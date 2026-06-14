@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hariseldon — T2SAIM Command Center</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+        :root { --navy: #0f1a2e; --gold: #c9a84c; --cream: #f7f4ec; --bg: #06080c; }
+        body { font-family: 'Outfit', sans-serif; margin: 0; background: var(--bg); color: #d1d5db; }
+        .glass { background: rgba(13,17,24,0.85); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.04); border-radius: 16px; }
+        .gold-text { color: var(--gold); }
+        .gold-border { border-left: 4px solid var(--gold); }
+        .card { @apply glass p-6 transition-all duration-300 cursor-pointer; }
+        .card:hover { transform: translateY(-4px); box-shadow: 0 0 30px rgba(201,168,76,0.15); }
+        .card-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+        .stripe { background: linear-gradient(90deg, var(--gold), #e5c76b); height: 3px; border-radius: 999px; }
+        .login-screen { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg); display: flex; align-items: center; justify-content: center; z-index: 9999; }
+        .login-box { background: rgba(13,17,24,0.95); border: 1px solid rgba(201,168,76,0.2); border-radius: 20px; padding: 3rem; max-width: 420px; width: 90%; text-align: center; }
+        .login-box input { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: white; padding: 12px 20px; border-radius: 10px; width: 100%; font-size: 1.1rem; outline: none; text-align: center; }
+        .login-box input:focus { border-color: var(--gold); }
+        .login-box button { background: var(--gold); color: #0f1a2e; font-weight: 700; padding: 12px 30px; border-radius: 10px; border: none; cursor: pointer; font-size: 1rem; transition: all 0.2s; }
+        .login-box button:hover { background: #e5c76b; transform: scale(1.02); }
+        .hidden { display: none; }
+        .content-hidden { opacity: 0; pointer-events: none; }
+        .content-visible { opacity: 1; pointer-events: all; transition: opacity 0.5s; }
+    </style>
+</head>
+<body>
+
+<!-- LOGIN SCREEN -->
+<div id="loginScreen" class="login-screen">
+    <div class="login-box">
+        <div style="font-size: 3rem; margin-bottom: 1rem;">🖖</div>
+        <h1 style="font-size: 1.8rem; font-weight: 800; color: white; margin-bottom: 0.5rem;">HARISELDON</h1>
+        <p style="color: var(--gold); font-size: 0.9rem; margin-bottom: 2rem; letter-spacing: 2px; text-transform: uppercase;">T2SAIM Command Center</p>
+        <p style="color: #9ca3af; font-size: 0.85rem; margin-bottom: 1.5rem;">Bu siteye erişmek için şifre giriniz</p>
+        <input type="password" id="passwordInput" placeholder="••••••••••" onkeydown="if(event.key==='Enter') checkPassword()">
+        <p id="errorMsg" style="color: #ef4444; font-size: 0.8rem; margin-top: 0.5rem; display: none;">Hatalı şifre!</p>
+        <div style="margin-top: 1.5rem;"><button onclick="checkPassword()"><i class="fa-solid fa-lock-open mr-2"></i>Giriş</button></div>
+        <p style="color: #4b5563; font-size: 0.75rem; margin-top: 2rem;">Honor – Ethics – Truth</p>
+    </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="mainContent" class="content-hidden" style="padding: 2rem; max-width: 1400px; margin: 0 auto;">
+
+    <!-- HEADER -->
+    <div class="glass p-8 gold-border flex flex-col md:flex-row items-start md:items-center justify-between gap-4" style="margin-bottom: 2rem;">
+        <div>
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 6px;">
+                <span style="font-size: 2.5rem;">🖖</span>
+                <h1 style="font-size: 2rem; font-weight: 800; color: white; margin: 0; letter-spacing: -0.5px;">HARISELDON</h1>
+                <span style="background: rgba(201,168,76,0.15); color: var(--gold); padding: 2px 10px; border-radius: 20px; font-size: 0.7rem; font-weight: 600; letter-spacing: 1px;">T2SAIM</span>
+            </div>
+            <p style="color: #9ca3af; margin: 0; font-size: 0.95rem;">Gerçek Zamanlı Piyasa İstihbaratı &bull; Amnesia Protokolü &bull; λ=0.15</p>
+            <p style="color: #4b5563; margin: 4px 0 0 0; font-size: 0.8rem;">
+                <span id="lastUpdate">Yükleniyor...</span> &bull; Sonraki Koşu: <span id="nextRun">-</span>
+            </p>
+        </div>
+        <div style="display: flex; gap: 8px;">
+            <a href="https://github.com/tarco-forensics/Hariseldon" target="_blank" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #9ca3af; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-size: 0.85rem;"><i class="fa-brands fa-github mr-1"></i>GitHub</a>
+            <button onclick="location.reload()" style="background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.2); color: var(--gold); padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 0.85rem;"><i class="fa-solid fa-rotate mr-1"></i>Yenile</button>
+        </div>
+    </div>
+
+    <!-- NAV -->
+    <div style="display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 0.5rem;">
+        <button class="nav-btn active" data-tab="dashboard" style="padding: 8px 20px; border-radius: 8px 8px 0 0; border: none; background: rgba(201,168,76,0.15); color: var(--gold); font-weight: 600; cursor: pointer; transition: all 0.2s; font-size: 0.9rem;">📊 Piyasa</button>
+        <button class="nav-btn" data-tab="reports" style="padding: 8px 20px; border-radius: 8px 8px 0 0; border: none; background: transparent; color: #9ca3af; cursor: pointer; transition: all 0.2s; font-size: 0.9rem;">📋 Raporlar</button>
+        <button class="nav-btn" data-tab="uk" style="padding: 8px 20px; border-radius: 8px 8px 0 0; border: none; background: transparent; color: #9ca3af; cursor: pointer; transition: all 0.2s; font-size: 0.9rem;">🇬🇧 UK Seçim</button>
+        <button class="nav-btn" data-tab="amigdala" style="padding: 8px 20px; border-radius: 8px 8px 0 0; border: none; background: transparent; color: #9ca3af; cursor: pointer; transition: all 0.2s; font-size: 0.9rem;">🧠 Amigdala</button>
+        <button class="nav-btn" data-tab="veritas" style="padding: 8px 20px; border-radius: 8px 8px 0 0; border: none; background: transparent; color: #9ca3af; cursor: pointer; transition: all 0.2s; font-size: 0.9rem;">🖖 Veritas</button>
+    </div>
+
+    <!-- TAB: PİYASA -->
+    <div id="tab-dashboard" class="tab-content">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+            <a href="dashboards/BIST100_Amnesia_Dashboard.html" class="card" style="display: block; text-decoration: none; color: inherit;">
+                <div class="card-icon">🇹🇷</div>
+                <h3 style="font-weight: 700; color: white; margin: 0 0 4px 0;">BIST-100</h3>
+                <p style="color: #9ca3af; font-size: 0.85rem; margin: 0;">MFDFA C4 &bull; +%49.71 &bull; Anchor</p>
+                <div style="margin-top: 8px; background: rgba(16,185,129,0.1); color: #10b981; padding: 2px 10px; border-radius: 12px; display: inline-block; font-size: 0.75rem;">CANLI</div>
+            </a>
+            <a href="dashboards/GLOBAL_Amnesia_Max_Profit_Dashboard.html" class="card" style="display: block; text-decoration: none; color: inherit;">
+                <div class="card-icon">🌐</div>
+                <h3 style="font-weight: 700; color: white; margin: 0 0 4px 0;">Küresel Piyasalar</h3>
+                <p style="color: #9ca3af; font-size: 0.85rem; margin: 0;">6 Bölge &bull; US +%70.86 &bull; JP +%72.31</p>
+            </a>
+            <a href="dashboards/SAYFA2_Kuresel_Karsilastirma_Dashboard.html" class="card" style="display: block; text-decoration: none; color: inherit;">
+                <div class="card-icon">🏆</div>
+                <h3 style="font-weight: 700; color: white; margin: 0 0 4px 0;">Karşılaştırma</h3>
+                <p style="color: #9ca3af; font-size: 0.85rem; margin: 0;">TR + 6 Bölge &bull; 7 Sekmeli Dashboard</p>
+            </a>
+            <a href="dashboards/SAYFA3_Kripto_Amnesia_TR_Amigdala_Dashboard.html" class="card" style="display: block; text-decoration: none; color: inherit;">
+                <div class="card-icon">🪙</div>
+                <h3 style="font-weight: 700; color: white; margin: 0 0 4px 0;">Kripto + TR Amigdala</h3>
+                <p style="color: #9ca3af; font-size: 0.85rem; margin: 0;">Coin +%178.29 &bull; TR OSINT</p>
+            </a>
+        </div>
+        <div class="glass p-6" style="margin-bottom: 2rem;">
+            <h3 style="font-weight: 700; color: white; margin-bottom: 1rem;"><i class="fa-solid fa-chart-line gold-text mr-2"></i>Anchor Dashboard</h3>
+            <iframe src="dashboards/BIST100_Amnesia_Dashboard.html" style="width: 100%; height: 600px; border: none; border-radius: 12px; background: #0d1118;"></iframe>
+        </div>
+    </div>
+
+    <!-- TAB: RAPORLAR -->
+    <div id="tab-reports" class="tab-content" style="display: none;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;">
+            <a href="reports/BIST100_BTF_Amnesia_Maximum_Profit_Raporu.md" class="card" style="display: block; text-decoration: none; color: inherit;">
+                <h3 style="font-weight: 700; color: white; margin: 0 0 4px 0;">BIST BAPT C4 Raporu</h3>
+                <p style="color: #9ca3af; font-size: 0.85rem; margin: 0;">James +%19.59 &bull; 43 stop-loss</p>
+            </a>
+            <a href="reports/BIST100_DA_MFDFA_Raporu.md" class="card" style="display: block; text-decoration: none; color: inherit;">
+                <h3 style="font-weight: 700; color: white; margin: 0 0 4px 0;">BIST MFDFA Analizi</h3>
+                <p style="color: #9ca3af; font-size: 0.85rem; margin: 0;">UH/UL/DH/DL rejimleri &bull; h(q)</p>
+            </a>
+            <a href="reports/JAMES_TESLIM_RAPORU.md" class="card" style="display: block; text-decoration: none; color: inherit;">
+                <h3 style="font-weight: 700; color: white; margin: 0 0 4px 0;">James Teslim Raporu</h3>
+                <p style="color: #9ca3af; font-size: 0.85rem; margin: 0;">T2SAIM devir teslim</p>
+            </a>
+        </div>
+    </div>
+
+    <!-- TAB: UK -->
+    <div id="tab-uk" class="tab-content" style="display: none;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
+            <a href="dashboards/UK_KAPSAMLI_ANALIZ.html" class="card" style="display: block; text-decoration: none; color: inherit;">
+                <h3 style="font-weight: 700; color: white; margin: 0 0 4px 0;">UK Kapsamlı Analiz</h3>
+            </a>
+            <a href="dashboards/UK_YAPISAL_DONUSUM.html" class="card" style="display: block; text-decoration: none; color: inherit;">
+                <h3 style="font-weight: 700; color: white; margin: 0 0 4px 0;">UK Yapısal Dönüşüm</h3>
+            </a>
+            <a href="uk-election/MAKERFIELD_BYELECTION_FINAL.html" class="card" style="display: block; text-decoration: none; color: inherit;">
+                <h3 style="font-weight: 700; color: white; margin: 0 0 4px 0;">Makerfield Ara Seçim</h3>
+            </a>
+        </div>
+    </div>
+
+    <!-- TAB: AMİGDALA -->
+    <div id="tab-amigdala" class="tab-content" style="display: none;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
+            <a href="dashboards/AMİGDALA_MEKANIZMA_ANALIZI.html" class="card" style="display: block; text-decoration: none; color: inherit;">
+                <h3 style="font-weight: 700; color: white; margin: 0 0 4px 0;">Amigdala Mekanizma</h3>
+            </a>
+            <a href="dashboards/NÖROPOLİTİK_PROTOKOL.html" class="card" style="display: block; text-decoration: none; color: inherit;">
+                <h3 style="font-weight: 700; color: white; margin: 0 0 4px 0;">Nöropolitik Protokol</h3>
+            </a>
+        </div>
+    </div>
+
+    <!-- TAB: VERİTAS -->
+    <div id="tab-veritas" class="tab-content" style="display: none;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
+            <a href="dashboards/USS_VERITY_NIHAI_RAPOR.html" class="card" style="display: block; text-decoration: none; color: inherit;">
+                <h3 style="font-weight: 700; color: white; margin: 0 0 4px 0;">USS Verity Nihai Rapor</h3>
+            </a>
+            <a href="dashboards/T2SAIM_SORUSTURMA_PROTOKOLU.html" class="card" style="display: block; text-decoration: none; color: inherit;">
+                <h3 style="font-weight: 700; color: white; margin: 0 0 4px 0;">Soruşturma Protokolü</h3>
+            </a>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="stripe" style="margin-top: 3rem;"></div>
+    <div style="text-align: center; padding: 1.5rem 0; color: #4b5563; font-size: 0.8rem;">
+        T2SAIM Protokol &bull; Amnesia λ=0.15 &bull; Zero Future Leakage &bull; <span style="color: var(--gold);">Honor – Ethics – Truth</span><br>
+        Science Officer SPOCK &bull; Kaptan Tarco &bull; Hariseldon v1.0 &bull; <span id="footerDate"></span>
+    </div>
+
+</div>
+
+<script>
+// Şifre kontrolü
+function checkPassword() {
+    var pwd = document.getElementById('passwordInput').value;
+    if (pwd === 'T2SAIM2026') {
+        document.getElementById('loginScreen').style.display = 'none';
+        document.getElementById('mainContent').classList.remove('content-hidden');
+        document.getElementById('mainContent').classList.add('content-visible');
+        document.getElementById('errorMsg').style.display = 'none';
+        document.title = 'Hariseldon — T2SAIM Command Center';
+    } else {
+        document.getElementById('errorMsg').style.display = 'block';
+        document.getElementById('passwordInput').value = '';
+        setTimeout(function() { document.getElementById('errorMsg').style.display = 'none'; }, 3000);
+    }
+}
+
+// Tab navigasyonu
+document.querySelectorAll('.nav-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+        document.querySelectorAll('.nav-btn').forEach(function(b) {
+            b.style.background = 'transparent';
+            b.style.color = '#9ca3af';
+        });
+        this.style.background = 'rgba(201,168,76,0.15)';
+        this.style.color = '#c9a84c';
+        document.querySelectorAll('.tab-content').forEach(function(t) { t.style.display = 'none'; });
+        document.getElementById('tab-' + this.dataset.tab).style.display = 'block';
+    });
+});
+
+// Tarih
+document.getElementById('footerDate').textContent = new Date().toISOString().split('T')[0];
+document.getElementById('lastUpdate').textContent = '14 Haziran 2026 14:34';
+document.getElementById('nextRun').textContent = 'Her gün 09:00 UTC';
+
+// Enter tuşu
+document.getElementById('passwordInput').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') checkPassword();
+});
+</script>
+</body>
+</html>

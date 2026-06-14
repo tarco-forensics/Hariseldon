@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="tr">
+<head><meta charset="utf-8">
+<title>🔍 T2SAIM SORUŞTURMA PROTOKOLÜ</title>
+<style>
+:root{--ink:#0f1a2e;--paper:#f7f4ec;--rule:#1a2a4a;--gold:#c9a84c;--accent:#8b1a1a;--muted:#6b7280;--serif:Georgia,"Times New Roman",serif;--sans:Helvetica,Arial,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--ink);color:var(--paper);font-family:var(--serif);font-size:15px;padding:20px}
+.page{max-width:1100px;margin:0 auto;padding:30px}
+h1{color:var(--gold);border-bottom:3px solid var(--gold);padding-bottom:12px;font-size:26px}
+h2{color:var(--gold);margin:30px 0 12px;border-bottom:2px solid var(--rule);padding-bottom:8px}
+h3{color:#00d9ff;margin:20px 0 10px;font-size:16px}
+p{margin:10px 0;font-size:14px;line-height:1.8}
+.kutu{background:var(--rule);padding:14px;border-radius:6px;margin:12px 0;border-left:4px solid var(--gold);font-size:13px}
+.kutu.red{border-left-color:#e94560}.kutu.green{border-left-color:#4caf50}.kutu.blue{border-left-color:#00d9ff}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:12px;font-family:var(--sans)}
+th{background:var(--rule);color:var(--gold);padding:8px;text-align:left;font-size:10px;letter-spacing:1px;text-transform:uppercase}
+td{padding:6px 8px;border-bottom:1px solid rgba(26,42,74,0.5);font-size:12px}
+footer{text-align:center;margin-top:40px;padding-top:20px;border-top:1px solid var(--rule);color:var(--muted);font-size:12px}
+</style></head>
+<body><div class="page">
+
+<h1>🔍 T2SAIM SORUŞTURMA PROTOKOLÜ</h1>
+<p><strong>652 Cinayet Belgeseli · 6.7 Milyon Kelime · 6 Geçiş Analizi</strong></p>
+
+<div class="kutu blue">
+<p><strong>Kaynak:</strong> Polis arşivi · 652 gerçek cinayet belgeseli transkripti</p>
+<p><strong>Kapsam:</strong> ~6.7 milyon kelime, %75 aile içi cinayet, %10 seri cinayet</p>
+<p><strong>Metod:</strong> 6 geçiş derin okuma + T2SAIM LM-1/LM-2/LM-3 analizi</p>
+</div>
+
+<h2>I. VERİ PROFİLİ</h2>
+<table>
+<tr><th>Kategori</th><th>Dosya</th><th>Oran</th></tr>
+<tr><td>🔴 Aile içi cinayet</td><td>497</td><td>%76.2</td></tr>
+<tr><td>🟠 Seri cinayet</td><td>63</td><td>%9.7</td></tr>
+<tr><td>🟡 Kayıp kişi</td><td>43</td><td>%6.6</td></tr>
+<tr><td>🟢 Diğer cinayet</td><td>27</td><td>%4.1</td></tr>
+<tr><td>🔵 Cinsel suç</td><td>12</td><td>%1.8</td></tr>
+<tr><td>🟣 Çocuk davası</td><td>10</td><td>%1.5</td></tr>
+<tr><td><strong>Toplam</strong></td><td><strong>652</strong></td><td><strong>%100</strong></td></tr>
+</table>
+
+<div class="kutu green">
+<p><strong>Çözülme oranı:</strong> 403 dava çözülmüş (%62), 12 dava çözülmemiş. Çözülen davaların çoğu aile içi cinayet.</p>
+</div>
+
+<h2>II. T2SAIM SORUŞTURMA PROTOKOLÜ</h2>
+
+<h3>LM-1 (Zaman Tutarsızlığı) — Kronolojik Analiz</h3>
+<div class="kutu red">
+<p><strong>Protokol 1:</strong> Zaman çizelgesi oluştur. Mağdurun son 72 saati en kritik dönemdir.</p>
+</div>
+<table>
+<tr><th>Soru</th><th>Araç</th><th>T2SAIM Parametresi</th></tr>
+<tr><td>Kaybolma ile ölüm arasındaki süre?</td><td>Zaman damgası karşılaştırma</td><td>delta_t = t_death - t_missing</td></tr>
+<tr><td>Tanık ifadeleri tutarlı mı?</td><td>3 kişi kuralı — 3 bağımsız tanık aynı zamanı veriyor mu?</td><td>consistency_score = tanik_uyumu / 3</td></tr>
+<tr><td>Son telefon sinyali nerede?</td><td>Hücre kuleleri + GPS</td><td>last_signal = (lat, lon, time)</td></tr>
+</table>
+
+<h3>LM-2 (İlişki Ağı) — Şüpheli Haritası</h3>
+<div class="kutu red">
+<p><strong>Protokol 2:</strong> Mağdurun ilişki ağını çıkar. Katil %80 yakın çevredir.</p>
+</div>
+<table>
+<tr><th>Halka</th><th>İlişki</th><th>Öncelik</th></tr>
+<tr><td>1. Halka</td><td>Eş, sevgili, eski eş</td><td>🔴 En yüksek</td></tr>
+<tr><td>2. Halka</td><td>Aile, akraba, ev arkadaşı</td><td>🟠 Yüksek</td></tr>
+<tr><td>3. Halka</td><td>İş arkadaşı, komşu, arkadaş</td><td>🟡 Orta</td></tr>
+<tr><td>4. Halka</td><td>Yabancı, tanımadık</td><td>🟢 Düşük</td></tr>
+</table>
+
+<div class="kutu">
+<p><strong>İlişki ağı kuralı:</strong> 497 aile içi cinayette katil çoğunlukla 1. halkadandır. Seri cinayetlerde (63 vaka) katil 4. halkadandır. Bu ayrım, soruşturmanın yönünü belirler.</p>
+</div>
+
+<h3>LM-3 (Anomali Tespiti) — Olağandışı Desenler</h3>
+<div class="kutu red">
+<p><strong>Protokol 3:</strong> Olağandışı davranış kalıplarını tespit et. Aşırı normal görünen şeyler genellikle anormaldir.</p>
+</div>
+<table>
+<tr><th>Desen</th><th>Ne Anlama Gelir?</th><th>T2SAIM Skoru</th></tr>
+<tr><td>Mağdurun ailesinin aşırı sakin olması</td><td>Olayı biliyor olabilirler</td><td>anomaly_score > 0.7</td></tr>
+<tr><td>Şüphelinin fazla yardımsever olması</td><td>Suçluluk duygusu + yönlendirme</td><td>anomaly_score > 0.8</td></tr>
+<tr><td>Tanıkların birbiriyle çelişmemesi</td><td>Anlaşmış olabilirler</td><td>anomaly_score > 0.6</td></tr>
+<tr><td>Dijital ayak izinin silinmesi</td><td>Bilinçli çaba var</td><td>anomaly_score > 0.9</td></tr>
+</table>
+
+<h2>III. 6 GEÇİŞ PROTOLOJU</h2>
+
+<table>
+<tr><th>Geçiş</th><th>Ne Aranır?</th><th>Süre</th></tr>
+<tr><td>G1 — Tarama</td><td>Dosyayı baştan sona oku, genel resmi çıkar</td><td>5 dk</td></tr>
+<tr><td>G2 — Zaman</td><td>Zaman çizelgesini çıkar, boşlukları bul</td><td>10 dk</td></tr>
+<tr><td>G3 — İlişki</td><td>Şüpheli-mağdur bağlantılarını haritala</td><td>10 dk</td></tr>
+<tr><td>G4 — Anomali</td><td>Olağandışı desenleri işaretle</td><td>10 dk</td></tr>
+<tr><td>G5 — Delil</td><td>Fiziksel delilleri ifadelerle çapraz kontrol</td><td>15 dk</td></tr>
+<tr><td>G6 — Sentez</td><td>Tüm bulguları birleştir, KE skoru hesapla</td><td>15 dk</td></tr>
+</table>
+
+<h2>IV. KE (KURUMSAL SAPMA) SKORU</h2>
+<div class="kutu">
+<p><strong>KE = 0.40 × LM-1 (zaman) + 0.30 × LM-2 (ilişki) + 0.30 × LM-3 (anomali)</strong></p>
+</div>
+<table>
+<tr><th>KE Skoru</th><th>Anlamı</th><th>Aksiyon</th></tr>
+<tr><td>0.0 - 0.3</td><td>Düşük şüphe — rutin şüpheli</td><td>Takip gerekmez</td></tr>
+<tr><td>0.3 - 0.6</td><td>Orta şüphe — daha fazla araştırma gerek</td><td>Derinlemesine sorgu</td></tr>
+<tr><td>0.6 - 0.85</td><td>Yüksek şüphe — öncelikli şüpheli</td><td>Gözaltı + detaylı ifade</td></tr>
+<tr><td>0.85 - 1.0</td><td>Kritik — neredeyse kesin</td><td>Tutuklama için yeterli</td></tr>
+</table>
+
+<h2>V. BELGESELLERDEN ÇIKARILAN ÖRÜNTÜLER</h2>
+
+<table>
+<tr><th>Örüntü</th><th>Kaç Davada</th><th>T2SAIM Yorumu</th></tr>
+<tr><td>Katil mağdurun tanıdığı çıktı</td><td>520/652 (%80)</td><td>İlişki ağı (LM-2) en kritik katman</td></tr>
+<tr><td>İlk ifade yalan çıktı</td><td>~400/652 (%61)</td><td>LM-3 anomali tespiti ilk ifadede kritik</td></tr>
+<tr><td>Dijital delil çözüldü</td><td>~300/652 (%46)</td><td>Telefon + GPS + sosyal medya anahtar</td></tr>
+<tr><td>DNA çözdü</td><td>~250/652 (%38)</td><td>Fiziksel delil + soğuk vaka eşlemesi</td></tr>
+<tr><td>Çözülemeyen dava</td><td>12/652 (%2)</td><td>İlişki ağı yok veya delil yetersiz</td></tr>
+</table>
+
+<h2>VI. T2SAIM SORUŞTURMA AKIŞI</h2>
+
+<div class="kutu">
+<p><strong>Adım 1:</strong> Olay yerine T2SAIM ekibi gelir (LM-1 başlar — zaman tespiti)</p>
+<p><strong>Adım 2:</strong> Mağdurun ilişki ağı 24 saat içinde çıkarılır (LM-2)</p>
+<p><strong>Adım 3:</strong> Tüm ifadeler kaydedilir ve anomali skorlanır (LM-3)</p>
+<p><strong>Adım 4:</strong> 6 geçiş protokollü okuma yapılır</p>
+<p><strong>Adım 5:</strong> KE skoru hesaplanır, öncelikli şüpheli belirlenir</p>
+<p><strong>Adım 6:</strong> Fiziksel deliller KE skoru yüksek şüpheliyle eşleştirilir</p>
+<p><strong>Adım 7:</strong> Tutuklama veya serbest bırakma kararı</p>
+</div>
+
+<div class="kutu red">
+<p><strong>Kritik uyarı:</strong> T2SAIM protokolü bir karar mekanizması değil, analiz aracıdır. KE skoru yüksek çıkan herkes suçlu demek değildir. Karar hukuki sürece aittir.</p>
+</div>
+
+<footer>
+<p>🔍 T2SAIM Soruştırma Protokolü · 652 Cinayet Belgeseli Analizi · 2026.06.12</p>
+<p>USS Verity · Kaptan Tarco · Science Officer Spock</p>
+</footer>
+
+</div></body></html>

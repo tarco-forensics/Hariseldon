@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="tr">
+<head><meta charset="utf-8">
+<title>Pieces OS — MCP Araç Paneli</title>
+<style>
+:root{--ink:#0f1a2e;--paper:#f7f4ec;--gold:#c9a84c;--accent:#8b1a1a;--muted:#6b7280}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--ink);color:var(--paper);font-family:monospace;padding:30px}
+.page{max-width:900px;margin:0 auto}
+h1{color:var(--gold);border-bottom:3px solid var(--gold);padding-bottom:12px;font-size:24px}
+h2{color:var(--gold);margin:30px 0 12px;border-bottom:1px solid #1a2a4a;padding-bottom:6px;font-size:18px}
+p{margin:10px 0;font-size:13px;line-height:1.6}
+.kutu{background:#1a2a4a;padding:14px;border-radius:6px;margin:12px 0;border-left:4px solid var(--gold);font-size:13px}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:12px}
+th{background:#1a2a4a;color:var(--gold);padding:8px;text-align:left;font-size:11px;letter-spacing:1px;text-transform:uppercase}
+td{padding:6px 8px;border-bottom:1px solid rgba(26,42,74,0.5);font-size:12px}
+.code{background:#0a0f1a;padding:10px;border-radius:4px;font-family:monospace;font-size:12px;color:#4caf50;overflow-x:auto}
+.btn{display:inline-block;padding:6px 14px;background:transparent;border:1px solid var(--gold);color:var(--gold);font-family:monospace;font-size:11px;cursor:pointer;margin:4px}
+.btn:hover{background:rgba(201,168,76,0.1)}
+footer{text-align:center;margin-top:40px;padding-top:20px;border-top:1px solid #1a2a4a;color:var(--muted);font-size:11px}
+</style></head>
+<body><div class="page">
+
+<h1>🔧 Pieces OS — MCP Araç Paneli</h1>
+<p><strong>Endpoint:</strong> <code>http://localhost:39300/model_context_protocol/2025-03-26/mcp</code></p>
+
+<div class="kutu">
+<p>Bu panel, Pieces OS MCP sunucusu üzerinden kullanılabilen araçları listeler. Her araç bir MCP (Model Context Protocol) fonksiyonudur.</p>
+</div>
+
+<h2>📡 Bağlantı Bilgisi</h2>
+<table>
+<tr><th>Protokol</th><td>MCP (Model Context Protocol)</td></tr>
+<tr><th>Transport</th><td>HTTP + SSE (Server-Sent Events)</td></tr>
+<tr><th>Port</th><td>39300</td></tr>
+<tr><th>Endpoint</th><td><code>/model_context_protocol/2025-03-26/mcp</code></td></tr>
+</table>
+
+<h2>🔧 38 Araç (Tahmini Liste)</h2>
+<p class="kutu">Pieces OS, local bilgisayarınızda çalışan bir yapay zeka asistanıdır. 38 farklı işlemi MCP üzerinden sunar. Bunlar arasında:</p>
+
+<table>
+<tr><th>#</th><th>Araç Adı</th><th>Açıklama</th></tr>
+<tr><td>1-10</td><td>Sohbet & Metin</td><td>AI sohbet, metin oluşturma, özetleme, çeviri</td></tr>
+<tr><td>11-20</td><td>Kod & Geliştirme</td><td>Kod açıklama, hata ayıklama, refactoring, snippet yönetimi</td></tr>
+<tr><td>21-30</td><td>Dosya & Sistem</td><td>Dosya okuma/yazma, snippet kaydetme, clipboard yönetimi</td></tr>
+<tr><td>31-38</td><td>Yapay Zeka & Model</td><td>Model sorgulama, embedding, vektör arama, context yönetimi</td></tr>
+</table>
+
+<h2>🔌 Claude'a Bağlantı</h2>
+<div class="kutu">
+<p><strong>Claude Desktop MCP Config:</strong></p>
+<div class="code">{
+  "mcpServers": {
+    "pieces_os": {
+      "url": "http://localhost:39300/model_context_protocol/2025-03-26/mcp"
+    }
+  }
+}</div>
+</div>
+
+<h2>🌐 Web Arayüz</h2>
+<div class="kutu">
+<p>Pieces OS'un kendi web arayüzü varsayılan olarak şu adreste çalışır:</p>
+<p style="font-size:16px;margin:10px 0"><a href="http://localhost:10005" style="color:#4caf50">http://localhost:10005</a></p>
+<p>Bu adresten Pieces OS'un tüm araçlarını görsel olarak kullanabilirsiniz.</p>
+</div>
+
+<h2>🔄 MCP Bağlantı Testi</h2>
+<div class="kutu">
+<p>Terminalden bağlantı testi:</p>
+<div class="code">curl -X POST http://localhost:39300/model_context_protocol/2025-03-26/mcp \
+  -H "Content-Type: application/json" \
+  -d '{"jsonrpc":"2.0","id":1,"method":"tools/list","params":{}}'</div>
+</div>
+
+<footer>
+<p>USS Verity · Pieces OS MCP Panel · 2026.06.09</p>
+</footer>
+
+</div></body></html>

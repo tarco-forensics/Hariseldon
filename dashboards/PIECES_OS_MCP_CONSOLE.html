@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="tr">
+<head><meta charset="utf-8">
+<title>Pieces OS — MCP Web Console</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0f1a2e;color:#eaeaea;font-family:monospace;padding:20px;font-size:13px}
+.page{max-width:1200px;margin:0 auto}
+h1{color:#c9a84c;font-size:22px;border-bottom:2px solid #c9a84c;padding-bottom:10px;margin-bottom:20px}
+.panel{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.kutu{background:#1a2a4a;padding:14px;border-radius:6px;border-left:4px solid #c9a84c;margin-bottom:12px}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:12px}
+th{background:#0f1a2e;color:#c9a84c;padding:6px;text-align:left;font-size:10px;letter-spacing:1px;text-transform:uppercase;border-bottom:1px solid #c9a84c}
+td{padding:5px 6px;border-bottom:1px solid rgba(26,42,74,0.5);font-size:11px;font-family:monospace}
+input{width:100%;padding:8px;background:#0f1a2e;border:1px solid #1a2a4a;color:#eaeaea;font-family:monospace;font-size:12px;margin:4px 0}
+input:focus{border-color:#c9a84c;outline:none}
+button{padding:6px 14px;background:transparent;border:1px solid #c9a84c;color:#c9a84c;font-family:monospace;font-size:11px;cursor:pointer;margin:4px}
+button:hover{background:rgba(201,168,76,0.1)}
+.sonuc{background:#0a0f1a;padding:10px;border-radius:4px;color:#4caf50;font-size:11px;min-height:50px;white-space:pre-wrap;overflow-x:auto}
+.gonder{background:#c9a84c;color:#0f1a2e;font-weight:bold}
+.status{display:inline-block;padding:3px 8px;border-radius:3px;font-size:10px;margin:2px}
+.status.on{background:#1a4a1a;color:#4caf50}
+.status.off{background:#4a1a1a;color:#e94560}
+footer{text-align:center;margin-top:30px;padding-top:15px;border-top:1px solid #1a2a4a;color:#6b7280;font-size:11px}
+</style></head>
+<body>
+<div class="page">
+<h1>🔧 Pieces OS — MCP Web Console</h1>
+<p style="margin-bottom:16px;font-size:12px;color:#6b7280">
+Endpoint: <code style="color:#4caf50">http://localhost:39300/model_context_protocol/2025-03-26/mcp</code>
+<span class="status on">🟢 BAĞLI</span>
+</p>
+
+<div class="panel">
+<div class="kutu" style="border-left-color:#4caf50">
+<h3 style="color:#4caf50;margin-bottom:8px">📡 Araç Listesi</h3>
+<div id="toolList" style="font-size:11px">Yükleniyor...</div>
+</div>
+
+<div class="kutu" style="border-left-color:#00d9ff">
+<h3 style="color:#00d9ff;margin-bottom:8px">⚡ Araç Çalıştır</h3>
+<select id="toolSelect" style="width:100%;padding:6px;background:#0f1a2e;border:1px solid #1a2a4a;color:#eaeaea;font-family:monospace;font-size:11px;margin:4px 0">
+<option>Araç seçin...</option>
+</select>
+<input type="text" id="paramsInput" placeholder='{"param1": "value1"}' value='{}'>
+<button onclick="runTool()" class="gonder">▶ ÇALIŞTIR</button>
+<div id="result" class="sonuc" style="margin-top:8px">Çıktı burada görünecek...</div>
+</div>
+</div>
+
+<h2 style="color:#c9a84c;margin:24px 0 12px;font-size:16px;border-bottom:1px solid #1a2a4a;padding-bottom:6px">🛠️ Tüm Araçlar</h2>
+<table>
+<tr><th>#</th><th>Araç Adı</th><th>Açıklama</th><th>Durum</th></tr>
+<tr><td>1</td><td>pieces_os_chat</td><td>AI sohbet</td><td><span class="status on">✅</span></td></tr>
+<tr><td>2</td><td>pieces_os_code_explain</td><td>Kod açıklama</td><td><span class="status on">✅</span></td></tr>
+<tr><td>3</td><td>pieces_os_code_debug</td><td>Hata ayıklama</td><td><span class="status on">✅</span></td></tr>
+<tr><td>4</td><td>pieces_os_snippet_save</td><td>Snippet kaydet</td><td><span class="status on">✅</span></td></tr>
+<tr><td>5</td><td>pieces_os_search</td><td>Kod arama</td><td><span class="status on">✅</span></td></tr>
+<tr><td>6-38</td><td colspan="3">Diğer araçlar Pieces OS MCP üzerinden kullanılabilir</td></tr>
+</table>
+
+<h2 style="color:#c9a84c;margin:24px 0 12px;font-size:16px;border-bottom:1px solid #1a2a4a;padding-bottom:6px">🔌 Bağlantı Bilgisi</h2>
+<div class="kutu" style="border-left-color:#c9a84c">
+<p><strong>Transport:</strong> HTTP + SSE (MCP)</p>
+<p><strong>Auth:</strong> Cookie tabanlı (NotebookLM için)</p>
+<p><strong>Status:</strong> Çalışıyor</p>
+</div>
+
+<footer>
+<p>USS Verity · Pieces OS MCP Console · 2026.06.09</p>
+</footer>
+</div>
+
+<script>
+async function loadTools() {
+try {
+const r = await fetch('http://localhost:39300/model_context_protocol/2025-03-26/mcp', {
+method: 'POST',
+headers: {'Content-Type':'application/json','mcp-session-id':'web-1'},
+body: JSON.stringify({jsonrpc:'2.0',id:1,method:'tools/list',params:{}})
+});
+const d = await r.json();
+if(d.result&&d.result.tools){
+document.getElementById('toolList').innerHTML = d.result.tools.map((t,i)=>
+'<div style="margin:4px 0;color:#00d9ff">'+(i+1)+'. '+t.name+'</div>'
+).join('');
+const sel = document.getElementById('toolSelect');
+d.result.tools.forEach(t=>{
+const o = document.createElement('option');
+o.value = t.name;
+o.text = t.name;
+sel.appendChild(o);
+});
+} else {
+document.getElementById('toolList').innerHTML = '<span style="color:#e94560">Araçlar yüklenemedi</span>';
+}
+} catch(e) {
+document.getElementById('toolList').innerHTML = '<span style="color:#e94560">MCP sunucusuna bağlanılamadı: localhost:39300</span>';
+}
+}
+loadTools();
+
+async function runTool() {
+const tool = document.getElementById('toolSelect').value;
+let params = {};
+try { params = JSON.parse(document.getElementById('paramsInput').value || '{}'); } catch(e) {}
+document.getElementById('result').innerText = 'Çalıştırılıyor: '+tool+'...';
+try {
+const r = await fetch('http://localhost:39300/model_context_protocol/2025-03-26/mcp', {
+method: 'POST',
+headers: {'Content-Type':'application/json','mcp-session-id':'web-1'},
+body: JSON.stringify({jsonrpc:'2.0',id:1,method:'tools/call',params:{name:tool,arguments:params}})
+});
+const d = await r.json();
+document.getElementById('result').innerText = JSON.stringify(d, null, 2);
+} catch(e) {
+document.getElementById('result').innerText = 'Hata: '+e.message;
+}
+}
+</script>
+</body></html>
