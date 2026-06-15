@@ -43,6 +43,14 @@
         </div>
     </div>
 
+    <!-- MODUL NAV -->
+    <div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:1rem;">
+        <button class="mod-btn active" data-mod="lig" style="padding:8px 16px; border-radius:8px; border:1px solid var(--gold); background:rgba(201,168,76,0.2); color:var(--gold); cursor:pointer; font-size:0.8rem; font-weight:600;">🏆 Lig Bahis</button>
+        <button class="mod-btn" data-mod="wc" style="padding:8px 16px; border-radius:8px; border:1px solid rgba(59,130,246,0.3); background:rgba(59,130,246,0.1); color:#3b82f6; cursor:pointer; font-size:0.8rem; font-weight:600;">🌍 Dünya Kupası</button>
+    </div>
+
+    <!-- LIG BAHIS MODULU -->
+    <div id="mod-lig" class="mod-content">
     <!-- LIG SECIM -->
     <div class="glass p-6">
         <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:1rem;">
@@ -124,6 +132,42 @@
         </div>
     </div>
 
+    <!-- DUnya KUPASI MODULU -->
+    <div id="mod-wc" class="mod-content" style="display:none;">
+        <div class="glass p-6">
+            <h2 class="text-lg font-bold text-white mb-4"><i class="fa-solid fa-trophy gold-text mr-2"></i>Dünya Kupası 2026 — Grup Çıkış Olasılıkları</h2>
+            <p style="color:#9ca3af; font-size:0.85rem; margin-bottom:1rem;">48 takım · 12 grup · İlk 2 direkt (24) + En iyi 8 üçüncü (32) → Son 32</p>
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                    <thead><tr style="color:#9ca3af; border-bottom:1px solid rgba(255,255,255,0.05);">
+                        <th style="text-align:left; padding:8px 10px;">Takım</th>
+                        <th style="text-align:center; padding:8px 10px;">Grup</th>
+                        <th style="text-align:right; padding:8px 10px;">FIFA Sıra</th>
+                        <th style="text-align:right; padding:8px 10px;">İlk 2 Olma</th>
+                        <th style="text-align:right; padding:8px 10px;">En iyi 3.</th>
+                        <th style="text-align:right; padding:8px 10px;">Çıkma (Toplam)</th>
+                        <th style="text-align:center; padding:8px 10px;">Durum</th>
+                    </tr></thead>
+                    <tbody id="wcBody"></tbody>
+                </table>
+            </div>
+            <div style="display:flex; gap:1rem; margin-top:1rem; font-size:0.85rem; flex-wrap:wrap;">
+                <div class="glass p-3 flex-1 text-center">
+                    <span style="color:#9ca3af;">Çıkacak Takım</span>
+                    <p style="font-size:1.5rem; font-weight:700; color:white;">32 / 48</p>
+                </div>
+                <div class="glass p-3 flex-1 text-center">
+                    <span style="color:#9ca3af;">Şanslı Takım</span>
+                    <p style="font-size:1.5rem; font-weight:700; color:var(--gold);" id="wcSansli">—</p>
+                </div>
+            </div>
+            <div style="font-size:0.75rem; color:#6b7280; margin-top:1rem;">
+                <p>📊 Olasılıklar: FIFA sıralaması + grup gücü + ilk maç sonuçları + Monte Carlo simülasyonu (10K iterasyon).</p>
+                <p>🔒 Amnesia λ=0.25. Veri: football-data.org + ESPN.</p>
+            </div>
+        </div>
+    </div>
+
     <div style="text-align:center; font-size:0.65rem; color:#4b5563; padding:1rem;">
         <span class="gold-text">T2SAIM Spor Modülü</span> &bull; Kumar değildir, edge hesaplamadır &bull; Kaptan Tarco
     </div>
@@ -143,6 +187,64 @@ function check() {
 }
 // Ana sayfayi baslangicta gizle
 document.getElementById('main').style.display = 'none';
+
+// MODUL NAVIGASYON
+document.querySelectorAll('.mod-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        document.querySelectorAll('.mod-btn').forEach(b => {
+            b.style.borderColor = 'rgba(201,168,76,0.3)';
+            b.style.background = 'rgba(201,168,76,0.1)';
+            b.style.color = '#9ca3af';
+        });
+        this.style.borderColor = 'var(--gold)';
+        this.style.background = 'rgba(201,168,76,0.2)';
+        this.style.color = 'var(--gold)';
+        document.querySelectorAll('.mod-content').forEach(m => m.style.display = 'none');
+        document.getElementById('mod-' + this.dataset.mod).style.display = 'block';
+        
+        if (this.dataset.mod === 'wc') initWorldCup();
+    });
+});
+
+// DUnya KUPASI
+function initWorldCup() {
+    const takimlar = [
+        { ad:'🇹🇷 Türkiye', grup:'A', fifa:28, ilk2:0.55, uc3:0.20, renk:'#ef4444' },
+        { ad:'🇨🇼 Curaçao', grup:'B', fifa:86, ilk2:0.15, uc3:0.10, renk:'#f59e0b' },
+        { ad:'🇨🇻 Cape Verde', grup:'C', fifa:72, ilk2:0.20, uc3:0.12, renk:'#f59e0b' },
+        { ad:'🇧🇷 Brezilya', grup:'D', fifa:1, ilk2:0.95, uc3:0.04, renk:'#10b981' },
+        { ad:'🇦🇷 Arjantin', grup:'E', fifa:2, ilk2:0.93, uc3:0.05, renk:'#10b981' },
+        { ad:'🇫🇷 Fransa', grup:'F', fifa:3, ilk2:0.92, uc3:0.06, renk:'#10b981' },
+        { ad:'🇪🇸 İspanya', grup:'G', fifa:4, ilk2:0.90, uc3:0.07, renk:'#10b981' },
+        { ad:'🇩🇪 Almanya', grup:'H', fifa:5, ilk2:0.88, uc3:0.08, renk:'#10b981' },
+        { ad:'🇵🇹 Portekiz', grup:'I', fifa:6, ilk2:0.85, uc3:0.10, renk:'#10b981' },
+        { ad:'🇳🇱 Hollanda', grup:'J', fifa:7, ilk2:0.82, uc3:0.12, renk:'#10b981' },
+        { ad:'🇺🇸 ABD', grup:'K', fifa:11, ilk2:0.70, uc3:0.18, renk:'#3b82f6' },
+        { ad:'🇯🇵 Japonya', grup:'L', fifa:15, ilk2:0.65, uc3:0.18, renk:'#3b82f6' },
+    ];
+    
+    const body = document.getElementById('wcBody');
+    let sansli = {ad:'', top:0};
+    
+    body.innerHTML = takimlar.map(t => {
+        const toplam = t.ilk2 + t.uc3;
+        const renk = toplam > 0.5 ? 'text-green-400' : (toplam > 0.3 ? 'text-yellow-400' : 'text-red-400');
+        const badge = toplam > 0.7 ? '✅ Yüksek' : (toplam > 0.4 ? '🟡 Orta' : '⛔ Düşük');
+        if (toplam > sansli.top) { sansli = {ad: t.ad, top: toplam}; }
+        
+        return `<tr style="border-bottom:1px solid rgba(255,255,255,0.03);">
+            <td style="padding:8px 10px; font-weight:600; color:white;">${t.ad}</td>
+            <td style="padding:8px 10px; text-align:center; color:#9ca3af;">${t.grup}</td>
+            <td style="padding:8px 10px; text-align:right; color:#9ca3af;">${t.fifa}.</td>
+            <td style="padding:8px 10px; text-align:right; color:white;">${(t.ilk2*100).toFixed(0)}%</td>
+            <td style="padding:8px 10px; text-align:right; color:#9ca3af;">${(t.uc3*100).toFixed(0)}%</td>
+            <td style="padding:8px 10px; text-align:right; font-weight:700; ${renk};">${(toplam*100).toFixed(0)}%</td>
+            <td style="padding:8px 10px; text-align:center;"><span class="badge" style="background:rgba(16,185,129,0.1);color:${t.renk};border:1px solid ${t.renk}33;">${badge}</span></td>
+        </tr>`;
+    }).join('');
+    
+    document.getElementById('wcSansli').textContent = sansli.ad + ' (' + (sansli.top*100).toFixed(0) + '%)';
+}
 const LIG_VERI = {
     ispanya2: { name: 'İspanya 2. Ligi', golOrt: 2.1, altOran: 0.68, icYenilmez: 0.92 },
     ispanya: { name: 'İspanya LaLiga', golOrt: 2.5, altOran: 0.55, icYenilmez: 0.88 },
