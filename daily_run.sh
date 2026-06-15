@@ -22,12 +22,6 @@ echo "[1] TR Telegram Amigdala..." >> "$LOG"
 python turkiye_amigdala_dedektoru.py 2>&1 >> "$LOG"
 echo "  => Amigdala tamamlandi" >> "$LOG"
 
-# Once: Fraud Tespit (manipulasyon kontrolu)
-echo "[2] Fraud Tespit Modulu..." >> "$LOG"
-python /b/T2SAIM_Spock_Hermes/FRAUD_TESPIT/T2SAIM_Module_Fraud.py 2>&1 >> "$LOG"
-python /b/T2SAIM_Spock_Hermes/FRAUD_TESPIT/T2SAIM_Module_Lex.py 2>&1 >> "$LOG"
-echo "  => Fraud tespit tamamlandi" >> "$LOG"
-
 # Cift gun (0): BIST, Tek gun (1): Global
 if [ $GUN_MOD -eq 0 ]; then
     echo "[3] BIST-100 MFDFA Motoru (Hurst=0.52)..."
