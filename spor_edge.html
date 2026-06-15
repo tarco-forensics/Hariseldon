@@ -257,23 +257,25 @@ function check() {
 document.getElementById('main').style.display = 'none';
 
 // MODUL NAVIGASYON
-document.querySelectorAll('.mod-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-        document.querySelectorAll('.mod-btn').forEach(b => {
-            b.style.borderColor = 'rgba(201,168,76,0.3)';
-            b.style.background = 'rgba(201,168,76,0.1)';
-            b.style.color = '#9ca3af';
-        });
-        this.style.borderColor = 'var(--gold)';
-        this.style.background = 'rgba(201,168,76,0.2)';
-        this.style.color = 'var(--gold)';
-        document.querySelectorAll('.mod-content').forEach(m => m.style.display = 'none');
-        const target = document.getElementById('mod-' + this.dataset.mod);
-        if (target) target.style.display = 'block';
-        else console.error('Bulunamadi: mod-' + this.dataset.mod);
-        
-        if (this.dataset.mod === 'wc') initWorldCup();
+function switchMod(mod) {
+    document.querySelectorAll('.mod-btn').forEach(b => {
+        b.style.borderColor = 'rgba(201,168,76,0.3)';
+        b.style.background = 'rgba(201,168,76,0.1)';
+        b.style.color = '#9ca3af';
     });
+    const activeBtn = document.querySelector('[data-mod="' + mod + '"]');
+    if (activeBtn) {
+        activeBtn.style.borderColor = 'var(--gold)';
+        activeBtn.style.background = 'rgba(201,168,76,0.2)';
+        activeBtn.style.color = 'var(--gold)';
+    }
+    document.querySelectorAll('.mod-content').forEach(m => m.style.display = 'none');
+    const target = document.getElementById('mod-' + mod);
+    if (target) { target.style.display = 'block'; }
+    if (mod === 'wc') initWorldCup();
+}
+document.querySelectorAll('.mod-btn').forEach(btn => {
+    btn.addEventListener('click', function() { switchMod(this.dataset.mod); });
 });
 
 // DUnya KUPASI
