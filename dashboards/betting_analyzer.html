@@ -403,11 +403,6 @@ table { border-collapse: collapse; width: 100%; }
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
         Risk Matrisi
       </button>
-      <div class="nav-section-label" style="margin-top: var(--space-3)">Teknik</div>
-      <button class="nav-item" onclick="showPage('pythoncode')" aria-label="Python Pipeline">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-        Python Pipeline
-      </button>
     </nav>
     <div class="sidebar-footer">
       <div class="theme-toggle">
@@ -496,28 +491,7 @@ table { border-collapse: collapse; width: 100%; }
               <div id="arb-result"></div>
             </div>
 
-            <div class="card">
-              <div class="card-title">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-                Formül Açıklaması
-              </div>
-              <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-3);">
-                Arbitraj için temel eşitsizlik: tüm sonuçların implied probability toplamı 1'in altına düşmelidir.
-              </p>
-              <div class="code-block" style="font-size: 0.78rem;">
-<span class="comment"># Overround (toplam implied prob)</span>
-<span class="var">S</span> = <span class="number">1</span>/<span class="var">o1</span> + <span class="number">1</span>/<span class="var">ox</span> + <span class="number">1</span>/<span class="var">o2</span>
 
-<span class="comment"># Arbitraj marjı (kâr yüzdesi)</span>
-<span class="var">margin</span> = (<span class="number">1</span> - <span class="var">S</span>) / <span class="var">S</span>
-
-<span class="comment"># Stake dağılımı (her çıktı için)</span>
-<span class="var">stake_i</span> = (<span class="var">total</span> / <span class="var">S</span>) / <span class="var">odds_i</span>
-
-<span class="comment"># Tüm durumlarda aynı kâr</span>
-<span class="var">profit</span> = <span class="var">total</span> * <span class="var">margin</span>
-              </div>
-            </div>
           </div>
 
           <div>
@@ -982,10 +956,7 @@ table { border-collapse: collapse; width: 100%; }
       </div>
     </div>
 
-    <!-- ═══════════════════════════════════════════════════ -->
-    <!-- PAGE 6: PYTHON PIPELINE -->
-    <!-- ═══════════════════════════════════════════════════ -->
-    <div id="page-pythoncode" class="page">
+    <div id="page-pythoncode" class="page" style="display:none!important">
       <div class="topbar">
         <span class="topbar-title">Python Odds Pipeline</span>
         <span class="topbar-badge">Kaynak Kod</span>
