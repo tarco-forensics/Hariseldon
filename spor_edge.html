@@ -175,6 +175,22 @@
                 <p>📊 Olasılıklar: FIFA sıralaması + grup gücü + ilk maç sonuçları + Monte Carlo simülasyonu (10K iterasyon).</p>
                 <p>🔒 Amnesia λ=0.25. Veri: football-data.org + ESPN.</p>
             </div>
+            <!-- SELDON WC -->
+            <div style="margin-top:1rem; padding-top:1rem; border-top:1px solid rgba(255,255,255,0.05);">
+                <h4 class="text-sm text-white font-bold mb-2"><i class="fa-solid fa-brain gold-text mr-1"></i>Seldon WC — Türkiye Grup Simülasyonu</h4>
+                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:1rem; margin-bottom:1rem;">
+                    <div><label style="font-size:0.7rem; color:#9ca3af;">Türkiye Gücü (0-1)</label><input type="range" id="wc_TRguc" min="0.1" max="1" step="0.05" value="0.65" oninput="document.getElementById('wc_TRval').textContent=this.value"><span id="wc_TRval" style="color:var(--gold);">0.65</span></div>
+                    <div><label style="font-size:0.7rem; color:#9ca3af;">Rakip Ort. Gücü</label><input type="range" id="wc_RAKguc" min="0.1" max="1" step="0.05" value="0.55" oninput="document.getElementById('wc_RAKval').textContent=this.value"><span id="wc_RAKval" style="color:var(--gold);">0.55</span></div>
+                    <div style="display:flex;align-items:end;"><button class="btn w-full" onclick="runSeldonWC()"><i class="fa-solid fa-play mr-2"></i>Türkiye Simülasyonu</button></div>
+                </div>
+                <div id="wcSeldonSonuc" class="glass p-3" style="display:none;">
+                    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:0.5rem; text-align:center;">
+                        <div><span style="color:#9ca3af;font-size:0.65rem;">Grup 1. Olma</span><p style="color:white;font-size:1.2rem;font-weight:700;" id="wcS1">—</p></div>
+                        <div><span style="color:#9ca3af;font-size:0.65rem;">Grup 2. Olma</span><p style="color:white;font-size:1.2rem;font-weight:700;" id="wcS2">—</p></div>
+                        <div><span style="color:#9ca3af;font-size:0.65rem;">İlk 2 Çıkma</span><p style="color:var(--gold);font-size:1.2rem;font-weight:700;" id="wcSCikma">—</p></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -462,6 +478,40 @@ function runSeldon() {
     document.getElementById('selEdge').innerHTML = '<span style="color:'+c+';">' + (edge>0?'+':'') + (edge*100).toFixed(1) + '%</span>';
     document.getElementById('selEdge').parentElement.querySelector('p').style.color = c;
     document.getElementById('selSonuc').style.display = 'block';
+}
+
+// SELDON WC 
+function runSeldonWC() {
+    const trG = +document.getElementById('wc_TRguc').value;
+    const raG = +document.getElementById('wc_RAKguc').value;
+    const N = 5000;
+    let birinci = 0, ikinci = 0, cikamaz = 0;
+    
+    for (let i = 0; i < N; i++) {
+        // 3 maclik grup simülasyonu
+        let puan = 0, golAv = 0;
+        // Mac 1 vs rakip 1
+        const g1t = poissonSample(trG * 1.2), g1r = poissonSample(raG * 0.8);
+        if (g1t > g1r) puan += 3; else if (g1t === g1r) puan += 1;
+        golAv += g1t - g1r;
+        // Mac 2 vs rakip 2 (biraz daha zayif)
+        const g2t = poissonSample(trG * 1.15), g2r = poissonSample(raG * 0.75);
+        if (g2t > g2r) puan += 3; else if (g2t === g2r) puan += 1;
+        golAv += g2t - g2r;
+        // Mac 3 vs rakip 3
+        const g3t = poissonSample(trG * 1.1), g3r = poissonSample(raG * 0.7);
+        if (g3t > g3r) puan += 3; else if (g3t === g3r) puan += 1;
+        golAv += g3t - g3r;
+        
+        if (puan >= 7) birinci++;
+        else if (puan >= 4) ikinci++;
+        else cikamaz++;
+    }
+    
+    document.getElementById('wcS1').textContent = (birinci/N*100).toFixed(1) + '%';
+    document.getElementById('wcS2').textContent = (ikinci/N*100).toFixed(1) + '%';
+    document.getElementById('wcSCikma').textContent = ((birinci+ikinci)/N*100).toFixed(1) + '%';
+    document.getElementById('wcSeldonSonuc').style.display = 'block';
 }
 </script>
 </body>
