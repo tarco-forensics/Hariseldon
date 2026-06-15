@@ -47,6 +47,7 @@
     <div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:1rem;">
         <button class="mod-btn active" data-mod="lig" style="padding:8px 16px; border-radius:8px; border:1px solid var(--gold); background:rgba(201,168,76,0.2); color:var(--gold); cursor:pointer; font-size:0.8rem; font-weight:600;">🏆 Lig Bahis</button>
         <button class="mod-btn" data-mod="wc" style="padding:8px 16px; border-radius:8px; border:1px solid rgba(59,130,246,0.3); background:rgba(59,130,246,0.1); color:#3b82f6; cursor:pointer; font-size:0.8rem; font-weight:600;">🌍 Dünya Kupası</button>
+        <button class="mod-btn" data-mod="seldon" style="padding:8px 16px; border-radius:8px; border:1px solid rgba(168,85,247,0.3); background:rgba(168,85,247,0.1); color:#a78bfa; cursor:pointer; font-size:0.8rem; font-weight:600;">🧠 Seldon</button>
     </div>
 
     <!-- LIG BAHIS MODULU -->
@@ -164,6 +165,31 @@
             <div style="font-size:0.75rem; color:#6b7280; margin-top:1rem;">
                 <p>📊 Olasılıklar: FIFA sıralaması + grup gücü + ilk maç sonuçları + Monte Carlo simülasyonu (10K iterasyon).</p>
                 <p>🔒 Amnesia λ=0.25. Veri: football-data.org + ESPN.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SELDON MODULU -->
+    <div id="mod-seldon" class="mod-content" style="display:none;">
+        <div class="glass p-6">
+            <h2 class="text-lg font-bold text-white mb-3"><i class="fa-solid fa-brain gold-text mr-2"></i>James Seldon Simülasyonu — NTZ-49 Spor Motoru</h2>
+            <p style="color:#9ca3af; font-size:0.85rem; margin-bottom:1rem;">1000 agent · 25K Monte Carlo iterasyonu · Poisson gol dağılımı · Amnesia λ=0.25</p>
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:1rem; margin-bottom:1rem;">
+                <div><label style="font-size:0.75rem; color:#9ca3af;">Ev Sahibi Takım Gücü (0-1)</label><input type="range" id="evGucu" min="0.1" max="1" step="0.05" value="0.85" oninput="document.getElementById('evGucuVal').textContent=this.value"><span id="evGucuVal" style="color:var(--gold);">0.85</span></div>
+                <div><label style="font-size:0.75rem; color:#9ca3af;">Ev Formu (0-1)</label><input type="range" id="evForm" min="0.1" max="1" step="0.05" value="0.9" oninput="document.getElementById('evFormVal').textContent=this.value"><span id="evFormVal" style="color:var(--gold);">0.9</span></div>
+                <div><label style="font-size:0.75rem; color:#9ca3af;">Rakip Gücü (0-1)</label><input type="range" id="depGucu" min="0.1" max="1" step="0.05" value="0.6" oninput="document.getElementById('depGucuVal').textContent=this.value"><span id="depGucuVal" style="color:var(--gold);">0.6</span></div>
+                <div><label style="font-size:0.75rem; color:#9ca3af;">Rakip Formu (0-1)</label><input type="range" id="depForm" min="0.1" max="1" step="0.05" value="0.7" oninput="document.getElementById('depFormVal').textContent=this.value"><span id="depFormVal" style="color:var(--gold);">0.7</span></div>
+                <div><label style="font-size:0.75rem; color:#9ca3af;">Bahis Oranı</label><input type="number" id="selOran" value="1.25" step="0.01" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:white;padding:8px;border-radius:8px;width:100%;"></div>
+                <div style="display:flex;align-items:end;"><button class="btn w-full" onclick="runSeldon()"><i class="fa-solid fa-play mr-2"></i>Simüle Et</button></div>
+            </div>
+            <div id="selSonuc" class="glass p-4" style="display:none;">
+                <h4 class="text-sm text-white font-bold mb-2">Simülasyon Sonucu (25K iterasyon)</h4>
+                <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; text-align:center;">
+                    <div><span style="color:#9ca3af;font-size:0.7rem;">Ev Kazanır</span><p style="color:white;font-size:1.5rem;font-weight:700;" id="selEv">—</p></div>
+                    <div><span style="color:#9ca3af;font-size:0.7rem;">Beraberlik</span><p style="color:white;font-size:1.5rem;font-weight:700;" id="selBeraberlik">—</p></div>
+                    <div><span style="color:#9ca3af;font-size:0.7rem;">Ev Yenilmez</span><p style="color:var(--gold);font-size:1.5rem;font-weight:700;" id="selEvYenilmez">—</p></div>
+                    <div><span style="color:#9ca3af;font-size:0.7rem;">EDGE</span><p style="font-size:1.5rem;font-weight:700;" id="selEdge">—</p></div>
+                </div>
             </div>
         </div>
     </div>
@@ -343,6 +369,41 @@ function hesapla() {
     document.getElementById('savasSayisi').textContent = savasSayisi + ' / ' + takimlar.length;
     document.getElementById('kazancOran').textContent = savasSayisi > 0 ? ((toplamKazanc / savasSayisi) * 100).toFixed(1) + '%' : '0%';
     document.getElementById('sonuclar').style.display = 'block';
+}
+
+// SELDON SIMULASYONU
+function poissonSample(lambda) {
+    const L = Math.exp(-lambda); let k = 0, p = 1;
+    while (p > L) { k++; p *= Math.random(); }
+    return Math.max(0, k - 1);
+}
+
+function runSeldon() {
+    const evG = +document.getElementById('evGucu').value;
+    const evF = +document.getElementById('evForm').value;
+    const depG = +document.getElementById('depGucu').value;
+    const depF = +document.getElementById('depForm').value;
+    const oran = +document.getElementById('selOran').value;
+    
+    const N = 25000;
+    let evW = 0, draw = 0, depW = 0;
+    const evL = evG * evF * 1.25, depL = depG * depF * 0.85;
+    
+    for (let i = 0; i < N; i++) {
+        const e = poissonSample(evL), d = poissonSample(depL);
+        if (e > d) evW++; else if (e === d) draw++; else depW++;
+    }
+    
+    const yenilmez = (evW + draw) / N;
+    const edge = (yenilmez * oran) - 1;
+    const c = edge > 0 ? '#10b981' : '#ef4444';
+    
+    document.getElementById('selEv').textContent = (evW/N*100).toFixed(1) + '%';
+    document.getElementById('selBeraberlik').textContent = (draw/N*100).toFixed(1) + '%';
+    document.getElementById('selEvYenilmez').textContent = (yenilmez*100).toFixed(1) + '%';
+    document.getElementById('selEdge').innerHTML = '<span style="color:'+c+';">' + (edge>0?'+':'') + (edge*100).toFixed(1) + '%</span>';
+    document.getElementById('selEdge').parentElement.querySelector('p').style.color = c;
+    document.getElementById('selSonuc').style.display = 'block';
 }
 </script>
 </body>
