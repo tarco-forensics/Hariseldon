@@ -73,6 +73,27 @@
 
 <p style="text-align:center;font-size:0.6rem;color:#4b5563;padding:1rem">T2SAIM Arbitraj Agent v1.0 • Deneysel modül • 1000 USD başlangıç</p>
 
+<!-- SELDON SIMULASYONU -->
+<div class="glass" style="margin-top:1rem">
+    <h2 class="gold" style="font-size:1.1rem">🧠 James Seldon Monte Carlo Simülasyonu</h2>
+    <p style="color:#6b7280;font-size:0.75rem;margin-bottom:0.8rem">Poisson(λ) gol dağılımı • 25K iterasyon • Edge > 0 → Savaşa gir</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:0.8rem;margin-bottom:1rem">
+        <div><label style="font-size:0.7rem;color:#9ca3af">Ev Takım Gücü</label><input type="range" id="sgEv" min="0.1" max="1" step="0.05" value="0.8" oninput="updateSeldon()"><span id="sgEvV" class="gold" style="font-size:0.8rem">0.8</span></div>
+        <div><label style="font-size:0.7rem;color:#9ca3af">Ev Form</label><input type="range" id="sgEf" min="0.1" max="1" step="0.05" value="0.85" oninput="updateSeldon()"><span id="sgEfV" class="gold" style="font-size:0.8rem">0.85</span></div>
+        <div><label style="font-size:0.7rem;color:#9ca3af">Rakip Gücü</label><input type="range" id="sgDg" min="0.1" max="1" step="0.05" value="0.6" oninput="updateSeldon()"><span id="sgDgV" class="gold" style="font-size:0.8rem">0.6</span></div>
+        <div><label style="font-size:0.7rem;color:#9ca3af">Rakip Form</label><input type="range" id="sgDf" min="0.1" max="1" step="0.05" value="0.65" oninput="updateSeldon()"><span id="sgDfV" class="gold" style="font-size:0.8rem">0.65</span></div>
+        <div><label style="font-size:0.7rem;color:#9ca3af">Bahis Oranı</label><input type="number" id="sgOr" value="1.90" step="0.01" oninput="updateSeldon()"></div>
+        <div style="display:flex;align-items:end"><button onclick="runFullSeldon()" style="background:var(--gold);color:var(--bg);font-weight:700;padding:10px 20px;border-radius:8px;border:none;cursor:pointer;width:100%">🚀 25K Simülasyon</button></div>
+    </div>
+    <div id="seldonSonuc" style="display:grid;grid-template-columns:repeat(4,1fr);gap:0.8rem;text-align:center">
+        <div class="glass" style="padding:0.8rem"><span style="font-size:0.65rem;color:#9ca3af">Ev Kazanır</span><p style="font-size:1.3rem;font-weight:700;color:white" id="ssEv">—</p></div>
+        <div class="glass" style="padding:0.8rem"><span style="font-size:0.65rem;color:#9ca3af">Beraberlik</span><p style="font-size:1.3rem;font-weight:700;color:white" id="ssBer">—</p></div>
+        <div class="glass" style="padding:0.8rem"><span style="font-size:0.65rem;color:#9ca3af">Ev Yenilmez</span><p style="font-size:1.3rem;font-weight:700" id="ssYen">—</p></div>
+        <div class="glass" style="padding:0.8rem"><span style="font-size:0.65rem;color:#9ca3af">EDGE %</span><p style="font-size:1.3rem;font-weight:700" id="ssEdge">—</p></div>
+    </div>
+    <div id="seldonKarar" style="margin-top:0.8rem;padding:0.8rem;text-align:center;font-weight:700;border-radius:8px;display:none"></div>
+</div>
+
 <script>
 // Veriler (JSON'dan veya sabit)
 const DATA = {
@@ -114,6 +135,37 @@ const sonBakiye = DATA.gecmis.length ? DATA.gecmis[0].bakiye : DATA.bakiye;
 const kar = sonBakiye - 1000;
 document.getElementById('bakiye').textContent = '$'+sonBakiye.toLocaleString();
 document.getElementById('karZarar').innerHTML = `<span class="${kar>=0?'green':'red'}">${kar>=0?'+':''}$${kar}</span> (${(kar/10).toFixed(1)}%)`;
+
+// SELDON SIMULASYONU
+function poisson(lambda){const L=Math.exp(-lambda);let k=0,p=1;while(p>L){k++;p*=Math.random()}return Math.max(0,k-1)}
+function updateSeldon(){
+    document.getElementById('sgEvV').textContent=document.getElementById('sgEv').value;
+    document.getElementById('sgEfV').textContent=document.getElementById('sgEf').value;
+    document.getElementById('sgDgV').textContent=document.getElementById('sgDg').value;
+    document.getElementById('sgDfV').textContent=document.getElementById('sgDf').value;
+    runFullSeldon();
+}
+function runFullSeldon(){
+    const evG=+document.getElementById('sgEv').value,evF=+document.getElementById('sgEf').value;
+    const depG=+document.getElementById('sgDg').value,depF=+document.getElementById('sgDf').value;
+    const oran=+document.getElementById('sgOr').value,N=25000;
+    const evL=evG*evF*1.25,depL=depG*depF*0.85;
+    let evW=0,draw=0,depW=0;
+    for(let i=0;i<N;i++){const e=poisson(evL),d=poisson(depL);if(e>d)evW++;else if(e===d)draw++;else depW++}
+    const yenilmez=(evW+draw)/N,edge=(yenilmez*oran)-1;
+    document.getElementById('ssEv').textContent=(evW/N*100).toFixed(1)+'%';
+    document.getElementById('ssBer').textContent=(draw/N*100).toFixed(1)+'%';
+    document.getElementById('ssYen').textContent=(yenilmez*100).toFixed(1)+'%';
+    document.getElementById('ssYen').style.color=yenilmez>0.5?'var(--green)':'var(--red)';
+    document.getElementById('ssEdge').textContent=(edge>0?'+':'')+(edge*100).toFixed(1)+'%';
+    document.getElementById('ssEdge').style.color=edge>0?'var(--green)':'var(--red)';
+    const kd=document.getElementById('seldonKarar');
+    kd.style.display='block';
+    kd.textContent=edge>0?'✅ SAVAŞA GİR! Edge pozitif':'⛔ BEKLE! Edge negatif';
+    kd.style.background=edge>0?'rgba(16,185,129,0.15)':'rgba(239,68,68,0.15)';
+    kd.style.color=edge>0?'var(--green)':'var(--red)';
+}
+updateSeldon();
 </script>
 </body>
 </html>
