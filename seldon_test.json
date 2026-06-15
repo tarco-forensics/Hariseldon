@@ -1,0 +1,23 @@
+[
+  {
+    "ev": "Manchester City FC",
+    "dep": "Arsenal FC",
+    "yenilmez": 84.3,
+    "edge": 5.3,
+    "gir": true
+  },
+  {
+    "ev": "Liverpool FC",
+    "dep": "Chelsea FC",
+    "yenilmez": 84.4,
+    "edge": 9.8,
+    "gir": true
+  },
+  {
+    "ev": "Manchester United FC",
+    "dep": "Tottenham Hotspur FC",
+    "yenilmez": 85.9,
+    "edge": 20.3,
+    "gir": true
+  }
+]
