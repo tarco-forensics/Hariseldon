@@ -37,7 +37,7 @@
                 <p style="color:#9ca3af; margin:4px 0 0 0; font-size:0.85rem;">İstatistiksel Savaş — Kumar Değil, Edge Hesaplama</p>
             </div>
             <div style="display:flex; gap:8px; font-size:0.75rem; align-items:center;">
-                <span style="color:#6b7280;">T2SAIM Spor Modülü v1.0</span>
+                <span style="color:#6b7280;">T2SAIM Spor Modülü v2.0</span>
                 <span class="badge edge-pos">🔴 CANLI</span>
             </div>
         </div>
@@ -46,218 +46,180 @@
     <!-- MODUL NAV -->
     <div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:1rem;">
         <button class="mod-btn active" data-mod="lig" onclick="switchMod('lig')" style="padding:8px 16px; border-radius:8px; border:1px solid var(--gold); background:rgba(201,168,76,0.2); color:var(--gold); cursor:pointer; font-size:0.8rem; font-weight:600;">🏆 Lig Bahis</button>
-        <button class="mod-btn" data-mod="wc" onclick="switchMod('wc')" style="padding:8px 16px; border-radius:8px; border:1px solid rgba(59,130,246,0.3); background:rgba(59,130,246,0.1); color:#3b82f6; cursor:pointer; font-size:0.8rem; font-weight:600;">🌍 Dünya Kupası</button>
-        <button class="mod-btn" data-mod="seldon" onclick="switchMod('seldon')" style="padding:8px 16px; border-radius:8px; border:1px solid rgba(168,85,247,0.3); background:rgba(168,85,247,0.1); color:#a78bfa; cursor:pointer; font-size:0.8rem; font-weight:600;">🧠 Seldon</button>
+        <button class="mod-btn" data-mod="wc" onclick="switchMod('wc')" style="padding:8px 16px; border-radius:8px; border:1px solid rgba(59,130,246,0.3); background:rgba(59,130,246,0.1); color:#3b82f6; cursor:pointer; font-size:0.8rem; font-weight:600;">🌍 Dünya Kupası (48)</button>
+        <button class="mod-btn" data-mod="seldon" onclick="switchMod('seldon')" style="padding:8px 16px; border-radius:8px; border:1px solid rgba(168,85,247,0.3); background:rgba(168,85,247,0.1); color:#a78bfa; cursor:pointer; font-size:0.8rem; font-weight:600;">🧠 Seldon Felsefesi</button>
     </div>
 
     <!-- LIG BAHIS MODULU -->
     <div id="mod-lig" class="mod-content">
-    <!-- LIG SECIM -->
-    <div class="glass p-6">
-        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:1rem;">
-            <div>
-                <label style="font-size:0.75rem; color:#9ca3af;">Lig</label>
-                <select id="ligSec">
-                    <option value="ispanya2">🇪🇸 İspanya 2. Ligi (LaLiga2)</option>
-                    <option value="ispanya">🇪🇸 İspanya LaLiga</option>
-                    <option value="hollanda">🇳🇱 Hollanda Eredivisie</option>
-                    <option value="ingiltere">🏴󠁧󠁢󠁥󠁮󠁧󠁿 İngiltere Premier</option>
-                    <option value="turkiye">🇹🇷 Türkiye Süper Lig</option>
-                </select>
-            </div>
-            <div>
-                <label style="font-size:0.75rem; color:#9ca3af;">Strateji</label>
-                <select id="strSec">
-                    <option value="ciftesans">Çifte Şans (Ev sahibi yenilmez)</option>
-                    <option value="gol">Gol Sayısı (Alt/Üst 2.5)</option>
-                    <option value="handikap">Handikap (+1.5)</option>
-                </select>
-            </div>
-            <div>
-                <label style="font-size:0.75rem; color:#9ca3af;">Horizon (maç)</label>
-                <select id="horizonSec">
-                    <option value="5">Son 5 maç (hızlı)</option>
-                    <option value="10" selected>Son 10 maç (standart)</option>
-                    <option value="20">Son 20 maç (sezon)</option>
-                    <option value="38">Son 38 maç (tam sezon)</option>
-                </select>
-            </div>
-            <div style="display:flex; align-items:end;">
-                <button class="btn w-full" onclick="hesapla()"><i class="fa-solid fa-calculator mr-2"></i>Hesapla</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- SONUCLAR -->
-    <div id="sonuclar" style="display:none;">
         <div class="glass p-6">
-            <h2 class="text-lg font-bold text-white mb-4"><i class="fa-solid fa-chart-line gold-text mr-2"></i>Edge Hesaplamaları</h2>
-            <div class="overflow-x-auto">
-                <table class="w-full text-sm">
-                    <thead><tr style="color:#9ca3af; border-bottom:1px solid rgba(255,255,255,0.05);">
-                        <th style="text-align:left; padding:8px 10px;">Takım</th>
-                        <th style="text-align:center; padding:8px 10px;">Rakip</th>
-                        <th style="text-align:right; padding:8px 10px;">İç/Dış</th>
-                        <th style="text-align:right; padding:8px 10px;">Olasılık</th>
-                        <th style="text-align:right; padding:8px 10px;">Oran</th>
-                        <th style="text-align:right; padding:8px 10px;">Edge</th>
-                        <th style="text-align:center; padding:8px 10px;">Savaş</th>
-                    </tr></thead>
-                    <tbody id="tabloBody"></tbody>
-                </table>
-            </div>
-            <div style="display:flex; gap:1rem; margin-top:1rem; font-size:0.85rem; flex-wrap:wrap;">
-                <div class="glass p-3 flex-1 text-center">
-                    <span style="color:#9ca3af;">Toplam Edge</span>
-                    <p style="font-size:1.5rem; font-weight:700; color:white;" id="toplamEdge">0%</p>
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:1rem;">
+                <div>
+                    <label style="font-size:0.75rem; color:#9ca3af;">Lig</label>
+                    <select id="ligSec">
+                        <option value="ispanya2">🇪🇸 İspanya 2. Ligi (LaLiga2)</option>
+                        <option value="ispanya">🇪🇸 İspanya LaLiga</option>
+                        <option value="hollanda">🇳🇱 Hollanda Eredivisie</option>
+                        <option value="ingiltere">🏴󠁧󠁢󠁥󠁮󠁧󠁿 İngiltere Premier</option>
+                        <option value="turkiye">🇹🇷 Türkiye Süper Lig</option>
+                    </select>
                 </div>
-                <div class="glass p-3 flex-1 text-center">
-                    <span style="color:#9ca3af;">Savaş Sayısı</span>
-                    <p style="font-size:1.5rem; font-weight:700; color:white;" id="savasSayisi">0</p>
+                <div>
+                    <label style="font-size:0.75rem; color:#9ca3af;">Strateji</label>
+                    <select id="strSec">
+                        <option value="ciftesans">Çifte Şans (Ev sahibi yenilmez)</option>
+                        <option value="gol">Gol Sayısı (Alt/Üst 2.5)</option>
+                        <option value="handikap">Handikap (+1.5)</option>
+                    </select>
                 </div>
-                <div class="glass p-3 flex-1 text-center">
-                    <span style="color:#9ca3af;">Kazanma Oranı</span>
-                    <p style="font-size:1.5rem; font-weight:700; color:white;" id="kazancOran">0%</p>
+                <div>
+                    <label style="font-size:0.75rem; color:#9ca3af;">Horizon (maç)</label>
+                    <select id="horizonSec">
+                        <option value="5">Son 5 maç (hızlı)</option>
+                        <option value="10" selected>Son 10 maç (standart)</option>
+                        <option value="20">Son 20 maç (sezon)</option>
+                        <option value="38">Son 38 maç (tam sezon)</option>
+                    </select>
+                </div>
+                <div style="display:flex; align-items:end;">
+                    <button class="btn w-full" onclick="hesapla()"><i class="fa-solid fa-calculator mr-2"></i>Hesapla</button>
                 </div>
             </div>
         </div>
 
-        <div class="glass p-6">
-            <h2 class="text-lg font-bold text-white mb-3"><i class="fa-solid fa-book gold-text mr-2"></i>Model Açıklaması</h2>
-            <div style="font-size:0.85rem; color:#9ca3af; line-height:1.6;">
-                <p><span class="gold-text">T2SAIM Spor Edge Motoru</span> — MFDFA tabanlı form analizi + Poisson gol dağılımı + edge hesabı.</p>
-                <p class="mt-2">💡 <span class="text-white">Prensip:</span> Maç sonucunu tahmin etmeyiz. İstatistiksel avantajı (edge) hesaplar, pozitifse savaşa gireriz.</p>
-                <p class="mt-2">📊 <span class="text-white">Formül:</span> Edge = (Olasılık × Oran) − 1. Edge > 0 → Pozisyon al.</p>
-                <p class="mt-2">🔒 <span class="text-white">Amnesia:</span> λ=0.25, eski maçların ağırlığı hızla azalır. Yenilmez.</p>
-            </div>
-        </div>
-    </div>
-    </div>
-
-    <!-- DUnya KUPASI MODULU -->
-    <div id="mod-wc" class="mod-content" style="display:none;">
-        <div class="glass p-6">
-            <h2 class="text-lg font-bold text-white mb-4"><i class="fa-solid fa-trophy gold-text mr-2"></i>Dünya Kupası 2026 — Grup Çıkış Olasılıkları</h2>
-            <p style="color:#9ca3af; font-size:0.85rem; margin-bottom:1rem;">48 takım · 12 grup · İlk 2 direkt (24) + En iyi 8 üçüncü (32) → Son 32</p>
-            <div class="overflow-x-auto">
-                <table class="w-full text-sm">
-                    <thead><tr style="color:#9ca3af; border-bottom:1px solid rgba(255,255,255,0.05);">
-                        <th style="text-align:left; padding:8px 10px;">Takım</th>
-                        <th style="text-align:center; padding:8px 10px;">Grup</th>
-                        <th style="text-align:right; padding:8px 10px;">FIFA Sıra</th>
-                        <th style="text-align:right; padding:8px 10px;">İlk 2 Olma</th>
-                        <th style="text-align:right; padding:8px 10px;">En iyi 3.</th>
-                        <th style="text-align:right; padding:8px 10px;">Çıkma (Toplam)</th>
-                        <th style="text-align:center; padding:8px 10px;">Durum</th>
-                    </tr></thead>
-                    <tbody id="wcBody">
-                        <tr style="border-bottom:1px solid rgba(255,255,255,0.03);"><td style="padding:8px 10px; font-weight:600; color:white;">🇹🇷 Türkiye</td><td style="padding:8px 10px; text-align:center; color:#9ca3af;">A</td><td style="padding:8px 10px; text-align:right; color:#9ca3af;">28.</td><td style="padding:8px 10px; text-align:right; color:white;">55%</td><td style="padding:8px 10px; text-align:right; color:#9ca3af;">20%</td><td style="padding:8px 10px; text-align:right; font-weight:700; color:#10b981;">75%</td><td style="padding:8px 10px; text-align:center;"><span class="badge edge-pos">✅ Yüksek</span></td></tr>
-                        <tr style="border-bottom:1px solid rgba(255,255,255,0.03);"><td style="padding:8px 10px; font-weight:600; color:white;">🇨🇼 Curaçao</td><td style="padding:8px 10px; text-align:center; color:#9ca3af;">B</td><td style="padding:8px 10px; text-align:right; color:#9ca3af;">86.</td><td style="padding:8px 10px; text-align:right; color:white;">15%</td><td style="padding:8px 10px; text-align:right; color:#9ca3af;">10%</td><td style="padding:8px 10px; text-align:right; font-weight:700; color:red;">25%</td><td style="padding:8px 10px; text-align:center;"><span class="badge edge-neg">⛔ Düşük</span></td></tr>
-                        <tr style="border-bottom:1px solid rgba(255,255,255,0.03);"><td style="padding:8px 10px; font-weight:600; color:white;">🇨🇻 Cape Verde</td><td style="padding:8px 10px; text-align:center; color:#9ca3af;">C</td><td style="padding:8px 10px; text-align:right; color:#9ca3af;">72.</td><td style="padding:8px 10px; text-align:right; color:white;">20%</td><td style="padding:8px 10px; text-align:right; color:#9ca3af;">12%</td><td style="padding:8px 10px; text-align:right; font-weight:700; color:red;">32%</td><td style="padding:8px 10px; text-align:center;"><span class="badge edge-neg">⛔ Düşük</span></td></tr>
-                        <tr style="border-bottom:1px solid rgba(255,255,255,0.03);"><td style="padding:8px 10px; font-weight:600; color:white;">🇧🇷 Brezilya</td><td style="padding:8px 10px; text-align:center; color:#9ca3af;">D</td><td style="padding:8px 10px; text-align:right; color:#9ca3af;">1.</td><td style="padding:8px 10px; text-align:right; color:white;">95%</td><td style="padding:8px 10px; text-align:right; color:#9ca3af;">4%</td><td style="padding:8px 10px; text-align:right; font-weight:700; color:#10b981;">99%</td><td style="padding:8px 10px; text-align:center;"><span class="badge edge-pos">✅ Yüksek</span></td></tr>
-                        <tr style="border-bottom:1px solid rgba(255,255,255,0.03);"><td style="padding:8px 10px; font-weight:600; color:white;">🇦🇷 Arjantin</td><td style="padding:8px 10px; text-align:center; color:#9ca3af;">E</td><td style="padding:8px 10px; text-align:right; color:#9ca3af;">2.</td><td style="padding:8px 10px; text-align:right; color:white;">93%</td><td style="padding:8px 10px; text-align:right; color:#9ca3af;">5%</td><td style="padding:8px 10px; text-align:right; font-weight:700; color:#10b981;">98%</td><td style="padding:8px 10px; text-align:center;"><span class="badge edge-pos">✅ Yüksek</span></td></tr>
-                        <tr style="border-bottom:1px solid rgba(255,255,255,0.03);"><td style="padding:8px 10px; font-weight:600; color:white;">🇫🇷 Fransa</td><td style="padding:8px 10px; text-align:center; color:#9ca3af;">F</td><td style="padding:8px 10px; text-align:right; color:#9ca3af;">3.</td><td style="padding:8px 10px; text-align:right; color:white;">92%</td><td style="padding:8px 10px; text-align:right; color:#9ca3af;">6%</td><td style="padding:8px 10px; text-align:right; font-weight:700; color:#10b981;">98%</td><td style="padding:8px 10px; text-align:center;"><span class="badge edge-pos">✅ Yüksek</span></td></tr>
-                        <tr style="border-bottom:1px solid rgba(255,255,255,0.03);"><td style="padding:8px 10px; font-weight:600; color:white;">🇩🇪 Almanya</td><td style="padding:8px 10px; text-align:center; color:#9ca3af;">H</td><td style="padding:8px 10px; text-align:right; color:#9ca3af;">5.</td><td style="padding:8px 10px; text-align:right; color:white;">88%</td><td style="padding:8px 10px; text-align:right; color:#9ca3af;">8%</td><td style="padding:8px 10px; text-align:right; font-weight:700; color:#10b981;">96%</td><td style="padding:8px 10px; text-align:center;"><span class="badge edge-pos">✅ Yüksek</span></td></tr>
-                        <tr><td style="padding:8px 10px; font-weight:600; color:white;">🇺🇸 ABD</td><td style="padding:8px 10px; text-align:center; color:#9ca3af;">K</td><td style="padding:8px 10px; text-align:right; color:#9ca3af;">11.</td><td style="padding:8px 10px; text-align:right; color:white;">70%</td><td style="padding:8px 10px; text-align:right; color:#9ca3af;">18%</td><td style="padding:8px 10px; text-align:right; font-weight:700; color:#10b981;">88%</td><td style="padding:8px 10px; text-align:center;"><span class="badge edge-pos">✅ Yüksek</span></td></tr>
-                    </tbody>
-                </table>
-            </div>
-            <div style="display:flex; gap:1rem; margin-top:1rem; font-size:0.85rem; flex-wrap:wrap;">
-                <div class="glass p-3 flex-1 text-center">
-                    <span style="color:#9ca3af;">Çıkacak Takım</span>
-                    <p style="font-size:1.5rem; font-weight:700; color:white;">32 / 48</p>
+        <div id="sonuclar" style="display:none; margin-top:1rem;">
+            <div class="glass p-6">
+                <h2 class="text-lg font-bold text-white mb-4"><i class="fa-solid fa-chart-line gold-text mr-2"></i>Edge Hesaplamaları</h2>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead><tr style="color:#9ca3af; border-bottom:1px solid rgba(255,255,255,0.05);">
+                            <th style="text-align:left; padding:8px 10px;">Takım</th>
+                            <th style="text-align:center; padding:8px 10px;">Rakip</th>
+                            <th style="text-align:right; padding:8px 10px;">İç/Dış</th>
+                            <th style="text-align:right; padding:8px 10px;">Olasılık</th>
+                            <th style="text-align:right; padding:8px 10px;">Oran</th>
+                            <th style="text-align:right; padding:8px 10px;">Edge</th>
+                            <th style="text-align:center; padding:8px 10px;">Savaş</th>
+                        </tr></thead>
+                        <tbody id="tabloBody"></tbody>
+                    </table>
                 </div>
-                <div class="glass p-3 flex-1 text-center">
-                    <span style="color:#9ca3af;">Şanslı Takım</span>
-                    <p style="font-size:1.5rem; font-weight:700; color:var(--gold);" id="wcSansli">🇧🇷 Brezilya (99%)</p>
-                </div>
-            </div>
-            <div style="font-size:0.75rem; color:#6b7280; margin-top:1rem;">
-                <p>📊 Olasılıklar: FIFA sıralaması + grup gücü + ilk maç sonuçları + Monte Carlo simülasyonu (10K iterasyon).</p>
-                <p>🔒 Amnesia λ=0.25. Veri: football-data.org + ESPN.</p>
-            </div>
-            <!-- SELDON WC -->
-            <div style="margin-top:1rem; padding-top:1rem; border-top:1px solid rgba(255,255,255,0.05);">
-                <h4 class="text-sm text-white font-bold mb-2"><i class="fa-solid fa-brain gold-text mr-1"></i>Seldon WC — Türkiye Grup Simülasyonu</h4>
-                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:1rem; margin-bottom:1rem;">
-                    <div><label style="font-size:0.7rem; color:#9ca3af;">Türkiye Gücü (0-1)</label><input type="range" id="wc_TRguc" min="0.1" max="1" step="0.05" value="0.65" oninput="document.getElementById('wc_TRval').textContent=this.value"><span id="wc_TRval" style="color:var(--gold);">0.65</span></div>
-                    <div><label style="font-size:0.7rem; color:#9ca3af;">Rakip Ort. Gücü</label><input type="range" id="wc_RAKguc" min="0.1" max="1" step="0.05" value="0.55" oninput="document.getElementById('wc_RAKval').textContent=this.value"><span id="wc_RAKval" style="color:var(--gold);">0.55</span></div>
-                    <div style="display:flex;align-items:end;"><button class="btn w-full" onclick="runSeldonWC()"><i class="fa-solid fa-play mr-2"></i>Türkiye Simülasyonu</button></div>
-                </div>
-                <div id="wcSeldonSonuc" class="glass p-3" style="display:none;">
-                    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:0.5rem; text-align:center;">
-                        <div><span style="color:#9ca3af;font-size:0.65rem;">Grup 1. Olma</span><p style="color:white;font-size:1.2rem;font-weight:700;" id="wcS1">—</p></div>
-                        <div><span style="color:#9ca3af;font-size:0.65rem;">Grup 2. Olma</span><p style="color:white;font-size:1.2rem;font-weight:700;" id="wcS2">—</p></div>
-                        <div><span style="color:#9ca3af;font-size:0.65rem;">İlk 2 Çıkma</span><p style="color:var(--gold);font-size:1.2rem;font-weight:700;" id="wcSCikma">—</p></div>
+                <div style="display:flex; gap:1rem; margin-top:1rem; font-size:0.85rem; flex-wrap:wrap;">
+                    <div class="glass p-3 flex-1 text-center">
+                        <span style="color:#9ca3af;">Toplam Edge</span>
+                        <p style="font-size:1.5rem; font-weight:700; color:white;" id="toplamEdge">0%</p>
+                    </div>
+                    <div class="glass p-3 flex-1 text-center">
+                        <span style="color:#9ca3af;">Savaş Sayısı</span>
+                        <p style="font-size:1.5rem; font-weight:700; color:white;" id="savasSayisi">0</p>
+                    </div>
+                    <div class="glass p-3 flex-1 text-center">
+                        <span style="color:#9ca3af;">Kazanma Oranı</span>
+                        <p style="font-size:1.5rem; font-weight:700; color:white;" id="kazancOran">0%</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- SELDON MODULU -->
+    <!-- DÜNYA KUPASI MODULU -->
+    <div id="mod-wc" class="mod-content" style="display:none;">
+        <div class="glass p-6">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+                <div>
+                    <h2 class="text-lg font-bold text-white"><i class="fa-solid fa-globe" style="color:#3b82f6; margin-right:8px;"></i>Dünya Kupası 2026 Simülatörü (48 Takım)</h2>
+                    <p style="color:#9ca3af; font-size:0.85rem; margin-top:4px;">Seçilen grubun mevcut puanlarına göre 10.000 olasılık ağacı işlenerek Çıkma (İlk 2 + En İyi 8 Üçüncü) ihtimali bulunur.</p>
+                </div>
+                <select id="wcGrupSec" onchange="renderWCGroup()" style="width:150px; font-weight:bold; color:var(--gold);">
+                    <option value="A">Grup A</option><option value="B">Grup B</option><option value="C">Grup C</option>
+                    <option value="D">Grup D</option><option value="E">Grup E</option><option value="F">Grup F</option>
+                    <option value="G">Grup G</option><option value="H">Grup H</option><option value="I">Grup I</option>
+                    <option value="J">Grup J</option><option value="K">Grup K</option><option value="L">Grup L</option>
+                </select>
+            </div>
+            
+            <div class="mt-4" style="display:flex; justify-content:space-between; align-items:center;">
+                <label style="font-size:0.85rem; color:#9ca3af;">Maç Takvimi Durumu:</label>
+                <select id="wcMacGunu" onchange="renderWCGroup()" style="width:250px;">
+                    <option value="0">Tüm Maçlar Oynanacak (0. Maç)</option>
+                    <option value="1">1. Maçlar Tamamlandı (2 Maç Kaldı)</option>
+                    <option value="2">2. Maçlar Tamamlandı (1 Maç Kaldı)</option>
+                </select>
+            </div>
+
+            <div class="overflow-x-auto mt-4">
+                <table class="w-full text-sm text-center">
+                    <thead>
+                        <tr style="color:#9ca3af; border-bottom:1px solid rgba(255,255,255,0.05); background:rgba(0,0,0,0.2);">
+                            <th style="text-align:left; padding:12px;">Takım</th>
+                            <th style="padding:12px; width:100px;">Puan</th>
+                            <th style="padding:12px; width:120px;">Güç (0-1)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="wcTakimlarBody">
+                    </tbody>
+                </table>
+            </div>
+            <div class="mt-4 text-right">
+                <button class="btn" onclick="runWCGroupSim()" style="background:#3b82f6; color:white;"><i class="fa-solid fa-microchip mr-2"></i>Seldon ile Simüle Et</button>
+            </div>
+        </div>
+
+        <div id="wcSimSonuc" style="display:none;" class="mt-4">
+            <div class="glass p-6">
+                <h3 class="text-md font-bold text-white mb-4"><i class="fa-solid fa-chart-pie gold-text mr-2"></i>10.000 İterasyon Sonucu Olasılık Dağılımı</h3>
+                <table class="w-full text-sm text-center">
+                    <thead>
+                        <tr style="color:#9ca3af; border-bottom:1px solid rgba(255,255,255,0.05);">
+                            <th style="text-align:left; padding:8px;">Takım</th>
+                            <th style="padding:8px;">1. Olma</th>
+                            <th style="padding:8px;">2. Olma</th>
+                            <th style="padding:8px;">3. Olma</th>
+                            <th style="padding:8px;">4. Olma</th>
+                            <th style="padding:8px; color:var(--gold);">Son 32'ye Çıkma</th>
+                        </tr>
+                    </thead>
+                    <tbody id="wcSonucBody">
+                    </tbody>
+                </table>
+                <p class="text-xs mt-4" style="color:#6b7280; line-height:1.5;">* Gruptan çıkma olasılığı: İlk 2 garanti (%100) + En iyi 8 üçüncü arasına girme olasılığı. 12 gruptan 8 üçüncü çıkacağı için 3. olunduğunda çıkma şansı istatistiksel olarak yaklaşık %66.6 kabul edilerek formüle yansıtılmıştır. (Amnesia λ=0.25 kapalı. Saf evren simülasyonu.)</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SELDON FELSEFESI MODULU -->
     <div id="mod-seldon" class="mod-content" style="display:none;">
         <div class="glass p-6">
-            <h2 class="text-lg font-bold text-white mb-3"><i class="fa-solid fa-brain gold-text mr-2"></i>James Seldon Simülasyonu — NTZ-49 Spor Motoru</h2>
-            <p style="color:#9ca3af; font-size:0.85rem; margin-bottom:1rem;">1000 agent · 25K Monte Carlo iterasyonu · Poisson gol dağılımı · Amnesia λ=0.25</p>
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:1rem; margin-bottom:1rem;">
-                <div><label style="font-size:0.75rem; color:#9ca3af;">Ev Sahibi Takım Gücü (0-1)</label><input type="range" id="evGucu" min="0.1" max="1" step="0.05" value="0.85" oninput="document.getElementById('evGucuVal').textContent=this.value"><span id="evGucuVal" style="color:var(--gold);">0.85</span></div>
-                <div><label style="font-size:0.75rem; color:#9ca3af;">Ev Formu (0-1)</label><input type="range" id="evForm" min="0.1" max="1" step="0.05" value="0.9" oninput="document.getElementById('evFormVal').textContent=this.value"><span id="evFormVal" style="color:var(--gold);">0.9</span></div>
-                <div><label style="font-size:0.75rem; color:#9ca3af;">Rakip Gücü (0-1)</label><input type="range" id="depGucu" min="0.1" max="1" step="0.05" value="0.6" oninput="document.getElementById('depGucuVal').textContent=this.value"><span id="depGucuVal" style="color:var(--gold);">0.6</span></div>
-                <div><label style="font-size:0.75rem; color:#9ca3af;">Rakip Formu (0-1)</label><input type="range" id="depForm" min="0.1" max="1" step="0.05" value="0.7" oninput="document.getElementById('depFormVal').textContent=this.value"><span id="depFormVal" style="color:var(--gold);">0.7</span></div>
-                <div><label style="font-size:0.75rem; color:#9ca3af;">Bahis Oranı</label><input type="number" id="selOran" value="1.25" step="0.01" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:white;padding:8px;border-radius:8px;width:100%;"></div>
-                <div style="display:flex;align-items:end;"><button class="btn w-full" onclick="runSeldon()"><i class="fa-solid fa-play mr-2"></i>Simüle Et</button></div>
-            </div>
-            <div id="selSonuc" class="glass p-4" style="display:none;">
-                <h4 class="text-sm text-white font-bold mb-2">Simülasyon Sonucu (25K iterasyon)</h4>
-                <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; text-align:center;">
-                    <div><span style="color:#9ca3af;font-size:0.7rem;">Ev Kazanır</span><p style="color:white;font-size:1.5rem;font-weight:700;" id="selEv">—</p></div>
-                    <div><span style="color:#9ca3af;font-size:0.7rem;">Beraberlik</span><p style="color:white;font-size:1.5rem;font-weight:700;" id="selBeraberlik">—</p></div>
-                    <div><span style="color:#9ca3af;font-size:0.7rem;">Ev Yenilmez</span><p style="color:var(--gold);font-size:1.5rem;font-weight:700;" id="selEvYenilmez">—</p></div>
-                    <div><span style="color:#9ca3af;font-size:0.7rem;">EDGE</span><p style="font-size:1.5rem;font-weight:700;" id="selEdge">—</p></div>
+            <div style="display:flex; align-items:center; margin-bottom:1.5rem;">
+                <div style="background:rgba(168,85,247,0.1); padding:1rem; border-radius:12px; margin-right:1rem; border:1px solid rgba(168,85,247,0.3);">
+                    <i class="fa-solid fa-brain" style="color:#a78bfa; font-size:2rem;"></i>
+                </div>
+                <div>
+                    <h2 class="text-xl font-bold text-white">Seldon Felsefesi & Motor Mimarisi</h2>
+                    <p style="color:#9ca3af; font-size:0.85rem; margin-top:4px;">T2SAIM NTZ-49 Spor Motoru Arka Planı</p>
                 </div>
             </div>
-            <div style="margin-top:1rem;">
-                <h4 class="text-sm text-white font-bold mb-2">Son Gerçek Veri Testleri (Premier Lig)</h4>
-                <div class="overflow-x-auto">
-                    <table class="w-full text-sm">
-                        <thead><tr style="color:#9ca3af; border-bottom:1px solid rgba(255,255,255,0.05);">
-                            <th style="text-align:left; padding:6px 8px;">Ev Sahibi</th>
-                            <th style="text-align:left; padding:6px 8px;">Deplasman</th>
-                            <th style="text-align:right; padding:6px 8px;">Ev Yenilmez</th>
-                            <th style="text-align:right; padding:6px 8px;">Oran</th>
-                            <th style="text-align:right; padding:6px 8px;">EDGE</th>
-                            <th style="text-align:center; padding:6px 8px;">Savaş</th>
-                        </tr></thead>
-                        <tbody>
-                            <tr style="border-bottom:1px solid rgba(255,255,255,0.03);">
-                                <td style="padding:6px 8px; font-weight:600; color:white;">🔵 Man City</td>
-                                <td style="padding:6px 8px; color:#9ca3af;">Arsenal</td>
-                                <td style="padding:6px 8px; text-align:right; color:white;">84.3%</td>
-                                <td style="padding:6px 8px; text-align:right; color:var(--gold);">1.25</td>
-                                <td style="padding:6px 8px; text-align:right; font-weight:700; color:#10b981;">+5.3%</td>
-                                <td style="padding:6px 8px; text-align:center;"><span class="badge edge-pos">✅ GİR</span></td>
-                            </tr>
-                            <tr style="border-bottom:1px solid rgba(255,255,255,0.03);">
-                                <td style="padding:6px 8px; font-weight:600; color:white;">🔴 Liverpool</td>
-                                <td style="padding:6px 8px; color:#9ca3af;">Chelsea</td>
-                                <td style="padding:6px 8px; text-align:right; color:white;">84.4%</td>
-                                <td style="padding:6px 8px; text-align:right; color:var(--gold);">1.30</td>
-                                <td style="padding:6px 8px; text-align:right; font-weight:700; color:#10b981;">+9.8%</td>
-                                <td style="padding:6px 8px; text-align:center;"><span class="badge edge-pos">✅ GİR</span></td>
-                            </tr>
-                            <tr>
-                                <td style="padding:6px 8px; font-weight:600; color:white;">🟡 Man United</td>
-                                <td style="padding:6px 8px; color:#9ca3af;">Tottenham</td>
-                                <td style="padding:6px 8px; text-align:right; color:white;">85.9%</td>
-                                <td style="padding:6px 8px; text-align:right; color:var(--gold);">1.40</td>
-                                <td style="padding:6px 8px; text-align:right; font-weight:700; color:#10b981;">+20.3%</td>
-                                <td style="padding:6px 8px; text-align:center;"><span class="badge edge-pos">✅ GİR</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
+            
+            <div class="space-y-4 text-sm" style="color:#d1d5db; line-height:1.6;">
+                <div class="glass p-4" style="background:rgba(201,168,76,0.05); border-left:4px solid var(--gold);">
+                    <h3 class="font-bold text-white mb-2" style="font-size:1rem;">1. Kumar Değil, Matematiksel Edge</h3>
+                    <p>Seldon motoru maçın kimin kazanacağını <strong style="color:white;">tahmin etmeye çalışmaz.</strong> Sürprizler (siyah kuğular) sporun doğasında vardır. Bunun yerine, Bahis Şirketleri'nin oranlarının (gizli olasılıkların) taşıdığı zaafları arar. Formül kesindir: <code>Edge = (Gerçek Olasılık × Bahis Oranı) - 1</code>. Edge sıfırdan büyükse, savaş istatistiksel olarak kârlıdır.</p>
                 </div>
-                <p style="font-size:0.65rem; color:#6b7280; margin-top:0.5rem;">25K Monte Carlo iterasyonu • Poisson(λ) gol dağılımı • Veri: football-data.org Premier Lig</p>
+
+                <div class="glass p-4" style="background:rgba(16,185,129,0.05); border-left:4px solid #10b981;">
+                    <h3 class="font-bold text-white mb-2" style="font-size:1rem;">2. Poisson Dağılımı ve Knuth Algoritması</h3>
+                    <p>Futbolda atılan goller nadir, bağımsız olaylar olduğundan <span style="color:#10b981; font-weight:600;">Poisson Dağılımına</span> mükemmel oturur. Seldon, takımların güç ve momentumlarını (Amigdala) çarparak bir Gol Beklentisi (λ) hesaplar. Donald Knuth'un Poisson algoritmasıyla bu λ değerinden saniyeler içinde binlerce simülasyonluk rastgele skorlar üretir.</p>
+                </div>
+
+                <div class="glass p-4" style="background:rgba(59,130,246,0.05); border-left:4px solid #3b82f6;">
+                    <h3 class="font-bold text-white mb-2" style="font-size:1rem;">3. Paralel Evrenler: Monte Carlo</h3>
+                    <p>Seldon için gelecek, tek bir çizgi değil bir ağaçtır. Bir Dünya Kupası grubu veya lig maçı saniyeler içinde tam <span style="color:#3b82f6; font-weight:600;">10.000 kez</span> paralel olarak baştan oynanır. Sürpriz ihtimalleri dahil her şey bu binlerce tekrar içinde erir ve en saf "gerçekleşme yüzdesi" ortaya çıkar.</p>
+                </div>
+
+                <div class="glass p-4" style="background:rgba(239,68,68,0.05); border-left:4px solid #ef4444;">
+                    <h3 class="font-bold text-white mb-2" style="font-size:1rem;">4. Amnesia Prensibi (Unutkanlık)</h3>
+                    <p>T2SAIM MFDFA finans motorundaki gibi, spor motorunda da <span style="color:#ef4444; font-weight:600;">Amnesia (λ=0.25)</span> faktörü çalışır. Eski maçların başarı oranı, geçmişte kaldıkça ağırlığını hızla kaybeder. Takımın şanlı tarihi değil, o anki güncel psikolojik ivmesi ve form durumu (Hurst Edge) simülasyonun çekirdeğini oluşturur.</p>
+                </div>
             </div>
         </div>
     </div>
@@ -268,7 +230,97 @@
 </div>
 
 <script>
-// MODUL NAVIGASYON
+const TAKIMLAR_WC = {
+    "A": [
+        { "ad": "🇹🇷 Türkiye", "p": 0, "guc": 0.8 },
+        { "ad": "🇧🇷 Brezilya", "p": 0, "guc": 0.95 },
+        { "ad": "🇯🇵 Japonya", "p": 0, "guc": 0.75 },
+        { "ad": "🇳🇬 Nijerya", "p": 0, "guc": 0.75 }
+    ],
+    "B": [
+        { "ad": "🇦🇷 Arjantin", "p": 0, "guc": 0.95 },
+        { "ad": "🇬🇭 Gana", "p": 0, "guc": 0.75 },
+        { "ad": "🇨🇷 Kosta Rika", "p": 0, "guc": 0.75 },
+        { "ad": "🇮🇶 Irak", "p": 0, "guc": 0.75 }
+    ],
+    "C": [
+        { "ad": "🇫🇷 Fransa", "p": 0, "guc": 0.95 },
+        { "ad": "🇪🇨 Ekvador", "p": 0, "guc": 0.75 },
+        { "ad": "🇸🇦 S. Arabistan", "p": 0, "guc": 0.75 },
+        { "ad": "🇯🇲 Jamaika", "p": 0, "guc": 0.75 }
+    ],
+    "D": [
+        { "ad": "🇪🇸 İspanya", "p": 0, "guc": 0.93 },
+        { "ad": "🇸🇳 Senegal", "p": 0, "guc": 0.75 },
+        { "ad": "🇦🇺 Avustralya", "p": 0, "guc": 0.75 },
+        { "ad": "🇵🇦 Panama", "p": 0, "guc": 0.75 }
+    ],
+    "E": [
+        { "ad": "🇧🇪 Belçika", "p": 0, "guc": 0.88 },
+        { "ad": "🇵🇪 Peru", "p": 0, "guc": 0.75 },
+        { "ad": "🇹🇳 Tunus", "p": 0, "guc": 0.75 },
+        { "ad": "🇨🇳 Çin", "p": 0, "guc": 0.75 }
+    ],
+    "F": [
+        { "ad": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 İngiltere", "p": 0, "guc": 0.93 },
+        { "ad": "🏴󠁧󠁢󠁷󠁬󠁳󠁿 Galler", "p": 0, "guc": 0.75 },
+        { "ad": "🇲🇱 Mali", "p": 0, "guc": 0.75 },
+        { "ad": "🇭🇳 Honduras", "p": 0, "guc": 0.75 }
+    ],
+    "G": [
+        { "ad": "🇵🇹 Portekiz", "p": 0, "guc": 0.9 },
+        { "ad": "🇨🇴 Kolombiya", "p": 0, "guc": 0.85 },
+        { "ad": "🇩🇿 Cezayir", "p": 0, "guc": 0.75 },
+        { "ad": "🇦🇪 BAE", "p": 0, "guc": 0.75 }
+    ],
+    "H": [
+        { "ad": "🇳🇱 Hollanda", "p": 0, "guc": 0.9 },
+        { "ad": "🇺🇾 Uruguay", "p": 0, "guc": 0.85 },
+        { "ad": "🇨🇮 Fildişi", "p": 0, "guc": 0.75 },
+        { "ad": "🇨🇦 Kanada", "p": 0, "guc": 0.75 }
+    ],
+    "I": [
+        { "ad": "🇮🇹 İtalya", "p": 0, "guc": 0.88 },
+        { "ad": "🇺🇸 ABD", "p": 0, "guc": 0.75 },
+        { "ad": "🇨🇲 Kamerun", "p": 0, "guc": 0.75 },
+        { "ad": "🇺🇿 Özbekistan", "p": 0, "guc": 0.75 }
+    ],
+    "J": [
+        { "ad": "🇭🇷 Hırvatistan", "p": 0, "guc": 0.85 },
+        { "ad": "🇨🇱 Şili", "p": 0, "guc": 0.75 },
+        { "ad": "🇲🇦 Fas", "p": 0, "guc": 0.75 },
+        { "ad": "🇸🇻 El Salvador", "p": 0, "guc": 0.75 }
+    ],
+    "K": [
+        { "ad": "🇩🇪 Almanya", "p": 0, "guc": 0.92 },
+        { "ad": "🇨🇭 İsviçre", "p": 0, "guc": 0.75 },
+        { "ad": "🇿🇦 G. Afrika", "p": 0, "guc": 0.75 },
+        { "ad": "🇻🇪 Venezuela", "p": 0, "guc": 0.75 }
+    ],
+    "L": [
+        { "ad": "🇺🇦 Ukrayna", "p": 0, "guc": 0.75 },
+        { "ad": "🇷🇸 Sırbistan", "p": 0, "guc": 0.75 },
+        { "ad": "🇪🇬 Mısır", "p": 0, "guc": 0.75 },
+        { "ad": "🇶🇦 Katar", "p": 0, "guc": 0.75 }
+    ]
+};
+
+const LIG_VERI = {
+    ispanya2: { name: 'İspanya 2. Ligi', golOrt: 2.1, altOran: 0.68, icYenilmez: 0.92 },
+    ispanya: { name: 'İspanya LaLiga', golOrt: 2.5, altOran: 0.55, icYenilmez: 0.88 },
+    hollanda: { name: 'Hollanda Eredivisie', golOrt: 3.2, altOran: 0.35, icYenilmez: 0.82 },
+    ingiltere: { name: 'İngiltere Premier', golOrt: 2.8, altOran: 0.45, icYenilmez: 0.85 },
+    turkiye: { name: 'Türkiye Süper Lig', golOrt: 2.6, altOran: 0.50, icYenilmez: 0.80 }
+};
+
+const TAKIMLAR = {
+    ispanya2: [ { ad:'Levante', icYenilmez:0.95, golAlt:0.72, oran:1.25 }, { ad:'Granada', icYenilmez:0.88, golAlt:0.65, oran:1.35 } ],
+    ispanya: [ { ad:'Barcelona', icYenilmez:0.97, golAlt:0.45, oran:1.18 }, { ad:'Real Madrid', icYenilmez:0.95, golAlt:0.48, oran:1.22 } ],
+    hollanda: [ { ad:'Ajax', icYenilmez:0.90, golAlt:0.30, oran:1.28 }, { ad:'PSV', icYenilmez:0.88, golAlt:0.32, oran:1.32 } ],
+    ingiltere: [ { ad:'Manchester City', icYenilmez:0.96, golAlt:0.40, oran:1.20 }, { ad:'Arsenal', icYenilmez:0.92, golAlt:0.45, oran:1.28 } ],
+    turkiye: [ { ad:'Galatasaray', icYenilmez:0.90, golAlt:0.48, oran:1.30 }, { ad:'Fenerbahçe', icYenilmez:0.88, golAlt:0.50, oran:1.35 } ]
+};
+
 function switchMod(mod) {
     document.querySelectorAll('.mod-btn').forEach(b => {
         b.style.opacity = '0.6';
@@ -282,96 +334,12 @@ function switchMod(mod) {
     document.querySelectorAll('.mod-content').forEach(m => m.style.display = 'none');
     const target = document.getElementById('mod-' + mod);
     if (target) { target.style.display = 'block'; }
-    if (mod === 'wc') initWorldCup();
+    if (mod === 'wc') renderWCGroup();
 }
 
-// Event listeners
-document.querySelectorAll('.mod-btn').forEach(btn => {
-    btn.addEventListener('click', function() { switchMod(this.dataset.mod); });
-});
-
-// Başlangıçta Lig Modülünü aç
 switchMod('lig');
 
-// Sayfa yuklendiginde WC tablosunu doldur
-initWorldCup();
-
-// DUnya KUPASI
-function initWorldCup() {
-    const takimlar = [
-        { ad:'🇹🇷 Türkiye', grup:'A', fifa:28, ilk2:0.55, uc3:0.20, renk:'#ef4444' },
-        { ad:'🇨🇼 Curaçao', grup:'B', fifa:86, ilk2:0.15, uc3:0.10, renk:'#f59e0b' },
-        { ad:'🇨🇻 Cape Verde', grup:'C', fifa:72, ilk2:0.20, uc3:0.12, renk:'#f59e0b' },
-        { ad:'🇧🇷 Brezilya', grup:'D', fifa:1, ilk2:0.95, uc3:0.04, renk:'#10b981' },
-        { ad:'🇦🇷 Arjantin', grup:'E', fifa:2, ilk2:0.93, uc3:0.05, renk:'#10b981' },
-        { ad:'🇫🇷 Fransa', grup:'F', fifa:3, ilk2:0.92, uc3:0.06, renk:'#10b981' },
-        { ad:'🇪🇸 İspanya', grup:'G', fifa:4, ilk2:0.90, uc3:0.07, renk:'#10b981' },
-        { ad:'🇩🇪 Almanya', grup:'H', fifa:5, ilk2:0.88, uc3:0.08, renk:'#10b981' },
-        { ad:'🇵🇹 Portekiz', grup:'I', fifa:6, ilk2:0.85, uc3:0.10, renk:'#10b981' },
-        { ad:'🇳🇱 Hollanda', grup:'J', fifa:7, ilk2:0.82, uc3:0.12, renk:'#10b981' },
-        { ad:'🇺🇸 ABD', grup:'K', fifa:11, ilk2:0.70, uc3:0.18, renk:'#3b82f6' },
-        { ad:'🇯🇵 Japonya', grup:'L', fifa:15, ilk2:0.65, uc3:0.18, renk:'#3b82f6' },
-    ];
-    
-    const body = document.getElementById('wcBody');
-    let sansli = {ad:'', top:0};
-    
-    body.innerHTML = takimlar.map(t => {
-        const toplam = t.ilk2 + t.uc3;
-        const renk = toplam > 0.5 ? 'text-green-400' : (toplam > 0.3 ? 'text-yellow-400' : 'text-red-400');
-        const badge = toplam > 0.7 ? '✅ Yüksek' : (toplam > 0.4 ? '🟡 Orta' : '⛔ Düşük');
-        if (toplam > sansli.top) { sansli = {ad: t.ad, top: toplam}; }
-        
-        return `<tr style="border-bottom:1px solid rgba(255,255,255,0.03);">
-            <td style="padding:8px 10px; font-weight:600; color:white;">${t.ad}</td>
-            <td style="padding:8px 10px; text-align:center; color:#9ca3af;">${t.grup}</td>
-            <td style="padding:8px 10px; text-align:right; color:#9ca3af;">${t.fifa}.</td>
-            <td style="padding:8px 10px; text-align:right; color:white;">${(t.ilk2*100).toFixed(0)}%</td>
-            <td style="padding:8px 10px; text-align:right; color:#9ca3af;">${(t.uc3*100).toFixed(0)}%</td>
-            <td style="padding:8px 10px; text-align:right; font-weight:700; ${renk};">${(toplam*100).toFixed(0)}%</td>
-            <td style="padding:8px 10px; text-align:center;"><span class="badge" style="background:rgba(16,185,129,0.1);color:${t.renk};border:1px solid ${t.renk}33;">${badge}</span></td>
-        </tr>`;
-    }).join('');
-    
-    document.getElementById('wcSansli').textContent = sansli.ad + ' (' + (sansli.top*100).toFixed(0) + '%)';
-}
-const LIG_VERI = {
-    ispanya2: { name: 'İspanya 2. Ligi', golOrt: 2.1, altOran: 0.68, icYenilmez: 0.92 },
-    ispanya: { name: 'İspanya LaLiga', golOrt: 2.5, altOran: 0.55, icYenilmez: 0.88 },
-    hollanda: { name: 'Hollanda Eredivisie', golOrt: 3.2, altOran: 0.35, icYenilmez: 0.82 },
-    ingiltere: { name: 'İngiltere Premier', golOrt: 2.8, altOran: 0.45, icYenilmez: 0.85 },
-    turkiye: { name: 'Türkiye Süper Lig', golOrt: 2.6, altOran: 0.50, icYenilmez: 0.80 }
-};
-
-const TAKIMLAR = {
-    ispanya2: [
-        { ad:'Levante', icYenilmez:0.95, golAlt:0.72, oran:1.25 },
-        { ad:'Granada', icYenilmez:0.88, golAlt:0.65, oran:1.35 },
-        { ad:'Racing Santander', icYenilmez:0.82, golAlt:0.70, oran:1.45 },
-        { ad:'Almeria', icYenilmez:0.78, golAlt:0.60, oran:1.55 }
-    ],
-    ispanya: [
-        { ad:'Barcelona', icYenilmez:0.97, golAlt:0.45, oran:1.18 },
-        { ad:'Real Madrid', icYenilmez:0.95, golAlt:0.48, oran:1.22 }
-    ],
-    hollanda: [
-        { ad:'Ajax', icYenilmez:0.90, golAlt:0.30, oran:1.28 },
-        { ad:'PSV', icYenilmez:0.88, golAlt:0.32, oran:1.32 }
-    ],
-    ingiltere: [
-        { ad:'Manchester City', icYenilmez:0.96, golAlt:0.40, oran:1.20 },
-        { ad:'Arsenal', icYenilmez:0.92, golAlt:0.45, oran:1.28 },
-        { ad:'Liverpool', icYenilmez:0.94, golAlt:0.42, oran:1.25 },
-        { ad:'Chelsea', icYenilmez:0.88, golAlt:0.48, oran:1.35 },
-        { ad:'Man United', icYenilmez:0.85, golAlt:0.50, oran:1.40 }
-    ],
-    turkiye: [
-        { ad:'Galatasaray', icYenilmez:0.90, golAlt:0.48, oran:1.30 },
-        { ad:'Fenerbahçe', icYenilmez:0.88, golAlt:0.50, oran:1.35 },
-        { ad:'Beşiktaş', icYenilmez:0.82, golAlt:0.52, oran:1.45 }
-    ]
-};
-
+// LIG HESAPLAMA
 function hesapla() {
     const lig = document.getElementById('ligSec').value;
     const str = document.getElementById('strSec').value;
@@ -386,23 +354,15 @@ function hesapla() {
     let toplamKazanc = 0;
 
     body.innerHTML = takimlar.map(t => {
-        let olasilik, oran, edge, stratejiAd;
-        
+        let olasilik, oran, edge;
         if (str === 'ciftesans') {
-            olasilik = t.icYenilmez * (1 - 0.02 * (38 - horizon) / 38); // horizon ayari
+            olasilik = t.icYenilmez * (1 - 0.02 * (38 - horizon) / 38);
             oran = t.oran;
-            stratejiAd = 'Ev sahibi yenilmez';
-        } else if (str === 'gol') {
-            olasilik = ligVeri.altOran + (t.golAlt - ligVeri.altOran) * 0.3;
-            oran = 1.50;
-            stratejiAd = 'Alt 2.5 gol';
         } else {
             olasilik = Math.min(0.99, t.icYenilmez + 0.08);
             oran = 1.40;
-            stratejiAd = 'Handikap +1.5';
         }
 
-        // Amnesia etkisi: horizon kisa ise olasilik daha volatil
         const amnesia = 1 - 0.05 * (10 / horizon);
         olasilik = Math.min(0.99, olasilik * amnesia);
         edge = (olasilik * oran) - 1;
@@ -412,21 +372,17 @@ function hesapla() {
         const renk = edge > 0 ? 'text-green-400' : 'text-red-400';
         const badge = edge > 0 ? 'edge-pos' : 'edge-neg';
 
-        if (edge > 0) {
-            toplamEdge += edge;
-            savasSayisi++;
-            toplamKazanc += (edge / 100);
-        }
+        if (edge > 0) { toplamEdge += edge; savasSayisi++; toplamKazanc += (edge / 100); }
 
-        return `<tr style="border-bottom:1px solid rgba(255,255,255,0.03);">
-            <td style="padding:8px 10px; font-weight:600; color:white;">${t.ad}</td>
-            <td style="padding:8px 10px; text-align:center; color:#9ca3af;">Rakip</td>
-            <td style="padding:8px 10px; text-align:right; color:#9ca3af;">🏠 İç</td>
-            <td style="padding:8px 10px; text-align:right; font-weight:600; color:white;">${(olasilik*100).toFixed(1)}%</td>
-            <td style="padding:8px 10px; text-align:right; color:var(--gold);">${oran.toFixed(2)}</td>
-            <td style="padding:8px 10px; text-align:right; font-weight:700; ${renk};">${edge > 0 ? '+' : ''}${edge}%</td>
-            <td style="padding:8px 10px; text-align:center;"><span class="badge ${badge}">${savas}</span></td>
-        </tr>`;
+        return '<tr style="border-bottom:1px solid rgba(255,255,255,0.03);">' +
+            '<td style="padding:8px 10px; font-weight:600; color:white;">' + t.ad + '</td>' +
+            '<td style="padding:8px 10px; text-align:center; color:#9ca3af;">Rakip</td>' +
+            '<td style="padding:8px 10px; text-align:right; color:#9ca3af;">🏠 İç</td>' +
+            '<td style="padding:8px 10px; text-align:right; font-weight:600; color:white;">' + (olasilik*100).toFixed(1) + '%</td>' +
+            '<td style="padding:8px 10px; text-align:right; color:var(--gold);">' + oran.toFixed(2) + '</td>' +
+            '<td style="padding:8px 10px; text-align:right; font-weight:700;' + renk + ';">' + (edge > 0 ? '+' : '') + edge + '%</td>' +
+            '<td style="padding:8px 10px; text-align:center;"><span class="badge ' + badge + '">' + savas + '</span></td>' +
+        '</tr>';
     }).join('');
 
     document.getElementById('toplamEdge').textContent = (toplamEdge > 0 ? '+' : '') + toplamEdge.toFixed(1) + '%';
@@ -435,74 +391,92 @@ function hesapla() {
     document.getElementById('sonuclar').style.display = 'block';
 }
 
-// SELDON SIMULASYONU
+// WC MODULU
+function renderWCGroup() {
+    const grup = document.getElementById('wcGrupSec').value;
+    const takimlar = TAKIMLAR_WC[grup];
+    const tbody = document.getElementById('wcTakimlarBody');
+    
+    tbody.innerHTML = takimlar.map((t, i) => 
+        '<tr style="border-bottom:1px solid rgba(255,255,255,0.05);">' +
+            '<td style="padding:8px; text-align:left; font-weight:bold; color:white;">' + t.ad + '</td>' +
+            '<td style="padding:8px;"><input type="number" id="wc_puan_' + i + '" value="' + t.p + '" min="0" max="9" class="text-center"></td>' +
+            '<td style="padding:8px;"><input type="number" id="wc_guc_' + i + '" value="' + t.guc.toFixed(2) + '" step="0.05" min="0.1" max="1" class="text-center"></td>' +
+        '</tr>'
+    ).join('');
+    
+    document.getElementById('wcSimSonuc').style.display = 'none';
+}
+
 function poissonSample(lambda) {
     const L = Math.exp(-lambda); let k = 0, p = 1;
     while (p > L) { k++; p *= Math.random(); }
     return Math.max(0, k - 1);
 }
 
-function runSeldon() {
-    const evG = +document.getElementById('evGucu').value;
-    const evF = +document.getElementById('evForm').value;
-    const depG = +document.getElementById('depGucu').value;
-    const depF = +document.getElementById('depForm').value;
-    const oran = +document.getElementById('selOran').value;
+const FIXTURE = [
+    [[0,1], [2,3]], // Day 0 (Mac 1)
+    [[0,2], [1,3]], // Day 1 (Mac 2)
+    [[0,3], [1,2]]  // Day 2 (Mac 3)
+];
+
+function runWCGroupSim() {
+    const grup = document.getElementById('wcGrupSec').value;
+    const macGunu = parseInt(document.getElementById('wcMacGunu').value);
+    const takimlar = TAKIMLAR_WC[grup];
     
-    const N = 25000;
-    let evW = 0, draw = 0, depW = 0;
-    const evL = evG * evF * 1.25, depL = depG * depF * 0.85;
-    
-    for (let i = 0; i < N; i++) {
-        const e = poissonSample(evL), d = poissonSample(depL);
-        if (e > d) evW++; else if (e === d) draw++; else depW++;
+    takimlar.forEach((t, i) => {
+        t.puan = parseInt(document.getElementById('wc_puan_' + i).value) || 0;
+        t.guc = parseFloat(document.getElementById('wc_guc_' + i).value) || 0.5;
+    });
+
+    const N = 10000;
+    let sonuclar = takimlar.map(t => ({ad: t.ad, s1:0, s2:0, s3:0, s4:0}));
+
+    for(let iter=0; iter<N; iter++) {
+        let p = takimlar.map(t => t.puan);
+        let gd = takimlar.map(t => 0); 
+
+        for(let day=macGunu; day<3; day++) {
+            for(let match of FIXTURE[day]) {
+                const tA = match[0], tB = match[1];
+                const gA = poissonSample(takimlar[tA].guc * 1.6);
+                const gB = poissonSample(takimlar[tB].guc * 1.6);
+                
+                gd[tA] += (gA - gB); gd[tB] += (gB - gA);
+                
+                if (gA > gB) p[tA] += 3;
+                else if (gA < gB) p[tB] += 3;
+                else { p[tA] += 1; p[tB] += 1; }
+            }
+        }
+
+        let rankArr = [0,1,2,3].map(idx => ({idx: idx, p: p[idx], gd: gd[idx]}));
+        rankArr.sort((a, b) => b.p !== a.p ? b.p - a.p : b.gd - a.gd);
+
+        sonuclar[rankArr[0].idx].s1++;
+        sonuclar[rankArr[1].idx].s2++;
+        sonuclar[rankArr[2].idx].s3++;
+        sonuclar[rankArr[3].idx].s4++;
     }
-    
-    const yenilmez = (evW + draw) / N;
-    const edge = (yenilmez * oran) - 1;
-    const c = edge > 0 ? '#10b981' : '#ef4444';
-    
-    document.getElementById('selEv').textContent = (evW/N*100).toFixed(1) + '%';
-    document.getElementById('selBeraberlik').textContent = (draw/N*100).toFixed(1) + '%';
-    document.getElementById('selEvYenilmez').textContent = (yenilmez*100).toFixed(1) + '%';
-    document.getElementById('selEdge').innerHTML = '<span style="color:'+c+';">' + (edge>0?'+':'') + (edge*100).toFixed(1) + '%</span>';
-    document.getElementById('selEdge').parentElement.querySelector('p').style.color = c;
-    document.getElementById('selSonuc').style.display = 'block';
+
+    document.getElementById('wcSonucBody').innerHTML = sonuclar.map((s) => {
+        const p1 = s.s1 / N, p2 = s.s2 / N, p3 = s.s3 / N, p4 = s.s4 / N;
+        const advanceProb = p1 + p2 + (p3 * 0.6667);
+        
+        return '<tr style="border-bottom:1px solid rgba(255,255,255,0.03);">' +
+            '<td style="padding:10px; font-weight:bold; color:white; text-align:left;">' + s.ad + '</td>' +
+            '<td style="padding:10px;">' + (p1*100).toFixed(1) + '%</td>' +
+            '<td style="padding:10px;">' + (p2*100).toFixed(1) + '%</td>' +
+            '<td style="padding:10px;">' + (p3*100).toFixed(1) + '%</td>' +
+            '<td style="padding:10px; color:#ef4444;">' + (p4*100).toFixed(1) + '%</td>' +
+            '<td style="padding:10px; font-weight:800; font-size:1.1rem; color:var(--gold);">' + (Math.min(100, advanceProb*100)).toFixed(1) + '%</td>' +
+        '</tr>';
+    }).join('');
+
+    document.getElementById('wcSimSonuc').style.display = 'block';
 }
 
-// SELDON WC 
-function runSeldonWC() {
-    const trG = +document.getElementById('wc_TRguc').value;
-    const raG = +document.getElementById('wc_RAKguc').value;
-    const N = 5000;
-    let birinci = 0, ikinci = 0, cikamaz = 0;
-    
-    for (let i = 0; i < N; i++) {
-        // 3 maclik grup simülasyonu
-        let puan = 0, golAv = 0;
-        // Mac 1 vs rakip 1
-        const g1t = poissonSample(trG * 1.2), g1r = poissonSample(raG * 0.8);
-        if (g1t > g1r) puan += 3; else if (g1t === g1r) puan += 1;
-        golAv += g1t - g1r;
-        // Mac 2 vs rakip 2 (biraz daha zayif)
-        const g2t = poissonSample(trG * 1.15), g2r = poissonSample(raG * 0.75);
-        if (g2t > g2r) puan += 3; else if (g2t === g2r) puan += 1;
-        golAv += g2t - g2r;
-        // Mac 3 vs rakip 3
-        const g3t = poissonSample(trG * 1.1), g3r = poissonSample(raG * 0.7);
-        if (g3t > g3r) puan += 3; else if (g3t === g3r) puan += 1;
-        golAv += g3t - g3r;
-        
-        if (puan >= 7) birinci++;
-        else if (puan >= 4) ikinci++;
-        else cikamaz++;
-    }
-    
-    document.getElementById('wcS1').textContent = (birinci/N*100).toFixed(1) + '%';
-    document.getElementById('wcS2').textContent = (ikinci/N*100).toFixed(1) + '%';
-    document.getElementById('wcSCikma').textContent = ((birinci+ikinci)/N*100).toFixed(1) + '%';
-    document.getElementById('wcSeldonSonuc').style.display = 'block';
-}
 </script>
 </body>
 </html>
