@@ -1,0 +1,1902 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Algoritmik Bahis Analiz Platformu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@300..700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+/* ─── DESIGN TOKENS ─── */
+:root {
+  --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+  --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+  --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+  --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+
+  --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem;
+  --space-4: 1rem; --space-5: 1.25rem; --space-6: 1.5rem;
+  --space-8: 2rem; --space-10: 2.5rem; --space-12: 3rem;
+  --space-16: 4rem;
+
+  --radius-sm: 0.375rem; --radius-md: 0.5rem;
+  --radius-lg: 0.75rem; --radius-xl: 1rem; --radius-full: 9999px;
+  --transition-interactive: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+  --font-body: 'Inter', 'Helvetica Neue', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Cascadia Code', monospace;
+  --content-wide: 1200px;
+}
+
+[data-theme="dark"] {
+  --color-bg: #0d1117;
+  --color-surface: #161b22;
+  --color-surface-2: #1c2330;
+  --color-surface-offset: #21262d;
+  --color-surface-dynamic: #2d333b;
+  --color-divider: #30363d;
+  --color-border: #3d444d;
+  --color-text: #e6edf3;
+  --color-text-muted: #8b949e;
+  --color-text-faint: #484f58;
+  --color-text-inverse: #0d1117;
+  --color-primary: #58a6ff;
+  --color-primary-hover: #79b8ff;
+  --color-primary-active: #a5d6ff;
+  --color-primary-highlight: #1c2e4a;
+  --color-success: #3fb950;
+  --color-success-highlight: #1a3a21;
+  --color-warning: #d29922;
+  --color-warning-highlight: #3a2f0b;
+  --color-error: #f85149;
+  --color-error-highlight: #3d1b1b;
+  --color-orange: #fd8d3c;
+  --color-gold: #e8af34;
+  --color-purple: #bc8cff;
+  --shadow-sm: 0 1px 3px oklch(0 0 0 / 0.3);
+  --shadow-md: 0 4px 12px oklch(0 0 0 / 0.4);
+  --shadow-lg: 0 12px 32px oklch(0 0 0 / 0.5);
+}
+
+[data-theme="light"] {
+  --color-bg: #f6f8fa;
+  --color-surface: #ffffff;
+  --color-surface-2: #f6f8fa;
+  --color-surface-offset: #eaeef2;
+  --color-surface-dynamic: #d8dee4;
+  --color-divider: #d0d7de;
+  --color-border: #d0d7de;
+  --color-text: #1f2328;
+  --color-text-muted: #656d76;
+  --color-text-faint: #9198a1;
+  --color-text-inverse: #ffffff;
+  --color-primary: #0969da;
+  --color-primary-hover: #0550ae;
+  --color-primary-active: #033d8b;
+  --color-primary-highlight: #ddf4ff;
+  --color-success: #1a7f37;
+  --color-success-highlight: #dafbe1;
+  --color-warning: #9a6700;
+  --color-warning-highlight: #fff8c5;
+  --color-error: #cf222e;
+  --color-error-highlight: #ffebe9;
+  --color-orange: #bc4c00;
+  --color-gold: #9a6700;
+  --color-purple: #8250df;
+  --shadow-sm: 0 1px 3px oklch(0.2 0.01 240 / 0.06);
+  --shadow-md: 0 4px 12px oklch(0.2 0.01 240 / 0.08);
+  --shadow-lg: 0 12px 32px oklch(0.2 0.01 240 / 0.12);
+}
+
+/* ─── BASE ─── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; scroll-padding-top: var(--space-16); }
+body { min-height: 100dvh; font-family: var(--font-body); font-size: var(--text-base); color: var(--color-text); background-color: var(--color-bg); line-height: 1.6; }
+img, picture, video, canvas, svg { display: block; max-width: 100%; }
+h1,h2,h3,h4 { text-wrap: balance; line-height: 1.2; }
+p, li { text-wrap: pretty; max-width: 72ch; }
+input, button, textarea, select { font: inherit; color: inherit; }
+button { cursor: pointer; background: none; border: none; }
+table { border-collapse: collapse; width: 100%; }
+:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; border-radius: var(--radius-sm); }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+
+/* ─── LAYOUT ─── */
+.app-wrapper { display: flex; min-height: 100dvh; }
+
+.sidebar {
+  width: 240px; min-height: 100dvh; position: sticky; top: 0; height: 100vh;
+  background: var(--color-surface); border-right: 1px solid var(--color-border);
+  display: flex; flex-direction: column; padding: var(--space-6) 0; flex-shrink: 0;
+  overflow-y: auto;
+}
+.sidebar-logo {
+  padding: 0 var(--space-5) var(--space-6);
+  border-bottom: 1px solid var(--color-divider);
+  margin-bottom: var(--space-4);
+}
+.logo-mark {
+  display: flex; align-items: center; gap: var(--space-3);
+}
+.logo-svg { width: 32px; height: 32px; flex-shrink: 0; }
+.logo-text { font-size: var(--text-sm); font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; }
+.logo-text span { color: var(--color-primary); }
+.sidebar-nav { flex: 1; padding: 0 var(--space-3); }
+.nav-section-label {
+  font-size: var(--text-xs); font-weight: 600; color: var(--color-text-faint);
+  text-transform: uppercase; letter-spacing: 0.08em; padding: var(--space-3) var(--space-2) var(--space-1);
+}
+.nav-item {
+  display: flex; align-items: center; gap: var(--space-3); padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md); font-size: var(--text-sm); color: var(--color-text-muted);
+  cursor: pointer; transition: all var(--transition-interactive); margin-bottom: 2px;
+  text-decoration: none; border: none; width: 100%; text-align: left;
+}
+.nav-item:hover { background: var(--color-surface-offset); color: var(--color-text); }
+.nav-item.active { background: var(--color-primary-highlight); color: var(--color-primary); font-weight: 500; }
+.nav-item svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+.sidebar-footer { padding: var(--space-4) var(--space-5) 0; border-top: 1px solid var(--color-divider); }
+.theme-toggle {
+  display: flex; align-items: center; justify-content: space-between;
+  font-size: var(--text-xs); color: var(--color-text-muted); padding: var(--space-2) 0;
+}
+.toggle-btn {
+  background: var(--color-surface-offset); border: 1px solid var(--color-border);
+  border-radius: var(--radius-full); padding: var(--space-1) var(--space-2);
+  display: flex; align-items: center; gap: var(--space-1);
+  color: var(--color-text-muted); font-size: var(--text-xs);
+  transition: all var(--transition-interactive);
+}
+.toggle-btn:hover { color: var(--color-text); background: var(--color-surface-dynamic); }
+
+.main-content { flex: 1; min-width: 0; overflow-y: auto; }
+.page { display: none; padding: var(--space-8) var(--space-8); max-width: var(--content-wide); }
+.page.active { display: block; }
+
+/* ─── TOPBAR ─── */
+.topbar {
+  background: var(--color-surface); border-bottom: 1px solid var(--color-border);
+  padding: var(--space-4) var(--space-8); display: flex; align-items: center;
+  justify-content: space-between; position: sticky; top: 0; z-index: 10;
+}
+.topbar-title { font-size: var(--text-lg); font-weight: 600; }
+.topbar-badge {
+  background: var(--color-primary-highlight); color: var(--color-primary);
+  font-size: var(--text-xs); font-weight: 600; padding: 2px var(--space-2);
+  border-radius: var(--radius-full); font-family: var(--font-mono);
+}
+
+/* ─── KPI CARDS ─── */
+.kpi-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: var(--space-4); margin-bottom: var(--space-6); }
+.kpi-card {
+  background: var(--color-surface); border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg); padding: var(--space-4) var(--space-5);
+  box-shadow: var(--shadow-sm); transition: box-shadow var(--transition-interactive);
+}
+.kpi-card:hover { box-shadow: var(--shadow-md); }
+.kpi-label { font-size: var(--text-xs); color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: var(--space-2); }
+.kpi-value { font-size: var(--text-xl); font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1; margin-bottom: var(--space-1); }
+.kpi-sub { font-size: var(--text-xs); color: var(--color-text-muted); }
+.kpi-pos { color: var(--color-success); }
+.kpi-neg { color: var(--color-error); }
+.kpi-neutral { color: var(--color-warning); }
+
+/* ─── SECTION HEADERS ─── */
+.section-header { margin-bottom: var(--space-4); }
+.section-title { font-size: var(--text-lg); font-weight: 600; margin-bottom: var(--space-1); }
+.section-desc { font-size: var(--text-sm); color: var(--color-text-muted); }
+
+/* ─── CARDS ─── */
+.card {
+  background: var(--color-surface); border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg); padding: var(--space-5); box-shadow: var(--shadow-sm);
+  margin-bottom: var(--space-5);
+}
+.card-title {
+  font-size: var(--text-base); font-weight: 600; margin-bottom: var(--space-4);
+  padding-bottom: var(--space-3); border-bottom: 1px solid var(--color-divider);
+  display: flex; align-items: center; gap: var(--space-2);
+}
+.card-title svg { width: 16px; height: 16px; color: var(--color-primary); }
+
+/* ─── FORM CONTROLS ─── */
+.form-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: var(--space-4); }
+.form-group { display: flex; flex-direction: column; gap: var(--space-1); }
+.form-label { font-size: var(--text-xs); font-weight: 500; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.06em; }
+.form-input {
+  background: var(--color-surface-offset); border: 1px solid var(--color-border);
+  border-radius: var(--radius-md); padding: var(--space-2) var(--space-3);
+  font-size: var(--text-sm); font-family: var(--font-mono); color: var(--color-text);
+  transition: border-color var(--transition-interactive), box-shadow var(--transition-interactive);
+  width: 100%;
+}
+.form-input:focus { border-color: var(--color-primary); box-shadow: 0 0 0 3px color-mix(in oklch, var(--color-primary) 15%, transparent); outline: none; }
+.form-input::placeholder { color: var(--color-text-faint); }
+
+/* ─── BUTTONS ─── */
+.btn {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  padding: var(--space-2) var(--space-4); border-radius: var(--radius-md);
+  font-size: var(--text-sm); font-weight: 500;
+  transition: all var(--transition-interactive); cursor: pointer;
+  border: 1px solid transparent;
+}
+.btn-primary { background: var(--color-primary); color: #fff; }
+.btn-primary:hover { filter: brightness(1.1); }
+.btn-secondary { background: var(--color-surface-offset); border-color: var(--color-border); color: var(--color-text); }
+.btn-secondary:hover { background: var(--color-surface-dynamic); }
+.btn-success { background: var(--color-success); color: #fff; }
+.btn-group { display: flex; gap: var(--space-2); flex-wrap: wrap; margin-top: var(--space-4); }
+
+/* ─── RESULT BOXES ─── */
+.result-box {
+  background: var(--color-surface-offset); border: 1px solid var(--color-border);
+  border-radius: var(--radius-md); padding: var(--space-4); margin-top: var(--space-4);
+}
+.result-row { display: flex; justify-content: space-between; align-items: center; padding: var(--space-2) 0; border-bottom: 1px solid var(--color-divider); }
+.result-row:last-child { border-bottom: none; }
+.result-label { font-size: var(--text-sm); color: var(--color-text-muted); }
+.result-value { font-size: var(--text-sm); font-weight: 600; font-family: var(--font-mono); }
+
+.alert {
+  border-radius: var(--radius-md); padding: var(--space-3) var(--space-4);
+  font-size: var(--text-sm); margin-top: var(--space-4);
+  display: flex; align-items: flex-start; gap: var(--space-2);
+}
+.alert-success { background: var(--color-success-highlight); color: var(--color-success); border: 1px solid color-mix(in oklch, var(--color-success) 30%, transparent); }
+.alert-error { background: var(--color-error-highlight); color: var(--color-error); border: 1px solid color-mix(in oklch, var(--color-error) 30%, transparent); }
+.alert-warning { background: var(--color-warning-highlight); color: var(--color-warning); border: 1px solid color-mix(in oklch, var(--color-warning) 30%, transparent); }
+.alert-info { background: var(--color-primary-highlight); color: var(--color-primary); border: 1px solid color-mix(in oklch, var(--color-primary) 30%, transparent); }
+
+/* ─── TABLES ─── */
+.table-wrap { overflow-x: auto; border-radius: var(--radius-md); border: 1px solid var(--color-border); }
+.data-table { width: 100%; font-size: var(--text-sm); }
+.data-table thead { background: var(--color-surface-offset); }
+.data-table th { padding: var(--space-3) var(--space-4); text-align: left; font-weight: 600; font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-text-muted); border-bottom: 1px solid var(--color-border); white-space: nowrap; }
+.data-table td { padding: var(--space-3) var(--space-4); border-bottom: 1px solid var(--color-divider); font-variant-numeric: tabular-nums; }
+.data-table tr:last-child td { border-bottom: none; }
+.data-table tr:hover td { background: var(--color-surface-offset); }
+.badge {
+  display: inline-flex; align-items: center; padding: 2px var(--space-2);
+  border-radius: var(--radius-full); font-size: var(--text-xs); font-weight: 600;
+}
+.badge-green { background: var(--color-success-highlight); color: var(--color-success); }
+.badge-red { background: var(--color-error-highlight); color: var(--color-error); }
+.badge-yellow { background: var(--color-warning-highlight); color: var(--color-warning); }
+.badge-blue { background: var(--color-primary-highlight); color: var(--color-primary); }
+.badge-purple { background: color-mix(in oklch, var(--color-purple) 20%, transparent); color: var(--color-purple); }
+
+/* ─── CODE BLOCKS ─── */
+.code-block {
+  background: #0d1117; border: 1px solid var(--color-border);
+  border-radius: var(--radius-md); padding: var(--space-4);
+  font-family: var(--font-mono); font-size: 0.8rem; line-height: 1.7;
+  overflow-x: auto; color: #e6edf3; position: relative;
+}
+.code-block .comment { color: #8b949e; }
+.code-block .keyword { color: #ff7b72; }
+.code-block .string { color: #a5d6ff; }
+.code-block .func { color: #d2a8ff; }
+.code-block .number { color: #79c0ff; }
+.code-block .var { color: #ffa657; }
+.code-block .builtin { color: #3fb950; }
+.copy-btn {
+  position: absolute; top: var(--space-2); right: var(--space-2);
+  background: var(--color-surface-offset); border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm); padding: var(--space-1) var(--space-2);
+  font-size: var(--text-xs); color: var(--color-text-muted); font-family: var(--font-mono);
+  cursor: pointer; transition: all var(--transition-interactive);
+}
+.copy-btn:hover { background: var(--color-surface-dynamic); color: var(--color-text); }
+
+.code-tabs { display: flex; gap: 2px; background: var(--color-surface-offset); border: 1px solid var(--color-border); border-bottom: none; border-radius: var(--radius-md) var(--radius-md) 0 0; padding: var(--space-2) var(--space-2) 0; }
+.code-tab { padding: var(--space-1) var(--space-3); font-size: var(--text-xs); font-family: var(--font-mono); border-radius: var(--radius-sm) var(--radius-sm) 0 0; color: var(--color-text-muted); cursor: pointer; transition: all var(--transition-interactive); }
+.code-tab.active { background: #0d1117; color: var(--color-primary); }
+.code-tab-content { display: none; }
+.code-tab-content.active { display: block; }
+.code-block-tabbed { border-radius: 0 0 var(--radius-md) var(--radius-md); }
+
+/* ─── PROGRESS BARS ─── */
+.progress-row { display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-2); }
+.progress-label { font-size: var(--text-xs); color: var(--color-text-muted); width: 140px; flex-shrink: 0; }
+.progress-bar-wrap { flex: 1; background: var(--color-surface-offset); border-radius: var(--radius-full); height: 6px; overflow: hidden; }
+.progress-bar { height: 100%; border-radius: var(--radius-full); transition: width 0.8s cubic-bezier(0.16,1,0.3,1); }
+.progress-value { font-size: var(--text-xs); font-family: var(--font-mono); color: var(--color-text-muted); width: 40px; text-align: right; }
+
+/* ─── CHART CONTAINERS ─── */
+.chart-container { position: relative; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-5); box-shadow: var(--shadow-sm); }
+.chart-title { font-size: var(--text-base); font-weight: 600; margin-bottom: var(--space-4); }
+.chart-wrap { height: 280px; }
+
+/* ─── RISK MATRIX ─── */
+.risk-item {
+  display: flex; align-items: flex-start; gap: var(--space-4);
+  padding: var(--space-4); border: 1px solid var(--color-border);
+  border-radius: var(--radius-md); background: var(--color-surface-2); margin-bottom: var(--space-3);
+  transition: all var(--transition-interactive);
+}
+.risk-item:hover { border-color: var(--color-primary); box-shadow: var(--shadow-sm); }
+.risk-icon { width: 36px; height: 36px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1rem; }
+.risk-body { flex: 1; }
+.risk-name { font-size: var(--text-sm); font-weight: 600; margin-bottom: var(--space-1); }
+.risk-desc { font-size: var(--text-xs); color: var(--color-text-muted); line-height: 1.5; }
+.risk-severity { font-size: var(--text-xs); font-family: var(--font-mono); font-weight: 600; padding: 2px var(--space-2); border-radius: var(--radius-full); align-self: flex-start; flex-shrink: 0; }
+
+/* ─── GRID HELPERS ─── */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-5); }
+.three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: var(--space-4); }
+@media (max-width: 900px) { .two-col, .three-col { grid-template-columns: 1fr; } }
+
+/* ─── PAGE TRANSITIONS ─── */
+.page { animation: fadeIn 0.2s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ─── ODDS COMPARISON TABLE ─── */
+.odds-site-row { display: grid; grid-template-columns: 160px repeat(3, 1fr) 100px; gap: var(--space-2); align-items: center; padding: var(--space-3); border-bottom: 1px solid var(--color-divider); }
+.odds-site-row:last-child { border-bottom: none; }
+.odds-site-header { font-size: var(--text-xs); font-weight: 600; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.06em; }
+.odds-best { font-weight: 700; color: var(--color-success); }
+.odds-val { font-family: var(--font-mono); font-size: var(--text-sm); text-align: center; }
+.site-name { font-size: var(--text-sm); font-weight: 500; }
+
+/* ─── MOBILE ─── */
+@media (max-width: 768px) {
+  .sidebar { display: none; }
+  .page { padding: var(--space-4); }
+  .topbar { padding: var(--space-3) var(--space-4); }
+  .kpi-grid { grid-template-columns: 1fr 1fr; }
+  .form-grid { grid-template-columns: 1fr 1fr; }
+  .odds-site-row { grid-template-columns: 1fr 1fr 1fr; font-size: var(--text-xs); }
+}
+
+/* ─── MISC ─── */
+.divider { height: 1px; background: var(--color-divider); margin: var(--space-5) 0; }
+.mono { font-family: var(--font-mono); }
+.text-muted { color: var(--color-text-muted); }
+.text-success { color: var(--color-success); }
+.text-error { color: var(--color-error); }
+.text-warning { color: var(--color-warning); }
+.text-primary { color: var(--color-primary); }
+.mt-4 { margin-top: var(--space-4); }
+.mb-4 { margin-bottom: var(--space-4); }
+</style>
+</head>
+<body>
+
+<div class="app-wrapper">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-mark">
+        <svg class="logo-svg" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="8" fill="#1c2e4a"/>
+          <path d="M6 22 L10 14 L14 18 L18 10 L22 16 L26 8" stroke="#58a6ff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="26" cy="8" r="2" fill="#3fb950"/>
+        </svg>
+        <div class="logo-text">Algo<span>Bahis</span><br>Analitik</div>
+      </div>
+    </div>
+    <nav class="sidebar-nav" role="navigation">
+      <div class="nav-section-label">Modüller</div>
+      <button class="nav-item active" onclick="showPage('arbitrage')" aria-label="Arbitraj Hesaplayıcı">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        Arbitraj Hesaplayıcı
+      </button>
+      <button class="nav-item" onclick="showPage('valuebetting')" aria-label="Value Betting">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+        Value Betting
+      </button>
+      <button class="nav-item" onclick="showPage('margin')" aria-label="Marj Analizi">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        Marj Analizi
+      </button>
+      <div class="nav-section-label" style="margin-top: var(--space-3)">Güvenlik</div>
+      <button class="nav-item" onclick="showPage('detection')" aria-label="Tespit Mekanizmaları">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Tespit Mekanizmaları
+      </button>
+      <button class="nav-item" onclick="showPage('riskmatrix')" aria-label="Risk Matrisi">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        Risk Matrisi
+      </button>
+      <div class="nav-section-label" style="margin-top: var(--space-3)">Teknik</div>
+      <button class="nav-item" onclick="showPage('pythoncode')" aria-label="Python Pipeline">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        Python Pipeline
+      </button>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="theme-toggle">
+        <span>Tema</span>
+        <button class="toggle-btn" data-theme-toggle aria-label="Switch theme" onclick="toggleTheme()">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          Dark
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <div class="main-content">
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- PAGE 1: ARBİTRAJ HESAPLAYICI -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <div id="page-arbitrage" class="page active">
+      <div class="topbar">
+        <span class="topbar-title">Arbitraj Hesaplayıcı</span>
+        <span class="topbar-badge">Surebet</span>
+      </div>
+      <div style="padding: var(--space-6) var(--space-8);">
+        <div class="section-header">
+          <div class="section-title">Çapraz Site Arbitraj Tespiti</div>
+          <div class="section-desc">Farklı bahis sitelerindeki oran farklarını ve garantili kâr fırsatlarını hesaplayın. Tüm sonuçların toplam implied probability'si &lt;100 ise arbitraj fırsatı vardır.</div>
+        </div>
+
+        <!-- KPI -->
+        <div class="kpi-grid" id="arb-kpis">
+          <div class="kpi-card">
+            <div class="kpi-label">Toplam Implied Prob.</div>
+            <div class="kpi-value" id="kpi-total-prob">—</div>
+            <div class="kpi-sub">%100 altı = fırsat</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Arbitraj Marjı</div>
+            <div class="kpi-value" id="kpi-arb-margin">—</div>
+            <div class="kpi-sub">Garanti kâr yüzdesi</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Toplam Stake</div>
+            <div class="kpi-value" id="kpi-total-stake">—</div>
+            <div class="kpi-sub">₺ olarak</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Beklenen Kâr</div>
+            <div class="kpi-value" id="kpi-exp-profit">—</div>
+            <div class="kpi-sub">Her durumda</div>
+          </div>
+        </div>
+
+        <div class="two-col">
+          <div>
+            <div class="card">
+              <div class="card-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                3 Sonuçlu Market (Maç Sonucu)
+              </div>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label class="form-label">Site 1 — Ev Sahibi Kazanır (1)</label>
+                  <input type="number" class="form-input" id="odds-1" placeholder="2.10" step="0.01" min="1" value="2.15">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Site 2 — Beraberlik (X)</label>
+                  <input type="number" class="form-input" id="odds-x" placeholder="3.40" step="0.01" min="1" value="3.55">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Site 3 — Deplasman Kazanır (2)</label>
+                  <input type="number" class="form-input" id="odds-2" placeholder="3.80" step="0.01" min="1" value="4.20">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Toplam Sermaye (₺)</label>
+                  <input type="number" class="form-input" id="arb-capital" placeholder="1000" value="1000">
+                </div>
+              </div>
+              <div class="btn-group">
+                <button class="btn btn-primary" onclick="calcArbitrage()">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/></svg>
+                  Hesapla
+                </button>
+                <button class="btn btn-secondary" onclick="loadDemoArb()">Demo Yükle</button>
+              </div>
+              <div id="arb-result"></div>
+            </div>
+
+            <div class="card">
+              <div class="card-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                Formül Açıklaması
+              </div>
+              <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-3);">
+                Arbitraj için temel eşitsizlik: tüm sonuçların implied probability toplamı 1'in altına düşmelidir.
+              </p>
+              <div class="code-block" style="font-size: 0.78rem;">
+<span class="comment"># Overround (toplam implied prob)</span>
+<span class="var">S</span> = <span class="number">1</span>/<span class="var">o1</span> + <span class="number">1</span>/<span class="var">ox</span> + <span class="number">1</span>/<span class="var">o2</span>
+
+<span class="comment"># Arbitraj marjı (kâr yüzdesi)</span>
+<span class="var">margin</span> = (<span class="number">1</span> - <span class="var">S</span>) / <span class="var">S</span>
+
+<span class="comment"># Stake dağılımı (her çıktı için)</span>
+<span class="var">stake_i</span> = (<span class="var">total</span> / <span class="var">S</span>) / <span class="var">odds_i</span>
+
+<span class="comment"># Tüm durumlarda aynı kâr</span>
+<span class="var">profit</span> = <span class="var">total</span> * <span class="var">margin</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="card">
+              <div class="card-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-3"/></svg>
+                Canlı Oran Karşılaştırması
+              </div>
+              <div style="background: var(--color-surface-offset); border-radius: var(--radius-md); padding: var(--space-3); margin-bottom: var(--space-4);">
+                <div class="odds-site-row">
+                  <span class="odds-site-header">Bahis Sitesi</span>
+                  <span class="odds-site-header" style="text-align:center">1</span>
+                  <span class="odds-site-header" style="text-align:center">X</span>
+                  <span class="odds-site-header" style="text-align:center">2</span>
+                  <span class="odds-site-header" style="text-align:center">Overround</span>
+                </div>
+                <div id="odds-comparison-table">
+                  <!-- JS ile doldurulacak -->
+                </div>
+              </div>
+              <button class="btn btn-secondary" onclick="refreshOddsTable()" style="width: 100%;">↻ Örnek Verileri Yenile</button>
+            </div>
+
+            <div class="chart-container" style="margin-top: var(--space-5);">
+              <div class="chart-title">Implied Probability Dağılımı</div>
+              <div class="chart-wrap">
+                <canvas id="arbChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- PAGE 2: VALUE BETTING -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <div id="page-valuebetting" class="page">
+      <div class="topbar">
+        <span class="topbar-title">Value Betting Hesaplayıcı</span>
+        <span class="topbar-badge">EV+</span>
+      </div>
+      <div style="padding: var(--space-6) var(--space-8);">
+        <div class="section-header">
+          <div class="section-title">Pozitif Beklenen Değer (Expected Value) Analizi</div>
+          <div class="section-desc">Kendi modelinizin tahmin ettiği olasılık ile bookmaker'ın sunduğu normalized implied probability arasındaki farktan value bet fırsatı tespit edin.</div>
+        </div>
+        <div class="two-col">
+          <div>
+            <div class="card">
+              <div class="card-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                EV Hesaplama Girdileri
+              </div>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label class="form-label">Bookmaker Oranı (Decimal)</label>
+                  <input type="number" class="form-input" id="vb-odds" placeholder="2.10" step="0.01" min="1.01" value="2.30">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Model Olasılığı (%)</label>
+                  <input type="number" class="form-input" id="vb-prob" placeholder="50" step="0.1" min="1" max="99" value="52">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Bahis Tutarı (₺)</label>
+                  <input type="number" class="form-input" id="vb-stake" placeholder="100" value="100">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Bankroll (₺)</label>
+                  <input type="number" class="form-input" id="vb-bankroll" placeholder="5000" value="5000">
+                </div>
+              </div>
+              <div class="btn-group">
+                <button class="btn btn-primary" onclick="calcValueBet()">EV Hesapla</button>
+                <button class="btn btn-secondary" onclick="calcKelly()">Kelly Stake Hesapla</button>
+              </div>
+              <div id="vb-result"></div>
+            </div>
+
+            <div class="card">
+              <div class="card-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                Kelly Kriteri Açıklaması
+              </div>
+              <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-3);">Kelly kriteri, bankroll'un yüzde kaçının bahse konulması gerektiğini beklenen değer üzerinden optimal biçimde hesaplar.</p>
+              <div class="code-block" style="font-size: 0.78rem;">
+<span class="comment"># Kelly Kriteri</span>
+<span class="var">f</span> = (<span class="var">b</span> * <span class="var">p</span> - <span class="var">q</span>) / <span class="var">b</span>
+
+<span class="comment"># b = net odds (odds - 1)</span>
+<span class="comment"># p = model kazanma olasılığı</span>
+<span class="comment"># q = 1 - p (kaybetme olasılığı)</span>
+
+<span class="comment"># Fraksiyonel Kelly (güvenli versiyon)</span>
+<span class="var">stake</span> = (<span class="var">f</span> / <span class="number">4</span>) * <span class="var">bankroll</span>  <span class="comment"># 1/4 Kelly</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="chart-container">
+              <div class="chart-title">EV vs Oran Senaryoları</div>
+              <div class="chart-wrap">
+                <canvas id="evChart"></canvas>
+              </div>
+            </div>
+            <div class="chart-container" style="margin-top: var(--space-5);">
+              <div class="chart-title">Bankroll Büyümesi (Simülasyon — 100 Bahis)</div>
+              <div class="chart-wrap">
+                <canvas id="bankrollChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- PAGE 3: MARJ ANALİZİ -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <div id="page-margin" class="page">
+      <div class="topbar">
+        <span class="topbar-title">Bookmaker Marj Analizi</span>
+        <span class="topbar-badge">Overround</span>
+      </div>
+      <div style="padding: var(--space-6) var(--space-8);">
+        <div class="section-header">
+          <div class="section-title">Bookmaker Overround ve Fair Odds Hesabı</div>
+          <div class="section-desc">Farklı bookmaker'ların uyguladığı overround/marj oranlarını karşılaştırın ve "fair odds" değerlerini tespit edin.</div>
+        </div>
+
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-label">Ortalama Soft Marj</div>
+            <div class="kpi-value kpi-neg">~7.2%</div>
+            <div class="kpi-sub">Bet365, William Hill</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Sharp Bookmaker Marjı</div>
+            <div class="kpi-value kpi-neutral">~1.8%</div>
+            <div class="kpi-sub">Pinnacle, SBO</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Exchange Komisyonu</div>
+            <div class="kpi-value kpi-pos">~2-5%</div>
+            <div class="kpi-sub">Betfair, Smarkets</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Arb Fırsatı Ömrü</div>
+            <div class="kpi-value">~30s</div>
+            <div class="kpi-sub">Ortalama pencere</div>
+          </div>
+        </div>
+
+        <div class="two-col">
+          <div>
+            <div class="card">
+              <div class="card-title">Overround Hesaplama</div>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label class="form-label">Oran 1</label>
+                  <input type="number" class="form-input" id="mg-o1" value="2.10" step="0.01" min="1">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Oran X</label>
+                  <input type="number" class="form-input" id="mg-ox" value="3.20" step="0.01" min="1">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Oran 2</label>
+                  <input type="number" class="form-input" id="mg-o2" value="3.60" step="0.01" min="1">
+                </div>
+              </div>
+              <button class="btn btn-primary" style="margin-top: var(--space-4);" onclick="calcMargin()">Marjı Hesapla</button>
+              <div id="margin-result"></div>
+            </div>
+
+            <div class="card">
+              <div class="card-title">Bookmaker Karşılaştırma Tablosu</div>
+              <div class="table-wrap">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Bookmaker</th>
+                      <th>Tür</th>
+                      <th>Tipik Marj</th>
+                      <th>Sharp Limit</th>
+                      <th>Değerlendirme</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Pinnacle</td><td><span class="badge badge-green">Sharp</span></td><td class="mono text-success">~1.5–2%</td><td class="mono">Yüksek</td><td><span class="badge badge-green">Önerilen</span></td></tr>
+                    <tr><td>Betfair Exch.</td><td><span class="badge badge-blue">Exchange</span></td><td class="mono text-primary">~2–5% kom.</td><td class="mono">Yüksek</td><td><span class="badge badge-green">Önerilen</span></td></tr>
+                    <tr><td>SBO / Asian</td><td><span class="badge badge-green">Sharp</span></td><td class="mono text-success">~1.8%</td><td class="mono">Yüksek</td><td><span class="badge badge-blue">İyi</span></td></tr>
+                    <tr><td>Bet365</td><td><span class="badge badge-yellow">Soft</span></td><td class="mono text-warning">~6–8%</td><td class="mono">Düşük</td><td><span class="badge badge-yellow">Dikkat</span></td></tr>
+                    <tr><td>William Hill</td><td><span class="badge badge-yellow">Soft</span></td><td class="mono text-warning">~7–9%</td><td class="mono">Düşük</td><td><span class="badge badge-yellow">Dikkat</span></td></tr>
+                    <tr><td>Bwin / Unibet</td><td><span class="badge badge-yellow">Soft</span></td><td class="mono text-warning">~6–8%</td><td class="mono">Düşük</td><td><span class="badge badge-yellow">Dikkat</span></td></tr>
+                    <tr><td>1xBet</td><td><span class="badge badge-yellow">Orta</span></td><td class="mono">~4–5%</td><td class="mono">Orta</td><td><span class="badge badge-yellow">Dikkat</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="chart-container">
+              <div class="chart-title">Bookmaker Marj Karşılaştırması</div>
+              <div class="chart-wrap">
+                <canvas id="marginChart"></canvas>
+              </div>
+            </div>
+            <div class="card" style="margin-top: var(--space-5);">
+              <div class="card-title">Normalleştirme Yöntemleri</div>
+              <div class="table-wrap">
+                <table class="data-table">
+                  <thead><tr><th>Yöntem</th><th>Formül</th><th>Kullanım Amacı</th></tr></thead>
+                  <tbody>
+                    <tr><td>Basic Normalization</td><td class="mono">p_i = (1/o_i) / S</td><td class="text-muted" style="font-size:var(--text-xs)">Standart fair probability</td></tr>
+                    <tr><td>Shin Method</td><td class="mono">z + (1-z)/S</td><td class="text-muted" style="font-size:var(--text-xs)">İçeriden bilgi modeli</td></tr>
+                    <tr><td>Power Method</td><td class="mono">p_i = (1/o_i)^n</td><td class="text-muted" style="font-size:var(--text-xs)">Marj dağılımı tahmini</td></tr>
+                    <tr><td>Additive Method</td><td class="mono">p_i - (S-1)/n</td><td class="text-muted" style="font-size:var(--text-xs)">Eşit marj dağılımı</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- PAGE 4: TESPİT MEKANİZMALARI -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <div id="page-detection" class="page">
+      <div class="topbar">
+        <span class="topbar-title">Bookmaker Tespit Mekanizmaları</span>
+        <span class="topbar-badge">Analiz</span>
+      </div>
+      <div style="padding: var(--space-6) var(--space-8);">
+        <div class="section-header">
+          <div class="section-title">Bookmaker'lar Şüpheli Hesapları Nasıl Tespit Ediyor?</div>
+          <div class="section-desc">Modern bookmaker'lar AI ve makine öğrenimi tabanlı anomali tespit sistemleri kullanarak sharp/profesyonel bettorları otomatik olarak profillemekte ve hesaplarını kısıtlamaktadır.</div>
+        </div>
+        <div class="two-col">
+          <div>
+            <div class="card">
+              <div class="card-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                Davranış Profilleme Katmanları
+              </div>
+              <div id="detection-layers">
+                <!-- JS ile doldurulacak -->
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="card">
+              <div class="card-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                Tetikleyici Sinyal Türleri
+              </div>
+              <div style="margin-bottom: var(--space-4);">
+                <div class="progress-row"><div class="progress-label">Arb bahis örüntüsü</div><div class="progress-bar-wrap"><div class="progress-bar" style="width:95%; background: var(--color-error);"></div></div><div class="progress-value text-error">95%</div></div>
+                <div class="progress-row"><div class="progress-label">Kapanış çizgisi üstü</div><div class="progress-bar-wrap"><div class="progress-bar" style="width:88%; background: var(--color-error);"></div></div><div class="progress-value text-error">88%</div></div>
+                <div class="progress-row"><div class="progress-label">Açılış oran baskısı</div><div class="progress-bar-wrap"><div class="progress-bar" style="width:82%; background: var(--color-warning);"></div></div><div class="progress-value text-warning">82%</div></div>
+                <div class="progress-row"><div class="progress-label">Niş market yoğunluğu</div><div class="progress-bar-wrap"><div class="progress-bar" style="width:75%; background: var(--color-warning);"></div></div><div class="progress-value text-warning">75%</div></div>
+                <div class="progress-row"><div class="progress-label">Yüksek stake/withdrawal</div><div class="progress-bar-wrap"><div class="progress-bar" style="width:70%; background: var(--color-warning);"></div></div><div class="progress-value text-warning">70%</div></div>
+                <div class="progress-row"><div class="progress-label">IP/cihaz anomalisi</div><div class="progress-bar-wrap"><div class="progress-bar" style="width:65%; background: var(--color-primary);"></div></div><div class="progress-value text-primary">65%</div></div>
+                <div class="progress-row"><div class="progress-label">Promosyon kötüye kullanım</div><div class="progress-bar-wrap"><div class="progress-bar" style="width:78%; background: var(--color-error);"></div></div><div class="progress-value text-error">78%</div></div>
+                <div class="progress-row"><div class="progress-label">Coğrafi uyumsuzluk</div><div class="progress-bar-wrap"><div class="progress-bar" style="width:55%; background: var(--color-primary);"></div></div><div class="progress-value text-primary">55%</div></div>
+              </div>
+              <div class="alert alert-info">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                Bazı operatörler, ilk 10 bahse göre hesabın ömrünü tahmin eder. İlk bahisler kapanış çizgisini tutarlı biçimde geçerse limit riski hızla artar.
+              </div>
+            </div>
+
+            <div class="card" style="margin-top: var(--space-5);">
+              <div class="card-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                ML Modelleri (Tespit Tarafı)
+              </div>
+              <div class="table-wrap">
+                <table class="data-table">
+                  <thead><tr><th>Algoritma</th><th>Kullanım Senaryosu</th><th>Etkinlik</th></tr></thead>
+                  <tbody>
+                    <tr><td>Random Forest</td><td class="text-muted" style="font-size:var(--text-xs)">Örüntü sınıflandırma</td><td><span class="badge badge-red">Yüksek</span></td></tr>
+                    <tr><td>Isolation Forest</td><td class="text-muted" style="font-size:var(--text-xs)">Anomali tespiti</td><td><span class="badge badge-red">Yüksek</span></td></tr>
+                    <tr><td>Autoencoder (NN)</td><td class="text-muted" style="font-size:var(--text-xs)">Derin anomali</td><td><span class="badge badge-red">Yüksek</span></td></tr>
+                    <tr><td>RFM Skoru</td><td class="text-muted" style="font-size:var(--text-xs)">Sıklık/hacim analizi</td><td><span class="badge badge-yellow">Orta</span></td></tr>
+                    <tr><td>Graph Analysis</td><td class="text-muted" style="font-size:var(--text-xs)">Hesap ilişkilendirme</td><td><span class="badge badge-red">Yüksek</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top: var(--space-2);">
+          <div class="card-title">Tespit Mekanizması Aşamaları (Zaman Çizelgesi)</div>
+          <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--space-3);">
+            <div style="text-align:center; padding: var(--space-3); background: var(--color-surface-offset); border-radius: var(--radius-md);">
+              <div style="font-size: 1.4rem; margin-bottom: var(--space-2);">🧩</div>
+              <div style="font-size: var(--text-xs); font-weight: 600; color: var(--color-text); margin-bottom: 4px;">Kayıt</div>
+              <div style="font-size: var(--text-xs); color: var(--color-text-muted);">KYC, cihaz ID, IP logu</div>
+            </div>
+            <div style="text-align:center; padding: var(--space-3); background: var(--color-surface-offset); border-radius: var(--radius-md);">
+              <div style="font-size: 1.4rem; margin-bottom: var(--space-2);">📊</div>
+              <div style="font-size: var(--text-xs); font-weight: 600; color: var(--color-text); margin-bottom: 4px;">İlk 10 Bahis</div>
+              <div style="font-size: var(--text-xs); color: var(--color-text-muted);">Yaşam boyu değer tahmini</div>
+            </div>
+            <div style="text-align:center; padding: var(--space-3); background: var(--color-surface-offset); border-radius: var(--radius-md);">
+              <div style="font-size: 1.4rem; margin-bottom: var(--space-2);">🔍</div>
+              <div style="font-size: var(--text-xs); font-weight: 600; color: var(--color-text); margin-bottom: 4px;">Örüntü Tespiti</div>
+              <div style="font-size: var(--text-xs); color: var(--color-text-muted);">ML anomali skoru</div>
+            </div>
+            <div style="text-align:center; padding: var(--space-3); background: color-mix(in oklch, var(--color-warning) 15%, transparent); border-radius: var(--radius-md);">
+              <div style="font-size: 1.4rem; margin-bottom: var(--space-2);">⚠️</div>
+              <div style="font-size: var(--text-xs); font-weight: 600; color: var(--color-warning); margin-bottom: 4px;">Limit Düşürme</div>
+              <div style="font-size: var(--text-xs); color: var(--color-text-muted);">Stake 1–5₺'ye düşer</div>
+            </div>
+            <div style="text-align:center; padding: var(--space-3); background: color-mix(in oklch, var(--color-error) 15%, transparent); border-radius: var(--radius-md);">
+              <div style="font-size: 1.4rem; margin-bottom: var(--space-2);">🚫</div>
+              <div style="font-size: var(--text-xs); font-weight: 600; color: var(--color-error); margin-bottom: 4px;">Hesap Kapatma</div>
+              <div style="font-size: var(--text-xs); color: var(--color-text-muted);">KYC doğrulama gecikmesi</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- PAGE 5: RİSK MATRİSİ -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <div id="page-riskmatrix" class="page">
+      <div class="topbar">
+        <span class="topbar-title">Bahis Stratejisi Risk Matrisi</span>
+        <span class="topbar-badge">Karşılaştırma</span>
+      </div>
+      <div style="padding: var(--space-6) var(--space-8);">
+        <div class="section-header">
+          <div class="section-title">Strateji Türleri ve Risk/Ödül Analizi</div>
+          <div class="section-desc">Farklı bahis stratejilerinin hesap kısıtlaması, kârlılık sürekliliği ve ölçeklenebilirlik açısından karşılaştırmalı analizi.</div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Strateji Karşılaştırma Matrisi</div>
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Strateji</th>
+                  <th>Nasıl Çalışır?</th>
+                  <th>Limit Riski</th>
+                  <th>Kâr Potansiyeli</th>
+                  <th>Ölçeklenebilirlik</th>
+                  <th>Tespit Hızı</th>
+                  <th>EV Türü</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Surebet Arbitraj</strong></td>
+                  <td style="font-size:var(--text-xs);color:var(--color-text-muted)">Farklı site oranları arasındaki boşluk</td>
+                  <td><span class="badge badge-red">Çok Yüksek</span></td>
+                  <td><span class="badge badge-yellow">1–3%</span></td>
+                  <td><span class="badge badge-red">Düşük</span></td>
+                  <td><span class="badge badge-red">Çok Hızlı</span></td>
+                  <td><span class="badge badge-green">Risk-free</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Value Betting</strong></td>
+                  <td style="font-size:var(--text-xs);color:var(--color-text-muted)">Model olasılığı vs. bookmaker oranı</td>
+                  <td><span class="badge badge-yellow">Orta–Yüksek</span></td>
+                  <td><span class="badge badge-green">5–15%</span></td>
+                  <td><span class="badge badge-yellow">Orta</span></td>
+                  <td><span class="badge badge-yellow">Orta</span></td>
+                  <td><span class="badge badge-blue">Pozitif EV</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Line Shopping</strong></td>
+                  <td style="font-size:var(--text-xs);color:var(--color-text-muted)">En iyi oranı birden fazla sitede ara</td>
+                  <td><span class="badge badge-blue">Düşük</span></td>
+                  <td><span class="badge badge-yellow">2–5%</span></td>
+                  <td><span class="badge badge-green">Yüksek</span></td>
+                  <td><span class="badge badge-blue">Yavaş</span></td>
+                  <td><span class="badge badge-blue">Pozitif EV</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Matched Betting</strong></td>
+                  <td style="font-size:var(--text-xs);color:var(--color-text-muted)">Promosyon + lay bahisleri</td>
+                  <td><span class="badge badge-yellow">Orta</span></td>
+                  <td><span class="badge badge-yellow">Bonus bazlı</span></td>
+                  <td><span class="badge badge-red">Sınırlı</span></td>
+                  <td><span class="badge badge-yellow">Orta</span></td>
+                  <td><span class="badge badge-green">Risk-free*</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Canlı Arb</strong></td>
+                  <td style="font-size:var(--text-xs);color:var(--color-text-muted)">In-play gecikmeli fiyatlama</td>
+                  <td><span class="badge badge-red">Çok Yüksek</span></td>
+                  <td><span class="badge badge-green">3–8%</span></td>
+                  <td><span class="badge badge-red">Çok Düşük</span></td>
+                  <td><span class="badge badge-red">Anında</span></td>
+                  <td><span class="badge badge-green">Risk-free*</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Exchange Trading</strong></td>
+                  <td style="font-size:var(--text-xs);color:var(--color-text-muted)">Back/lay spread, likidite mining</td>
+                  <td><span class="badge badge-green">Çok Düşük</span></td>
+                  <td><span class="badge badge-yellow">Değişken</span></td>
+                  <td><span class="badge badge-green">Yüksek</span></td>
+                  <td><span class="badge badge-green">Çok Yavaş</span></td>
+                  <td><span class="badge badge-blue">Tarafsız</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="two-col">
+          <div>
+            <div class="card">
+              <div class="card-title">Hesap Kısıtlama Mekanizmaları</div>
+              <div id="restriction-methods"></div>
+            </div>
+          </div>
+          <div>
+            <div class="chart-container">
+              <div class="chart-title">Strateji Risk/Ödül Radar</div>
+              <div class="chart-wrap">
+                <canvas id="radarChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Bookmaker Türü: Sharp vs Soft Karşılaştırması</div>
+          <div class="two-col" style="margin-top: 0;">
+            <div>
+              <div style="background: var(--color-success-highlight); border: 1px solid color-mix(in oklch, var(--color-success) 30%, transparent); border-radius: var(--radius-md); padding: var(--space-4);">
+                <div style="font-weight: 600; color: var(--color-success); margin-bottom: var(--space-3); font-size: var(--text-sm);">✓ Sharp Bookmaker'lar (Önerilen)</div>
+                <ul style="list-style: none; display: flex; flex-direction: column; gap: var(--space-2);">
+                  <li style="font-size: var(--text-xs); color: var(--color-text-muted);">• <strong style="color:var(--color-text)">Pinnacle:</strong> Düşük marj (~1.5%), kazananlara limit uygulamaz</li>
+                  <li style="font-size: var(--text-xs); color: var(--color-text-muted);">• <strong style="color:var(--color-text)">Betfair Exchange:</strong> Komisyon bazlı, sharp para kabul eder</li>
+                  <li style="font-size: var(--text-xs); color: var(--color-text-muted);">• <strong style="color:var(--color-text)">Asian Handicap:</strong> Derin likidite, düşük marj</li>
+                  <li style="font-size: var(--text-xs); color: var(--color-text-muted);">• Kapanış çizgisini referans alır, piyasayı bilgilendirir</li>
+                </ul>
+              </div>
+            </div>
+            <div>
+              <div style="background: var(--color-error-highlight); border: 1px solid color-mix(in oklch, var(--color-error) 30%, transparent); border-radius: var(--radius-md); padding: var(--space-4);">
+                <div style="font-weight: 600; color: var(--color-error); margin-bottom: var(--space-3); font-size: var(--text-sm);">✗ Soft Bookmaker'lar (Dikkat)</div>
+                <ul style="list-style: none; display: flex; flex-direction: column; gap: var(--space-2);">
+                  <li style="font-size: var(--text-xs); color: var(--color-text-muted);">• <strong style="color:var(--color-text)">Bet365, W.Hill:</strong> Yüksek marj (~7%), kazananları hızlı kısıtlar</li>
+                  <li style="font-size: var(--text-xs); color: var(--color-text-muted);">• Sharp parayı "zararlı" olarak kategorize eder</li>
+                  <li style="font-size: var(--text-xs); color: var(--color-text-muted);">• Ortalama kısıtlama: ilk kazanmalardan itibaren haftalarca</li>
+                  <li style="font-size: var(--text-xs); color: var(--color-text-muted);">• KYC gecikmesiyle çekim sürecini uzatabilirler</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- PAGE 6: PYTHON PIPELINE -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <div id="page-pythoncode" class="page">
+      <div class="topbar">
+        <span class="topbar-title">Python Odds Pipeline</span>
+        <span class="topbar-badge">Kaynak Kod</span>
+      </div>
+      <div style="padding: var(--space-6) var(--space-8);">
+        <div class="section-header">
+          <div class="section-title">Oran Çekme, Normalizasyon ve Arbitraj Tespiti</div>
+          <div class="section-desc">Üretim kalitesinde bir bahis analiz sistemi için Python pipeline mimarisi. Veri toplama, overround hesaplama, value bet tespiti ve execution katmanları.</div>
+        </div>
+
+        <div class="code-tabs" id="codeTabs">
+          <button class="code-tab active" onclick="switchTab('tab1')">odds_collector.py</button>
+          <button class="code-tab" onclick="switchTab('tab2')">margin_calc.py</button>
+          <button class="code-tab" onclick="switchTab('tab3')">arbitrage_scanner.py</button>
+          <button class="code-tab" onclick="switchTab('tab4')">value_bet_engine.py</button>
+          <button class="code-tab" onclick="switchTab('tab5')">kelly_sizer.py</button>
+        </div>
+
+        <div id="tab1" class="code-tab-content active">
+          <div class="code-block code-block-tabbed" style="font-size:0.78rem; max-height: 520px; overflow-y: auto;">
+<button class="copy-btn" onclick="copyCode('tab1')">Kopyala</button>
+<span class="comment">"""
+odds_collector.py
+Çoklu bookmaker API/scraping ile oran toplama pipeline'ı.
+The Odds API (resmî) + aiohttp ile asenkron veri çekme.
+"""</span>
+
+<span class="keyword">import</span> asyncio
+<span class="keyword">import</span> aiohttp
+<span class="keyword">import</span> pandas <span class="keyword">as</span> pd
+<span class="keyword">from</span> datetime <span class="keyword">import</span> datetime
+<span class="keyword">from</span> dataclasses <span class="keyword">import</span> dataclass
+<span class="keyword">from</span> typing <span class="keyword">import</span> List, Dict, Optional
+
+<span class="comment"># ─── Veri modeli ───</span>
+<span class="builtin">@dataclass</span>
+<span class="keyword">class</span> <span class="var">OddsSnapshot</span>:
+    <span class="var">event_id</span>: str
+    <span class="var">home_team</span>: str
+    <span class="var">away_team</span>: str
+    <span class="var">bookmaker</span>: str
+    <span class="var">market</span>: str          <span class="comment"># h2h, spreads, totals</span>
+    <span class="var">outcomes</span>: Dict        <span class="comment"># {sonuç: oran}</span>
+    <span class="var">timestamp</span>: datetime
+
+<span class="comment"># ─── API tabanlı oran çekici ───</span>
+<span class="keyword">class</span> <span class="var">OddsAPICollector</span>:
+    <span class="var">BASE_URL</span> = <span class="string">"https://api.the-odds-api.com/v4"</span>
+
+    <span class="keyword">def</span> <span class="func">__init__</span>(<span class="var">self</span>, <span class="var">api_key</span>: str):
+        <span class="var">self</span>.<span class="var">api_key</span> = <span class="var">api_key</span>
+        <span class="var">self</span>.<span class="var">session</span>: Optional[aiohttp.<span class="var">ClientSession</span>] = None
+
+    <span class="keyword">async def</span> <span class="func">__aenter__</span>(<span class="var">self</span>):
+        <span class="comment"># Rate limit: varsayılan 500ms retry backoff</span>
+        <span class="var">connector</span> = aiohttp.<span class="var">TCPConnector</span>(<span class="var">limit_per_host</span>=<span class="number">5</span>)
+        <span class="var">self</span>.<span class="var">session</span> = aiohttp.<span class="var">ClientSession</span>(<span class="var">connector</span>=<span class="var">connector</span>)
+        <span class="keyword">return</span> <span class="var">self</span>
+
+    <span class="keyword">async def</span> <span class="func">__aexit__</span>(<span class="var">self</span>, *<span class="var">args</span>):
+        <span class="keyword">await</span> <span class="var">self</span>.<span class="var">session</span>.<span class="func">close</span>()
+
+    <span class="keyword">async def</span> <span class="func">fetch_sport_odds</span>(
+        <span class="var">self</span>,
+        <span class="var">sport</span>: str = <span class="string">"soccer_epl"</span>,
+        <span class="var">markets</span>: str = <span class="string">"h2h"</span>,
+        <span class="var">regions</span>: str = <span class="string">"eu"</span>
+    ) -> List[<span class="var">OddsSnapshot</span>]:
+
+        <span class="var">url</span> = <span class="string">f"{self.BASE_URL}/sports/{sport}/odds"</span>
+        <span class="var">params</span> = {
+            <span class="string">"apiKey"</span>: <span class="var">self</span>.<span class="var">api_key</span>,
+            <span class="string">"regions"</span>: <span class="var">regions</span>,
+            <span class="string">"markets"</span>: <span class="var">markets</span>,
+            <span class="string">"oddsFormat"</span>: <span class="string">"decimal"</span>,
+            <span class="string">"dateFormat"</span>: <span class="string">"iso"</span>
+        }
+
+        <span class="keyword">async with</span> <span class="var">self</span>.<span class="var">session</span>.<span class="func">get</span>(<span class="var">url</span>, <span class="var">params</span>=<span class="var">params</span>) <span class="keyword">as</span> <span class="var">resp</span>:
+            <span class="var">resp</span>.<span class="func">raise_for_status</span>()
+            <span class="var">data</span> = <span class="keyword">await</span> <span class="var">resp</span>.<span class="func">json</span>()
+
+        <span class="keyword">return</span> <span class="var">self</span>.<span class="func">_parse_events</span>(<span class="var">data</span>)
+
+    <span class="keyword">def</span> <span class="func">_parse_events</span>(<span class="var">self</span>, <span class="var">data</span>: list) -> List[<span class="var">OddsSnapshot</span>]:
+        <span class="var">snapshots</span> = []
+        <span class="keyword">for</span> <span class="var">event</span> <span class="keyword">in</span> <span class="var">data</span>:
+            <span class="keyword">for</span> <span class="var">bm</span> <span class="keyword">in</span> <span class="var">event</span>[<span class="string">"bookmakers"</span>]:
+                <span class="keyword">for</span> <span class="var">mkt</span> <span class="keyword">in</span> <span class="var">bm</span>[<span class="string">"markets"</span>]:
+                    <span class="var">outcomes</span> = {
+                        <span class="var">o</span>[<span class="string">"name"</span>]: <span class="var">o</span>[<span class="string">"price"</span>]
+                        <span class="keyword">for</span> <span class="var">o</span> <span class="keyword">in</span> <span class="var">mkt</span>[<span class="string">"outcomes"</span>]
+                    }
+                    <span class="var">snapshots</span>.<span class="func">append</span>(<span class="var">OddsSnapshot</span>(
+                        <span class="var">event_id</span>=<span class="var">event</span>[<span class="string">"id"</span>],
+                        <span class="var">home_team</span>=<span class="var">event</span>[<span class="string">"home_team"</span>],
+                        <span class="var">away_team</span>=<span class="var">event</span>[<span class="string">"away_team"</span>],
+                        <span class="var">bookmaker</span>=<span class="var">bm</span>[<span class="string">"key"</span>],
+                        <span class="var">market</span>=<span class="var">mkt</span>[<span class="string">"key"</span>],
+                        <span class="var">outcomes</span>=<span class="var">outcomes</span>,
+                        <span class="var">timestamp</span>=datetime.<span class="func">utcnow</span>()
+                    ))
+        <span class="keyword">return</span> <span class="var">snapshots</span>
+
+<span class="comment"># ─── Oran DataFrame'e dönüştürme ───</span>
+<span class="keyword">def</span> <span class="func">snapshots_to_df</span>(<span class="var">snapshots</span>: List[<span class="var">OddsSnapshot</span>]) -> pd.<span class="var">DataFrame</span>:
+    <span class="var">rows</span> = []
+    <span class="keyword">for</span> <span class="var">s</span> <span class="keyword">in</span> <span class="var">snapshots</span>:
+        <span class="keyword">for</span> <span class="var">outcome</span>, <span class="var">odds</span> <span class="keyword">in</span> <span class="var">s</span>.<span class="var">outcomes</span>.<span class="func">items</span>():
+            <span class="var">rows</span>.<span class="func">append</span>({
+                <span class="string">"event_id"</span>: <span class="var">s</span>.<span class="var">event_id</span>,
+                <span class="string">"match"</span>: <span class="string">f"{s.home_team} v {s.away_team}"</span>,
+                <span class="string">"bookmaker"</span>: <span class="var">s</span>.<span class="var">bookmaker</span>,
+                <span class="string">"market"</span>: <span class="var">s</span>.<span class="var">market</span>,
+                <span class="string">"outcome"</span>: <span class="var">outcome</span>,
+                <span class="string">"odds"</span>: <span class="var">odds</span>,
+                <span class="string">"implied_prob"</span>: <span class="number">1</span> / <span class="var">odds</span>,
+                <span class="string">"timestamp"</span>: <span class="var">s</span>.<span class="var">timestamp</span>
+            })
+    <span class="keyword">return</span> pd.<span class="var">DataFrame</span>(<span class="var">rows</span>)
+
+<span class="comment"># ─── Kullanım ───</span>
+<span class="keyword">async def</span> <span class="func">main</span>():
+    <span class="keyword">async with</span> <span class="var">OddsAPICollector</span>(<span class="string">"YOUR_API_KEY"</span>) <span class="keyword">as</span> <span class="var">collector</span>:
+        <span class="var">snaps</span> = <span class="keyword">await</span> <span class="var">collector</span>.<span class="func">fetch_sport_odds</span>(<span class="string">"soccer_epl"</span>)
+        <span class="var">df</span> = <span class="func">snapshots_to_df</span>(<span class="var">snaps</span>)
+        <span class="var">df</span>.<span class="func">to_csv</span>(<span class="string">"odds_snapshot.csv"</span>, <span class="var">index</span>=<span class="keyword">False</span>)
+        <span class="func">print</span>(<span class="string">f"[OK] {len(df)} satır kaydedildi."</span>)
+
+asyncio.<span class="func">run</span>(<span class="func">main</span>())
+          </div>
+        </div>
+
+        <div id="tab2" class="code-tab-content">
+          <div class="code-block code-block-tabbed" style="font-size:0.78rem; max-height: 520px; overflow-y: auto;">
+<button class="copy-btn" onclick="copyCode('tab2')">Kopyala</button>
+<span class="comment">"""
+margin_calc.py
+Overround hesaplama ve oran normalizasyonu.
+Dört farklı yöntem: Temel, Shin, Power, Additive.
+"""</span>
+
+<span class="keyword">import</span> numpy <span class="keyword">as</span> np
+<span class="keyword">from</span> scipy.optimize <span class="keyword">import</span> brentq
+<span class="keyword">import</span> pandas <span class="keyword">as</span> pd
+
+<span class="keyword">def</span> <span class="func">overround</span>(<span class="var">odds</span>: list) -> float:
+    <span class="string">"""Toplam implied probability = overround."""</span>
+    <span class="keyword">return</span> <span class="func">sum</span>(<span class="number">1</span> / <span class="var">o</span> <span class="keyword">for</span> <span class="var">o</span> <span class="keyword">in</span> <span class="var">odds</span>)
+
+<span class="keyword">def</span> <span class="func">bookmaker_margin</span>(<span class="var">odds</span>: list) -> float:
+    <span class="string">"""Marj yüzdesi (ev avantajı)."""</span>
+    <span class="var">S</span> = <span class="func">overround</span>(<span class="var">odds</span>)
+    <span class="keyword">return</span> (<span class="var">S</span> - <span class="number">1</span>) / <span class="var">S</span>
+
+<span class="comment"># ─── Normalizasyon yöntemleri ───</span>
+
+<span class="keyword">def</span> <span class="func">normalize_basic</span>(<span class="var">odds</span>: list) -> np.<span class="var">ndarray</span>:
+    <span class="string">"""Temel normalizasyon: p_i = (1/o_i) / S"""</span>
+    <span class="var">imp</span> = np.<span class="func">array</span>([<span class="number">1</span>/<span class="var">o</span> <span class="keyword">for</span> <span class="var">o</span> <span class="keyword">in</span> <span class="var">odds</span>])
+    <span class="keyword">return</span> <span class="var">imp</span> / <span class="var">imp</span>.<span class="func">sum</span>()
+
+<span class="keyword">def</span> <span class="func">normalize_shin</span>(<span class="var">odds</span>: list) -> np.<span class="var">ndarray</span>:
+    <span class="string">"""Shin yöntemi: içeriden bilgi varsayımı."""</span>
+    <span class="var">n</span> = <span class="func">len</span>(<span class="var">odds</span>)
+    <span class="var">q</span> = np.<span class="func">array</span>([<span class="number">1</span>/<span class="var">o</span> <span class="keyword">for</span> <span class="var">o</span> <span class="keyword">in</span> <span class="var">odds</span>])
+    <span class="var">S</span> = <span class="var">q</span>.<span class="func">sum</span>()
+
+    <span class="keyword">def</span> <span class="func">shin_eq</span>(<span class="var">z</span>):
+        <span class="keyword">return</span> <span class="func">sum</span>(
+            np.<span class="func">sqrt</span>(<span class="var">z</span>**<span class="number">2</span> + <span class="number">4</span>*(<span class="number">1</span>-<span class="var">z</span>)*<span class="var">qi</span>**<span class="number">2</span>/<span class="var">S</span>)
+            <span class="keyword">for</span> <span class="var">qi</span> <span class="keyword">in</span> <span class="var">q</span>
+        ) - (<span class="number">2</span> - <span class="var">z</span>)
+
+    <span class="var">z_star</span> = <span class="func">brentq</span>(<span class="var">shin_eq</span>, <span class="number">0</span>, <span class="number">0.5</span>)
+    <span class="var">p</span> = (np.<span class="func">sqrt</span>(<span class="var">z_star</span>**<span class="number">2</span> + <span class="number">4</span>*(<span class="number">1</span>-<span class="var">z_star</span>)*<span class="var">q</span>/<span class="var">S</span>) - <span class="var">z_star</span>) / (<span class="number">2</span>*(<span class="number">1</span>-<span class="var">z_star</span>))
+    <span class="keyword">return</span> <span class="var">p</span>
+
+<span class="keyword">def</span> <span class="func">normalize_power</span>(<span class="var">odds</span>: list) -> np.<span class="var">ndarray</span>:
+    <span class="string">"""Power yöntemi: p_i = (1/o_i)^n, n optimize edilir."""</span>
+    <span class="var">imp</span> = np.<span class="func">array</span>([<span class="number">1</span>/<span class="var">o</span> <span class="keyword">for</span> <span class="var">o</span> <span class="keyword">in</span> <span class="var">odds</span>])
+
+    <span class="keyword">def</span> <span class="func">residual</span>(<span class="var">n</span>):
+        <span class="keyword">return</span> (<span class="var">imp</span>**<span class="var">n</span>).<span class="func">sum</span>() - <span class="number">1</span>
+
+    <span class="var">n_star</span> = <span class="func">brentq</span>(<span class="var">residual</span>, <span class="number">0.5</span>, <span class="number">2</span>)
+    <span class="keyword">return</span> <span class="var">imp</span>**<span class="var">n_star</span>
+
+<span class="keyword">def</span> <span class="func">normalize_additive</span>(<span class="var">odds</span>: list) -> np.<span class="var">ndarray</span>:
+    <span class="string">"""Additive: p_i = (1/o_i) - (S-1)/n"""</span>
+    <span class="var">imp</span> = np.<span class="func">array</span>([<span class="number">1</span>/<span class="var">o</span> <span class="keyword">for</span> <span class="var">o</span> <span class="keyword">in</span> <span class="var">odds</span>])
+    <span class="var">S</span> = <span class="var">imp</span>.<span class="func">sum</span>()
+    <span class="keyword">return</span> <span class="var">imp</span> - (<span class="var">S</span> - <span class="number">1</span>) / <span class="func">len</span>(<span class="var">odds</span>)
+
+<span class="comment"># ─── Karşılaştırma raporu ───</span>
+<span class="keyword">def</span> <span class="func">margin_report</span>(<span class="var">odds</span>: list) -> pd.<span class="var">DataFrame</span>:
+    <span class="var">S</span> = <span class="func">overround</span>(<span class="var">odds</span>)
+    <span class="var">margin_pct</span> = <span class="func">bookmaker_margin</span>(<span class="var">odds</span>) * <span class="number">100</span>
+
+    <span class="var">methods</span> = {
+        <span class="string">"basic"</span>: <span class="func">normalize_basic</span>(<span class="var">odds</span>),
+        <span class="string">"shin"</span>: <span class="func">normalize_shin</span>(<span class="var">odds</span>),
+        <span class="string">"power"</span>: <span class="func">normalize_power</span>(<span class="var">odds</span>),
+        <span class="string">"additive"</span>: <span class="func">normalize_additive</span>(<span class="var">odds</span>),
+    }
+
+    <span class="var">rows</span> = []
+    <span class="keyword">for</span> <span class="var">method</span>, <span class="var">probs</span> <span class="keyword">in</span> <span class="var">methods</span>.<span class="func">items</span>():
+        <span class="var">rows</span>.<span class="func">append</span>({
+            <span class="string">"method"</span>: <span class="var">method</span>,
+            <span class="string">"overround"</span>: <span class="func">round</span>(<span class="var">S</span>, <span class="number">4</span>),
+            <span class="string">"margin_pct"</span>: <span class="func">round</span>(<span class="var">margin_pct</span>, <span class="number">3</span>),
+            **{<span class="string">f"p_{i+1}"</span>: <span class="func">round</span>(<span class="var">p</span>, <span class="number">4</span>) <span class="keyword">for</span> <span class="var">i</span>, <span class="var">p</span> <span class="keyword">in</span> <span class="func">enumerate</span>(<span class="var">probs</span>)}
+        })
+
+    <span class="keyword">return</span> pd.<span class="var">DataFrame</span>(<span class="var">rows</span>)
+
+<span class="comment"># ─── Test ───</span>
+<span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:
+    <span class="var">odds_3way</span> = [<span class="number">2.10</span>, <span class="number">3.20</span>, <span class="number">3.60</span>]
+    <span class="var">report</span> = <span class="func">margin_report</span>(<span class="var">odds_3way</span>)
+    <span class="func">print</span>(<span class="var">report</span>.<span class="func">to_string</span>())
+    <span class="func">print</span>(<span class="string">f"\nBookmaker marjı: {bookmaker_margin(odds_3way)*100:.2f}%"</span>)
+          </div>
+        </div>
+
+        <div id="tab3" class="code-tab-content">
+          <div class="code-block code-block-tabbed" style="font-size:0.78rem; max-height: 520px; overflow-y: auto;">
+<button class="copy-btn" onclick="copyCode('tab3')">Kopyala</button>
+<span class="comment">"""
+arbitrage_scanner.py
+Çapraz site arbitraj fırsatı tarayıcı.
+Tüm outcome kombinasyonlarında best-odds ile overround < 1 tespiti.
+"""</span>
+
+<span class="keyword">import</span> pandas <span class="keyword">as</span> pd
+<span class="keyword">import</span> itertools
+<span class="keyword">from</span> dataclasses <span class="keyword">import</span> dataclass, field
+<span class="keyword">from</span> typing <span class="keyword">import</span> Dict, List, Tuple
+
+<span class="builtin">@dataclass</span>
+<span class="keyword">class</span> <span class="var">ArbitrageOpportunity</span>:
+    <span class="var">event_id</span>: str
+    <span class="var">match</span>: str
+    <span class="var">total_implied</span>: float
+    <span class="var">arb_margin</span>: float   <span class="comment"># (1 - S) / S</span>
+    <span class="var">legs</span>: List[Dict]    <span class="comment"># [{outcome, bookmaker, odds, stake}]</span>
+    <span class="var">expected_profit</span>: float  <span class="comment"># sermaye * margin</span>
+
+<span class="keyword">class</span> <span class="var">ArbitrageScanner</span>:
+    <span class="var">MIN_MARGIN</span> = <span class="number">0.005</span>  <span class="comment"># %0.5 minimum kâr eşiği</span>
+    <span class="var">MIN_STAKE</span>  = <span class="number">10</span>     <span class="comment"># minimum geçerli bahis limiti (₺)</span>
+
+    <span class="keyword">def</span> <span class="func">__init__</span>(<span class="var">self</span>, <span class="var">df</span>: pd.<span class="var">DataFrame</span>):
+        <span class="string">"""
+        df: event_id, match, bookmaker, outcome, odds sütunları
+        içeren normalize edilmiş oran DataFrame'i
+        """</span>
+        <span class="var">self</span>.<span class="var">df</span> = <span class="var">df</span>
+
+    <span class="keyword">def</span> <span class="func">find_best_odds</span>(<span class="var">self</span>, <span class="var">event_id</span>: str) -> pd.<span class="var">DataFrame</span>:
+        <span class="string">"""Her outcome için en yüksek oranı ve bookmaker'ı döndür."""</span>
+        <span class="var">event_df</span> = <span class="var">self</span>.<span class="var">df</span>[<span class="var">self</span>.<span class="var">df</span>[<span class="string">"event_id"</span>] == <span class="var">event_id</span>]
+        <span class="keyword">return</span> (
+            <span class="var">event_df</span>
+            .<span class="func">groupby</span>(<span class="string">"outcome"</span>)
+            .<span class="func">apply</span>(<span class="keyword">lambda</span> <span class="var">x</span>: <span class="var">x</span>.<span class="func">loc</span>[<span class="var">x</span>[<span class="string">"odds"</span>].<span class="func">idxmax</span>()])
+            .<span class="func">reset_index</span>(<span class="var">drop</span>=<span class="keyword">True</span>)
+        )
+
+    <span class="keyword">def</span> <span class="func">scan_event</span>(
+        <span class="var">self</span>, <span class="var">event_id</span>: str, <span class="var">capital</span>: float = <span class="number">1000</span>
+    ) -> <span class="var">ArbitrageOpportunity</span> | None:
+
+        <span class="var">best</span> = <span class="var">self</span>.<span class="func">find_best_odds</span>(<span class="var">event_id</span>)
+        <span class="keyword">if</span> <span class="func">len</span>(<span class="var">best</span>) < <span class="number">2</span>:
+            <span class="keyword">return</span> None
+
+        <span class="var">S</span> = (<span class="number">1</span> / <span class="var">best</span>[<span class="string">"odds"</span>]).<span class="func">sum</span>()
+
+        <span class="keyword">if</span> <span class="var">S</span> >= <span class="number">1</span>:
+            <span class="keyword">return</span> None  <span class="comment"># Arbitraj yok</span>
+
+        <span class="var">arb_margin</span> = (<span class="number">1</span> - <span class="var">S</span>) / <span class="var">S</span>
+
+        <span class="keyword">if</span> <span class="var">arb_margin</span> < <span class="var">self</span>.<span class="var">MIN_MARGIN</span>:
+            <span class="keyword">return</span> None  <span class="comment"># Kâr çok düşük</span>
+
+        <span class="comment"># Stake dağılımı: stake_i = (capital/S) / odds_i</span>
+        <span class="var">legs</span> = []
+        <span class="keyword">for</span> _, <span class="var">row</span> <span class="keyword">in</span> <span class="var">best</span>.<span class="func">iterrows</span>():
+            <span class="var">stake</span> = (<span class="var">capital</span> / <span class="var">S</span>) / <span class="var">row</span>[<span class="string">"odds"</span>]
+            <span class="keyword">if</span> <span class="var">stake</span> < <span class="var">self</span>.<span class="var">MIN_STAKE</span>:
+                <span class="keyword">continue</span>  <span class="comment"># Limit altı bacak</span>
+            <span class="var">legs</span>.<span class="func">append</span>({
+                <span class="string">"outcome"</span>: <span class="var">row</span>[<span class="string">"outcome"</span>],
+                <span class="string">"bookmaker"</span>: <span class="var">row</span>[<span class="string">"bookmaker"</span>],
+                <span class="string">"odds"</span>: <span class="var">row</span>[<span class="string">"odds"</span>],
+                <span class="string">"stake"</span>: <span class="func">round</span>(<span class="var">stake</span>, <span class="number">2</span>),
+                <span class="string">"return"</span>: <span class="func">round</span>(<span class="var">stake</span> * <span class="var">row</span>[<span class="string">"odds"</span>], <span class="number">2</span>)
+            })
+
+        <span class="keyword">return</span> <span class="var">ArbitrageOpportunity</span>(
+            <span class="var">event_id</span>=<span class="var">event_id</span>,
+            <span class="var">match</span>=<span class="var">best</span>[<span class="string">"match"</span>].<span class="func">iloc</span>[<span class="number">0</span>],
+            <span class="var">total_implied</span>=<span class="func">round</span>(<span class="var">S</span>, <span class="number">4</span>),
+            <span class="var">arb_margin</span>=<span class="func">round</span>(<span class="var">arb_margin</span> * <span class="number">100</span>, <span class="number">3</span>),
+            <span class="var">legs</span>=<span class="var">legs</span>,
+            <span class="var">expected_profit</span>=<span class="func">round</span>(<span class="var">capital</span> * <span class="var">arb_margin</span>, <span class="number">2</span>)
+        )
+
+    <span class="keyword">def</span> <span class="func">scan_all</span>(<span class="var">self</span>, <span class="var">capital</span>: float = <span class="number">1000</span>) -> List[<span class="var">ArbitrageOpportunity</span>]:
+        <span class="var">events</span> = <span class="var">self</span>.<span class="var">df</span>[<span class="string">"event_id"</span>].<span class="func">unique</span>()
+        <span class="var">opps</span> = []
+        <span class="keyword">for</span> <span class="var">eid</span> <span class="keyword">in</span> <span class="var">events</span>:
+            <span class="var">opp</span> = <span class="var">self</span>.<span class="func">scan_event</span>(<span class="var">eid</span>, <span class="var">capital</span>)
+            <span class="keyword">if</span> <span class="var">opp</span>:
+                <span class="var">opps</span>.<span class="func">append</span>(<span class="var">opp</span>)
+        <span class="keyword">return</span> <span class="func">sorted</span>(<span class="var">opps</span>, <span class="var">key</span>=<span class="keyword">lambda</span> <span class="var">x</span>: <span class="var">x</span>.<span class="var">arb_margin</span>, <span class="var">reverse</span>=<span class="keyword">True</span>)
+          </div>
+        </div>
+
+        <div id="tab4" class="code-tab-content">
+          <div class="code-block code-block-tabbed" style="font-size:0.78rem; max-height: 520px; overflow-y: auto;">
+<button class="copy-btn" onclick="copyCode('tab4')">Kopyala</button>
+<span class="comment">"""
+value_bet_engine.py
+Pozitif EV (Expected Value) tespiti için model-piyasa karşılaştırma motoru.
+Model olasılığı vs. normalize edilmiş bookmaker implied probability.
+"""</span>
+
+<span class="keyword">import</span> numpy <span class="keyword">as</span> np
+<span class="keyword">import</span> pandas <span class="keyword">as</span> pd
+<span class="keyword">from</span> scipy.stats <span class="keyword">import</span> poisson
+<span class="keyword">from</span> dataclasses <span class="keyword">import</span> dataclass
+
+<span class="builtin">@dataclass</span>
+<span class="keyword">class</span> <span class="var">ValueBet</span>:
+    <span class="var">match</span>: str
+    <span class="var">outcome</span>: str
+    <span class="var">bookmaker</span>: str
+    <span class="var">odds</span>: float
+    <span class="var">model_prob</span>: float      <span class="comment"># modelden gelen gerçek olasılık</span>
+    <span class="var">implied_prob_fair</span>: float  <span class="comment"># marjdan arındırılmış</span>
+    <span class="var">ev</span>: float               <span class="comment"># beklenen değer (₺ başına)</span>
+    <span class="var">edge</span>: float             <span class="comment"># model - implied_fair (yüzde)</span>
+
+<span class="keyword">class</span> <span class="var">PoissonMatchModel</span>:
+    <span class="string">"""
+    Basit Dixon-Coles Poisson gol modeli.
+    Takım güç ratinglerine dayalı skor dağılımı.
+    """</span>
+
+    <span class="keyword">def</span> <span class="func">__init__</span>(<span class="var">self</span>, <span class="var">home_xg</span>: float, <span class="var">away_xg</span>: float,
+                 <span class="var">home_adv</span>: float = <span class="number">1.15</span>):
+        <span class="var">self</span>.<span class="var">lam_h</span> = <span class="var">home_xg</span> * <span class="var">home_adv</span>
+        <span class="var">self</span>.<span class="var">lam_a</span> = <span class="var">away_xg</span>
+
+    <span class="keyword">def</span> <span class="func">score_matrix</span>(<span class="var">self</span>, <span class="var">max_goals</span>: int = <span class="number">8</span>) -> np.<span class="var">ndarray</span>:
+        <span class="var">home_probs</span> = poisson.<span class="func">pmf</span>(<span class="func">range</span>(<span class="var">max_goals</span>+<span class="number">1</span>), <span class="var">self</span>.<span class="var">lam_h</span>)
+        <span class="var">away_probs</span> = poisson.<span class="func">pmf</span>(<span class="func">range</span>(<span class="var">max_goals</span>+<span class="number">1</span>), <span class="var">self</span>.<span class="var">lam_a</span>)
+        <span class="keyword">return</span> np.<span class="func">outer</span>(<span class="var">home_probs</span>, <span class="var">away_probs</span>)
+
+    <span class="keyword">def</span> <span class="func">h2h_probs</span>(<span class="var">self</span>) -> dict:
+        <span class="var">M</span> = <span class="var">self</span>.<span class="func">score_matrix</span>()
+        <span class="keyword">return</span> {
+            <span class="string">"home_win"</span>: np.<span class="func">tril</span>(<span class="var">M</span>, -<span class="number">1</span>).<span class="func">sum</span>(),
+            <span class="string">"draw"</span>: np.<span class="func">trace</span>(<span class="var">M</span>),
+            <span class="string">"away_win"</span>: np.<span class="func">triu</span>(<span class="var">M</span>, <span class="number">1</span>).<span class="func">sum</span>()
+        }
+
+<span class="keyword">class</span> <span class="var">ValueBetEngine</span>:
+    <span class="var">MIN_EDGE</span> = <span class="number">0.03</span>   <span class="comment"># %3 minimum kenar</span>
+    <span class="var">MAX_EV_ODDS</span> = <span class="number">8.0</span> <span class="comment"># yüksek oranlı longshot'ları filtrele</span>
+
+    <span class="keyword">def</span> <span class="func">__init__</span>(<span class="var">self</span>, <span class="var">odds_df</span>: pd.<span class="var">DataFrame</span>):
+        <span class="var">self</span>.<span class="var">df</span> = <span class="var">odds_df</span>
+
+    <span class="keyword">def</span> <span class="func">expected_value</span>(<span class="var">self</span>, <span class="var">model_prob</span>: float,
+                       <span class="var">odds</span>: float) -> float:
+        <span class="string">"""EV = p * (odds - 1) - (1 - p)"""</span>
+        <span class="keyword">return</span> <span class="var">model_prob</span> * (<span class="var">odds</span> - <span class="number">1</span>) - (<span class="number">1</span> - <span class="var">model_prob</span>)
+
+    <span class="keyword">def</span> <span class="func">scan</span>(
+        <span class="var">self</span>,
+        <span class="var">model_probs</span>: Dict[str, Dict[str, float]],  <span class="comment"># {event_id: {outcome: prob}}</span>
+        <span class="var">normalization</span>: str = <span class="string">"basic"</span>
+    ) -> List[<span class="var">ValueBet</span>]:
+
+        <span class="keyword">from</span> margin_calc <span class="keyword">import</span> normalize_basic, normalize_shin
+
+        <span class="var">results</span> = []
+
+        <span class="keyword">for</span> <span class="var">event_id</span>, <span class="var">probs</span> <span class="keyword">in</span> <span class="var">model_probs</span>.<span class="func">items</span>():
+            <span class="var">ev_df</span> = <span class="var">self</span>.<span class="var">df</span>[<span class="var">self</span>.<span class="var">df</span>[<span class="string">"event_id"</span>] == <span class="var">event_id</span>]
+
+            <span class="keyword">for</span> _, <span class="var">row</span> <span class="keyword">in</span> <span class="var">ev_df</span>.<span class="func">iterrows</span>():
+                <span class="var">outcome</span> = <span class="var">row</span>[<span class="string">"outcome"</span>]
+                <span class="keyword">if</span> <span class="var">outcome</span> <span class="keyword">not in</span> <span class="var">probs</span>:
+                    <span class="keyword">continue</span>
+
+                <span class="comment"># Aynı event'in tüm oranlarını al ve normalize et</span>
+                <span class="var">event_odds</span> = <span class="var">ev_df</span>[<span class="var">ev_df</span>[<span class="string">"bookmaker"</span>] == <span class="var">row</span>[<span class="string">"bookmaker"</span>]]
+                <span class="var">odds_list</span> = <span class="var">event_odds</span>[<span class="string">"odds"</span>].<span class="func">tolist</span>()
+                <span class="var">outcomes_list</span> = <span class="var">event_odds</span>[<span class="string">"outcome"</span>].<span class="func">tolist</span>()
+
+                <span class="var">fair_probs</span> = <span class="func">normalize_basic</span>(<span class="var">odds_list</span>)
+                <span class="var">outcome_idx</span> = <span class="var">outcomes_list</span>.<span class="func">index</span>(<span class="var">outcome</span>)
+                <span class="var">fair_p</span> = <span class="var">fair_probs</span>[<span class="var">outcome_idx</span>]
+
+                <span class="var">model_p</span> = <span class="var">probs</span>[<span class="var">outcome</span>]
+                <span class="var">edge</span> = <span class="var">model_p</span> - <span class="var">fair_p</span>
+                <span class="var">ev</span> = <span class="var">self</span>.<span class="func">expected_value</span>(<span class="var">model_p</span>, <span class="var">row</span>[<span class="string">"odds"</span>])
+
+                <span class="keyword">if</span> (<span class="var">edge</span> >= <span class="var">self</span>.<span class="var">MIN_EDGE</span> <span class="keyword">and</span>
+                    <span class="var">ev</span> > <span class="number">0</span> <span class="keyword">and</span>
+                    <span class="var">row</span>[<span class="string">"odds"</span>] <= <span class="var">self</span>.<span class="var">MAX_EV_ODDS</span>):
+
+                    <span class="var">results</span>.<span class="func">append</span>(<span class="var">ValueBet</span>(
+                        <span class="var">match</span>=<span class="var">row</span>[<span class="string">"match"</span>],
+                        <span class="var">outcome</span>=<span class="var">outcome</span>,
+                        <span class="var">bookmaker</span>=<span class="var">row</span>[<span class="string">"bookmaker"</span>],
+                        <span class="var">odds</span>=<span class="var">row</span>[<span class="string">"odds"</span>],
+                        <span class="var">model_prob</span>=<span class="var">model_p</span>,
+                        <span class="var">implied_prob_fair</span>=<span class="func">round</span>(<span class="var">fair_p</span>, <span class="number">4</span>),
+                        <span class="var">ev</span>=<span class="func">round</span>(<span class="var">ev</span>, <span class="number">4</span>),
+                        <span class="var">edge</span>=<span class="func">round</span>(<span class="var">edge</span> * <span class="number">100</span>, <span class="number">2</span>)
+                    ))
+
+        <span class="keyword">return</span> <span class="func">sorted</span>(<span class="var">results</span>, <span class="var">key</span>=<span class="keyword">lambda</span> <span class="var">x</span>: <span class="var">x</span>.<span class="var">ev</span>, <span class="var">reverse</span>=<span class="keyword">True</span>)
+          </div>
+        </div>
+
+        <div id="tab5" class="code-tab-content">
+          <div class="code-block code-block-tabbed" style="font-size:0.78rem; max-height: 520px; overflow-y: auto;">
+<button class="copy-btn" onclick="copyCode('tab5')">Kopyala</button>
+<span class="comment">"""
+kelly_sizer.py
+Kelly kriteri ve portföy bazlı stake boyutlandırma.
+Fraksiyonel Kelly, korelasyon filtresi ve drawdown limitleri.
+"""</span>
+
+<span class="keyword">import</span> numpy <span class="keyword">as</span> np
+<span class="keyword">from</span> typing <span class="keyword">import</span> List, Dict, Optional
+
+<span class="keyword">def</span> <span class="func">kelly_fraction</span>(
+    <span class="var">model_prob</span>: float,
+    <span class="var">odds</span>: float,
+    <span class="var">fraction</span>: float = <span class="number">0.25</span>  <span class="comment"># 1/4 Kelly (önerilen)</span>
+) -> float:
+    <span class="string">"""
+    Kelly: f = (b*p - q) / b
+    b = decimal_odds - 1 (net kazanç)
+    p = model kazanma olasılığı
+    q = 1 - p
+    fraction: konservatif Kelly çarpanı
+    """</span>
+    <span class="var">b</span> = <span class="var">odds</span> - <span class="number">1</span>
+    <span class="var">p</span> = <span class="var">model_prob</span>
+    <span class="var">q</span> = <span class="number">1</span> - <span class="var">p</span>
+    <span class="var">f</span> = (<span class="var">b</span> * <span class="var">p</span> - <span class="var">q</span>) / <span class="var">b</span>
+    <span class="keyword">return</span> <span class="func">max</span>(<span class="number">0</span>, <span class="var">f</span> * <span class="var">fraction</span>)  <span class="comment"># Negatif olursa 0</span>
+
+<span class="keyword">def</span> <span class="func">kelly_stake</span>(
+    <span class="var">bankroll</span>: float,
+    <span class="var">model_prob</span>: float,
+    <span class="var">odds</span>: float,
+    <span class="var">fraction</span>: float = <span class="number">0.25</span>,
+    <span class="var">max_stake_pct</span>: float = <span class="number">0.05</span>  <span class="comment"># max %5 bankroll per bet</span>
+) -> float:
+    <span class="var">f</span> = <span class="func">kelly_fraction</span>(<span class="var">model_prob</span>, <span class="var">odds</span>, <span class="var">fraction</span>)
+    <span class="var">raw_stake</span> = <span class="var">bankroll</span> * <span class="var">f</span>
+    <span class="keyword">return</span> <span class="func">min</span>(<span class="var">raw_stake</span>, <span class="var">bankroll</span> * <span class="var">max_stake_pct</span>)
+
+<span class="comment"># ─── Portfolio Kelly (çoklu bahis) ───</span>
+<span class="keyword">class</span> <span class="var">PortfolioSizer</span>:
+    <span class="string">"""
+    Aynı anda birden fazla value bet varken
+    toplam risk bütçesini dengeli dağıtır.
+    """</span>
+
+    <span class="keyword">def</span> <span class="func">__init__</span>(
+        <span class="var">self</span>,
+        <span class="var">bankroll</span>: float,
+        <span class="var">max_daily_risk</span>: float = <span class="number">0.10</span>,  <span class="comment"># max günlük %10</span>
+        <span class="var">max_single_bet</span>: float = <span class="number">0.03</span>,  <span class="comment"># tekil bet max %3</span>
+        <span class="var">kelly_fraction</span>: float = <span class="number">0.25</span>
+    ):
+        <span class="var">self</span>.<span class="var">bankroll</span> = <span class="var">bankroll</span>
+        <span class="var">self</span>.<span class="var">max_daily_risk</span> = <span class="var">max_daily_risk</span>
+        <span class="var">self</span>.<span class="var">max_single_bet</span> = <span class="var">max_single_bet</span>
+        <span class="var">self</span>.<span class="var">fraction</span> = <span class="var">kelly_fraction</span>
+
+    <span class="keyword">def</span> <span class="func">size_bets</span>(<span class="var">self</span>, <span class="var">bets</span>: List[Dict]) -> List[Dict]:
+        <span class="string">"""
+        bets: [{"model_prob": float, "odds": float, "event_id": str, ...}]
+        Dönüş: her bet'e "stake" eklenmiş liste
+        """</span>
+        <span class="var">daily_budget</span> = <span class="var">self</span>.<span class="var">bankroll</span> * <span class="var">self</span>.<span class="var">max_daily_risk</span>
+        <span class="var">sized</span> = []
+        <span class="var">remaining</span> = <span class="var">daily_budget</span>
+
+        <span class="comment"># EV'ye göre sırala (en iyi önce)</span>
+        <span class="var">bets_sorted</span> = <span class="func">sorted</span>(
+            <span class="var">bets</span>,
+            <span class="var">key</span>=<span class="keyword">lambda</span> <span class="var">b</span>: <span class="var">b</span>[<span class="string">"model_prob"</span>] * (<span class="var">b</span>[<span class="string">"odds"</span>]-<span class="number">1</span>) - (<span class="number">1</span>-<span class="var">b</span>[<span class="string">"model_prob"</span>]),
+            <span class="var">reverse</span>=<span class="keyword">True</span>
+        )
+
+        <span class="keyword">for</span> <span class="var">bet</span> <span class="keyword">in</span> <span class="var">bets_sorted</span>:
+            <span class="keyword">if</span> <span class="var">remaining</span> <= <span class="number">0</span>:
+                <span class="keyword">break</span>
+
+            <span class="var">raw_stake</span> = <span class="func">kelly_stake</span>(
+                <span class="var">self</span>.<span class="var">bankroll</span>,
+                <span class="var">bet</span>[<span class="string">"model_prob"</span>],
+                <span class="var">bet</span>[<span class="string">"odds"</span>],
+                <span class="var">self</span>.<span class="var">fraction</span>,
+                <span class="var">self</span>.<span class="var">max_single_bet</span>
+            )
+            <span class="var">stake</span> = <span class="func">min</span>(<span class="var">raw_stake</span>, <span class="var">remaining</span>)
+            <span class="keyword">if</span> <span class="var">stake</span> < <span class="number">5</span>:   <span class="comment"># minimum bahis filtresi</span>
+                <span class="keyword">continue</span>
+
+            <span class="var">remaining</span> -= <span class="var">stake</span>
+            <span class="var">sized</span>.<span class="func">append</span>({**<span class="var">bet</span>, <span class="string">"stake"</span>: <span class="func">round</span>(<span class="var">stake</span>, <span class="number">2</span>)})
+
+        <span class="keyword">return</span> <span class="var">sized</span>
+
+<span class="comment"># ─── Drawdown izleme ───</span>
+<span class="keyword">def</span> <span class="func">max_drawdown</span>(<span class="var">bankroll_series</span>: List[float]) -> float:
+    <span class="var">peak</span> = <span class="var">bankroll_series</span>[<span class="number">0</span>]
+    <span class="var">max_dd</span> = <span class="number">0</span>
+    <span class="keyword">for</span> <span class="var">val</span> <span class="keyword">in</span> <span class="var">bankroll_series</span>:
+        <span class="keyword">if</span> <span class="var">val</span> > <span class="var">peak</span>:
+            <span class="var">peak</span> = <span class="var">val</span>
+        <span class="var">dd</span> = (<span class="var">peak</span> - <span class="var">val</span>) / <span class="var">peak</span>
+        <span class="keyword">if</span> <span class="var">dd</span> > <span class="var">max_dd</span>:
+            <span class="var">max_dd</span> = <span class="var">dd</span>
+    <span class="keyword">return</span> <span class="var">max_dd</span>
+
+<span class="comment"># ─── Test ───</span>
+<span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:
+    <span class="var">bankroll</span> = <span class="number">5000</span>
+    <span class="var">model_prob</span> = <span class="number">0.52</span>
+    <span class="var">odds</span> = <span class="number">2.20</span>
+
+    <span class="var">f</span> = <span class="func">kelly_fraction</span>(<span class="var">model_prob</span>, <span class="var">odds</span>)
+    <span class="var">stake</span> = <span class="func">kelly_stake</span>(<span class="var">bankroll</span>, <span class="var">model_prob</span>, <span class="var">odds</span>)
+
+    <span class="func">print</span>(<span class="string">f"Kelly: {f:.4f} | Stake: ₺{stake:.2f}"</span>)
+    <span class="func">print</span>(<span class="string">f"EV/₺: {model_prob*(odds-1)-(1-model_prob):.4f}"</span>)
+          </div>
+        </div>
+
+        <div class="card" style="margin-top: var(--space-5);">
+          <div class="card-title">Pipeline Mimarisi</div>
+          <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: var(--space-2);">
+            <div style="text-align:center; padding: var(--space-3); background: var(--color-primary-highlight); border-radius: var(--radius-md);">
+              <div style="font-size: 1.2rem; margin-bottom: var(--space-1);">🔌</div>
+              <div style="font-size: var(--text-xs); font-weight: 600; color: var(--color-primary);">Ingestion</div>
+              <div style="font-size: var(--text-xs); color: var(--color-text-muted);">API / Scraping</div>
+            </div>
+            <div style="text-align:center; padding: var(--space-3); background: var(--color-surface-offset); border-radius: var(--radius-md);">
+              <div style="font-size: 1.2rem; margin-bottom: var(--space-1);">🔄</div>
+              <div style="font-size: var(--text-xs); font-weight: 600;">Normalize</div>
+              <div style="font-size: var(--text-xs); color: var(--color-text-muted);">Overround kaldır</div>
+            </div>
+            <div style="text-align:center; padding: var(--space-3); background: var(--color-surface-offset); border-radius: var(--radius-md);">
+              <div style="font-size: 1.2rem; margin-bottom: var(--space-1);">🧠</div>
+              <div style="font-size: var(--text-xs); font-weight: 600;">Model</div>
+              <div style="font-size: var(--text-xs); color: var(--color-text-muted);">Poisson / ML</div>
+            </div>
+            <div style="text-align:center; padding: var(--space-3); background: var(--color-success-highlight); border-radius: var(--radius-md);">
+              <div style="font-size: 1.2rem; margin-bottom: var(--space-1);">⚡</div>
+              <div style="font-size: var(--text-xs); font-weight: 600; color: var(--color-success);">Sinyal</div>
+              <div style="font-size: var(--text-xs); color: var(--color-text-muted);">Arb / Value</div>
+            </div>
+            <div style="text-align:center; padding: var(--space-3); background: var(--color-surface-offset); border-radius: var(--radius-md);">
+              <div style="font-size: 1.2rem; margin-bottom: var(--space-1);">📐</div>
+              <div style="font-size: var(--text-xs); font-weight: 600;">Kelly Size</div>
+              <div style="font-size: var(--text-xs); color: var(--color-text-muted);">Stake hesap</div>
+            </div>
+            <div style="text-align:center; padding: var(--space-3); background: var(--color-warning-highlight); border-radius: var(--radius-md);">
+              <div style="font-size: 1.2rem; margin-bottom: var(--space-1);">📋</div>
+              <div style="font-size: var(--text-xs); font-weight: 600; color: var(--color-warning);">Execution</div>
+              <div style="font-size: var(--text-xs); color: var(--color-text-muted);">API / Log</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- main-content -->
+</div><!-- app-wrapper -->
+
+<script>
+// ─── Navigation ───
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById('page-' + id).classList.add('active');
+  event.currentTarget.classList.add('active');
+}
+
+// ─── Theme Toggle ───
+function toggleTheme() {
+  const html = document.documentElement;
+  const current = html.getAttribute('data-theme');
+  const next = current === 'dark' ? 'light' : 'dark';
+  html.setAttribute('data-theme', next);
+  const btn = document.querySelector('.toggle-btn');
+  if (next === 'light') {
+    btn.innerHTML = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg> Light`;
+  } else {
+    btn.innerHTML = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg> Dark`;
+  }
+}
+
+// ─── Copy Code ───
+function copyCode(tabId) {
+  const el = document.getElementById(tabId).querySelector('.code-block');
+  const text = el.innerText.replace('Kopyala\n', '');
+  navigator.clipboard.writeText(text).catch(() => {});
+  const btn = document.getElementById(tabId).querySelector('.copy-btn');
+  btn.textContent = '✓ Kopyalandı';
+  setTimeout(() => btn.textContent = 'Kopyala', 1800);
+}
+
+// ─── Code Tabs ───
+function switchTab(id) {
+  document.querySelectorAll('.code-tab').forEach((t, i) => {
+    const ids = ['tab1','tab2','tab3','tab4','tab5'];
+    t.classList.toggle('active', ids[i] === id);
+  });
+  document.querySelectorAll('.code-tab-content').forEach(c => c.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+// ─── Arbitraj Hesapla ───
+function calcArbitrage() {
+  const o1 = parseFloat(document.getElementById('odds-1').value);
+  const ox = parseFloat(document.getElementById('odds-x').value);
+  const o2 = parseFloat(document.getElementById('odds-2').value);
+  const capital = parseFloat(document.getElementById('arb-capital').value);
+
+  if (isNaN(o1)||isNaN(ox)||isNaN(o2)||o1<1||ox<1||o2<1) {
+    document.getElementById('arb-result').innerHTML = `<div class="alert alert-error">Geçerli oran değerleri girin (minimum 1.01).</div>`;
+    return;
+  }
+
+  const S = 1/o1 + 1/ox + 1/o2;
+  const margin = (1 - S) / S;
+  const isArb = S < 1;
+
+  const stake1 = (capital / S) / o1;
+  const stakex = (capital / S) / ox;
+  const stake2 = (capital / S) / o2;
+  const totalStake = stake1 + stakex + stake2;
+  const profit = capital * (isArb ? margin : -Math.abs(margin));
+
+  // KPI güncelle
+  const totalImplied = (S * 100).toFixed(2);
+  document.getElementById('kpi-total-prob').innerHTML = `<span class="${isArb ? 'kpi-pos' : 'kpi-neg'}">${totalImplied}%</span>`;
+  document.getElementById('kpi-arb-margin').innerHTML = `<span class="${isArb ? 'kpi-pos' : 'kpi-neg'}">${(margin*100).toFixed(2)}%</span>`;
+  document.getElementById('kpi-total-stake').textContent = `₺${totalStake.toFixed(0)}`;
+  document.getElementById('kpi-exp-profit').innerHTML = `<span class="${isArb ? 'kpi-pos' : 'kpi-neg'}">₺${Math.abs(profit).toFixed(2)}</span>`;
+
+  const html = isArb ? `
+    <div class="alert alert-success">✓ Arbitraj fırsatı tespit edildi! Kâr marjı: ${(margin*100).toFixed(3)}%</div>
+    <div class="result-box">
+      <div class="result-row"><span class="result-label">Toplam Implied Prob.</span><span class="result-value kpi-pos">${(S*100).toFixed(3)}%</span></div>
+      <div class="result-row"><span class="result-label">Arbitraj Marjı</span><span class="result-value kpi-pos">${(margin*100).toFixed(3)}%</span></div>
+      <div class="result-row"><span class="result-label">Stake — 1 (Site 1, oran: ${o1})</span><span class="result-value">₺${stake1.toFixed(2)}</span></div>
+      <div class="result-row"><span class="result-label">Stake — X (Site 2, oran: ${ox})</span><span class="result-value">₺${stakex.toFixed(2)}</span></div>
+      <div class="result-row"><span class="result-label">Stake — 2 (Site 3, oran: ${o2})</span><span class="result-value">₺${stake2.toFixed(2)}</span></div>
+      <div class="result-row"><span class="result-label">Toplam Yatırım</span><span class="result-value">₺${totalStake.toFixed(2)}</span></div>
+      <div class="result-row"><span class="result-label">Her Senaryoda Kâr</span><span class="result-value kpi-pos">₺${profit.toFixed(2)}</span></div>
+      <div class="result-row"><span class="result-label">ROI</span><span class="result-value kpi-pos">${(margin*100).toFixed(3)}%</span></div>
+    </div>` :
+  `<div class="alert alert-error">✗ Arbitraj yok. Toplam implied probability: ${(S*100).toFixed(2)}% (100% üzeri = ev avantajı aktif)</div>
+    <div class="result-box">
+      <div class="result-row"><span class="result-label">Toplam Implied Prob.</span><span class="result-value kpi-neg">${(S*100).toFixed(3)}%</span></div>
+      <div class="result-row"><span class="result-label">Bookmaker Marjı</span><span class="result-value kpi-neg">${(Math.abs(margin)*100).toFixed(3)}%</span></div>
+      <div class="result-row"><span class="result-label">Fair Odds 1</span><span class="result-value">${(1/(1/o1/S)).toFixed(3)}</span></div>
+      <div class="result-row"><span class="result-label">Fair Odds X</span><span class="result-value">${(1/(1/ox/S)).toFixed(3)}</span></div>
+      <div class="result-row"><span class="result-label">Fair Odds 2</span><span class="result-value">${(1/(1/o2/S)).toFixed(3)}</span></div>
+    </div>`;
+
+  document.getElementById('arb-result').innerHTML = html;
+  updateArbChart(o1, ox, o2, S);
+}
+
+function loadDemoArb() {
+  document.getElementById('odds-1').value = '2.15';
+  document.getElementById('odds-x').value = '3.70';
+  document.getElementById('odds-2').value = '4.50';
+  document.getElementById('arb-capital').value = '1000';
+  calcArbitrage();
+}
+
+// ─── Value Betting ───
+function calcValueBet() {
+  const odds = parseFloat(document.getElementById('vb-odds').value);
+  const probPct = parseFloat(document.getElementById('vb-prob').value);
+  const stake = parseFloat(document.getElementById('vb-stake').value);
+
+  if (isNaN(odds)||isNaN(probPct)||odds<1.01||probPct<=0||probPct>=100) {
+    document.getElementById('vb-result').innerHTML = `<div class="alert alert-error">Geçerli değerler girin.</div>`;
+    return;
+  }
+
+  const p = probPct / 100;
+  const ev = p * (odds - 1) - (1 - p);
+  const evMoney = ev * stake;
+  const impliedProb = 1 / odds * 100;
+
+  const html = `
+    <div class="result-box" style="margin-top: var(--space-4);">
+      <div class="result-row"><span class="result-label">Beklenen Değer (EV/₺)</span><span class="result-value ${ev>0?'kpi-pos':'kpi-neg'}">${ev.toFixed(4)}</span></div>
+      <div class="result-row"><span class="result-label">EV (₺${stake} bahis için)</span><span class="result-value ${ev>0?'kpi-pos':'kpi-neg'}">₺${evMoney.toFixed(2)}</span></div>
+
+      <div class="result-row"><span class="result-label">Model Olasılığı</span><span class="result-value">${probPct}%</span></div>
+      <div class="result-row"><span class="result-label">Implied Prob. (Bookmaker)</span><span class="result-value">${impliedProb.toFixed(2)}%</span></div>
+      <div class="result-row"><span class="result-label">Edge</span><span class="result-value ${ev>0?'kpi-pos':'kpi-neg'}">${((p - 1/odds)*100).toFixed(2)}%</span></div>
+      <div class="result-row"><span class="result-label">Karar</span><span class="result-value ${ev>0?'kpi-pos':'kpi-neg'}">${ev>0 ? '\u2713 VALUE BET - oyna' : '\u2717 EV Negatif - oynama'}</span></div>
+    </div>
+  `;
+  document.getElementById('vb-result').innerHTML = html;
+  updateEVChart();
+}
+
+function calcKelly() {
+  const odds = parseFloat(document.getElementById('vb-odds').value);
+  const probPct = parseFloat(document.getElementById('vb-prob').value);
+  const bankroll = parseFloat(document.getElementById('vb-bankroll').value);
+  const p = probPct/100;
+  const b = odds - 1;
+  const q = 1 - p;
+  const f = (b*p - q)/b;
+  const frac = f/4;
+  const stake = Math.max(0, frac * bankroll);
+  const ev = p*(odds-1)-(1-p);
+  document.getElementById('vb-result').innerHTML = `
+    <div class="result-box" style="margin-top: var(--space-4);">
+      <div class="result-row"><span class="result-label">Full Kelly (f*)</span><span class="result-value">${(f*100).toFixed(2)}%</span></div>
+      <div class="result-row"><span class="result-label">1/4 Kelly (Onerilen)</span><span class="result-value kpi-pos">${(frac*100).toFixed(2)}%</span></div>
+      <div class="result-row"><span class="result-label">Onerilen Stake</span><span class="result-value kpi-pos">&#8378;${stake.toFixed(2)}</span></div>
+      <div class="result-row"><span class="result-label">Beklenen EV/bahis</span><span class="result-value ${ev>0?'kpi-pos':'kpi-neg'}">${(ev*stake).toFixed(2)} &#8378;</span></div>
+    </div>`;
+  updateBankrollChart(p, odds, bankroll);
+}
+
+function calcMargin() {
+  const o1 = parseFloat(document.getElementById('mg-o1').value);
+  const ox = parseFloat(document.getElementById('mg-ox').value);
+  const o2 = parseFloat(document.getElementById('mg-o2').value);
+  const S = 1/o1 + 1/ox + 1/o2;
+  const margin = (S-1)/S;
+  const fairO1 = 1/(1/o1/S);
+  const fairOx = 1/(1/ox/S);
+  const fairO2 = 1/(1/o2/S);
+  document.getElementById('margin-result').innerHTML = `
+    <div class="result-box" style="margin-top:var(--space-4)">
+      <div class="result-row"><span class="result-label">Overround (S)</span><span class="result-value">${(S*100).toFixed(3)}%</span></div>
+      <div class="result-row"><span class="result-label">Bookmaker Marji</span><span class="result-value kpi-neg">${(margin*100).toFixed(3)}%</span></div>
+      <div class="result-row"><span class="result-label">Fair Oran 1</span><span class="result-value">${fairO1.toFixed(3)}</span></div>
+      <div class="result-row"><span class="result-label">Fair Oran X</span><span class="result-value">${fairOx.toFixed(3)}</span></div>
+      <div class="result-row"><span class="result-label">Fair Oran 2</span><span class="result-value">${fairO2.toFixed(3)}</span></div>
+    </div>`;
+}
+
+const bookmakerData = [
+  { name: 'Pinnacle', o1: 2.08, ox: 3.35, o2: 3.88 },
+  { name: 'Bet365',   o1: 2.05, ox: 3.30, o2: 3.75 },
+  { name: 'Betfair',  o1: 2.12, ox: 3.45, o2: 4.00 },
+  { name: 'Unibet',   o1: 2.04, ox: 3.25, o2: 3.70 },
+  { name: '1xBet',    o1: 2.10, ox: 3.40, o2: 3.90 },
+  { name: 'Bwin',     o1: 2.03, ox: 3.20, o2: 3.65 },
+];
+
+function refreshOddsTable() {
+  const jitter = () => +(Math.random()*0.12 - 0.06).toFixed(2);
+  const rows = bookmakerData.map(b => ({
+    name: b.name,
+    o1: +(b.o1 + jitter()).toFixed(2),
+    ox: +(b.ox + jitter()).toFixed(2),
+    o2: +(b.o2 + jitter()).toFixed(2)
+  }));
+  const best1 = Math.max(...rows.map(r=>r.o1));
+  const bestx = Math.max(...rows.map(r=>r.ox));
+  const best2 = Math.max(...rows.map(r=>r.o2));
+  document.getElementById('odds-comparison-table').innerHTML = rows.map(r => {
+    const S = (1/r.o1 + 1/r.ox + 1/r.o2)*100;
+    return `<div class="odds-site-row">
+      <span class="site-name">${r.name}</span>
+      <span class="odds-val ${r.o1===best1?'odds-best':''}">${r.o1.toFixed(2)}</span>
+      <span class="odds-val ${r.ox===bestx?'odds-best':''}">${r.ox.toFixed(2)}</span>
+      <span class="odds-val ${r.o2===best2?'odds-best':''}">${r.o2.toFixed(2)}</span>
+      <span class="odds-val" style="font-size:var(--text-xs);color:${S>105?'var(--color-error)':'var(--color-warning)'};">${S.toFixed(1)}%</span>
+    </div>`;
+  }).join('');
+}
+
+const detectionLayers = [
+  { icon:'\ud83d\udd75\ufe0f', name:'CLV Takibi (Closing Line Value)', desc:'Kapanis cizgisini ne siklikla gectiginiz olculur. Surekli CLV+ olan hesaplar sharp olarak etiketlenir. Bu, bookmaker in en guclu tespit sinyalidir.', sev:'Kritik', col:'var(--color-error)' },
+  { icon:'\ud83d\udcf1', name:'Cihaz Parmak Izi', desc:'Browser, OS, ekran cozunurlugu, Canvas API degerleri ve WebGL renderer birlestirilir. Proxy veya VPN bu katmani asmaz.', sev:'Yuksek', col:'var(--color-error)' },
+  { icon:'\ud83c\udf10', name:'IP & Davranissal Analiz', desc:'IP adresi, ASN, ISP turu, oturum basina bahis suresi ve mouse hareketi takip edilir.', sev:'Yuksek', col:'var(--color-warning)' },
+  { icon:'\ud83d\udcb0', name:'Para Akisi Analizi', desc:'Kucuk yatirim buyuk cekim dongusunde, yuksek stake/withdrawal oraninda risk ekibi tetiklenir.', sev:'Orta', col:'var(--color-warning)' },
+  { icon:'\ud83d\udd17', name:'Hesap Grafi (Graph Analysis)', desc:'Ortak IP, odeme yontemi veya cihaz araciligiyla baglantili hesaplarin tumu kisitilanir.', sev:'Yuksek', col:'var(--color-error)' },
+  { icon:'\u23f1\ufe0f', name:'Bahis Zamanlama Oruntu', desc:'Mac oncesi yuksek stake, ani oran degisimi ile bahis korelasyonu tespit modeline dahil edilir.', sev:'Orta', col:'var(--color-warning)' },
+];
+
+function initDetection() {
+  document.getElementById('detection-layers').innerHTML = detectionLayers.map(d => `
+    <div class="risk-item">
+      <div class="risk-icon" style="background:color-mix(in oklch, ${d.col} 15%, transparent);">${d.icon}</div>
+      <div class="risk-body"><div class="risk-name">${d.name}</div><div class="risk-desc">${d.desc}</div></div>
+      <span class="risk-severity" style="background:color-mix(in oklch,${d.col} 15%,transparent);color:${d.col};">${d.sev}</span>
+    </div>`).join('');
+}
+
+const restrictionMethods = [
+  { icon:'\u26a1', title:'Anlik Limit Dusurme', desc:'Stake siniri 1-5 TL seviyesine indirilir.', badge:'badge-red', badgeText:'En Yaygin' },
+  { icon:'\ud83c\udf81', title:'Bonus Kisitlamasi', desc:'Tum promosyonlardan dislanir, hesap acik gorunur.', badge:'badge-yellow', badgeText:'Sik' },
+  { icon:'\ud83d\udd0d', title:'KYC Geciktirme', desc:'Cekim yapilinca ek kimlik dogrulamasi istenir.', badge:'badge-yellow', badgeText:'Taktiksel' },
+  { icon:'\ud83d\udeab', title:'Hesap Kapatma', desc:'Sartlar ihlali gerekcessiyle hesap askiya alinir.', badge:'badge-red', badgeText:'Agir' },
+  { icon:'\ud83d\udcca', title:'Oran Geciktirme', desc:'"Odds changed" mesajiyla yeni oran sunulur.', badge:'badge-blue', badgeText:'Soft' },
+];
+
+function initRestrictions() {
+  document.getElementById('restriction-methods').innerHTML = restrictionMethods.map(r => `
+    <div class="risk-item">
+      <div class="risk-icon" style="background:var(--color-surface-dynamic);">${r.icon}</div>
+      <div class="risk-body"><div class="risk-name">${r.title}</div><div class="risk-desc">${r.desc}</div></div>
+      <span class="badge ${r.badge}">${r.badgeText}</span>
+    </div>`).join('');
+}
+
+let arbChart, evChart, bankrollChart, marginChart, radarChart;
+
+function getChartColors() {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  return {
+    text: isDark ? '#cdccca' : '#28251d',
+    grid: isDark ? '#393836' : '#dcd9d5',
+    primary: '#4f98a3', success: '#6daa45', error: '#dd6974',
+    warning: '#e8af34', orange: '#fdab43', purple: '#a86fdf',
+  };
+}
+
+function updateArbChart(o1,ox,o2,S){
+  const c=getChartColors();
+  const ctx=document.getElementById('arbChart').getContext('2d');
+  if(arbChart)arbChart.destroy();
+  arbChart=new Chart(ctx,{type:'bar',data:{labels:['1 (Ev)','X (Ber.)','2 (Dep.)'],datasets:[
+    {label:'Implied Prob.',data:[+(1/o1*100).toFixed(2),+(1/ox*100).toFixed(2),+(1/o2*100).toFixed(2)],backgroundColor:c.primary+'99'},
+    {label:'Fair Prob.',data:[+(1/o1/S*100).toFixed(2),+(1/ox/S*100).toFixed(2),+(1/o2/S*100).toFixed(2)],backgroundColor:c.success+'99'},
+  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:c.text,font:{size:11}}}},scales:{x:{ticks:{color:c.text},grid:{color:c.grid}},y:{ticks:{color:c.text,callback:v=>v+'%'},grid:{color:c.grid}}}}});
+}
+
+function updateEVChart(){
+  const c=getChartColors();
+  const p=parseFloat(document.getElementById('vb-prob').value)/100||0.5;
+  const oddsRange=Array.from({length:20},(_,i)=>+(1.2+i*0.2).toFixed(1));
+  const ctx=document.getElementById('evChart').getContext('2d');
+  if(evChart)evChart.destroy();
+  evChart=new Chart(ctx,{type:'line',data:{labels:oddsRange,datasets:[{label:`EV (p:${(p*100).toFixed(0)}%)`,data:oddsRange.map(o=>+(p*(o-1)-(1-p)).toFixed(4)),borderColor:c.primary,backgroundColor:c.primary+'22',fill:true,tension:0.4,pointRadius:3}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:c.text,font:{size:11}}}},scales:{x:{title:{display:true,text:'Decimal Odds',color:c.text},ticks:{color:c.text},grid:{color:c.grid}},y:{title:{display:true,text:'Expected Value',color:c.text},ticks:{color:c.text},grid:{color:c.grid}}}}});
+}
+
+function updateBankrollChart(p,odds,bankroll){
+  const c=getChartColors();
+  const f=((odds-1)*p-(1-p))/(odds-1)*0.25;
+  const sp=Math.max(0,Math.min(f,0.05));
+  let bl=bankroll;
+  const series=[bl];
+  for(let i=0;i<100;i++){bl=Math.random()<p?bl+bl*sp*(odds-1):bl-bl*sp;series.push(+bl.toFixed(2));}
+  const ctx=document.getElementById('bankrollChart').getContext('2d');
+  if(bankrollChart)bankrollChart.destroy();
+  bankrollChart=new Chart(ctx,{type:'line',data:{labels:Array.from({length:101},(_,i)=>i),datasets:[{label:'Bankroll',data:series,borderColor:series[100]>bankroll?c.success:c.error,backgroundColor:(series[100]>bankroll?c.success:c.error)+'18',fill:true,tension:0.3,pointRadius:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:c.text,font:{size:11}}}},scales:{x:{title:{display:true,text:'Bahis No.',color:c.text},ticks:{color:c.text},grid:{color:c.grid}},y:{ticks:{color:c.text,callback:v=>'TL '+v.toFixed(0)},grid:{color:c.grid}}}}});
+}
+
+function initMarginChart(){
+  const c=getChartColors();
+  const labels=['Pinnacle','Betfair','SBO','1xBet','Bet365','William Hill','Bwin'];
+  const data=[1.7,3.0,1.9,4.2,7.0,8.0,7.5];
+  const ctx=document.getElementById('marginChart').getContext('2d');
+  marginChart=new Chart(ctx,{type:'bar',data:{labels,datasets:[{label:'Marj (%)',data,backgroundColor:data.map(v=>v<3?c.success+'bb':v<5?c.warning+'bb':c.error+'bb')}]},options:{responsive:true,maintainAspectRatio:false,indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{ticks:{color:c.text,callback:v=>v+'%'},grid:{color:c.grid}},y:{ticks:{color:c.text},grid:{color:c.grid}}}}});
+}
+
+function initRadarChart(){
+  const c=getChartColors();
+  const ctx=document.getElementById('radarChart').getContext('2d');
+  radarChart=new Chart(ctx,{type:'radar',data:{labels:['Karlilik','Olceklendirme','Limit Guvenligi','Edge Suresi','Model Bagimsizligi'],datasets:[
+    {label:'Surebet Arb',data:[40,20,10,60,90],borderColor:c.primary,backgroundColor:c.primary+'22',pointBackgroundColor:c.primary},
+    {label:'Value Bet',data:[75,65,40,50,30],borderColor:c.success,backgroundColor:c.success+'22',pointBackgroundColor:c.success},
+    {label:'Exchange',data:[55,80,90,70,60],borderColor:c.orange,backgroundColor:c.orange+'22',pointBackgroundColor:c.orange},
+  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:c.text,font:{size:11}}}},scales:{r:{ticks:{color:c.text,backdropColor:'transparent',font:{size:9}},grid:{color:c.grid},pointLabels:{color:c.text,font:{size:10}},min:0,max:100}}}});
+}
+
+document.addEventListener('DOMContentLoaded',()=>{
+  refreshOddsTable();
+  initDetection();
+  initRestrictions();
+  initMarginChart();
+  initRadarChart();
+  updateArbChart(2.15,3.55,4.20,1/2.15+1/3.55+1/4.20);
+  updateEVChart();
+  updateBankrollChart(0.52,2.30,5000);
+  calcArbitrage();
+});
+</script>
+</body>
+</html>
