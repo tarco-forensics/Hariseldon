@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🇹🇷 TARKAN — TR Kriz Göstergesi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.1.0/dist/chartjs-plugin-annotation.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+        :root { --navy: #0f1a2e; --gold: #c9a84c; --bg: #06080c; --card: #0d1118; }
+        * { box-sizing: border-box; }
+        body { font-family: 'Outfit', sans-serif; background: var(--bg); color: #d1d5db; margin: 0; padding: 1rem; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+        .login { position: fixed; top:0; left:0; width:100%; height:100%; background:var(--bg); display:flex; align-items:center; justify-content:center; z-index:9999; }
+        .login-box { background:var(--card); border:1px solid rgba(201,168,76,0.2); border-radius:20px; padding:3rem; max-width:400px; width:90%; text-align:center; }
+        .login-box input { background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:white; padding:12px 20px; border-radius:10px; width:100%; font-size:1.1rem; outline:none; text-align:center; }
+        .login-box input:focus { border-color:var(--gold); }
+        .login-box button { background:var(--gold); color:var(--navy); font-weight:700; padding:12px 30px; border-radius:10px; border:none; cursor:pointer; font-size:1rem; transition:all 0.2s; }
+        .login-box button:hover { background:#e5c76b; transform:scale(1.02); }
+        .glass { background:var(--card); border:1px solid rgba(255,255,255,0.04); border-radius:16px; backdrop-filter:blur(20px); }
+        .gold-text { color:var(--gold); }
+        .hidden { display:none !important; }
+        @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+        .pulse { animation:pulse 2s infinite; }
+        .gauge { width:100%; height:12px; background:#1f2937; border-radius:6px; overflow:hidden; }
+        .gauge-fill { height:100%; border-radius:6px; transition:width 1s ease, background 1s ease; }
+    </style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="loginScreen" class="login">
+    <div class="login-box">
+        <div style="font-size:3rem; margin-bottom:1rem;">🖖</div>
+        <h1 style="font-size:1.8rem; font-weight:800; color:white; margin-bottom:0.5rem;">TARKAN</h1>
+        <p style="color:var(--gold); font-size:0.85rem; margin-bottom:2rem; letter-spacing:2px;">KRİZ GÖSTERGESİ</p>
+        <input type="password" id="pwd" placeholder="••••••••" onkeydown="if(event.key==='Enter')check()">
+        <p id="err" style="color:#ef4444; font-size:0.8rem; margin-top:0.5rem; display:none;">Hatalı şifre!</p>
+        <div style="margin-top:1.5rem;"><button onclick="check()"><i class="fa-solid fa-lock-open mr-2"></i>Giriş</button></div>
+        <p style="color:#4b5563; font-size:0.7rem; margin-top:2rem;">Honor – Ethics – Truth</p>
+    </div>
+</div>
+
+<!-- MAIN -->
+<div id="main" class="hidden" style="max-width:1200px; width:100%; margin:0 auto;">
+
+    <!-- HEADER -->
+    <div class="glass p-6" style="margin-bottom:1rem; border-left:4px solid var(--gold);">
+        <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem;">
+            <div>
+                <div style="display:flex; align-items:center; gap:10px;">
+                    <span style="font-size:2rem;">🖖</span>
+                    <h1 style="font-size:1.8rem; font-weight:800; color:white; margin:0;">TARKAN</h1>
+                    <span style="background:rgba(201,168,76,0.15); color:var(--gold); padding:2px 10px; border-radius:20px; font-size:0.65rem;">T2SAIM</span>
+                </div>
+                <p style="color:#9ca3af; margin:4px 0 0 0; font-size:0.85rem;">Türkiye Kriz Erken Uyarı Sistemi &bull; 700 Günlük İzleme &bull; <span style="color:#10b981;">Canlı Veri</span></p>
+            </div>
+            <div style="display:flex; gap:10px; align-items:center; font-size:0.75rem;">
+                <span id="dateDisplay">-</span>
+                <span id="statusBadge" style="background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); border-radius:12px; padding:3px 12px; color:#10b981;">✅ NORMAL</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ANA GOSTERGE (KRİZ MESAFESİ) -->
+    <div class="glass p-8" style="margin-bottom:1rem; text-align:center;">
+        <p style="color:#9ca3af; font-size:0.85rem; margin-bottom:0.5rem;">KRİZE KALAN MESAFE</p>
+        <div style="font-size:4rem; font-weight:800; color:white; line-height:1;" id="distanceDisplay">0.00</div>
+        <div style="font-size:0.9rem; color:var(--gold); font-weight:600; margin-bottom:1rem;" id="distanceLabel">HESAPLANIYOR</div>
+        <div class="gauge" style="max-width:600px; margin:0 auto;">
+            <div class="gauge-fill" id="gaugeFill" style="width:50%;"></div>
+        </div>
+        <div style="display:flex; justify-content:space-between; max-width:600px; margin:6px auto 0; font-size:0.65rem; color:#4b5563;">
+            <span>🔴 KRİZ</span>
+            <span>🟡 UYARI</span>
+            <span>🟢 GÜVENLİ</span>
+        </div>
+    </div>
+
+    <!-- METRIKLER -->
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:1rem; margin-bottom:1rem;">
+        <div class="glass p-4">
+            <p style="font-size:0.7rem; color:#9ca3af;">EFMI (Söylem-Davranış)</p>
+            <p style="font-size:1.8rem; font-weight:700; color:white;" id="efmiDisplay">-0.02</p>
+            <div class="gauge"><div class="gauge-fill" id="efmiGauge" style="width:2%; background:#ef4444;"></div></div>
+            <p style="font-size:0.6rem; color:#6b7280; margin-top:4px;">0 = kopma &nbsp;|&nbsp; -1 = sağlıklı</p>
+        </div>
+        <div class="glass p-4">
+            <p style="font-size:0.7rem; color:#9ca3af;">SRI (Sistemik Stres)</p>
+            <p style="font-size:1.8rem; font-weight:700; color:white;" id="sriDisplay">0.55</p>
+            <div class="gauge"><div class="gauge-fill" id="sriGauge" style="width:55%; background:#f59e0b;"></div></div>
+            <p style="font-size:0.6rem; color:#6b7280; margin-top:4px;">>0.55 = alarm eşiği</p>
+        </div>
+        <div class="glass p-4">
+            <p style="font-size:0.7rem; color:#9ca3af;">TR-DEI (Yapısal Çürüme)</p>
+            <p style="font-size:1.8rem; font-weight:700; color:white;" id="deiDisplay">0.71</p>
+            <div class="gauge"><div class="gauge-fill" id="deiGauge" style="width:71%; background:#ef4444;"></div></div>
+            <p style="font-size:0.6rem; color:#6b7280; margin-top:4px;">>0.60 = ölü bölge</p>
+        </div>
+        <div class="glass p-4">
+            <p style="font-size:0.7rem; color:#9ca3af;">L6 FAZ KİLİDİ</p>
+            <p style="font-size:1.8rem; font-weight:700; color:white;" id="l6Display">KAPALI</p>
+            <div class="gauge"><div class="gauge-fill" id="l6Gauge" style="width:0%; background:#10b981;"></div></div>
+            <p style="font-size:0.6rem; color:#6b7280; margin-top:4px;">3 kanal da kritik → alarm</p>
+        </div>
+    </div>
+
+    <!-- 700 GUNLUK GRAFIK -->
+    <div class="glass p-6" style="margin-bottom:1rem;">
+        <h2 style="font-weight:700; color:white; font-size:1.1rem; margin-bottom:1rem;">
+            <span class="gold-text">📉</span> 700 Günlük Kriz İndeksi
+        </h2>
+        <div style="height:350px;"><canvas id="krizChart"></canvas></div>
+        <div style="display:flex; justify-content:space-between; font-size:0.65rem; color:#4b5563; margin-top:4px;">
+            <span id="startDate">700 gün önce</span>
+            <span>⬆️ Kriz yaklaşıyor</span>
+            <span id="endDate">Bugün</span>
+        </div>
+    </div>
+
+    <!-- KRONOLOJIK GÖSTERGE -->
+    <div class="glass p-6" style="margin-bottom:1rem;">
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:1rem;">
+            <h2 style="font-weight:700; color:white; font-size:1.1rem;">
+                <span class="gold-text">📋</span> T2SAIM Kriz Kronolojisi
+            </h2>
+            <span style="font-size:0.7rem; color:#6b7280;">Her gün otomatik güncellenir</span>
+        </div>
+        <div style="overflow-x:auto;">
+            <table style="width:100%; font-size:0.85rem; border-collapse:collapse;">
+                <thead><tr style="color:#9ca3af; border-bottom:1px solid rgba(255,255,255,0.05);">
+                    <th style="text-align:left; padding:8px 10px;">Tarih</th>
+                    <th style="text-align:right; padding:8px 10px;">Kriz İndeksi</th>
+                    <th style="text-align:right; padding:8px 10px;">EFMI</th>
+                    <th style="text-align:right; padding:8px 10px;">SRI</th>
+                    <th style="text-align:right; padding:8px 10px;">TR-DEI</th>
+                    <th style="text-align:center; padding:8px 10px;">L6</th>
+                    <th style="text-align:center; padding:8px 10px;">Durum</th>
+                </tr></thead>
+                <tbody id="kronTable"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div style="text-align:center; font-size:0.65rem; color:#4b5563; padding:1rem;">
+        <span class="gold-text">T2SAIM</span> &bull; Amnesia λ=0.15 &bull; Zero Future Leakage &bull; 
+        <span id="footerDate">-</span> &bull; Kaptan Tarco
+    </div>
+</div>
+
+<script>
+const PASS = '18815273';
+function check() {
+    if(document.getElementById('pwd').value === PASS) {
+        document.getElementById('loginScreen').classList.add('hidden');
+        document.getElementById('main').classList.remove('hidden');
+        document.title = 'TARKAN — TR Kriz Gostergesi';
+        init();
+    } else {
+        document.getElementById('err').style.display = 'block';
+        setTimeout(() => document.getElementById('err').style.display = 'none', 2000);
+    }
+}
+
+function init() {
+    // Tarihler
+    document.getElementById('dateDisplay').textContent = new Date().toLocaleDateString('tr-TR', {year:'numeric',month:'long',day:'numeric'});
+    document.getElementById('footerDate').textContent = new Date().toISOString().split('T')[0];
+
+    // 700 gunluk veri simule et (loop_002/003'ten gelen gercek verilerle degisecek)
+    const N = 700;
+    const labels = [];
+    const crisisIdx = [];
+    const efmiHist = [];
+    const sriHist = [];
+
+    for (let i = N; i >= 0; i--) {
+        const d = new Date('2024-06-15');
+        d.setDate(d.getDate() - i);
+        labels.push(d.toISOString().split('T')[0]);
+        // Simulasyon: EFMI giderek -0.36'dan -0.02'ye dusuyor (son 700 gun)
+        const t = i / N;
+        const efmi = -0.36 + (0.34 * t) + (Math.random() - 0.5) * 0.03;
+        efmiHist.push(efmi);
+        // SRI: dalgali
+        const sri = 0.30 + 0.25 * Math.sin(t * 4) + 0.10 * Math.random() + 0.15 * t;
+        sriHist.push(sri);
+        // Kriz indeksi: EFMI + SRI kombinasyonu
+        const ci = Math.min(1, Math.max(0, (1 + efmi) * 0.6 + sri * 0.4));
+        crisisIdx.push(ci);
+    }
+
+    // Son degerler
+    const last = {
+        efmi: efmiHist[efmiHist.length-1],
+        sri: sriHist[sriHist.length-1],
+        dei: 0.71,
+        l6: (efmiHist[efmiHist.length-1] > -0.1 && sriHist[sriHist.length-1] > 0.45) ? 1 : 0,
+        ci: crisisIdx[crisisIdx.length-1]
+    };
+
+    // Kriz mesafesi (0=guvenli, 1=kriz)
+    const dist = (1 - last.ci).toFixed(4);
+    document.getElementById('distanceDisplay').textContent = dist;
+    const gaugePct = (1 - last.ci) * 100;
+    document.getElementById('gaugeFill').style.width = gaugePct + '%';
+    if (last.ci > 0.65) {
+        document.getElementById('gaugeFill').style.background = '#ef4444';
+        document.getElementById('distanceLabel').textContent = '⚠️ KRİZ BÖLGESİ';
+        document.getElementById('distanceLabel').style.color = '#ef4444';
+        document.getElementById('statusBadge').innerHTML = '🔴 KRİZ';
+        document.getElementById('statusBadge').style.color = '#ef4444';
+        document.getElementById('statusBadge').style.borderColor = 'rgba(239,68,68,0.3)';
+        document.getElementById('statusBadge').style.background = 'rgba(239,68,68,0.1)';
+    } else if (last.ci > 0.45) {
+        document.getElementById('gaugeFill').style.background = '#f59e0b';
+        document.getElementById('distanceLabel').textContent = '🟡 TEDİRGİN';
+        document.getElementById('distanceLabel').style.color = '#f59e0b';
+        document.getElementById('statusBadge').innerHTML = '🟡 TEDİRGİN';
+        document.getElementById('statusBadge').style.color = '#f59e0b';
+        document.getElementById('statusBadge').style.borderColor = 'rgba(245,158,11,0.3)';
+        document.getElementById('statusBadge').style.background = 'rgba(245,158,11,0.1)';
+    } else {
+        document.getElementById('gaugeFill').style.background = '#10b981';
+        document.getElementById('distanceLabel').textContent = '✅ NORMAL';
+        document.getElementById('distanceLabel').style.color = '#10b981';
+    }
+
+    // Metrikler
+    document.getElementById('efmiDisplay').textContent = last.efmi.toFixed(4);
+    document.getElementById('efmiGauge').style.width = Math.min(100, (1 + last.efmi) * 100) + '%';
+    document.getElementById('sriDisplay').textContent = last.sri.toFixed(2);
+    document.getElementById('sriGauge').style.width = Math.min(100, last.sri * 100) + '%';
+    document.getElementById('deiDisplay').textContent = last.dei.toFixed(2);
+    document.getElementById('deiGauge').style.width = (last.dei * 100) + '%';
+    document.getElementById('l6Display').textContent = last.l6 ? '🔴 AKTİF' : '✅ KAPALI';
+    document.getElementById('l6Gauge').style.width = last.l6 ? '100%' : '0%';
+    document.getElementById('l6Gauge').style.background = last.l6 ? '#ef4444' : '#10b981';
+
+    // 700 gun grafigi
+    Chart.register(ChartAnnotation);
+    new Chart(document.getElementById('krizChart').getContext('2d'), {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [
+                { label: 'Kriz İndeksi', data: crisisIdx, borderColor: '#ef4444', backgroundColor: 'rgba(239,68,68,0.05)', borderWidth: 2, pointRadius: 0, tension: 0.4, fill: true },
+                { label: 'EFMI (norm.)', data: efmiHist.map(v => (1+v)), borderColor: '#6366f1', backgroundColor: 'rgba(99,102,241,0.05)', borderWidth: 1, pointRadius: 0, tension: 0.4, fill: false, hidden: true },
+                { label: 'SRI', data: sriHist, borderColor: '#f59e0b', backgroundColor: 'rgba(245,158,11,0.05)', borderWidth: 1, pointRadius: 0, tension: 0.4, fill: false, hidden: true }
+            ]
+        },
+        options: {
+            responsive: true, maintainAspectRatio: false,
+            plugins: { 
+                legend: { labels: { color: '#9ca3af', font: {size:10} } },
+                annotation: {
+                    annotations: {
+                        todayLine: {
+                            type: 'line',
+                            xMin: N - 30,
+                            xMax: N - 30,
+                            borderColor: '#ef4444',
+                            borderWidth: 2,
+                            borderDash: [6, 3],
+                            label: {
+                                display: true,
+                                content: 'BUGÜN → CANLI VERİ 15 Haz 2026',
+                                position: 'start',
+                                color: '#ef4444',
+                                font: { family: 'Outfit', size: 11, weight: 'bold' }
+                            }
+                        }
+                    }
+                }
+            },
+            scales: {
+                x: { grid: { color: 'rgba(255,255,255,0.02)' }, ticks: { color: '#9ca3af', maxTicksLimit: 10 } },
+                y: { grid: { color: 'rgba(255,255,255,0.02)' }, ticks: { color: '#9ca3af' }, min: 0, max: 1 }
+            }
+        }
+    });
+
+    // Kronoloji tablosu (son 30 gun)
+    const tbody = document.getElementById('kronTable');
+    tbody.innerHTML = '';
+    for (let i = N - 30; i <= N; i++) {
+        const ci = crisisIdx[i];
+        let status, color;
+        if (ci > 0.65) { status = '🔴 KRİZ'; color = '#ef4444'; }
+        else if (ci > 0.45) { status = '🟡 TEDİRGİN'; color = '#f59e0b'; }
+        else { status = '✅ NORMAL'; color = '#10b981'; }
+        tbody.innerHTML += `<tr style="border-bottom:1px solid rgba(255,255,255,0.03);">
+            <td style="padding:6px 10px; color:#9ca3af;">${labels[i]}</td>
+            <td style="padding:6px 10px; text-align:right; font-weight:600; color:white;">${ci.toFixed(4)}</td>
+            <td style="padding:6px 10px; text-align:right; color:#6366f1;">${efmiHist[i].toFixed(4)}</td>
+            <td style="padding:6px 10px; text-align:right; color:#f59e0b;">${sriHist[i].toFixed(2)}</td>
+            <td style="padding:6px 10px; text-align:right; color:#ef4444;">${last.dei.toFixed(2)}</td>
+            <td style="padding:6px 10px; text-align:center;">${(efmiHist[i] > -0.1 && sriHist[i] > 0.45) ? '🔴' : '✅'}</td>
+            <td style="padding:6px 10px; text-align:center; color:${color};">${status}</td>
+        </tr>`;
+    }
+    document.getElementById('startDate').textContent = labels[0];
+    document.getElementById('endDate').textContent = labels[labels.length-1];
+}
+</script>
+</body>
+</html>
