@@ -184,6 +184,23 @@
                 </table>
                 <p class="text-xs mt-4" style="color:#6b7280; line-height:1.5;">* Gruptan çıkma olasılığı: İlk 2 garanti (%100) + En iyi 8 üçüncü arasına girme olasılığı. 12 gruptan 8 üçüncü çıkacağı için 3. olunduğunda çıkma şansı istatistiksel olarak yaklaşık %66.6 kabul edilerek formüle yansıtılmıştır. (Amnesia λ=0.25 kapalı. Saf evren simülasyonu.)</p>
             </div>
+            
+            <div class="glass p-6 mt-4">
+                <h3 class="text-md font-bold text-white mb-4"><i class="fa-solid fa-futbol gold-text mr-2"></i>Kalan Fikstür & Maç İçi Olasılıklar</h3>
+                <table class="w-full text-sm text-center">
+                    <thead>
+                        <tr style="color:#9ca3af; border-bottom:1px solid rgba(255,255,255,0.05);">
+                            <th style="text-align:left; padding:8px;">Ev Sahibi</th>
+                            <th style="padding:8px;">Ev Kazanır</th>
+                            <th style="padding:8px;">Beraberlik</th>
+                            <th style="padding:8px;">Deplasman Kazanır</th>
+                            <th style="text-align:right; padding:8px;">Deplasman</th>
+                        </tr>
+                    </thead>
+                    <tbody id="wcMacBody">
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 
@@ -432,22 +449,31 @@ function runWCGroupSim() {
 
     const N = 10000;
     let sonuclar = takimlar.map(t => ({ad: t.ad, s1:0, s2:0, s3:0, s4:0}));
+    let matchStats = [
+        {tA: FIXTURE[0][0][0], tB: FIXTURE[0][0][1], day:0, w1:0, d:0, w2:0},
+        {tA: FIXTURE[0][1][0], tB: FIXTURE[0][1][1], day:0, w1:0, d:0, w2:0},
+        {tA: FIXTURE[1][0][0], tB: FIXTURE[1][0][1], day:1, w1:0, d:0, w2:0},
+        {tA: FIXTURE[1][1][0], tB: FIXTURE[1][1][1], day:1, w1:0, d:0, w2:0},
+        {tA: FIXTURE[2][0][0], tB: FIXTURE[2][0][1], day:2, w1:0, d:0, w2:0},
+        {tA: FIXTURE[2][1][0], tB: FIXTURE[2][1][1], day:2, w1:0, d:0, w2:0}
+    ];
 
     for(let iter=0; iter<N; iter++) {
         let p = takimlar.map(t => t.puan);
         let gd = takimlar.map(t => 0); 
 
         for(let day=macGunu; day<3; day++) {
-            for(let match of FIXTURE[day]) {
+            for(let mIdx=0; mIdx<2; mIdx++) {
+                const match = FIXTURE[day][mIdx];
                 const tA = match[0], tB = match[1];
                 const gA = poissonSample(takimlar[tA].guc * 1.6);
                 const gB = poissonSample(takimlar[tB].guc * 1.6);
                 
                 gd[tA] += (gA - gB); gd[tB] += (gB - gA);
                 
-                if (gA > gB) p[tA] += 3;
-                else if (gA < gB) p[tB] += 3;
-                else { p[tA] += 1; p[tB] += 1; }
+                if (gA > gB) { p[tA] += 3; matchStats[day*2 + mIdx].w1++; }
+                else if (gA < gB) { p[tB] += 3; matchStats[day*2 + mIdx].w2++; }
+                else { p[tA] += 1; p[tB] += 1; matchStats[day*2 + mIdx].d++; }
             }
         }
 
@@ -473,6 +499,24 @@ function runWCGroupSim() {
             '<td style="padding:10px; font-weight:800; font-size:1.1rem; color:var(--gold);">' + (Math.min(100, advanceProb*100)).toFixed(1) + '%</td>' +
         '</tr>';
     }).join('');
+
+    let macHtml = '';
+    matchStats.forEach(m => {
+        if (m.day >= macGunu) {
+            const sum = m.w1 + m.d + m.w2;
+            if (sum > 0) {
+                macHtml += '<tr style="border-bottom:1px solid rgba(255,255,255,0.03);">' +
+                    '<td style="padding:10px; font-weight:bold; color:white; text-align:left;">' + takimlar[m.tA].ad + '</td>' +
+                    '<td style="padding:10px; color:#10b981;">' + ((m.w1/sum)*100).toFixed(1) + '%</td>' +
+                    '<td style="padding:10px; color:#9ca3af;">' + ((m.d/sum)*100).toFixed(1) + '%</td>' +
+                    '<td style="padding:10px; color:#ef4444;">' + ((m.w2/sum)*100).toFixed(1) + '%</td>' +
+                    '<td style="padding:10px; font-weight:bold; color:white; text-align:right;">' + takimlar[m.tB].ad + '</td>' +
+                '</tr>';
+            }
+        }
+    });
+    if (macHtml === '') macHtml = '<tr><td colspan="5" style="padding:10px; color:#6b7280;">Kalan maç bulunmuyor. Tüm maçlar oynandı.</td></tr>';
+    document.getElementById('wcMacBody').innerHTML = macHtml;
 
     document.getElementById('wcSimSonuc').style.display = 'block';
 }
