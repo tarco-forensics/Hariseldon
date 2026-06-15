@@ -132,9 +132,10 @@
             </div>
         </div>
     </div>
+    </div>
 
     <!-- DUnya KUPASI MODULU -->
-    <div id="mod-wc" class="mod-content" style="display:block;">
+    <div id="mod-wc" class="mod-content" style="display:none;">
         <div class="glass p-6">
             <h2 class="text-lg font-bold text-white mb-4"><i class="fa-solid fa-trophy gold-text mr-2"></i>Dünya Kupası 2026 — Grup Çıkış Olasılıkları</h2>
             <p style="color:#9ca3af; font-size:0.85rem; margin-bottom:1rem;">48 takım · 12 grup · İlk 2 direkt (24) + En iyi 8 üçüncü (32) → Son 32</p>
@@ -195,7 +196,7 @@
     </div>
 
     <!-- SELDON MODULU -->
-    <div id="mod-seldon" class="mod-content" style="display:block;">
+    <div id="mod-seldon" class="mod-content" style="display:none;">
         <div class="glass p-6">
             <h2 class="text-lg font-bold text-white mb-3"><i class="fa-solid fa-brain gold-text mr-2"></i>James Seldon Simülasyonu — NTZ-49 Spor Motoru</h2>
             <p style="color:#9ca3af; font-size:0.85rem; margin-bottom:1rem;">1000 agent · 25K Monte Carlo iterasyonu · Poisson gol dağılımı · Amnesia λ=0.25</p>
@@ -267,41 +268,30 @@
 </div>
 
 <script>
-const PASS = '18815273';
-function check() {
-    if(document.getElementById('pwd').value === PASS) {
-        document.getElementById('loginScreen').style.display = 'none';
-        document.getElementById('main').style.display = 'block';
-        document.title = 'SPOR EDGE — T2SAIM';
-    } else {
-        document.getElementById('err').style.display = 'block';
-        setTimeout(() => document.getElementById('err').style.display = 'none', 2000);
-    }
-}
-// Ana sayfayi baslangicta gizle
-document.getElementById('main').style.display = 'none';
-
 // MODUL NAVIGASYON
 function switchMod(mod) {
     document.querySelectorAll('.mod-btn').forEach(b => {
-        b.style.borderColor = 'rgba(201,168,76,0.3)';
-        b.style.background = 'rgba(201,168,76,0.1)';
-        b.style.color = '#9ca3af';
+        b.style.opacity = '0.6';
+        b.style.borderWidth = '1px';
     });
     const activeBtn = document.querySelector('[data-mod="' + mod + '"]');
     if (activeBtn) {
-        activeBtn.style.borderColor = 'var(--gold)';
-        activeBtn.style.background = 'rgba(201,168,76,0.2)';
-        activeBtn.style.color = 'var(--gold)';
+        activeBtn.style.opacity = '1';
+        activeBtn.style.borderWidth = '2px';
     }
     document.querySelectorAll('.mod-content').forEach(m => m.style.display = 'none');
     const target = document.getElementById('mod-' + mod);
     if (target) { target.style.display = 'block'; }
     if (mod === 'wc') initWorldCup();
 }
+
+// Event listeners
 document.querySelectorAll('.mod-btn').forEach(btn => {
     btn.addEventListener('click', function() { switchMod(this.dataset.mod); });
 });
+
+// Başlangıçta Lig Modülünü aç
+switchMod('lig');
 
 // Sayfa yuklendiginde WC tablosunu doldur
 initWorldCup();
