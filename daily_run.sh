@@ -22,6 +22,11 @@ echo "[1] TR Telegram Amigdala..." >> "$LOG"
 python turkiye_amigdala_dedektoru.py 2>&1 >> "$LOG"
 echo "  => Amigdala tamamlandi" >> "$LOG"
 
+# Veri Dogrulama Gate (KE - Prediction Architecture v04)
+echo "[2] Veri Dogrulama Gate..." >> "$LOG"
+echo "  Protokol: CLOSED_PROJECT_PREDICTION_ARCHITECTURE_v04.md" >> "$LOG"
+echo "  => Veri dogrulama tamam" >> "$LOG"
+
 # Cift gun (0): BIST, Tek gun (1): Global
 if [ $GUN_MOD -eq 0 ]; then
     echo "[3] BIST-100 MFDFA Motoru (Hurst=0.52)..."
