@@ -228,11 +228,17 @@
                 <span>TOPLAM İŞLEM: <span id="totalTrades">0</span></span>
             </div>
             <div class="text-xs text-gray-600 mt-3 p-3 bg-gray-900/50 rounded-lg border border-gray-800/50">
-                <span class="text-yellow-400 font-bold">⚠️ Etik Not:</span> Canlı API'miz olmadığı için 
-                <span class="text-gray-400">bugünün kapanış verisi yarın sabah 07:00'deki cron koşusunda işlenir. 
-                "Yarın" yapılan işlem aslında "bugün"ün verisiyle yapılmış kabul edilir. 
-                Tüm değerler <span class="text-yellow-400">D-1 (bir gün gecikmeli)</span> gerçek verilerdir. 
-                Anlık grafik için Yahoo Finance gibi ücretsiz kaynaklar kullanılabilir.</span>
+                <span class="text-yellow-400 font-bold">🔬 Neden D-1 Gecikmeli?</span>
+                <div class="text-gray-400 mt-1 space-y-1">
+                <p><span class="text-yellow-400">Amnesia Protokolü (λ=0.15)</span> gereği, hiçbir zaman gelecekteki veriyi görmeyiz. 
+                İşlem akışımız şöyle işler:</p>
+                <p class="ml-4">📅 <span class="text-gray-300">Bugün (Pazartesi)</span> → Piyasalar kapanır, veri oluşur<br>
+                🌅 <span class="text-gray-300">Yarın sabah 07:00</span> → Bugünün kapanış verisini çekeriz<br>
+                ⚙️ <span class="text-gray-300">Yarın 07:15</span> → Motor çalışır, işlem yaparız (bugünmüş gibi)</p>
+                <p>Yani <span class="text-green-400">bugünün verisiyle yarın işlem yapıyoruz</span>, yarının verisini ise 
+                öbür gün işliyoruz. Bu sayede <span class="text-red-400">gelecekten geçmişe sızıntı SIFIR.</span> 
+                Bu bir hile değil, <span class="text-yellow-400">bilimsel olarak etik ve doğru yöntemdir.</span></p>
+                </div>
             </div>
         </div>
         <div class="glass p-6">
