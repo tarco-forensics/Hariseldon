@@ -268,7 +268,9 @@ document.querySelectorAll('.mod-btn').forEach(btn => {
         this.style.background = 'rgba(201,168,76,0.2)';
         this.style.color = 'var(--gold)';
         document.querySelectorAll('.mod-content').forEach(m => m.style.display = 'none');
-        document.getElementById('mod-' + this.dataset.mod).style.display = 'block';
+        const target = document.getElementById('mod-' + this.dataset.mod);
+        if (target) target.style.display = 'block';
+        else console.error('Bulunamadi: mod-' + this.dataset.mod);
         
         if (this.dataset.mod === 'wc') initWorldCup();
     });
