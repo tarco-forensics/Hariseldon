@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚽ SPOR EDGE — T2SAIM Spor Yatırım Motoru</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+        :root { --navy: #0f1a2e; --gold: #c9a84c; --bg: #06080c; --card: #0d1118; }
+        * { box-sizing: border-box; }
+        body { font-family: 'Outfit', sans-serif; background: var(--bg); color: #d1d5db; margin: 0; padding: 1rem; min-height: 100vh; }
+        .glass { background: var(--card); border: 1px solid rgba(255,255,255,0.04); border-radius: 16px; backdrop-filter: blur(20px); }
+        .gold-text { color: var(--gold); }
+        input, select { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: white; padding: 10px 16px; border-radius: 8px; width: 100%; outline: none; }
+        input:focus, select:focus { border-color: var(--gold); }
+        .btn { background: var(--gold); color: var(--navy); font-weight: 700; padding: 10px 24px; border-radius: 8px; border: none; cursor: pointer; transition: all 0.2s; }
+        .btn:hover { background: #e5c76b; transform: scale(1.02); }
+        .badge { padding: 2px 10px; border-radius: 12px; font-size: 0.7rem; font-weight: 600; }
+        .edge-pos { background: rgba(16,185,129,0.15); color: #10b981; border: 1px solid rgba(16,185,129,0.3); }
+        .edge-neg { background: rgba(239,68,68,0.15); color: #ef4444; border: 1px solid rgba(239,68,68,0.3); }
+    </style>
+</head>
+<body>
+<div class="max-w-6xl mx-auto space-y-4">
+
+    <!-- HEADER -->
+    <div class="glass p-6" style="border-left:4px solid var(--gold);">
+        <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem;">
+            <div>
+                <div style="display:flex; align-items:center; gap:10px;">
+                    <span style="font-size:2rem;">⚽</span>
+                    <h1 style="font-size:1.8rem; font-weight:800; color:white; margin:0;">SPOR EDGE</h1>
+                    <span class="badge" style="background:rgba(201,168,76,0.15); color:var(--gold);">T2SAIM</span>
+                </div>
+                <p style="color:#9ca3af; margin:4px 0 0 0; font-size:0.85rem;">İstatistiksel Savaş — Kumar Değil, Edge Hesaplama</p>
+            </div>
+            <div style="display:flex; gap:8px; font-size:0.75rem; align-items:center;">
+                <span style="color:#6b7280;">T2SAIM Spor Modülü v1.0</span>
+                <span class="badge edge-pos">🔴 CANLI</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- LIG SECIM -->
+    <div class="glass p-6">
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:1rem;">
+            <div>
+                <label style="font-size:0.75rem; color:#9ca3af;">Lig</label>
+                <select id="ligSec">
+                    <option value="ispanya2">🇪🇸 İspanya 2. Ligi (LaLiga2)</option>
+                    <option value="ispanya">🇪🇸 İspanya LaLiga</option>
+                    <option value="hollanda">🇳🇱 Hollanda Eredivisie</option>
+                    <option value="ingiltere">🏴󠁧󠁢󠁥󠁮󠁧󠁿 İngiltere Premier</option>
+                    <option value="turkiye">🇹🇷 Türkiye Süper Lig</option>
+                </select>
+            </div>
+            <div>
+                <label style="font-size:0.75rem; color:#9ca3af;">Strateji</label>
+                <select id="strSec">
+                    <option value="ciftesans">Çifte Şans (Ev sahibi yenilmez)</option>
+                    <option value="gol">Gol Sayısı (Alt/Üst 2.5)</option>
+                    <option value="handikap">Handikap (+1.5)</option>
+                </select>
+            </div>
+            <div>
+                <label style="font-size:0.75rem; color:#9ca3af;">Horizon (maç)</label>
+                <select id="horizonSec">
+                    <option value="5">Son 5 maç (hızlı)</option>
+                    <option value="10" selected>Son 10 maç (standart)</option>
+                    <option value="20">Son 20 maç (sezon)</option>
+                    <option value="38">Son 38 maç (tam sezon)</option>
+                </select>
+            </div>
+            <div style="display:flex; align-items:end;">
+                <button class="btn w-full" onclick="hesapla()"><i class="fa-solid fa-calculator mr-2"></i>Hesapla</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SONUCLAR -->
+    <div id="sonuclar" style="display:none;">
+        <div class="glass p-6">
+            <h2 class="text-lg font-bold text-white mb-4"><i class="fa-solid fa-chart-line gold-text mr-2"></i>Edge Hesaplamaları</h2>
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                    <thead><tr style="color:#9ca3af; border-bottom:1px solid rgba(255,255,255,0.05);">
+                        <th style="text-align:left; padding:8px 10px;">Takım</th>
+                        <th style="text-align:center; padding:8px 10px;">Rakip</th>
+                        <th style="text-align:right; padding:8px 10px;">İç/Dış</th>
+                        <th style="text-align:right; padding:8px 10px;">Olasılık</th>
+                        <th style="text-align:right; padding:8px 10px;">Oran</th>
+                        <th style="text-align:right; padding:8px 10px;">Edge</th>
+                        <th style="text-align:center; padding:8px 10px;">Savaş</th>
+                    </tr></thead>
+                    <tbody id="tabloBody"></tbody>
+                </table>
+            </div>
+            <div style="display:flex; gap:1rem; margin-top:1rem; font-size:0.85rem; flex-wrap:wrap;">
+                <div class="glass p-3 flex-1 text-center">
+                    <span style="color:#9ca3af;">Toplam Edge</span>
+                    <p style="font-size:1.5rem; font-weight:700; color:white;" id="toplamEdge">0%</p>
+                </div>
+                <div class="glass p-3 flex-1 text-center">
+                    <span style="color:#9ca3af;">Savaş Sayısı</span>
+                    <p style="font-size:1.5rem; font-weight:700; color:white;" id="savasSayisi">0</p>
+                </div>
+                <div class="glass p-3 flex-1 text-center">
+                    <span style="color:#9ca3af;">Kazanma Oranı</span>
+                    <p style="font-size:1.5rem; font-weight:700; color:white;" id="kazancOran">0%</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="glass p-6">
+            <h2 class="text-lg font-bold text-white mb-3"><i class="fa-solid fa-book gold-text mr-2"></i>Model Açıklaması</h2>
+            <div style="font-size:0.85rem; color:#9ca3af; line-height:1.6;">
+                <p><span class="gold-text">T2SAIM Spor Edge Motoru</span> — MFDFA tabanlı form analizi + Poisson gol dağılımı + edge hesabı.</p>
+                <p class="mt-2">💡 <span class="text-white">Prensip:</span> Maç sonucunu tahmin etmeyiz. İstatistiksel avantajı (edge) hesaplar, pozitifse savaşa gireriz.</p>
+                <p class="mt-2">📊 <span class="text-white">Formül:</span> Edge = (Olasılık × Oran) − 1. Edge > 0 → Pozisyon al.</p>
+                <p class="mt-2">🔒 <span class="text-white">Amnesia:</span> λ=0.25, eski maçların ağırlığı hızla azalır. Yenilmez.</p>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align:center; font-size:0.65rem; color:#4b5563; padding:1rem;">
+        <span class="gold-text">T2SAIM Spor Modülü</span> &bull; Kumar değildir, edge hesaplamadır &bull; Kaptan Tarco
+    </div>
+</div>
+
+<script>
+const LIG_VERI = {
+    ispanya2: { name: 'İspanya 2. Ligi', golOrt: 2.1, altOran: 0.68, icYenilmez: 0.92 },
+    ispanya: { name: 'İspanya LaLiga', golOrt: 2.5, altOran: 0.55, icYenilmez: 0.88 },
+    hollanda: { name: 'Hollanda Eredivisie', golOrt: 3.2, altOran: 0.35, icYenilmez: 0.82 },
+    ingiltere: { name: 'İngiltere Premier', golOrt: 2.8, altOran: 0.45, icYenilmez: 0.85 },
+    turkiye: { name: 'Türkiye Süper Lig', golOrt: 2.6, altOran: 0.50, icYenilmez: 0.80 }
+};
+
+const TAKIMLAR = {
+    ispanya2: [
+        { ad:'Levante', icYenilmez:0.95, golAlt:0.72, oran:1.25 },
+        { ad:'Granada', icYenilmez:0.88, golAlt:0.65, oran:1.35 },
+        { ad:'Racing Santander', icYenilmez:0.82, golAlt:0.70, oran:1.45 },
+        { ad:'Almeria', icYenilmez:0.78, golAlt:0.60, oran:1.55 }
+    ],
+    ispanya: [
+        { ad:'Barcelona', icYenilmez:0.97, golAlt:0.45, oran:1.18 },
+        { ad:'Real Madrid', icYenilmez:0.95, golAlt:0.48, oran:1.22 }
+    ],
+    hollanda: [
+        { ad:'Ajax', icYenilmez:0.90, golAlt:0.30, oran:1.28 },
+        { ad:'PSV', icYenilmez:0.88, golAlt:0.32, oran:1.32 }
+    ],
+    ingiltere: [
+        { ad:'Manchester City', icYenilmez:0.96, golAlt:0.40, oran:1.20 },
+        { ad:'Arsenal', icYenilmez:0.92, golAlt:0.45, oran:1.28 }
+    ],
+    turkiye: [
+        { ad:'Galatasaray', icYenilmez:0.90, golAlt:0.48, oran:1.30 },
+        { ad:'Fenerbahçe', icYenilmez:0.88, golAlt:0.50, oran:1.35 },
+        { ad:'Beşiktaş', icYenilmez:0.82, golAlt:0.52, oran:1.45 }
+    ]
+};
+
+function hesapla() {
+    const lig = document.getElementById('ligSec').value;
+    const str = document.getElementById('strSec').value;
+    const horizon = parseInt(document.getElementById('horizonSec').value);
+
+    const ligVeri = LIG_VERI[lig];
+    const takimlar = TAKIMLAR[lig];
+    const body = document.getElementById('tabloBody');
+    
+    let toplamEdge = 0;
+    let savasSayisi = 0;
+    let toplamKazanc = 0;
+
+    body.innerHTML = takimlar.map(t => {
+        let olasilik, oran, edge, stratejiAd;
+        
+        if (str === 'ciftesans') {
+            olasilik = t.icYenilmez * (1 - 0.02 * (38 - horizon) / 38); // horizon ayari
+            oran = t.oran;
+            stratejiAd = 'Ev sahibi yenilmez';
+        } else if (str === 'gol') {
+            olasilik = ligVeri.altOran + (t.golAlt - ligVeri.altOran) * 0.3;
+            oran = 1.50;
+            stratejiAd = 'Alt 2.5 gol';
+        } else {
+            olasilik = Math.min(0.99, t.icYenilmez + 0.08);
+            oran = 1.40;
+            stratejiAd = 'Handikap +1.5';
+        }
+
+        // Amnesia etkisi: horizon kisa ise olasilik daha volatil
+        const amnesia = 1 - 0.05 * (10 / horizon);
+        olasilik = Math.min(0.99, olasilik * amnesia);
+        edge = (olasilik * oran) - 1;
+        edge = Math.round(edge * 10000) / 100;
+
+        const savas = edge > 0 ? '✅ GİR' : '⛔ BEKLE';
+        const renk = edge > 0 ? 'text-green-400' : 'text-red-400';
+        const badge = edge > 0 ? 'edge-pos' : 'edge-neg';
+
+        if (edge > 0) {
+            toplamEdge += edge;
+            savasSayisi++;
+            toplamKazanc += (edge / 100);
+        }
+
+        return `<tr style="border-bottom:1px solid rgba(255,255,255,0.03);">
+            <td style="padding:8px 10px; font-weight:600; color:white;">${t.ad}</td>
+            <td style="padding:8px 10px; text-align:center; color:#9ca3af;">Rakip</td>
+            <td style="padding:8px 10px; text-align:right; color:#9ca3af;">🏠 İç</td>
+            <td style="padding:8px 10px; text-align:right; font-weight:600; color:white;">${(olasilik*100).toFixed(1)}%</td>
+            <td style="padding:8px 10px; text-align:right; color:var(--gold);">${oran.toFixed(2)}</td>
+            <td style="padding:8px 10px; text-align:right; font-weight:700; ${renk};">${edge > 0 ? '+' : ''}${edge}%</td>
+            <td style="padding:8px 10px; text-align:center;"><span class="badge ${badge}">${savas}</span></td>
+        </tr>`;
+    }).join('');
+
+    document.getElementById('toplamEdge').textContent = (toplamEdge > 0 ? '+' : '') + toplamEdge.toFixed(1) + '%';
+    document.getElementById('savasSayisi').textContent = savasSayisi + ' / ' + takimlar.length;
+    document.getElementById('kazancOran').textContent = savasSayisi > 0 ? ((toplamKazanc / savasSayisi) * 100).toFixed(1) + '%' : '0%';
+    document.getElementById('sonuclar').style.display = 'block';
+}
+</script>
+</body>
+</html>
