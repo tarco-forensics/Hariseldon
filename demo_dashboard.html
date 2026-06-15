@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T2SAIM Arbitraj Agent — Canlı Dashboard</title>
+    <style>
+        :root{--bg:#06080c;--card:#0d1118;--gold:#c9a84c;--green:#10b981;--red:#ef4444;--blue:#3b82f6}
+        *{box-sizing:border-box;margin:0;padding:0}
+        body{font-family:'Segoe UI',system-ui;background:var(--bg);color:#d1d5db;padding:1rem;min-height:100vh}
+        .glass{background:var(--card);border:1px solid rgba(255,255,255,0.04);border-radius:12px;padding:1.2rem}
+        .gold{color:var(--gold)}.green{color:var(--green)}.red{color:var(--red)}
+        h2{font-size:1rem;margin-bottom:0.8rem}
+        table{width:100%;border-collapse:collapse;font-size:0.8rem}
+        th{text-align:left;padding:8px 6px;color:#9ca3af;border-bottom:1px solid rgba(255,255,255,0.05)}
+        td{padding:8px 6px;border-bottom:1px solid rgba(255,255,255,0.03)}
+        .badge{padding:2px 8px;border-radius:10px;font-size:0.7rem;font-weight:600}
+        .bg-green{background:rgba(16,185,129,0.15);color:var(--green)}
+        .bg-red{background:rgba(239,68,68,0.15);color:var(--red)}
+        .bg-gold{background:rgba(201,168,76,0.15);color:var(--gold)}
+        .grid2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+        .grid6{display:grid;grid-template-columns:repeat(6,1fr);gap:0.5rem}
+        @media(max-width:700px){.grid2,.grid6{grid-template-columns:1fr}}
+    </style>
+</head>
+<body style="max-width:1100px;margin:0 auto">
+
+<div class="glass" style="border-left:4px solid var(--gold);margin-bottom:1rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem">
+    <div>
+        <h1 style="color:white;font-size:1.3rem">🤖 T2SAIM Arbitraj Agent</h1>
+        <p style="color:#6b7280;font-size:0.75rem">6 bahis sitesi • Edge > %5 • 1000 USD sanal portföy</p>
+    </div>
+    <div style="text-align:right">
+        <p style="font-size:0.7rem;color:#6b7280">Bakiye</p>
+        <p style="font-size:1.8rem;font-weight:800;color:white" id="bakiye">$1000</p>
+        <p style="font-size:0.75rem" id="karZarar">+$0.00</p>
+    </div>
+</div>
+
+<!-- SITE MARJLARI -->
+<div class="glass" style="margin-bottom:1rem">
+    <h2 class="gold">🏢 Taranan Bahis Siteleri</h2>
+    <div class="grid6">
+        <div style="text-align:center;padding:8px;border-radius:8px;background:rgba(255,255,255,0.03)"><span style="font-weight:700;color:white">Pinnacle</span><br><span style="font-size:0.65rem;color:#9ca3af">Marj: %2.5</span></div>
+        <div style="text-align:center;padding:8px;border-radius:8px;background:rgba(255,255,255,0.03)"><span style="font-weight:700;color:white">Bet365</span><br><span style="font-size:0.65rem;color:#9ca3af">Marj: %5.5</span></div>
+        <div style="text-align:center;padding:8px;border-radius:8px;background:rgba(255,255,255,0.03)"><span style="font-weight:700;color:white">Betfair</span><br><span style="font-size:0.65rem;color:#9ca3af">Marj: %3.0</span></div>
+        <div style="text-align:center;padding:8px;border-radius:8px;background:rgba(255,255,255,0.03)"><span style="font-weight:700;color:white">Unibet</span><br><span style="font-size:0.65rem;color:#9ca3af">Marj: %6.0</span></div>
+        <div style="text-align:center;padding:8px;border-radius:8px;background:rgba(255,255,255,0.03)"><span style="font-weight:700;color:white">1xBet</span><br><span style="font-size:0.65rem;color:#9ca3af">Marj: %5.0</span></div>
+        <div style="text-align:center;padding:8px;border-radius:8px;background:rgba(255,255,255,0.03)"><span style="font-weight:700;color:white">Bwin</span><br><span style="font-size:0.65rem;color:#9ca3af">Marj: %6.5</span></div>
+    </div>
+</div>
+
+<div class="grid2" style="margin-bottom:1rem">
+    <!-- VALUE BET -->
+    <div class="glass">
+        <h2 class="green">🟢 Value Bet Fırsatları (Edge > %5)</h2>
+        <table><thead><tr><th>Maç</th><th>Seçim</th><th>Site</th><th>Oran</th><th>Edge</th></tr></thead>
+        <tbody id="valBody"></tbody></table>
+    </div>
+    <!-- ARBITRAJ -->
+    <div class="glass">
+        <h2 class="gold">✅ Arbitraj Fırsatları (Risk-Free)</h2>
+        <table><thead><tr><th>Maç</th><th>Siteler</th><th>Imp %</th><th>Kâr %</th></tr></thead>
+        <tbody id="arbBody"></tbody></table>
+    </div>
+</div>
+
+<!-- ISLEM GECMISI -->
+<div class="glass">
+    <h2>📋 İşlem Geçmişi (Son 10)</h2>
+    <table><thead><tr><th>Tarih</th><th>Maç</th><th>Seçim</th><th>Site</th><th>Oran</th><th>Stake</th><th>Kazanç</th><th>Bakiye</th></tr></thead>
+    <tbody id="gecmisBody"></tbody></table>
+</div>
+
+<p style="text-align:center;font-size:0.6rem;color:#4b5563;padding:1rem">T2SAIM Arbitraj Agent v1.0 • Deneysel modül • 1000 USD başlangıç</p>
+
+<script>
+// Veriler (JSON'dan veya sabit)
+const DATA = {
+    tarih: "2026-06-16",
+    bakiye: 1000,
+    kar_zarar: 0,
+    firsatlar: [
+        {mac:"Tottenham vs Man United",type:"VALUE",secim:"Ev Sahibi",site1:"Pinnacle",oran:2.50,edge:20.0,stake:50},
+        {mac:"Tottenham vs Man United",type:"VALUE",secim:"Ev Sahibi",site1:"Betfair",oran:2.55,edge:22.4,stake:50},
+        {mac:"Arsenal vs Newcastle",type:"VALUE",secim:"Ev Sahibi",site1:"Betfair",oran:1.62,edge:7.8,stake:50},
+        {mac:"Liverpool vs Chelsea",type:"VALUE",secim:"Ev Sahibi",site1:"Betfair",oran:1.78,edge:6.9,stake:50},
+        {mac:"Chelsea vs Brighton",type:"VALUE",secim:"Ev Sahibi",site1:"Betfair",oran:1.88,edge:5.2,stake:50},
+        {mac:"Man City vs Arsenal",type:"VALUE",secim:"Ev Sahibi",site1:"Betfair",oran:1.92,edge:5.1,stake:50},
+    ],
+    gecmis: [
+        {tarih:"2026-06-14",mac:"Man City-Arsenal",secim:"Ev",site:"Pinnacle",oran:1.90,stake:50,sonuc:"✅ +$45",bakiye:1045},
+        {tarih:"2026-06-14",mac:"Liverpool-Chelsea",secim:"Ev",site:"Betfair",oran:1.78,stake:50,sonuc:"❌ -$50",bakiye:995},
+        {tarih:"2026-06-13",mac:"Spurs-ManUtd",secim:"Beraberlik",site:"Bet365",oran:3.20,stake:30,sonuc:"✅ +$66",bakiye:1045},
+        {tarih:"2026-06-13",mac:"Arsenal-Newc",secim:"Ev",site:"Pinnacle",oran:1.62,stake:50,sonuc:"✅ +$31",bakiye:995},
+    ]
+};
+
+const val = DATA.firsatlar.filter(f=>f.type==='VALUE');
+const arb = DATA.firsatlar.filter(f=>f.type!=='VALUE');
+
+document.getElementById('valBody').innerHTML = val.length ? val.map(f=>
+    `<tr><td style="color:white">${f.mac}</td><td>${f.secim||'Ev'}</td><td style="color:var(--gold)">${f.site1}</td><td>${f.oran}</td><td class="green">+${f.edge}%</td></tr>`
+).join('') : '<tr><td colspan="5" style="text-align:center;color:#6b7280;">Value bet fırsatı bulunamadı</td></tr>';
+
+document.getElementById('arbBody').innerHTML = arb.length ? arb.map(f=>
+    `<tr><td style="color:white">${f.mac}</td><td>${f.site1}+${f.site2}</td><td>${f.imp}%</td><td class="green">+${f.kar_pct}%</td></tr>`
+).join('') : '<tr><td colspan="4" style="text-align:center;color:#6b7280;">Arbitraj fırsatı bulunamadı</td></tr>';
+
+document.getElementById('gecmisBody').innerHTML = DATA.gecmis.map(g=>
+    `<tr><td>${g.tarih}</td><td style="color:white">${g.mac}</td><td>${g.secim}</td><td style="color:var(--gold)">${g.site}</td><td>${g.oran}</td><td>$${g.stake}</td><td class="${g.sonuc.startsWith('✅')?'green':'red'}">${g.sonuc}</td><td style="color:white">$${g.bakiye}</td></tr>`
+).join('');
+
+const sonBakiye = DATA.gecmis.length ? DATA.gecmis[0].bakiye : DATA.bakiye;
+const kar = sonBakiye - 1000;
+document.getElementById('bakiye').textContent = '$'+sonBakiye.toLocaleString();
+document.getElementById('karZarar').innerHTML = `<span class="${kar>=0?'green':'red'}">${kar>=0?'+':''}$${kar}</span> (${(kar/10).toFixed(1)}%)`;
+</script>
+</body>
+</html>
