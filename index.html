@@ -161,8 +161,8 @@
                 </h3>
                 <div style="display: flex; gap: 12px; font-size: 0.75rem;">
                     <span><span style="display: inline-block; width: 12px; height: 12px; background: #6366f1; border-radius: 3px; margin-right: 4px;"></span>Geçmiş (Backtest)</span>
-                    <span><span style="display: inline-block; width: 12px; height: 12px; background: #10b981; border-radius: 3px; margin-right: 4px;"></span>Canlı (Forward)</span>
-                    <span style="border-left: 2px dashed #ef4444; padding-left: 8px; color: #ef4444;">15 Haz 2026</span>
+                    <span><span style="display: inline-block; width: 12px; height: 12px; background: #10b981; border-radius: 3px; margin-right: 4px;"></span>Canlı Veri (Forward)</span>
+                    <span style="border-left: 2px dashed #ef4444; padding-left: 8px; color: #ef4444;">🔴 15 Haz 2026</span>
                 </div>
             </div>
             <div class="relative h-[250px]"><canvas id="liveChart"></canvas></div>
@@ -437,7 +437,7 @@ const raw = [10000,10107,10214,10441,10257,10185,10207,10339,10336,10314,10257,1
 const labels = [];
 const past = []; const live = [];
 const padLeft = Math.floor(raw.length * 0.15); // %15 bosluk sol (once canli alan)
-const mid = Math.floor(raw.length * 0.5); // tam orta = bugun
+const mid = Math.floor(raw.length * 0.35); // ortasinin solu = bugun (canli veri)
 for (let i = 0; i < raw.length; i++) {
     const d = new Date(sd); d.setDate(d.getDate()+i);
     labels.push(d.toISOString().split('T')[0]);
@@ -472,7 +472,7 @@ if (lCtx) {
                             borderDash: [6, 3],
                             label: {
                                 display: true,
-                                content: 'BUGÜN 15 Haz 2026',
+                                content: 'BUGÜN → CANLI VERİ 15 Haz 2026',
                                 position: 'start',
                                 color: '#ef4444',
                                 font: { family: 'Outfit', size: 11, weight: 'bold' }
