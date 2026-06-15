@@ -3,7 +3,7 @@
 # Kaptan Tarco | SPOCK | Amnesia λ=0.15 | Zero Future Leakage
 # Takvim: Çift gün BIST, Tek gün Global, Her gün Amigdala
 
-HARISELDON="/c/Users/tarka/Hariseldon"
+HARISELDON="/b/Hariseldon"
 LOG="$HARISELDON/logs/daily_$(date +%Y%m%d).log"
 mkdir -p "$HARISELDON/logs"
 
