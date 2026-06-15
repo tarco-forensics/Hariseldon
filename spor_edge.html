@@ -130,6 +130,19 @@
 </div>
 
 <script>
+const PASS = '18815273';
+function check() {
+    if(document.getElementById('pwd').value === PASS) {
+        document.getElementById('loginScreen').style.display = 'none';
+        document.getElementById('main').style.display = 'block';
+        document.title = 'SPOR EDGE — T2SAIM';
+    } else {
+        document.getElementById('err').style.display = 'block';
+        setTimeout(() => document.getElementById('err').style.display = 'none', 2000);
+    }
+}
+// Ana sayfayi baslangicta gizle
+document.getElementById('main').style.display = 'none';
 const LIG_VERI = {
     ispanya2: { name: 'İspanya 2. Ligi', golOrt: 2.1, altOran: 0.68, icYenilmez: 0.92 },
     ispanya: { name: 'İspanya LaLiga', golOrt: 2.5, altOran: 0.55, icYenilmez: 0.88 },
