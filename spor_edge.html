@@ -278,6 +278,9 @@ document.querySelectorAll('.mod-btn').forEach(btn => {
     btn.addEventListener('click', function() { switchMod(this.dataset.mod); });
 });
 
+// Sayfa yuklendiginde WC tablosunu doldur
+initWorldCup();
+
 // DUnya KUPASI
 function initWorldCup() {
     const takimlar = [
