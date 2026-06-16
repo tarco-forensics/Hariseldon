@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated": "2026-06-16 19:07",
+    "generated": "2026-06-16 22:57",
     "yesterday": "2026-06-15",
     "total_portfolio": 155730.0,
     "total_profit": 75730.0,
@@ -29,10 +29,10 @@
       "portfolio": 15984.0,
       "profit": 5984.0,
       "live_ok": true,
-      "close_prev": 14446.4,
-      "close_last": 14493.09,
-      "daily_pct": 0.32,
-      "last_date": "2026-06-16"
+      "close_prev": 13938.5,
+      "close_last": 14446.4,
+      "daily_pct": 3.64,
+      "last_date": "2026-06-15"
     },
     {
       "key": "sp500",
@@ -52,8 +52,8 @@
       "profit": 8002.0,
       "live_ok": true,
       "close_prev": 7554.29,
-      "close_last": 7530.02,
-      "daily_pct": -0.32,
+      "close_last": 7511.35,
+      "daily_pct": -0.57,
       "last_date": "2026-06-16"
     },
     {
@@ -162,8 +162,8 @@
       "profit": 29702.0,
       "live_ok": true,
       "close_prev": 66289.5,
-      "close_last": 66035.46,
-      "daily_pct": -0.38,
+      "close_last": 65699.85,
+      "daily_pct": -0.89,
       "last_date": "2026-06-16"
     },
     {
@@ -184,8 +184,8 @@
       "profit": 8587.0,
       "live_ok": true,
       "close_prev": 4328.0,
-      "close_last": 4361.6,
-      "daily_pct": 0.78,
+      "close_last": 4353.0,
+      "daily_pct": 0.58,
       "last_date": "2026-06-16"
     }
   ]
