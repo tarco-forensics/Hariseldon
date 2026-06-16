@@ -345,7 +345,11 @@ function check() {
 }
 
 function init() {
-    fetch('crisis_data.json?v=' + Date.now())
+    let url = 'crisis_data.json';
+    if (window.location.protocol === 'file:') {
+        url = 'https://tarco-forensics.github.io/Hariseldon/crisis_data.json';
+    }
+    fetch(url + '?v=' + Date.now())
         .then(r => r.json())
         .then(data => renderDashboard(data))
         .catch(() => renderDashboard(null));  // fallback: simülasyon
@@ -471,6 +475,8 @@ function renderDashboard(realData) {
         document.getElementById('gaugeFill').style.background = '#10b981';
         document.getElementById('distanceLabel').textContent = '✅ NORMAL';
         document.getElementById('distanceLabel').style.color = '#10b981';
+        document.getElementById('statusBadge').innerHTML = '✅ NORMAL';
+        document.getElementById('statusBadge').style.cssText += ';color:#10b981;border-color:rgba(16,185,129,.3);background:rgba(16,185,129,.1)';
     }
     document.getElementById('efmiDisplay').textContent = last.efmi.toFixed(4);
     document.getElementById('efmiGauge').style.width = Math.min(100, (1 + last.efmi) * 100) + '%';
