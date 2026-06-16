@@ -14,10 +14,35 @@ from datetime import datetime, timedelta
 
 DATA_DIR = r"B:\T2SAIM_NEXUS\Macroekonomics\hermes_crisis_lab\data"
 OUT_FILE = r"B:\Hariseldon\crisis_data.json"
+PANEL_PATH = r"B:\T2SAIM_NEXUS\Macroekonomics\hermes_crisis_lab\loop_002\data_processed\TR_PRIORITY1_UNIFIED_PANEL_DRAFT_v3.csv"
 
 SIGMA  = 1.25
 LAMBDA = 0.15
 SRI_ALARM = 0.55
+
+DEFAULT_PSY = 0.5985
+DEFAULT_FIN = 0.4145
+DEFAULT_DEI = 0.71
+
+def load_macro_baselines():
+    if not os.path.exists(PANEL_PATH):
+        return DEFAULT_PSY, DEFAULT_FIN, DEFAULT_DEI
+    try:
+        with open(PANEL_PATH, encoding="utf-8") as f:
+            reader = csv.DictReader(f)
+            rows = list(reader)
+            if rows:
+                for r in reversed(rows):
+                    psy = r.get("sri_psy_component")
+                    fin = r.get("sri_fin_component")
+                    if psy and fin:
+                        val_psy = float(psy)
+                        val_fin = float(fin)
+                        val_dei = float(r.get("dei")) if r.get("dei") else DEFAULT_DEI
+                        return val_psy, val_fin, val_dei
+    except:
+        pass
+    return DEFAULT_PSY, DEFAULT_FIN, DEFAULT_DEI
 
 # ── 1. USDTRY günlük veri ──────────────────────────────────────────────
 def load_usdtry():
@@ -97,6 +122,8 @@ def compute_crisis_index():
     vol  = load_vol()
     dates = make_date_range(700)
 
+    psy_base, fin_base, dei_base = load_macro_baselines()
+
     # USDTRY serisi (günlük)
     usd_series = []
     for d in dates:
@@ -122,8 +149,8 @@ def compute_crisis_index():
     # Z-skorları (1260 günlük pencere ≈ 5 yıl)
     zscores = rolling_zscore(smoothed_returns, window=min(1260, len(smoothed_returns)))
 
-    # Normalize Z → [0,1]
-    z_norm = [min(1.0, max(0.0, abs(z) / (SIGMA * 2))) for z in zscores]
+    # Normalize Z → [0,1] (SIGMA standardizasyonu ile)
+    z_norm = [min(1.0, max(0.0, abs(z) / SIGMA)) for z in zscores]
 
     # Volatilite katkısı
     vol_dates = sorted(vol.keys())
@@ -133,16 +160,25 @@ def compute_crisis_index():
         # en yakın haftalık volatiliteyi bul
         closest = min(vol_dates, key=lambda x: abs((datetime.strptime(x, "%Y-%m-%d") - d).days)) if vol_dates else None
         if closest:
-            v = vol[closest] / 100.0
+            v = vol[closest] # Fixed: no division by 100.0
             vol_series.append(min(1.0, v / 5.0))   # %5 volatilite = 1.0
         else:
             vol_series.append(0.3)
 
-    # SRI = 0.6 * z_norm + 0.4 * volatilite
-    sri_series = [0.6 * z + 0.4 * v for z, v in zip(z_norm, vol_series)]
+    # Günlük volatilite bileşeni
+    sri_vol_daily = [0.6 * z + 0.4 * v for z, v in zip(z_norm, vol_series)]
+
+    # Hibrid SRI formülü: 0.30 * sri_psy + 0.40 * sri_fin + 0.30 * sri_vol_daily
+    sri_series = [0.30 * psy_base + 0.40 * fin_base + 0.30 * svol for svol in sri_vol_daily]
+
+    # Yapısal DEI çarpanının uygulanması (TR-DEI = dei_base, 0.60'ı aşarsa asimetrik olarak %15 tırmandırılır)
+    sri_series_dei = []
+    for s in sri_series:
+        s_new = s * 1.15 if dei_base >= 0.60 else s
+        sri_series_dei.append(min(1.0, s_new))
 
     # Alarm sinyalleri
-    alarms = [1 if s >= SRI_ALARM else 0 for s in sri_series]
+    alarms = [1 if s >= SRI_ALARM else 0 for s in sri_series_dei]
 
     # Amnesia belleği
     memory = apply_amnesia(alarms)
@@ -150,7 +186,7 @@ def compute_crisis_index():
     # Kriz indeksi (0-1) — amnesia belleği de dahil
     # Yüksek bellek → sistem tehlikeye çok yakın bir dönemde
     crisis_idx = []
-    for s, m, a in zip(sri_series, memory, alarms):
+    for s, m, a in zip(sri_series_dei, memory, alarms):
         base = s * 0.7 + min(1.0, m / 5.0) * 0.3
         ci   = min(1.0, max(0.0, base))
         crisis_idx.append(round(ci, 4))
@@ -173,7 +209,7 @@ def compute_crisis_index():
         output.append({
             "date":     dstr,
             "ci":       crisis_idx[i],
-            "sri":      round(sri_series[i], 4),
+            "sri":      round(sri_series_dei[i], 4),
             "z":        round(z_norm[i], 4),
             "vol":      round(vol_series[i], 4),
             "alarm":    alarms[i],
@@ -191,7 +227,7 @@ def compute_crisis_index():
         "memory_last": last["memory"],
         "alarm_now":   last["alarm"],
         "l6_active":   1 if last["sri"] >= 0.50 and last["z"] >= 0.50 else 0,
-        "dei":         0.71,   # statik (yapısal bozunma — ayrı modelden)
+        "dei":         dei_base,
         "sigma":       SIGMA,
         "lam":         LAMBDA,
         "data_points": len(output)
