@@ -19,17 +19,25 @@ if %ERRORLEVEL% NEQ 0 (
 )
 
 :: 2. Kriz indeksini yeniden hesapla
-echo [2/3] Kriz indeksi hesaplaniyor... >> %LOG%
+echo [2/4] Kriz indeksi hesaplaniyor... >> %LOG%
 %PYTHON% B:\Hariseldon\generate_crisis_data.py >> %LOG% 2>&1
 if %ERRORLEVEL% NEQ 0 (
     echo HATA: Kriz indeksi hesaplama basarisiz >> %LOG%
     goto END
 )
 
+:: 2.5 Canlı piyasa verilerini çek ve market_data.json üret
+echo [3/4] Canli piyasa verileri cekiliyor... >> %LOG%
+%PYTHON% B:\Hariseldon\generate_market_data.py >> %LOG% 2>&1
+if %ERRORLEVEL% NEQ 0 (
+    echo HATA: Piyasa verileri cekme basarisiz >> %LOG%
+    goto END
+)
+
 :: 3. GitHub'a push et
-echo [3/3] GitHub push... >> %LOG%
+echo [4/4] GitHub push... >> %LOG%
 cd /d B:\Hariseldon
-git add crisis_data.json >> %LOG% 2>&1
+git add crisis_data.json market_data.json >> %LOG% 2>&1
 git commit -m "data: daily update %DATE%" >> %LOG% 2>&1
 git push origin main >> %LOG% 2>&1
 if %ERRORLEVEL% NEQ 0 (
