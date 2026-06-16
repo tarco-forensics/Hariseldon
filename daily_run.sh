@@ -25,7 +25,12 @@ echo "  => Amigdala tamamlandi" >> "$LOG"
 # Veri Dogrulama Gate (KE - Prediction Architecture v04)
 echo "[2] Veri Dogrulama Gate..." >> "$LOG"
 echo "  Protokol: CLOSED_PROJECT_PREDICTION_ARCHITECTURE_v04.md" >> "$LOG"
-echo "  => Veri dogrulama tamam" >> "$LOG"
+echo "  => Amigdala tamamlandi" >> "$LOG"
+
+# D-1 VERI GUNCELLEME (yfinance)
+echo "[2] BIST veri guncelleme..." >> "$LOG"
+python /b/T2SAIM_Spock_Hermes/veri_guncelle.py 2>&1 >> "$LOG"
+echo "  => Veri guncelleme tamam" >> "$LOG"
 
 # Cift gun (0): BIST, Tek gun (1): Global
 if [ $GUN_MOD -eq 0 ]; then
