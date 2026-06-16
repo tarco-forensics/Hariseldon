@@ -173,52 +173,71 @@ function check() {
 }
 
 function init() {
+    fetch('crisis_data.json?v=' + Date.now())
+        .then(r => r.json())
+        .then(data => renderDashboard(data))
+        .catch(() => renderDashboard(null));  // fallback: simülasyon
+}
+
+function renderDashboard(realData) {
     // ── Başlık tarihi ──────────────────────────────────────────────────
     const now = new Date();
     now.setHours(0,0,0,0);
     document.getElementById('dateDisplay').textContent = now.toLocaleDateString('tr-TR', {year:'numeric',month:'long',day:'numeric'});
     document.getElementById('footerDate').textContent = now.toISOString().split('T')[0];
 
-    // ── Tarih hesabı ───────────────────────────────────────────────────
-    // Dün = bugün - 1 gün
     const yesterday = new Date(now);
     yesterday.setDate(yesterday.getDate() - 1);
     const yesterdayStr = yesterday.toISOString().split('T')[0];
 
-    const PAST_DAYS   = 700;  // mavi çizgi uzunluğu
-    const FUTURE_DAYS = 45;   // kırmızı çizgi ilerisi (görsel boşluk için)
-    const TOTAL       = PAST_DAYS + FUTURE_DAYS;
+    const FUTURE_DAYS = 45;
+    let labelsAll = [], crisisAll = [], sriAll = [], efmiAll = [];
 
-    // Başlangıç: tam 700 gün önce (dün dahil 700 nokta olacak)
-    // i=0  → 700 gün önce
-    // i=700 → dün  (pivotIdx)
-    // i=745 → 45 gün sonrası
-    const labelsAll = [];
-    const crisisAll = [];
-    const efmiAll   = [];
-    const sriAll    = [];
-
-    const origin = new Date(yesterday);
-    origin.setDate(origin.getDate() - PAST_DAYS); // 700 gün öncesi
-
-    for (let i = 0; i <= TOTAL; i++) {
-        const d = new Date(origin);
-        d.setDate(origin.getDate() + i);
-        labelsAll.push(d.toISOString().split('T')[0]);
-
-        // t: 0 = 700 gün önce, 1 = dün, >1 = gelecek
-        const t = i / PAST_DAYS;
-        const tC = Math.min(t, 1); // geçmiş için 0-1 arası
-        const efmi = -0.36 + (0.34 * tC) + (Math.random() - 0.5) * 0.03;
-        efmiAll.push(efmi);
-        const sri = 0.30 + 0.25 * Math.sin(tC * 4) + 0.10 * Math.random() + 0.15 * tC;
-        sriAll.push(sri);
-        const ci = Math.min(1, Math.max(0, (1 + efmi) * 0.6 + sri * 0.4));
-        crisisAll.push(ci);
+    if (realData && realData.series && realData.series.length > 0) {
+        // ── GERÇEK T2SAIM VERİSİ ──────────────────────────────────────
+        const series = realData.series;
+        for (const row of series) {
+            labelsAll.push(row.date);
+            crisisAll.push(row.ci);
+            sriAll.push(row.sri);
+            efmiAll.push(row.z);   // z-norm ≈ EFMI proxy
+        }
+        // Sağda görsel boşluk için 45 günlük ileri veri (son değeri tut)
+        const lastRow = series[series.length - 1];
+        const lastDate = new Date(lastRow.date);
+        for (let i = 1; i <= FUTURE_DAYS; i++) {
+            const d = new Date(lastDate);
+            d.setDate(d.getDate() + i);
+            labelsAll.push(d.toISOString().split('T')[0]);
+            // İleri tahmin: son değere hafif gürültü ekle
+            crisisAll.push(Math.min(1, Math.max(0, lastRow.ci + (Math.random()-0.5)*0.02)));
+            sriAll.push(Math.min(1, Math.max(0, lastRow.sri + (Math.random()-0.5)*0.02)));
+            efmiAll.push(lastRow.z);
+        }
+    } else {
+        // ── FALLBACK: Simülasyon ───────────────────────────────────────
+        const PAST_DAYS = 700;
+        const TOTAL = PAST_DAYS + FUTURE_DAYS;
+        const origin = new Date(yesterday);
+        origin.setDate(origin.getDate() - PAST_DAYS);
+        for (let i = 0; i <= TOTAL; i++) {
+            const d = new Date(origin);
+            d.setDate(origin.getDate() + i);
+            labelsAll.push(d.toISOString().split('T')[0]);
+            const t = i / PAST_DAYS;
+            const tC = Math.min(t, 1);
+            const efmi = -0.36 + (0.34 * tC) + (Math.random() - 0.5) * 0.03;
+            efmiAll.push(efmi);
+            const sri = 0.30 + 0.25 * Math.sin(tC * 4) + 0.10 * Math.random() + 0.15 * tC;
+            sriAll.push(sri);
+            crisisAll.push(Math.min(1, Math.max(0, (1 + efmi) * 0.6 + sri * 0.4)));
+        }
     }
 
-    // pivotIdx = dünün indeksi = PAST_DAYS (her zaman sabit)
-    const pivotIdx = PAST_DAYS; // labelsAll[700] === yesterdayStr
+    // pivotIdx = dünün indeksi (labelsAll içinde bul)
+    const pivotIdx = labelsAll.indexOf(yesterdayStr) >= 0
+        ? labelsAll.indexOf(yesterdayStr)
+        : labelsAll.length - FUTURE_DAYS - 1;
 
     // ── Mavi çizgi: sadece 0..pivotIdx (dün dahil), son noktada dot ───
     const pastData = crisisAll.map((v, i) => i <= pivotIdx ? v : null);
@@ -226,12 +245,21 @@ function init() {
     const futureData = crisisAll.map((v, i) => i >= pivotIdx ? v : null);
 
     // ── KPI değerleri (dünkü) ─────────────────────────────────────────
-    const last = {
-        efmi: efmiAll[pivotIdx],
-        sri:  sriAll[pivotIdx],
+    // Son değerler — gerçek veriden veya hesaplanan diziden
+    const last = realData && realData.summary ? {
+        efmi: realData.summary.ci_last,     // z-norm proxy
+        sri:  realData.summary.sri_last,
+        dei:  realData.summary.dei || 0.71,
+        l6:   realData.summary.l6_active,
+        ci:   realData.summary.ci_last,
+        memory: realData.summary.memory_last,
+        alarm: realData.summary.alarm_now
+    } : {
+        efmi: efmiAll[pivotIdx] || 0,
+        sri:  sriAll[pivotIdx] || 0,
         dei:  0.71,
         l6:   (efmiAll[pivotIdx] > -0.1 && sriAll[pivotIdx] > 0.45) ? 1 : 0,
-        ci:   crisisAll[pivotIdx]
+        ci:   crisisAll[pivotIdx] || 0
     };
 
     // Kriz mesafesi
