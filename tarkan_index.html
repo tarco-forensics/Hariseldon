@@ -54,6 +54,7 @@
                     <span style="font-size:2rem;">🖖</span>
                     <h1 style="font-size:1.8rem; font-weight:800; color:white; margin:0;">TARKAN</h1>
                     <span style="background:rgba(201,168,76,0.15); color:var(--gold); padding:2px 10px; border-radius:20px; font-size:0.65rem;">T2SAIM</span>
+                    <span style="background:rgba(239,68,68,0.15); color:#ef4444; padding:2px 10px; border-radius:20px; font-size:0.65rem; border:1px solid rgba(239,68,68,0.3);" class="pulse">⬤ CANLI</span>
                 </div>
                 <p style="color:#9ca3af; margin:4px 0 0 0; font-size:0.85rem;">T2SAIM Merkez &bull; Kriz &bull; Borsa &bull; Spor &bull; <span style="color:#10b981;">Canlı Veri</span></p>
             </div>
@@ -116,13 +117,20 @@
 
     <!-- 700 GUNLUK GRAFIK -->
     <div class="glass p-6" style="margin-bottom:1rem;">
-        <h2 style="font-weight:700; color:white; font-size:1.1rem; margin-bottom:1rem;">
-            <span class="gold-text">📉</span> 700 Günlük Kriz İndeksi
-        </h2>
+        <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:1rem;">
+            <h2 style="font-weight:700; color:white; font-size:1.1rem; margin:0;">
+                <span class="gold-text">📉</span> 700 Günlük Kriz İndeksi
+            </h2>
+            <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+                <span style="font-size:0.65rem; color:#6b7280;">Backtest: 1994–2026 &nbsp;|&nbsp; σ=1.25 &nbsp;|&nbsp; λ=0.15</span>
+                <span style="background:rgba(59,130,246,0.12); color:#3b82f6; border:1px solid rgba(59,130,246,0.3); padding:2px 8px; border-radius:12px; font-size:0.65rem; font-weight:700;">── Geçmiş</span>
+                <span style="background:rgba(239,68,68,0.12); color:#ef4444; border:1px solid rgba(239,68,68,0.3); padding:2px 8px; border-radius:12px; font-size:0.65rem; font-weight:700;" class="pulse">⬤ CANLI &gt; 2026-06-15</span>
+            </div>
+        </div>
         <div style="height:350px;"><canvas id="krizChart"></canvas></div>
         <div style="display:flex; justify-content:space-between; font-size:0.65rem; color:#4b5563; margin-top:4px;">
             <span id="startDate">700 gün önce</span>
-            <span>⬆️ Kriz yaklaşıyor</span>
+            <span style="color:var(--gold); font-weight:600;">T2SAIM Gerçek Veri — USDTRY + Volatilite</span>
             <span id="endDate">Bugün</span>
         </div>
     </div>
