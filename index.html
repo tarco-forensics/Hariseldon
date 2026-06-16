@@ -114,6 +114,67 @@
             </div>
         </div>
 
+        <!-- DETAY PANELİ -->
+        <div id="marketDetailPanel" class="glass p-6 mt-4 mb-4 hidden">
+            <div class="flex flex-col lg:flex-row gap-6">
+                <!-- Sol Taraf: Portföy Değerleri -->
+                <div class="w-full lg:w-1/3 space-y-4">
+                    <div class="flex items-center gap-3 border-b border-gray-800 pb-3">
+                        <span id="detailFlag" class="text-3xl"></span>
+                        <div>
+                            <h4 id="detailName" class="text-lg font-bold text-white leading-tight"></h4>
+                            <span id="detailTicker" class="text-xs text-gray-500 font-mono"></span>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="bg-gray-950/40 p-3 rounded-lg border border-gray-800/40">
+                            <span class="text-xs text-gray-500 block">Başlangıç Kasa</span>
+                            <span id="detailStart" class="text-sm font-semibold text-gray-300 font-mono"></span>
+                        </div>
+                        <div class="bg-gray-950/40 p-3 rounded-lg border border-gray-800/40">
+                            <span class="text-xs text-gray-500 block">Mevcut Kasa</span>
+                            <span id="detailPortfolio" class="text-sm font-semibold text-white font-mono"></span>
+                        </div>
+                        <div class="bg-gray-950/40 p-3 rounded-lg border border-gray-800/40">
+                            <span class="text-xs text-gray-500 block">Net Kâr/Zarar</span>
+                            <span id="detailProfit" class="text-sm font-bold font-mono"></span>
+                        </div>
+                        <div class="bg-gray-950/40 p-3 rounded-lg border border-gray-800/40">
+                            <span class="text-xs text-gray-500 block">Strateji ROI</span>
+                            <span id="detailRoi" class="text-sm font-bold text-green-400 font-mono"></span>
+                        </div>
+                        <div class="bg-gray-950/40 p-3 rounded-lg border border-gray-800/40">
+                            <span class="text-xs text-gray-500 block">Net Alpha</span>
+                            <span id="detailAlpha" class="text-sm font-semibold gold-text font-mono"></span>
+                        </div>
+                        <div class="bg-gray-950/40 p-3 rounded-lg border border-gray-800/40">
+                            <span class="text-xs text-gray-500 block">Sharpe Raporu</span>
+                            <span id="detailSharpe" class="text-sm font-semibold text-gray-300 font-mono"></span>
+                        </div>
+                        <div class="bg-gray-950/40 p-3 rounded-lg border border-gray-800/40">
+                            <span class="text-xs text-gray-500 block">Toplam İşlem</span>
+                            <span id="detailTrades" class="text-sm font-semibold text-gray-300 font-mono"></span>
+                        </div>
+                        <div class="bg-gray-950/40 p-3 rounded-lg border border-gray-800/40">
+                            <span class="text-xs text-gray-500 block">Stop-Loss Adedi</span>
+                            <span id="detailStop" class="text-sm font-semibold text-amber-500 font-mono"></span>
+                        </div>
+                    </div>
+                    <div class="pt-2">
+                        <a id="detailDashboardLink" href="#" class="block w-full text-center bg-yellow-500/10 text-yellow-400 border border-yellow-500/20 py-2 rounded-lg text-sm font-semibold transition hover:bg-yellow-500/20">
+                            <i class="fa-solid fa-square-arrow-up-right mr-1"></i> Detaylı Analiz Sayfası
+                        </a>
+                    </div>
+                </div>
+                <!-- Sağ Taraf: TradingView Canlı Grafik -->
+                <div class="w-full lg:w-2/3">
+                    <div class="tradingview-widget-container" style="height: 400px; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05);">
+                        <div id="detailTvChart" style="height: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
             <a href="dashboards/BIST100_Amnesia_Dashboard.html" class="card" style="display: block; text-decoration: none; color: inherit;">
                 <div class="card-icon">🇹🇷</div>
@@ -139,7 +200,7 @@
         </div>
         <div class="glass p-6" style="margin-bottom: 2rem;">
             <h3 style="font-weight: 700; color: white; margin-bottom: 1rem;"><i class="fa-solid fa-chart-line gold-text mr-2"></i>Anchor Dashboard</h3>
-            <iframe src="dashboards/BIST100_Amnesia_Dashboard.html" style="width: 100%; height: 600px; border: none; border-radius: 12px; background: #0d1118;"></iframe>
+            <iframe id="anchorIframe" src="dashboards/BIST100_Amnesia_Dashboard.html" style="width: 100%; height: 600px; border: none; border-radius: 12px; background: #0d1118;"></iframe>
         </div>
 
         <!-- LIVE WIDGET -->
@@ -170,15 +231,16 @@
                     Canlı Piyasa Grafiği (TradingView)
                 </h3>
                 <div style="display: flex; gap: 6px; font-size: 0.7rem;">
-                    <button class="tv-btn" data-symbol="BIST100" style="padding: 2px 10px; border-radius: 6px; border: 1px solid rgba(201,168,76,0.3); background: rgba(201,168,76,0.1); color: var(--gold); cursor: pointer;">🇹🇷 BIST</button>
+                    <button class="tv-btn" data-symbol="BIST:XU100" style="padding: 2px 10px; border-radius: 6px; border: 1px solid rgba(201,168,76,0.3); background: rgba(201,168,76,0.1); color: var(--gold); cursor: pointer;">🇹🇷 BIST</button>
                     <button class="tv-btn active" data-symbol="SPY" style="padding: 2px 10px; border-radius: 6px; border: 1px solid var(--gold); background: rgba(201,168,76,0.2); color: var(--gold); cursor: pointer;">🇺🇸 SPY</button>
                     <button class="tv-btn" data-symbol="EWU" style="padding: 2px 10px; border-radius: 6px; border: 1px solid rgba(201,168,76,0.3); background: rgba(201,168,76,0.1); color: var(--gold); cursor: pointer;">🇬🇧 UK</button>
+                    <button class="tv-btn" data-symbol="FEZ" style="padding: 2px 10px; border-radius: 6px; border: 1px solid rgba(201,168,76,0.3); background: rgba(201,168,76,0.1); color: var(--gold); cursor: pointer;">🇪🇺 EU</button>
                     <button class="tv-btn" data-symbol="EWJ" style="padding: 2px 10px; border-radius: 6px; border: 1px solid rgba(201,168,76,0.3); background: rgba(201,168,76,0.1); color: var(--gold); cursor: pointer;">🇯🇵 JP</button>
                     <button class="tv-btn" data-symbol="EWH" style="padding: 2px 10px; border-radius: 6px; border: 1px solid rgba(201,168,76,0.3); background: rgba(201,168,76,0.1); color: var(--gold); cursor: pointer;">🇭🇰 HK</button>
-                    <button class="tv-btn" data-symbol="BTC-USD" style="padding: 2px 10px; border-radius: 6px; border: 1px solid rgba(201,168,76,0.3); background: rgba(201,168,76,0.1); color: var(--gold); cursor: pointer;">🪙 BTC</button>
+                    <button class="tv-btn" data-symbol="COINBASE:BTCUSD" style="padding: 2px 10px; border-radius: 6px; border: 1px solid rgba(201,168,76,0.3); background: rgba(201,168,76,0.1); color: var(--gold); cursor: pointer;">🪙 BTC</button>
                 </div>
             </div>
-            <div class="tradingview-widget-container" style="height: 400px; border-radius: 12px; overflow: hidden;">
+            <div class="tradingview-widget-container" style="height: 600px; border-radius: 12px; overflow: hidden;">
                 <div id="tvChart" style="height: 100%;"></div>
             </div>
         </div>
@@ -420,6 +482,7 @@ function loadDataAndInit() {
         setTimeout(function() {
             initDailyTable();
             initDashboardTable();
+            showMarketDetail('bist');
         }, 300);
     });
 }
@@ -554,7 +617,7 @@ function initDashboardTable() {
         const isBist = m.key === 'bist';
         const optText = isBist ? 'opt ★' : 'opt';
         
-        body += `<tr class="border-b border-gray-800/50 hover:bg-gray-800/30">
+        body += `<tr class="border-b border-gray-800/50 hover:bg-gray-800/30 cursor-pointer" onclick="showMarketDetail('${m.key}')" id="row-${m.key}">
             <td class="py-2 px-3"><span class="text-lg mr-2">${flagEmoji}</span><span class="text-white font-semibold">${m.name}</span></td>
             <td class="text-right gold-text font-mono">${m.hurst} <span class="text-xs text-green-400">${optText}</span></td>
             <td class="text-right text-green-400 font-mono">+%${m.roi.toFixed(2)}</td>
@@ -562,7 +625,7 @@ function initDashboardTable() {
             <td class="text-right gold-text font-mono">+${m.alpha.toFixed(2)}pp</td>
             <td class="text-right font-mono text-gray-400">${m.sharpe}</td>
             <td class="text-right font-mono text-gray-400">${m.stop}</td>
-            <td class="text-center"><a href="${m.dashboard}" class="text-xs bg-yellow-500/10 text-yellow-400 px-2 py-1 rounded">Aç</a></td>
+            <td class="text-center" onclick="event.stopPropagation()"><a href="${m.dashboard}" target="_blank" class="text-xs bg-yellow-500/10 text-yellow-400 px-2 py-1 rounded">Aç</a></td>
             <td class="text-center"><span class="text-xs ${durumColor} px-2 py-1 rounded-full">${durumText}</span></td>
         </tr>`;
     });
@@ -570,6 +633,95 @@ function initDashboardTable() {
     document.getElementById('dashboardBody').innerHTML = body;
     document.getElementById('totalRoiSum').textContent = '+%' + summary.total_roi_sum.toFixed(2) + '%';
     document.getElementById('totalAlphaSum').textContent = '+' + summary.total_alpha_sum.toFixed(2) + 'pp';
+}
+
+function getTvSymbol(key) {
+    const symbols = {
+        'bist': 'BIST:XU100',
+        'sp500': 'SPY',
+        'ftse': 'EWU',
+        'stoxx': 'FEZ',
+        'nikkei': 'EWJ',
+        'hsi': 'EWH',
+        'btc': 'COINBASE:BTCUSD'
+    };
+    return symbols[key] || 'SPY';
+}
+
+function showMarketDetail(key) {
+    if (!marketData) return;
+    const m = marketData.markets.find(item => item.key === key);
+    if (!m) return;
+    
+    // Highlight selected row
+    document.querySelectorAll('#dashboardBody tr').forEach(tr => {
+        tr.classList.remove('bg-yellow-500/5', 'border-l-4', 'border-yellow-500');
+    });
+    const selectedRow = document.getElementById('row-' + key);
+    if (selectedRow) {
+        selectedRow.classList.add('bg-yellow-500/5', 'border-l-4', 'border-yellow-500');
+    }
+    
+    const flagEmoji = m.flag === 'TR' ? '🇹🇷' : m.flag === 'US' ? '🇺🇸' : m.flag === 'GB' ? '🇬🇧' : m.flag === 'EU' ? '🇪🇺' : m.flag === 'JP' ? '🇯🇵' : m.flag === 'HK' ? '🇭🇰' : '🪙';
+    
+    // Fill stats
+    document.getElementById('detailFlag').textContent = flagEmoji;
+    document.getElementById('detailName').textContent = m.name;
+    document.getElementById('detailTicker').textContent = m.ticker;
+    
+    const startVal = m.portfolio - m.profit;
+    document.getElementById('detailStart').textContent = '$' + startVal.toLocaleString();
+    document.getElementById('detailPortfolio').textContent = '$' + m.portfolio.toLocaleString();
+    
+    const profitEl = document.getElementById('detailProfit');
+    profitEl.textContent = (m.profit >= 0 ? '+' : '') + '$' + m.profit.toLocaleString();
+    profitEl.className = 'text-sm font-bold font-mono ' + (m.profit >= 0 ? 'text-green-400' : 'text-red-400');
+    
+    document.getElementById('detailRoi').textContent = '+%' + m.roi.toFixed(2);
+    document.getElementById('detailAlpha').textContent = '+' + m.alpha.toFixed(2) + 'pp';
+    document.getElementById('detailSharpe').textContent = m.sharpe;
+    document.getElementById('detailTrades').textContent = m.trades + ' işlem';
+    document.getElementById('detailStop').textContent = m.stop + ' adet';
+    document.getElementById('detailDashboardLink').href = m.dashboard;
+    
+    // Show panel
+    const panel = document.getElementById('marketDetailPanel');
+    panel.classList.remove('hidden');
+    
+    // Load TradingView chart
+    loadDetailTvChart(getTvSymbol(key));
+    
+    // Update sub-dashboard iframe
+    const iframe = document.getElementById('anchorIframe');
+    if (iframe) {
+        iframe.src = m.dashboard;
+    }
+}
+
+function loadDetailTvChart(symbol) {
+    if (typeof TradingView === 'undefined') {
+        setTimeout(() => loadDetailTvChart(symbol), 100);
+        return;
+    }
+    const container = document.getElementById('detailTvChart');
+    container.innerHTML = '';
+    new TradingView.widget({
+        container_id: 'detailTvChart',
+        autosize: true,
+        symbol: symbol,
+        interval: 'D',
+        timezone: 'Europe/Istanbul',
+        theme: 'dark',
+        style: '1',
+        locale: 'tr',
+        toolbar_bg: '#0d1118',
+        enable_publishing: false,
+        hide_side_toolbar: false,
+        allow_symbol_change: false,
+        studies: ['RSI@tv-basicstudies', 'MASimple@tv-basicstudies'],
+        width: '100%',
+        height: '100%'
+    });
 }
 
 // GUNLUK PERFORMANS TABLOSU
@@ -653,6 +805,10 @@ document.getElementById('tab-daily').style.display = 'none';
 // TRADINGVIEW WIDGET
 let tvWidget = null;
 function loadTvChart(symbol) {
+    if (typeof TradingView === 'undefined') {
+        setTimeout(() => loadTvChart(symbol), 100);
+        return;
+    }
     const container = document.getElementById('tvChart');
     container.innerHTML = '';
     new TradingView.widget({
