@@ -363,11 +363,36 @@ table { border-collapse: collapse; width: 100%; }
 .text-primary { color: var(--color-primary); }
 .mt-4 { margin-top: var(--space-4); }
 .mb-4 { margin-bottom: var(--space-4); }
+
+/* ─── LOGIN OVERLAY ─── */
+.login-screen { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #06080c; display: flex; align-items: center; justify-content: center; z-index: 99999; }
+.login-box { background: #0d121f; border: 1px solid rgba(201, 168, 76, 0.2); border-radius: 20px; padding: 3rem; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+.login-box input { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); color: white; padding: 12px 20px; border-radius: 10px; width: 100%; font-size: 1.1rem; outline: none; text-align: center; margin-bottom: 1.5rem; }
+.login-box input:focus { border-color: #c9a84c; }
+.login-box button { background: #c9a84c; color: #0f1a2e; font-weight: 700; padding: 12px 30px; border-radius: 10px; border: none; cursor: pointer; font-size: 1rem; transition: all 0.2s; width: 100%; }
+.login-box button:hover { background: #e5c76b; transform: scale(1.02); }
+.login-error { color: #ef4444; font-size: 0.85rem; margin-top: 0.8rem; display: none; }
+.hidden { display: none !important; }
+.pulse { animation: pulse 2s infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
 </style>
 </head>
 <body>
 
-<div class="app-wrapper">
+<!-- LOGIN OVERLAY -->
+<div id="loginScreen" class="login-screen">
+    <div class="login-box">
+        <div style="font-size:3rem; margin-bottom:1rem;">⚽</div>
+        <h1 style="font-size:1.8rem; font-weight:800; color:white; margin-bottom:0.5rem;">T2SAIM</h1>
+        <p style="color:#c9a84c; font-size:0.85rem; margin-bottom:2rem; letter-spacing:2px; font-weight:600;">SPOR ANALİTİK MOTORU</p>
+        <input type="password" id="pwd" placeholder="••••••••" onkeydown="if(event.key==='Enter')checkPassword()">
+        <button onclick="checkPassword()"><i class="fa-solid fa-lock-open mr-2"></i>Sisteme Giriş</button>
+        <p id="err" class="login-error">Yetkisiz Erişim! Şifre Hatalı.</p>
+        <p style="color:#4b5563; font-size:0.7rem; margin-top:2rem;">Honor – Ethics – Truth &bull; Private</p>
+    </div>
+</div>
+
+<div class="app-wrapper hidden" id="appWrapper">
   <!-- SIDEBAR -->
   <aside class="sidebar">
     <div class="sidebar-logo">
@@ -435,6 +460,44 @@ table { border-collapse: collapse; width: 100%; }
         <div class="section-header">
           <div class="section-title">Çapraz Site Arbitraj Tespiti</div>
           <div class="section-desc">Farklı bahis sitelerindeki oran farklarını ve garantili kâr fırsatlarını hesaplayın. Tüm sonuçların toplam implied probability'si &lt;100 ise arbitraj fırsatı vardır.</div>
+        </div>
+
+        <!-- 📡 CANLI TARAMA & OTONOM SİNYAL AKIŞI -->
+        <div class="card" style="border: 1px solid rgba(16, 185, 129, 0.2); background: linear-gradient(180deg, rgba(13,17,24,0.9) 0%, rgba(6,12,10,0.9) 100%); margin-bottom: var(--space-6);">
+          <div class="card-title" style="border-bottom: 1px solid rgba(16, 185, 129, 0.15); display: flex; align-items: center; justify-content: space-between;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg>
+              <span style="color:#10b981;">📡 Canlı Tarama & Otonom Sinyal Akışı (Live Node Feed)</span>
+            </div>
+            <span class="badge badge-green pulse" style="font-size:0.65rem;">🟢 AKTİF NOD</span>
+          </div>
+          <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-4);">
+            Yerel tarama düğümünüz (<code>scrape_live_odds.py</code>) tarafından toplanan ve filtrelenen anlık arbitraj ve yüksek EV fırsatları aşağıda listelenmektedir.
+          </p>
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th style="padding: 8px 10px;">Zaman</th>
+                  <th style="padding: 8px 10px;">Karşılaşma</th>
+                  <th style="padding: 8px 10px;">Tür</th>
+                  <th style="padding: 8px 10px;">Büro 1 (Oran)</th>
+                  <th style="padding: 8px 10px;">Büro 2 (Oran)</th>
+                  <th style="padding: 8px 10px;">Büro 3 (Oran)</th>
+                  <th style="padding: 8px 10px;">Detay</th>
+                  <th style="padding: 8px 10px; text-align: right;">Edge / Kâr</th>
+                  <th style="padding: 8px 10px; text-align: center;">Aksiyon</th>
+                </tr>
+              </thead>
+              <tbody id="live-signals-body">
+                <tr>
+                  <td colspan="9" style="text-align:center; color:var(--color-text-muted); padding: 1.5rem;">
+                    Canlı veri akışı bekleniyor... Lütfen yerel tarama betiğini (<code>scrape_live_odds.py</code>) çalıştırın.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
 
         <!-- KPI -->
@@ -1500,8 +1563,30 @@ function initRadarChart(){
   ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:c.text,font:{size:11}}}},scales:{r:{ticks:{color:c.text,backdropColor:'transparent',font:{size:9}},grid:{color:c.grid},pointLabels:{color:c.text,font:{size:10}},min:0,max:100}}}});
 }
 
-document.addEventListener('DOMContentLoaded',()=>{
-  refreshOddsTable();
+// ─── LOGIN VE DİNAMİK VERİ YÜKLEME ───
+const PASS = '18815273';
+let activeInterval = null;
+
+function checkPassword() {
+  const pwdInput = document.getElementById('pwd').value;
+  if (pwdInput === PASS) {
+    document.getElementById('loginScreen').classList.add('hidden');
+    document.getElementById('appWrapper').classList.remove('hidden');
+    document.title = 'T2SAIM Analitik — Algoritmik Bahis Analiz Platformu';
+    
+    // Panoyu ilklendir
+    initDashboard();
+    
+    // Her 10 saniyede bir canlı verileri güncelle
+    loadLiveOdds();
+    activeInterval = setInterval(loadLiveOdds, 10000);
+  } else {
+    document.getElementById('err').style.display = 'block';
+    setTimeout(() => document.getElementById('err').style.display = 'none', 2000);
+  }
+}
+
+function initDashboard() {
   initDetection();
   initRestrictions();
   initMarginChart();
@@ -1509,6 +1594,84 @@ document.addEventListener('DOMContentLoaded',()=>{
   updateArbChart(2.15,3.55,4.20,1/2.15+1/3.55+1/4.20);
   updateEVChart();
   calcArbitrage();
+}
+
+function loadLiveOdds() {
+  fetch('canli_oranlar.json?v=' + Date.now())
+    .then(r => r.json())
+    .then(data => {
+      if (data && data.maclar && data.maclar.length > 0) {
+        renderLiveSignals(data.maclar);
+      } else {
+        renderEmptySignals("Mevcut aktif fırsat bulunamadı. Tarama devam ediyor...");
+      }
+    })
+    .catch(() => {
+      renderEmptySignals("Veri dosyası bulunamadı. Lütfen yerel <code>scrape_live_odds.py</code> betiğini çalıştırın.");
+    });
+}
+
+function renderLiveSignals(maclar) {
+  const tbody = document.getElementById('live-signals-body');
+  tbody.innerHTML = maclar.map((m, idx) => {
+    const isArb = m.tur.includes("SUREBET");
+    const badgeClass = isArb ? 'badge-green' : 'badge-blue';
+    const rawDataStr = encodeURIComponent(JSON.stringify(m.raw_data));
+    
+    return `<tr>
+      <td style="padding: 8px 10px;" class="mono text-muted">${m.zaman}</td>
+      <td style="padding: 8px 10px;"><strong>${m.mac}</strong></td>
+      <td style="padding: 8px 10px;"><span class="badge ${badgeClass}">${m.tur}</span></td>
+      <td style="padding: 8px 10px; font-size:var(--text-xs);">${m.site1}</td>
+      <td style="padding: 8px 10px; font-size:var(--text-xs);">${m.site2}</td>
+      <td style="padding: 8px 10px; font-size:var(--text-xs);">${m.site3}</td>
+      <td style="padding: 8px 10px; font-size:var(--text-xs);" class="text-muted">${m.detay}</td>
+      <td style="padding: 8px 10px; text-align: right;" class="mono ${isArb?'text-success':'text-primary'} font-bold">${m.edge}</td>
+      <td style="padding: 8px 10px; text-align: center;">
+        <button class="btn btn-secondary" style="padding: 2px 8px; font-size:0.7rem;" onclick="loadSignalToForm('${rawDataStr}', ${isArb})">
+          <i class="fa-solid fa-calculator"></i> Yükle
+        </button>
+      </td>
+    </tr>`;
+  }).join('');
+}
+
+function renderEmptySignals(message) {
+  const tbody = document.getElementById('live-signals-body');
+  tbody.innerHTML = `<tr>
+    <td colspan="9" style="text-align:center; color:var(--color-text-muted); padding: 1.5rem;">
+      ${message}
+    </td>
+  </tr>`;
+}
+
+function loadSignalToForm(rawDataStr, isArb) {
+  const rawData = JSON.parse(decodeURIComponent(rawDataStr));
+  if (isArb) {
+    // Arbitraj Hesaplayıcı formunu doldur
+    document.getElementById('odds-1').value = rawData.o1;
+    document.getElementById('odds-x').value = rawData.ox;
+    document.getElementById('odds-2').value = rawData.o2;
+    showPage('arbitrage');
+    calcArbitrage();
+    
+    // Sayfa içine odaklanıp calculator kartına kaydır
+    document.getElementById('odds-1').focus();
+  } else {
+    // Value Bet formunu doldur
+    document.getElementById('vb-odds').value = rawData.o1;
+    // Olasılığı oran merkezinden çıkar
+    const fairProb = (1.0 / rawData.o1) * 1.15; // tahmini
+    document.getElementById('vb-prob').value = Math.min(99, Math.round(fairProb * 100));
+    showPage('valuebetting');
+    calcValueBet();
+    document.getElementById('vb-odds').focus();
+  }
+}
+
+document.addEventListener('DOMContentLoaded',()=>{
+  // Giriş ekranında başlığı ayarla
+  document.title = 'T2SAIM — Güvenli Giriş';
 });
 </script>
 </body>
