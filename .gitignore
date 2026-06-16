@@ -6,3 +6,6 @@ dashboards/betting_analyzer.html
 scrape_live_odds.py
 simulate_history.py
 t2saim_seal.py
+portfolio_backtester.html
+portfolio_history.json
+run_portfolio_backtest.py
