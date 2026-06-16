@@ -113,8 +113,14 @@ def compute_crisis_index():
     returns = [0.0] + [(usd_series[i] - usd_series[i-1]) / (usd_series[i-1] or 1)
                        for i in range(1, len(usd_series))]
 
+    # Makroekonomik dalgalanmaları ve hafta sonu 0 değerlerini sönümlemek için returns serisini 30 günlük hareketli ortalamayla düzeltiyoruz
+    smoothed_returns = []
+    for i in range(len(returns)):
+        sub = returns[max(0, i - 30): i + 1]
+        smoothed_returns.append(sum(sub) / len(sub))
+
     # Z-skorları (1260 günlük pencere ≈ 5 yıl)
-    zscores = rolling_zscore(returns, window=min(1260, len(returns)))
+    zscores = rolling_zscore(smoothed_returns, window=min(1260, len(smoothed_returns)))
 
     # Normalize Z → [0,1]
     z_norm = [min(1.0, max(0.0, abs(z) / (SIGMA * 2))) for z in zscores]

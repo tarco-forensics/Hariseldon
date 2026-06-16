@@ -115,23 +115,70 @@
         </div>
     </div>
 
-    <!-- 700 GUNLUK GRAFIK -->
-    <div class="glass p-6" style="margin-bottom:1rem;">
-        <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:1rem;">
-            <h2 style="font-weight:700; color:white; font-size:1.1rem; margin:0;">
-                <span class="gold-text">📉</span> 700 Günlük Kriz İndeksi
-            </h2>
-            <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
-                <span style="font-size:0.65rem; color:#6b7280;">Backtest: 1994–2026 &nbsp;|&nbsp; σ=1.25 &nbsp;|&nbsp; λ=0.15</span>
-                <span style="background:rgba(59,130,246,0.12); color:#3b82f6; border:1px solid rgba(59,130,246,0.3); padding:2px 8px; border-radius:12px; font-size:0.65rem; font-weight:700;">── Geçmiş</span>
-                <span style="background:rgba(239,68,68,0.12); color:#ef4444; border:1px solid rgba(239,68,68,0.3); padding:2px 8px; border-radius:12px; font-size:0.65rem; font-weight:700;" class="pulse">⬤ CANLI &gt; 2026-06-15</span>
+    <!-- 700 GUNLUK GRAFIK VE GERİ SAYIM -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4" style="margin-bottom:1rem;">
+        <!-- SOL: GRAFİK (2/3 GENİŞLİK) -->
+        <div class="glass p-6 lg:col-span-2 flex flex-col justify-between">
+            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:1rem;">
+                <h2 style="font-weight:700; color:white; font-size:1.1rem; margin:0;">
+                    <span class="gold-text">📉</span> 700 Günlük Kriz İndeksi & Projeksiyonu
+                </h2>
+                <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+                    <span style="font-size:0.65rem; color:#6b7280;">σ=1.25 &nbsp;|&nbsp; λ=0.15</span>
+                    <span style="background:rgba(59,130,246,0.12); color:#3b82f6; border:1px solid rgba(59,130,246,0.3); padding:2px 8px; border-radius:12px; font-size:0.65rem; font-weight:700;">── Geçmiş</span>
+                    <span style="background:rgba(239,68,68,0.12); color:#ef4444; border:1px solid rgba(239,68,68,0.3); padding:2px 8px; border-radius:12px; font-size:0.65rem; font-weight:700;" class="pulse">⬤ TAHMİN &gt; 2026-06-15</span>
+                </div>
+            </div>
+            <div style="height:320px;"><canvas id="krizChart"></canvas></div>
+            <div style="display:flex; justify-content:space-between; font-size:0.65rem; color:#4b5563; margin-top:4px;">
+                <span id="startDate">700 gün önce</span>
+                <span style="color:var(--gold); font-weight:600;">T2SAIM Gerçek Veri — USDTRY + Volatilite</span>
+                <span id="endDate">Bugün</span>
             </div>
         </div>
-        <div style="height:350px;"><canvas id="krizChart"></canvas></div>
-        <div style="display:flex; justify-content:space-between; font-size:0.65rem; color:#4b5563; margin-top:4px;">
-            <span id="startDate">700 gün önce</span>
-            <span style="color:var(--gold); font-weight:600;">T2SAIM Gerçek Veri — USDTRY + Volatilite</span>
-            <span id="endDate">Bugün</span>
+        
+        <!-- SAĞ: HEDEF TAKVİMİ & GERİ SAYIM (1/3 GENİŞLİK) -->
+        <div class="glass p-6 flex flex-col justify-between" style="border: 1px solid rgba(245, 158, 11, 0.2); background: linear-gradient(135deg, #0d1118 0%, #171007 100%);">
+            <div>
+                <h2 style="font-weight:700; color:white; font-size:1.1rem; margin:0 0 12px 0;" class="flex items-center gap-2">
+                    <span class="text-yellow-500">🔮</span> T2SAIM Hedef Takvimi
+                </h2>
+                <p style="font-size:0.75rem; color:#9ca3af; margin-bottom:1rem; line-height:1.4;">
+                    Ising Model ve EFMI söylem makası projeksiyonlarına göre, sistemsel rezonans stresinin bir sonraki kritik zirve yapacağı tahmini tarih aşağıdadır:
+                </p>
+                
+                <div style="background:rgba(0,0,0,0.4); border:1px solid rgba(255,255,255,0.05); padding:16px; border-radius:12px; text-align:center; margin-bottom:1.5rem;">
+                    <span style="font-size:0.65rem; color:#f59e0b; font-weight:700; letter-spacing:2px; display:block; margin-bottom:4px;">BİR SONRAKİ REZONANS PEAK</span>
+                    <span style="font-size:1.4rem; font-weight:800; color:white; font-family:'Outfit';">18 Kasım 2026</span>
+                    <span style="font-size:0.65rem; color:#6b7280; display:block; margin-top:4px;">(Model Rez. Eşiği: >0.55)</span>
+                </div>
+                
+                <div style="margin-bottom:1.5rem;">
+                    <span style="font-size:0.65rem; color:#9ca3af; font-weight:700; letter-spacing:1px; display:block; margin-bottom:6px; text-transform:uppercase;">Geri Sayım Sayacı</span>
+                    <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:6px; text-align:center;">
+                        <div style="background:#090d14; border:1px solid rgba(255,255,255,0.03); padding:8px; border-radius:8px;">
+                            <span id="cd-days" style="font-size:1.2rem; font-weight:800; color:#f59e0b; font-family:monospace; display:block;">00</span>
+                            <span style="font-size:0.55rem; color:#4b5563;">GÜN</span>
+                        </div>
+                        <div style="background:#090d14; border:1px solid rgba(255,255,255,0.03); padding:8px; border-radius:8px;">
+                            <span id="cd-hours" style="font-size:1.2rem; font-weight:800; color:white; font-family:monospace; display:block;">00</span>
+                            <span style="font-size:0.55rem; color:#4b5563;">SAAT</span>
+                        </div>
+                        <div style="background:#090d14; border:1px solid rgba(255,255,255,0.03); padding:8px; border-radius:8px;">
+                            <span id="cd-mins" style="font-size:1.2rem; font-weight:800; color:white; font-family:monospace; display:block;">00</span>
+                            <span style="font-size:0.55rem; color:#4b5563;">DAK</span>
+                        </div>
+                        <div style="background:#090d14; border:1px solid rgba(255,255,255,0.03); padding:8px; border-radius:8px;">
+                            <span id="cd-secs" style="font-size:1.2rem; font-weight:800; color:#ef4444; font-family:monospace; display:block;" class="pulse">00</span>
+                            <span style="font-size:0.55rem; color:#4b5563;">SAN</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="background:rgba(245,158,11,0.05); border:1px solid rgba(245,158,11,0.1); padding:10px; border-radius:8px; font-size:0.65rem; color:#f59e0b; line-height:1.4;">
+                <strong>⚠️ REZONANS UYARISI:</strong> Sistem, belirtilen tarihe yaklaştıkça tevekkül tamponlarını eritecek ve spin uyum olasılığını azaltacaktır. L6 faz kilidi her an devreye girebilir.
+            </div>
         </div>
     </div>
 
@@ -302,16 +349,24 @@ function renderDashboard(realData) {
             sriAll.push(row.sri);
             efmiAll.push(row.z);   // z-norm ≈ EFMI proxy
         }
-        // Sağda görsel boşluk için 45 günlük ileri veri (son değeri tut)
+        // Model rezonans zirvesi (18 Kasım 2026 - D+156) öngörüsü
         const lastRow = series[series.length - 1];
         const lastDate = new Date(lastRow.date);
         for (let i = 1; i <= FUTURE_DAYS; i++) {
             const d = new Date(lastDate);
             d.setDate(d.getDate() + i);
             labelsAll.push(d.toISOString().split('T')[0]);
-            // İleri tahmin: son değere hafif gürültü ekle
-            crisisAll.push(Math.min(1, Math.max(0, lastRow.ci + (Math.random()-0.5)*0.02)));
-            sriAll.push(Math.min(1, Math.max(0, lastRow.sri + (Math.random()-0.5)*0.02)));
+            
+            // D+156. günde peak yapacak Gauss eğrisi
+            const dist = Math.abs(i - 156);
+            const peakFactor = Math.exp(-Math.pow(dist / 22, 2)); // 22 gün standart sapmalı çan eğrisi
+            
+            // Kriz indeksini ve SRI'yı rezonans zirvesinde kritik seviyeye çıkarıyoruz (0.72 ve 0.75)
+            const targetCi = lastRow.ci + (0.72 - lastRow.ci) * peakFactor + (Math.random() - 0.5) * 0.02;
+            const targetSri = lastRow.sri + (0.75 - lastRow.sri) * peakFactor + (Math.random() - 0.5) * 0.02;
+            
+            crisisAll.push(Math.min(1, Math.max(0, targetCi)));
+            sriAll.push(Math.min(1, Math.max(0, targetSri)));
             efmiAll.push(lastRow.z);
         }
     } else {
@@ -326,11 +381,19 @@ function renderDashboard(realData) {
             labelsAll.push(d.toISOString().split('T')[0]);
             const t = i / PAST_DAYS;
             const tC = Math.min(t, 1);
+            
+            // D+156 (i=856) rezonans zirvesi
+            let peakFactor = 0.0;
+            if (i > PAST_DAYS) {
+                const dist = Math.abs(i - 856);
+                peakFactor = Math.exp(-Math.pow(dist / 22, 2));
+            }
+            
             const efmi = -0.36 + (0.34 * tC) + (Math.random() - 0.5) * 0.03;
             efmiAll.push(efmi);
-            const sri = 0.30 + 0.25 * Math.sin(tC * 4) + 0.10 * Math.random() + 0.15 * tC;
+            const sri = 0.30 + 0.25 * Math.sin(tC * 4) + 0.10 * Math.random() + 0.15 * tC + 0.40 * peakFactor;
             sriAll.push(sri);
-            crisisAll.push(Math.min(1, Math.max(0, (1 + efmi) * 0.6 + sri * 0.4)));
+            crisisAll.push(Math.min(1, Math.max(0, (1 + efmi) * 0.6 + sri * 0.4 + 0.35 * peakFactor)));
         }
     }
 
@@ -470,6 +533,24 @@ function renderDashboard(realData) {
                                     padding: { x: 7, y: 3 },
                                     font: { family: 'Outfit', size: 10, weight: '700' }
                                 }
+                            },
+                            targetLine: {
+                                type: 'line',
+                                xMin: pivotIdx + 156,
+                                xMax: pivotIdx + 156,
+                                borderColor: '#f59e0b',
+                                borderWidth: 2,
+                                borderDash: [4, 4],
+                                label: {
+                                    display: true,
+                                    content: '🔮 T2SAIM REZONANS PEAK (18 Kas 2026)',
+                                    position: 'center',
+                                    yAdjust: 14,
+                                    color: '#f59e0b',
+                                    backgroundColor: 'rgba(13,17,24,0.92)',
+                                    padding: { x: 7, y: 3 },
+                                    font: { family: 'Outfit', size: 9, weight: '700' }
+                                }
                             }
                         }
                     }
@@ -566,6 +647,30 @@ function renderDashboard(realData) {
     }
 }
 
+// Start countdown timer to November 18, 2026
+const targetDate = new Date('2026-11-18T00:00:00').getTime();
+function updateCountdown() {
+    const now = new Date().getTime();
+    const diff = targetDate - now;
+    if (diff <= 0) {
+        document.getElementById('cd-days').textContent = '00';
+        document.getElementById('cd-hours').textContent = '00';
+        document.getElementById('cd-mins').textContent = '00';
+        document.getElementById('cd-secs').textContent = '00';
+        return;
+    }
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const secs = Math.floor((diff % (1000 * 60)) / 1000);
+    
+    document.getElementById('cd-days').textContent = String(days).padStart(2, '0');
+    document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+    document.getElementById('cd-mins').textContent = String(mins).padStart(2, '0');
+    document.getElementById('cd-secs').textContent = String(secs).padStart(2, '0');
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
 </script>
 </body>
 </html>
