@@ -249,8 +249,7 @@ function init() {
 
     // 700 gun grafigi - IKI PARCA: Mavi (gecmis) + Kirmizi (canli)
     Chart.register(ChartAnnotation);
-    const N = crisisIdx.length;
-    const mid = Math.floor(N * 0.5); // orta = 15 Haziran 2026
+    const mid = Math.floor(crisisIdx.length * 0.5); // orta = 15 Haziran 2026
     const past = crisisIdx.map((v,i) => i <= mid ? v : null);
     const future = crisisIdx.map((v,i) => i >= mid ? v : null);
     
