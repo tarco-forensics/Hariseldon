@@ -2,3 +2,7 @@ experiments/
 logs/*.log
 dashboards/canli_oranlar.json
 dashboards/betting_history.json
+dashboards/betting_analyzer.html
+scrape_live_odds.py
+simulate_history.py
+t2saim_seal.py
