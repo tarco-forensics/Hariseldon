@@ -173,6 +173,50 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Seldon Simülatörü Kısmı -->
+            <div class="border-t border-gray-800 my-6"></div>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Sol Taraf: Simülasyon Metrikleri -->
+                <div class="space-y-4">
+                    <h4 class="text-md font-bold text-white flex items-center gap-2">
+                        <span>🔮</span> Seldon Monte Carlo Simülasyonu
+                    </h4>
+                    <p class="text-xs text-gray-500">
+                        Seçilen piyasanın son getiri, oynaklık ve Sharpe oranları kullanılarak **10,000 Monte Carlo simülasyonu** çalıştırılmıştır.
+                    </p>
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-xs py-1 border-b border-gray-900">
+                            <span class="text-gray-400">Edge Olasılığı (Kâr Etme)</span>
+                            <span id="simEdge" class="font-bold text-green-400 font-mono">-</span>
+                        </div>
+                        <div class="flex justify-between text-xs py-1 border-b border-gray-900">
+                            <span class="text-gray-400">30 Günlük Medyan Hedef</span>
+                            <span id="simMedian" class="font-semibold text-white font-mono">-</span>
+                        </div>
+                        <div class="flex justify-between text-xs py-1 border-b border-gray-900">
+                            <span class="text-gray-400">Boğa Senaryosu (%95 Limit)</span>
+                            <span id="simBull" class="font-semibold text-green-400 font-mono">-</span>
+                        </div>
+                        <div class="flex justify-between text-xs py-1 border-b border-gray-900">
+                            <span class="text-gray-400">Ayı Senaryosu (%5 Limit)</span>
+                            <span id="simBear" class="font-semibold text-red-400 font-mono">-</span>
+                        </div>
+                    </div>
+                    <div class="p-3 bg-yellow-500/5 border border-yellow-500/10 rounded-lg text-[10px] text-gray-500">
+                        <span class="text-yellow-400 font-semibold">⚠️ Seldon Felsefesi:</span> Bu tahmin bir kesinlik belirtmez. Olasılık dağılımının kümülatif medyanını temsil eder.
+                    </div>
+                </div>
+                <!-- Sağ Taraf: Simülasyon Getiri Projeksiyonu Grafiği (ChartJS) -->
+                <div class="lg:col-span-2">
+                    <div class="chart-container" style="background: transparent; border: none; padding: 0;">
+                        <span class="text-xs text-gray-400 font-semibold mb-2 block">Gelecek 30 Günlük Tahmin Kanalları</span>
+                        <div class="relative h-[220px]">
+                            <canvas id="seldonSimChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
@@ -696,6 +740,9 @@ function showMarketDetail(key) {
     if (iframe) {
         iframe.src = m.dashboard;
     }
+    
+    // Auto-run Seldon Monte Carlo Simulation
+    runSeldonSimulation(m);
 }
 
 function loadDetailTvChart(symbol) {
@@ -721,6 +768,145 @@ function loadDetailTvChart(symbol) {
         studies: ['RSI@tv-basicstudies', 'MASimple@tv-basicstudies'],
         width: '100%',
         height: '100%'
+    });
+}
+
+let seldonSimChart = null;
+
+function runSeldonSimulation(m) {
+    const startPrice = m.close_last || 100;
+    const dailyChangePct = m.daily_pct || 0.5; // mean drift
+    const sharpe = m.sharpe || 1.5;
+    
+    // Infer volatility: daily_vol = absolute(daily_pct / 100) / Sharpe
+    let dailyVol = Math.abs(dailyChangePct / 100) / sharpe;
+    if (isNaN(dailyVol) || dailyVol <= 0) {
+        dailyVol = 0.015; // default 1.5% daily volatility
+    }
+    dailyVol = Math.max(0.005, Math.min(0.04, dailyVol));
+    
+    const dailyDrift = (dailyChangePct / 100) || 0.001;
+    
+    const DAYS = 30;
+    const ITERATIONS = 10000;
+    
+    // Run Monte Carlo simulation paths
+    let currentPrices = new Array(ITERATIONS).fill(startPrice);
+    
+    const medianPath = [startPrice];
+    const bullPath = [startPrice];
+    const bearPath = [startPrice];
+    
+    for (let day = 1; day <= DAYS; day++) {
+        for (let i = 0; i < ITERATIONS; i++) {
+            // Box-Muller transform for normal distribution
+            const u1 = Math.random() || 0.0001;
+            const u2 = Math.random() || 0.0001;
+            const z = Math.sqrt(-2.0 * Math.log(u1)) * Math.cos(2.0 * Math.PI * u2);
+            
+            const r = dailyDrift + dailyVol * z;
+            currentPrices[i] = currentPrices[i] * (1 + r);
+        }
+        
+        const sorted = [...currentPrices].sort((a, b) => a - b);
+        medianPath.push(sorted[Math.floor(ITERATIONS * 0.50)]);
+        bullPath.push(sorted[Math.floor(ITERATIONS * 0.95)]);
+        bearPath.push(sorted[Math.floor(ITERATIONS * 0.05)]);
+    }
+    
+    const finalMedian = medianPath[DAYS];
+    const finalBull = bullPath[DAYS];
+    const finalBear = bearPath[DAYS];
+    
+    // Edge probability (ending higher than starting price)
+    let positiveRuns = 0;
+    for (let i = 0; i < ITERATIONS; i++) {
+        if (currentPrices[i] > startPrice) {
+            positiveRuns++;
+        }
+    }
+    const edgeProb = (positiveRuns / ITERATIONS) * 100;
+    
+    // Update UI
+    document.getElementById('simEdge').textContent = edgeProb.toFixed(1) + '%';
+    document.getElementById('simMedian').textContent = finalMedian.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+    document.getElementById('simBull').textContent = finalBull.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+    document.getElementById('simBear').textContent = finalBear.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+    
+    // Render Seldon prediction chart
+    drawSeldonSimChart(DAYS, medianPath, bullPath, bearPath);
+}
+
+function drawSeldonSimChart(days, medianPath, bullPath, bearPath) {
+    const ctx = document.getElementById('seldonSimChart');
+    if (!ctx) return;
+    
+    const existingChart = Chart.getChart(ctx);
+    if (existingChart) existingChart.destroy();
+    
+    const labels = Array.from({length: days + 1}, (_, i) => 'Gün ' + i);
+    
+    seldonSimChart = new Chart(ctx.getContext('2d'), {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [
+                {
+                    label: 'Boğa Senaryosu (%95)',
+                    data: bullPath,
+                    borderColor: 'rgba(16, 185, 129, 0.4)',
+                    borderWidth: 1.5,
+                    borderDash: [5, 5],
+                    pointRadius: 0,
+                    fill: false,
+                    tension: 0.2
+                },
+                {
+                    label: 'Medyan Hedef (%50)',
+                    data: medianPath,
+                    borderColor: '#c9a84c',
+                    backgroundColor: 'rgba(201, 168, 76, 0.05)',
+                    borderWidth: 2.5,
+                    pointRadius: 0,
+                    fill: false,
+                    tension: 0.2
+                },
+                {
+                    label: 'Ayı Senaryosu (%5)',
+                    data: bearPath,
+                    borderColor: 'rgba(239, 68, 68, 0.4)',
+                    borderWidth: 1.5,
+                    borderDash: [5, 5],
+                    pointRadius: 0,
+                    fill: false,
+                    tension: 0.2
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: true,
+                    labels: { color: '#9ca3af', font: { size: 9 } }
+                }
+            },
+            scales: {
+                x: {
+                    grid: { color: 'rgba(255, 255, 255, 0.02)' },
+                    ticks: { color: '#9ca3af', font: { size: 9 } }
+                },
+                y: {
+                    grid: { color: 'rgba(255, 255, 255, 0.02)' },
+                    ticks: {
+                        color: '#9ca3af',
+                        font: { size: 9 },
+                        callback: v => v.toLocaleString(undefined, {maximumFractionDigits: 0})
+                    }
+                }
+            }
+        }
     });
 }
 
