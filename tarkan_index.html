@@ -247,16 +247,22 @@ function init() {
     document.getElementById('l6Gauge').style.width = last.l6 ? '100%' : '0%';
     document.getElementById('l6Gauge').style.background = last.l6 ? '#ef4444' : '#10b981';
 
-    // 700 gun grafigi
+    // 700 gun grafigi - IKI PARCA: Mavi (gecmis) + Kirmizi (canli)
     Chart.register(ChartAnnotation);
+    const N = crisisIdx.length;
+    const mid = Math.floor(N * 0.5); // orta = 15 Haziran 2026
+    const past = crisisIdx.map((v,i) => i <= mid ? v : null);
+    const future = crisisIdx.map((v,i) => i >= mid ? v : null);
+    
     new Chart(document.getElementById('krizChart').getContext('2d'), {
         type: 'line',
         data: {
             labels: labels,
             datasets: [
-                { label: 'Kriz İndeksi', data: crisisIdx, borderColor: '#ef4444', backgroundColor: 'rgba(239,68,68,0.05)', borderWidth: 2, pointRadius: 0, tension: 0.4, fill: true },
-                { label: 'EFMI (norm.)', data: efmiHist.map(v => (1+v)), borderColor: '#6366f1', backgroundColor: 'rgba(99,102,241,0.05)', borderWidth: 1, pointRadius: 0, tension: 0.4, fill: false, hidden: true },
-                { label: 'SRI', data: sriHist, borderColor: '#f59e0b', backgroundColor: 'rgba(245,158,11,0.05)', borderWidth: 1, pointRadius: 0, tension: 0.4, fill: false, hidden: true }
+                { label: 'Geçmiş (Backtest)', data: past, borderColor: '#3b82f6', backgroundColor: 'rgba(59,130,246,0.05)', borderWidth: 2, pointRadius: 0, tension: 0.4, fill: false },
+                { label: 'Canlı (Forward)', data: future, borderColor: '#ef4444', backgroundColor: 'rgba(239,68,68,0.05)', borderWidth: 3, pointRadius: 0, tension: 0.4, fill: false, borderDash: [8,4] },
+                { label: 'EFMI (norm.)', data: efmiHist.map(v => (1+v)), borderColor: '#6366f1', borderWidth: 1, pointRadius: 0, tension: 0.4, fill: false, hidden: true },
+                { label: 'SRI', data: sriHist, borderColor: '#f59e0b', borderWidth: 1, pointRadius: 0, tension: 0.4, fill: false, hidden: true }
             ]
         },
         options: {
@@ -267,14 +273,13 @@ function init() {
                     annotations: {
                         todayLine: {
                             type: 'line',
-                            xMin: N - 30,
-                            xMax: N - 30,
+                            xMin: mid,
+                            xMax: mid,
                             borderColor: '#ef4444',
-                            borderWidth: 2,
-                            borderDash: [6, 3],
+                            borderWidth: 3,
                             label: {
                                 display: true,
-                                content: 'BUGÜN → CANLI VERİ 15 Haz 2026',
+                                content: '15 Haz 2026 → CANLI',
                                 position: 'start',
                                 color: '#ef4444',
                                 font: { family: 'Outfit', size: 11, weight: 'bold' }
