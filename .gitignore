@@ -1,3 +1,4 @@
 experiments/
 logs/*.log
 dashboards/canli_oranlar.json
+dashboards/betting_history.json

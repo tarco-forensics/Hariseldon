@@ -419,6 +419,10 @@ table { border-collapse: collapse; width: 100%; }
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
         Marj Analizi
       </button>
+      <button class="nav-item" onclick="showPage('backtest')" aria-label="Tarihsel Analiz">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Tarihsel Analiz (Backtest)
+      </button>
       <div class="nav-section-label" style="margin-top: var(--space-3)">Güvenlik</div>
       <button class="nav-item" onclick="showPage('detection')" aria-label="Tespit Mekanizmaları">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
@@ -1213,6 +1217,120 @@ table { border-collapse: collapse; width: 100%; }
       </div>
     </div>
 
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- PAGE 7: TARIHSEL ANALIZ & BACKTEST -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <div id="page-backtest" class="page">
+      <div class="topbar">
+        <span class="topbar-title">Tarihsel Analiz & Backtest Performansı</span>
+        <span class="topbar-badge">Performans</span>
+      </div>
+      <div style="padding: var(--space-6) var(--space-8);">
+        <div class="section-header">
+          <div class="section-title">Model Tahmin & Gerçekleşen Karşılaştırma Analizi</div>
+          <div class="section-desc">Modelimizin geçmişte tespit ettiği fırsatların ve bu işlemlerin gerçek skor/kazanç sonuçlarının analizi. 1000 TL/USD başlangıç sermayesi üzerinden simüle edilmiştir.</div>
+        </div>
+
+        <!-- KPI -->
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-label">Başlangıç Kasası</div>
+            <div class="kpi-value">₺1,000.00</div>
+            <div class="kpi-sub">Sermaye Girişi</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Güncel Kasa (Net)</div>
+            <div class="kpi-value text-success" id="kpi-backtest-bankroll">—</div>
+            <div class="kpi-sub" id="kpi-backtest-roi">—</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Toplam İşlem / Kazanma</div>
+            <div class="kpi-value" id="kpi-backtest-trades">—</div>
+            <div class="kpi-sub" id="kpi-backtest-winrate">—</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Ortalama Kazanç / Edge</div>
+            <div class="kpi-value text-primary" id="kpi-backtest-avg-profit">—</div>
+            <div class="kpi-sub" id="kpi-backtest-avg-edge">—</div>
+          </div>
+        </div>
+
+        <div class="two-col">
+          <!-- SOL SÜTUN: KUMULATİF BÜYÜME VE HİSTOGRAM -->
+          <div>
+            <div class="chart-container" style="margin-bottom: var(--space-5);">
+              <div class="chart-title">Sermaye Gelişim Eğrisi (₺1000 Başlangıç)</div>
+              <div class="chart-wrap" style="height: 250px;">
+                <canvas id="bankrollChart"></canvas>
+              </div>
+            </div>
+
+            <div class="chart-container">
+              <div class="chart-title">Edge Aralığı vs. Ortalama Kârlılık (Histogram)</div>
+              <div class="chart-wrap" style="height: 250px;">
+                <canvas id="edgeHistogramChart"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <!-- SAĞ SÜTUN: GERÇEKLEŞEN İŞLEM GÜNLÜĞÜ -->
+          <div class="card" style="margin-bottom: 0;">
+            <div class="card-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              Tarihsel İşlem Günlüğü (Son 20 Kayıt)
+            </div>
+            <div class="table-wrap" style="max-height: 580px; overflow-y: auto;">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th style="padding: 6px 8px;">Tarih</th>
+                    <th style="padding: 6px 8px;">Karşılaşma</th>
+                    <th style="padding: 6px 8px;">Tür</th>
+                    <th style="padding: 6px 8px; text-align: right;">Oran</th>
+                    <th style="padding: 6px 8px; text-align: right;">Edge</th>
+                    <th style="padding: 6px 8px; text-align: right;">Stake</th>
+                    <th style="padding: 6px 8px; text-align: center;">Skor</th>
+                    <th style="padding: 6px 8px; text-align: center;">Durum</th>
+                    <th style="padding: 6px 8px; text-align: right;">Kâr/Zarar</th>
+                  </tr>
+                </thead>
+                <tbody id="backtest-history-body">
+                  <tr>
+                    <td colspan="9" style="text-align:center; padding:2rem; color:var(--color-text-muted);">
+                      Veriler yükleniyor...
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top: var(--space-6);">
+          <div class="card-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            Sermaye Yönetimi & Radara Yakalanmama Protokolü
+          </div>
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:var(--space-6);" class="text-xs text-gray-300 leading-relaxed">
+            <div>
+              <p class="mb-2"><strong>1. Stake Yuvarlama (Mihrak Sönümleme):</strong></p>
+              <p class="mb-4">Bahis algoritmaları, arbitrajı maksimize etmek için küsuratlı stake'ler önerir (Örn: 243.57 ₺). Bu durum bookmaker anomalilerinde doğrudan alarm çalar. T2SAIM, radardan kaçınmak için bahislerinizi en yakın 5 veya 10 birime yuvarlamanızı şart koşar. İstatistiksel kâr marjında hafif bir düşüş olsa da hesap ömrünü 10 kattan fazla uzatır.</p>
+              
+              <p class="mb-2"><strong>2. 1/4 Kelly Bankroll Koruma Filtresi:</strong></p>
+              <p>Kelly kriteri kasa büyümesini teorik olarak optimize eder. Ancak yüksek varyans soft bookmaker limitlerini hızla tetikleyebilir. T2SAIM standart olarak <strong>Fraksiyonel Kelly (1/4 oranında)</strong> kullanır. Bu sayede, 1000 ₺/USD sermayede tek bir bahse yatırılan miktar hiçbir zaman normal limitlerin (50-150 ₺) dışına taşmaz.</p>
+            </div>
+            <div>
+              <p class="mb-2"><strong>3. Limit ve Likidite Bölümleme (Sermaye Dağıtımı):</strong></p>
+              <p class="mb-4">1000 USD/TL büyüklüğünde bir sermaye tek bir büroda tek işlemle döndürülmemelidir. Bunun yerine, sermaye en az 3-4 soft büroya (Bet365, Bwin, Unibet vb.) eşit bölünmeli veya Pinnacle/Betfair gibi limit sorunu olmayan sharp platformlarda konsolide edilmelidir.</p>
+              
+              <p class="mb-2"><strong>4. Edge ve Kârlılık Histogram İlişkisi:</strong></p>
+              <p>Histogramda görüleceği üzere, edge derecesi arttıkça teorik ve pratik kârlılık artar. Ancak %10'un üzerindeki ekstrem edge değerlerinde bahis iptali (void) veya limit riski üstel olarak yükselir. Güvenli bölge (sweet spot) <strong>%3 ile %8 arasındaki edge aralığıdır.</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div id="page-pythoncode" class="page" style="display:none!important">
       <div class="topbar">
         <span class="topbar-title">Python Odds Pipeline</span>
@@ -1594,6 +1712,170 @@ function initDashboard() {
   updateArbChart(2.15,3.55,4.20,1/2.15+1/3.55+1/4.20);
   updateEVChart();
   calcArbitrage();
+  
+  // Tarihsel Backtest verilerini de yükle
+  loadBacktestData();
+}
+
+let bankrollChartInstance = null;
+let histogramChartInstance = null;
+
+function loadBacktestData() {
+  fetch('betting_history.json?v=' + Date.now())
+    .then(r => r.json())
+    .then(data => {
+      if (data && data.length > 0) {
+        processBacktestStats(data);
+      }
+    })
+    .catch(() => {
+      document.getElementById('backtest-history-body').innerHTML = `<tr>
+        <td colspan="9" style="text-align:center; padding:2rem; color:var(--color-error);">
+          Geçmiş veriler yüklenemedi. Lütfen yerelde <code>simulate_history.py</code> dosyasını çalıştırın.
+        </td>
+      </tr>`;
+    });
+}
+
+function processBacktestStats(history) {
+  const totalTrades = history.length;
+  const wonTrades = history.filter(h => h.sonuc === "KAZANDI").length;
+  const winRate = (wonTrades / totalTrades) * 100;
+  
+  const finalBankroll = history[history.length - 1].kumulatif_kasa;
+  const netProfit = finalBankroll - 1000.0;
+  const roi = (netProfit / 1000.0) * 100;
+  
+  const avgProfit = history.reduce((sum, h) => sum + h.net_kar, 0) / totalTrades;
+  const avgEdge = history.reduce((sum, h) => sum + h.edge, 0) / totalTrades;
+  
+  // KPI'ları güncelle
+  document.getElementById('kpi-backtest-bankroll').textContent = `₺${finalBankroll.toLocaleString('tr-TR', {minimumFractionDigits:2, maximumFractionDigits:2})}`;
+  document.getElementById('kpi-backtest-roi').innerHTML = `<span class="${netProfit>=0?'text-success':'text-error'}">${netProfit>=0?'+':''}${roi.toFixed(1)}% ROI</span>`;
+  document.getElementById('kpi-backtest-trades').textContent = `${totalTrades} / ${wonTrades}`;
+  document.getElementById('kpi-backtest-winrate').textContent = `%${winRate.toFixed(1)} Kazanma Oranı`;
+  document.getElementById('kpi-backtest-avg-profit').textContent = `₺${avgProfit.toFixed(2)}`;
+  document.getElementById('kpi-backtest-avg-edge').textContent = `%${avgEdge.toFixed(2)} Ortalama Edge`;
+  
+  // Tarihsel Tabloyu doldur (son 20 kayıt)
+  const recentHistory = history.slice(-20).reverse();
+  const tbody = document.getElementById('backtest-history-body');
+  tbody.innerHTML = recentHistory.map(h => {
+    const isWin = h.sonuc === "KAZANDI";
+    const statusClass = isWin ? 'badge-green' : 'badge-red';
+    const profitClass = h.net_kar >= 0 ? 'text-success' : 'text-error';
+    const profitSign = h.net_kar >= 0 ? '+' : '';
+    
+    return `<tr>
+      <td style="padding: 6px 8px;" class="mono text-muted">${h.tarih}</td>
+      <td style="padding: 6px 8px;"><strong>${h.mac}</strong></td>
+      <td style="padding: 6px 8px;"><span class="badge ${h.tur==='SUREBET'?'badge-green':'badge-blue'}">${h.tur}</span></td>
+      <td style="padding: 6px 8px; text-align: right;" class="mono">${h.oran.toFixed(2)}</td>
+      <td style="padding: 6px 8px; text-align: right;" class="mono text-primary">%${h.edge.toFixed(1)}</td>
+      <td style="padding: 6px 8px; text-align: right;" class="mono">₺${h.stake}</td>
+      <td style="padding: 6px 8px; text-align: center;" class="mono text-muted">${h.skor}</td>
+      <td style="padding: 6px 8px; text-align: center;"><span class="badge ${statusClass}">${h.sonuc}</span></td>
+      <td style="padding: 6px 8px; text-align: right;" class="mono ${profitClass} font-bold">${profitSign}₺${h.net_kar.toFixed(2)}</td>
+    </tr>`;
+  }).join('');
+  
+  // Grafikleri çiz
+  drawBankrollChart(history);
+  drawEdgeHistogram(history);
+}
+
+function drawBankrollChart(history) {
+  const c = getChartColors();
+  const ctx = document.getElementById('bankrollChart').getContext('2d');
+  
+  const labels = history.map(h => h.tarih);
+  const data = history.map(h => h.kumulatif_kasa);
+  
+  if (bankrollChartInstance) bankrollChartInstance.destroy();
+  
+  bankrollChartInstance = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: labels,
+      datasets: [{
+        label: 'Kasa Gelişimi (₺)',
+        data: data,
+        borderColor: c.success,
+        backgroundColor: c.success + '11',
+        fill: true,
+        tension: 0.1,
+        pointRadius: 0
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: {
+          ticks: { color: c.text, maxTicksLimit: 8 },
+          grid: { color: c.grid }
+        },
+        y: {
+          ticks: { color: c.text },
+          grid: { color: c.grid }
+        }
+      }
+    }
+  });
+}
+
+function drawEdgeHistogram(history) {
+  const c = getChartColors();
+  const ctx = document.getElementById('edgeHistogramChart').getContext('2d');
+  
+  // Edge'leri aralıklara göre grupla
+  // Buckets: 1-3%, 3-5%, 5-8%, 8%+
+  const buckets = {
+    '1-3%': { sum_profit: 0, count: 0 },
+    '3-5%': { sum_profit: 0, count: 0 },
+    '5-8%': { sum_profit: 0, count: 0 },
+    '8%+':  { sum_profit: 0, count: 0 }
+  };
+  
+  for (const h of history) {
+    let key = '';
+    if (h.edge < 3.0) key = '1-3%';
+    else if (h.edge < 5.0) key = '3-5%';
+    else if (h.edge < 8.0) key = '5-8%';
+    else key = '8%+';
+    
+    buckets[key].sum_profit += h.net_kar;
+    buckets[key].count += 1;
+  }
+  
+  const labels = Object.keys(buckets);
+  // Her bucket için ortalama kârlılık
+  const avgProfitPerBucket = labels.map(l => buckets[l].count > 0 ? +(buckets[l].sum_profit / buckets[l].count).toFixed(2) : 0);
+  
+  if (histogramChartInstance) histogramChartInstance.destroy();
+  
+  histogramChartInstance = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: labels,
+      datasets: [{
+        label: 'İşlem Başına Ortalama Kâr (₺)',
+        data: avgProfitPerBucket,
+        backgroundColor: labels.map((_, i) => [c.primary + '99', c.success + '99', c.warning + '99', c.orange + '99'][i]),
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { ticks: { color: c.text }, grid: { color: c.grid } },
+        y: { ticks: { color: c.text }, grid: { color: c.grid } }
+      }
+    }
+  });
 }
 
 function loadLiveOdds() {
