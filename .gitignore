@@ -9,3 +9,10 @@ t2saim_seal.py
 portfolio_backtester.html
 portfolio_history.json
 run_portfolio_backtest.py
+dashboards/gold_prediction_dashboard.html
+dashboards/gold_prediction_history.json
+t2saim_gold_prediction_engine.py
+dashboards/commodity_dashboard.html
+dashboards/commodity_history.json
+t2saim_commodity_optimizer.py
+btf_run_commodity_engine.py

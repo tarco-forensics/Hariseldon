@@ -1,15 +1,15 @@
 {
   "summary": {
-    "generated": "2026-06-16 09:00",
+    "generated": "2026-06-16 19:07",
     "yesterday": "2026-06-15",
-    "total_portfolio": 137143.0,
-    "total_profit": 67143.0,
-    "total_roi_pct": 95.92,
-    "markets_count": 7,
-    "live_count": 7,
-    "total_roi_sum": 671.43,
-    "total_alpha_sum": 401.84,
-    "total_trades": 287
+    "total_portfolio": 155730.0,
+    "total_profit": 75730.0,
+    "total_roi_pct": 94.66,
+    "markets_count": 8,
+    "live_count": 8,
+    "total_roi_sum": 757.3,
+    "total_alpha_sum": 418.79,
+    "total_trades": 311
   },
   "markets": [
     {
@@ -25,12 +25,13 @@
       "stop": 8,
       "trades": 42,
       "dashboard": "dashboards/BIST100_Amnesia_Dashboard.html",
+      "horizon": "30 Gün (D+30)",
       "portfolio": 15984.0,
       "profit": 5984.0,
       "live_ok": true,
-      "close_prev": 13938.5,
-      "close_last": 14488.39,
-      "daily_pct": 3.95,
+      "close_prev": 14446.4,
+      "close_last": 14493.09,
+      "daily_pct": 0.32,
       "last_date": "2026-06-16"
     },
     {
@@ -46,13 +47,14 @@
       "stop": 3,
       "trades": 35,
       "dashboard": "dashboards/GLOBAL_Amnesia_Max_Profit_Dashboard.html",
+      "horizon": "30 Gün (D+30)",
       "portfolio": 18002.0,
       "profit": 8002.0,
       "live_ok": true,
-      "close_prev": 7394.3,
-      "close_last": 7431.46,
-      "daily_pct": 0.5,
-      "last_date": "2026-06-15"
+      "close_prev": 7554.29,
+      "close_last": 7530.02,
+      "daily_pct": -0.32,
+      "last_date": "2026-06-16"
     },
     {
       "key": "ftse",
@@ -67,12 +69,13 @@
       "stop": 12,
       "trades": 28,
       "dashboard": "dashboards/GLOBAL_Amnesia_Max_Profit_Dashboard.html",
+      "horizon": "30 Gün (D+30)",
       "portfolio": 17248.0,
       "profit": 7248.0,
       "live_ok": true,
-      "close_prev": 10471.7,
-      "close_last": 10439.36,
-      "daily_pct": -0.31,
+      "close_prev": 10430.6,
+      "close_last": 10494.21,
+      "daily_pct": 0.61,
       "last_date": "2026-06-16"
     },
     {
@@ -88,12 +91,13 @@
       "stop": 47,
       "trades": 52,
       "dashboard": "dashboards/GLOBAL_Amnesia_Max_Profit_Dashboard.html",
+      "horizon": "30 Gün (D+30)",
       "portfolio": 14058.0,
       "profit": 4058.0,
       "live_ok": true,
-      "close_prev": 6187.63,
-      "close_last": 6245.8,
-      "daily_pct": 0.94,
+      "close_prev": 6229.43,
+      "close_last": 6257.42,
+      "daily_pct": 0.45,
       "last_date": "2026-06-16"
     },
     {
@@ -109,13 +113,14 @@
       "stop": 2,
       "trades": 18,
       "dashboard": "dashboards/GLOBAL_Amnesia_Max_Profit_Dashboard.html",
+      "horizon": "30 Gün (D+30)",
       "portfolio": 17231.0,
       "profit": 7231.0,
       "live_ok": true,
       "close_prev": 66020.04,
-      "close_last": 69404.5,
-      "daily_pct": 5.13,
-      "last_date": "2026-06-16"
+      "close_last": 69317.5,
+      "daily_pct": 4.99,
+      "last_date": "2026-06-15"
     },
     {
       "key": "hsi",
@@ -130,13 +135,14 @@
       "stop": 18,
       "trades": 44,
       "dashboard": "dashboards/GLOBAL_Amnesia_Max_Profit_Dashboard.html",
+      "horizon": "30 Gün (D+30)",
       "portfolio": 14918.0,
       "profit": 4918.0,
       "live_ok": true,
       "close_prev": 24718.1,
-      "close_last": 24429.77,
-      "daily_pct": -1.17,
-      "last_date": "2026-06-16"
+      "close_last": 24842.67,
+      "daily_pct": 0.5,
+      "last_date": "2026-06-15"
     },
     {
       "key": "btc",
@@ -151,12 +157,35 @@
       "stop": 100,
       "trades": 68,
       "dashboard": "dashboards/SAYFA3_Kripto_Amnesia_TR_Amigdala_Dashboard.html",
+      "horizon": "30 Gün (D+30)",
       "portfolio": 39702.0,
       "profit": 29702.0,
       "live_ok": true,
       "close_prev": 66289.5,
-      "close_last": 66346.35,
-      "daily_pct": 0.09,
+      "close_last": 66035.46,
+      "daily_pct": -0.38,
+      "last_date": "2026-06-16"
+    },
+    {
+      "key": "emtia",
+      "flag": "MTL",
+      "name": "Değerli Metaller",
+      "ticker": "GC=F",
+      "hurst": 0.6,
+      "signal": "Trend",
+      "roi": 85.87,
+      "alpha": 16.95,
+      "sharpe": 0.84,
+      "stop": 5,
+      "trades": 24,
+      "dashboard": "dashboards/commodity_dashboard.html",
+      "horizon": "5 Gün (D+5)",
+      "portfolio": 18587.0,
+      "profit": 8587.0,
+      "live_ok": true,
+      "close_prev": 4328.0,
+      "close_last": 4361.6,
+      "daily_pct": 0.78,
       "last_date": "2026-06-16"
     }
   ]

@@ -43,6 +43,11 @@ else
     echo "  => Global tamamlandi" >> "$LOG"
 fi
 
+# Her gun: C5 Emtia Motoru
+echo "[4] C5 Emtia Motoru..." >> "$LOG"
+python btf_run_commodity_engine.py 2>&1 >> "$LOG"
+echo "  => C5 Emtia tamamlandi" >> "$LOG"
+
 # Sonuclari Hariseldon'a kopyala
 echo "[KOPYALA] Sonuclar..." >> "$LOG"
 cp "/b/T2SAIM_James_Projects/07-Sonuclar/BIST100_BTF_Amnesia_Max_Profit_Dashboard.html" "$HARISELDON/dashboards/BIST100_Amnesia_Dashboard.html"

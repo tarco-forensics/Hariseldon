@@ -6,6 +6,12 @@ index.html'in günlük tablosu ve live chart bu JSON'ı kullanır.
 import json, math, sys
 from datetime import datetime, timedelta
 
+# Ensure UTF-8 output encoding
+try:
+    sys.stdout.reconfigure(encoding='utf-8')
+except AttributeError:
+    pass
+
 try:
     import yfinance as yf
     import numpy as np
@@ -16,13 +22,14 @@ except ImportError:
 OUT_FILE = r"B:\Hariseldon\market_data.json"
 
 MARKETS = [
-    {"key": "bist",   "flag": "TR", "name": "BIST-100",     "ticker": "XU100.IS",   "bench": "XU100.IS",  "hurst": 0.52, "roi": 59.84, "alpha": 68.20, "sharpe": 1.99, "stop": 8,   "trades": 42,  "dashboard": "dashboards/BIST100_Amnesia_Dashboard.html"},
-    {"key": "sp500",  "flag": "US", "name": "S&P 500",      "ticker": "^GSPC",      "bench": "^GSPC",     "hurst": 0.46, "roi": 80.02, "alpha": 58.53, "sharpe": 2.41, "stop": 3,   "trades": 35,  "dashboard": "dashboards/GLOBAL_Amnesia_Max_Profit_Dashboard.html"},
-    {"key": "ftse",   "flag": "GB", "name": "FTSE 100",     "ticker": "^FTSE",      "bench": "^FTSE",     "hurst": 0.57, "roi": 72.48, "alpha": 48.29, "sharpe": 1.52, "stop": 12,  "trades": 28,  "dashboard": "dashboards/GLOBAL_Amnesia_Max_Profit_Dashboard.html"},
-    {"key": "stoxx",  "flag": "EU", "name": "Euro Stoxx 50","ticker": "^STOXX50E",  "bench": "^STOXX50E", "hurst": 0.60, "roi": 40.58, "alpha": 23.03, "sharpe": 0.89, "stop": 47,  "trades": 52,  "dashboard": "dashboards/GLOBAL_Amnesia_Max_Profit_Dashboard.html"},
-    {"key": "nikkei", "flag": "JP", "name": "Nikkei 225",   "ticker": "^N225",      "bench": "^N225",     "hurst": 0.55, "roi": 72.31, "alpha": 15.04, "sharpe": 2.18, "stop": 2,   "trades": 18,  "dashboard": "dashboards/GLOBAL_Amnesia_Max_Profit_Dashboard.html"},
-    {"key": "hsi",    "flag": "HK", "name": "Hang Seng",    "ticker": "^HSI",       "bench": "^HSI",      "hurst": 0.52, "roi": 49.18, "alpha": 14.53, "sharpe": 1.21, "stop": 18,  "trades": 44,  "dashboard": "dashboards/GLOBAL_Amnesia_Max_Profit_Dashboard.html"},
-    {"key": "btc",    "flag": "COIN","name": "Kripto (BTC)", "ticker": "BTC-USD",    "bench": "BTC-USD",   "hurst": 0.60, "roi": 297.02,"alpha": 174.22,"sharpe": 3.12, "stop": 100, "trades": 68,  "dashboard": "dashboards/SAYFA3_Kripto_Amnesia_TR_Amigdala_Dashboard.html"},
+    {"key": "bist",   "flag": "TR", "name": "BIST-100",     "ticker": "XU100.IS",   "bench": "XU100.IS",  "hurst": 0.52, "roi": 59.84, "alpha": 68.20, "sharpe": 1.99, "stop": 8,   "trades": 42,  "dashboard": "dashboards/BIST100_Amnesia_Dashboard.html", "horizon": "30 Gün (D+30)"},
+    {"key": "sp500",  "flag": "US", "name": "S&P 500",      "ticker": "^GSPC",      "bench": "^GSPC",     "hurst": 0.46, "roi": 80.02, "alpha": 58.53, "sharpe": 2.41, "stop": 3,   "trades": 35,  "dashboard": "dashboards/GLOBAL_Amnesia_Max_Profit_Dashboard.html", "horizon": "30 Gün (D+30)"},
+    {"key": "ftse",   "flag": "GB", "name": "FTSE 100",     "ticker": "^FTSE",      "bench": "^FTSE",     "hurst": 0.57, "roi": 72.48, "alpha": 48.29, "sharpe": 1.52, "stop": 12,  "trades": 28,  "dashboard": "dashboards/GLOBAL_Amnesia_Max_Profit_Dashboard.html", "horizon": "30 Gün (D+30)"},
+    {"key": "stoxx",  "flag": "EU", "name": "Euro Stoxx 50","ticker": "^STOXX50E",  "bench": "^STOXX50E", "hurst": 0.60, "roi": 40.58, "alpha": 23.03, "sharpe": 0.89, "stop": 47,  "trades": 52,  "dashboard": "dashboards/GLOBAL_Amnesia_Max_Profit_Dashboard.html", "horizon": "30 Gün (D+30)"},
+    {"key": "nikkei", "flag": "JP", "name": "Nikkei 225",   "ticker": "^N225",      "bench": "^N225",     "hurst": 0.55, "roi": 72.31, "alpha": 15.04, "sharpe": 2.18, "stop": 2,   "trades": 18,  "dashboard": "dashboards/GLOBAL_Amnesia_Max_Profit_Dashboard.html", "horizon": "30 Gün (D+30)"},
+    {"key": "hsi",    "flag": "HK", "name": "Hang Seng",    "ticker": "^HSI",       "bench": "^HSI",      "hurst": 0.52, "roi": 49.18, "alpha": 14.53, "sharpe": 1.21, "stop": 18,  "trades": 44,  "dashboard": "dashboards/GLOBAL_Amnesia_Max_Profit_Dashboard.html", "horizon": "30 Gün (D+30)"},
+    {"key": "btc",    "flag": "COIN","name": "Kripto (BTC)", "ticker": "BTC-USD",    "bench": "BTC-USD",   "hurst": 0.60, "roi": 297.02,"alpha": 174.22,"sharpe": 3.12, "stop": 100, "trades": 68,  "dashboard": "dashboards/SAYFA3_Kripto_Amnesia_TR_Amigdala_Dashboard.html", "horizon": "30 Gün (D+30)"},
+    {"key": "emtia",  "flag": "MTL", "name": "Değerli Metaller", "ticker": "GC=F",   "bench": "GC=F",      "hurst": 0.60, "roi": 85.87, "alpha": 16.95, "sharpe": 0.84, "stop": 5,   "trades": 24,  "dashboard": "dashboards/commodity_dashboard.html", "horizon": "5 Gün (D+5)"},
 ]
 
 PORTFOLIO_BASE = 10000  # her piyasa için başlangıç sermayesi
@@ -91,6 +98,7 @@ def main():
             "stop":      m["stop"],
             "trades":    m["trades"],
             "dashboard": m["dashboard"],
+            "horizon":   m.get("horizon", "30 Gün (D+30)"),
             "portfolio": portfolio_value,
             "profit":    round(portfolio_value - PORTFOLIO_BASE, 2),
             # Canlı veri

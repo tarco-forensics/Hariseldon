@@ -34,6 +34,13 @@ if %ERRORLEVEL% NEQ 0 (
     goto END
 )
 
+:: 2.7 Çoklu Emtia C5 Motorunu koştur
+echo [3.5/4] C5 Emtia Motoru kosturuluyor... >> %LOG%
+%PYTHON% B:\T2SAIM_Spock_Hermes\00_Success\btf_run_commodity_engine.py >> %LOG% 2>&1
+if %ERRORLEVEL% NEQ 0 (
+    echo UYARI: C5 Emtia Motoru calismasi basarisiz >> %LOG%
+)
+
 :: 3. GitHub'a push et
 echo [4/4] GitHub push... >> %LOG%
 cd /d B:\Hariseldon
