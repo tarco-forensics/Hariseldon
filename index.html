@@ -518,6 +518,31 @@ function initDailyTable() {
     document.getElementById('dailyProfit').textContent = '+$'+(total - 7*10000).toLocaleString();
     document.getElementById('totalTrades').textContent = '287';
     document.getElementById('todayDate').textContent = '16 Haz 2026';
+    
+    // Gunluk Getiri Karsilastirma Grafigi
+    setTimeout(function(){
+        const ctx = document.getElementById('dailyChart');
+        if (!ctx) return;
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['BIST','S&P500','FTSE','Euro','Nikkei','HangSeng','Kripto'],
+                datasets: [{
+                    label: 'ROI %', data: [59.84,80.02,72.48,40.58,72.31,49.18,297.02],
+                    backgroundColor: ['#ef4444','#3b82f6','#6366f1','#f59e0b','#10b981','#a78bfa','#f97316'],
+                    borderRadius: 6
+                }]
+            },
+            options: {
+                responsive: true, maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: { grid: { color: 'rgba(255,255,255,0.03)' }, ticks: { color: '#9ca3af', callback: v => v+'%' } },
+                    x: { ticks: { color: '#9ca3af', font: { size: 9 } } }
+                }
+            }
+        });
+    }, 500);
 }
 
 document.getElementById('tab-daily').style.display = 'none';
