@@ -201,7 +201,7 @@ function renderDashboard(realData) {
     yesterday.setDate(yesterday.getDate() - 1);
     const yesterdayStr = yesterday.toISOString().split('T')[0];
 
-    const FUTURE_DAYS = 45;
+    const FUTURE_DAYS = 180;  // sağda 6 ay — çizgi ortada
     let labelsAll = [], crisisAll = [], sriAll = [], efmiAll = [];
 
     if (realData && realData.series && realData.series.length > 0) {
@@ -333,7 +333,7 @@ function renderDashboard(realData) {
                     spanGaps: false
                 },
                 {
-                    // Kırmızı — ileri (dün → +45 gün)
+                    // Kırmızı — ileri (dün → +180 gün)
                     label: 'Kriz İndeksi — Tahmin',
                     data: futureData,
                     borderColor: '#ef4444',
@@ -388,13 +388,17 @@ function renderDashboard(realData) {
             },
             scales: {
                 x: {
+                    // Pencere: pivot ± 180 gün — çizgi tam ortada
+                    min: Math.max(0, pivotIdx - 180),
+                    max: pivotIdx + 180,
                     grid: { color: 'rgba(255,255,255,0.04)' },
                     ticks: {
                         color: '#6b7280',
-                        maxTicksLimit: 12,
+                        maxTicksLimit: 13,
                         maxRotation: 0,
                         callback(val, idx) {
-                            return idx % 70 === 0 ? this.getLabelForValue(val) : '';
+                            // ~30 günde bir etiket göster
+                            return idx % 30 === 0 ? this.getLabelForValue(val) : '';
                         }
                     },
                     title: { display: true, text: 'Zaman', color: '#6b7280', font: { size: 11 } }
