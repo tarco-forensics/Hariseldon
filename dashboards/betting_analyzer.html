@@ -6,7 +6,7 @@
 <title>T2SAIM Analitik — Algoritmik Bahis Analiz Platformu</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@300..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
 /* ─── DESIGN TOKENS ─── */
@@ -26,69 +26,69 @@
   --radius-sm: 0.375rem; --radius-md: 0.5rem;
   --radius-lg: 0.75rem; --radius-xl: 1rem; --radius-full: 9999px;
   --transition-interactive: 180ms cubic-bezier(0.16, 1, 0.3, 1);
-  --font-body: 'Inter', 'Helvetica Neue', sans-serif;
+  --font-body: 'Outfit', 'Inter', sans-serif;
   --font-mono: 'JetBrains Mono', 'Cascadia Code', monospace;
   --content-wide: 1200px;
 }
 
 [data-theme="dark"] {
-  --color-bg: #0d1117;
-  --color-surface: #161b22;
-  --color-surface-2: #1c2330;
-  --color-surface-offset: #21262d;
-  --color-surface-dynamic: #2d333b;
-  --color-divider: #30363d;
-  --color-border: #3d444d;
+  --color-bg: #06080c;
+  --color-surface: #0d121f;
+  --color-surface-2: #12192a;
+  --color-surface-offset: #172134;
+  --color-surface-dynamic: #1c283f;
+  --color-divider: rgba(255, 255, 255, 0.05);
+  --color-border: rgba(201, 168, 76, 0.15);
   --color-text: #e6edf3;
-  --color-text-muted: #8b949e;
-  --color-text-faint: #484f58;
-  --color-text-inverse: #0d1117;
-  --color-primary: #58a6ff;
-  --color-primary-hover: #79b8ff;
-  --color-primary-active: #a5d6ff;
-  --color-primary-highlight: #1c2e4a;
-  --color-success: #3fb950;
-  --color-success-highlight: #1a3a21;
-  --color-warning: #d29922;
-  --color-warning-highlight: #3a2f0b;
-  --color-error: #f85149;
-  --color-error-highlight: #3d1b1b;
-  --color-orange: #fd8d3c;
-  --color-gold: #e8af34;
-  --color-purple: #bc8cff;
-  --shadow-sm: 0 1px 3px oklch(0 0 0 / 0.3);
-  --shadow-md: 0 4px 12px oklch(0 0 0 / 0.4);
-  --shadow-lg: 0 12px 32px oklch(0 0 0 / 0.5);
+  --color-text-muted: #9ca3af;
+  --color-text-faint: #4b5563;
+  --color-text-inverse: #06080c;
+  --color-primary: #c9a84c;
+  --color-primary-hover: #e5c76b;
+  --color-primary-active: #f1dc97;
+  --color-primary-highlight: rgba(201, 168, 76, 0.15);
+  --color-success: #10b981;
+  --color-success-highlight: rgba(16, 185, 129, 0.1);
+  --color-warning: #f59e0b;
+  --color-warning-highlight: rgba(245, 158, 11, 0.1);
+  --color-error: #ef4444;
+  --color-error-highlight: rgba(239, 68, 68, 0.1);
+  --color-orange: #f97316;
+  --color-gold: #c9a84c;
+  --color-purple: #a78bfa;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(201, 168, 76, 0.05);
+  --shadow-lg: 0 12px 32px rgba(201, 168, 76, 0.1);
 }
 
 [data-theme="light"] {
-  --color-bg: #f6f8fa;
+  --color-bg: #f7f4ec;
   --color-surface: #ffffff;
-  --color-surface-2: #f6f8fa;
-  --color-surface-offset: #eaeef2;
-  --color-surface-dynamic: #d8dee4;
-  --color-divider: #d0d7de;
-  --color-border: #d0d7de;
-  --color-text: #1f2328;
-  --color-text-muted: #656d76;
-  --color-text-faint: #9198a1;
+  --color-surface-2: #f7f4ec;
+  --color-surface-offset: #eae6db;
+  --color-surface-dynamic: #ded9cd;
+  --color-divider: #e4decb;
+  --color-border: #d0c8b2;
+  --color-text: #0f1a2e;
+  --color-text-muted: #4b5563;
+  --color-text-faint: #9ca3af;
   --color-text-inverse: #ffffff;
-  --color-primary: #0969da;
-  --color-primary-hover: #0550ae;
-  --color-primary-active: #033d8b;
-  --color-primary-highlight: #ddf4ff;
-  --color-success: #1a7f37;
-  --color-success-highlight: #dafbe1;
-  --color-warning: #9a6700;
-  --color-warning-highlight: #fff8c5;
-  --color-error: #cf222e;
-  --color-error-highlight: #ffebe9;
-  --color-orange: #bc4c00;
-  --color-gold: #9a6700;
-  --color-purple: #8250df;
-  --shadow-sm: 0 1px 3px oklch(0.2 0.01 240 / 0.06);
-  --shadow-md: 0 4px 12px oklch(0.2 0.01 240 / 0.08);
-  --shadow-lg: 0 12px 32px oklch(0.2 0.01 240 / 0.12);
+  --color-primary: #c9a84c;
+  --color-primary-hover: #b08d35;
+  --color-primary-active: #9a6700;
+  --color-primary-highlight: rgba(201, 168, 76, 0.1);
+  --color-success: #10b981;
+  --color-success-highlight: rgba(16, 185, 129, 0.1);
+  --color-warning: #f59e0b;
+  --color-warning-highlight: rgba(245, 158, 11, 0.1);
+  --color-error: #ef4444;
+  --color-error-highlight: rgba(239, 68, 68, 0.1);
+  --color-orange: #f97316;
+  --color-gold: #c9a84c;
+  --color-purple: #a78bfa;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.12);
 }
 
 /* ─── BASE ─── */
@@ -403,6 +403,11 @@ table { border-collapse: collapse; width: 100%; }
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
         Risk Matrisi
       </button>
+      <div class="nav-section-label" style="margin-top: var(--space-3)">Bilgi</div>
+      <button class="nav-item" onclick="showPage('education')" aria-label="Eğitim & Rehber">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+        Eğitim & Rehber
+      </button>
     </nav>
     <div class="sidebar-footer">
       <div class="theme-toggle">
@@ -523,6 +528,23 @@ table { border-collapse: collapse; width: 100%; }
             </div>
           </div>
         </div>
+
+        <div class="card" style="margin-top: var(--space-6);">
+          <div class="card-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            Modül Hakkında & Kullanım Rehberi
+          </div>
+          <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-3);">
+            <strong>Arbitraj Hesaplayıcı (Surebet)</strong> modülü, farklı bahis bürolarının aynı karşılaşma için sunduğu oranlar arasındaki uyumsuzluğu tespit ederek risksiz kâr dağılımı yapmanızı sağlar.
+          </p>
+          <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-4);">
+            <strong>Nasıl Kullanılır?</strong><br>
+            1. Karşılaşmanın farklı bürolardaki en yüksek Ev Sahibi (1), Beraberlik (X) ve Deplasman (2) oranlarını girin.<br>
+            2. Bu arbitraj işlemi için ayırdığınız toplam yatırım bütçesini girin.<br>
+            3. "Arbitraj Hesapla" butonuna tıklayarak risksiz kâr yüzdesini, hangi seçeneğe ne kadar yatırmanız gerektiğini ve net kazancınızı görün.
+          </p>
+          <button class="btn btn-secondary" onclick="showPage('education')">Detaylı Eğitim Sayfasına Git →</button>
+        </div>
       </div>
     </div>
 
@@ -559,49 +581,68 @@ table { border-collapse: collapse; width: 100%; }
                   <label class="form-label">Bahis Tutarı (₺)</label>
                   <input type="number" class="form-input" id="vb-stake" placeholder="100" value="100">
                 </div>
-                <div class="form-group">
-                  <label class="form-label">Bankroll (₺)</label>
-                  <input type="number" class="form-input" id="vb-bankroll" placeholder="5000" value="5000">
-                </div>
               </div>
               <div class="btn-group">
                 <button class="btn btn-primary" onclick="calcValueBet()">EV Hesapla</button>
-                <button class="btn btn-secondary" onclick="calcKelly()">Kelly Stake Hesapla</button>
               </div>
               <div id="vb-result"></div>
             </div>
 
             <div class="card">
               <div class="card-title">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-                Kelly Kriteri Açıklaması
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                EV (Beklenen Değer) Nedir?
               </div>
-              <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-3);">Kelly kriteri, bankroll'un yüzde kaçının bahse konulması gerektiğini beklenen değer üzerinden optimal biçimde hesaplar.</p>
+              <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-3);">
+                <strong>Beklenen Değer (Expected Value - EV)</strong>, bir bahsin uzun vadede getireceği ortalama kâr veya zarar miktarını gösterir. Bahis şirketlerinin marj eklenmiş oranları ile kendi modelinizin çıkardığı gerçek olasılık farkı üzerinden hesaplanır.
+              </p>
+              <div class="code-block" style="font-size: 0.78rem; margin-bottom: var(--space-3);">
+<span class="comment"># EV Olasılık Formülü</span>
+<span class="var">EV</span> = (<span class="var">Model Olasılığı</span> * <span class="var">Net Kazanç</span>) - (<span class="var">Kaybetme Olasılığı</span> * <span class="var">Kayıp</span>)
+<span class="var">EV</span> = (<span class="var">p</span> * (<span class="var">Oran</span> - 1)) - (1 - <span class="var">p</span>)
+              </div>
+              <p style="font-size: var(--text-sm); color: var(--color-text-muted);">
+                Eğer hesaplanan <strong>EV > 0</strong> ise, bu bir "Değerli Bahis" (Value Bet)'tir. Uzun vadede bu bahisleri oynamak istatistiksel olarak kasanızı büyütür.
+              </p>
+            </div>
+
+            <div class="card">
+              <div class="card-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                Kelly Kriteri Nedir? (Para Yönetimi)
+              </div>
+              <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-3);">Kelly kriteri, bankroll'un yüzde kaçının bahse konulması gerektiğini beklenen değer (EV) ve oran üzerinden optimal biçimde hesaplayan matematiksel bir para yönetimi formülüdür. Bu hesaplamayı kendiniz manuel olarak uygulayabilirsiniz.</p>
               <div class="code-block" style="font-size: 0.78rem;">
-<span class="comment"># Kelly Kriteri</span>
-<span class="var">f</span> = (<span class="var">b</span> * <span class="var">p</span> - <span class="var">q</span>) / <span class="var">b</span>
+<span class="comment"># Kelly Formülü</span>
+<span class="var">f*</span> = <span class="var">EV</span> / (<span class="var">Oran</span> - 1)
 
-<span class="comment"># b = net odds (odds - 1)</span>
-<span class="comment"># p = model kazanma olasılığı</span>
-<span class="comment"># q = 1 - p (kaybetme olasılığı)</span>
-
-<span class="comment"># Fraksiyonel Kelly (güvenli versiyon)</span>
-<span class="var">stake</span> = (<span class="var">f</span> / <span class="number">4</span>) * <span class="var">bankroll</span>  <span class="comment"># 1/4 Kelly</span>
+<span class="comment"># Fraksiyonel Kelly (Kasa Korumalı Versiyon)</span>
+<span class="var">Yatırım Tutarı</span> = (<span class="var">f*</span> / 4) * <span class="var">Toplam Kasa (Bankroll)</span>
               </div>
             </div>
           </div>
           <div>
-            <div class="chart-container">
+            <div class="chart-container" style="height: 450px;">
               <div class="chart-title">EV vs Oran Senaryoları</div>
               <div class="chart-wrap">
                 <canvas id="evChart"></canvas>
               </div>
             </div>
-            <div class="chart-container" style="margin-top: var(--space-5);">
-              <div class="chart-title">Bankroll Büyümesi (Simülasyon — 100 Bahis)</div>
-              <div class="chart-wrap">
-                <canvas id="bankrollChart"></canvas>
+            <div class="card" style="margin-top: var(--space-6);">
+              <div class="card-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                Modül Hakkında & Kullanım Rehberi
               </div>
+              <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-3);">
+                <strong>Value Betting Hesaplayıcı</strong> modülü, modelinizin hesapladığı gerçek olasılık ile bookmaker'ın sunduğu oran arasındaki değer farklarını analiz eder.
+              </p>
+              <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-4);">
+                <strong>Nasıl Kullanılır?</strong><br>
+                1. Bookmaker oranını (Decimal) ve modelinizin hesapladığı gerçek kazanma olasılığını (%) girin.<br>
+                2. Simüle etmek istediğiniz sabit bahis miktarını (Stake) yazın.<br>
+                3. "EV Hesapla" butonuna basarak bahsin Pozitif Beklenen Değer (EV+) taşıyıp taşımadığını ve istatistiksel uzun vadeli kârlılığını görün.
+              </p>
+              <button class="btn btn-secondary" onclick="showPage('education')">Detaylı Eğitim Sayfasına Git →</button>
             </div>
           </div>
         </div>
@@ -716,6 +757,21 @@ table { border-collapse: collapse; width: 100%; }
             </div>
           </div>
         </div>
+        <div class="card" style="margin-top: var(--space-6);">
+          <div class="card-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            Modül Hakkında & Kullanım Rehberi
+          </div>
+          <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-3);">
+            <strong>Bookmaker Marj Analizi</strong> modülü, bahis sitelerinin oranlara eklediği kâr marjlarını (overround) ve bu marjlar kaldırıldığında ortaya çıkan "gerçek/adil oranları" (fair odds) hesaplar.
+          </p>
+          <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-4);">
+            <strong>Nasıl Kullanılır?</strong><br>
+            1. Bir maçın ev sahibi (1), beraberlik (X) ve deplasman (2) oranlarını girin.<br>
+            2. "Marjı Hesapla" butonuna tıklayarak bookmaker'ın uyguladığı gizli marj yüzdesini ve marj arındırılmış gerçek adil oran değerlerini görün.
+          </p>
+          <button class="btn btn-secondary" onclick="showPage('education')">Detaylı Eğitim Sayfasına Git →</button>
+        </div>
       </div>
     </div>
 
@@ -816,6 +872,21 @@ table { border-collapse: collapse; width: 100%; }
               <div style="font-size: var(--text-xs); color: var(--color-text-muted);">KYC doğrulama gecikmesi</div>
             </div>
           </div>
+        </div>
+        <div class="card" style="margin-top: var(--space-6);">
+          <div class="card-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            Modül Hakkında & Kullanım Rehberi
+          </div>
+          <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-3);">
+            <strong>Bookmaker Tespit Mekanizmaları</strong> modülü, bahis şirketlerinin profesyonel, surebet veya value bet oynayan hesapları tespit etmek için kullandığı yapay zeka tabanlı anomali tespit aşamalarını ve sinyallerini analiz eder.
+          </p>
+          <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-4);">
+            <strong>Nasıl Kullanılır?</strong><br>
+            1. Sol taraftaki davranışsal profil oluşturma aşamalarını inceleyin.<br>
+            2. Sağ taraftaki "Tetikleyici Sinyal Türleri" listesinden risk oluşturabilecek faktörleri görerek oyun tarzınızı nasıl kamufle edeceğinizi öğrenin.
+          </p>
+          <button class="btn btn-secondary" onclick="showPage('education')">Detaylı Eğitim Sayfasına Git →</button>
         </div>
       </div>
     </div>
@@ -953,6 +1024,129 @@ table { border-collapse: collapse; width: 100%; }
             </div>
           </div>
         </div>
+
+        <div class="card" style="margin-top: var(--space-6);">
+          <div class="card-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            Modül Hakkında & Kullanım Rehberi
+          </div>
+          <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-3);">
+            <strong>Bahis Stratejisi Risk Matrisi</strong> modülü, farklı oyun modellerinin kârlılık potansiyellerini ve hesap kısıtlanma risklerini karşılaştırarak optimal portföy dağılımı yapmanıza yardımcı olur.
+          </p>
+          <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-4);">
+            <strong>Nasıl Kullanılır?</strong><br>
+            1. Radar grafiği üzerinde Surebet, Value Bet ve Exchange stratejilerinin güçlü/zayıf yönlerini karşılaştırın.<br>
+            2. Sağ tarafta yer alan Sharp ve Soft bookmaker dinamiklerini okuyarak, hangi sitelerde hangi stratejileri uygulayacağınızı belirleyin.
+          </p>
+          <button class="btn btn-secondary" onclick="showPage('education')">Detaylı Eğitim Sayfasına Git →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- PAGE 6: EĞİTİM & REHBER -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <div id="page-education" class="page">
+      <div class="topbar">
+        <span class="topbar-title">T2SAIM Spor Yatırım Akademisi</span>
+        <span class="topbar-badge">Eğitim</span>
+      </div>
+      <div style="padding: var(--space-6) var(--space-8);">
+        <div class="section-header">
+          <div class="section-title">Algoritmik Bahis ve Matematiksel Edge Akademisi</div>
+          <div class="section-desc">Platformda yer alan modüllerin bilimsel arka planları, matematiksel temelleri ve güvenli uygulama protokolleri.</div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6);">
+          <!-- 1. Arbitraj Hesaplayıcı -->
+          <div class="card">
+            <div class="card-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+              1. Arbitraj Hesaplayıcı (Surebet)
+            </div>
+            <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-3);">
+              Farklı bahis şirketlerinin aynı maça açtığı oranlardaki uyumsuzlukları değerlendirme esasına dayanır. Tüm olası sonuçlara (Ev Sahibi, Beraberlik, Deplasman) yapılan yatırımların toplam ihtimali %100'ün altına düştüğünde ortaya risksiz kâr çıkar.
+            </p>
+            <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-4);">
+              <strong>Nasıl Uygulanır?</strong> Farklı bahis sitelerinde açılan oranları modüle girin. Hesaplayıcı, toplam implied probability oranını bulur ve bütçenizi her bir orana risksiz kâr sağlayacak şekilde böler.
+            </p>
+            <button class="btn btn-secondary" onclick="showPage('arbitrage')">Modüle Git →</button>
+          </div>
+
+          <!-- 2. Value Betting -->
+          <div class="card">
+            <div class="card-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+              2. Value Betting (Değerli Bahis)
+            </div>
+            <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-3);">
+              Olasılık analizi yaparak bahis şirketinin sunduğu oranın, olayın gerçekleşme olasılığını eksik hesapladığı durumları bulma yöntemidir. Pozitif Beklenen Değer (EV+) elde edildiğinde, uzun vadede kasa büyümesi garanti altına alınır.
+            </p>
+            <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-4);">
+              <strong>Nasıl Uygulanır?</strong> Bookmaker oranını ve modelinizin olasılık tahminini girin. "EV Hesapla" butonu ile bahsin uzun vadedeki kârlılığını (Edge) ölçün.
+            </p>
+            <button class="btn btn-secondary" onclick="showPage('valuebetting')">Modüle Git →</button>
+          </div>
+
+          <!-- 3. Marj Analizi -->
+          <div class="card">
+            <div class="card-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+              3. Marj Analizi (Overround)
+            </div>
+            <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-3);">
+              Bahis şirketlerinin kâr edebilmesi için oranları adil olasılıkların altına çekme oranına marj (overround) denir. Bu modül, uygulanan marjı tersine mühendislikle arındırarak "Adil Oranları" (Fair Odds) hesaplar.
+            </p>
+            <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-4);">
+              <strong>Nasıl Uygulanır?</strong> Bookmaker oranlarını girerek hangi sitenin ne kadar marj kestiğini görün. Düşük marjlı (Sharp) siteleri tercih edin.
+            </p>
+            <button class="btn btn-secondary" onclick="showPage('margin')">Modüle Git →</button>
+          </div>
+
+          <!-- 4. Güvenlik -->
+          <div class="card">
+            <div class="card-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              4. Güvenlik (Hesap Sağlığı)
+            </div>
+            <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-3);">
+              Profesyonel bahis yatırımı yaparken fonlarınızın ve hesaplarınızın güvenliğini sağlamak en kritik adımdır. Ödeme yöntemlerinin gizliliği ve hesapların gerçek kimlik doğrulamaları (KYC) gibi güvenlik önlemleri bu kapsamdadır.
+            </p>
+            <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-4);">
+              <strong>Tavsiye:</strong> İşlemlerinizde aracı sanal kartlar, kripto para transferleri ve temiz ödeme yöntemleri kullanarak banka hesaplarınızın güvenliğini koruyun.
+            </p>
+          </div>
+
+          <!-- 5. Tespit Mekanizmaları -->
+          <div class="card">
+            <div class="card-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              5. Tespit Mekanizmaları ve Gizlilik
+            </div>
+            <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-3);">
+              Bookmaker'lar (özellikle Soft olanlar), kazanan profesyonel oyuncuları tespit etmek için anomali tarama botları kullanır. Yuvarlanmamış stake miktarları, sürekli niş lig bahisleri ve IP değişiklikleri alarm tetikler.
+            </p>
+            <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-4);">
+              <strong>Nasıl Kaçınılır?</strong> Stake tutarlarını yuvarlayın (Örn: 240₺), popüler liglerden "kamuflaj bahisleri" yapın ve temiz/sabit proxy kullanın.
+            </p>
+            <button class="btn btn-secondary" onclick="showPage('detection')">Modüle Git →</button>
+          </div>
+
+          <!-- 6. Risk Matrisi -->
+          <div class="card">
+            <div class="card-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              6. Risk Matrisi ve Karşılaştırma
+            </div>
+            <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-3);">
+              Farklı yöntemlerin (Arbitraj, Value Bet, Line Shopping) getiri oranları ile hesap kısıtlama (limit) risklerinin analizidir. Risksiz kâr sunan surebet'in hesap ömrü çok kısayken, value bet çok daha uzun ömürlüdür.
+            </p>
+            <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-4);">
+              <strong>Tavsiye:</strong> Risk/ödül dengenize göre portföyünüzü dağıtın. Bookmaker türlerine (Sharp vs Soft) dikkat ederek uzun vadeli sermaye koruma stratejileri geliştirin.
+            </p>
+            <button class="btn btn-secondary" onclick="showPage('riskmatrix')">Modüle Git →</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1029,8 +1223,17 @@ table { border-collapse: collapse; width: 100%; }
 function showPage(id) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-  document.getElementById('page-' + id).classList.add('active');
-  event.currentTarget.classList.add('active');
+  
+  const pageEl = document.getElementById('page-' + id);
+  if (pageEl) pageEl.classList.add('active');
+  
+  const navItem = document.querySelector(`.sidebar-nav .nav-item[onclick*="showPage('${id}')"]`) || 
+                  document.querySelector(`.sidebar-nav .nav-item[onclick*="showPage(\\'${id}\\')"]`);
+  if (navItem) {
+    navItem.classList.add('active');
+  } else if (window.event && window.event.currentTarget && window.event.currentTarget.classList.contains('nav-item')) {
+    window.event.currentTarget.classList.add('active');
+  }
 }
 
 // ─── Theme Toggle ───
@@ -1160,26 +1363,7 @@ function calcValueBet() {
   updateEVChart();
 }
 
-function calcKelly() {
-  const odds = parseFloat(document.getElementById('vb-odds').value);
-  const probPct = parseFloat(document.getElementById('vb-prob').value);
-  const bankroll = parseFloat(document.getElementById('vb-bankroll').value);
-  const p = probPct/100;
-  const b = odds - 1;
-  const q = 1 - p;
-  const f = (b*p - q)/b;
-  const frac = f/4;
-  const stake = Math.max(0, frac * bankroll);
-  const ev = p*(odds-1)-(1-p);
-  document.getElementById('vb-result').innerHTML = `
-    <div class="result-box" style="margin-top: var(--space-4);">
-      <div class="result-row"><span class="result-label">Full Kelly (f*)</span><span class="result-value">${(f*100).toFixed(2)}%</span></div>
-      <div class="result-row"><span class="result-label">1/4 Kelly (Onerilen)</span><span class="result-value kpi-pos">${(frac*100).toFixed(2)}%</span></div>
-      <div class="result-row"><span class="result-label">Onerilen Stake</span><span class="result-value kpi-pos">&#8378;${stake.toFixed(2)}</span></div>
-      <div class="result-row"><span class="result-label">Beklenen EV/bahis</span><span class="result-value ${ev>0?'kpi-pos':'kpi-neg'}">${(ev*stake).toFixed(2)} &#8378;</span></div>
-    </div>`;
-  updateBankrollChart(p, odds, bankroll);
-}
+
 
 function calcMargin() {
   const o1 = parseFloat(document.getElementById('mg-o1').value);
@@ -1267,15 +1451,15 @@ function initRestrictions() {
     </div>`).join('');
 }
 
-let arbChart, evChart, bankrollChart, marginChart, radarChart;
+let arbChart, evChart, marginChart, radarChart;
 
 function getChartColors() {
   const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
   return {
-    text: isDark ? '#cdccca' : '#28251d',
-    grid: isDark ? '#393836' : '#dcd9d5',
-    primary: '#4f98a3', success: '#6daa45', error: '#dd6974',
-    warning: '#e8af34', orange: '#fdab43', purple: '#a86fdf',
+    text: isDark ? '#cdccca' : '#0f1a2e',
+    grid: isDark ? '#1c283f' : '#e4decb',
+    primary: '#c9a84c', success: '#10b981', error: '#ef4444',
+    warning: '#f59e0b', orange: '#f97316', purple: '#a78bfa',
   };
 }
 
@@ -1296,18 +1480,6 @@ function updateEVChart(){
   const ctx=document.getElementById('evChart').getContext('2d');
   if(evChart)evChart.destroy();
   evChart=new Chart(ctx,{type:'line',data:{labels:oddsRange,datasets:[{label:`EV (p:${(p*100).toFixed(0)}%)`,data:oddsRange.map(o=>+(p*(o-1)-(1-p)).toFixed(4)),borderColor:c.primary,backgroundColor:c.primary+'22',fill:true,tension:0.4,pointRadius:3}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:c.text,font:{size:11}}}},scales:{x:{title:{display:true,text:'Decimal Odds',color:c.text},ticks:{color:c.text},grid:{color:c.grid}},y:{title:{display:true,text:'Expected Value',color:c.text},ticks:{color:c.text},grid:{color:c.grid}}}}});
-}
-
-function updateBankrollChart(p,odds,bankroll){
-  const c=getChartColors();
-  const f=((odds-1)*p-(1-p))/(odds-1)*0.25;
-  const sp=Math.max(0,Math.min(f,0.05));
-  let bl=bankroll;
-  const series=[bl];
-  for(let i=0;i<100;i++){bl=Math.random()<p?bl+bl*sp*(odds-1):bl-bl*sp;series.push(+bl.toFixed(2));}
-  const ctx=document.getElementById('bankrollChart').getContext('2d');
-  if(bankrollChart)bankrollChart.destroy();
-  bankrollChart=new Chart(ctx,{type:'line',data:{labels:Array.from({length:101},(_,i)=>i),datasets:[{label:'Bankroll',data:series,borderColor:series[100]>bankroll?c.success:c.error,backgroundColor:(series[100]>bankroll?c.success:c.error)+'18',fill:true,tension:0.3,pointRadius:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:c.text,font:{size:11}}}},scales:{x:{title:{display:true,text:'Bahis No.',color:c.text},ticks:{color:c.text},grid:{color:c.grid}},y:{ticks:{color:c.text,callback:v=>'TL '+v.toFixed(0)},grid:{color:c.grid}}}}});
 }
 
 function initMarginChart(){
@@ -1336,7 +1508,6 @@ document.addEventListener('DOMContentLoaded',()=>{
   initRadarChart();
   updateArbChart(2.15,3.55,4.20,1/2.15+1/3.55+1/4.20);
   updateEVChart();
-  updateBankrollChart(0.52,2.30,5000);
   calcArbitrage();
 });
 </script>
