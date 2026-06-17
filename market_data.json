@@ -1,7 +1,7 @@
 {
   "summary": {
-    "generated": "2026-06-16 22:57",
-    "yesterday": "2026-06-15",
+    "generated": "2026-06-17 07:38",
+    "yesterday": "2026-06-16",
     "total_portfolio": 155730.0,
     "total_profit": 75730.0,
     "total_roi_pct": 94.66,
@@ -29,10 +29,10 @@
       "portfolio": 15984.0,
       "profit": 5984.0,
       "live_ok": true,
-      "close_prev": 13938.5,
-      "close_last": 14446.4,
-      "daily_pct": 3.64,
-      "last_date": "2026-06-15"
+      "close_prev": 14446.4,
+      "close_last": 14493.1,
+      "daily_pct": 0.32,
+      "last_date": "2026-06-16"
     },
     {
       "key": "sp500",
@@ -74,7 +74,7 @@
       "profit": 7248.0,
       "live_ok": true,
       "close_prev": 10430.6,
-      "close_last": 10494.21,
+      "close_last": 10494.2,
       "daily_pct": 0.61,
       "last_date": "2026-06-16"
     },
@@ -117,10 +117,10 @@
       "portfolio": 17231.0,
       "profit": 7231.0,
       "live_ok": true,
-      "close_prev": 66020.04,
-      "close_last": 69317.5,
-      "daily_pct": 4.99,
-      "last_date": "2026-06-15"
+      "close_prev": 69404.5,
+      "close_last": 70008.44,
+      "daily_pct": 0.87,
+      "last_date": "2026-06-17"
     },
     {
       "key": "hsi",
@@ -139,10 +139,10 @@
       "portfolio": 14918.0,
       "profit": 4918.0,
       "live_ok": true,
-      "close_prev": 24718.1,
-      "close_last": 24842.67,
-      "daily_pct": 0.5,
-      "last_date": "2026-06-15"
+      "close_prev": 24493.95,
+      "close_last": 24276.51,
+      "daily_pct": -0.89,
+      "last_date": "2026-06-17"
     },
     {
       "key": "btc",
@@ -161,10 +161,10 @@
       "portfolio": 39702.0,
       "profit": 29702.0,
       "live_ok": true,
-      "close_prev": 66289.5,
-      "close_last": 65699.85,
-      "daily_pct": -0.89,
-      "last_date": "2026-06-16"
+      "close_prev": 65600.64,
+      "close_last": 65608.2,
+      "daily_pct": 0.01,
+      "last_date": "2026-06-17"
     },
     {
       "key": "emtia",
@@ -183,10 +183,10 @@
       "portfolio": 18587.0,
       "profit": 8587.0,
       "live_ok": true,
-      "close_prev": 4328.0,
-      "close_last": 4353.0,
-      "daily_pct": 0.58,
-      "last_date": "2026-06-16"
+      "close_prev": 4330.9,
+      "close_last": 4345.6,
+      "daily_pct": 0.34,
+      "last_date": "2026-06-17"
     }
   ]
 }
