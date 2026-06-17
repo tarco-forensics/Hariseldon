@@ -206,6 +206,9 @@
                             <span id="simBear" class="font-semibold text-red-400 font-mono">-</span>
                         </div>
                     </div>
+                    <div id="simDetailExplanation" class="p-3 bg-cyan-500/5 border border-cyan-500/10 rounded-lg text-[10px] text-gray-400">
+                        <strong>Simülasyon Analizi:</strong> Fiyat yörüngesini incelemek için listeden bir piyasaya tıklayın.
+                    </div>
                     <div class="p-3 bg-yellow-500/5 border border-yellow-500/10 rounded-lg text-[10px] text-gray-500">
                         <span class="text-yellow-400 font-semibold">⚠️ Seldon Felsefesi:</span> Bu tahmin bir kesinlik belirtmez. Olasılık dağılımının kümülatif medyanını temsil eder.
                     </div>
@@ -1034,6 +1037,18 @@ function runSeldonSimulation(m) {
     document.getElementById('simMedian').textContent = finalMedian.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
     document.getElementById('simBull').textContent = finalBull.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
     document.getElementById('simBear').textContent = finalBear.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+    
+    const day3Median = medianPath[3];
+    const explainEl = document.getElementById('simDetailExplanation');
+    if (explainEl) {
+        explainEl.innerHTML = `
+            <strong>Simülasyon Detayı (${m.name}):</strong><br>
+            • <strong>Gün 0 (Kapanış):</strong> ${startPrice.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}<br>
+            • <strong>Drift (Günlük Getiri):</strong> ${(dailyChangePct >= 0 ? '+' : '')}${dailyChangePct.toFixed(2)}%<br>
+            • <strong>Gün 3 Medyan Beklenti:</strong> ${day3Median.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}<br>
+            • <strong>Günlük Volatilite (Tahmini):</strong> ${(dailyVol * 100).toFixed(2)}%
+        `;
+    }
     
     // Render Seldon prediction chart
     drawSeldonSimChart(DAYS, medianPath, bullPath, bearPath);

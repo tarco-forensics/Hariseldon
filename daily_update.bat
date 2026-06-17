@@ -41,11 +41,22 @@ if %ERRORLEVEL% NEQ 0 (
     echo UYARI: C5 Emtia Motoru calismasi basarisiz >> %LOG%
 )
 
+:: 2.8 T2SAIM Günlük Portföy Jeneratörünü Çalıştır
+echo [3.8/4] T2SAIM Gunluk Portfoy Olusturuluyor... >> %LOG%
+%PYTHON% B:\T2SAIM_James_Projects\00_Success\t2saim_daily_portfolio_generator.py >> %LOG% 2>&1
+if %ERRORLEVEL% NEQ 0 (
+    echo HATA: Portfoy olusturma basarisiz >> %LOG%
+) else (
+    copy /y B:\T2SAIM_James_Projects\00_Success\t2saim_web_dashboard_data.json B:\Hariseldon\ >> %LOG% 2>&1
+    copy /y B:\T2SAIM_James_Projects\00_Success\t2saim_model_selector.json B:\Hariseldon\ >> %LOG% 2>&1
+    copy /y B:\T2SAIM_James_Projects\00_Success\t2saim_stock_selection_results.json B:\Hariseldon\ >> %LOG% 2>&1
+)
+
 :: 3. GitHub'a push et
 echo [4/4] GitHub push... >> %LOG%
 cd /d B:\Hariseldon
-git add crisis_data.json market_data.json >> %LOG% 2>&1
-git commit -m "data: daily update %DATE%" >> %LOG% 2>&1
+git add crisis_data.json market_data.json t2saim_web_dashboard_data.json t2saim_model_selector.json t2saim_stock_selection_results.json t2saim_dashboard.html t2saim_asset_details.html t2saim_crypto_dashboard.html >> %LOG% 2>&1
+git commit -m "data: daily update with new models %DATE%" >> %LOG% 2>&1
 git push origin main >> %LOG% 2>&1
 if %ERRORLEVEL% NEQ 0 (
     echo UYARI: Git push basarisiz (ag sorunu olabilir) >> %LOG%

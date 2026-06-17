@@ -48,6 +48,13 @@ echo "[4] C5 Emtia Motoru..." >> "$LOG"
 python btf_run_commodity_engine.py 2>&1 >> "$LOG"
 echo "  => C5 Emtia tamamlandi" >> "$LOG"
 
+# Her gun: T2SAIM Günlük Portföy Jeneratörü
+echo "[5] T2SAIM Gunluk Portfoy Olusturuluyor..." >> "$LOG"
+python /b/T2SAIM_James_Projects/00_Success/t2saim_daily_portfolio_generator.py 2>&1 >> "$LOG"
+cp /b/T2SAIM_James_Projects/00_Success/t2saim_web_dashboard_data.json "$HARISELDON/"
+cp /b/T2SAIM_James_Projects/00_Success/t2saim_model_selector.json "$HARISELDON/"
+cp /b/T2SAIM_James_Projects/00_Success/t2saim_stock_selection_results.json "$HARISELDON/"
+
 # Sonuclari Hariseldon'a kopyala
 echo "[KOPYALA] Sonuclar..." >> "$LOG"
 cp "/b/T2SAIM_James_Projects/07-Sonuclar/BIST100_BTF_Amnesia_Max_Profit_Dashboard.html" "$HARISELDON/dashboards/BIST100_Amnesia_Dashboard.html"
@@ -60,7 +67,7 @@ cp /b/T2SAIM_James_Projects/07-Sonuclar/turkiye_amigdala_*.json "$HARISELDON/ami
 echo "[GIT] Commit ve push..." >> "$LOG"
 cd "$HARISELDON"
 git add -A
-git commit -m "gunluk kosu $(date +%Y-%m-%d)" >> "$LOG" 2>&1
+git commit -m "gunluk kosu with new models $(date +%Y-%m-%d)" >> "$LOG" 2>&1
 git push origin main >> "$LOG" 2>&1
 
 echo "========================================" >> "$LOG"
