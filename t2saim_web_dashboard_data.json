@@ -1,0 +1,532 @@
+{
+  "generation_time": "2026-06-17 19:55:38",
+  "total_markets": 5,
+  "markets": {
+    "us": {
+      "name": "US (S&P 500)",
+      "selected_model": "Model 4 (Optimized Hybrid)",
+      "redeploy_frequency_days": 15,
+      "hyperparameters": {},
+      "market_characteristics": {
+        "hurst": 0.5977,
+        "volatility": 1.07,
+        "sharpe": 0.6604,
+        "annual_return": 11.2,
+        "regime": "bear",
+        "autocorr": -0.0177,
+        "n_available": 30,
+        "inflation": 0.045
+      },
+      "reasons": [
+        "KALIBRE: James backtestinde Model 4 (Optimized Hybrid) kazandi (ROI=+186.15%)"
+      ],
+      "portfolio_summary": {
+        "total_invested_stocks": 15,
+        "average_hurst": 0.5315,
+        "average_composite_score": 49.0
+      },
+      "allocated_stocks": [
+        {
+          "rank": 1,
+          "ticker": "MU",
+          "hurst": 0.5525,
+          "return_120d_pct": 295.26,
+          "return_20d_pct": 26.49,
+          "volatility_pct": 68.72,
+          "sharpe": 3.12,
+          "max_dd_pct": -31.14,
+          "composite_score": 68.33,
+          "weight_pct": 6.67
+        },
+        {
+          "rank": 2,
+          "ticker": "AMD",
+          "hurst": 0.5301,
+          "return_120d_pct": 154.44,
+          "return_20d_pct": 13.76,
+          "volatility_pct": 65.41,
+          "sharpe": 2.24,
+          "max_dd_pct": -32.46,
+          "composite_score": 62.66,
+          "weight_pct": 6.67
+        },
+        {
+          "rank": 3,
+          "ticker": "LRCX",
+          "hurst": 0.503,
+          "return_120d_pct": 122.98,
+          "return_20d_pct": 22.62,
+          "volatility_pct": 52.55,
+          "sharpe": 2.66,
+          "max_dd_pct": -21.91,
+          "composite_score": 62.26,
+          "weight_pct": 6.67
+        },
+        {
+          "rank": 4,
+          "ticker": "ARM",
+          "hurst": 0.5376,
+          "return_120d_pct": 235.49,
+          "return_20d_pct": 66.66,
+          "volatility_pct": 67.61,
+          "sharpe": 1.5,
+          "max_dd_pct": -42.69,
+          "composite_score": 62.15,
+          "weight_pct": 6.67
+        },
+        {
+          "rank": 5,
+          "ticker": "AMAT",
+          "hurst": 0.5115,
+          "return_120d_pct": 124.32,
+          "return_20d_pct": 28.92,
+          "volatility_pct": 49.15,
+          "sharpe": 2.42,
+          "max_dd_pct": -22.74,
+          "composite_score": 61.12,
+          "weight_pct": 6.67
+        },
+        {
+          "rank": 6,
+          "ticker": "DDOG",
+          "hurst": 0.5412,
+          "return_120d_pct": 66.24,
+          "return_20d_pct": 13.34,
+          "volatility_pct": 62.62,
+          "sharpe": 1.01,
+          "max_dd_pct": -51.11,
+          "composite_score": 53.45,
+          "weight_pct": 6.67
+        },
+        {
+          "rank": 7,
+          "ticker": "PANW",
+          "hurst": 0.569,
+          "return_120d_pct": 50.43,
+          "return_20d_pct": 17.38,
+          "volatility_pct": 39.01,
+          "sharpe": 0.89,
+          "max_dd_pct": -37.32,
+          "composite_score": 49.33,
+          "weight_pct": 6.67
+        },
+        {
+          "rank": 8,
+          "ticker": "GOOGL",
+          "hurst": 0.5805,
+          "return_120d_pct": 19.07,
+          "return_20d_pct": -10.27,
+          "volatility_pct": 28.91,
+          "sharpe": 2.5,
+          "max_dd_pct": -20.79,
+          "composite_score": 49.11,
+          "weight_pct": 6.67
+        },
+        {
+          "rank": 9,
+          "ticker": "CRWD",
+          "hurst": 0.5286,
+          "return_120d_pct": 43.07,
+          "return_20d_pct": 17.73,
+          "volatility_pct": 45.41,
+          "sharpe": 0.77,
+          "max_dd_pct": -39.05,
+          "composite_score": 44.33,
+          "weight_pct": 6.67
+        },
+        {
+          "rank": 10,
+          "ticker": "MARA",
+          "hurst": 0.5412,
+          "return_120d_pct": 45.3,
+          "return_20d_pct": 5.94,
+          "volatility_pct": 78.83,
+          "sharpe": -0.15,
+          "max_dd_pct": -73.71,
+          "composite_score": 39.72,
+          "weight_pct": 6.67
+        },
+        {
+          "rank": 11,
+          "ticker": "AAPL",
+          "hurst": 0.5146,
+          "return_120d_pct": 7.16,
+          "return_20d_pct": -2.37,
+          "volatility_pct": 22.57,
+          "sharpe": 1.71,
+          "max_dd_pct": -14.39,
+          "composite_score": 38.06,
+          "weight_pct": 6.67
+        },
+        {
+          "rank": 12,
+          "ticker": "QCOM",
+          "hurst": 0.5258,
+          "return_120d_pct": 22.78,
+          "return_20d_pct": 6.21,
+          "volatility_pct": 48.2,
+          "sharpe": 0.64,
+          "max_dd_pct": -34.5,
+          "composite_score": 36.78,
+          "weight_pct": 6.67
+        },
+        {
+          "rank": 13,
+          "ticker": "AVGO",
+          "hurst": 0.5133,
+          "return_120d_pct": 16.29,
+          "return_20d_pct": -13.12,
+          "volatility_pct": 45.6,
+          "sharpe": 0.9,
+          "max_dd_pct": -30.73,
+          "composite_score": 36.59,
+          "weight_pct": 6.67
+        },
+        {
+          "rank": 14,
+          "ticker": "NVDA",
+          "hurst": 0.5209,
+          "return_120d_pct": 17.97,
+          "return_20d_pct": -12.86,
+          "volatility_pct": 34.92,
+          "sharpe": 1.0,
+          "max_dd_pct": -22.26,
+          "composite_score": 35.56,
+          "weight_pct": 6.67
+        },
+        {
+          "rank": 15,
+          "ticker": "NET",
+          "hurst": 0.5027,
+          "return_120d_pct": 17.88,
+          "return_20d_pct": 14.35,
+          "volatility_pct": 61.3,
+          "sharpe": 0.48,
+          "max_dd_pct": -39.91,
+          "composite_score": 35.55,
+          "weight_pct": 6.67
+        }
+      ]
+    },
+    "uk": {
+      "name": "UK (FTSE 100)",
+      "selected_model": "Model 3 (Advanced Hybrid)",
+      "redeploy_frequency_days": 5,
+      "hyperparameters": {},
+      "market_characteristics": {
+        "hurst": 0.6,
+        "volatility": 0.8,
+        "sharpe": 0.6008,
+        "annual_return": 7.63,
+        "regime": "bull",
+        "autocorr": -0.0217,
+        "n_available": 20,
+        "inflation": 0.032
+      },
+      "reasons": [
+        "KALIBRE: James backtestinde Model 3 (Advanced Hybrid) kazandi (ROI=+30.55%)"
+      ],
+      "portfolio_summary": {
+        "total_invested_stocks": 3,
+        "average_hurst": 0.5197,
+        "average_composite_score": 44.2
+      },
+      "allocated_stocks": [
+        {
+          "rank": 1,
+          "ticker": "GLEN.L",
+          "hurst": 0.5134,
+          "return_120d_pct": 50.8,
+          "return_20d_pct": -3.02,
+          "volatility_pct": 31.25,
+          "sharpe": 2.21,
+          "max_dd_pct": -14.36,
+          "composite_score": 48.28,
+          "weight_pct": 33.33
+        },
+        {
+          "rank": 2,
+          "ticker": "RIO.L",
+          "hurst": 0.5375,
+          "return_120d_pct": 34.13,
+          "return_20d_pct": -8.2,
+          "volatility_pct": 26.21,
+          "sharpe": 2.18,
+          "max_dd_pct": -16.7,
+          "composite_score": 46.19,
+          "weight_pct": 33.33
+        },
+        {
+          "rank": 3,
+          "ticker": "HSBA.L",
+          "hurst": 0.5083,
+          "return_120d_pct": 17.55,
+          "return_20d_pct": -1.28,
+          "volatility_pct": 26.15,
+          "sharpe": 1.58,
+          "max_dd_pct": -18.66,
+          "composite_score": 38.13,
+          "weight_pct": 33.33
+        }
+      ]
+    },
+    "eu": {
+      "name": "Europe (Stoxx 50)",
+      "selected_model": "Model 4 (Optimized Hybrid)",
+      "redeploy_frequency_days": 15,
+      "hyperparameters": {},
+      "market_characteristics": {
+        "hurst": 0.5927,
+        "volatility": 1.1,
+        "sharpe": 0.4623,
+        "annual_return": 8.1,
+        "regime": "bull",
+        "autocorr": -0.0432,
+        "n_available": 20,
+        "inflation": 0.038
+      },
+      "reasons": [
+        "KALIBRE: James backtestinde Model 4 (Optimized Hybrid) kazandi (ROI=+26.04%)"
+      ],
+      "portfolio_summary": {
+        "total_invested_stocks": 3,
+        "average_hurst": 0.5168,
+        "average_composite_score": 45.54
+      },
+      "allocated_stocks": [
+        {
+          "rank": 1,
+          "ticker": "ASML.AS",
+          "hurst": 0.5041,
+          "return_120d_pct": 83.2,
+          "return_20d_pct": 24.72,
+          "volatility_pct": 40.52,
+          "sharpe": 2.24,
+          "max_dd_pct": -16.8,
+          "composite_score": 55.1,
+          "weight_pct": 33.33
+        },
+        {
+          "rank": 2,
+          "ticker": "TTE.PA",
+          "hurst": 0.5098,
+          "return_120d_pct": 45.17,
+          "return_20d_pct": -0.36,
+          "volatility_pct": 21.67,
+          "sharpe": 1.84,
+          "max_dd_pct": -10.06,
+          "composite_score": 43.74,
+          "weight_pct": 33.33
+        },
+        {
+          "rank": 3,
+          "ticker": "IBE.MC",
+          "hurst": 0.5364,
+          "return_120d_pct": 14.8,
+          "return_20d_pct": 5.86,
+          "volatility_pct": 14.91,
+          "sharpe": 1.79,
+          "max_dd_pct": -7.14,
+          "composite_score": 37.78,
+          "weight_pct": 33.33
+        }
+      ]
+    },
+    "jp": {
+      "name": "Japan (Nikkei 225)",
+      "selected_model": "Model 1 (MFDFA)",
+      "redeploy_frequency_days": 1,
+      "hyperparameters": {},
+      "market_characteristics": {
+        "hurst": 0.6098,
+        "volatility": 1.42,
+        "sharpe": 0.7491,
+        "annual_return": 16.86,
+        "regime": "bull",
+        "autocorr": -0.0681,
+        "n_available": 20,
+        "inflation": 0.02
+      },
+      "reasons": [
+        "KALIBRE: James backtestinde Model 1 (MFDFA) kazandi (ROI=+93.71%)"
+      ],
+      "portfolio_summary": {
+        "total_invested_stocks": 7,
+        "average_hurst": 0.5092,
+        "average_composite_score": 48.9
+      },
+      "allocated_stocks": [
+        {
+          "rank": 1,
+          "ticker": "6981.T",
+          "hurst": 0.5212,
+          "return_120d_pct": 161.16,
+          "return_20d_pct": 39.1,
+          "volatility_pct": 51.88,
+          "sharpe": 2.79,
+          "max_dd_pct": -20.24,
+          "composite_score": 63.47,
+          "weight_pct": 14.29
+        },
+        {
+          "rank": 2,
+          "ticker": "8035.T",
+          "hurst": 0.5245,
+          "return_120d_pct": 110.54,
+          "return_20d_pct": 35.22,
+          "volatility_pct": 52.7,
+          "sharpe": 2.13,
+          "max_dd_pct": -30.66,
+          "composite_score": 61.35,
+          "weight_pct": 14.29
+        },
+        {
+          "rank": 3,
+          "ticker": "9984.T",
+          "hurst": 0.532,
+          "return_120d_pct": 50.5,
+          "return_20d_pct": 12.65,
+          "volatility_pct": 77.24,
+          "sharpe": 1.64,
+          "max_dd_pct": -54.14,
+          "composite_score": 54.09,
+          "weight_pct": 14.29
+        },
+        {
+          "rank": 4,
+          "ticker": "4063.T",
+          "hurst": 0.5145,
+          "return_120d_pct": 57.28,
+          "return_20d_pct": 1.17,
+          "volatility_pct": 37.14,
+          "sharpe": 1.27,
+          "max_dd_pct": -15.42,
+          "composite_score": 43.57,
+          "weight_pct": 14.29
+        },
+        {
+          "rank": 5,
+          "ticker": "8058.T",
+          "hurst": 0.5044,
+          "return_120d_pct": 27.07,
+          "return_20d_pct": -19.94,
+          "volatility_pct": 31.8,
+          "sharpe": 1.59,
+          "max_dd_pct": -22.06,
+          "composite_score": 41.1,
+          "weight_pct": 14.29
+        },
+        {
+          "rank": 6,
+          "ticker": "8306.T",
+          "hurst": 0.4778,
+          "return_120d_pct": 32.15,
+          "return_20d_pct": 7.95,
+          "volatility_pct": 30.23,
+          "sharpe": 1.65,
+          "max_dd_pct": -17.59,
+          "composite_score": 40.06,
+          "weight_pct": 14.29
+        },
+        {
+          "rank": 7,
+          "ticker": "6098.T",
+          "hurst": 0.4903,
+          "return_120d_pct": 32.96,
+          "return_20d_pct": 37.89,
+          "volatility_pct": 46.66,
+          "sharpe": 0.55,
+          "max_dd_pct": -37.71,
+          "composite_score": 38.68,
+          "weight_pct": 14.29
+        }
+      ]
+    },
+    "hk": {
+      "name": "Hong Kong (HSI)",
+      "selected_model": "Model 2 (TimesFM Hybrid)",
+      "redeploy_frequency_days": 5,
+      "hyperparameters": {},
+      "market_characteristics": {
+        "hurst": 0.5893,
+        "volatility": 1.6,
+        "sharpe": -0.1192,
+        "annual_return": -3.03,
+        "regime": "bear",
+        "autocorr": 0.0211,
+        "n_available": 20,
+        "inflation": 0.022
+      },
+      "reasons": [
+        "KALIBRE: James backtestinde Model 2 (TimesFM Hybrid) kazandi (ROI=+46.11%)"
+      ],
+      "portfolio_summary": {
+        "total_invested_stocks": 5,
+        "average_hurst": 0.525,
+        "average_composite_score": 40.14
+      },
+      "allocated_stocks": [
+        {
+          "rank": 1,
+          "ticker": "0001.HK",
+          "hurst": 0.5365,
+          "return_120d_pct": 31.48,
+          "return_20d_pct": -2.98,
+          "volatility_pct": 24.14,
+          "sharpe": 1.9,
+          "max_dd_pct": -13.24,
+          "composite_score": 43.66,
+          "weight_pct": 20.0
+        },
+        {
+          "rank": 2,
+          "ticker": "0005.HK",
+          "hurst": 0.5083,
+          "return_120d_pct": 28.76,
+          "return_20d_pct": 1.64,
+          "volatility_pct": 26.73,
+          "sharpe": 1.77,
+          "max_dd_pct": -17.77,
+          "composite_score": 41.43,
+          "weight_pct": 20.0
+        },
+        {
+          "rank": 3,
+          "ticker": "0883.HK",
+          "hurst": 0.5163,
+          "return_120d_pct": 21.86,
+          "return_20d_pct": -3.38,
+          "volatility_pct": 28.17,
+          "sharpe": 1.44,
+          "max_dd_pct": -18.07,
+          "composite_score": 39.47,
+          "weight_pct": 20.0
+        },
+        {
+          "rank": 4,
+          "ticker": "0016.HK",
+          "hurst": 0.5304,
+          "return_120d_pct": 22.93,
+          "return_20d_pct": -18.35,
+          "volatility_pct": 29.64,
+          "sharpe": 1.22,
+          "max_dd_pct": -21.83,
+          "composite_score": 38.28,
+          "weight_pct": 20.0
+        },
+        {
+          "rank": 5,
+          "ticker": "1398.HK",
+          "hurst": 0.5333,
+          "return_120d_pct": 21.53,
+          "return_20d_pct": 2.56,
+          "volatility_pct": 18.94,
+          "sharpe": 1.5,
+          "max_dd_pct": -11.02,
+          "composite_score": 37.87,
+          "weight_pct": 20.0
+        }
+      ]
+    }
+  }
+}

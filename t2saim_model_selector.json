@@ -1,0 +1,322 @@
+{
+  "us": {
+    "name": "US (S&P 500)",
+    "selected_model": "Model 4 (Optimized Hybrid)",
+    "n_stocks": 15,
+    "redeploy_days": 15,
+    "selection_source": "empirical",
+    "expected_roi": 186.15,
+    "selected_stocks": [
+      "MU",
+      "AMD",
+      "LRCX",
+      "ARM",
+      "AMAT",
+      "DDOG",
+      "PANW",
+      "GOOGL",
+      "CRWD",
+      "MARA",
+      "AAPL",
+      "QCOM",
+      "AVGO",
+      "NVDA",
+      "NET"
+    ],
+    "reasons": [
+      "KALIBRE: James backtestinde Model 4 (Optimized Hybrid) kazandi (ROI=+186.15%)"
+    ],
+    "characteristics": {
+      "hurst": 0.5977,
+      "volatility": 1.07,
+      "sharpe": 0.6604,
+      "annual_return": 11.2,
+      "regime": "bear",
+      "autocorr": -0.0177,
+      "n_available": 30,
+      "inflation": 0.045
+    }
+  },
+  "uk": {
+    "name": "UK (FTSE 100)",
+    "selected_model": "Model 3 (Advanced Hybrid)",
+    "n_stocks": 3,
+    "redeploy_days": 5,
+    "selection_source": "empirical",
+    "expected_roi": 30.55,
+    "selected_stocks": [
+      "GLEN.L",
+      "RIO.L",
+      "HSBA.L"
+    ],
+    "reasons": [
+      "KALIBRE: James backtestinde Model 3 (Advanced Hybrid) kazandi (ROI=+30.55%)"
+    ],
+    "characteristics": {
+      "hurst": 0.6,
+      "volatility": 0.8,
+      "sharpe": 0.6008,
+      "annual_return": 7.63,
+      "regime": "bull",
+      "autocorr": -0.0217,
+      "n_available": 20,
+      "inflation": 0.032
+    }
+  },
+  "eu": {
+    "name": "Europe (Stoxx 50)",
+    "selected_model": "Model 4 (Optimized Hybrid)",
+    "n_stocks": 15,
+    "redeploy_days": 15,
+    "selection_source": "empirical",
+    "expected_roi": 26.04,
+    "selected_stocks": [
+      "ASML.AS",
+      "TTE.PA",
+      "IBE.MC"
+    ],
+    "reasons": [
+      "KALIBRE: James backtestinde Model 4 (Optimized Hybrid) kazandi (ROI=+26.04%)"
+    ],
+    "characteristics": {
+      "hurst": 0.5927,
+      "volatility": 1.1,
+      "sharpe": 0.4623,
+      "annual_return": 8.1,
+      "regime": "bull",
+      "autocorr": -0.0432,
+      "n_available": 20,
+      "inflation": 0.038
+    }
+  },
+  "jp": {
+    "name": "Japan (Nikkei 225)",
+    "selected_model": "Model 1 (MFDFA)",
+    "n_stocks": 3,
+    "redeploy_days": 1,
+    "selection_source": "empirical",
+    "expected_roi": 93.71,
+    "selected_stocks": [
+      "6981.T",
+      "8035.T",
+      "9984.T"
+    ],
+    "reasons": [
+      "KALIBRE: James backtestinde Model 1 (MFDFA) kazandi (ROI=+93.71%)"
+    ],
+    "characteristics": {
+      "hurst": 0.6098,
+      "volatility": 1.42,
+      "sharpe": 0.7491,
+      "annual_return": 16.86,
+      "regime": "bull",
+      "autocorr": -0.0681,
+      "n_available": 20,
+      "inflation": 0.02
+    }
+  },
+  "hk": {
+    "name": "Hong Kong (HSI)",
+    "selected_model": "Model 2 (TimesFM Hybrid)",
+    "n_stocks": 5,
+    "redeploy_days": 5,
+    "selection_source": "empirical",
+    "expected_roi": 46.11,
+    "selected_stocks": [
+      "0001.HK",
+      "0005.HK",
+      "0883.HK",
+      "0016.HK",
+      "1398.HK"
+    ],
+    "reasons": [
+      "KALIBRE: James backtestinde Model 2 (TimesFM Hybrid) kazandi (ROI=+46.11%)"
+    ],
+    "characteristics": {
+      "hurst": 0.5893,
+      "volatility": 1.6,
+      "sharpe": -0.1192,
+      "annual_return": -3.03,
+      "regime": "bear",
+      "autocorr": 0.0211,
+      "n_available": 20,
+      "inflation": 0.022
+    }
+  },
+  "crypto": {
+    "name": "Crypto (BTC)",
+    "selected_model": "Model 3 (Advanced Hybrid)",
+    "n_stocks": 3,
+    "redeploy_days": 3,
+    "selection_source": "empirical",
+    "expected_roi": 280.68,
+    "selected_stocks": [],
+    "reasons": [
+      "KALIBRE: James backtestinde Model 3 (Advanced Hybrid) kazandi (ROI=+280.68%)"
+    ],
+    "characteristics": {
+      "hurst": 0.6012,
+      "volatility": 2.8,
+      "sharpe": 0.152,
+      "annual_return": 6.76,
+      "regime": "bear",
+      "autocorr": -0.0184,
+      "n_available": 24,
+      "inflation": 0.045
+    }
+  },
+  "commodity": {
+    "name": "Commodity",
+    "selected_model": "Model 1 (MFDFA)",
+    "n_stocks": 1,
+    "redeploy_days": 1,
+    "selection_source": "empirical",
+    "expected_roi": 135.48,
+    "selected_stocks": [],
+    "reasons": [
+      "KALIBRE: James backtestinde Model 1 (MFDFA) kazandi (ROI=+135.48%)"
+    ],
+    "characteristics": {
+      "hurst": 0.5904,
+      "volatility": 1.18,
+      "sharpe": 0.9094,
+      "annual_return": 17.0,
+      "regime": "bear",
+      "autocorr": -0.0229,
+      "n_available": 5,
+      "inflation": 0.045
+    }
+  },
+  "tr": {
+    "name": "Turkey (BIST 100)",
+    "selected_model": "Model 1 (MFDFA)",
+    "n_stocks": 3,
+    "redeploy_days": 1,
+    "selection_source": "empirical",
+    "expected_roi": -0.64,
+    "selected_stocks": [],
+    "reasons": [
+      "KALIBRE: James backtestinde Model 1 (MFDFA) kazandi (ROI=-0.64%)"
+    ],
+    "characteristics": {
+      "hurst": 0.6018,
+      "volatility": 2.65,
+      "sharpe": 0.7609,
+      "annual_return": 31.97,
+      "regime": "bear",
+      "autocorr": 0.0355,
+      "n_available": 90,
+      "inflation": 0.503
+    }
+  },
+  "gold": {
+    "name": "Gold",
+    "selected_model": "Model 1 (MFDFA)",
+    "n_stocks": 1,
+    "redeploy_days": 1,
+    "selection_source": "empirical",
+    "expected_roi": 135.48,
+    "selected_stocks": [],
+    "reasons": [
+      "KALIBRE: James backtestinde Model 1 (MFDFA) kazandi (ROI=+135.48%)"
+    ],
+    "characteristics": {
+      "hurst": 0.6077,
+      "volatility": 1.12,
+      "sharpe": 0.5965,
+      "annual_return": 10.65,
+      "regime": "bear",
+      "autocorr": -0.0164,
+      "n_available": 1,
+      "inflation": 0.045
+    }
+  },
+  "silver": {
+    "name": "Silver",
+    "selected_model": "Model 1 (MFDFA)",
+    "n_stocks": 1,
+    "redeploy_days": 5,
+    "selection_source": "empirical",
+    "expected_roi": 10.21,
+    "selected_stocks": [],
+    "reasons": [
+      "KALIBRE: James backtestinde Model 1 (MFDFA) kazandi (ROI=+10.21%)"
+    ],
+    "characteristics": {
+      "hurst": 0.6035,
+      "volatility": 2.11,
+      "sharpe": 0.3052,
+      "annual_return": 10.21,
+      "regime": "bear",
+      "autocorr": -0.0352,
+      "n_available": 1,
+      "inflation": 0.045
+    }
+  },
+  "copper": {
+    "name": "Copper",
+    "selected_model": "Model 4 (Optimized Hybrid)",
+    "n_stocks": 1,
+    "redeploy_days": 15,
+    "selection_source": "empirical",
+    "expected_roi": 7.72,
+    "selected_stocks": [],
+    "reasons": [
+      "KALIBRE: James backtestinde Model 4 (Optimized Hybrid) kazandi (ROI=+7.72%)"
+    ],
+    "characteristics": {
+      "hurst": 0.6001,
+      "volatility": 1.72,
+      "sharpe": 0.2822,
+      "annual_return": 7.72,
+      "regime": "bear",
+      "autocorr": -0.0698,
+      "n_available": 1,
+      "inflation": 0.045
+    }
+  },
+  "platinum": {
+    "name": "Platinum",
+    "selected_model": "Model 1 (MFDFA)",
+    "n_stocks": 1,
+    "redeploy_days": 5,
+    "selection_source": "empirical",
+    "expected_roi": 5.61,
+    "selected_stocks": [],
+    "reasons": [
+      "KALIBRE: James backtestinde Model 1 (MFDFA) kazandi (ROI=+5.61%)"
+    ],
+    "characteristics": {
+      "hurst": 0.6054,
+      "volatility": 2.0,
+      "sharpe": 0.1762,
+      "annual_return": 5.61,
+      "regime": "bear",
+      "autocorr": -0.0615,
+      "n_available": 1,
+      "inflation": 0.045
+    }
+  },
+  "palladium": {
+    "name": "Palladium",
+    "selected_model": "Model 1 (MFDFA)",
+    "n_stocks": 1,
+    "redeploy_days": 5,
+    "selection_source": "empirical",
+    "expected_roi": 5.73,
+    "selected_stocks": [],
+    "reasons": [
+      "KALIBRE: James backtestinde Model 1 (MFDFA) kazandi (ROI=+5.73%)"
+    ],
+    "characteristics": {
+      "hurst": 0.6085,
+      "volatility": 2.46,
+      "sharpe": 0.1469,
+      "annual_return": 5.73,
+      "regime": "bear",
+      "autocorr": 0.0456,
+      "n_available": 1,
+      "inflation": 0.045
+    }
+  }
+}

@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T2SAIM & HERMES - Hisse Detay Analizi</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #080b11;
+            --card-bg: rgba(17, 24, 39, 0.75);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            
+            /* Curated Neon Accents */
+            --accent-cyan: #00ffd1;
+            --accent-purple: #bd5eff;
+            --accent-green: #39ff14;
+            --accent-gold: #ffb700;
+            --accent-magenta: #ff007f;
+            
+            --grad-accent: linear-gradient(135deg, #00ffd1 0%, #bd5eff 100%);
+            --grad-card: linear-gradient(180deg, rgba(23, 30, 46, 0.5) 0%, rgba(17, 24, 39, 0.8) 100%);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(189, 94, 255, 0.04) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(0, 255, 209, 0.04) 0%, transparent 40%);
+            padding-bottom: 60px;
+        }
+
+        /* Login Screen */
+        .login-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #080b11;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            background-image: radial-gradient(circle at center, rgba(0, 255, 209, 0.05) 0%, transparent 70%);
+        }
+
+        .login-box {
+            background: rgba(17, 24, 39, 0.7);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .login-box input[type="password"] {
+            width: 100%;
+            padding: 14px 20px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            text-align: center;
+            font-size: 16px;
+            margin-bottom: 15px;
+            font-family: monospace;
+            letter-spacing: 4px;
+        }
+
+        .login-box button {
+            background: var(--grad-accent);
+            border: none;
+            color: white;
+            padding: 14px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 14px;
+            width: 100%;
+            transition: opacity 0.3s;
+        }
+
+        .login-box button:hover {
+            opacity: 0.9;
+        }
+
+        .error-msg {
+            color: var(--accent-magenta);
+            font-size: 13px;
+            margin-top: 10px;
+            display: none;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        /* Navigation Bar */
+        header {
+            padding: 30px 5% 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--card-border);
+            background: rgba(8, 11, 17, 0.85);
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo-section h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: var(--grad-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-section p {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 4px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Nav buttons */
+        .nav-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 20px 5% 0 5%;
+        }
+
+        .nav-btn {
+            padding: 10px 18px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.02);
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .nav-btn:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-main);
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 40px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-cyan);
+            text-decoration: none;
+            font-size: 14px;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Profile Layout */
+        .profile-container {
+            background: var(--grad-card);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            margin-bottom: 30px;
+        }
+
+        .profile-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--card-border);
+            padding-bottom: 25px;
+            margin-bottom: 30px;
+        }
+
+        .ticker-badge {
+            font-family: 'Outfit', sans-serif;
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--accent-cyan);
+        }
+
+        .composite-score-badge {
+            text-align: right;
+        }
+
+        .score-value {
+            font-family: 'Outfit', sans-serif;
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--accent-purple);
+        }
+
+        .score-label {
+            font-size: 11px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 4px;
+        }
+
+        .profile-details h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 14px;
+        }
+
+        .profile-details p {
+            font-size: 15px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        /* Metric Grid */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .metric-item {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 18px;
+            text-align: center;
+        }
+
+        .metric-title {
+            font-size: 11px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .metric-value {
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .trend-up { color: var(--accent-green); }
+        .trend-down { color: var(--accent-magenta); }
+
+        .model-instruction {
+            background: rgba(0, 255, 209, 0.03);
+            border: 1px solid rgba(0, 255, 209, 0.2);
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .model-instruction i {
+            font-size: 24px;
+            color: var(--accent-cyan);
+        }
+
+        .model-instruction-text {
+            font-size: 13.5px;
+            line-height: 1.5;
+            color: var(--text-muted);
+        }
+
+        .model-instruction-text strong {
+            color: var(--text-main);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- LOGIN PANEL -->
+    <div id="loginScreen" class="login-screen">
+        <div class="login-box">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">🖖</div>
+            <h1 style="font-size: 1.7rem; font-weight: 800; color: white; margin-bottom: 0.5rem; font-family: 'Outfit', sans-serif;">T2SAIM MATRIX</h1>
+            <p style="color: var(--accent-cyan); font-size: 0.8rem; margin-bottom: 2rem; letter-spacing: 2px;">SECURE COMMAND GATE</p>
+            <input type="password" id="pwd" placeholder="••••••••" onkeydown="if(event.key==='Enter')checkPassword()">
+            <p id="err" class="error-msg">Hatalı şifre!</p>
+            <div style="margin-top: 1.5rem;"><button onclick="checkPassword()"><i class="fa-solid fa-lock-open mr-2"></i>Sisteme Giriş</button></div>
+            <p style="color:#4b5563; font-size: 0.7rem; margin-top: 2rem;">Honor – Ethics – Truth</p>
+        </div>
+    </div>
+
+    <!-- MAIN DASHBOARD CONTENT (HIDDEN BY DEFAULT) -->
+    <div id="mainContent" class="hidden">
+        <header>
+            <div class="logo-section">
+                <h1>T2SAIM & HERMES</h1>
+                <p>Hisse Detay Analizi</p>
+            </div>
+        </header>
+
+        <!-- Dynamic Nav Bar -->
+        <div class="nav-container">
+            <a href="index.html" class="nav-btn">📊 Borsa</a>
+            <a href="tarkan_index.html" class="nav-btn">🖖 Kriz</a>
+            <a href="kriz_raporu.html" class="nav-btn">📜 Kriz Raporu</a>
+            <a href="spor_edge.html" class="nav-btn">⚽ Spor Edge</a>
+            <a href="portfolio_restricted.html" class="nav-btn">💼 Portföy Backtest</a>
+            <a href="t2saim_dashboard.html" class="nav-btn">📊 T2SAIM Matrix</a>
+            <a href="t2saim_crypto_dashboard.html" class="nav-btn">🪙 Crypto Hub</a>
+        </div>
+
+        <main>
+            <a href="t2saim_dashboard.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Matrix Panelina Geri Dön</a>
+            
+            <div class="profile-container">
+                <div class="profile-header">
+                    <div>
+                        <div class="ticker-badge" id="asset-ticker">Yükleniyor...</div>
+                        <div style="font-size: 14px; color: var(--text-muted); margin-top: 4px;" id="asset-market">Piyasa Bilgisi</div>
+                    </div>
+                    <div class="composite-score-badge">
+                        <div class="score-value" id="asset-score">-</div>
+                        <div class="score-label">Composite Skor</div>
+                    </div>
+                </div>
+
+                <div class="profile-details">
+                    <h3>Varlık Profili ve T2SAIM Analizi</h3>
+                    <p id="asset-description">
+                        Bu hissenin profili yükleniyor. T2SAIM kriterleri (Hurst exponent, son 120 günlük getiri, volatilite ve Sharpe rasyosu) model tarafından işlenmektedir.
+                    </p>
+                </div>
+
+                <div class="metrics-grid">
+                    <div class="metric-item">
+                        <div class="metric-title">Hurst Katsayısı</div>
+                        <div class="metric-value" id="m-hurst">-</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-title">Sharpe Oranı</div>
+                        <div class="metric-value" id="m-sharpe">-</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-title">Yıllık Volatilite</div>
+                        <div class="metric-value" id="m-vol">-</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-title">Maks Drawdown</div>
+                        <div class="metric-value" id="m-dd">-</div>
+                    </div>
+                </div>
+
+                <div class="metrics-grid">
+                    <div class="metric-item">
+                        <div class="metric-title">120G Getiri</div>
+                        <div class="metric-value" id="m-r120">-</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-title">20G Getiri</div>
+                        <div class="metric-value" id="m-r20">-</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-title">Otokorelasyon</div>
+                        <div class="metric-value" id="m-auto">-</div>
+                    </div>
+                </div>
+
+                <div class="model-instruction">
+                    <i class="fa-solid fa-gears"></i>
+                    <div class="model-instruction-text" id="model-instruction-text">
+                        Yükleniyor...
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const PASS = '18815273';
+        let stockResults = {};
+
+        // Custom descriptions for selected stocks
+        const stockDescriptions = {
+            "MU": "Micron Technology, Inc. küresel bir yarı iletken bellek lideridir. DRAM ve NAND flaş bellek çiplerinin tasarımı ve üretimi konusunda uzmanlaşmıştır. T2SAIM modeline göre, yapay zeka bulut sunucuları ve ekran kartlarında HBM (Yüksek Bant Genişlikli Bellek) talebindeki patlama nedeniyle güçlü bir trend momentumuna sahiptir.",
+            "AMD": "Advanced Micro Devices, Inc. veri merkezleri, yapay zeka hızlandırıcıları ve yüksek performanslı bilgi işlem çipleri geliştiren öncü bir yarı iletken firmasıdır. Güçlü Hurst katsayısı, MI300 AI çip serisine olan talebi ve pazar büyüme potansiyelini doğrulamaktadır.",
+            "LRCX": "Lam Research Corporation, yarı iletken sanayisinde çip kazıma (etching) ve katman biriktirme (deposition) ekipmanları üreten tekel konumundaki bir firmadır. Üç boyutlu flash bellek (3D NAND) ve nano-boyutlu transistör üretimi için Lam ekipmanları zorunludur. T2SAIM motoru, yarı iletken döngüsünün en kalıcı bileşeni olarak Lam Research'ü listelemektedir.",
+            "ARM": "ARM Holdings plc, dünyadaki tüm akıllı telefon işlemcilerinin (%99) ve yeni nesil yüksek verimli yapay zeka veri merkezi işlemcilerinin temel mimarisini tasarlayan fikri mülkiyet devidir. Mimari lisanslama modeli sayesinde düşük volatilite ve yüksek marjlı büyüme sergilemektedir.",
+            "AMAT": "Applied Materials, Inc. dünyadaki hemen hemen tüm çip üreticilerine fiziksel buhar biriktirme (PVD) ve malzeme mühendisliği çözümleri sağlayan dünyanın en büyük yarı iletken ekipman üreticisidir. Güçlü Hurst katsayısı, çip fabrikalarının küresel çapta genişleme döngüsünün devam ettiğine işaret eder.",
+            "DDOG": "Datadog, Inc. bulut bilişim döneminde sistem sağlığı, güvenlik analizleri ve uygulama izleme yazılımları sağlayan lider bir SaaS platformudur. Yüksek momentumu ve otokorelasyon gücü, bulut altyapılarının izlenmesi ve optimizasyonu konusundaki kurumsal harcamaların kararlılığını yansıtır.",
+            "PANW": "Palo Alto Networks, Inc. kurumsal ağ güvenlik sistemleri ve yeni nesil bulut tabanlı siber güvenlik yazılımları sunan küresel bir güvenlik lideridir. T2SAIM analizleri, siber saldırıların artışı karşısında siber güvenlik bütçelerinin defansif gücünü doğrulamaktadır.",
+            "GOOGL": "Alphabet Inc. (Google), arama motoru tekelinin yanı sıra Google Cloud ve yapay zeka araştırma kolu (DeepMind/Gemini) ile öne çıkan teknoloji devidir. T2SAIM portföyünde istikrarlı yapay zeka büyümesinin temel taşı olarak yer almaktadır.",
+            "CRWD": "CrowdStrike Holdings, Inc. yapay zeka destekli Falcon platformu üzerinden uç nokta (endpoint) siber güvenliği sağlayan öncü bir siber güvenlik şirketidir. Güçlü Sharpe rasyosu ile siber güvenlik sektöründeki en disiplinli büyüme performansını temsil eder.",
+            "MARA": "Marathon Digital Holdings, Inc. kurumsal düzeyde Bitcoin madenciliği yapan ve bilançosunda yoğun Bitcoin rezervi tutan yüksek betalı bir kripto madencilik şirketidir. Bitcoin fiyat hareketlerine karşı aşırı hassastır ve portföyün beta/momentum kaldıracını artırmak için seçilmiştir.",
+            "AAPL": "Apple Inc. tüketici elektroniği devi olarak cihaz içi yapay zeka çipleri (Apple Intelligence) entegrasyonu ile cihaz yenileme döngüsünün eşiğindedir. İstikrarlı nakit akışı ve düşük volatilitesi ile Model 4 portföyünün dengelenmesini sağlar.",
+            "NVDA": "NVIDIA Corporation, yapay zeka modellerinin eğitilmesinde ve koşturulmasında tekel haline gelen H100, Blackwell mimarili grafik işlemcilerinin (GPU) ve CUDA yazılım ekosisteminin mutlak lideridir. Yüksek Sharpe rasyosu ile portföyün en güçlü getiri motorlarındandır.",
+            "AVGO": "Broadcom Inc. veri merkezi anahtarlama (switching) çipleri ve kurumsal yazılım (VMware) entegrasyonu sunan yarı iletken ve altyapı devidir. Yapay zeka ağ donanım bileşenlerinde baskındır.",
+            "QCOM": "Qualcomm Incorporated, mobil işlemciler ve otomotiv çipleri pazarında on-device AI (cihaz içi yapay zeka) yetenekleriyle öne çıkan yarı iletken tasarımı devidir.",
+            "NET": "Cloudflare, Inc. internet trafiğinin önemli bir kısmını yönlendiren, CDN, siber güvenlik ve uç bilişim (edge computing) altyapısı sunan lider bulut altyapı sağlayıcısıdır.",
+            "GLEN.L": "Glencore plc, kobalt, bakır ve nikel gibi yeşil enerji dönüşümü için kritik olan hammaddelerin üretimini ve ticaretini yapan dünyanın en büyük emtia şirketlerinden biridir.",
+            "RIO.L": "Rio Tinto Group, dünyanın en büyük demir cevheri, bakır ve alüminyum madenciliği şirketlerindendir. Model 3 portföyünde küresel emtia döngüsünü yakalamak amacıyla yer almaktadır.",
+            "HSBA.L": "HSBC Holdings plc, Asya ve Avrupa ticaret koridorlarındaki egemenliğiyle küresel finans sisteminin en likit ve yaygın bankacılık devlerinden biridir.",
+            "ASML.AS": "ASML Holding N.V. gelişmiş mikroçiplerin üretilmesi için zorunlu olan Ultraviyole (EUV) litografi makinelerinin dünyadaki tek üreticisidir. Yarı iletken endüstrisinin mutlak darboğaz noktasıdır.",
+            "TTE.PA": "TotalEnergies SE, petrol ve gaz üretiminin yanı sıra elektrik şebekeleri ve yenilenebilir enerji yatırımlarıyla öne çıkan Fransız enerji devidir.",
+            "IBE.MC": "Iberdrola, S.A. rüzgar enerjisi üretimi ve akıllı şebeke altyapılarında dünya lideri olan İspanyol elektrik ve yenilenebilir enerji devidir.",
+            "6981.T": "Murata Manufacturing Co., Ltd. akıllı telefonlar, otomotiv ve yapay zeka donanımlarında kullanılan çok katmanlı seramik kapasitörlerin (MLCC) küresel pazar lideridir.",
+            "8035.T": "Tokyo Electron Limited, Japonya'nın en büyük, dünyanın ise önde gelen yarı iletler kaplama ve geliştirme ekipmanları üreticisidir.",
+            "9984.T": "SoftBank Group Corp. Vision Fund fonları üzerinden yapay zeka, robotik ve teknoloji girişimlerine milyarlarca dolar yatıran küresel yatırım holdingidir."
+        };
+
+        // Autologin check
+        window.addEventListener('DOMContentLoaded', () => {
+            if (sessionStorage.getItem('t2saim_authorized') === 'true') {
+                document.getElementById('loginScreen').style.display = 'none';
+                document.getElementById('mainContent').classList.remove('hidden');
+                loadStockData();
+            }
+        });
+
+        // Password check
+        function checkPassword() {
+            var pwd = document.getElementById('pwd').value;
+            if (pwd === PASS) {
+                sessionStorage.setItem('t2saim_authorized', 'true');
+                document.getElementById('loginScreen').style.display = 'none';
+                document.getElementById('mainContent').classList.remove('hidden');
+                loadStockData();
+            } else {
+                document.getElementById('err').style.display = 'block';
+                document.getElementById('pwd').value = '';
+                setTimeout(function() { document.getElementById('err').style.display = 'none'; }, 3000);
+            }
+        }
+
+        // Parse query params
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Load Stock Data
+        async function loadStockData() {
+            try {
+                const response = await fetch('t2saim_stock_selection_results.json');
+                stockResults = await response.json();
+                
+                const ticker = getQueryParam('ticker');
+                const market = getQueryParam('market');
+                
+                if (!ticker || !market || !stockResults[market]) {
+                    document.getElementById('asset-ticker').innerText = "Hatalı Parametre!";
+                    document.getElementById('asset-description').innerText = "Lütfen geçerli bir hisse senedi sembolü ve piyasa seçerek bu sayfaya erişin.";
+                    return;
+                }
+                
+                // Find stock in ranked list
+                const mData = stockResults[market];
+                const stock = mData.top_stocks.find(s => s.ticker === ticker) || mData.all_ranked.find(s => s.ticker === ticker);
+                
+                if (!stock) {
+                    document.getElementById('asset-ticker').innerText = `${ticker} bulunamadı!`;
+                    return;
+                }
+                
+                // Set values
+                document.getElementById('asset-ticker').innerText = stock.ticker;
+                document.getElementById('asset-market').innerText = `${mData.name} Piyasası &bull; T2SAIM optimal portföy listesindedir.`;
+                document.getElementById('asset-score').innerText = stock.composite_score.toFixed(1);
+                
+                // Set metrics
+                document.getElementById('m-hurst').innerText = stock.hurst.toFixed(4);
+                document.getElementById('m-sharpe').innerText = stock.sharpe.toFixed(2);
+                document.getElementById('m-vol').innerText = `%${stock.volatility.toFixed(2)}`;
+                document.getElementById('m-dd').innerText = `${stock.max_dd.toFixed(2)}%`;
+                document.getElementById('m-r120').innerText = `${stock.return_120d >= 0 ? '+' : ''}${stock.return_120d.toFixed(2)}%`;
+                document.getElementById('m-r20').innerText = `${stock.return_20d >= 0 ? '+' : ''}${stock.return_20d.toFixed(2)}%`;
+                document.getElementById('m-auto').innerText = stock.autocorr.toFixed(4);
+                
+                // Set description
+                const desc = stockDescriptions[stock.ticker] || `${stock.ticker} senedi, T2SAIM otonom modeli tarafından ${mData.name} piyasasındaki diğer varlıklara kıyasla yüksek Hurst katsayısı (${stock.hurst.toFixed(4)}) ve güçlü Sharpe oranı (${stock.sharpe.toFixed(2)}) nedeniyle portföye seçilmiştir.`;
+                document.getElementById('asset-description').innerText = desc;
+                
+                // Set model instruction text
+                let modelType = market === 'us' || market === 'eu' ? 'Model 4 (Optimized Hybrid)' : (market === 'tr' ? 'Model 1 (MFDFA)' : 'Model 3 (Advanced Hybrid)');
+                let stopType = market === 'us' || market === 'eu' ? 'adaptif intraday/kapanış' : 'kapanış bazlı';
+                let lossLimit = market === 'us' ? '%3 sabit stop' : '%5 sabit stop';
+                
+                document.getElementById('model-instruction-text').innerHTML = `
+                    Bu varlık <strong>${modelType}</strong> stratejisi kapsamında yönetilmektedir. 
+                    Pozisyon kontrolü için <strong>${stopType}</strong> durdurma emirleri ve <strong>${lossLimit}</strong> risk eşikleri uygulanır. 
+                    Kasa ağırlığı portföy büyüklüğünün <strong>%${(100 / mData.n_optimal).toFixed(2)}</strong> oranında kilitlenmiştir.
+                `;
+                
+            } catch (err) {
+                console.error("Hisse detayları yüklenirken hata oluştu:", err);
+            }
+        }
+    </script>
+</body>
+</html>

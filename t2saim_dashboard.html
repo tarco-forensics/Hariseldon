@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T2SAIM & HERMES - Investment Matrix Dashboard</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #080b11;
+            --card-bg: rgba(17, 24, 39, 0.75);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            
+            /* Curated Neon Accents */
+            --accent-cyan: #00ffd1;
+            --accent-purple: #bd5eff;
+            --accent-green: #39ff14;
+            --accent-gold: #ffb700;
+            --accent-magenta: #ff007f;
+            
+            --grad-accent: linear-gradient(135deg, #00ffd1 0%, #bd5eff 100%);
+            --grad-card: linear-gradient(180deg, rgba(23, 30, 46, 0.5) 0%, rgba(17, 24, 39, 0.8) 100%);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(189, 94, 255, 0.04) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(0, 255, 209, 0.04) 0%, transparent 40%);
+            padding-bottom: 60px;
+        }
+
+        /* Login Screen */
+        .login-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #080b11;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            background-image: radial-gradient(circle at center, rgba(0, 255, 209, 0.05) 0%, transparent 70%);
+        }
+
+        .login-box {
+            background: rgba(17, 24, 39, 0.7);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .login-box input[type="password"] {
+            width: 100%;
+            padding: 14px 20px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            text-align: center;
+            font-size: 16px;
+            margin-bottom: 15px;
+            font-family: monospace;
+            letter-spacing: 4px;
+        }
+
+        .login-box button {
+            background: var(--grad-accent);
+            border: none;
+            color: white;
+            padding: 14px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 14px;
+            width: 100%;
+            transition: opacity 0.3s;
+        }
+
+        .login-box button:hover {
+            opacity: 0.9;
+        }
+
+        .error-msg {
+            color: var(--accent-magenta);
+            font-size: 13px;
+            margin-top: 10px;
+            display: none;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        /* Navigation Bar */
+        header {
+            padding: 30px 5% 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--card-border);
+            background: rgba(8, 11, 17, 0.85);
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo-section h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: var(--grad-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-section p {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 4px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .meta-info {
+            text-align: right;
+        }
+
+        .meta-info div {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 2px;
+        }
+
+        .meta-info strong {
+            color: var(--accent-cyan);
+        }
+
+        /* Nav buttons */
+        .nav-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 20px 5% 0 5%;
+        }
+
+        .nav-btn {
+            padding: 10px 18px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.02);
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .nav-btn:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-main);
+        }
+
+        .nav-btn.active {
+            border-color: var(--accent-cyan);
+            background: rgba(0, 255, 209, 0.1);
+            color: var(--accent-cyan);
+        }
+
+        main {
+            max-width: 1400px;
+            margin: 30px auto;
+            padding: 0 40px;
+        }
+
+        /* Performance Table Styling */
+        .performance-panel {
+            background: var(--grad-card);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 40px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .panel-title h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .panel-title p {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 25px;
+        }
+
+        .performance-table-container {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        .perf-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 13.5px;
+        }
+
+        .perf-table th {
+            padding: 14px 18px;
+            color: var(--text-muted);
+            font-weight: 600;
+            border-bottom: 1px solid var(--card-border);
+            text-transform: uppercase;
+            font-size: 10.5px;
+            letter-spacing: 0.5px;
+        }
+
+        .perf-table td {
+            padding: 16px 18px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            font-weight: 500;
+        }
+
+        .perf-table tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .val-nominal {
+            color: var(--accent-purple);
+        }
+
+        .val-real {
+            color: var(--accent-cyan);
+        }
+
+        /* Market Cards */
+        .market-section-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .market-section-title::after {
+            content: '';
+            flex-grow: 1;
+            height: 1px;
+            background: var(--card-border);
+        }
+
+        .market-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .market-card {
+            background: var(--grad-card);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 20px;
+            cursor: pointer;
+            backdrop-filter: blur(12px);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .market-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--text-muted);
+            transition: background 0.3s;
+        }
+
+        .market-card.active::before {
+            background: var(--accent-cyan);
+        }
+
+        .market-card.active {
+            border-color: rgba(0, 255, 209, 0.4);
+            box-shadow: 0 0 25px rgba(0, 255, 209, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .market-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 14px;
+        }
+
+        .market-name {
+            font-family: 'Outfit', sans-serif;
+            font-size: 17px;
+            font-weight: 600;
+        }
+
+        .model-badge {
+            font-size: 10px;
+            font-weight: 600;
+            padding: 3px 8px;
+            border-radius: 20px;
+            text-transform: uppercase;
+        }
+
+        .badge-model4 {
+            background: rgba(0, 255, 209, 0.1);
+            color: var(--accent-cyan);
+            border: 1px solid rgba(0, 255, 209, 0.3);
+        }
+        .badge-model3 {
+            background: rgba(189, 94, 255, 0.1);
+            color: var(--accent-purple);
+            border: 1px solid rgba(189, 94, 255, 0.3);
+        }
+        .badge-model1 {
+            background: rgba(255, 183, 0, 0.1);
+            color: var(--accent-gold);
+            border: 1px solid rgba(255, 183, 0, 0.3);
+        }
+
+        .market-stat {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12.5px;
+            margin-bottom: 8px;
+        }
+
+        .market-stat .label {
+            color: var(--text-muted);
+        }
+
+        /* Detail Panel */
+        .detail-panel {
+            background: var(--grad-card);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 30px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .panel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--card-border);
+            padding-bottom: 20px;
+        }
+
+        .active-market-h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .active-market-p {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 6px;
+        }
+
+        .panel-reasons {
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-purple);
+            padding: 12px 20px;
+            border-radius: 0 8px 8px 0;
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* Stocks Table */
+        .stocks-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 13.5px;
+        }
+
+        .stocks-table th {
+            padding: 14px 18px;
+            color: var(--text-muted);
+            font-weight: 600;
+            border-bottom: 1px solid var(--card-border);
+            text-transform: uppercase;
+            font-size: 10.5px;
+        }
+
+        .stocks-table td {
+            padding: 16px 18px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .stocks-table tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .ticker-link {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            text-decoration: none;
+            font-size: 15px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .ticker-link:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .score-badge {
+            background: rgba(255, 255, 255, 0.04);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+        }
+
+        .score-high {
+            color: var(--accent-cyan);
+            background: rgba(0, 255, 209, 0.05);
+        }
+
+        .trend-up { color: var(--accent-green); }
+        .trend-down { color: var(--accent-magenta); }
+
+        .methodology-note {
+            background: rgba(239, 68, 68, 0.04);
+            border-left: 4px solid var(--accent-magenta);
+            border-radius: 0 12px 12px 0;
+            padding: 18px;
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-top: 25px;
+        }
+
+        .methodology-note strong {
+            color: var(--text-main);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            .meta-info {
+                text-align: left;
+            }
+            main {
+                padding: 0 20px;
+            }
+            .panel-header {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- LOGIN PANEL -->
+    <div id="loginScreen" class="login-screen">
+        <div class="login-box">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">🖖</div>
+            <h1 style="font-size: 1.7rem; font-weight: 800; color: white; margin-bottom: 0.5rem; font-family: 'Outfit', sans-serif;">T2SAIM MATRIX</h1>
+            <p style="color: var(--accent-cyan); font-size: 0.8rem; margin-bottom: 2rem; letter-spacing: 2px;">SECURE COMMAND GATE</p>
+            <input type="password" id="pwd" placeholder="••••••••" onkeydown="if(event.key==='Enter')checkPassword()">
+            <p id="err" class="error-msg">Hatalı şifre!</p>
+            <div style="margin-top: 1.5rem;"><button onclick="checkPassword()"><i class="fa-solid fa-lock-open mr-2"></i>Sisteme Giriş</button></div>
+            <p style="color:#4b5563; font-size: 0.7rem; margin-top: 2rem;">Honor – Ethics – Truth</p>
+        </div>
+    </div>
+
+    <!-- MAIN DASHBOARD CONTENT (HIDDEN BY DEFAULT) -->
+    <div id="mainContent" class="hidden">
+        <header>
+            <div class="logo-section">
+                <h1>T2SAIM & HERMES</h1>
+                <p>Investment Matrix Dashboard</p>
+            </div>
+            <div class="meta-info">
+                <div id="gen-time">Güncelleme: -</div>
+                <div>Yol Haritası: <strong>2.5 Yıllık Nihai Geçiş Raporu</strong></div>
+            </div>
+        </header>
+
+        <!-- Dynamic Nav Bar -->
+        <div class="nav-container">
+            <a href="index.html" class="nav-btn">📊 Borsa</a>
+            <a href="tarkan_index.html" class="nav-btn">🖖 Kriz</a>
+            <a href="kriz_raporu.html" class="nav-btn">📜 Kriz Raporu</a>
+            <a href="spor_edge.html" class="nav-btn">⚽ Spor Edge</a>
+            <a href="portfolio_restricted.html" class="nav-btn">💼 Portföy Backtest</a>
+            <a href="t2saim_dashboard.html" class="nav-btn active">📊 T2SAIM Matrix</a>
+            <a href="t2saim_crypto_dashboard.html" class="nav-btn">🪙 Crypto Hub</a>
+        </div>
+
+        <main>
+            <!-- 2.5 Yr Verification Panel -->
+            <div class="performance-panel">
+                <div class="panel-title">
+                    <h2>📊 T2SAIM × TimesFM 2.5 Yıllık Doğrulanmış Karşılaştırmalı Performans Tablosu</h2>
+                    <p>Başlangıç Sermayesi: Her Pazar için 10.000$ (Konsolide Toplam: 80.000$)</p>
+                </div>
+                <div class="performance-table-container">
+                    <table class="perf-table">
+                        <thead>
+                            <tr>
+                                <th>Küresel Piyasa / Varlık</th>
+                                <th>Optimal Karar Modeli</th>
+                                <th>Reel Değer ($)</th>
+                                <th>Reel ROI (%)</th>
+                                <th>Nominal Değer ($)</th>
+                                <th>Nominal ROI (%)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>🇺🇸 <strong>US (S&P 500)</strong></td>
+                                <td>Model 4 (Opt Hybrid)</td>
+                                <td class="val-real">57,676.57</td>
+                                <td class="trend-up"><strong>+476.77%</strong></td>
+                                <td class="val-nominal">60,272.02</td>
+                                <td class="trend-up">+502.72%</td>
+                            </tr>
+                            <tr>
+                                <td>🇬🇧 <strong>UK (FTSE 100)</strong></td>
+                                <td>Model 3 (Adv Hybrid)</td>
+                                <td class="val-real">15,594.79</td>
+                                <td class="trend-up"><strong>+55.95%</strong></td>
+                                <td class="val-nominal">16,093.82</td>
+                                <td class="trend-up">+60.94%</td>
+                            </tr>
+                            <tr>
+                                <td>🇪🇺 <strong>Europe (Stoxx 50)</strong></td>
+                                <td>Model 4 (Opt Hybrid)</td>
+                                <td class="val-real">14,705.91</td>
+                                <td class="trend-up"><strong>+47.06%</strong></td>
+                                <td class="val-nominal">15,264.73</td>
+                                <td class="trend-up">+52.65%</td>
+                            </tr>
+                            <tr>
+                                <td>🇯🇵 <strong>Japan (Nikkei 225)</strong></td>
+                                <td>Model 1 (MFDFA)</td>
+                                <td class="val-real">30,100.71</td>
+                                <td class="trend-up"><strong>+201.01%</strong></td>
+                                <td class="val-nominal">30,702.72</td>
+                                <td class="trend-up">+207.03%</td>
+                            </tr>
+                            <tr>
+                                <td>🇭🇰 <strong>Hong Kong (HSI)</strong></td>
+                                <td>Model 2 (TimesFM)</td>
+                                <td class="val-real">18,814.29</td>
+                                <td class="trend-up"><strong>+88.14%</strong></td>
+                                <td class="val-nominal">19,228.20</td>
+                                <td class="trend-up">+92.28%</td>
+                            </tr>
+                            <tr>
+                                <td>🪙 <strong>Crypto (BTC)</strong></td>
+                                <td>Model 3 (Adv Hybrid)</td>
+                                <td class="val-real">92,809.54</td>
+                                <td class="trend-up"><strong>+828.10%</strong></td>
+                                <td class="val-nominal">96,985.97</td>
+                                <td class="trend-up">+869.86%</td>
+                            </tr>
+                            <tr>
+                                <td>🟡 <strong>Gold / Commodity</strong></td>
+                                <td>Model 1 (MFDFA)</td>
+                                <td class="val-real">41,679.91</td>
+                                <td class="trend-up"><strong>+316.80%</strong></td>
+                                <td class="val-nominal">43,555.51</td>
+                                <td class="trend-up">+335.56%</td>
+                            </tr>
+                            <tr>
+                                <td>🇹🇷 <strong>Turkey (BIST100)</strong></td>
+                                <td>Model 1 (MFDFA)</td>
+                                <td class="val-real">9,893.05</td>
+                                <td class="trend-down"><strong>-1.07%</strong></td>
+                                <td class="val-nominal">14,869.25</td>
+                                <td class="trend-up">+48.69%</td>
+                            </tr>
+                            <tr style="border-top: 2px solid var(--card-border); background: rgba(255,255,255,0.02); font-weight: bold;">
+                                <td><strong>KONSOLİDE TOPLAM</strong></td>
+                                <td><strong>Karar Ağacı Portföyü</strong></td>
+                                <td class="val-real"><strong>281,274.77</strong></td>
+                                <td class="trend-up"><strong>+251.59%</strong></td>
+                                <td class="val-nominal"><strong>296,972.23</strong></td>
+                                <td class="trend-up"><strong>+271.22%</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="methodology-note">
+                    <strong>T2SAIM-CPI Enflasyon Arındırma Metodolojisi ve Türkiye İstisnası:</strong><br>
+                    Türkiye (BIST 100) satırındaki reel hesaplamalar, <strong>T2SAIM-CPI (Yerel tüketici fiyat endeksi ağırlıklı günlük sönümleme) metoduna</strong> göre yapılmıştır. Türkiye pazarında nominal bazda portföy <strong>%48.69</strong> (14,869.25 TRY/USD eşdeğeri) büyümüş görünmesine rağmen, ülkedeki <strong>%50.3</strong>'lük hiperenflasyon karşısında reel satın alma gücü <strong>-%1.07</strong> (9,893.05$) erimiştir. 
+                    Bu durum, Model 1'in nakit taşımayan agresif yapısının doğruluğunu ispatlar; nakit taşıyan Model 2 ve Model 4 nominal bazda kazansa da reel bazda çok daha ağır kayıplar vermiştir.
+                </div>
+            </div>
+
+            <!-- Market Cards -->
+            <div class="market-section-title">Piyasa Rejimleri ve Karar Analizleri</div>
+            <div class="market-grid" id="markets-container">
+                <!-- Dynamic market cards will be placed here -->
+            </div>
+
+            <!-- Detail Table Panel -->
+            <div class="market-section-title">Portföy Dağılım Detayları</div>
+            <div class="detail-panel">
+                <div class="panel-header">
+                    <div class="panel-title">
+                        <h2 id="active-market-name">Yükleniyor...</h2>
+                        <p id="active-market-model">Model Seçimi ve Ağırlık Detayları</p>
+                    </div>
+                    <div class="panel-reasons" id="active-reasons">
+                        Seçilen pazara dair karar analizi gerekçeleri burada listelenecektir.
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <table class="stocks-table">
+                        <thead>
+                            <tr>
+                                <th>Sıra</th>
+                                <th>Sembol</th>
+                                <th>Hurst</th>
+                                <th>120G Getiri</th>
+                                <th>20G Getiri</th>
+                                <th>Volatilite</th>
+                                <th>Sharpe</th>
+                                <th>Maks DD</th>
+                                <th>Kompozit Skor</th>
+                                <th>Kasa Ağırlığı</th>
+                            </tr>
+                        </thead>
+                        <tbody id="stocks-table-body">
+                            <!-- Dynamic stocks listing -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const PASS = '18815273';
+        let dashboardData = {};
+
+        // Autologin check if session key is saved
+        window.addEventListener('DOMContentLoaded', () => {
+            if (sessionStorage.getItem('t2saim_authorized') === 'true') {
+                document.getElementById('loginScreen').style.display = 'none';
+                document.getElementById('mainContent').classList.remove('hidden');
+                loadDashboardData();
+            }
+        });
+
+        // Password check
+        function checkPassword() {
+            var pwd = document.getElementById('pwd').value;
+            if (pwd === PASS) {
+                sessionStorage.setItem('t2saim_authorized', 'true');
+                document.getElementById('loginScreen').style.display = 'none';
+                document.getElementById('mainContent').classList.remove('hidden');
+                loadDashboardData();
+            } else {
+                document.getElementById('err').style.display = 'block';
+                document.getElementById('pwd').value = '';
+                setTimeout(function() { document.getElementById('err').style.display = 'none'; }, 3000);
+            }
+        }
+
+        // Fetch dashboard data
+        async function loadDashboardData() {
+            try {
+                const response = await fetch('t2saim_web_dashboard_data.json');
+                dashboardData = await response.json();
+                
+                // Set meta info
+                document.getElementById('gen-time').innerHTML = `Güncelleme: <strong>${dashboardData.generation_time}</strong>`;
+                buildMarketCards();
+            } catch (err) {
+                console.error("Dashboard verisi yüklenirken hata oluştu:", err);
+                document.getElementById('active-market-name').innerText = "Hata!";
+                document.getElementById('active-market-model').innerText = "Dashboard verisi (t2saim_web_dashboard_data.json) bulunamadı.";
+            }
+        }
+
+        // Build Market Selection Cards
+        function buildMarketCards() {
+            const container = document.getElementById('markets-container');
+            container.innerHTML = '';
+            
+            let isFirst = true;
+            for (let key in dashboardData.markets) {
+                const m = dashboardData.markets[key];
+                
+                const card = document.createElement('div');
+                card.className = `market-card ${isFirst ? 'active' : ''}`;
+                card.dataset.key = key;
+                
+                // Get badge class
+                let badgeClass = 'badge-model4';
+                if (m.selected_model.includes('Model 3')) badgeClass = 'badge-model3';
+                else if (m.selected_model.includes('Model 1')) badgeClass = 'badge-model1';
+                
+                card.innerHTML = `
+                    <div class="market-header">
+                        <div class="market-name">${m.name}</div>
+                        <div class="model-badge ${badgeClass}">${m.selected_model.split(' ')[0] + ' ' + m.selected_model.split(' ')[1]}</div>
+                    </div>
+                    <div class="market-stat">
+                        <span class="label">Piyasa Hurst</span>
+                        <span class="val">${m.market_characteristics.hurst.toFixed(4)}</span>
+                    </div>
+                    <div class="market-stat">
+                        <span class="label">Volatilite (Günlük)</span>
+                        <span class="val">%${m.market_characteristics.volatility.toFixed(2)}</span>
+                    </div>
+                    <div class="market-stat">
+                        <span class="label">Enflasyon (Bölgesel)</span>
+                        <span class="val">%${(m.market_characteristics.inflation * 100).toFixed(1)}</span>
+                    </div>
+                `;
+                
+                card.addEventListener('click', () => {
+                    document.querySelectorAll('.market-card').forEach(c => c.classList.remove('active'));
+                    card.classList.add('active');
+                    showMarketAllocation(key);
+                });
+                
+                container.appendChild(card);
+                
+                if (isFirst) {
+                    showMarketAllocation(key);
+                    isFirst = false;
+                }
+            }
+        }
+
+        // Display Selected Market Allocation Table
+        function showMarketAllocation(marketKey) {
+            const m = dashboardData.markets[marketKey];
+            if (!m) return;
+            
+            document.getElementById('active-market-name').innerText = m.name;
+            document.getElementById('active-market-model').innerText = `${m.selected_model} | Rebalance Döngüsü: ${m.redeploy_frequency_days} Gün`;
+            
+            // Reasons list
+            const reasonsHtml = m.reasons && m.reasons.length > 0 
+                ? m.reasons.join('<br>') 
+                : "Güvenli trend takibi ve otonom rejim parametreleri uygulanmaktadır.";
+            document.getElementById('active-reasons').innerHTML = reasonsHtml;
+            
+            // Populate table
+            const tbody = document.getElementById('stocks-table-body');
+            tbody.innerHTML = '';
+            
+            if (m.allocated_stocks && m.allocated_stocks.length > 0) {
+                m.allocated_stocks.forEach(s => {
+                    const tr = document.createElement('tr');
+                    const compositeClass = s.composite_score > 50 ? 'score-high' : '';
+                    
+                    // Create relative ticker details link
+                    const detailsLink = `t2saim_asset_details.html?ticker=${encodeURIComponent(s.ticker)}&market=${encodeURIComponent(marketKey)}`;
+                    
+                    tr.innerHTML = `
+                        <td><strong>${s.rank}</strong></td>
+                        <td><a href="${detailsLink}" class="ticker-link"><i class="fa-solid fa-circle-info" style="font-size: 0.85rem;"></i>${s.ticker}</a></td>
+                        <td>${s.hurst.toFixed(4)}</td>
+                        <td class="${s.return_120d_pct >= 0 ? 'trend-up' : 'trend-down'}">${s.return_120d_pct >= 0 ? '+' : ''}${s.return_120d_pct.toFixed(2)}%</td>
+                        <td class="${s.return_20d_pct >= 0 ? 'trend-up' : 'trend-down'}">${s.return_20d_pct >= 0 ? '+' : ''}${s.return_20d_pct.toFixed(2)}%</td>
+                        <td>%${s.volatility_pct.toFixed(2)}</td>
+                        <td>${s.sharpe.toFixed(2)}</td>
+                        <td class="trend-down">${s.max_dd_pct.toFixed(2)}%</td>
+                        <td><span class="score-badge ${compositeClass}">${s.composite_score.toFixed(1)}</span></td>
+                        <td><strong style="color: var(--accent-cyan);">%${s.weight_pct.toFixed(2)}</strong></td>
+                    `;
+                    tbody.appendChild(tr);
+                });
+            } else {
+                tbody.innerHTML = `<tr><td colspan="10" style="text-align: center; color: var(--text-muted); padding: 40px 0;">Bu pazar için tahsis edilmiş aktif hisse bulunmamaktadır.</td></tr>`;
+            }
+        }
+    </script>
+</body>
+</html>

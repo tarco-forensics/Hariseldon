@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T2SAIM & HERMES - Kripto Piyasası Hub</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #080b11;
+            --card-bg: rgba(17, 24, 39, 0.75);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            
+            /* Curated Neon Accents */
+            --accent-cyan: #00ffd1;
+            --accent-purple: #bd5eff;
+            --accent-green: #39ff14;
+            --accent-gold: #ffb700;
+            --accent-magenta: #ff007f;
+            
+            --grad-accent: linear-gradient(135deg, #00ffd1 0%, #bd5eff 100%);
+            --grad-card: linear-gradient(180deg, rgba(23, 30, 46, 0.5) 0%, rgba(17, 24, 39, 0.8) 100%);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(189, 94, 255, 0.04) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(0, 255, 209, 0.04) 0%, transparent 40%);
+            padding-bottom: 60px;
+        }
+
+        /* Login Screen */
+        .login-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #080b11;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            background-image: radial-gradient(circle at center, rgba(0, 255, 209, 0.05) 0%, transparent 70%);
+        }
+
+        .login-box {
+            background: rgba(17, 24, 39, 0.7);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .login-box input[type="password"] {
+            width: 100%;
+            padding: 14px 20px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            text-align: center;
+            font-size: 16px;
+            margin-bottom: 15px;
+            font-family: monospace;
+            letter-spacing: 4px;
+        }
+
+        .login-box button {
+            background: var(--grad-accent);
+            border: none;
+            color: white;
+            padding: 14px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 14px;
+            width: 100%;
+            transition: opacity 0.3s;
+        }
+
+        .login-box button:hover {
+            opacity: 0.9;
+        }
+
+        .error-msg {
+            color: var(--accent-magenta);
+            font-size: 13px;
+            margin-top: 10px;
+            display: none;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        /* Navigation Bar */
+        header {
+            padding: 30px 5% 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--card-border);
+            background: rgba(8, 11, 17, 0.85);
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo-section h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: var(--grad-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-section p {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 4px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Nav buttons */
+        .nav-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 20px 5% 0 5%;
+        }
+
+        .nav-btn {
+            padding: 10px 18px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.02);
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .nav-btn:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-main);
+        }
+
+        .nav-btn.active {
+            border-color: var(--accent-cyan);
+            background: rgba(0, 255, 209, 0.1);
+            color: var(--accent-cyan);
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 40px;
+        }
+
+        /* Info Banner */
+        .crypto-intro {
+            background: var(--grad-card);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 35px;
+            margin-bottom: 40px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .crypto-intro h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--accent-cyan);
+        }
+
+        .crypto-intro p {
+            font-size: 15px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .stat-card h3 {
+            font-size: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+        }
+
+        .stat-card .val {
+            font-family: 'Outfit', sans-serif;
+            font-size: 32px;
+            font-weight: 800;
+        }
+
+        .trend-up { color: var(--accent-green); }
+
+        /* Rationale block */
+        .rationale-block {
+            background: rgba(189, 94, 255, 0.03);
+            border-left: 4px solid var(--accent-purple);
+            border-radius: 0 12px 12px 0;
+            padding: 24px;
+            margin-bottom: 40px;
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text-muted);
+        }
+
+        .rationale-block strong {
+            color: var(--text-main);
+        }
+
+        /* Asset Table */
+        .asset-table-panel {
+            background: var(--grad-card);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 30px;
+            backdrop-filter: blur(12px);
+        }
+
+        .table-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 14px;
+        }
+
+        th {
+            padding: 14px 18px;
+            color: var(--text-muted);
+            font-weight: 600;
+            border-bottom: 1px solid var(--card-border);
+            text-transform: uppercase;
+            font-size: 11px;
+        }
+
+        td {
+            padding: 16px 18px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .ticker-name {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            font-size: 16px;
+        }
+
+        .score-badge {
+            background: rgba(255, 255, 255, 0.04);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- LOGIN PANEL -->
+    <div id="loginScreen" class="login-screen">
+        <div class="login-box">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">🖖</div>
+            <h1 style="font-size: 1.7rem; font-weight: 800; color: white; margin-bottom: 0.5rem; font-family: 'Outfit', sans-serif;">T2SAIM MATRIX</h1>
+            <p style="color: var(--accent-cyan); font-size: 0.8rem; margin-bottom: 2rem; letter-spacing: 2px;">SECURE COMMAND GATE</p>
+            <input type="password" id="pwd" placeholder="••••••••" onkeydown="if(event.key==='Enter')checkPassword()">
+            <p id="err" class="error-msg">Hatalı şifre!</p>
+            <div style="margin-top: 1.5rem;"><button onclick="checkPassword()"><i class="fa-solid fa-lock-open mr-2"></i>Sisteme Giriş</button></div>
+            <p style="color:#4b5563; font-size: 0.7rem; margin-top: 2rem;">Honor – Ethics – Truth</p>
+        </div>
+    </div>
+
+    <!-- MAIN DASHBOARD CONTENT (HIDDEN BY DEFAULT) -->
+    <div id="mainContent" class="hidden">
+        <header>
+            <div class="logo-section">
+                <h1>T2SAIM & HERMES</h1>
+                <p>Kripto Piyasası Hub</p>
+            </div>
+        </header>
+
+        <!-- Dynamic Nav Bar -->
+        <div class="nav-container">
+            <a href="index.html" class="nav-btn">📊 Borsa</a>
+            <a href="tarkan_index.html" class="nav-btn">🖖 Kriz</a>
+            <a href="kriz_raporu.html" class="nav-btn">📜 Kriz Raporu</a>
+            <a href="spor_edge.html" class="nav-btn">⚽ Spor Edge</a>
+            <a href="portfolio_restricted.html" class="nav-btn">💼 Portföy Backtest</a>
+            <a href="t2saim_dashboard.html" class="nav-btn">📊 T2SAIM Matrix</a>
+            <a href="t2saim_crypto_dashboard.html" class="nav-btn active">🪙 Crypto Hub</a>
+        </div>
+
+        <main>
+            <div class="crypto-intro">
+                <h2>🪙 Kripto Para Rejim Analizi ve Getiri Katalizörü</h2>
+                <p>
+                    Kripto para piyasası, kümülatif portföyümüz genelinde en yüksek getiri çarpanına sahip sınıftır. Ancak son derece yüksek volatilite (%2.8 günlük, ~%36 yıllık dalgalanma) ve ani trend dönüşleri sergilemesi nedeniyle yönetimi özel bir rejim disiplini gerektirir.
+                </p>
+                <p>
+                    T2SAIM karar motoru, kripto piyasası için <strong>Model 3 (Advanced Hybrid)</strong> modelini otonom olarak atamıştır. Bu karar, yüksek oynaklık dönemlerinde parayı gereksiz yere nakde çıkartıp <em>"cash drag"</em> (nakit erimesi) ve whipsaw (yalancı yön değişimi) zararı yazmayı engeller.
+                </p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>2.5 Yıllık Reel ROI</h3>
+                    <div class="val trend-up">+828.10%</div>
+                </div>
+                <div class="stat-card">
+                    <h3>2.5 Yıllık Nominal ROI</h3>
+                    <div class="val trend-up">+869.86%</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Nihai Değer (10K $ Başlangıç)</h3>
+                    <div class="val" style="color: var(--accent-cyan);">92,809.54 $</div>
+                </div>
+            </div>
+
+            <div class="rationale-block">
+                <strong>Stratejik Rasyonel ve Model 3 Üstünlüğü:</strong><br>
+                Yüksek dalgalanmalı dönemlerde hızlı nakit dağıtımı yapan Model 4, kriptoda terste kalıp üst üste zarar kesmiştir (Model 4 ROI: -%28.64). Model 3 ise, TimesFM tahmin filtresiyle boğa adaylarını seçtikten sonra pozisyonları <strong>20 günlük sabit vade kilidi</strong> ile tutarak ve stop-loss emirlerini sadece <strong>kapanış bazlı</strong> çalıştırarak gün içi gürültüyü (intraday noise) filtrelemiştir. Sonuçta kümülatif getiri <strong>+%828.10</strong>'a ulaşmıştır.
+            </div>
+
+            <!-- Asset Table -->
+            <div class="asset-table-panel">
+                <div class="table-title">🪙 T2SAIM En Yüksek Puanlı Kripto ve İlişkili Varlıklar</div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Sıra</th>
+                                <th>Sembol</th>
+                                <th>Hurst</th>
+                                <th>120G Getiri</th>
+                                <th>20G Getiri</th>
+                                <th>Volatilite</th>
+                                <th>Sharpe</th>
+                                <th>Maks DD</th>
+                                <th>Kompozit Skor</th>
+                            </tr>
+                        </thead>
+                        <tbody id="crypto-table-body">
+                            <!-- Loaded dynamically from JSON -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const PASS = '18815273';
+        let stockResults = {};
+
+        // Autologin check
+        window.addEventListener('DOMContentLoaded', () => {
+            if (sessionStorage.getItem('t2saim_authorized') === 'true') {
+                document.getElementById('loginScreen').style.display = 'none';
+                document.getElementById('mainContent').classList.remove('hidden');
+                loadCryptoData();
+            }
+        });
+
+        // Password check
+        function checkPassword() {
+            var pwd = document.getElementById('pwd').value;
+            if (pwd === PASS) {
+                sessionStorage.setItem('t2saim_authorized', 'true');
+                document.getElementById('loginScreen').style.display = 'none';
+                document.getElementById('mainContent').classList.remove('hidden');
+                loadCryptoData();
+            } else {
+                document.getElementById('err').style.display = 'block';
+                document.getElementById('pwd').value = '';
+                setTimeout(function() { document.getElementById('err').style.display = 'none'; }, 3000);
+            }
+        }
+
+        // Load Crypto data
+        async function loadCryptoData() {
+            try {
+                const response = await fetch('t2saim_stock_selection_results.json');
+                stockResults = await response.json();
+                
+                const cryptoMarket = stockResults['crypto'];
+                const tbody = document.getElementById('crypto-table-body');
+                tbody.innerHTML = '';
+                
+                if (cryptoMarket && cryptoMarket.top_stocks) {
+                    cryptoMarket.top_stocks.forEach((s, idx) => {
+                        const tr = document.createElement('tr');
+                        const compositeClass = s.composite_score > 50 ? 'score-high' : '';
+                        
+                        tr.innerHTML = `
+                            <td><strong>${idx + 1}</strong></td>
+                            <td><span class="ticker-name">${s.ticker}</span></td>
+                            <td>${s.hurst.toFixed(4)}</td>
+                            <td class="${s.return_120d >= 0 ? 'trend-up' : 'trend-down'}">${s.return_120d >= 0 ? '+' : ''}${s.return_120d.toFixed(2)}%</td>
+                            <td class="${s.return_20d >= 0 ? 'trend-up' : 'trend-down'}">${s.return_20d >= 0 ? '+' : ''}${s.return_20d.toFixed(2)}%</td>
+                            <td>%${s.volatility.toFixed(2)}</td>
+                            <td>${s.sharpe.toFixed(2)}</td>
+                            <td class="trend-down">${s.max_dd.toFixed(2)}%</td>
+                            <td><span class="score-badge ${compositeClass}">${s.composite_score.toFixed(1)}</span></td>
+                        `;
+                        tbody.appendChild(tr);
+                    });
+                } else {
+                    tbody.innerHTML = `<tr><td colspan="9" style="text-align: center; color: var(--text-muted); padding: 40px 0;">Kripto verisi yüklenemedi.</td></tr>`;
+                }
+            } catch (err) {
+                console.error("Kripto verisi yüklenirken hata oluştu:", err);
+            }
+        }
+    </script>
+</body>
+</html>
