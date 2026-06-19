@@ -1,7 +1,7 @@
 {
   "summary": {
-    "generated": "2026-06-17 19:55",
-    "yesterday": "2026-06-16",
+    "generated": "2026-06-19 08:00",
+    "yesterday": "2026-06-18",
     "total_portfolio": 155730.0,
     "total_profit": 75730.0,
     "total_roi_pct": 94.66,
@@ -30,7 +30,7 @@
       "profit": 5984.0,
       "live_ok": true,
       "close_prev": 14493.1,
-      "close_last": 14421.15,
+      "close_last": 14421.2,
       "daily_pct": -0.5,
       "last_date": "2026-06-17"
     },
@@ -52,9 +52,9 @@
       "profit": 8002.0,
       "live_ok": true,
       "close_prev": 7511.35,
-      "close_last": 7487.78,
-      "daily_pct": -0.31,
-      "last_date": "2026-06-17"
+      "close_last": 7420.1,
+      "daily_pct": -1.21,
+      "last_date": "2026-06-18"
     },
     {
       "key": "ftse",
@@ -74,7 +74,7 @@
       "profit": 7248.0,
       "live_ok": true,
       "close_prev": 10494.2,
-      "close_last": 10508.61,
+      "close_last": 10508.6,
       "daily_pct": 0.14,
       "last_date": "2026-06-17"
     },
@@ -117,10 +117,10 @@
       "portfolio": 17231.0,
       "profit": 7231.0,
       "live_ok": true,
-      "close_prev": 69317.5,
-      "close_last": 69404.5,
-      "daily_pct": 0.13,
-      "last_date": "2026-06-16"
+      "close_prev": 69902.25,
+      "close_last": 70645.44,
+      "daily_pct": 1.06,
+      "last_date": "2026-06-19"
     },
     {
       "key": "hsi",
@@ -139,10 +139,10 @@
       "portfolio": 14918.0,
       "profit": 4918.0,
       "live_ok": true,
-      "close_prev": 24842.67,
-      "close_last": 24493.95,
-      "daily_pct": -1.4,
-      "last_date": "2026-06-16"
+      "close_prev": 24493.95,
+      "close_last": 24312.16,
+      "daily_pct": -0.74,
+      "last_date": "2026-06-17"
     },
     {
       "key": "btc",
@@ -161,10 +161,10 @@
       "portfolio": 39702.0,
       "profit": 29702.0,
       "live_ok": true,
-      "close_prev": 65600.64,
-      "close_last": 65782.46,
-      "daily_pct": 0.28,
-      "last_date": "2026-06-17"
+      "close_prev": 64418.45,
+      "close_last": 62404.34,
+      "daily_pct": -3.13,
+      "last_date": "2026-06-19"
     },
     {
       "key": "emtia",
@@ -183,10 +183,10 @@
       "portfolio": 18587.0,
       "profit": 8587.0,
       "live_ok": true,
-      "close_prev": 4330.9,
-      "close_last": 4343.4,
-      "daily_pct": 0.29,
-      "last_date": "2026-06-17"
+      "close_prev": 4224.1,
+      "close_last": 4154.0,
+      "daily_pct": -1.66,
+      "last_date": "2026-06-19"
     }
   ]
 }
