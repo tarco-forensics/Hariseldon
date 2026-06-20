@@ -1,7 +1,7 @@
 {
   "summary": {
-    "generated": "2026-06-19 08:00",
-    "yesterday": "2026-06-18",
+    "generated": "2026-06-20 08:00",
+    "yesterday": "2026-06-19",
     "total_portfolio": 155730.0,
     "total_profit": 75730.0,
     "total_roi_pct": 94.66,
@@ -29,10 +29,10 @@
       "portfolio": 15984.0,
       "profit": 5984.0,
       "live_ok": true,
-      "close_prev": 14493.1,
-      "close_last": 14421.2,
-      "daily_pct": -0.5,
-      "last_date": "2026-06-17"
+      "close_prev": 14421.2,
+      "close_last": 14734.5,
+      "daily_pct": 2.17,
+      "last_date": "2026-06-19"
     },
     {
       "key": "sp500",
@@ -73,10 +73,10 @@
       "portfolio": 17248.0,
       "profit": 7248.0,
       "live_ok": true,
-      "close_prev": 10494.2,
-      "close_last": 10508.6,
-      "daily_pct": 0.14,
-      "last_date": "2026-06-17"
+      "close_prev": 10508.6,
+      "close_last": 10363.3,
+      "daily_pct": -1.38,
+      "last_date": "2026-06-19"
     },
     {
       "key": "stoxx",
@@ -95,10 +95,10 @@
       "portfolio": 14058.0,
       "profit": 4058.0,
       "live_ok": true,
-      "close_prev": 6257.42,
-      "close_last": 6300.07,
-      "daily_pct": 0.68,
-      "last_date": "2026-06-17"
+      "close_prev": 6300.07,
+      "close_last": 6293.13,
+      "daily_pct": -0.11,
+      "last_date": "2026-06-19"
     },
     {
       "key": "nikkei",
@@ -118,8 +118,8 @@
       "profit": 7231.0,
       "live_ok": true,
       "close_prev": 69902.25,
-      "close_last": 70645.44,
-      "daily_pct": 1.06,
+      "close_last": 71250.06,
+      "daily_pct": 1.93,
       "last_date": "2026-06-19"
     },
     {
@@ -162,9 +162,9 @@
       "profit": 29702.0,
       "live_ok": true,
       "close_prev": 64418.45,
-      "close_last": 62404.34,
-      "daily_pct": -3.13,
-      "last_date": "2026-06-19"
+      "close_last": 63530.83,
+      "daily_pct": -1.38,
+      "last_date": "2026-06-20"
     },
     {
       "key": "emtia",
@@ -184,8 +184,8 @@
       "profit": 8587.0,
       "live_ok": true,
       "close_prev": 4224.1,
-      "close_last": 4154.0,
-      "daily_pct": -1.66,
+      "close_last": 4172.9,
+      "daily_pct": -1.21,
       "last_date": "2026-06-19"
     }
   ]
