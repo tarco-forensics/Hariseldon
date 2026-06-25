@@ -356,6 +356,7 @@
             <a href="kriz_raporu.html" class="nav-btn">📜 Kriz Raporu</a>
             <a href="spor_edge.html" class="nav-btn">⚽ Spor Edge</a>
             <a href="portfolio_restricted.html" class="nav-btn">💼 Portföy Backtest</a>
+            <a href="dashboards/SAYFA3_Kripto_Amnesia_TR_Amigdala_Dashboard.html" class="nav-btn">🔮 Reality Text</a>
             <a href="t2saim_dashboard.html" class="nav-btn">📊 T2SAIM Matrix</a>
             <a href="t2saim_crypto_dashboard.html" class="nav-btn active">🪙 Crypto Hub</a>
         </div>
@@ -391,6 +392,126 @@
                 Yüksek dalgalanmalı dönemlerde hızlı nakit dağıtımı yapan Model 4, kriptoda terste kalıp üst üste zarar kesmiştir (Model 4 ROI: -%28.64). Model 3 ise, TimesFM tahmin filtresiyle boğa adaylarını seçtikten sonra pozisyonları <strong>20 günlük sabit vade kilidi</strong> ile tutarak ve stop-loss emirlerini sadece <strong>kapanış bazlı</strong> çalıştırarak gün içi gürültüyü (intraday noise) filtrelemiştir. Sonuçta kümülatif getiri <strong>+%828.10</strong>'a ulaşmıştır.
             </div>
 
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
+                <!-- PANEL 1: ROTASYON PORTFÖYÜ -->
+                <div class="asset-table-panel">
+                    <div class="table-title flex items-center gap-2">
+                        <i class="fa-solid fa-arrows-spin text-purple-400"></i>
+                        <span>T2SAIM Türkiye Kripto Rotasyon Portföyü (D+30)</span>
+                    </div>
+                    <p class="text-xs text-gray-400 mb-4">
+                        Türkiye piyasasında riski dağıtıp getiriyi maksimize etmek için kurgulanan <strong>maksimum 3-4 varlıklı</strong> rotasyon sepeti:
+                    </p>
+                    <div class="space-y-3">
+                        <div class="bg-gray-900/40 p-3 rounded-lg border border-gray-800/40 flex justify-between items-center">
+                            <div>
+                                <span class="font-bold text-white font-mono">BTC (Bitcoin)</span>
+                                <span class="text-[10px] text-gray-500 block">Ağırlık: %40 &bull; Güvenli Liman / Ana Demir</span>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-xs bg-green-500/10 text-green-400 px-2 py-0.5 rounded border border-green-500/20 font-bold">AL (h=0.60)</span>
+                                <span class="text-[10px] text-gray-400 block mt-1">Hedef: 104,500 $</span>
+                            </div>
+                        </div>
+                        <div class="bg-gray-900/40 p-3 rounded-lg border border-gray-800/40 flex justify-between items-center">
+                            <div>
+                                <span class="font-bold text-white font-mono">ETH (Ethereum)</span>
+                                <span class="text-[10px] text-gray-500 block">Ağırlık: %30 &bull; Akıllı Sözleşme Lideri</span>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-xs bg-green-500/10 text-green-400 px-2 py-0.5 rounded border border-green-500/20 font-bold">AL (h=0.58)</span>
+                                <span class="text-[10px] text-gray-400 block mt-1">Hedef: 4,250 $</span>
+                            </div>
+                        </div>
+                        <div class="bg-gray-900/40 p-3 rounded-lg border border-gray-800/40 flex justify-between items-center">
+                            <div>
+                                <span class="font-bold text-white font-mono">SOL (Solana)</span>
+                                <span class="text-[10px] text-gray-500 block">Ağırlık: %15 &bull; Yüksek Beta Momentum</span>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-xs bg-green-500/10 text-green-400 px-2 py-0.5 rounded border border-green-500/20 font-bold">AL (h=0.61)</span>
+                                <span class="text-[10px] text-gray-400 block mt-1">Hedef: 220 $</span>
+                            </div>
+                        </div>
+                        <div class="bg-gray-900/40 p-3 rounded-lg border border-gray-800/40 flex justify-between items-center">
+                            <div>
+                                <span class="font-bold text-white font-mono">AVAX (Avalanche)</span>
+                                <span class="text-[10px] text-gray-500 block">Ağırlık: %15 &bull; TR Lokal Topluluk Desteği</span>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-xs bg-yellow-500/10 text-yellow-400 px-2 py-0.5 rounded border border-yellow-500/20 font-bold">TUT (h=0.56)</span>
+                                <span class="text-[10px] text-gray-400 block mt-1">Hedef: 48 $</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-[10px] text-gray-500 mt-4 p-3 bg-purple-500/5 rounded-lg border border-purple-500/10">
+                        <strong>Zamanlama Kuralları:</strong><br>
+                        &bull; <strong>Alım Tetikleyicisi:</strong> 30 Günlük Hurst $h \ge 0.58$ (trend gücü) VE Amigdala Stres Endeksi aşırı panik bölgesindeyken kademeli alım.<br>
+                        &bull; <strong>Satım Tetikleyicisi:</strong> Hurst $h < 0.52$ trend kaybı VEYA Monte Carlo getiri projeksiyonunun +%95 üst bandına ulaşıldığında kâr realizasyonu.
+                    </div>
+                </div>
+
+                <!-- PANEL 2: MALİYET HESAPLAYICI -->
+                <div class="asset-table-panel flex flex-col justify-between">
+                    <div>
+                        <div class="table-title flex items-center gap-2">
+                            <i class="fa-solid fa-calculator text-cyan-400"></i>
+                            <span>TR Banka & Borsa İşlem Maliyeti Hesaplayıcı</span>
+                        </div>
+                        <p class="text-xs text-gray-400 mb-4">
+                            Türkiye'deki banka ve borsalar üzerinden kripto alım satımının toplam finansal sürtünmesini (makas ve komisyon) hesaplar:
+                        </p>
+                        
+                        <div class="space-y-3">
+                            <div>
+                                <label class="text-[10px] uppercase text-gray-450 block mb-1">Yatırım Tutarı (TRY)</label>
+                                <input type="number" id="calcAmount" value="100000" class="w-full bg-black/40 border border-gray-800 rounded-lg p-2 text-white font-mono outline-none focus:border-cyan-400 text-sm" oninput="calculateCosts()">
+                            </div>
+                            <div>
+                                <label class="text-[10px] uppercase text-gray-450 block mb-1">İşlem Rotası (Yol)</label>
+                                <select id="calcRoute" class="w-full bg-gray-900 border border-gray-800 rounded-lg p-2 text-white outline-none focus:border-cyan-400 text-sm" onchange="calculateCosts()">
+                                    <option value="path_a">Yol A: Banka EFT/FAST -> Yerel Borsa TRY Paritesi (En Ucuz)</option>
+                                    <option value="path_b">Yol B: Banka EFT/FAST -> Yerel Borsa (TRY/USDT %0.8 Makas) -> Global Borsa (En Verimli)</option>
+                                    <option value="path_c">Yol C: Kredi Kartı ile Doğrudan Para Yatırma (%3.5 Komisyon) (En Hızlı)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Results output -->
+                        <div class="mt-4 grid grid-cols-2 gap-2 text-xs">
+                            <div class="bg-gray-900/60 p-2.5 rounded border border-gray-850">
+                                <span class="text-[9px] text-gray-500 block">Yatırma Ücreti</span>
+                                <span id="resDeposit" class="font-bold font-mono text-gray-300">0.00 TRY</span>
+                            </div>
+                            <div class="bg-gray-900/60 p-2.5 rounded border border-gray-850">
+                                <span class="text-[9px] text-gray-500 block">Borsa Komisyonu</span>
+                                <span id="resTrade" class="font-bold font-mono text-gray-300">0.00 TRY</span>
+                            </div>
+                            <div class="bg-gray-900/60 p-2.5 rounded border border-gray-850">
+                                <span class="text-[9px] text-gray-500 block">Kur / USDT Makası</span>
+                                <span id="resSpread" class="font-bold font-mono text-gray-300">0.00 TRY</span>
+                            </div>
+                            <div class="bg-gray-900/60 p-2.5 rounded border border-gray-850">
+                                <span class="text-[9px] text-gray-500 block">Net Yatırım</span>
+                                <span id="resNet" class="font-bold font-mono text-cyan-400">0.00 TRY</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bottom highlights -->
+                    <div class="mt-4 p-3 bg-cyan-500/5 rounded-lg border border-cyan-500/10 flex justify-between items-center text-[10px]">
+                        <div>
+                            <span class="text-gray-500 block">Yüklenen Toplam Yük (Kayıp)</span>
+                            <span id="resTotalCostPct" class="font-bold text-red-400 font-mono">-</span>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-gray-500 block">Gerekli Başa Baş Fiyat Hareketi</span>
+                            <span id="resBreakeven" class="font-bold text-green-400 font-mono">-</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Asset Table -->
             <div class="asset-table-panel">
                 <div class="table-title">🪙 T2SAIM En Yüksek Puanlı Kripto ve İlişkili Varlıklar</div>
@@ -419,7 +540,7 @@
     </div>
 
     <script>
-        const PASS = '18815273';
+        const PASS = 'TarYus68';
         let stockResults = {};
 
         // Autologin check
@@ -446,8 +567,45 @@
             }
         }
 
+        function calculateCosts() {
+            const amount = parseFloat(document.getElementById('calcAmount').value) || 0;
+            const route = document.getElementById('calcRoute').value;
+            
+            let depositFee = 0;
+            let tradeFee = 0;
+            let spreadCost = 0;
+            
+            if (route === 'path_a') {
+                depositFee = 0;
+                tradeFee = amount * 0.0020;
+                spreadCost = 0;
+            } else if (route === 'path_b') {
+                depositFee = 32.0; // transfer fee
+                spreadCost = amount * 0.008; // 0.8% spread
+                tradeFee = (amount - spreadCost) * 0.0010; // global trading fee
+            } else if (route === 'path_c') {
+                depositFee = amount * 0.035;
+                spreadCost = 0;
+                tradeFee = (amount - depositFee) * 0.0020;
+            }
+            
+            const totalCost = depositFee + tradeFee + spreadCost;
+            const netInvestment = Math.max(0, amount - totalCost);
+            const totalCostPct = amount > 0 ? (totalCost / amount) * 100 : 0;
+            
+            const breakevenPct = netInvestment > 0 ? ((amount - netInvestment) / netInvestment) * 100 : 0;
+            
+            document.getElementById('resDeposit').textContent = depositFee.toLocaleString('tr-TR', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' TRY';
+            document.getElementById('resTrade').textContent = tradeFee.toLocaleString('tr-TR', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' TRY';
+            document.getElementById('resSpread').textContent = spreadCost.toLocaleString('tr-TR', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' TRY';
+            document.getElementById('resNet').textContent = netInvestment.toLocaleString('tr-TR', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' TRY';
+            document.getElementById('resTotalCostPct').textContent = '%' + totalCostPct.toFixed(2) + ' (' + totalCost.toLocaleString('tr-TR', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' TRY)';
+            document.getElementById('resBreakeven').textContent = '+' + breakevenPct.toFixed(2) + '%';
+        }
+
         // Load Crypto data
         async function loadCryptoData() {
+            calculateCosts();
             try {
                 const response = await fetch('t2saim_stock_selection_results.json');
                 stockResults = await response.json();

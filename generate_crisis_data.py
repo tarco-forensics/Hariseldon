@@ -110,7 +110,7 @@ def apply_amnesia(alarms, lam=0.15):
     memory = 0.0
     result = []
     for alarm in alarms:
-        memory = memory * math.exp(-lam / 12)   # aylık bozunma → günlük yaklaşım
+        memory = memory * math.exp(-lam / 30.0)   # aylık bozunmanın günlük adımı
         if alarm:
             memory = min(memory + 1.0, 5.0)
         result.append(memory)

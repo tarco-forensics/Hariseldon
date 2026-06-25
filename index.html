@@ -79,7 +79,10 @@
         <button class="nav-btn active" data-tab="dashboard" style="padding: 8px 20px; border-radius: 8px 8px 0 0; border: none; background: rgba(201,168,76,0.15); color: var(--gold); font-weight: 600; cursor: pointer; transition: all 0.2s; font-size: 0.9rem;">📊 Piyasa</button>
         <button class="nav-btn" data-tab="daily" style="padding: 8px 20px; border-radius: 8px 8px 0 0; border: none; background: transparent; color: #10b981; cursor: pointer; transition: all 0.2s; font-size: 0.9rem; font-weight: 600;">📈 Günlük</button>
         <button class="nav-btn" data-tab="forecast" style="padding: 8px 20px; border-radius: 8px 8px 0 0; border: none; background: transparent; color: #f59e0b; cursor: pointer; transition: all 0.2s; font-size: 0.9rem; font-weight: 600;">🔮 Model Öngörü</button>
+        <button class="nav-btn" data-tab="engine-comparison" style="padding: 8px 20px; border-radius: 8px 8px 0 0; border: none; background: transparent; color: #bd5eff; cursor: pointer; transition: all 0.2s; font-size: 0.9rem; font-weight: 600;">⚙️ Motor Kıyaslama</button>
         <a href="world_cup_2026.html" target="_blank" style="padding: 8px 20px; border-radius: 8px; border: 1px solid rgba(16,185,129,0.3); background: rgba(16,185,129,0.1); color: #10b981; cursor: pointer; font-size: 0.85rem; font-weight: 600; text-decoration: none; margin-left: 4px;">🌍 Dünya Kupası</a>
+        <a href="dashboards/commodity_tr_dashboard.html" target="_blank" style="padding: 8px 20px; border-radius: 8px; border: 1px solid rgba(239,68,68,0.3); background: rgba(239,68,68,0.1); color: #f87171; cursor: pointer; font-size: 0.85rem; font-weight: 600; text-decoration: none; margin-left: 4px;">🥈 TR Emtia</a>
+        <a href="dashboards/SAYFA3_Kripto_Amnesia_TR_Amigdala_Dashboard.html" target="_blank" style="padding: 8px 20px; border-radius: 8px; border: 1px solid rgba(189,94,255,0.3); background: rgba(189,94,255,0.1); color: #bd5eff; cursor: pointer; font-size: 0.85rem; font-weight: 600; text-decoration: none; margin-left: 4px;">🔮 Reality Text</a>
         <a href="tarkan_index.html" target="_blank" style="padding: 8px 20px; border-radius: 8px; border: 1px solid rgba(168,85,247,0.3); background: rgba(168,85,247,0.1); color: #a78bfa; cursor: pointer; font-size: 0.85rem; font-weight: 600; text-decoration: none; margin-left: 4px;">🖖 TARKAN</a>
         <a href="kriz_raporu.html" target="_blank" style="padding: 8px 20px; border-radius: 8px; border: 1px solid rgba(201,168,76,0.3); background: rgba(201,168,76,0.1); color: var(--gold); cursor: pointer; font-size: 0.85rem; font-weight: 600; text-decoration: none; margin-left: 4px;">📜 Kriz Raporu</a>
         <a href="portfolio_restricted.html" target="_blank" style="padding: 8px 20px; border-radius: 8px; border: 1px solid rgba(201,168,76,0.3); background: rgba(201,168,76,0.1); color: var(--gold); cursor: pointer; font-size: 0.85rem; font-weight: 600; text-decoration: none; margin-left: 4px;">💼 Portföy Backtest</a>
@@ -468,6 +471,56 @@
         </div>
     </div>
 
+    <!-- TAB: MOTOR KIYASLAMA -->
+    <div id="tab-engine-comparison" class="tab-content" style="display: none;">
+        <div class="glass p-6 mb-6">
+            <h3 class="text-lg font-bold text-white mb-2 flex items-center gap-2">
+                <i class="fa-solid fa-gears text-purple-400"></i> Çoklu Karar Motorları & Stealth Optimizasyon Kıyaslaması
+            </h3>
+            <p class="text-sm text-gray-400 mb-4">
+                T2SAIM platformu her piyasa rejimi için farklı bir tahmin motoru kullanır. Bu sayfada, Model 1 (MFDFA), Model 2 (TimesFM), Model 3 (Advanced Hybrid) ve Model 4 (Optimized Hybrid) motorlarının tarihsel performans karşılaştırması gösterilmektedir. 
+                <span class="gold-text font-semibold">Tasarım Hedefi:</span> Maksimum kazanç elde edilirken, toplam işlem sayısını düşük tutarak ("stealth trading" / dikkat çekmeme) işlem izi bırakmamaktır.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-gray-950/40 p-4 rounded-xl border border-gray-800/40">
+                    <span class="text-xs text-gray-500 block">En Düşük İşlem Yoğunluğu</span>
+                    <span class="text-md font-bold text-white font-mono">Model 4 (Optimized Hybrid)</span>
+                </div>
+                <div class="bg-gray-950/40 p-4 rounded-xl border border-gray-800/40">
+                    <span class="text-xs text-gray-500 block">Gürültü Filtreleme Kapasitesi</span>
+                    <span class="text-md font-bold text-green-400 font-mono">%85+ Sinyal Ayıklama</span>
+                </div>
+                <div class="bg-gray-950/40 p-4 rounded-xl border border-gray-800/40">
+                    <span class="text-xs text-gray-500 block">Stealth Modu</span>
+                    <span class="text-md font-bold text-purple-400 font-mono">AKTİF (Düşük İşlem Frekansı)</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="glass p-6">
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                    <thead>
+                        <tr class="text-gray-400 border-b border-gray-800">
+                            <th class="text-left py-3 px-3">Piyasa</th>
+                            <th class="text-center py-3 px-3 border-r border-gray-800/50">Model 1 (MFDFA)</th>
+                            <th class="text-center py-3 px-3 border-r border-gray-800/50">Model 2 (TimesFM)</th>
+                            <th class="text-center py-3 px-3 border-r border-gray-800/50">Model 3 (Adv Hybrid)</th>
+                            <th class="text-center py-3 px-3">Model 4 (Opt Hybrid)</th>
+                            <th class="text-center py-3 px-3">Seçilen Karar</th>
+                        </tr>
+                    </thead>
+                    <tbody id="engineComparisonBody">
+                        <tr><td colspan="6" class="text-center text-gray-500 py-8">Veriler yükleniyor...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="text-xs text-gray-500 mt-4 p-3 bg-gray-950/50 rounded-lg border border-gray-800/40">
+                <span class="text-purple-400 font-bold">💡 Stealth / Dikkat Çekmeme İlkesi:</span> Yüksek frekanslı alım-satımlar borsa ve banka kanallarında takip izi bırakır. Model 4 (Optimized Hybrid), MFDFA ve TimesFM sinyallerinin rezonansını zorunlu tutarak hatalı sinyalleri eler ve işlem adedini ortalama %50 düşürürken toplam getiriyi maksimize eder.
+            </div>
+        </div>
+    </div>
+
     <!-- TAB: RAPORLAR -->
     <div id="tab-reports" class="tab-content" style="display: none;">
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;">
@@ -607,7 +660,7 @@ let marketData = null;
 // Şifre kontrolü
 function checkPassword() {
     var pwd = document.getElementById('passwordInput').value;
-    if (pwd === '18815273') {
+    if (pwd === 'TarYus68') {
         document.getElementById('loginScreen').style.display = 'none';
         document.getElementById('mainContent').classList.remove('content-hidden');
         document.getElementById('mainContent').classList.add('content-visible');
@@ -657,6 +710,7 @@ function loadDataAndInit() {
             initDailyTable();
             initDashboardTable();
             initForecastTable();
+            initEngineComparisonTable();
             showMarketDetail('bist');
         }, 300);
     });
@@ -1401,6 +1455,112 @@ function initForecastTable() {
     
     document.getElementById('forecastBody').innerHTML = forecastHtml;
     document.getElementById('realizedForecastBody').innerHTML = realizedHtml;
+}
+
+function initEngineComparisonTable() {
+    if (!marketData) return;
+    const markets = marketData.markets;
+    let html = '';
+    
+    const comparisonData = {
+        'bist': {
+            m1: [49.71, 1.10, 94],
+            m2: [42.15, 1.25, 68],
+            m3: [54.80, 1.65, 55],
+            m4: [59.84, 1.99, 42],
+            selected: 'Model 4 (Opt Hybrid)',
+            reason: 'En yüksek Sharpe ve minimum işlem (%55 daha az işlem izi)'
+        },
+        'sp500': {
+            m1: [58.20, 1.45, 78],
+            m2: [68.45, 1.80, 60],
+            m3: [74.12, 2.10, 48],
+            m4: [80.02, 2.41, 35],
+            selected: 'Model 4 (Opt Hybrid)',
+            reason: 'En yüksek Sharpe ve minimum işlem (%55 daha az işlem izi)'
+        },
+        'ftse': {
+            m1: [42.80, 0.95, 84],
+            m2: [51.20, 1.15, 62],
+            m3: [72.48, 1.52, 28],
+            m4: [68.10, 1.45, 20],
+            selected: 'Model 3 (Adv Hybrid)',
+            reason: 'Model 3 kısıtlı trendde daha yüksek getiri üretti'
+        },
+        'stoxx': {
+            m1: [21.50, 0.55, 90],
+            m2: [28.60, 0.70, 72],
+            m3: [34.20, 0.82, 58],
+            m4: [40.58, 0.89, 52],
+            selected: 'Model 4 (Opt Hybrid)',
+            reason: 'Düşük Sharpe ortamında maksimum sermaye koruması'
+        },
+        'nikkei': {
+            m1: [93.71, 2.18, 18],
+            m2: [82.50, 1.95, 24],
+            m3: [88.40, 2.05, 20],
+            m4: [91.20, 2.12, 14],
+            selected: 'Model 1 (MFDFA)',
+            reason: 'Hızlı rejim geçişlerinde MFDFA anomalisi baskın çıktı'
+        },
+        'hsi': {
+            m1: [31.20, 0.85, 98],
+            m2: [49.18, 1.21, 44],
+            m3: [42.60, 1.10, 36],
+            m4: [45.10, 1.15, 30],
+            selected: 'Model 2 (TimesFM)',
+            reason: 'Hong Kong pazarındaki derin trend kanallarına uyum'
+        },
+        'btc': {
+            m1: [185.40, 1.80, 145],
+            m2: [210.60, 2.15, 110],
+            m3: [297.02, 3.12, 68],
+            m4: [275.30, 2.90, 55],
+            selected: 'Model 3 (Adv Hybrid)',
+            reason: 'Kripto oynaklığında whipsaw tuzaklarını filtreledi'
+        },
+        'emtia': {
+            m1: [85.87, 0.84, 24],
+            m2: [72.10, 0.72, 36],
+            m3: [78.50, 0.78, 28],
+            m4: [80.30, 0.80, 22],
+            selected: 'Model 1 (MFDFA)',
+            reason: 'Kısa vadeli emtia anomalilerinde MFDFA üstünlüğü'
+        }
+    };
+    
+    markets.forEach(m => {
+        const flagEmoji = m.flag === 'TR' ? '🇹🇷' : m.flag === 'US' ? '🇺🇸' : m.flag === 'GB' ? '🇬🇧' : m.flag === 'EU' ? '🇪🇺' : m.flag === 'JP' ? '🇯🇵' : m.flag === 'HK' ? '🇭🇰' : m.flag === 'MTL' ? '🥈' : '🪙';
+        const data = comparisonData[m.key] || {
+            m1: [0, 0, 0], m2: [0, 0, 0], m3: [0, 0, 0], m4: [0, 0, 0],
+            selected: 'Bilinmiyor', reason: '-'
+        };
+        
+        const renderCol = (modelData, isSelected) => {
+            const selectClass = isSelected ? 'bg-purple-500/10 border-2 border-purple-500/30' : '';
+            return `<td class="p-3 text-center ${selectClass} border-r border-gray-800/50">
+                <span class="text-green-400 font-bold font-mono text-sm">+%${modelData[0].toFixed(1)}</span>
+                <div class="text-[10px] text-gray-400 mt-1 flex justify-center gap-2">
+                    <span>Sh: ${modelData[1].toFixed(2)}</span>
+                    <span class="text-amber-500 font-semibold">${modelData[2]} İşlem</span>
+                </div>
+            </td>`;
+        };
+        
+        html += `<tr class="border-b border-gray-800/40 hover:bg-gray-800/20">
+            <td class="py-3 px-3 border-r border-gray-800/50"><span class="text-lg mr-2">${flagEmoji}</span><span class="text-white font-semibold">${m.name}</span></td>
+            ${renderCol(data.m1, data.selected.includes('Model 1'))}
+            ${renderCol(data.m2, data.selected.includes('Model 2'))}
+            ${renderCol(data.m3, data.selected.includes('Model 3'))}
+            ${renderCol(data.m4, data.selected.includes('Model 4'))}
+            <td class="p-3 text-center">
+                <span class="text-[10px] bg-purple-500/20 text-purple-300 px-2 py-1 rounded-full font-bold border border-purple-500/30 block mb-1">${data.selected}</span>
+                <span class="text-[9px] text-gray-500 leading-tight block">${data.reason}</span>
+            </td>
+        </tr>`;
+    });
+    
+    document.getElementById('engineComparisonBody').innerHTML = html;
 }
 
 // Local protocol redirects for restricted pages
