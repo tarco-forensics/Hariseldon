@@ -1,7 +1,7 @@
 {
   "summary": {
-    "generated": "2026-06-26 08:34",
-    "yesterday": "2026-06-25",
+    "generated": "2026-06-28 08:06",
+    "yesterday": "2026-06-27",
     "total_portfolio": 155730.0,
     "total_profit": 75730.0,
     "total_roi_pct": 94.66,
@@ -54,7 +54,7 @@
       "close_prev": 7358.22,
       "close_last": 7357.49,
       "daily_pct": -0.01,
-      "last_date": "2026-06-25"
+      "last_date": "2026-06-26"
     },
     {
       "key": "ftse",
@@ -117,10 +117,10 @@
       "portfolio": 17231.0,
       "profit": 7231.0,
       "live_ok": true,
-      "close_prev": 72366.34,
-      "close_last": 69154.33,
-      "daily_pct": -4.44,
-      "last_date": "2026-06-26"
+      "close_prev": 69174.97,
+      "close_last": 72366.34,
+      "daily_pct": 4.61,
+      "last_date": "2026-06-25"
     },
     {
       "key": "hsi",
@@ -139,10 +139,10 @@
       "portfolio": 14918.0,
       "profit": 4918.0,
       "live_ok": true,
-      "close_prev": 23076.91,
-      "close_last": 22697.53,
-      "daily_pct": -1.64,
-      "last_date": "2026-06-26"
+      "close_prev": 23412.18,
+      "close_last": 23076.91,
+      "daily_pct": -1.43,
+      "last_date": "2026-06-25"
     },
     {
       "key": "btc",
@@ -161,10 +161,10 @@
       "portfolio": 39702.0,
       "profit": 29702.0,
       "live_ok": true,
-      "close_prev": 60995.13,
-      "close_last": 59914.8,
-      "daily_pct": -1.77,
-      "last_date": "2026-06-26"
+      "close_prev": 60016.43,
+      "close_last": 59920.31,
+      "daily_pct": -0.16,
+      "last_date": "2026-06-28"
     },
     {
       "key": "emtia",
@@ -184,8 +184,8 @@
       "profit": 8587.0,
       "live_ok": true,
       "close_prev": 4030.5,
-      "close_last": 4028.2,
-      "daily_pct": -0.06,
+      "close_last": 4096.3,
+      "daily_pct": 1.63,
       "last_date": "2026-06-26"
     }
   ]
