@@ -1,12 +1,12 @@
 {
   "summary": {
-    "generated": "2026-07-02 08:00",
-    "yesterday": "2026-07-01",
+    "generated": "2026-07-03 08:00",
+    "yesterday": "2026-07-02",
     "total_portfolio": 155730.0,
     "total_profit": 75730.0,
     "total_roi_pct": 94.66,
     "markets_count": 8,
-    "live_count": 8,
+    "live_count": 0,
     "total_roi_sum": 757.3,
     "total_alpha_sum": 418.79,
     "total_trades": 311
@@ -28,11 +28,11 @@
       "horizon": "30 Gün (D+30)",
       "portfolio": 15984.0,
       "profit": 5984.0,
-      "live_ok": true,
-      "close_prev": 14121.8,
-      "close_last": 14350.6,
-      "daily_pct": 1.62,
-      "last_date": "2026-07-01"
+      "live_ok": false,
+      "close_prev": null,
+      "close_last": null,
+      "daily_pct": null,
+      "last_date": "2026-07-02"
     },
     {
       "key": "sp500",
@@ -50,11 +50,11 @@
       "horizon": "30 Gün (D+30)",
       "portfolio": 18002.0,
       "profit": 8002.0,
-      "live_ok": true,
-      "close_prev": 7499.36,
-      "close_last": 7483.23,
-      "daily_pct": -0.22,
-      "last_date": "2026-07-01"
+      "live_ok": false,
+      "close_prev": null,
+      "close_last": null,
+      "daily_pct": null,
+      "last_date": "2026-07-02"
     },
     {
       "key": "ftse",
@@ -72,11 +72,11 @@
       "horizon": "30 Gün (D+30)",
       "portfolio": 17248.0,
       "profit": 7248.0,
-      "live_ok": true,
-      "close_prev": 10497.1,
-      "close_last": 10478.3,
-      "daily_pct": -0.18,
-      "last_date": "2026-07-01"
+      "live_ok": false,
+      "close_prev": null,
+      "close_last": null,
+      "daily_pct": null,
+      "last_date": "2026-07-02"
     },
     {
       "key": "stoxx",
@@ -94,11 +94,11 @@
       "horizon": "30 Gün (D+30)",
       "portfolio": 14058.0,
       "profit": 4058.0,
-      "live_ok": true,
-      "close_prev": 6328.09,
-      "close_last": 6282.5,
-      "daily_pct": -0.72,
-      "last_date": "2026-07-01"
+      "live_ok": false,
+      "close_prev": null,
+      "close_last": null,
+      "daily_pct": null,
+      "last_date": "2026-07-02"
     },
     {
       "key": "nikkei",
@@ -116,10 +116,10 @@
       "horizon": "30 Gün (D+30)",
       "portfolio": 17231.0,
       "profit": 7231.0,
-      "live_ok": true,
-      "close_prev": 70474.96,
-      "close_last": 69123.39,
-      "daily_pct": -1.92,
+      "live_ok": false,
+      "close_prev": null,
+      "close_last": null,
+      "daily_pct": null,
       "last_date": "2026-07-02"
     },
     {
@@ -138,10 +138,10 @@
       "horizon": "30 Gün (D+30)",
       "portfolio": 14918.0,
       "profit": 4918.0,
-      "live_ok": true,
-      "close_prev": 22881.02,
-      "close_last": 23154.41,
-      "daily_pct": 1.19,
+      "live_ok": false,
+      "close_prev": null,
+      "close_last": null,
+      "daily_pct": null,
       "last_date": "2026-07-02"
     },
     {
@@ -160,10 +160,10 @@
       "horizon": "30 Gün (D+30)",
       "portfolio": 39702.0,
       "profit": 29702.0,
-      "live_ok": true,
-      "close_prev": 58558.86,
-      "close_last": 60698.08,
-      "daily_pct": 3.65,
+      "live_ok": false,
+      "close_prev": null,
+      "close_last": null,
+      "daily_pct": null,
       "last_date": "2026-07-02"
     },
     {
@@ -182,10 +182,10 @@
       "horizon": "5 Gün (D+5)",
       "portfolio": 18587.0,
       "profit": 8587.0,
-      "live_ok": true,
-      "close_prev": 4068.3,
-      "close_last": 4074.4,
-      "daily_pct": 0.15,
+      "live_ok": false,
+      "close_prev": null,
+      "close_last": null,
+      "daily_pct": null,
       "last_date": "2026-07-02"
     }
   ]
