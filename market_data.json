@@ -1,7 +1,7 @@
 {
   "summary": {
-    "generated": "2026-07-10 08:01",
-    "yesterday": "2026-07-09",
+    "generated": "2026-07-12 08:16",
+    "yesterday": "2026-07-11",
     "total_portfolio": 155730.0,
     "total_profit": 75730.0,
     "total_roi_pct": 94.66,
@@ -32,7 +32,7 @@
       "close_prev": null,
       "close_last": null,
       "daily_pct": null,
-      "last_date": "2026-07-09"
+      "last_date": "2026-07-11"
     },
     {
       "key": "sp500",
@@ -54,7 +54,7 @@
       "close_prev": null,
       "close_last": null,
       "daily_pct": null,
-      "last_date": "2026-07-09"
+      "last_date": "2026-07-11"
     },
     {
       "key": "ftse",
@@ -76,7 +76,7 @@
       "close_prev": null,
       "close_last": null,
       "daily_pct": null,
-      "last_date": "2026-07-09"
+      "last_date": "2026-07-11"
     },
     {
       "key": "stoxx",
@@ -98,7 +98,7 @@
       "close_prev": null,
       "close_last": null,
       "daily_pct": null,
-      "last_date": "2026-07-09"
+      "last_date": "2026-07-11"
     },
     {
       "key": "nikkei",
@@ -120,7 +120,7 @@
       "close_prev": null,
       "close_last": null,
       "daily_pct": null,
-      "last_date": "2026-07-09"
+      "last_date": "2026-07-11"
     },
     {
       "key": "hsi",
@@ -142,7 +142,7 @@
       "close_prev": null,
       "close_last": null,
       "daily_pct": null,
-      "last_date": "2026-07-09"
+      "last_date": "2026-07-11"
     },
     {
       "key": "btc",
@@ -164,7 +164,7 @@
       "close_prev": null,
       "close_last": null,
       "daily_pct": null,
-      "last_date": "2026-07-09"
+      "last_date": "2026-07-11"
     },
     {
       "key": "emtia",
@@ -186,7 +186,7 @@
       "close_prev": null,
       "close_last": null,
       "daily_pct": null,
-      "last_date": "2026-07-09"
+      "last_date": "2026-07-11"
     }
   ]
 }
