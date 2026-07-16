@@ -99,3 +99,1992 @@ To https://github.com/tarco-forensics/Hariseldon.git
    ab675f3..f655a2c  main -> main
 BASARILI: Guncelleme tamamlandi 
 Bitis:  9:00:55.28 
+ 
+================================================ 
+Wed 06/17/2026  7:38:11.71 — T2SAIM Gunluk Guncelleme 
+================================================ 
+[1/3] USDTRY verisi cekiliyor... 
+B:\Hariseldon\fetch_latest_usdtry.py:28: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  o = float(row["Open"])
+B:\Hariseldon\fetch_latest_usdtry.py:29: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  h = float(row["High"])
+B:\Hariseldon\fetch_latest_usdtry.py:30: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  l = float(row["Low"])
+B:\Hariseldon\fetch_latest_usdtry.py:31: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  c = float(row["Close"])
+Son mevcut veri: 2026-06-16
+Cekiliyor: 2026-06-17 -> 2026-06-18
+Eklendi: 1 yeni gun
+  2026-06-17: 46.3102
+[2/4] Kriz indeksi hesaplaniyor... 
+OK: 701 gunluk veri uretildi -> B:\Hariseldon\crisis_data.json
+   Dun (2026-06-16): CI=0.3093, SRI=0.4353, Alarm=0
+   Bellek: 0.077 | L6: 0
+[3/4] Canli piyasa verileri cekiliyor... 
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+T2SAIM Market Data Generator — 2026-06-17 07:38
+  Cekiliyor: BIST-100 (XU100.IS)...
+    OK: 2026-06-16 close=14493.1 (+0.32%)
+  Cekiliyor: S&P 500 (^GSPC)...
+    OK: 2026-06-16 close=7511.35 (-0.57%)
+  Cekiliyor: FTSE 100 (^FTSE)...
+    OK: 2026-06-16 close=10494.2 (+0.61%)
+  Cekiliyor: Euro Stoxx 50 (^STOXX50E)...
+    OK: 2026-06-16 close=6257.42 (+0.45%)
+  Cekiliyor: Nikkei 225 (^N225)...
+    OK: 2026-06-17 close=70008.44 (+0.87%)
+  Cekiliyor: Hang Seng (^HSI)...
+    OK: 2026-06-17 close=24276.51 (-0.89%)
+  Cekiliyor: Kripto (BTC) (BTC-USD)...
+    OK: 2026-06-17 close=65608.2 (+0.01%)
+  Cekiliyor: Değerli Metaller (GC=F)...
+    OK: 2026-06-17 close=4345.6 (+0.34%)
+
+OK: 8 piyasa -> B:\Hariseldon\market_data.json
+   Portfoy: $155,730 | Kar: $75,730 | Canli: 8/8
+[3.5/4] C5 Emtia Motoru kosturuluyor... 
+[                       0%                       ][************          25%                       ]  2 of 8 completed[******************    38%                       ]  3 of 8 completed[**********************50%                       ]  4 of 8 completed[**********************62%*****                  ]  5 of 8 completed[**********************75%***********            ]  6 of 8 completed[**********************88%*****************      ]  7 of 8 completed[*********************100%***********************]  8 of 8 completed
+[                       0%                       ][                       0%                       ][**********************60%****                   ]  3 of 5 completed[**********************80%*************          ]  4 of 5 completed[*********************100%***********************]  5 of 5 completed
+==========================================================================================
+T2SAIM MULTI-COMMODITY BTF ENGINE (C5 ENGINE)
+==========================================================================================
+[CONFIG LOADED] lookback_days=250, stop_loss_pct=5.50%, hurst_th=0.600, lambda_decay=0.15
+[+] yfinance ile 30 yıllık emtia ve makro verileri çekiliyor (1996 - 2026)...
+[+] Veriler hizalanıyor ve temizleniyor...
+[+] Alizanan toplam işgünü sayısı (30 yıllık): 4276
+
+[+] Analiz ediliyor: Gold (GC=F)
+  - Hurst Exponent : 1.2127
+  - Betalar        : DXY=-1.1533, TIPS=0.3035, SPY=0.5267
+  - En İyi Horizon : D+5 (Hata Delta: 1.81%)
+  - Karar          : BEKLE (HOLD) | Önerilen Stake: %0.00
+
+[+] Analiz ediliyor: Silver (SI=F)
+  - Hurst Exponent : 1.2041
+  - Betalar        : DXY=-3.0123, TIPS=-0.2869, SPY=1.2358
+  - En İyi Horizon : D+5 (Hata Delta: 3.74%)
+  - Karar          : BEKLE (HOLD) | Önerilen Stake: %0.00
+
+[+] Analiz ediliyor: Copper (HG=F)
+  - Hurst Exponent : 1.0241
+  - Betalar        : DXY=-0.7624, TIPS=0.4265, SPY=0.9603
+  - En İyi Horizon : D+5 (Hata Delta: 2.56%)
+  - Karar          : AL (BUY) | Önerilen Stake: %15.00
+
+[+] Analiz ediliyor: Platinum (PL=F)
+  - Hurst Exponent : 1.4530
+  - Betalar        : DXY=-1.8664, TIPS=-0.4994, SPY=1.1959
+  - En İyi Horizon : D+5 (Hata Delta: 3.40%)
+  - Karar          : BEKLE (HOLD) | Önerilen Stake: %0.00
+
+[+] Analiz ediliyor: Palladium (PA=F)
+  - Hurst Exponent : 1.1893
+  - Betalar        : DXY=-1.1125, TIPS=0.3853, SPY=1.1508
+  - En İyi Horizon : D+5 (Hata Delta: 4.70%)
+  - Karar          : BEKLE (HOLD) | Önerilen Stake: %0.00
+
+[+] Emtia öngörü ve backtest verileri başarıyla yerel JSON'a yazıldı: B:\Hariseldon\dashboards\commodity_history.json
+[+] Ortalama Portföy Sharpe Rasyosu (1.5 Yıl): 0.8487
+==========================================================================================
+[4/4] GitHub push... 
+[main e5b22eb] data: daily update Wed 06/17/2026
+ 2 files changed, 2569 insertions(+), 2569 deletions(-)
+To https://github.com/tarco-forensics/Hariseldon.git
+   8f59ec3..e5b22eb  main -> main
+BASARILI: Guncelleme tamamlandi 
+Bitis:  7:38:40.63 
+ 
+================================================ 
+Wed 06/17/2026  8:00:02.28 — T2SAIM Gunluk Guncelleme 
+================================================ 
+[1/3] USDTRY verisi cekiliyor... 
+$USDTRY=X: possibly delisted; no price data found  (1d 2026-06-18 -> 2026-06-18) (Yahoo error = "Data doesn't exist for startDate = 1781737200, endDate = 1781737200")
+
+1 Failed download:
+['USDTRY=X']: possibly delisted; no price data found  (1d 2026-06-18 -> 2026-06-18) (Yahoo error = "Data doesn't exist for startDate = 1781737200, endDate = 1781737200")
+Son mevcut veri: 2026-06-17
+Cekiliyor: 2026-06-18 -> 2026-06-18
+Yeni veri yok (piyasa kapali olabilir)
+[2/4] Kriz indeksi hesaplaniyor... 
+OK: 701 gunluk veri uretildi -> B:\Hariseldon\crisis_data.json
+   Dun (2026-06-16): CI=0.3093, SRI=0.4353, Alarm=0
+   Bellek: 0.077 | L6: 0
+[3/4] Canli piyasa verileri cekiliyor... 
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+T2SAIM Market Data Generator — 2026-06-17 08:00
+  Cekiliyor: BIST-100 (XU100.IS)...
+    OK: 2026-06-16 close=14493.1 (+0.32%)
+  Cekiliyor: S&P 500 (^GSPC)...
+    OK: 2026-06-16 close=7511.35 (-0.57%)
+  Cekiliyor: FTSE 100 (^FTSE)...
+    OK: 2026-06-16 close=10494.2 (+0.61%)
+  Cekiliyor: Euro Stoxx 50 (^STOXX50E)...
+    OK: 2026-06-16 close=6257.42 (+0.45%)
+  Cekiliyor: Nikkei 225 (^N225)...
+    OK: 2026-06-17 close=69902.25 (+0.72%)
+  Cekiliyor: Hang Seng (^HSI)...
+    OK: 2026-06-17 close=24287.03 (-0.84%)
+  Cekiliyor: Kripto (BTC) (BTC-USD)...
+    OK: 2026-06-17 close=65549.93 (-0.08%)
+  Cekiliyor: Değerli Metaller (GC=F)...
+    OK: 2026-06-17 close=4348.4 (+0.40%)
+
+OK: 8 piyasa -> B:\Hariseldon\market_data.json
+   Portfoy: $155,730 | Kar: $75,730 | Canli: 8/8
+[3.5/4] C5 Emtia Motoru kosturuluyor... 
+[                       0%                       ][************          25%                       ]  2 of 8 completed[******************    38%                       ]  3 of 8 completed[******************    38%                       ]  3 of 8 completed[**********************62%*****                  ]  5 of 8 completed[**********************75%***********            ]  6 of 8 completed[**********************88%*****************      ]  7 of 8 completed[*********************100%***********************]  8 of 8 completed
+[                       0%                       ][*******************   40%                       ]  2 of 5 completed[**********************60%****                   ]  3 of 5 completed[**********************80%*************          ]  4 of 5 completed[*********************100%***********************]  5 of 5 completed
+==========================================================================================
+T2SAIM MULTI-COMMODITY BTF ENGINE (C5 ENGINE)
+==========================================================================================
+[CONFIG LOADED] lookback_days=250, stop_loss_pct=5.50%, hurst_th=0.600, lambda_decay=0.15
+[+] yfinance ile 30 yıllık emtia ve makro verileri çekiliyor (1996 - 2026)...
+[+] Veriler hizalanıyor ve temizleniyor...
+[+] Alizanan toplam işgünü sayısı (30 yıllık): 4276
+
+[+] Analiz ediliyor: Gold (GC=F)
+  - Hurst Exponent : 1.2127
+  - Betalar        : DXY=-1.1533, TIPS=0.3034, SPY=0.5267
+  - En İyi Horizon : D+5 (Hata Delta: 1.81%)
+  - Karar          : BEKLE (HOLD) | Önerilen Stake: %0.00
+
+[+] Analiz ediliyor: Silver (SI=F)
+  - Hurst Exponent : 1.2041
+  - Betalar        : DXY=-3.0123, TIPS=-0.2869, SPY=1.2358
+  - En İyi Horizon : D+5 (Hata Delta: 3.74%)
+  - Karar          : BEKLE (HOLD) | Önerilen Stake: %0.00
+
+[+] Analiz ediliyor: Copper (HG=F)
+  - Hurst Exponent : 1.0241
+  - Betalar        : DXY=-0.7624, TIPS=0.4265, SPY=0.9603
+  - En İyi Horizon : D+5 (Hata Delta: 2.56%)
+  - Karar          : AL (BUY) | Önerilen Stake: %15.00
+
+[+] Analiz ediliyor: Platinum (PL=F)
+  - Hurst Exponent : 1.4530
+  - Betalar        : DXY=-1.8664, TIPS=-0.4994, SPY=1.1959
+  - En İyi Horizon : D+5 (Hata Delta: 3.40%)
+  - Karar          : BEKLE (HOLD) | Önerilen Stake: %0.00
+
+[+] Analiz ediliyor: Palladium (PA=F)
+  - Hurst Exponent : 1.1893
+  - Betalar        : DXY=-1.1125, TIPS=0.3854, SPY=1.1508
+  - En İyi Horizon : D+5 (Hata Delta: 4.70%)
+  - Karar          : BEKLE (HOLD) | Önerilen Stake: %0.00
+
+[+] Emtia öngörü ve backtest verileri başarıyla yerel JSON'a yazıldı: B:\Hariseldon\dashboards\commodity_history.json
+[+] Ortalama Portföy Sharpe Rasyosu (1.5 Yıl): 0.8487
+==========================================================================================
+[4/4] GitHub push... 
+[main f2f03bf] data: daily update Wed 06/17/2026
+ 1 file changed, 9 insertions(+), 9 deletions(-)
+To https://github.com/tarco-forensics/Hariseldon.git
+   366281e..f2f03bf  main -> main
+BASARILI: Guncelleme tamamlandi 
+Bitis:  8:00:26.77 
+ 
+================================================ 
+Wed 06/17/2026 19:55:04.67 — T2SAIM Gunluk Guncelleme 
+================================================ 
+[1/3] USDTRY verisi cekiliyor... 
+$USDTRY=X: possibly delisted; no price data found  (1d 2026-06-18 -> 2026-06-18) (Yahoo error = "Data doesn't exist for startDate = 1781737200, endDate = 1781737200")
+
+1 Failed download:
+['USDTRY=X']: possibly delisted; no price data found  (1d 2026-06-18 -> 2026-06-18) (Yahoo error = "Data doesn't exist for startDate = 1781737200, endDate = 1781737200")
+Son mevcut veri: 2026-06-17
+Cekiliyor: 2026-06-18 -> 2026-06-18
+Yeni veri yok (piyasa kapali olabilir)
+[2/4] Kriz indeksi hesaplaniyor... 
+OK: 701 gunluk veri uretildi -> B:\Hariseldon\crisis_data.json
+   Dun (2026-06-16): CI=0.3093, SRI=0.4353, Alarm=0
+   Bellek: 0.077 | L6: 0
+[3/4] Canli piyasa verileri cekiliyor... 
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+T2SAIM Market Data Generator — 2026-06-17 19:55
+  Cekiliyor: BIST-100 (XU100.IS)...
+    OK: 2026-06-17 close=14421.15 (-0.50%)
+  Cekiliyor: S&P 500 (^GSPC)...
+    OK: 2026-06-17 close=7487.78 (-0.31%)
+  Cekiliyor: FTSE 100 (^FTSE)...
+    OK: 2026-06-17 close=10508.61 (+0.14%)
+  Cekiliyor: Euro Stoxx 50 (^STOXX50E)...
+    OK: 2026-06-17 close=6300.07 (+0.68%)
+  Cekiliyor: Nikkei 225 (^N225)...
+    OK: 2026-06-16 close=69404.5 (+0.13%)
+  Cekiliyor: Hang Seng (^HSI)...
+    OK: 2026-06-16 close=24493.95 (-1.40%)
+  Cekiliyor: Kripto (BTC) (BTC-USD)...
+    OK: 2026-06-17 close=65782.46 (+0.28%)
+  Cekiliyor: Değerli Metaller (GC=F)...
+    OK: 2026-06-17 close=4343.4 (+0.29%)
+
+OK: 8 piyasa -> B:\Hariseldon\market_data.json
+   Portfoy: $155,730 | Kar: $75,730 | Canli: 8/8
+[3.5/4] C5 Emtia Motoru kosturuluyor... 
+[                       0%                       ][************          25%                       ]  2 of 8 completed[************          25%                       ]  2 of 8 completed[************          25%                       ]  2 of 8 completed[************          25%                       ]  2 of 8 completed[************          25%                       ]  2 of 8 completed[**********************88%*****************      ]  7 of 8 completed[*********************100%***********************]  8 of 8 completed
+[                       0%                       ][*******************   40%                       ]  2 of 5 completed[**********************60%****                   ]  3 of 5 completed[**********************80%*************          ]  4 of 5 completed[*********************100%***********************]  5 of 5 completed
+==========================================================================================
+T2SAIM MULTI-COMMODITY BTF ENGINE (C5 ENGINE)
+==========================================================================================
+[CONFIG LOADED] lookback_days=250, stop_loss_pct=5.50%, hurst_th=0.600, lambda_decay=0.15
+[+] yfinance ile 30 yıllık emtia ve makro verileri çekiliyor (1996 - 2026)...
+[+] Veriler hizalanıyor ve temizleniyor...
+[+] Alizanan toplam işgünü sayısı (30 yıllık): 4276
+
+[+] Analiz ediliyor: Gold (GC=F)
+  - Hurst Exponent : 1.2127
+  - Betalar        : DXY=-1.1533, TIPS=0.3035, SPY=0.5267
+  - En İyi Horizon : D+5 (Hata Delta: 1.81%)
+  - Karar          : BEKLE (HOLD) | Önerilen Stake: %0.00
+
+[+] Analiz ediliyor: Silver (SI=F)
+  - Hurst Exponent : 1.2041
+  - Betalar        : DXY=-3.0123, TIPS=-0.2869, SPY=1.2358
+  - En İyi Horizon : D+5 (Hata Delta: 3.74%)
+  - Karar          : BEKLE (HOLD) | Önerilen Stake: %0.00
+
+[+] Analiz ediliyor: Copper (HG=F)
+  - Hurst Exponent : 1.0241
+  - Betalar        : DXY=-0.7624, TIPS=0.4265, SPY=0.9603
+  - En İyi Horizon : D+5 (Hata Delta: 2.56%)
+  - Karar          : AL (BUY) | Önerilen Stake: %15.00
+
+[+] Analiz ediliyor: Platinum (PL=F)
+  - Hurst Exponent : 1.4530
+  - Betalar        : DXY=-1.8664, TIPS=-0.4994, SPY=1.1959
+  - En İyi Horizon : D+5 (Hata Delta: 3.40%)
+  - Karar          : BEKLE (HOLD) | Önerilen Stake: %0.00
+
+[+] Analiz ediliyor: Palladium (PA=F)
+  - Hurst Exponent : 1.1893
+  - Betalar        : DXY=-1.1125, TIPS=0.3854, SPY=1.1508
+  - En İyi Horizon : D+5 (Hata Delta: 4.70%)
+  - Karar          : BEKLE (HOLD) | Önerilen Stake: %0.00
+
+[+] Emtia öngörü ve backtest verileri başarıyla yerel JSON'a yazıldı: B:\Hariseldon\dashboards\commodity_history.json
+[+] Ortalama Portföy Sharpe Rasyosu (1.5 Yıl): 0.8487
+==========================================================================================
+[3.8/4] T2SAIM Gunluk Portfoy Olusturuluyor... 
+==========================================================
+  T2SAIM & HERMES - WEB PORTFOLIO PAYLOAD GENERATOR
+==========================================================
+
+Piyasalar işleniyor...
+  - US (S&P 500) (Model: Model 4 (Optimized Hybrid))
+  - UK (FTSE 100) (Model: Model 3 (Advanced Hybrid))
+  - Europe (Stoxx 50) (Model: Model 4 (Optimized Hybrid))
+  - Japan (Nikkei 225) (Model: Model 1 (MFDFA))
+  - Hong Kong (HSI) (Model: Model 2 (TimesFM Hybrid))
+
+[BAŞARILI] Web paneli verisi oluşturuldu: B:\T2SAIM_James_Projects\00_Success\t2saim_web_dashboard_data.json
+==========================================================
+        1 file(s) copied.
+        1 file(s) copied.
+        1 file(s) copied.
+[4/4] GitHub push... 
+warning: in the working copy of 't2saim_asset_details.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 't2saim_crypto_dashboard.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 't2saim_dashboard.html', LF will be replaced by CRLF the next time Git touches it
+[main 99d6c5c] data: daily update with new models Wed 06/17/2026
+ 7 files changed, 4378 insertions(+), 29 deletions(-)
+ create mode 100644 t2saim_asset_details.html
+ create mode 100644 t2saim_crypto_dashboard.html
+ create mode 100644 t2saim_dashboard.html
+ create mode 100644 t2saim_model_selector.json
+ create mode 100644 t2saim_stock_selection_results.json
+ create mode 100644 t2saim_web_dashboard_data.json
+To https://github.com/tarco-forensics/Hariseldon.git
+   484a556..99d6c5c  main -> main
+BASARILI: Guncelleme tamamlandi 
+Bitis: 19:55:55.90 
+ 
+================================================ 
+Fri 06/19/2026  8:00:03.24 — T2SAIM Gunluk Guncelleme 
+================================================ 
+[1/3] USDTRY verisi cekiliyor... 
+B:\Hariseldon\fetch_latest_usdtry.py:28: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  o = float(row["Open"])
+B:\Hariseldon\fetch_latest_usdtry.py:29: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  h = float(row["High"])
+B:\Hariseldon\fetch_latest_usdtry.py:30: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  l = float(row["Low"])
+B:\Hariseldon\fetch_latest_usdtry.py:31: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  c = float(row["Close"])
+Son mevcut veri: 2026-06-17
+Cekiliyor: 2026-06-18 -> 2026-06-20
+Eklendi: 2 yeni gun
+  2026-06-18: 46.44
+  2026-06-19: 46.4359
+[2/4] Kriz indeksi hesaplaniyor... 
+OK: 701 gunluk veri uretildi -> B:\Hariseldon\crisis_data.json
+   Dun (2026-06-18): CI=0.3668, SRI=0.5207, Alarm=0
+   Bellek: 0.039 | L6: 1
+[3/4] Canli piyasa verileri cekiliyor... 
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+T2SAIM Market Data Generator — 2026-06-19 08:00
+  Cekiliyor: BIST-100 (XU100.IS)...
+    OK: 2026-06-17 close=14421.2 (-0.50%)
+  Cekiliyor: S&P 500 (^GSPC)...
+    OK: 2026-06-18 close=7420.1 (-1.21%)
+  Cekiliyor: FTSE 100 (^FTSE)...
+    OK: 2026-06-17 close=10508.6 (+0.14%)
+  Cekiliyor: Euro Stoxx 50 (^STOXX50E)...
+    OK: 2026-06-17 close=6300.07 (+0.68%)
+  Cekiliyor: Nikkei 225 (^N225)...
+    OK: 2026-06-19 close=70645.44 (+1.06%)
+  Cekiliyor: Hang Seng (^HSI)...
+    OK: 2026-06-17 close=24312.16 (-0.74%)
+  Cekiliyor: Kripto (BTC) (BTC-USD)...
+    OK: 2026-06-19 close=62404.34 (-3.13%)
+  Cekiliyor: Değerli Metaller (GC=F)...
+    OK: 2026-06-19 close=4154.0 (-1.66%)
+
+OK: 8 piyasa -> B:\Hariseldon\market_data.json
+   Portfoy: $155,730 | Kar: $75,730 | Canli: 8/8
+[3.5/4] C5 Emtia Motoru kosturuluyor... 
+[                       0%                       ][                       0%                       ][******************    38%                       ]  3 of 8 completed[******************    38%                       ]  3 of 8 completed[**********************62%*****                  ]  5 of 8 completed[**********************75%***********            ]  6 of 8 completed[**********************88%*****************      ]  7 of 8 completed[*********************100%***********************]  8 of 8 completed
+[                       0%                       ][*******************   40%                       ]  2 of 5 completed[**********************60%****                   ]  3 of 5 completed[**********************80%*************          ]  4 of 5 completed[*********************100%***********************]  5 of 5 completed
+==========================================================================================
+T2SAIM MULTI-COMMODITY BTF ENGINE (C5 ENGINE)
+==========================================================================================
+[CONFIG LOADED] lookback_days=250, stop_loss_pct=5.50%, hurst_th=0.600, lambda_decay=0.15
+[+] yfinance ile 30 yıllık emtia ve makro verileri çekiliyor (1996 - 2026)...
+[+] Veriler hizalanıyor ve temizleniyor...
+[+] Alizanan toplam işgünü sayısı (30 yıllık): 4277
+
+[+] Analiz ediliyor: Gold (GC=F)
+  - Hurst Exponent : 1.0735
+  - Betalar        : DXY=-1.0770, TIPS=0.0579, SPY=0.5238
+  - En İyi Horizon : D+5 (Hata Delta: 1.81%)
+  - Karar          : BEKLE (HOLD) | Önerilen Stake: %0.00
+
+[+] Analiz ediliyor: Silver (SI=F)
+  - Hurst Exponent : 1.1048
+  - Betalar        : DXY=-2.8548, TIPS=-0.7857, SPY=1.2299
+  - En İyi Horizon : D+5 (Hata Delta: 3.74%)
+  - Karar          : BEKLE (HOLD) | Önerilen Stake: %0.00
+
+[+] Analiz ediliyor: Copper (HG=F)
+  - Hurst Exponent : 1.0323
+  - Betalar        : DXY=-0.7030, TIPS=0.2242, SPY=0.9579
+  - En İyi Horizon : D+5 (Hata Delta: 2.56%)
+  - Karar          : AL (BUY) | Önerilen Stake: %15.00
+
+[+] Analiz ediliyor: Platinum (PL=F)
+  - Hurst Exponent : 1.4817
+  - Betalar        : DXY=-1.8293, TIPS=-0.6762, SPY=1.1938
+  - En İyi Horizon : D+5 (Hata Delta: 3.40%)
+  - Karar          : BEKLE (HOLD) | Önerilen Stake: %0.00
+
+[+] Analiz ediliyor: Palladium (PA=F)
+  - Hurst Exponent : 1.1470
+  - Betalar        : DXY=-1.0463, TIPS=0.1736, SPY=1.1483
+  - En İyi Horizon : D+5 (Hata Delta: 4.70%)
+  - Karar          : BEKLE (HOLD) | Önerilen Stake: %0.00
+
+[+] Emtia öngörü ve backtest verileri başarıyla yerel JSON'a yazıldı: B:\Hariseldon\dashboards\commodity_history.json
+[+] Ortalama Portföy Sharpe Rasyosu (1.5 Yıl): 0.8343
+==========================================================================================
+[3.8/4] T2SAIM Gunluk Portfoy Olusturuluyor... 
+==========================================================
+  T2SAIM & HERMES - WEB PORTFOLIO PAYLOAD GENERATOR
+==========================================================
+
+Piyasalar işleniyor...
+  - US (S&P 500) (Model: Model 4 (Optimized Hybrid))
+  - UK (FTSE 100) (Model: Model 3 (Advanced Hybrid))
+  - Europe (Stoxx 50) (Model: Model 4 (Optimized Hybrid))
+  - Japan (Nikkei 225) (Model: Model 1 (MFDFA))
+  - Hong Kong (HSI) (Model: Model 2 (TimesFM Hybrid))
+
+[BAŞARILI] Web paneli verisi oluşturuldu: B:\T2SAIM_James_Projects\00_Success\t2saim_web_dashboard_data.json
+==========================================================
+        1 file(s) copied.
+        1 file(s) copied.
+        1 file(s) copied.
+[3.9/4] Dunya Kupasi 2026 Simulasyonu Olusturuluyor... 
+[+] Starting World Cup 2026 Simulations...
+ - Simulating Model 1 (Static/FIFA Rank)...
+ - Simulating Model 2 (Seldon/Amnesia)...
+[+] Simulation complete! Results saved to: B:\Hariseldon\dashboards\world_cup_sim_results.json
+[4/4] GitHub push... 
+[main 61c915a] data: daily update with new models Fri 06/19/2026
+ 4 files changed, 2611 insertions(+), 2611 deletions(-)
+To https://github.com/tarco-forensics/Hariseldon.git
+   bce3647..61c915a  main -> main
+BASARILI: Guncelleme tamamlandi 
+Bitis:  8:00:33.98 
+ 
+================================================ 
+Sat 06/20/2026  8:00:04.63 — T2SAIM Gunluk Guncelleme 
+================================================ 
+[1/3] USDTRY verisi cekiliyor... 
+B:\Hariseldon\fetch_latest_usdtry.py:28: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  o = float(row["Open"])
+B:\Hariseldon\fetch_latest_usdtry.py:29: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  h = float(row["High"])
+B:\Hariseldon\fetch_latest_usdtry.py:30: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  l = float(row["Low"])
+B:\Hariseldon\fetch_latest_usdtry.py:31: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  c = float(row["Close"])
+Son mevcut veri: 2026-06-19
+Cekiliyor: 2026-06-20 -> 2026-06-21
+Eklendi: 1 yeni gun
+  2026-06-19: 46.4289
+[2/4] Kriz indeksi hesaplaniyor... 
+OK: 701 gunluk veri uretildi -> B:\Hariseldon\crisis_data.json
+   Dun (2026-06-19): CI=0.3378, SRI=0.4793, Alarm=0
+   Bellek: 0.039 | L6: 0
+[3/4] Canli piyasa verileri cekiliyor... 
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+T2SAIM Market Data Generator — 2026-06-20 08:00
+  Cekiliyor: BIST-100 (XU100.IS)...
+    OK: 2026-06-19 close=14734.5 (+2.17%)
+  Cekiliyor: S&P 500 (^GSPC)...
+    OK: 2026-06-18 close=7420.1 (-1.21%)
+  Cekiliyor: FTSE 100 (^FTSE)...
+    OK: 2026-06-19 close=10363.3 (-1.38%)
+  Cekiliyor: Euro Stoxx 50 (^STOXX50E)...
+    OK: 2026-06-19 close=6293.13 (-0.11%)
+  Cekiliyor: Nikkei 225 (^N225)...
+    OK: 2026-06-19 close=71250.06 (+1.93%)
+  Cekiliyor: Hang Seng (^HSI)...
+    OK: 2026-06-17 close=24312.16 (-0.74%)
+  Cekiliyor: Kripto (BTC) (BTC-USD)...
+    OK: 2026-06-20 close=63530.83 (-1.38%)
+  Cekiliyor: Değerli Metaller (GC=F)...
+    OK: 2026-06-19 close=4172.9 (-1.21%)
+
+OK: 8 piyasa -> B:\Hariseldon\market_data.json
+   Portfoy: $155,730 | Kar: $75,730 | Canli: 8/8
+[3.5/4] C5 Emtia Motoru kosturuluyor... 
+[                       0%                       ][************          25%                       ]  2 of 8 completed[******************    38%                       ]  3 of 8 completed[**********************50%                       ]  4 of 8 completed[**********************62%*****                  ]  5 of 8 completed[**********************75%***********            ]  6 of 8 completed[**********************88%*****************      ]  7 of 8 completed[*********************100%***********************]  8 of 8 completed
+[                       0%                       ][*******************   40%                       ]  2 of 5 completed[**********************60%****                   ]  3 of 5 completed[**********************80%*************          ]  4 of 5 completed[*********************100%***********************]  5 of 5 completed
+==========================================================================================
+T2SAIM MULTI-COMMODITY BTF ENGINE (C5 ENGINE)
+==========================================================================================
+[CONFIG LOADED] lookback_days=250, stop_loss_pct=5.50%, hurst_th=0.600, lambda_decay=0.15
+[+] yfinance ile 30 yıllık emtia ve makro verileri çekiliyor (1996 - 2026)...
+[+] Veriler hizalanıyor ve temizleniyor...
+[+] Alizanan toplam işgünü sayısı (30 yıllık): 4277
+
+[+] Analiz ediliyor: Gold (GC=F)
+  - Hurst Exponent : 1.0735
+  - Betalar        : DXY=-1.0770, TIPS=0.0579, SPY=0.5238
+  - En İyi Horizon : D+5 (Hata Delta: 1.81%)
+  - Karar          : BEKLE (HOLD) | Önerilen Stake: %0.00
+
+[+] Analiz ediliyor: Silver (SI=F)
+  - Hurst Exponent : 1.1048
+  - Betalar        : DXY=-2.8548, TIPS=-0.7857, SPY=1.2299
+  - En İyi Horizon : D+5 (Hata Delta: 3.74%)
+  - Karar          : BEKLE (HOLD) | Önerilen Stake: %0.00
+
+[+] Analiz ediliyor: Copper (HG=F)
+  - Hurst Exponent : 1.0323
+  - Betalar        : DXY=-0.7030, TIPS=0.2241, SPY=0.9579
+  - En İyi Horizon : D+5 (Hata Delta: 2.56%)
+  - Karar          : AL (BUY) | Önerilen Stake: %15.00
+
+[+] Analiz ediliyor: Platinum (PL=F)
+  - Hurst Exponent : 1.4817
+  - Betalar        : DXY=-1.8293, TIPS=-0.6763, SPY=1.1938
+  - En İyi Horizon : D+5 (Hata Delta: 3.40%)
+  - Karar          : BEKLE (HOLD) | Önerilen Stake: %0.00
+
+[+] Analiz ediliyor: Palladium (PA=F)
+  - Hurst Exponent : 1.1470
+  - Betalar        : DXY=-1.0463, TIPS=0.1736, SPY=1.1483
+  - En İyi Horizon : D+5 (Hata Delta: 4.70%)
+  - Karar          : BEKLE (HOLD) | Önerilen Stake: %0.00
+
+[+] Emtia öngörü ve backtest verileri başarıyla yerel JSON'a yazıldı: B:\Hariseldon\dashboards\commodity_history.json
+[+] Ortalama Portföy Sharpe Rasyosu (1.5 Yıl): 0.8343
+==========================================================================================
+[3.8/4] T2SAIM Gunluk Portfoy Olusturuluyor... 
+C:\Users\tarka\AppData\Local\Programs\Python\Python311\python.exe: can't open file 'B:\\T2SAIM_James_Projects\\00_Success\\t2saim_daily_portfolio_generator.py': [Errno 2] No such file or directory
+HATA: Portfoy olusturma basarisiz 
+[3.9/4] Dunya Kupasi 2026 Simulasyonu Olusturuluyor... 
+[+] Starting World Cup 2026 Simulations...
+ - Simulating Model 1 (Static/FIFA Rank)...
+ - Simulating Model 2 (Seldon/Amnesia)...
+[+] Simulation complete! Results saved to: B:\Hariseldon\dashboards\world_cup_sim_results.json
+[4/4] GitHub push... 
+[main e350bd7] data: daily update with new models Sat 06/20/2026
+ 3 files changed, 2042 insertions(+), 2042 deletions(-)
+To https://github.com/tarco-forensics/Hariseldon.git
+   61c915a..e350bd7  main -> main
+BASARILI: Guncelleme tamamlandi 
+Bitis:  8:02:03.68 
+ 
+================================================ 
+Sun 06/21/2026  8:00:02.15 — T2SAIM Gunluk Guncelleme 
+================================================ 
+[1/3] USDTRY verisi cekiliyor... 
+B:\Hariseldon\fetch_latest_usdtry.py:28: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  o = float(row["Open"])
+B:\Hariseldon\fetch_latest_usdtry.py:29: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  h = float(row["High"])
+B:\Hariseldon\fetch_latest_usdtry.py:30: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  l = float(row["Low"])
+B:\Hariseldon\fetch_latest_usdtry.py:31: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  c = float(row["Close"])
+Son mevcut veri: 2026-06-19
+Cekiliyor: 2026-06-20 -> 2026-06-22
+Eklendi: 1 yeni gun
+  2026-06-21: 46.443
+[2/4] Kriz indeksi hesaplaniyor... 
+OK: 701 gunluk veri uretildi -> B:\Hariseldon\crisis_data.json
+   Dun (2026-06-20): CI=0.2937, SRI=0.4194, Alarm=0
+   Bellek: 0.001 | L6: 0
+[3/4] Canli piyasa verileri cekiliyor... 
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+T2SAIM Market Data Generator — 2026-06-21 08:00
+  Cekiliyor: BIST-100 (XU100.IS)...
+    OK: 2026-06-19 close=14734.5 (+2.17%)
+  Cekiliyor: S&P 500 (^GSPC)...
+    OK: 2026-06-18 close=7420.1 (-1.21%)
+  Cekiliyor: FTSE 100 (^FTSE)...
+    OK: 2026-06-19 close=10363.3 (-1.38%)
+  Cekiliyor: Euro Stoxx 50 (^STOXX50E)...
+    OK: 2026-06-19 close=6293.13 (-0.11%)
+  Cekiliyor: Nikkei 225 (^N225)...
+    OK: 2026-06-19 close=71250.06 (+1.93%)
+  Cekiliyor: Hang Seng (^HSI)...
+    OK: 2026-06-17 close=24312.16 (-0.74%)
+  Cekiliyor: Kripto (BTC) (BTC-USD)...
+    OK: 2026-06-21 close=64199.05 (+1.04%)
+  Cekiliyor: Değerli Metaller (GC=F)...
+    OK: 2026-06-19 close=4172.9 (-1.21%)
+
+OK: 8 piyasa -> B:\Hariseldon\market_data.json
+   Portfoy: $155,730 | Kar: $75,730 | Canli: 8/8
+[3.5/4] C5 Emtia Motoru kosturuluyor... 
+[                       0%                       ][************          25%                       ]  2 of 8 completed[************          25%                       ]  2 of 8 completed[**********************50%                       ]  4 of 8 completed[**********************62%*****                  ]  5 of 8 completed[**********************75%***********            ]  6 of 8 completed[**********************88%*****************      ]  7 of 8 completed[*********************100%***********************]  8 of 8 completed
+[                       0%                       ][                       0%                       ][**********************60%****                   ]  3 of 5 completed[**********************80%*************          ]  4 of 5 completed[*********************100%***********************]  5 of 5 completed
+==========================================================================================
+T2SAIM MULTI-COMMODITY BTF ENGINE (C5 ENGINE)
+==========================================================================================
+[CONFIG LOADED] lookback_days=250, stop_loss_pct=5.50%, hurst_th=0.600, lambda_decay=0.15
+[+] yfinance ile 30 yıllık emtia ve makro verileri çekiliyor (1996 - 2026)...
+[+] Veriler hizalanıyor ve temizleniyor...
+[+] Alizanan toplam işgünü sayısı (30 yıllık): 4277
+
+[+] Analiz ediliyor: Gold (GC=F)
+  - Hurst Exponent : 1.0735
+  - Betalar        : DXY=-1.0770, TIPS=0.0579, SPY=0.5238
+  - En İyi Horizon : D+5 (Hata Delta: 1.81%)
+  - Karar          : BEKLE (HOLD) | Önerilen Stake: %0.00
+
+[+] Analiz ediliyor: Silver (SI=F)
+  - Hurst Exponent : 1.1048
+  - Betalar        : DXY=-2.8548, TIPS=-0.7857, SPY=1.2299
+  - En İyi Horizon : D+5 (Hata Delta: 3.74%)
+  - Karar          : BEKLE (HOLD) | Önerilen Stake: %0.00
+
+[+] Analiz ediliyor: Copper (HG=F)
+  - Hurst Exponent : 1.0323
+  - Betalar        : DXY=-0.7030, TIPS=0.2242, SPY=0.9579
+  - En İyi Horizon : D+5 (Hata Delta: 2.56%)
+  - Karar          : AL (BUY) | Önerilen Stake: %15.00
+
+[+] Analiz ediliyor: Platinum (PL=F)
+  - Hurst Exponent : 1.4817
+  - Betalar        : DXY=-1.8293, TIPS=-0.6762, SPY=1.1938
+  - En İyi Horizon : D+5 (Hata Delta: 3.40%)
+  - Karar          : BEKLE (HOLD) | Önerilen Stake: %0.00
+
+[+] Analiz ediliyor: Palladium (PA=F)
+  - Hurst Exponent : 1.1470
+  - Betalar        : DXY=-1.0463, TIPS=0.1736, SPY=1.1483
+  - En İyi Horizon : D+5 (Hata Delta: 4.70%)
+  - Karar          : BEKLE (HOLD) | Önerilen Stake: %0.00
+
+[+] Emtia öngörü ve backtest verileri başarıyla yerel JSON'a yazıldı: B:\Hariseldon\dashboards\commodity_history.json
+[+] Ortalama Portföy Sharpe Rasyosu (1.5 Yıl): 0.8343
+==========================================================================================
+[3.8/4] T2SAIM Gunluk Portfoy Olusturuluyor... 
+C:\Users\tarka\AppData\Local\Programs\Python\Python311\python.exe: can't open file 'B:\\T2SAIM_James_Projects\\00_Success\\t2saim_daily_portfolio_generator.py': [Errno 2] No such file or directory
+HATA: Portfoy olusturma basarisiz 
+[3.9/4] Dunya Kupasi 2026 Simulasyonu Olusturuluyor... 
+[+] Starting World Cup 2026 Simulations...
+ - Simulating Model 1 (Static/FIFA Rank)...
+ - Simulating Model 2 (Seldon/Amnesia)...
+[+] Simulation complete! Results saved to: B:\Hariseldon\dashboards\world_cup_sim_results.json
+[4/4] GitHub push... 
+[main 3638ba4] data: daily update with new models Sun 06/21/2026
+ 3 files changed, 2857 insertions(+), 2857 deletions(-)
+To https://github.com/tarco-forensics/Hariseldon.git
+   e350bd7..3638ba4  main -> main
+BASARILI: Guncelleme tamamlandi 
+Bitis:  8:00:32.11 
+ 
+================================================ 
+Thu 06/25/2026  8:00:03.86 — T2SAIM Gunluk Guncelleme 
+================================================ 
+[1/3] USDTRY verisi cekiliyor... 
+B:\Hariseldon\fetch_latest_usdtry.py:28: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  o = float(row["Open"])
+B:\Hariseldon\fetch_latest_usdtry.py:29: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  h = float(row["High"])
+B:\Hariseldon\fetch_latest_usdtry.py:30: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  l = float(row["Low"])
+B:\Hariseldon\fetch_latest_usdtry.py:31: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  c = float(row["Close"])
+Son mevcut veri: 2026-06-21
+Cekiliyor: 2026-06-22 -> 2026-06-26
+Eklendi: 4 yeni gun
+  2026-06-22: 46.4521
+  2026-06-23: 46.4666
+  2026-06-24: 46.4709
+  2026-06-25: 46.51
+[2/4] Kriz indeksi hesaplaniyor... 
+OK: 701 gunluk veri uretildi -> B:\Hariseldon\crisis_data.json
+   Dun (2026-06-24): CI=0.2953, SRI=0.4114, Alarm=0
+   Bellek: 0.121 | L6: 0
+[3/4] Canli piyasa verileri cekiliyor... 
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+T2SAIM Market Data Generator — 2026-06-25 08:00
+  Cekiliyor: BIST-100 (XU100.IS)...
+    OK: 2026-06-24 close=14331.2 (-1.43%)
+  Cekiliyor: S&P 500 (^GSPC)...
+    OK: 2026-06-24 close=7358.22 (-0.10%)
+  Cekiliyor: FTSE 100 (^FTSE)...
+    OK: 2026-06-24 close=10461.6 (+0.31%)
+  Cekiliyor: Euro Stoxx 50 (^STOXX50E)...
+    OK: 2026-06-24 close=6214.7 (-0.25%)
+  Cekiliyor: Nikkei 225 (^N225)...
+    OK: 2026-06-25 close=71983.05 (+4.06%)
+  Cekiliyor: Hang Seng (^HSI)...
+    OK: 2026-06-25 close=23090.27 (-1.37%)
+  Cekiliyor: Kripto (BTC) (BTC-USD)...
+    OK: 2026-06-25 close=61209.47 (-2.33%)
+  Cekiliyor: Değerli Metaller (GC=F)...
+    OK: 2026-06-25 close=4008.3 (+0.45%)
+
+OK: 8 piyasa -> B:\Hariseldon\market_data.json
+   Portfoy: $155,730 | Kar: $75,730 | Canli: 8/8
+[3.5/4] C5 Emtia Motoru kosturuluyor... 
+[                       0%                       ][************          25%                       ]  2 of 8 completed[************          25%                       ]  2 of 8 completed[**********************50%                       ]  4 of 8 completed[**********************62%*****                  ]  5 of 8 completed[**********************75%***********            ]  6 of 8 completed[**********************88%*****************      ]  7 of 8 completed[*********************100%***********************]  8 of 8 completed
+[                       0%                       ][*******************   40%                       ]  2 of 5 completed[**********************60%****                   ]  3 of 5 completed[**********************80%*************          ]  4 of 5 completed[*********************100%***********************]  5 of 5 completed
+==========================================================================================
+T2SAIM MULTI-COMMODITY BTF ENGINE (C5 ENGINE)
+==========================================================================================
+[CONFIG LOADED] lookback_days=250, stop_loss_pct=5.50%, hurst_th=0.600, lambda_decay=0.15
+[+] yfinance ile 30 yıllık emtia ve makro verileri çekiliyor (1996 - 2026)...
+[+] Veriler hizalanıyor ve temizleniyor...
+[+] Alizanan toplam işgünü sayısı (30 yıllık): 4281
+
+[+] Analiz ediliyor: Gold (GC=F)
+  - Hurst Exponent : 1.2283
+  - Betalar        : DXY=-1.3747, TIPS=-0.4201, SPY=0.4970
+  - En İyi Horizon : D+5 (Hata Delta: 1.81%)
+  - Karar          : BEKLE (HOLD) | Önerilen Stake: %0.00
+
+[+] Analiz ediliyor: Silver (SI=F)
+  - Hurst Exponent : 0.7643
+  - Betalar        : DXY=-3.4311, TIPS=-1.7620, SPY=1.2206
+  - En İyi Horizon : D+5 (Hata Delta: 3.74%)
+  - Karar          : BEKLE (HOLD) | Önerilen Stake: %0.00
+
+[+] Analiz ediliyor: Copper (HG=F)
+  - Hurst Exponent : 0.7396
+  - Betalar        : DXY=-0.9658, TIPS=-0.3013, SPY=0.9728
+  - En İyi Horizon : D+5 (Hata Delta: 2.55%)
+  - Karar          : BEKLE (HOLD) | Önerilen Stake: %0.00
+
+[+] Analiz ediliyor: Platinum (PL=F)
+  - Hurst Exponent : 1.1445
+  - Betalar        : DXY=-2.2269, TIPS=-1.2360, SPY=1.1009
+  - En İyi Horizon : D+5 (Hata Delta: 3.40%)
+  - Karar          : BEKLE (HOLD) | Önerilen Stake: %0.00
+
+[+] Analiz ediliyor: Palladium (PA=F)
+  - Hurst Exponent : 1.0582
+  - Betalar        : DXY=-1.5963, TIPS=-0.7374, SPY=1.0823
+  - En İyi Horizon : D+5 (Hata Delta: 4.70%)
+  - Karar          : BEKLE (HOLD) | Önerilen Stake: %0.00
+
+[+] Emtia öngörü ve backtest verileri başarıyla yerel JSON'a yazıldı: B:\Hariseldon\dashboards\commodity_history.json
+[+] Ortalama Portföy Sharpe Rasyosu (1.5 Yıl): 0.6944
+==========================================================================================
+[3.8/4] T2SAIM Gunluk Portfoy Olusturuluyor... 
+C:\Users\tarka\AppData\Local\Programs\Python\Python311\python.exe: can't open file 'B:\\T2SAIM_James_Projects\\00_Success\\t2saim_daily_portfolio_generator.py': [Errno 2] No such file or directory
+HATA: Portfoy olusturma basarisiz 
+[3.9/4] Dunya Kupasi 2026 Simulasyonu Olusturuluyor... 
+[+] Starting World Cup 2026 Simulations...
+ - Simulating Model 1 (Static/FIFA Rank)...
+ - Simulating Model 2 (Seldon/Amnesia)...
+[+] Simulation complete! Results saved to: B:\Hariseldon\dashboards\world_cup_sim_results.json
+[4/4] GitHub push... 
+[main ddacf53] data: daily update with new models Thu 06/25/2026
+ 3 files changed, 2939 insertions(+), 2939 deletions(-)
+bash: line 1: /dev/tty: No such device or address
+error: failed to execute prompt script (exit code 1)
+fatal: could not read Password for 'https://tarco-forensics@github.com': No such file or directory
+UYARI: Git push basarisiz (ag sorunu olabilir
+BASARILI: Guncelleme tamamlandi 
+Bitis:  8:00:41.94 
+ 
+================================================ 
+Fri 06/26/2026  8:00:04.06 — T2SAIM Gunluk Guncelleme 
+================================================ 
+[1/3] USDTRY verisi cekiliyor... 
+B:\Hariseldon\fetch_latest_usdtry.py:28: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  o = float(row["Open"])
+B:\Hariseldon\fetch_latest_usdtry.py:29: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  h = float(row["High"])
+B:\Hariseldon\fetch_latest_usdtry.py:30: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  l = float(row["Low"])
+B:\Hariseldon\fetch_latest_usdtry.py:31: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  c = float(row["Close"])
+Son mevcut veri: 2026-06-25
+Cekiliyor: 2026-06-26 -> 2026-06-27
+Eklendi: 1 yeni gun
+  2026-06-26: 46.6074
+[2/4] Kriz indeksi hesaplaniyor... 
+OK: 701 gunluk veri uretildi -> B:\Hariseldon\crisis_data.json
+   Dun (2026-06-25): CI=0.3573, SRI=0.4172, Alarm=0
+   Bellek: 1.087 | L6: 0
+[3/4] Canli piyasa verileri cekiliyor... 
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+T2SAIM Market Data Generator — 2026-06-26 08:00
+  Cekiliyor: BIST-100 (XU100.IS)...
+    OK: 2026-06-25 close=14259.8 (-0.50%)
+  Cekiliyor: S&P 500 (^GSPC)...
+    OK: 2026-06-25 close=7357.49 (-0.01%)
+  Cekiliyor: FTSE 100 (^FTSE)...
+    OK: 2026-06-25 close=10529.9 (+0.65%)
+  Cekiliyor: Euro Stoxx 50 (^STOXX50E)...
+    OK: 2026-06-25 close=6267.53 (+0.85%)
+  Cekiliyor: Nikkei 225 (^N225)...
+    OK: 2026-06-26 close=68954.68 (-4.71%)
+  Cekiliyor: Hang Seng (^HSI)...
+    OK: 2026-06-26 close=22644.49 (-1.87%)
+  Cekiliyor: Kripto (BTC) (BTC-USD)...
+    OK: 2026-06-26 close=59847.48 (-1.88%)
+  Cekiliyor: Değerli Metaller (GC=F)...
+    OK: 2026-06-26 close=4025.8 (-0.12%)
+
+OK: 8 piyasa -> B:\Hariseldon\market_data.json
+   Portfoy: $155,730 | Kar: $75,730 | Canli: 8/8
+[3.5/4] C5 Emtia Motoru kosturuluyor... 
+[                       0%                       ][************          25%                       ]  2 of 8 completed[************          25%                       ]  2 of 8 completed[**********************50%                       ]  4 of 8 completed[**********************50%                       ]  4 of 8 completed[**********************75%***********            ]  6 of 8 completed[**********************88%*****************      ]  7 of 8 completed[*********************100%***********************]  8 of 8 completed
+[                       0%                       ][*******************   40%                       ]  2 of 5 completed[**********************60%****                   ]  3 of 5 completed[*********************100%***********************]  4 of 5 completed[*********************100%***********************]  4 of 5 completed
+==========================================================================================
+T2SAIM MULTI-COMMODITY BTF ENGINE (C5 ENGINE)
+==========================================================================================
+[CONFIG LOADED] lookback_days=250, stop_loss_pct=5.50%, hurst_th=0.600, lambda_decay=0.15
+[+] yfinance ile 30 yıllık emtia ve makro verileri çekiliyor (1996 - 2026)...
+[+] Veriler hizalanıyor ve temizleniyor...
+[+] Alizanan toplam işgünü sayısı (30 yıllık): 4282
+
+[+] Analiz ediliyor: Gold (GC=F)
+  - Hurst Exponent : 1.1569
+  - Betalar        : DXY=-1.3810, TIPS=-0.3960, SPY=0.4960
+  - En İyi Horizon : D+5 (Hata Delta: 1.81%)
+  - Karar          : BEKLE (HOLD) | Önerilen Stake: %0.00
+
+[+] Analiz ediliyor: Silver (SI=F)
+  - Hurst Exponent : 0.8162
+  - Betalar        : DXY=-3.4323, TIPS=-1.7587, SPY=1.2208
+  - En İyi Horizon : D+5 (Hata Delta: 3.74%)
+  - Karar          : BEKLE (HOLD) | Önerilen Stake: %0.00
+
+[+] Analiz ediliyor: Copper (HG=F)
+  - Hurst Exponent : 0.8471
+  - Betalar        : DXY=-0.9728, TIPS=-0.2636, SPY=0.9683
+  - En İyi Horizon : D+5 (Hata Delta: 2.55%)
+  - Karar          : BEKLE (HOLD) | Önerilen Stake: %0.00
+
+[+] Analiz ediliyor: Platinum (PL=F)
+  - Hurst Exponent : 1.1342
+  - Betalar        : DXY=-2.2242, TIPS=-1.2325, SPY=1.0969
+  - En İyi Horizon : D+5 (Hata Delta: 3.41%)
+  - Karar          : BEKLE (HOLD) | Önerilen Stake: %0.00
+
+[+] Analiz ediliyor: Palladium (PA=F)
+  - Hurst Exponent : 1.1977
+  - Betalar        : DXY=-1.5921, TIPS=-0.7346, SPY=1.0768
+  - En İyi Horizon : D+5 (Hata Delta: 4.70%)
+  - Karar          : BEKLE (HOLD) | Önerilen Stake: %0.00
+
+[+] Emtia öngörü ve backtest verileri başarıyla yerel JSON'a yazıldı: B:\Hariseldon\dashboards\commodity_history.json
+[+] Ortalama Portföy Sharpe Rasyosu (1.5 Yıl): 0.7244
+==========================================================================================
+[3.8/4] T2SAIM Gunluk Portfoy Olusturuluyor... 
+C:\Users\tarka\AppData\Local\Programs\Python\Python311\python.exe: can't open file 'B:\\T2SAIM_James_Projects\\00_Success\\t2saim_daily_portfolio_generator.py': [Errno 2] No such file or directory
+HATA: Portfoy olusturma basarisiz 
+[3.9/4] Dunya Kupasi 2026 Simulasyonu Olusturuluyor... 
+[+] Starting World Cup 2026 Simulations...
+ - Simulating Model 1 (Static/FIFA Rank)...
+ - Simulating Model 2 (Seldon/Amnesia)...
+[+] Simulation complete! Results saved to: B:\Hariseldon\dashboards\world_cup_sim_results.json
+[4/4] GitHub push... 
+[main b1d6b07] data: daily update with new models Fri 06/26/2026
+ 3 files changed, 2473 insertions(+), 2473 deletions(-)
+To https://github.com/tarco-forensics/Hariseldon.git
+   9fff744..b1d6b07  main -> main
+BASARILI: Guncelleme tamamlandi 
+Bitis:  8:00:42.10 
+ 
+================================================ 
+Sun 06/28/2026  8:00:53.74 — T2SAIM Gunluk Guncelleme 
+================================================ 
+[1/3] USDTRY verisi cekiliyor... 
+B:\Hariseldon\fetch_latest_usdtry.py:28: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  o = float(row["Open"])
+B:\Hariseldon\fetch_latest_usdtry.py:29: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  h = float(row["High"])
+B:\Hariseldon\fetch_latest_usdtry.py:30: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  l = float(row["Low"])
+B:\Hariseldon\fetch_latest_usdtry.py:31: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  c = float(row["Close"])
+Son mevcut veri: 2026-06-26
+Cekiliyor: 2026-06-27 -> 2026-06-29
+Eklendi: 1 yeni gun
+  2026-06-28: 46.5463
+[2/4] Kriz indeksi hesaplaniyor... 
+OK: 701 gunluk veri uretildi -> B:\Hariseldon\crisis_data.json
+   Dun (2026-06-27): CI=0.31, SRI=0.4266, Alarm=0
+   Bellek: 0.19 | L6: 0
+[3/4] Canli piyasa verileri cekiliyor... 
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+T2SAIM Market Data Generator — 2026-06-28 08:06
+  Cekiliyor: BIST-100 (XU100.IS)...
+    OK: 2026-06-25 close=14259.8 (-0.50%)
+  Cekiliyor: S&P 500 (^GSPC)...
+    OK: 2026-06-26 close=7357.49 (-0.01%)
+  Cekiliyor: FTSE 100 (^FTSE)...
+    OK: 2026-06-25 close=10529.9 (+0.65%)
+  Cekiliyor: Euro Stoxx 50 (^STOXX50E)...
+    OK: 2026-06-25 close=6267.53 (+0.85%)
+  Cekiliyor: Nikkei 225 (^N225)...
+    OK: 2026-06-25 close=72366.34 (+4.61%)
+  Cekiliyor: Hang Seng (^HSI)...
+    OK: 2026-06-25 close=23076.91 (-1.43%)
+  Cekiliyor: Kripto (BTC) (BTC-USD)...
+    OK: 2026-06-28 close=59920.31 (-0.16%)
+  Cekiliyor: Değerli Metaller (GC=F)...
+    OK: 2026-06-26 close=4096.3 (+1.63%)
+
+OK: 8 piyasa -> B:\Hariseldon\market_data.json
+   Portfoy: $155,730 | Kar: $75,730 | Canli: 8/8
+[3.5/4] C5 Emtia Motoru kosturuluyor... 
+[                       0%                       ][************          25%                       ]  2 of 8 completed[************          25%                       ]  2 of 8 completed[**********************50%                       ]  4 of 8 completed[**********************62%*****                  ]  5 of 8 completed[**********************75%***********            ]  6 of 8 completed[**********************88%*****************      ]  7 of 8 completed[*********************100%***********************]  8 of 8 completed
+[                       0%                       ][*******************   40%                       ]  2 of 5 completed[**********************60%****                   ]  3 of 5 completed[**********************80%*************          ]  4 of 5 completed[*********************100%***********************]  5 of 5 completed
+==========================================================================================
+T2SAIM MULTI-COMMODITY BTF ENGINE (C5 ENGINE)
+==========================================================================================
+[CONFIG LOADED] lookback_days=250, stop_loss_pct=5.50%, hurst_th=0.600, lambda_decay=0.15
+[+] yfinance ile 30 yıllık emtia ve makro verileri çekiliyor (1996 - 2026)...
+[+] Veriler hizalanıyor ve temizleniyor...
+[+] Alizanan toplam işgünü sayısı (30 yıllık): 4282
+
+[+] Analiz ediliyor: Gold (GC=F)
+  - Hurst Exponent : 1.1569
+  - Betalar        : DXY=-1.3810, TIPS=-0.3959, SPY=0.4960
+  - En İyi Horizon : D+5 (Hata Delta: 1.81%)
+  - Karar          : BEKLE (HOLD) | Önerilen Stake: %0.00
+
+[+] Analiz ediliyor: Silver (SI=F)
+  - Hurst Exponent : 0.8162
+  - Betalar        : DXY=-3.4323, TIPS=-1.7587, SPY=1.2208
+  - En İyi Horizon : D+5 (Hata Delta: 3.74%)
+  - Karar          : BEKLE (HOLD) | Önerilen Stake: %0.00
+
+[+] Analiz ediliyor: Copper (HG=F)
+  - Hurst Exponent : 0.8471
+  - Betalar        : DXY=-0.9728, TIPS=-0.2636, SPY=0.9683
+  - En İyi Horizon : D+5 (Hata Delta: 2.55%)
+  - Karar          : BEKLE (HOLD) | Önerilen Stake: %0.00
+
+[+] Analiz ediliyor: Platinum (PL=F)
+  - Hurst Exponent : 1.1342
+  - Betalar        : DXY=-2.2242, TIPS=-1.2325, SPY=1.0969
+  - En İyi Horizon : D+5 (Hata Delta: 3.41%)
+  - Karar          : BEKLE (HOLD) | Önerilen Stake: %0.00
+
+[+] Analiz ediliyor: Palladium (PA=F)
+  - Hurst Exponent : 1.1977
+  - Betalar        : DXY=-1.5921, TIPS=-0.7346, SPY=1.0768
+  - En İyi Horizon : D+5 (Hata Delta: 4.70%)
+  - Karar          : BEKLE (HOLD) | Önerilen Stake: %0.00
+
+[+] Emtia öngörü ve backtest verileri başarıyla yerel JSON'a yazıldı: B:\Hariseldon\dashboards\commodity_history.json
+[+] Ortalama Portföy Sharpe Rasyosu (1.5 Yıl): 0.7244
+==========================================================================================
+[3.8/4] T2SAIM Gunluk Portfoy Olusturuluyor... 
+C:\Users\tarka\AppData\Local\Programs\Python\Python311\python.exe: can't open file 'B:\\T2SAIM_James_Projects\\00_Success\\t2saim_daily_portfolio_generator.py': [Errno 2] No such file or directory
+HATA: Portfoy olusturma basarisiz 
+[3.9/4] Dunya Kupasi 2026 Simulasyonu Olusturuluyor... 
+[+] Starting World Cup 2026 Simulations...
+ - Simulating Model 1 (Static/FIFA Rank)...
+ - Simulating Model 2 (Seldon/Amnesia)...
+[+] Simulation complete! Results saved to: B:\Hariseldon\dashboards\world_cup_sim_results.json
+[4/4] GitHub push... 
+[main 5c6f91f] data: daily update with new models Sun 06/28/2026
+ 3 files changed, 2863 insertions(+), 2863 deletions(-)
+To https://github.com/tarco-forensics/Hariseldon.git
+   ae15cf9..5c6f91f  main -> main
+BASARILI: Guncelleme tamamlandi 
+Bitis:  8:15:49.64 
+ 
+================================================ 
+Tue 06/30/2026  8:00:42.26 — T2SAIM Gunluk Guncelleme 
+================================================ 
+[1/3] USDTRY verisi cekiliyor... 
+B:\Hariseldon\fetch_latest_usdtry.py:28: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  o = float(row["Open"])
+B:\Hariseldon\fetch_latest_usdtry.py:29: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  h = float(row["High"])
+B:\Hariseldon\fetch_latest_usdtry.py:30: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  l = float(row["Low"])
+B:\Hariseldon\fetch_latest_usdtry.py:31: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  c = float(row["Close"])
+Son mevcut veri: 2026-06-28
+Cekiliyor: 2026-06-29 -> 2026-07-01
+Eklendi: 2 yeni gun
+  2026-06-29: 46.6162
+  2026-06-30: 46.6306
+[2/4] Kriz indeksi hesaplaniyor... 
+OK: 701 gunluk veri uretildi -> B:\Hariseldon\crisis_data.json
+   Dun (2026-06-29): CI=0.4011, SRI=0.4026, Alarm=0
+   Bellek: 1.988 | L6: 0
+[3/4] Canli piyasa verileri cekiliyor... 
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+T2SAIM Market Data Generator — 2026-06-30 08:03
+  Cekiliyor: BIST-100 (XU100.IS)...
+    OK: 2026-06-29 close=14183.2 (-0.64%)
+  Cekiliyor: S&P 500 (^GSPC)...
+    OK: 2026-06-29 close=7440.43 (+1.18%)
+  Cekiliyor: FTSE 100 (^FTSE)...
+    OK: 2026-06-29 close=10484.2 (-0.23%)
+  Cekiliyor: Euro Stoxx 50 (^STOXX50E)...
+    OK: 2026-06-29 close=6231.63 (+0.16%)
+  Cekiliyor: Nikkei 225 (^N225)...
+    OK: 2026-06-30 close=70568.24 (+1.58%)
+  Cekiliyor: Hang Seng (^HSI)...
+    OK: 2026-06-30 close=22752.96 (-1.19%)
+  Cekiliyor: Kripto (BTC) (BTC-USD)...
+    OK: 2026-06-30 close=59389.89 (-0.24%)
+  Cekiliyor: Değerli Metaller (GC=F)...
+    OK: 2026-06-30 close=4002.1 (-0.50%)
+
+OK: 8 piyasa -> B:\Hariseldon\market_data.json
+   Portfoy: $155,730 | Kar: $75,730 | Canli: 8/8
+[3.5/4] C5 Emtia Motoru kosturuluyor... 
+[                       0%                       ][                       0%                       ][                       0%                       ][**********************50%                       ]  4 of 8 completed[**********************62%*****                  ]  5 of 8 completed[**********************75%***********            ]  6 of 8 completed[**********************88%*****************      ]  7 of 8 completed[*********************100%***********************]  8 of 8 completed
+[                       0%                       ][*******************   40%                       ]  2 of 5 completed[**********************60%****                   ]  3 of 5 completed[**********************80%*************          ]  4 of 5 completed[*********************100%***********************]  5 of 5 completed
+==========================================================================================
+T2SAIM MULTI-COMMODITY BTF ENGINE (C5 ENGINE)
+==========================================================================================
+[CONFIG LOADED] lookback_days=250, stop_loss_pct=5.50%, hurst_th=0.600, lambda_decay=0.15
+[+] yfinance ile 30 yıllık emtia ve makro verileri çekiliyor (1996 - 2026)...
+[+] Veriler hizalanıyor ve temizleniyor...
+[+] Alizanan toplam işgünü sayısı (30 yıllık): 4284
+
+[+] Analiz ediliyor: Gold (GC=F)
+  - Hurst Exponent : 1.1768
+  - Betalar        : DXY=-1.3759, TIPS=-0.3430, SPY=0.4320
+  - En İyi Horizon : D+5 (Hata Delta: 1.81%)
+  - Karar          : BEKLE (HOLD) | Önerilen Stake: %0.00
+
+[+] Analiz ediliyor: Silver (SI=F)
+  - Hurst Exponent : 1.0906
+  - Betalar        : DXY=-3.4352, TIPS=-1.6596, SPY=1.1078
+  - En İyi Horizon : D+5 (Hata Delta: 3.75%)
+  - Karar          : BEKLE (HOLD) | Önerilen Stake: %0.00
+
+[+] Analiz ediliyor: Copper (HG=F)
+  - Hurst Exponent : 1.0597
+  - Betalar        : DXY=-0.9798, TIPS=-0.1813, SPY=0.8969
+  - En İyi Horizon : D+5 (Hata Delta: 2.55%)
+  - Karar          : BEKLE (HOLD) | Önerilen Stake: %0.00
+
+[+] Analiz ediliyor: Platinum (PL=F)
+  - Hurst Exponent : 1.3307
+  - Betalar        : DXY=-2.2143, TIPS=-1.1440, SPY=0.9632
+  - En İyi Horizon : D+5 (Hata Delta: 3.41%)
+  - Karar          : BEKLE (HOLD) | Önerilen Stake: %0.00
+
+[+] Analiz ediliyor: Palladium (PA=F)
+  - Hurst Exponent : 1.3003
+  - Betalar        : DXY=-1.6251, TIPS=-0.5668, SPY=0.9948
+  - En İyi Horizon : D+5 (Hata Delta: 4.68%)
+  - Karar          : BEKLE (HOLD) | Önerilen Stake: %0.00
+
+[+] Emtia öngörü ve backtest verileri başarıyla yerel JSON'a yazıldı: B:\Hariseldon\dashboards\commodity_history.json
+[+] Ortalama Portföy Sharpe Rasyosu (1.5 Yıl): 0.7424
+==========================================================================================
+[3.8/4] T2SAIM Gunluk Portfoy Olusturuluyor... 
+C:\Users\tarka\AppData\Local\Programs\Python\Python311\python.exe: can't open file 'B:\\T2SAIM_James_Projects\\00_Success\\t2saim_daily_portfolio_generator.py': [Errno 2] No such file or directory
+HATA: Portfoy olusturma basarisiz 
+[3.9/4] Dunya Kupasi 2026 Simulasyonu Olusturuluyor... 
+[+] Starting World Cup 2026 Simulations...
+ - Simulating Model 1 (Static/FIFA Rank)...
+ - Simulating Model 2 (Seldon/Amnesia)...
+[+] Simulation complete! Results saved to: B:\Hariseldon\dashboards\world_cup_sim_results.json
+[4/4] GitHub push... 
+[main 8ea7eff] data: daily update with new models Tue 06/30/2026
+ 3 files changed, 2941 insertions(+), 2941 deletions(-)
+To https://github.com/tarco-forensics/Hariseldon.git
+   5c6f91f..8ea7eff  main -> main
+BASARILI: Guncelleme tamamlandi 
+Bitis:  8:14:19.47 
+ 
+================================================ 
+Wed 07/01/2026  8:00:08.27 — T2SAIM Gunluk Guncelleme 
+================================================ 
+[1/3] USDTRY verisi cekiliyor... 
+Son mevcut veri: 2026-06-30
+yfinance yuklu degil � pip install yfinance
+HATA: USDTRY verisi cekme basarisiz 
+Bitis:  8:00:18.34 
+ 
+================================================ 
+Per 02.07.2026  8:00:03,12 — T2SAIM Gunluk Guncelleme 
+================================================ 
+[1/3] USDTRY verisi cekiliyor... 
+B:\Hariseldon\fetch_latest_usdtry.py:28: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  o = float(row["Open"])
+B:\Hariseldon\fetch_latest_usdtry.py:29: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  h = float(row["High"])
+B:\Hariseldon\fetch_latest_usdtry.py:30: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  l = float(row["Low"])
+B:\Hariseldon\fetch_latest_usdtry.py:31: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  c = float(row["Close"])
+Son mevcut veri: 2026-06-30
+Cekiliyor: 2026-07-01 -> 2026-07-03
+Eklendi: 2 yeni gun
+  2026-07-01: 46.6547
+  2026-07-02: 46.6731
+[2/4] Kriz indeksi hesaplaniyor... 
+OK: 701 gunluk veri uretildi -> B:\Hariseldon\crisis_data.json
+   Dun (2026-07-01): CI=0.4122, SRI=0.4202, Alarm=0
+   Bellek: 1.968 | L6: 0
+[3/4] Canli piyasa verileri cekiliyor... 
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+B:\Hariseldon\generate_market_data.py:52: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  prev  = float(closes.iloc[-2])
+B:\Hariseldon\generate_market_data.py:53: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  last  = float(closes.iloc[-1])
+T2SAIM Market Data Generator — 2026-07-02 08:00
+  Cekiliyor: BIST-100 (XU100.IS)...
+    OK: 2026-07-01 close=14350.6 (+1.62%)
+  Cekiliyor: S&P 500 (^GSPC)...
+    OK: 2026-07-01 close=7483.23 (-0.22%)
+  Cekiliyor: FTSE 100 (^FTSE)...
+    OK: 2026-07-01 close=10478.3 (-0.18%)
+  Cekiliyor: Euro Stoxx 50 (^STOXX50E)...
+    OK: 2026-07-01 close=6282.5 (-0.72%)
+  Cekiliyor: Nikkei 225 (^N225)...
+    OK: 2026-07-02 close=69123.39 (-1.92%)
+  Cekiliyor: Hang Seng (^HSI)...
+    OK: 2026-07-02 close=23154.41 (+1.19%)
+  Cekiliyor: Kripto (BTC) (BTC-USD)...
+    OK: 2026-07-02 close=60698.08 (+3.65%)
+  Cekiliyor: Değerli Metaller (GC=F)...
+    OK: 2026-07-02 close=4074.4 (+0.15%)
+
+OK: 8 piyasa -> B:\Hariseldon\market_data.json
+   Portfoy: $155,730 | Kar: $75,730 | Canli: 8/8
+[3.5/4] C5 Emtia Motoru kosturuluyor... 
+[                       0%                       ][************          25%                       ]  2 of 8 completed[************          25%                       ]  2 of 8 completed[**********************50%                       ]  4 of 8 completed[**********************62%*****                  ]  5 of 8 completed[**********************75%***********            ]  6 of 8 completed[**********************88%*****************      ]  7 of 8 completed[*********************100%***********************]  8 of 8 completed
+[                       0%                       ][*******************   40%                       ]  2 of 5 completed[**********************60%****                   ]  3 of 5 completed[**********************60%****                   ]  3 of 5 completed[*********************100%***********************]  5 of 5 completed
+==========================================================================================
+T2SAIM MULTI-COMMODITY BTF ENGINE (C5 ENGINE)
+==========================================================================================
+[CONFIG LOADED] lookback_days=250, stop_loss_pct=5.50%, hurst_th=0.600, lambda_decay=0.15
+[+] yfinance ile 30 yıllık emtia ve makro verileri çekiliyor (1996 - 2026)...
+[+] Veriler hizalanıyor ve temizleniyor...
+[+] Alizanan toplam işgünü sayısı (30 yıllık): 4286
+
+[+] Analiz ediliyor: Gold (GC=F)
+  - Hurst Exponent : 1.4095
+  - Betalar        : DXY=-1.3541, TIPS=-0.3546, SPY=0.4316
+  - En İyi Horizon : D+5 (Hata Delta: 1.81%)
+  - Karar          : BEKLE (HOLD) | Önerilen Stake: %0.00
+
+[+] Analiz ediliyor: Silver (SI=F)
+  - Hurst Exponent : 1.0903
+  - Betalar        : DXY=-3.4071, TIPS=-1.8116, SPY=1.1329
+  - En İyi Horizon : D+5 (Hata Delta: 3.75%)
+  - Karar          : BEKLE (HOLD) | Önerilen Stake: %0.00
+
+[+] Analiz ediliyor: Copper (HG=F)
+  - Hurst Exponent : 1.1144
+  - Betalar        : DXY=-0.9877, TIPS=-0.2410, SPY=0.9091
+  - En İyi Horizon : D+5 (Hata Delta: 2.55%)
+  - Karar          : BEKLE (HOLD) | Önerilen Stake: %0.00
+
+[+] Analiz ediliyor: Platinum (PL=F)
+  - Hurst Exponent : 1.6938
+  - Betalar        : DXY=-2.1724, TIPS=-0.9760, SPY=0.9233
+  - En İyi Horizon : D+5 (Hata Delta: 3.41%)
+  - Karar          : BEKLE (HOLD) | Önerilen Stake: %0.00
+
+[+] Analiz ediliyor: Palladium (PA=F)
+  - Hurst Exponent : 1.3510
+  - Betalar        : DXY=-1.6033, TIPS=-0.4415, SPY=0.9660
+  - En İyi Horizon : D+5 (Hata Delta: 4.66%)
+  - Karar          : BEKLE (HOLD) | Önerilen Stake: %0.00
+
+[+] Emtia öngörü ve backtest verileri başarıyla yerel JSON'a yazıldı: B:\Hariseldon\dashboards\commodity_history.json
+[+] Ortalama Portföy Sharpe Rasyosu (1.5 Yıl): 0.7425
+==========================================================================================
+[3.8/4] T2SAIM Gunluk Portfoy Olusturuluyor... 
+C:\Users\tarka\AppData\Local\Programs\Python\Python311\python.exe: can't open file 'B:\\T2SAIM_James_Projects\\00_Success\\t2saim_daily_portfolio_generator.py': [Errno 2] No such file or directory
+HATA: Portfoy olusturma basarisiz 
+[3.9/4] Dunya Kupasi 2026 Simulasyonu Olusturuluyor... 
+[+] Starting World Cup 2026 Simulations...
+ - Simulating Model 1 (Static/FIFA Rank)...
+ - Simulating Model 2 (Seldon/Amnesia)...
+[+] Simulation complete! Results saved to: B:\Hariseldon\dashboards\world_cup_sim_results.json
+[4/4] GitHub push... 
+[main e9e5aad] data: daily update with new models Per 02.07.2026
+ 3 files changed, 2311 insertions(+), 2311 deletions(-)
+To https://github.com/tarco-forensics/Hariseldon.git
+   8ea7eff..e9e5aad  main -> main
+BASARILI: Guncelleme tamamlandi 
+Bitis:  8:00:31,33 
+ 
+================================================ 
+Cum 03.07.2026  8:00:12,41 — T2SAIM Gunluk Guncelleme 
+================================================ 
+[1/3] USDTRY verisi cekiliyor... 
+Son mevcut veri: 2026-07-02
+Cekiliyor: 2026-07-03 -> 2026-07-04
+Hata: module 'yfinance' has no attribute 'download'
+[2/4] Kriz indeksi hesaplaniyor... 
+OK: 701 gunluk veri uretildi -> B:\Hariseldon\crisis_data.json
+   Dun (2026-07-02): CI=0.4043, SRI=0.4305, Alarm=0
+   Bellek: 1.716 | L6: 0
+[3/4] Canli piyasa verileri cekiliyor... 
+T2SAIM Market Data Generator — 2026-07-03 08:00
+  Cekiliyor: BIST-100 (XU100.IS)...
+  HATA XU100.IS: module 'yfinance' has no attribute 'download'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: S&P 500 (^GSPC)...
+  HATA ^GSPC: module 'yfinance' has no attribute 'download'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: FTSE 100 (^FTSE)...
+  HATA ^FTSE: module 'yfinance' has no attribute 'download'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: Euro Stoxx 50 (^STOXX50E)...
+  HATA ^STOXX50E: module 'yfinance' has no attribute 'download'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: Nikkei 225 (^N225)...
+  HATA ^N225: module 'yfinance' has no attribute 'download'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: Hang Seng (^HSI)...
+  HATA ^HSI: module 'yfinance' has no attribute 'download'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: Kripto (BTC) (BTC-USD)...
+  HATA BTC-USD: module 'yfinance' has no attribute 'download'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: Değerli Metaller (GC=F)...
+  HATA GC=F: module 'yfinance' has no attribute 'download'
+    Veri alinamadi, backtest degerleri kullaniliyor
+
+OK: 8 piyasa -> B:\Hariseldon\market_data.json
+   Portfoy: $155,730 | Kar: $75,730 | Canli: 0/8
+[3.5/4] C5 Emtia Motoru kosturuluyor... 
+Traceback (most recent call last):
+  File "B:\T2SAIM_Spock_Hermes\00_Success\btf_run_commodity_engine.py", line 16, in <module>
+    import pandas as pd
+ModuleNotFoundError: No module named 'pandas'
+UYARI: C5 Emtia Motoru calismasi basarisiz 
+[3.8/4] T2SAIM Gunluk Portfoy Olusturuluyor... 
+C:\Users\tarka\AppData\Local\Programs\Python\Python311\python.exe: can't open file 'B:\\T2SAIM_James_Projects\\00_Success\\t2saim_daily_portfolio_generator.py': [Errno 2] No such file or directory
+HATA: Portfoy olusturma basarisiz 
+[3.9/4] Dunya Kupasi 2026 Simulasyonu Olusturuluyor... 
+[+] Starting World Cup 2026 Simulations...
+ - Simulating Model 1 (Static/FIFA Rank)...
+ - Simulating Model 2 (Seldon/Amnesia)...
+[+] Simulation complete! Results saved to: B:\Hariseldon\dashboards\world_cup_sim_results.json
+[4/4] GitHub push... 
+[main 28e8f09] data: daily update with new models Cum 03.07.2026
+ 3 files changed, 2454 insertions(+), 2454 deletions(-)
+To https://github.com/tarco-forensics/Hariseldon.git
+   e9e5aad..28e8f09  main -> main
+BASARILI: Guncelleme tamamlandi 
+Bitis:  8:03:18,77 
+ 
+================================================ 
+Cmt 04.07.2026  8:00:03,46 — T2SAIM Gunluk Guncelleme 
+================================================ 
+[1/3] USDTRY verisi cekiliyor... 
+Son mevcut veri: 2026-07-02
+Cekiliyor: 2026-07-03 -> 2026-07-05
+Hata: module 'yfinance' has no attribute 'download'
+[2/4] Kriz indeksi hesaplaniyor... 
+OK: 701 gunluk veri uretildi -> B:\Hariseldon\crisis_data.json
+   Dun (2026-07-03): CI=0.3921, SRI=0.4138, Alarm=0
+   Bellek: 1.707 | L6: 0
+[3/4] Canli piyasa verileri cekiliyor... 
+T2SAIM Market Data Generator — 2026-07-04 08:00
+  Cekiliyor: BIST-100 (XU100.IS)...
+  HATA XU100.IS: module 'yfinance' has no attribute 'download'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: S&P 500 (^GSPC)...
+  HATA ^GSPC: module 'yfinance' has no attribute 'download'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: FTSE 100 (^FTSE)...
+  HATA ^FTSE: module 'yfinance' has no attribute 'download'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: Euro Stoxx 50 (^STOXX50E)...
+  HATA ^STOXX50E: module 'yfinance' has no attribute 'download'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: Nikkei 225 (^N225)...
+  HATA ^N225: module 'yfinance' has no attribute 'download'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: Hang Seng (^HSI)...
+  HATA ^HSI: module 'yfinance' has no attribute 'download'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: Kripto (BTC) (BTC-USD)...
+  HATA BTC-USD: module 'yfinance' has no attribute 'download'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: Değerli Metaller (GC=F)...
+  HATA GC=F: module 'yfinance' has no attribute 'download'
+    Veri alinamadi, backtest degerleri kullaniliyor
+
+OK: 8 piyasa -> B:\Hariseldon\market_data.json
+   Portfoy: $155,730 | Kar: $75,730 | Canli: 0/8
+[3.5/4] C5 Emtia Motoru kosturuluyor... 
+Traceback (most recent call last):
+  File "B:\T2SAIM_Spock_Hermes\00_Success\btf_run_commodity_engine.py", line 16, in <module>
+    import pandas as pd
+ModuleNotFoundError: No module named 'pandas'
+UYARI: C5 Emtia Motoru calismasi basarisiz 
+[3.8/4] T2SAIM Gunluk Portfoy Olusturuluyor... 
+C:\Users\tarka\AppData\Local\Programs\Python\Python311\python.exe: can't open file 'B:\\T2SAIM_James_Projects\\00_Success\\t2saim_daily_portfolio_generator.py': [Errno 2] No such file or directory
+HATA: Portfoy olusturma basarisiz 
+[3.9/4] Dunya Kupasi 2026 Simulasyonu Olusturuluyor... 
+[+] Starting World Cup 2026 Simulations...
+ - Simulating Model 1 (Static/FIFA Rank)...
+ - Simulating Model 2 (Seldon/Amnesia)...
+[+] Simulation complete! Results saved to: B:\Hariseldon\dashboards\world_cup_sim_results.json
+[4/4] GitHub push... 
+[main 029a98c] data: daily update with new models Cmt 04.07.2026
+ 3 files changed, 2071 insertions(+), 2071 deletions(-)
+To https://github.com/tarco-forensics/Hariseldon.git
+   28e8f09..029a98c  main -> main
+BASARILI: Guncelleme tamamlandi 
+Bitis:  8:00:19,23 
+ 
+================================================ 
+Paz 05.07.2026  8:00:11,71 — T2SAIM Gunluk Guncelleme 
+================================================ 
+[1/3] USDTRY verisi cekiliyor... 
+Son mevcut veri: 2026-07-02
+Cekiliyor: 2026-07-03 -> 2026-07-06
+Hata: module 'yfinance' has no attribute 'download'
+[2/4] Kriz indeksi hesaplaniyor... 
+OK: 701 gunluk veri uretildi -> B:\Hariseldon\crisis_data.json
+   Dun (2026-07-04): CI=0.3092, SRI=0.4256, Alarm=0
+   Bellek: 0.189 | L6: 0
+[3/4] Canli piyasa verileri cekiliyor... 
+T2SAIM Market Data Generator — 2026-07-05 08:01
+  Cekiliyor: BIST-100 (XU100.IS)...
+  HATA XU100.IS: module 'yfinance' has no attribute 'download'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: S&P 500 (^GSPC)...
+  HATA ^GSPC: module 'yfinance' has no attribute 'download'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: FTSE 100 (^FTSE)...
+  HATA ^FTSE: module 'yfinance' has no attribute 'download'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: Euro Stoxx 50 (^STOXX50E)...
+  HATA ^STOXX50E: module 'yfinance' has no attribute 'download'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: Nikkei 225 (^N225)...
+  HATA ^N225: module 'yfinance' has no attribute 'download'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: Hang Seng (^HSI)...
+  HATA ^HSI: module 'yfinance' has no attribute 'download'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: Kripto (BTC) (BTC-USD)...
+  HATA BTC-USD: module 'yfinance' has no attribute 'download'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: Değerli Metaller (GC=F)...
+  HATA GC=F: module 'yfinance' has no attribute 'download'
+    Veri alinamadi, backtest degerleri kullaniliyor
+
+OK: 8 piyasa -> B:\Hariseldon\market_data.json
+   Portfoy: $155,730 | Kar: $75,730 | Canli: 0/8
+[3.5/4] C5 Emtia Motoru kosturuluyor... 
+==========================================================================================
+T2SAIM MULTI-COMMODITY BTF ENGINE (C5 ENGINE)
+==========================================================================================
+[CONFIG LOADED] lookback_days=250, stop_loss_pct=5.50%, hurst_th=0.600, lambda_decay=0.15
+[+] yfinance ile 30 yıllık emtia ve makro verileri çekiliyor (1996 - 2026)...
+[-] Hata: Veri indirme başarısız oldu: module 'yfinance' has no attribute 'download'
+UYARI: C5 Emtia Motoru calismasi basarisiz 
+[3.8/4] T2SAIM Gunluk Portfoy Olusturuluyor... 
+C:\Users\tarka\AppData\Local\Programs\Python\Python311\python.exe: can't open file 'B:\\T2SAIM_James_Projects\\00_Success\\t2saim_daily_portfolio_generator.py': [Errno 2] No such file or directory
+HATA: Portfoy olusturma basarisiz 
+[3.9/4] Dunya Kupasi 2026 Simulasyonu Olusturuluyor... 
+[+] Starting World Cup 2026 Simulations...
+ - Simulating Model 1 (Static/FIFA Rank)...
+ - Simulating Model 2 (Seldon/Amnesia)...
+[+] Simulation complete! Results saved to: B:\Hariseldon\dashboards\world_cup_sim_results.json
+[4/4] GitHub push... 
+[main 286b428] data: daily update with new models Paz 05.07.2026
+ 3 files changed, 2840 insertions(+), 2840 deletions(-)
+To https://github.com/tarco-forensics/Hariseldon.git
+   029a98c..286b428  main -> main
+BASARILI: Guncelleme tamamlandi 
+Bitis:  8:05:16,69 
+ 
+================================================ 
+Cum 10.07.2026  8:00:15,71 — T2SAIM Gunluk Guncelleme 
+================================================ 
+[1/3] USDTRY verisi cekiliyor... 
+Son mevcut veri: 2026-07-02
+Cekiliyor: 2026-07-03 -> 2026-07-11
+Hata: module 'yfinance' has no attribute 'download'
+[2/4] Kriz indeksi hesaplaniyor... 
+OK: 701 gunluk veri uretildi -> B:\Hariseldon\crisis_data.json
+   Dun (2026-07-09): CI=0.3864, SRI=0.4511, Alarm=0
+   Bellek: 1.178 | L6: 0
+[3/4] Canli piyasa verileri cekiliyor... 
+T2SAIM Market Data Generator — 2026-07-10 08:01
+  Cekiliyor: BIST-100 (XU100.IS)...
+  HATA XU100.IS: module 'yfinance' has no attribute 'download'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: S&P 500 (^GSPC)...
+  HATA ^GSPC: module 'yfinance' has no attribute 'download'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: FTSE 100 (^FTSE)...
+  HATA ^FTSE: module 'yfinance' has no attribute 'download'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: Euro Stoxx 50 (^STOXX50E)...
+  HATA ^STOXX50E: module 'yfinance' has no attribute 'download'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: Nikkei 225 (^N225)...
+  HATA ^N225: module 'yfinance' has no attribute 'download'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: Hang Seng (^HSI)...
+  HATA ^HSI: module 'yfinance' has no attribute 'download'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: Kripto (BTC) (BTC-USD)...
+  HATA BTC-USD: module 'yfinance' has no attribute 'download'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: Değerli Metaller (GC=F)...
+  HATA GC=F: module 'yfinance' has no attribute 'download'
+    Veri alinamadi, backtest degerleri kullaniliyor
+
+OK: 8 piyasa -> B:\Hariseldon\market_data.json
+   Portfoy: $155,730 | Kar: $75,730 | Canli: 0/8
+[3.5/4] C5 Emtia Motoru kosturuluyor... 
+==========================================================================================
+T2SAIM MULTI-COMMODITY BTF ENGINE (C5 ENGINE)
+==========================================================================================
+[CONFIG LOADED] lookback_days=250, stop_loss_pct=5.50%, hurst_th=0.600, lambda_decay=0.15
+[+] yfinance ile 30 yıllık emtia ve makro verileri çekiliyor (1996 - 2026)...
+[-] Hata: Veri indirme başarısız oldu: module 'yfinance' has no attribute 'download'
+UYARI: C5 Emtia Motoru calismasi basarisiz 
+[3.8/4] T2SAIM Gunluk Portfoy Olusturuluyor... 
+C:\Users\tarka\AppData\Local\Programs\Python\Python311\python.exe: can't open file 'B:\\T2SAIM_James_Projects\\00_Success\\t2saim_daily_portfolio_generator.py': [Errno 2] No such file or directory
+HATA: Portfoy olusturma basarisiz 
+[3.9/4] Dunya Kupasi 2026 Simulasyonu Olusturuluyor... 
+[+] Starting World Cup 2026 Simulations...
+ - Simulating Model 1 (Static/FIFA Rank)...
+ - Simulating Model 2 (Seldon/Amnesia)...
+[+] Simulation complete! Results saved to: B:\Hariseldon\dashboards\world_cup_sim_results.json
+[4/4] GitHub push... 
+[main 842333e] data: daily update with new models Cum 10.07.2026
+ 3 files changed, 2977 insertions(+), 2977 deletions(-)
+To https://github.com/tarco-forensics/Hariseldon.git
+   286b428..842333e  main -> main
+BASARILI: Guncelleme tamamlandi 
+Bitis:  8:03:10,04 
+ 
+================================================ 
+Paz 12.07.2026  8:09:12,26 — T2SAIM Gunluk Guncelleme 
+================================================ 
+[1/3] USDTRY verisi cekiliyor... 
+Son mevcut veri: 2026-07-02
+Cekiliyor: 2026-07-03 -> 2026-07-13
+Hata: module 'yfinance' has no attribute 'download'
+[2/4] Kriz indeksi hesaplaniyor... 
+OK: 701 gunluk veri uretildi -> B:\Hariseldon\crisis_data.json
+   Dun (2026-07-11): CI=0.3146, SRI=0.4332, Alarm=0
+   Bellek: 0.188 | L6: 0
+[3/4] Canli piyasa verileri cekiliyor... 
+T2SAIM Market Data Generator — 2026-07-12 08:16
+  Cekiliyor: BIST-100 (XU100.IS)...
+  HATA XU100.IS: module 'yfinance' has no attribute 'download'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: S&P 500 (^GSPC)...
+  HATA ^GSPC: module 'yfinance' has no attribute 'download'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: FTSE 100 (^FTSE)...
+  HATA ^FTSE: module 'yfinance' has no attribute 'download'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: Euro Stoxx 50 (^STOXX50E)...
+  HATA ^STOXX50E: module 'yfinance' has no attribute 'download'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: Nikkei 225 (^N225)...
+  HATA ^N225: module 'yfinance' has no attribute 'download'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: Hang Seng (^HSI)...
+  HATA ^HSI: module 'yfinance' has no attribute 'download'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: Kripto (BTC) (BTC-USD)...
+  HATA BTC-USD: module 'yfinance' has no attribute 'download'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: Değerli Metaller (GC=F)...
+  HATA GC=F: module 'yfinance' has no attribute 'download'
+    Veri alinamadi, backtest degerleri kullaniliyor
+
+OK: 8 piyasa -> B:\Hariseldon\market_data.json
+   Portfoy: $155,730 | Kar: $75,730 | Canli: 0/8
+[3.5/4] C5 Emtia Motoru kosturuluyor... 
+==========================================================================================
+T2SAIM MULTI-COMMODITY BTF ENGINE (C5 ENGINE)
+==========================================================================================
+[CONFIG LOADED] lookback_days=250, stop_loss_pct=5.50%, hurst_th=0.600, lambda_decay=0.15
+[+] yfinance ile 30 yıllık emtia ve makro verileri çekiliyor (1996 - 2026)...
+[-] Hata: Veri indirme başarısız oldu: module 'yfinance' has no attribute 'download'
+UYARI: C5 Emtia Motoru calismasi basarisiz 
+[3.8/4] T2SAIM Gunluk Portfoy Olusturuluyor... 
+C:\Users\tarka\AppData\Local\Programs\Python\Python311\python.exe: can't open file 'B:\\T2SAIM_James_Projects\\00_Success\\t2saim_daily_portfolio_generator.py': [Errno 2] No such file or directory
+HATA: Portfoy olusturma basarisiz 
+[3.9/4] Dunya Kupasi 2026 Simulasyonu Olusturuluyor... 
+[+] Starting World Cup 2026 Simulations...
+ - Simulating Model 1 (Static/FIFA Rank)...
+ - Simulating Model 2 (Seldon/Amnesia)...
+[+] Simulation complete! Results saved to: B:\Hariseldon\dashboards\world_cup_sim_results.json
+[4/4] GitHub push... 
+[main ec6a5e1] data: daily update with new models Paz 12.07.2026
+ 3 files changed, 2943 insertions(+), 2943 deletions(-)
+To https://github.com/tarco-forensics/Hariseldon.git
+   842333e..ec6a5e1  main -> main
+BASARILI: Guncelleme tamamlandi 
+Bitis:  8:20:15,42 
+ 
+================================================ 
+Pzt 13.07.2026  8:00:23,91 — T2SAIM Gunluk Guncelleme 
+================================================ 
+[1/3] USDTRY verisi cekiliyor... 
+Son mevcut veri: 2026-07-02
+Cekiliyor: 2026-07-03 -> 2026-07-14
+Hata: module 'yfinance' has no attribute 'download'
+[2/4] Kriz indeksi hesaplaniyor... 
+OK: 701 gunluk veri uretildi -> B:\Hariseldon\crisis_data.json
+   Dun (2026-07-12): CI=0.3123, SRI=0.4306, Alarm=0
+   Bellek: 0.182 | L6: 0
+[3/4] Canli piyasa verileri cekiliyor... 
+T2SAIM Market Data Generator — 2026-07-13 08:01
+  Cekiliyor: BIST-100 (XU100.IS)...
+  HATA XU100.IS: module 'yfinance' has no attribute 'download'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: S&P 500 (^GSPC)...
+  HATA ^GSPC: module 'yfinance' has no attribute 'download'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: FTSE 100 (^FTSE)...
+  HATA ^FTSE: module 'yfinance' has no attribute 'download'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: Euro Stoxx 50 (^STOXX50E)...
+  HATA ^STOXX50E: module 'yfinance' has no attribute 'download'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: Nikkei 225 (^N225)...
+  HATA ^N225: module 'yfinance' has no attribute 'download'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: Hang Seng (^HSI)...
+  HATA ^HSI: module 'yfinance' has no attribute 'download'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: Kripto (BTC) (BTC-USD)...
+  HATA BTC-USD: module 'yfinance' has no attribute 'download'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: Değerli Metaller (GC=F)...
+  HATA GC=F: module 'yfinance' has no attribute 'download'
+    Veri alinamadi, backtest degerleri kullaniliyor
+
+OK: 8 piyasa -> B:\Hariseldon\market_data.json
+   Portfoy: $155,730 | Kar: $75,730 | Canli: 0/8
+[3.5/4] C5 Emtia Motoru kosturuluyor... 
+==========================================================================================
+T2SAIM MULTI-COMMODITY BTF ENGINE (C5 ENGINE)
+==========================================================================================
+[CONFIG LOADED] lookback_days=250, stop_loss_pct=5.50%, hurst_th=0.600, lambda_decay=0.15
+[+] yfinance ile 30 yıllık emtia ve makro verileri çekiliyor (1996 - 2026)...
+[-] Hata: Veri indirme başarısız oldu: module 'yfinance' has no attribute 'download'
+UYARI: C5 Emtia Motoru calismasi basarisiz 
+[3.8/4] T2SAIM Gunluk Portfoy Olusturuluyor... 
+C:\Users\tarka\AppData\Local\Programs\Python\Python311\python.exe: can't open file 'B:\\T2SAIM_James_Projects\\00_Success\\t2saim_daily_portfolio_generator.py': [Errno 2] No such file or directory
+HATA: Portfoy olusturma basarisiz 
+[3.9/4] Dunya Kupasi 2026 Simulasyonu Olusturuluyor... 
+[+] Starting World Cup 2026 Simulations...
+ - Simulating Model 1 (Static/FIFA Rank)...
+ - Simulating Model 2 (Seldon/Amnesia)...
+[+] Simulation complete! Results saved to: B:\Hariseldon\dashboards\world_cup_sim_results.json
+[4/4] GitHub push... 
+[main aabed07] data: daily update with new models Pzt 13.07.2026
+ 3 files changed, 2771 insertions(+), 2771 deletions(-)
+To https://github.com/tarco-forensics/Hariseldon.git
+   ec6a5e1..aabed07  main -> main
+BASARILI: Guncelleme tamamlandi 
+Bitis:  8:02:17,83 
+ 
+================================================ 
+�ar 15.07.2026  8:00:18,94 — T2SAIM Gunluk Guncelleme 
+================================================ 
+[1/3] USDTRY verisi cekiliyor... 
+Son mevcut veri: 2026-07-02
+yfinance yuklu degil — pip install yfinance
+HATA: USDTRY verisi cekme basarisiz 
+Bitis:  8:00:25,87 
+ 
+================================================ 
+Per 16.07.2026 17:26:50,58 - T2SAIM Gunluk Guncelleme 
+================================================ 
+[1/4] USDTRY verisi cekiliyor... 
+Son mevcut veri: 2026-07-02
+Cekiliyor: 2026-07-03 -> 2026-07-17
+Hata: float() argument must be a string or a real number, not 'Series'
+[2/4] Kriz indeksi hesaplaniyor... 
+OK: 701 gunluk veri uretildi -> B:\Hariseldon\crisis_data.json
+   Dun (2026-07-15): CI=0.4631, SRI=0.5237, Alarm=0
+   Bellek: 1.608 | L6: 1
+[3/4] Canli piyasa verileri cekiliyor... 
+T2SAIM Market Data Generator — 2026-07-16 17:27
+  Cekiliyor: BIST-100 (XU100.IS)...
+  HATA XU100.IS: float() argument must be a string or a real number, not 'Series'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: S&P 500 (^GSPC)...
+  HATA ^GSPC: float() argument must be a string or a real number, not 'Series'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: FTSE 100 (^FTSE)...
+  HATA ^FTSE: float() argument must be a string or a real number, not 'Series'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: Euro Stoxx 50 (^STOXX50E)...
+  HATA ^STOXX50E: float() argument must be a string or a real number, not 'Series'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: Nikkei 225 (^N225)...
+  HATA ^N225: float() argument must be a string or a real number, not 'Series'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: Hang Seng (^HSI)...
+  HATA ^HSI: float() argument must be a string or a real number, not 'Series'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: Kripto (BTC) (BTC-USD)...
+  HATA BTC-USD: float() argument must be a string or a real number, not 'Series'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: Değerli Metaller (GC=F)...
+  HATA GC=F: float() argument must be a string or a real number, not 'Series'
+    Veri alinamadi, backtest degerleri kullaniliyor
+
+OK: 8 piyasa -> B:\Hariseldon\market_data.json
+   Portfoy: $155,730 | Kar: $75,730 | Canli: 0/8
+[3.5/4] C5 Emtia Motoru kosturuluyor... 
+============================================================
+RUNNING AMNESIA SIMULATION FOR: US_5YIL
+============================================================
+[US_5YIL] Final Value: $17,085.65 (ROI: +70.86%)
+[US_5YIL] Benchmark:  $12,149.00 (ROI: +21.49%)
+[US_5YIL] Alpha:      +49.37%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: UK_5YIL
+============================================================
+[UK_5YIL] Final Value: $14,097.51 (ROI: +40.98%)
+[UK_5YIL] Benchmark:  $12,419.01 (ROI: +24.19%)
+[UK_5YIL] Alpha:      +16.79%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: EU_5YIL
+============================================================
+[EU_5YIL] Final Value: $11,899.46 (ROI: +18.99%)
+[EU_5YIL] Benchmark:  $11,754.56 (ROI: +17.55%)
+[EU_5YIL] Alpha:      +1.45%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: JP_5YIL
+============================================================
+[JP_5YIL] Final Value: $17,231.32 (ROI: +72.31%)
+[JP_5YIL] Benchmark:  $15,727.17 (ROI: +57.27%)
+[JP_5YIL] Alpha:      +15.04%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: HK_5YIL
+============================================================
+[HK_5YIL] Final Value: $13,744.77 (ROI: +37.45%)
+[HK_5YIL] Benchmark:  $13,464.99 (ROI: +34.65%)
+[HK_5YIL] Alpha:      +2.80%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: COIN_5YIL
+============================================================
+[COIN_5YIL] Final Value: $27,829.20 (ROI: +178.29%)
+[COIN_5YIL] Benchmark:  $22,279.53 (ROI: +122.80%)
+[COIN_5YIL] Alpha:      +55.50%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: EMTIA_5YIL
+============================================================
+[EMTIA_5YIL] Final Value: $13,485.91 (ROI: +34.86%)
+[EMTIA_5YIL] Benchmark:  $16,818.56 (ROI: +68.19%)
+[EMTIA_5YIL] Alpha:      -33.33%
+
+[GLOBAL MASTER REPORT GENERATED] -> B:\T2SAIM_NEXUS\000_Shadow\69_To_be_corrected\07-Sonuclar\GLOBAL_Amnesia_Max_Profit_Dashboard.html
+[3.8/4] T2SAIM Gunluk Portfoy Olusturuluyor... 
+==========================================================
+  T2SAIM & HERMES - WEB PORTFOLIO PAYLOAD GENERATOR
+==========================================================
+
+Piyasalar işleniyor...
+  - US (S&P 500) (Model: Model 4 (Optimized Hybrid))
+  - UK (FTSE 100) (Model: Model 3 (Advanced Hybrid))
+  - Europe (Stoxx 50) (Model: Model 4 (Optimized Hybrid))
+  - Japan (Nikkei 225) (Model: Model 1 (MFDFA))
+  - Hong Kong (HSI) (Model: Model 2 (TimesFM Hybrid))
+
+[BAŞARILI] Web paneli verisi oluşturuldu: B:\T2SAIM_NEXUS\000_Shadow\00_Success\t2saim_web_dashboard_data_V17.json
+==========================================================
+        1 file(s) copied.
+        1 file(s) copied.
+        1 file(s) copied.
+[3.9/4] Dunya Kupasi 2026 Simulasyonu Olusturuluyor... 
+[+] Starting World Cup 2026 Simulations...
+ - Simulating Model 1 (Static/FIFA Rank)...
+ - Simulating Model 2 (Seldon/Amnesia)...
+[+] Simulation complete! Results saved to: B:\Hariseldon\dashboards\world_cup_sim_results.json
+[4/4] GitHub push... 
+[main badb860] data: daily update with new models
+ 5 files changed, 2960 insertions(+), 2900 deletions(-)
+To https://github.com/tarco-forensics/Hariseldon.git
+   aabed07..badb860  main -> main
+Bitis: 17:37:42,02 

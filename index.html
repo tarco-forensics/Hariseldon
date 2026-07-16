@@ -1359,10 +1359,11 @@ function initForecastTable() {
         
         // Calculate dynamic drift based on ROI and daily change
         // We want stable, realistic projections
-        const dailyDrift = (m.daily_pct / 100) * 0.05 + (m.roi / 100 / 252) * 0.95;
+        const dailyPctSafe = m.daily_pct || 0;
+        const dailyDrift = (dailyPctSafe / 100) * 0.05 + (m.roi / 100 / 252) * 0.95;
         
         // Forward Forecasts
-        const currentPrice = m.close_last;
+        const currentPrice = m.close_last || m.portfolio || 10000;
         const p5 = currentPrice * (1 + 5 * dailyDrift);
         const p10 = currentPrice * (1 + 10 * dailyDrift);
         const p20 = currentPrice * (1 + 20 * dailyDrift);
