@@ -1,5 +1,5 @@
 {
-  "generation_time": "2026-06-19 08:00:25",
+  "generation_time": "2026-07-16 17:33:29",
   "total_markets": 5,
   "markets": {
     "us": {
@@ -15,7 +15,12 @@
         "regime": "bear",
         "autocorr": -0.0177,
         "n_available": 30,
-        "inflation": 0.045
+        "inflation": 0.045,
+        "A_load_fin": 0.293,
+        "PFC_control_fin": 0.302,
+        "H_herd": 0.15,
+        "theta_panic": 0.65,
+        "C_atrophy_finance": 0.11
       },
       "reasons": [
         "KALIBRE: James backtestinde Model 4 (Optimized Hybrid) kazandi (ROI=+186.15%)"
@@ -221,7 +226,12 @@
         "regime": "bull",
         "autocorr": -0.0217,
         "n_available": 20,
-        "inflation": 0.032
+        "inflation": 0.032,
+        "A_load_fin": 0.293,
+        "PFC_control_fin": 0.57,
+        "H_herd": 0.35,
+        "theta_panic": 0.65,
+        "C_atrophy_finance": 0.57
       },
       "reasons": [
         "KALIBRE: James backtestinde Model 3 (Advanced Hybrid) kazandi (ROI=+30.55%)"
@@ -283,7 +293,12 @@
         "regime": "bull",
         "autocorr": -0.0432,
         "n_available": 20,
-        "inflation": 0.038
+        "inflation": 0.038,
+        "A_load_fin": 0.293,
+        "PFC_control_fin": 0.57,
+        "H_herd": 0.35,
+        "theta_panic": 0.65,
+        "C_atrophy_finance": 0.57
       },
       "reasons": [
         "KALIBRE: James backtestinde Model 4 (Optimized Hybrid) kazandi (ROI=+26.04%)"
@@ -345,7 +360,12 @@
         "regime": "bull",
         "autocorr": -0.0681,
         "n_available": 20,
-        "inflation": 0.02
+        "inflation": 0.02,
+        "A_load_fin": 0.21,
+        "PFC_control_fin": 0.85,
+        "H_herd": 0.12,
+        "theta_panic": 0.7,
+        "C_atrophy_finance": 0.15
       },
       "reasons": [
         "KALIBRE: James backtestinde Model 1 (MFDFA) kazandi (ROI=+93.71%)"
@@ -455,7 +475,12 @@
         "regime": "bear",
         "autocorr": 0.0211,
         "n_available": 20,
-        "inflation": 0.022
+        "inflation": 0.022,
+        "A_load_fin": 0.35,
+        "PFC_control_fin": 0.5,
+        "H_herd": 0.4,
+        "theta_panic": 0.65,
+        "C_atrophy_finance": 0.3
       },
       "reasons": [
         "KALIBRE: James backtestinde Model 2 (TimesFM Hybrid) kazandi (ROI=+46.11%)"

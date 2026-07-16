@@ -34,7 +34,12 @@
       "regime": "bear",
       "autocorr": -0.0177,
       "n_available": 30,
-      "inflation": 0.045
+      "inflation": 0.045,
+      "A_load_fin": 0.293,
+      "PFC_control_fin": 0.302,
+      "H_herd": 0.15,
+      "theta_panic": 0.65,
+      "C_atrophy_finance": 0.11
     }
   },
   "uk": {
@@ -60,7 +65,12 @@
       "regime": "bull",
       "autocorr": -0.0217,
       "n_available": 20,
-      "inflation": 0.032
+      "inflation": 0.032,
+      "A_load_fin": 0.293,
+      "PFC_control_fin": 0.57,
+      "H_herd": 0.35,
+      "theta_panic": 0.65,
+      "C_atrophy_finance": 0.57
     }
   },
   "eu": {
@@ -86,7 +96,12 @@
       "regime": "bull",
       "autocorr": -0.0432,
       "n_available": 20,
-      "inflation": 0.038
+      "inflation": 0.038,
+      "A_load_fin": 0.293,
+      "PFC_control_fin": 0.57,
+      "H_herd": 0.35,
+      "theta_panic": 0.65,
+      "C_atrophy_finance": 0.57
     }
   },
   "jp": {
@@ -112,7 +127,12 @@
       "regime": "bull",
       "autocorr": -0.0681,
       "n_available": 20,
-      "inflation": 0.02
+      "inflation": 0.02,
+      "A_load_fin": 0.21,
+      "PFC_control_fin": 0.85,
+      "H_herd": 0.12,
+      "theta_panic": 0.7,
+      "C_atrophy_finance": 0.15
     }
   },
   "hk": {
@@ -140,7 +160,12 @@
       "regime": "bear",
       "autocorr": 0.0211,
       "n_available": 20,
-      "inflation": 0.022
+      "inflation": 0.022,
+      "A_load_fin": 0.35,
+      "PFC_control_fin": 0.5,
+      "H_herd": 0.4,
+      "theta_panic": 0.65,
+      "C_atrophy_finance": 0.3
     }
   },
   "crypto": {
@@ -149,10 +174,10 @@
     "n_stocks": 3,
     "redeploy_days": 3,
     "selection_source": "empirical",
-    "expected_roi": 280.68,
+    "expected_roi": 297.02,
     "selected_stocks": [],
     "reasons": [
-      "KALIBRE: James backtestinde Model 3 (Advanced Hybrid) kazandi (ROI=+280.68%)"
+      "KALIBRE: James backtestinde Model 3 (Advanced Hybrid) kazandi (ROI=+297.02%)"
     ],
     "characteristics": {
       "hurst": 0.6012,
@@ -162,7 +187,12 @@
       "regime": "bear",
       "autocorr": -0.0184,
       "n_available": 24,
-      "inflation": 0.045
+      "inflation": 0.045,
+      "A_load_fin": 0.289,
+      "PFC_control_fin": 0.11,
+      "H_herd": 0.9,
+      "theta_panic": 0.65,
+      "C_atrophy_finance": 0.9
     }
   },
   "commodity": {
@@ -206,7 +236,12 @@
       "regime": "bear",
       "autocorr": 0.0355,
       "n_available": 90,
-      "inflation": 0.503
+      "inflation": 0.503,
+      "A_load_fin": 0.585,
+      "PFC_control_fin": 0.15,
+      "H_herd": 0.85,
+      "theta_panic": 0.55,
+      "C_atrophy_finance": 0.78
     }
   },
   "gold": {
