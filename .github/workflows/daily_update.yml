@@ -1,0 +1,33 @@
+name: 🚀 T2SAIM & Hariseldon Autonomous Cloud Daily Update
+
+on:
+  schedule:
+    - cron: '0 6 * * *' # Every day at 06:00 UTC (09:00 TR Time)
+    - cron: '0 15 * * *' # Every day at 15:00 UTC (18:00 TR Time)
+  workflow_dispatch: # Allows manual trigger from GitHub UI
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: 🐍 Setup Python 3.12
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      - name: ⚙️ Run T2SAIM Market & Crypto Generators
+        run: |
+          python generate_market_data.py
+          python generate_crypto_market_data.py
+          python generate_crisis_data.py
+          python world_cup_2026_simulator.py
+
+      - name: 📤 Commit & Push Updated Data
+        run: |
+          git config --global user.name "T2SAIM Cloud Bot"
+          git config --global user.email "bot@t2saim.org"
+          git add crisis_data.json market_data.json t2saim_stock_selection_results.json tarkan_index.html index.html t2saim_crypto_dashboard.html dashboards/world_cup_sim_results.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "auto: daily cloud update [skip ci]" && git push)
