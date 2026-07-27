@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated": "2026-07-28 01:51",
+    "generated": "2026-07-28 02:03",
     "yesterday": "2026-07-27",
     "total_portfolio": 155730.0,
     "total_profit": 75730.0,
@@ -141,10 +141,10 @@
       "portfolio": 17248.0,
       "profit": 7248.0,
       "live_ok": true,
-      "close_prev": 10639.2,
-      "close_last": 10781.75,
-      "daily_pct": 1.34,
-      "last_date": "2026-07-27",
+      "close_prev": 10717.0,
+      "close_last": 10639.2,
+      "daily_pct": -0.73,
+      "last_date": "2026-07-23",
       "history": [
         [
           "2026-07-14",
@@ -177,10 +177,6 @@
         [
           "2026-07-23",
           10639.2001953125
-        ],
-        [
-          "2026-07-27",
-          10781.75
         ]
       ]
     },
@@ -370,8 +366,8 @@
       "profit": 29702.0,
       "live_ok": true,
       "close_prev": 65340.3,
-      "close_last": 63947.85,
-      "daily_pct": -2.13,
+      "close_last": 63589.5,
+      "daily_pct": -2.68,
       "last_date": "2026-07-27",
       "history": [
         [
@@ -412,7 +408,7 @@
         ],
         [
           "2026-07-27",
-          63947.8515625
+          63589.5
         ]
       ]
     },
@@ -434,8 +430,8 @@
       "profit": 8587.0,
       "live_ok": true,
       "close_prev": 4067.6,
-      "close_last": 4075.9,
-      "daily_pct": 0.2,
+      "close_last": 4075.2,
+      "daily_pct": 0.19,
       "last_date": "2026-07-27",
       "history": [
         [
@@ -468,7 +464,7 @@
         ],
         [
           "2026-07-27",
-          4075.89990234375
+          4075.199951171875
         ]
       ]
     }
