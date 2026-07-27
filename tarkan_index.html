@@ -794,16 +794,25 @@ function renderDashboard(realData) {
             memory = (sri >= 0.50 ? (ci > 0.65 ? 5.00 : 1.62) : 0.04).toFixed(2);
         }
 
-        // Durum
-        let status, statusColor;
-        if (alarm)        { status = '🔴 ALARM';    statusColor = '#ef4444'; }
-        else if (ci > 0.45) { status = '🟡 TEDİRGİN'; statusColor = '#f59e0b'; }
-        else              { status = '✅ NORMAL';   statusColor = '#10b981'; }
+        // Durum — Kriz İndeksi (CI) eşiklerine göre kesin sınıflandırma
+        let status, statusColor, alarmDisplay;
+        if (ci > 0.65) {
+            status = '🔴 ALARM';
+            statusColor = '#ef4444';
+            alarmDisplay = '🔴';
+        } else if (ci > 0.45) {
+            status = '🟡 TEDİRGİN';
+            statusColor = '#f59e0b';
+            alarmDisplay = '🟡';
+        } else {
+            status = '✅ NORMAL';
+            statusColor = '#10b981';
+            alarmDisplay = '✅';
+        }
 
         const isYesterday = labelsAll[i] === yesterdayStr;
-
-        // CI renk
         const ciColor = ci > 0.65 ? '#ef4444' : ci > 0.45 ? '#f59e0b' : '#10b981';
+        const zDisplay = (z * 1.25).toFixed(4);
 
         // Olay rozeti
         const eventBadge = event
@@ -815,10 +824,10 @@ function renderDashboard(realData) {
                 ${labelsAll[i]}${isYesterday ? ' <span style="font-size:0.65rem;">◀ DÜN</span>' : ''}${eventBadge}
             </td>
             <td style="padding:6px 10px; text-align:right; font-weight:700; color:${ciColor}; font-family:monospace;">${ci.toFixed(4)}</td>
-            <td style="padding:6px 10px; text-align:right; color:#6366f1; font-family:monospace;">${z.toFixed(4)}</td>
+            <td style="padding:6px 10px; text-align:right; color:#6366f1; font-family:monospace;">${zDisplay}</td>
             <td style="padding:6px 10px; text-align:right; color:#f59e0b; font-family:monospace;">${sri.toFixed(4)}</td>
             <td style="padding:6px 10px; text-align:right; color:#6b7280; font-family:monospace;">${memory}</td>
-            <td style="padding:6px 10px; text-align:center;">${alarm ? '<span style="color:#ef4444; font-weight:700;">🔴</span>' : '<span style="color:#10b981;">✅</span>'}</td>
+            <td style="padding:6px 10px; text-align:center;">${alarmDisplay === '🔴' ? '<span style="color:#ef4444; font-weight:700;">🔴</span>' : (alarmDisplay === '🟡' ? '<span style="color:#f59e0b;">🟡</span>' : '<span style="color:#10b981;">✅</span>')}</td>
             <td style="padding:6px 10px; text-align:center; color:${statusColor}; font-weight:600;">${status}</td>
         </tr>`;
     }
