@@ -633,23 +633,31 @@ function renderDashboard(realData) {
         </td>
     </tr>`;
 
-    // Gerçek JSON'dan gelen satır dizisi (varsa)
+    // Gerçek JSON'dan gelen satır dizisi (varsa) ve Tarih Haritası
     const realSeries = realData && realData.series ? realData.series : null;
+    const realSeriesMap = {};
+    if (realSeries) {
+        for (const row of realSeries) {
+            realSeriesMap[row.date] = row;
+        }
+    }
 
     const tableStart = Math.max(0, pivotIdx - 29);
     for (let i = pivotIdx; i >= tableStart; i--) {
         const ci  = crisisAll[i];
         const sri = sriAll[i];
         const z   = efmiAll[i];   // z-norm (0-1)
+        const dateStr = labelsAll[i];
 
-        // Gerçek veriden memory ve alarm — yoksa fallback
+        // Gerçek veriden memory ve alarm — tarih haritasından öncelikli eşleştirme
         let memory = '-';
         let alarm  = 0;
         let event  = '';
-        if (realSeries && realSeries[i]) {
-            memory = realSeries[i].memory != null ? realSeries[i].memory.toFixed(2) : '-';
-            alarm  = realSeries[i].alarm  || 0;
-            event  = realSeries[i].event  || '';
+        const realRow = realSeriesMap[dateStr] || (realSeries ? realSeries[i] : null);
+        if (realRow) {
+            memory = (realRow.memory != null && !isNaN(realRow.memory)) ? Number(realRow.memory).toFixed(2) : '-';
+            alarm  = realRow.alarm  || 0;
+            event  = realRow.event  || '';
         }
 
         // Durum
