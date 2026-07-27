@@ -16,3 +16,4 @@ dashboards/commodity_dashboard.html
 dashboards/commodity_history.json
 t2saim_commodity_optimizer.py
 btf_run_commodity_engine.py
+autoresearch
