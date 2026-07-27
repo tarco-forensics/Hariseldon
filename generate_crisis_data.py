@@ -237,6 +237,22 @@ def compute_crisis_index():
     with open(OUT_FILE, "w", encoding="utf-8") as f:
         json.dump(result, f, ensure_ascii=False, indent=2)
 
+    # Embed directly into tarkan_index.html for 100% fail-safe offline/local rendering
+    html_path = os.path.join(os.path.dirname(OUT_FILE), "tarkan_index.html")
+    if os.path.exists(html_path):
+        with open(html_path, "r", encoding="utf-8") as f:
+            html_content = f.read()
+        json_str = json.dumps(result, ensure_ascii=False)
+        embedded_stmt = f"window.EMBEDDED_CRISIS_DATA = {json_str};"
+        if "window.EMBEDDED_CRISIS_DATA =" in html_content:
+            import re
+            html_content = re.sub(r"window\.EMBEDDED_CRISIS_DATA\s*=\s*\{.*?\};", embedded_stmt, html_content)
+        else:
+            html_content = html_content.replace("<script>", "<script>\n" + embedded_stmt, 1)
+        with open(html_path, "w", encoding="utf-8") as f:
+            f.write(html_content)
+        print(f"✅ Embedded real crisis data into {html_path}")
+
     print(f"OK: {len(output)} gunluk veri uretildi -> {OUT_FILE}")
     print(f"   Dun ({yesterday}): CI={last['ci']}, SRI={last['sri']}, Alarm={last['alarm']}")
     print(f"   Bellek: {last['memory']} | L6: {summary['l6_active']}")

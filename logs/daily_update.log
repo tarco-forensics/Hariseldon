@@ -2088,3 +2088,1450 @@ Piyasalar işleniyor...
 To https://github.com/tarco-forensics/Hariseldon.git
    aabed07..badb860  main -> main
 Bitis: 17:37:42,02 
+ 
+================================================ 
+Cum 17.07.2026  8:00:18,71 - T2SAIM Gunluk Guncelleme 
+================================================ 
+[1/4] USDTRY verisi cekiliyor... 
+Son mevcut veri: 2026-07-02
+Cekiliyor: 2026-07-03 -> 2026-07-18
+Hata: float() argument must be a string or a real number, not 'Series'
+[2/4] Kriz indeksi hesaplaniyor... 
+OK: 701 gunluk veri uretildi -> B:\Hariseldon\crisis_data.json
+   Dun (2026-07-16): CI=0.4702, SRI=0.5346, Alarm=0
+   Bellek: 1.6 | L6: 1
+[3/4] Canli piyasa verileri cekiliyor... 
+T2SAIM Market Data Generator — 2026-07-17 08:03
+  Cekiliyor: BIST-100 (XU100.IS)...
+  HATA XU100.IS: float() argument must be a string or a real number, not 'Series'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: S&P 500 (^GSPC)...
+  HATA ^GSPC: float() argument must be a string or a real number, not 'Series'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: FTSE 100 (^FTSE)...
+  HATA ^FTSE: float() argument must be a string or a real number, not 'Series'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: Euro Stoxx 50 (^STOXX50E)...
+  HATA ^STOXX50E: float() argument must be a string or a real number, not 'Series'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: Nikkei 225 (^N225)...
+  HATA ^N225: float() argument must be a string or a real number, not 'Series'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: Hang Seng (^HSI)...
+  HATA ^HSI: float() argument must be a string or a real number, not 'Series'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: Kripto (BTC) (BTC-USD)...
+  HATA BTC-USD: float() argument must be a string or a real number, not 'Series'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: Değerli Metaller (GC=F)...
+  HATA GC=F: float() argument must be a string or a real number, not 'Series'
+    Veri alinamadi, backtest degerleri kullaniliyor
+
+OK: 8 piyasa -> B:\Hariseldon\market_data.json
+   Portfoy: $155,730 | Kar: $75,730 | Canli: 0/8
+[3.5/4] C5 Emtia Motoru kosturuluyor... 
+============================================================
+RUNNING AMNESIA SIMULATION FOR: US_5YIL
+============================================================
+[US_5YIL] Final Value: $17,085.65 (ROI: +70.86%)
+[US_5YIL] Benchmark:  $12,149.00 (ROI: +21.49%)
+[US_5YIL] Alpha:      +49.37%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: UK_5YIL
+============================================================
+[UK_5YIL] Final Value: $14,097.51 (ROI: +40.98%)
+[UK_5YIL] Benchmark:  $12,419.01 (ROI: +24.19%)
+[UK_5YIL] Alpha:      +16.79%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: EU_5YIL
+============================================================
+[EU_5YIL] Final Value: $11,899.46 (ROI: +18.99%)
+[EU_5YIL] Benchmark:  $11,754.56 (ROI: +17.55%)
+[EU_5YIL] Alpha:      +1.45%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: JP_5YIL
+============================================================
+[JP_5YIL] Final Value: $17,231.32 (ROI: +72.31%)
+[JP_5YIL] Benchmark:  $15,727.17 (ROI: +57.27%)
+[JP_5YIL] Alpha:      +15.04%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: HK_5YIL
+============================================================
+[HK_5YIL] Final Value: $13,744.77 (ROI: +37.45%)
+[HK_5YIL] Benchmark:  $13,464.99 (ROI: +34.65%)
+[HK_5YIL] Alpha:      +2.80%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: COIN_5YIL
+============================================================
+[COIN_5YIL] Final Value: $27,829.20 (ROI: +178.29%)
+[COIN_5YIL] Benchmark:  $22,279.53 (ROI: +122.80%)
+[COIN_5YIL] Alpha:      +55.50%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: EMTIA_5YIL
+============================================================
+[EMTIA_5YIL] Final Value: $13,485.91 (ROI: +34.86%)
+[EMTIA_5YIL] Benchmark:  $16,818.56 (ROI: +68.19%)
+[EMTIA_5YIL] Alpha:      -33.33%
+
+[GLOBAL MASTER REPORT GENERATED] -> B:\T2SAIM_NEXUS\000_Shadow\69_To_be_corrected\07-Sonuclar\GLOBAL_Amnesia_Max_Profit_Dashboard.html
+[3.8/4] T2SAIM Gunluk Portfoy Olusturuluyor... 
+==========================================================
+  T2SAIM & HERMES - WEB PORTFOLIO PAYLOAD GENERATOR
+==========================================================
+
+Piyasalar işleniyor...
+  - US (S&P 500) (Model: Model 4 (Optimized Hybrid))
+  - UK (FTSE 100) (Model: Model 3 (Advanced Hybrid))
+  - Europe (Stoxx 50) (Model: Model 4 (Optimized Hybrid))
+  - Japan (Nikkei 225) (Model: Model 1 (MFDFA))
+  - Hong Kong (HSI) (Model: Model 2 (TimesFM Hybrid))
+
+[BAŞARILI] Web paneli verisi oluşturuldu: B:\T2SAIM_NEXUS\000_Shadow\00_Success\t2saim_web_dashboard_data_V17.json
+==========================================================
+        1 file(s) copied.
+        1 file(s) copied.
+        1 file(s) copied.
+[3.9/4] Dunya Kupasi 2026 Simulasyonu Olusturuluyor... 
+[+] Starting World Cup 2026 Simulations...
+ - Simulating Model 1 (Static/FIFA Rank)...
+ - Simulating Model 2 (Seldon/Amnesia)...
+[+] Simulation complete! Results saved to: B:\Hariseldon\dashboards\world_cup_sim_results.json
+[4/4] GitHub push... 
+[main 1fb41c1] data: daily update with new models
+ 4 files changed, 2174 insertions(+), 2174 deletions(-)
+To https://github.com/tarco-forensics/Hariseldon.git
+   5c5055d..1fb41c1  main -> main
+Bitis:  9:21:18,42 
+ 
+================================================ 
+Cum 17.07.2026 23:09:25,00 - T2SAIM Gunluk Guncelleme 
+================================================ 
+[1/4] USDTRY verisi cekiliyor... 
+Son mevcut veri: 2026-07-02
+Cekiliyor: 2026-07-03 -> 2026-07-18
+Hata: float() argument must be a string or a real number, not 'Series'
+[2/4] Kriz indeksi hesaplaniyor... 
+OK: 701 gunluk veri uretildi -> B:\Hariseldon\crisis_data.json
+   Dun (2026-07-16): CI=0.4702, SRI=0.5346, Alarm=0
+   Bellek: 1.6 | L6: 1
+[3/4] Canli piyasa verileri cekiliyor... 
+T2SAIM Market Data Generator — 2026-07-17 23:09
+  Cekiliyor: BIST-100 (XU100.IS)...
+  HATA XU100.IS: float() argument must be a string or a real number, not 'Series'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: S&P 500 (^GSPC)...
+  HATA ^GSPC: float() argument must be a string or a real number, not 'Series'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: FTSE 100 (^FTSE)...
+  HATA ^FTSE: float() argument must be a string or a real number, not 'Series'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: Euro Stoxx 50 (^STOXX50E)...
+  HATA ^STOXX50E: float() argument must be a string or a real number, not 'Series'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: Nikkei 225 (^N225)...
+  HATA ^N225: float() argument must be a string or a real number, not 'Series'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: Hang Seng (^HSI)...
+  HATA ^HSI: float() argument must be a string or a real number, not 'Series'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: Kripto (BTC) (BTC-USD)...
+  HATA BTC-USD: float() argument must be a string or a real number, not 'Series'
+    Veri alinamadi, backtest degerleri kullaniliyor
+  Cekiliyor: Değerli Metaller (GC=F)...
+  HATA GC=F: float() argument must be a string or a real number, not 'Series'
+    Veri alinamadi, backtest degerleri kullaniliyor
+
+OK: 8 piyasa -> B:\Hariseldon\market_data.json
+   Portfoy: $155,730 | Kar: $75,730 | Canli: 0/8
+[3.5/4] C5 Emtia Motoru kosturuluyor... 
+============================================================
+RUNNING AMNESIA SIMULATION FOR: US_5YIL
+============================================================
+[US_5YIL] Final Value: $17,085.65 (ROI: +70.86%)
+[US_5YIL] Benchmark:  $12,149.00 (ROI: +21.49%)
+[US_5YIL] Alpha:      +49.37%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: UK_5YIL
+============================================================
+[UK_5YIL] Final Value: $14,097.51 (ROI: +40.98%)
+[UK_5YIL] Benchmark:  $12,419.01 (ROI: +24.19%)
+[UK_5YIL] Alpha:      +16.79%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: EU_5YIL
+============================================================
+[EU_5YIL] Final Value: $11,899.46 (ROI: +18.99%)
+[EU_5YIL] Benchmark:  $11,754.56 (ROI: +17.55%)
+[EU_5YIL] Alpha:      +1.45%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: JP_5YIL
+============================================================
+[JP_5YIL] Final Value: $17,231.32 (ROI: +72.31%)
+[JP_5YIL] Benchmark:  $15,727.17 (ROI: +57.27%)
+[JP_5YIL] Alpha:      +15.04%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: HK_5YIL
+============================================================
+[HK_5YIL] Final Value: $13,744.77 (ROI: +37.45%)
+[HK_5YIL] Benchmark:  $13,464.99 (ROI: +34.65%)
+[HK_5YIL] Alpha:      +2.80%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: COIN_5YIL
+============================================================
+[COIN_5YIL] Final Value: $27,829.20 (ROI: +178.29%)
+[COIN_5YIL] Benchmark:  $22,279.53 (ROI: +122.80%)
+[COIN_5YIL] Alpha:      +55.50%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: EMTIA_5YIL
+============================================================
+[EMTIA_5YIL] Final Value: $13,485.91 (ROI: +34.86%)
+[EMTIA_5YIL] Benchmark:  $16,818.56 (ROI: +68.19%)
+[EMTIA_5YIL] Alpha:      -33.33%
+
+[GLOBAL MASTER REPORT GENERATED] -> B:\T2SAIM_NEXUS\000_Shadow\69_To_be_corrected\07-Sonuclar\GLOBAL_Amnesia_Max_Profit_Dashboard.html
+[3.8/4] T2SAIM Gunluk Portfoy Olusturuluyor... 
+==========================================================
+  T2SAIM & HERMES - WEB PORTFOLIO PAYLOAD GENERATOR
+==========================================================
+
+Piyasalar işleniyor...
+  - US (S&P 500) (Model: Model 4 (Optimized Hybrid))
+  - UK (FTSE 100) (Model: Model 3 (Advanced Hybrid))
+  - Europe (Stoxx 50) (Model: Model 4 (Optimized Hybrid))
+  - Japan (Nikkei 225) (Model: Model 1 (MFDFA))
+  - Hong Kong (HSI) (Model: Model 2 (TimesFM Hybrid))
+
+[BAŞARILI] Web paneli verisi oluşturuldu: B:\T2SAIM_NEXUS\000_Shadow\00_Success\t2saim_web_dashboard_data_V17.json
+==========================================================
+        1 file(s) copied.
+        1 file(s) copied.
+        1 file(s) copied.
+[3.9/4] Dunya Kupasi 2026 Simulasyonu Olusturuluyor... 
+[+] Starting World Cup 2026 Simulations...
+ - Simulating Model 1 (Static/FIFA Rank)...
+ - Simulating Model 2 (Seldon/Amnesia)...
+[+] Simulation complete! Results saved to: B:\Hariseldon\dashboards\world_cup_sim_results.json
+[4/4] GitHub push... 
+[main 5ce10e5] data: daily update with new models
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+To https://github.com/tarco-forensics/Hariseldon.git
+   1fb41c1..5ce10e5  main -> main
+Bitis: 23:18:18,84 
+ 
+================================================ 
+Cmt 18.07.2026  8:00:12,63 - T2SAIM Gunluk Guncelleme 
+================================================ 
+[1/4] USDTRY verisi cekiliyor... 
+Son mevcut veri: 2026-07-02
+yfinance yuklu degil — pip install yfinance
+[2/4] Kriz indeksi hesaplaniyor... 
+OK: 701 gunluk veri uretildi -> B:\Hariseldon\crisis_data.json
+   Dun (2026-07-17): CI=0.451, SRI=0.5473, Alarm=0
+   Bellek: 1.132 | L6: 1
+[3/4] Canli piyasa verileri cekiliyor... 
+pip install yfinance numpy
+[3.5/4] C5 Emtia Motoru kosturuluyor... 
+Traceback (most recent call last):
+  File "B:\T2SAIM_NEXUS\000_Shadow\00_Success\08_Utilities_and_Core_V17\global_btf_amnesia_engine.py", line 6, in <module>
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+[3.8/4] T2SAIM Gunluk Portfoy Olusturuluyor... 
+Traceback (most recent call last):
+  File "B:\T2SAIM_NEXUS\000_Shadow\00_Success\05_Simons_Selective_V18\t2saim_daily_portfolio_generator.py", line 14, in <module>
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+[3.9/4] Dunya Kupasi 2026 Simulasyonu Olusturuluyor... 
+[+] Starting World Cup 2026 Simulations...
+ - Simulating Model 1 (Static/FIFA Rank)...
+ - Simulating Model 2 (Seldon/Amnesia)...
+[+] Simulation complete! Results saved to: B:\Hariseldon\dashboards\world_cup_sim_results.json
+[4/4] GitHub push... 
+[main 29d75eb] data: daily update with new models
+ 2 files changed, 2408 insertions(+), 2408 deletions(-)
+To https://github.com/tarco-forensics/Hariseldon.git
+   5ce10e5..29d75eb  main -> main
+Bitis:  8:04:15,97 
+ 
+================================================ 
+Paz 19.07.2026 12:21:37,73 - T2SAIM Gunluk Guncelleme 
+================================================ 
+[1/4] USDTRY verisi cekiliyor... 
+Son mevcut veri: 2026-07-02
+yfinance yuklu degil — pip install yfinance
+[2/4] Kriz indeksi hesaplaniyor... 
+OK: 701 gunluk veri uretildi -> B:\Hariseldon\crisis_data.json
+   Dun (2026-07-18): CI=0.3193, SRI=0.4403, Alarm=0
+   Bellek: 0.184 | L6: 0
+[3/4] Canli piyasa verileri cekiliyor... 
+pip install yfinance numpy
+[3.5/4] C5 Emtia Motoru kosturuluyor... 
+Traceback (most recent call last):
+  File "B:\T2SAIM_NEXUS\000_Shadow\00_Success\08_Utilities_and_Core_V17\global_btf_amnesia_engine.py", line 7, in <module>
+    import pandas as pd
+  File "C:\Users\tarka\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\pandas\__init__.py", line 22, in <module>
+    from pandas.compat import is_numpy_dev as _is_numpy_dev  # pyright: ignore # noqa:F401
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tarka\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\pandas\compat\__init__.py", line 18, in <module>
+    from pandas.compat.numpy import (
+  File "C:\Users\tarka\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\pandas\compat\numpy\__init__.py", line 4, in <module>
+    from pandas.util.version import Version
+  File "C:\Users\tarka\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\pandas\util\__init__.py", line 2, in <module>
+    from pandas.util._decorators import (  # noqa:F401
+  File "C:\Users\tarka\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\pandas\util\_decorators.py", line 14, in <module>
+    from pandas._libs.properties import cache_readonly
+  File "C:\Users\tarka\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\pandas\_libs\__init__.py", line 13, in <module>
+    from pandas._libs.interval import Interval
+  File "pandas\_libs\interval.pyx", line 1, in init pandas._libs.interval
+ValueError: numpy.dtype size changed, may indicate binary incompatibility. Expected 96 from C header, got 88 from PyObject
+[3.8/4] T2SAIM Gunluk Portfoy Olusturuluyor... 
+==========================================================
+  T2SAIM & HERMES - WEB PORTFOLIO PAYLOAD GENERATOR
+==========================================================
+
+Piyasalar işleniyor...
+  - US (S&P 500) (Model: Model 4 (Optimized Hybrid))
+  - UK (FTSE 100) (Model: Model 3 (Advanced Hybrid))
+  - Europe (Stoxx 50) (Model: Model 4 (Optimized Hybrid))
+  - Japan (Nikkei 225) (Model: Model 1 (MFDFA))
+  - Hong Kong (HSI) (Model: Model 2 (TimesFM Hybrid))
+
+[BAŞARILI] Web paneli verisi oluşturuldu: B:\T2SAIM_NEXUS\000_Shadow\00_Success\t2saim_web_dashboard_data_V17.json
+==========================================================
+        1 file(s) copied.
+        1 file(s) copied.
+        1 file(s) copied.
+[3.9/4] Dunya Kupasi 2026 Simulasyonu Olusturuluyor... 
+[+] Starting World Cup 2026 Simulations...
+ - Simulating Model 1 (Static/FIFA Rank)...
+ - Simulating Model 2 (Seldon/Amnesia)...
+[+] Simulation complete! Results saved to: B:\Hariseldon\dashboards\world_cup_sim_results.json
+[4/4] GitHub push... 
+[main 6cc1c04] data: daily update with new models
+ 3 files changed, 2849 insertions(+), 2849 deletions(-)
+To https://github.com/tarco-forensics/Hariseldon.git
+   29d75eb..6cc1c04  main -> main
+Bitis: 12:22:23,75 
+ 
+================================================ 
+Paz 19.07.2026 14:06:58,92 - T2SAIM Gunluk Guncelleme 
+================================================ 
+[1/4] USDTRY verisi cekiliyor... 
+Son mevcut veri: 2026-07-02
+yfinance yuklu degil — pip install yfinance
+[2/4] Kriz indeksi hesaplaniyor... 
+OK: 701 gunluk veri uretildi -> B:\Hariseldon\crisis_data.json
+   Dun (2026-07-18): CI=0.3193, SRI=0.4403, Alarm=0
+   Bellek: 0.184 | L6: 0
+[3/4] Canli piyasa verileri cekiliyor... 
+pip install yfinance numpy
+[3.5/4] C5 Emtia Motoru kosturuluyor... 
+Traceback (most recent call last):
+  File "B:\T2SAIM_NEXUS\000_Shadow\00_Success\08_Utilities_and_Core_V17\global_btf_amnesia_engine.py", line 7, in <module>
+    import pandas as pd
+  File "C:\Users\tarka\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\pandas\__init__.py", line 22, in <module>
+    from pandas.compat import is_numpy_dev as _is_numpy_dev  # pyright: ignore # noqa:F401
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tarka\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\pandas\compat\__init__.py", line 18, in <module>
+    from pandas.compat.numpy import (
+  File "C:\Users\tarka\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\pandas\compat\numpy\__init__.py", line 4, in <module>
+    from pandas.util.version import Version
+  File "C:\Users\tarka\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\pandas\util\__init__.py", line 2, in <module>
+    from pandas.util._decorators import (  # noqa:F401
+  File "C:\Users\tarka\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\pandas\util\_decorators.py", line 14, in <module>
+    from pandas._libs.properties import cache_readonly
+  File "C:\Users\tarka\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\pandas\_libs\__init__.py", line 13, in <module>
+    from pandas._libs.interval import Interval
+  File "pandas\_libs\interval.pyx", line 1, in init pandas._libs.interval
+ValueError: numpy.dtype size changed, may indicate binary incompatibility. Expected 96 from C header, got 88 from PyObject
+[3.8/4] T2SAIM Gunluk Portfoy Olusturuluyor... 
+==========================================================
+  T2SAIM & HERMES - WEB PORTFOLIO PAYLOAD GENERATOR
+==========================================================
+
+Piyasalar işleniyor...
+  - US (S&P 500) (Model: Model 4 (Optimized Hybrid))
+  - UK (FTSE 100) (Model: Model 3 (Advanced Hybrid))
+  - Europe (Stoxx 50) (Model: Model 4 (Optimized Hybrid))
+  - Japan (Nikkei 225) (Model: Model 1 (MFDFA))
+  - Hong Kong (HSI) (Model: Model 2 (TimesFM Hybrid))
+
+[BAŞARILI] Web paneli verisi oluşturuldu: B:\T2SAIM_NEXUS\000_Shadow\00_Success\t2saim_web_dashboard_data_V17.json
+==========================================================
+        1 file(s) copied.
+        1 file(s) copied.
+        1 file(s) copied.
+[3.9/4] Dunya Kupasi 2026 Simulasyonu Olusturuluyor... 
+[+] Starting World Cup 2026 Simulations...
+ - Simulating Model 1 (Static/FIFA Rank)...
+ - Simulating Model 2 (Seldon/Amnesia)...
+[+] Simulation complete! Results saved to: B:\Hariseldon\dashboards\world_cup_sim_results.json
+[4/4] GitHub push... 
+[main 24e1086] data: daily update with new models
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+To https://github.com/tarco-forensics/Hariseldon.git
+   6cc1c04..24e1086  main -> main
+Bitis: 14:07:37,95 
+ 
+================================================ 
+Sal 21.07.2026  8:00:03,65 - T2SAIM Gunluk Guncelleme 
+================================================ 
+[1/4] USDTRY verisi cekiliyor... 
+Son mevcut veri: 2026-07-02
+yfinance yuklu degil — pip install yfinance
+[2/4] Kriz indeksi hesaplaniyor... 
+OK: 701 gunluk veri uretildi -> B:\Hariseldon\crisis_data.json
+   Dun (2026-07-20): CI=0.5974, SRI=0.6002, Alarm=1
+   Bellek: 2.954 | L6: 1
+[3/4] Canli piyasa verileri cekiliyor... 
+pip install yfinance numpy
+[3.5/4] C5 Emtia Motoru kosturuluyor... 
+
+A module that was compiled using NumPy 1.x cannot be run in
+NumPy 2.4.6 as it may crash. To support both 1.x and 2.x
+versions of NumPy, modules must be compiled with NumPy 2.0.
+Some module may need to rebuild instead e.g. with 'pybind11>=2.12'.
+
+If you are a user of the module, the easiest solution will be to
+downgrade to 'numpy<2' or try to upgrade the affected module.
+We expect that some modules will need time to support NumPy 2.
+
+Traceback (most recent call last):  File "B:\T2SAIM_NEXUS\000_Shadow\00_Success\08_Utilities_and_Core_V17\global_btf_amnesia_engine.py", line 7, in <module>
+    import pandas as pd
+  File "C:\Users\tarka\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\pandas\__init__.py", line 34, in <module>
+    from pandas.compat import (
+  File "C:\Users\tarka\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\pandas\compat\__init__.py", line 28, in <module>
+    from pandas.compat.pyarrow import (
+  File "C:\Users\tarka\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\pandas\compat\pyarrow.py", line 12, in <module>
+    import pyarrow as pa
+  File "C:\Users\tarka\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\pyarrow\__init__.py", line 65, in <module>
+    import pyarrow.lib as _lib
+AttributeError: _ARRAY_API not found
+============================================================
+RUNNING AMNESIA SIMULATION FOR: US_5YIL
+============================================================
+[US_5YIL] Final Value: $17,085.65 (ROI: +70.86%)
+[US_5YIL] Benchmark:  $12,149.00 (ROI: +21.49%)
+[US_5YIL] Alpha:      +49.37%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: UK_5YIL
+============================================================
+[UK_5YIL] Final Value: $14,097.51 (ROI: +40.98%)
+[UK_5YIL] Benchmark:  $12,419.01 (ROI: +24.19%)
+[UK_5YIL] Alpha:      +16.79%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: EU_5YIL
+============================================================
+[EU_5YIL] Final Value: $11,899.46 (ROI: +18.99%)
+[EU_5YIL] Benchmark:  $11,754.56 (ROI: +17.55%)
+[EU_5YIL] Alpha:      +1.45%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: JP_5YIL
+============================================================
+[JP_5YIL] Final Value: $17,231.32 (ROI: +72.31%)
+[JP_5YIL] Benchmark:  $15,727.17 (ROI: +57.27%)
+[JP_5YIL] Alpha:      +15.04%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: HK_5YIL
+============================================================
+[HK_5YIL] Final Value: $13,744.77 (ROI: +37.45%)
+[HK_5YIL] Benchmark:  $13,464.99 (ROI: +34.65%)
+[HK_5YIL] Alpha:      +2.80%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: COIN_5YIL
+============================================================
+[COIN_5YIL] Final Value: $27,829.20 (ROI: +178.29%)
+[COIN_5YIL] Benchmark:  $22,279.53 (ROI: +122.80%)
+[COIN_5YIL] Alpha:      +55.50%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: EMTIA_5YIL
+============================================================
+[EMTIA_5YIL] Final Value: $13,485.91 (ROI: +34.86%)
+[EMTIA_5YIL] Benchmark:  $16,818.56 (ROI: +68.19%)
+[EMTIA_5YIL] Alpha:      -33.33%
+
+[GLOBAL MASTER REPORT GENERATED] -> B:\T2SAIM_NEXUS\000_Shadow\69_To_be_corrected\07-Sonuclar\GLOBAL_Amnesia_Max_Profit_Dashboard.html
+[3.8/4] T2SAIM Gunluk Portfoy Olusturuluyor... 
+==========================================================
+  T2SAIM & HERMES - WEB PORTFOLIO PAYLOAD GENERATOR
+==========================================================
+
+Piyasalar işleniyor...
+  - US (S&P 500) (Model: Model 4 (Optimized Hybrid))
+  - UK (FTSE 100) (Model: Model 3 (Advanced Hybrid))
+  - Europe (Stoxx 50) (Model: Model 4 (Optimized Hybrid))
+  - Japan (Nikkei 225) (Model: Model 1 (MFDFA))
+  - Hong Kong (HSI) (Model: Model 2 (TimesFM Hybrid))
+
+[BAŞARILI] Web paneli verisi oluşturuldu: B:\T2SAIM_NEXUS\000_Shadow\00_Success\t2saim_web_dashboard_data_V17.json
+==========================================================
+        1 file(s) copied.
+        1 file(s) copied.
+        1 file(s) copied.
+[3.9/4] Dunya Kupasi 2026 Simulasyonu Olusturuluyor... 
+[+] Starting World Cup 2026 Simulations...
+ - Simulating Model 1 (Static/FIFA Rank)...
+ - Simulating Model 2 (Seldon/Amnesia)...
+[+] Simulation complete! Results saved to: B:\Hariseldon\dashboards\world_cup_sim_results.json
+[4/4] GitHub push... 
+[main 08338f2] data: daily update with new models
+ 3 files changed, 2847 insertions(+), 2847 deletions(-)
+To https://github.com/tarco-forensics/Hariseldon.git
+   24e1086..08338f2  main -> main
+Bitis:  8:01:06,60 
+ 
+================================================ 
+Sal 21.07.2026 14:16:36,92 - T2SAIM Gunluk Guncelleme 
+================================================ 
+[1/4] USDTRY verisi cekiliyor... 
+Son mevcut veri: 2026-07-02
+yfinance yuklu degil — pip install yfinance
+[2/4] Kriz indeksi hesaplaniyor... 
+OK: 701 gunluk veri uretildi -> B:\Hariseldon\crisis_data.json
+   Dun (2026-07-20): CI=0.5974, SRI=0.6002, Alarm=1
+   Bellek: 2.954 | L6: 1
+[3/4] Canli piyasa verileri cekiliyor... 
+pip install yfinance numpy
+[3.5/4] C5 Emtia Motoru kosturuluyor... 
+
+A module that was compiled using NumPy 1.x cannot be run in
+NumPy 2.4.6 as it may crash. To support both 1.x and 2.x
+versions of NumPy, modules must be compiled with NumPy 2.0.
+Some module may need to rebuild instead e.g. with 'pybind11>=2.12'.
+
+If you are a user of the module, the easiest solution will be to
+downgrade to 'numpy<2' or try to upgrade the affected module.
+We expect that some modules will need time to support NumPy 2.
+
+Traceback (most recent call last):  File "B:\T2SAIM_NEXUS\000_Shadow\00_Success\08_Utilities_and_Core_V17\global_btf_amnesia_engine.py", line 7, in <module>
+    import pandas as pd
+  File "C:\Users\tarka\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\pandas\__init__.py", line 34, in <module>
+    from pandas.compat import (
+  File "C:\Users\tarka\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\pandas\compat\__init__.py", line 28, in <module>
+    from pandas.compat.pyarrow import (
+  File "C:\Users\tarka\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\pandas\compat\pyarrow.py", line 12, in <module>
+    import pyarrow as pa
+  File "C:\Users\tarka\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\pyarrow\__init__.py", line 65, in <module>
+    import pyarrow.lib as _lib
+AttributeError: _ARRAY_API not found
+============================================================
+RUNNING AMNESIA SIMULATION FOR: US_5YIL
+============================================================
+[US_5YIL] Final Value: $17,085.65 (ROI: +70.86%)
+[US_5YIL] Benchmark:  $12,149.00 (ROI: +21.49%)
+[US_5YIL] Alpha:      +49.37%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: UK_5YIL
+============================================================
+[UK_5YIL] Final Value: $14,097.51 (ROI: +40.98%)
+[UK_5YIL] Benchmark:  $12,419.01 (ROI: +24.19%)
+[UK_5YIL] Alpha:      +16.79%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: EU_5YIL
+============================================================
+[EU_5YIL] Final Value: $11,899.46 (ROI: +18.99%)
+[EU_5YIL] Benchmark:  $11,754.56 (ROI: +17.55%)
+[EU_5YIL] Alpha:      +1.45%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: JP_5YIL
+============================================================
+[JP_5YIL] Final Value: $17,231.32 (ROI: +72.31%)
+[JP_5YIL] Benchmark:  $15,727.17 (ROI: +57.27%)
+[JP_5YIL] Alpha:      +15.04%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: HK_5YIL
+============================================================
+[HK_5YIL] Final Value: $13,744.77 (ROI: +37.45%)
+[HK_5YIL] Benchmark:  $13,464.99 (ROI: +34.65%)
+[HK_5YIL] Alpha:      +2.80%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: COIN_5YIL
+============================================================
+[COIN_5YIL] Final Value: $27,829.20 (ROI: +178.29%)
+[COIN_5YIL] Benchmark:  $22,279.53 (ROI: +122.80%)
+[COIN_5YIL] Alpha:      +55.50%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: EMTIA_5YIL
+============================================================
+[EMTIA_5YIL] Final Value: $13,485.91 (ROI: +34.86%)
+[EMTIA_5YIL] Benchmark:  $16,818.56 (ROI: +68.19%)
+[EMTIA_5YIL] Alpha:      -33.33%
+
+[GLOBAL MASTER REPORT GENERATED] -> B:\T2SAIM_NEXUS\000_Shadow\69_To_be_corrected\07-Sonuclar\GLOBAL_Amnesia_Max_Profit_Dashboard.html
+[3.8/4] T2SAIM Gunluk Portfoy Olusturuluyor... 
+==========================================================
+  T2SAIM & HERMES - WEB PORTFOLIO PAYLOAD GENERATOR
+==========================================================
+
+Piyasalar işleniyor...
+  - US (S&P 500) (Model: Model 4 (Optimized Hybrid))
+  - UK (FTSE 100) (Model: Model 3 (Advanced Hybrid))
+  - Europe (Stoxx 50) (Model: Model 4 (Optimized Hybrid))
+  - Japan (Nikkei 225) (Model: Model 1 (MFDFA))
+  - Hong Kong (HSI) (Model: Model 2 (TimesFM Hybrid))
+
+[BAŞARILI] Web paneli verisi oluşturuldu: B:\T2SAIM_NEXUS\000_Shadow\00_Success\t2saim_web_dashboard_data_V17.json
+==========================================================
+        1 file(s) copied.
+        1 file(s) copied.
+        1 file(s) copied.
+[3.9/4] Dunya Kupasi 2026 Simulasyonu Olusturuluyor... 
+[+] Starting World Cup 2026 Simulations...
+ - Simulating Model 1 (Static/FIFA Rank)...
+ - Simulating Model 2 (Seldon/Amnesia)...
+[+] Simulation complete! Results saved to: B:\Hariseldon\dashboards\world_cup_sim_results.json
+[4/4] GitHub push... 
+[main 7d3c945] data: daily update with new models
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+To https://github.com/tarco-forensics/Hariseldon.git
+   08338f2..7d3c945  main -> main
+Bitis: 14:19:35,24 
+ 
+================================================ 
+Çar 22.07.2026  8:00:18,78 - T2SAIM Gunluk Guncelleme 
+================================================ 
+[1/4] USDTRY verisi cekiliyor... 
+Son mevcut veri: 2026-07-02
+yfinance yuklu degil — pip install yfinance
+[2/4] Kriz indeksi hesaplaniyor... 
+OK: 701 gunluk veri uretildi -> B:\Hariseldon\crisis_data.json
+   Dun (2026-07-21): CI=0.6435, SRI=0.6006, Alarm=1
+   Bellek: 3.719 | L6: 1
+[3/4] Canli piyasa verileri cekiliyor... 
+pip install yfinance numpy
+[3.5/4] C5 Emtia Motoru kosturuluyor... 
+============================================================
+RUNNING AMNESIA SIMULATION FOR: US_5YIL
+============================================================
+[US_5YIL] Final Value: $17,085.65 (ROI: +70.86%)
+[US_5YIL] Benchmark:  $12,149.00 (ROI: +21.49%)
+[US_5YIL] Alpha:      +49.37%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: UK_5YIL
+============================================================
+[UK_5YIL] Final Value: $14,097.51 (ROI: +40.98%)
+[UK_5YIL] Benchmark:  $12,419.01 (ROI: +24.19%)
+[UK_5YIL] Alpha:      +16.79%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: EU_5YIL
+============================================================
+[EU_5YIL] Final Value: $11,899.46 (ROI: +18.99%)
+[EU_5YIL] Benchmark:  $11,754.56 (ROI: +17.55%)
+[EU_5YIL] Alpha:      +1.45%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: JP_5YIL
+============================================================
+[JP_5YIL] Final Value: $17,231.32 (ROI: +72.31%)
+[JP_5YIL] Benchmark:  $15,727.17 (ROI: +57.27%)
+[JP_5YIL] Alpha:      +15.04%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: HK_5YIL
+============================================================
+[HK_5YIL] Final Value: $13,744.77 (ROI: +37.45%)
+[HK_5YIL] Benchmark:  $13,464.99 (ROI: +34.65%)
+[HK_5YIL] Alpha:      +2.80%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: COIN_5YIL
+============================================================
+[COIN_5YIL] Final Value: $27,829.20 (ROI: +178.29%)
+[COIN_5YIL] Benchmark:  $22,279.53 (ROI: +122.80%)
+[COIN_5YIL] Alpha:      +55.50%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: EMTIA_5YIL
+============================================================
+[EMTIA_5YIL] Final Value: $13,485.91 (ROI: +34.86%)
+[EMTIA_5YIL] Benchmark:  $16,818.56 (ROI: +68.19%)
+[EMTIA_5YIL] Alpha:      -33.33%
+
+[GLOBAL MASTER REPORT GENERATED] -> B:\T2SAIM_NEXUS\000_Shadow\69_To_be_corrected\07-Sonuclar\GLOBAL_Amnesia_Max_Profit_Dashboard.html
+[3.8/4] T2SAIM Gunluk Portfoy Olusturuluyor... 
+==========================================================
+  T2SAIM & HERMES - WEB PORTFOLIO PAYLOAD GENERATOR
+==========================================================
+
+Piyasalar işleniyor...
+  - US (S&P 500) (Model: Model 4 (Optimized Hybrid))
+  - UK (FTSE 100) (Model: Model 3 (Advanced Hybrid))
+  - Europe (Stoxx 50) (Model: Model 4 (Optimized Hybrid))
+  - Japan (Nikkei 225) (Model: Model 1 (MFDFA))
+  - Hong Kong (HSI) (Model: Model 2 (TimesFM Hybrid))
+
+[BAŞARILI] Web paneli verisi oluşturuldu: B:\T2SAIM_NEXUS\000_Shadow\00_Success\t2saim_web_dashboard_data_V17.json
+==========================================================
+        1 file(s) copied.
+        1 file(s) copied.
+        1 file(s) copied.
+[3.9/4] Dunya Kupasi 2026 Simulasyonu Olusturuluyor... 
+[+] Starting World Cup 2026 Simulations...
+ - Simulating Model 1 (Static/FIFA Rank)...
+ - Simulating Model 2 (Seldon/Amnesia)...
+[+] Simulation complete! Results saved to: B:\Hariseldon\dashboards\world_cup_sim_results.json
+[4/4] GitHub push... 
+[main 0879b2c] data: daily update with new models
+ 3 files changed, 2436 insertions(+), 2436 deletions(-)
+To https://github.com/tarco-forensics/Hariseldon.git
+   7d3c945..0879b2c  main -> main
+Bitis:  8:19:10,08 
+ 
+================================================ 
+Çar 22.07.2026 10:15:11,16 - T2SAIM Gunluk Guncelleme 
+================================================ 
+[1/4] USDTRY verisi cekiliyor... 
+Son mevcut veri: 2026-07-02
+yfinance yuklu degil — pip install yfinance
+[2/4] Kriz indeksi hesaplaniyor... 
+OK: 701 gunluk veri uretildi -> B:\Hariseldon\crisis_data.json
+   Dun (2026-07-21): CI=0.6435, SRI=0.6006, Alarm=1
+   Bellek: 3.719 | L6: 1
+[3/4] Canli piyasa verileri cekiliyor... 
+pip install yfinance numpy
+[3.5/4] C5 Emtia Motoru kosturuluyor... 
+============================================================
+RUNNING AMNESIA SIMULATION FOR: US_5YIL
+============================================================
+[US_5YIL] Final Value: $17,085.65 (ROI: +70.86%)
+[US_5YIL] Benchmark:  $12,149.00 (ROI: +21.49%)
+[US_5YIL] Alpha:      +49.37%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: UK_5YIL
+============================================================
+[UK_5YIL] Final Value: $14,097.51 (ROI: +40.98%)
+[UK_5YIL] Benchmark:  $12,419.01 (ROI: +24.19%)
+[UK_5YIL] Alpha:      +16.79%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: EU_5YIL
+============================================================
+[EU_5YIL] Final Value: $11,899.46 (ROI: +18.99%)
+[EU_5YIL] Benchmark:  $11,754.56 (ROI: +17.55%)
+[EU_5YIL] Alpha:      +1.45%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: JP_5YIL
+============================================================
+[JP_5YIL] Final Value: $17,231.32 (ROI: +72.31%)
+[JP_5YIL] Benchmark:  $15,727.17 (ROI: +57.27%)
+[JP_5YIL] Alpha:      +15.04%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: HK_5YIL
+============================================================
+[HK_5YIL] Final Value: $13,744.77 (ROI: +37.45%)
+[HK_5YIL] Benchmark:  $13,464.99 (ROI: +34.65%)
+[HK_5YIL] Alpha:      +2.80%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: COIN_5YIL
+============================================================
+[COIN_5YIL] Final Value: $27,829.20 (ROI: +178.29%)
+[COIN_5YIL] Benchmark:  $22,279.53 (ROI: +122.80%)
+[COIN_5YIL] Alpha:      +55.50%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: EMTIA_5YIL
+============================================================
+[EMTIA_5YIL] Final Value: $13,485.91 (ROI: +34.86%)
+[EMTIA_5YIL] Benchmark:  $16,818.56 (ROI: +68.19%)
+[EMTIA_5YIL] Alpha:      -33.33%
+
+[GLOBAL MASTER REPORT GENERATED] -> B:\T2SAIM_NEXUS\000_Shadow\69_To_be_corrected\07-Sonuclar\GLOBAL_Amnesia_Max_Profit_Dashboard.html
+[3.8/4] T2SAIM Gunluk Portfoy Olusturuluyor... 
+==========================================================
+  T2SAIM & HERMES - WEB PORTFOLIO PAYLOAD GENERATOR
+==========================================================
+
+Piyasalar işleniyor...
+  - US (S&P 500) (Model: Model 4 (Optimized Hybrid))
+  - UK (FTSE 100) (Model: Model 3 (Advanced Hybrid))
+  - Europe (Stoxx 50) (Model: Model 4 (Optimized Hybrid))
+  - Japan (Nikkei 225) (Model: Model 1 (MFDFA))
+  - Hong Kong (HSI) (Model: Model 2 (TimesFM Hybrid))
+
+[BAŞARILI] Web paneli verisi oluşturuldu: B:\T2SAIM_NEXUS\000_Shadow\00_Success\t2saim_web_dashboard_data_V17.json
+==========================================================
+        1 file(s) copied.
+        1 file(s) copied.
+        1 file(s) copied.
+[3.9/4] Dunya Kupasi 2026 Simulasyonu Olusturuluyor... 
+[+] Starting World Cup 2026 Simulations...
+ - Simulating Model 1 (Static/FIFA Rank)...
+ - Simulating Model 2 (Seldon/Amnesia)...
+[+] Simulation complete! Results saved to: B:\Hariseldon\dashboards\world_cup_sim_results.json
+[4/4] GitHub push... 
+[main c38cf7d] data: daily update with new models
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+To https://github.com/tarco-forensics/Hariseldon.git
+   0879b2c..c38cf7d  main -> main
+Bitis: 10:17:44,25 
+ 
+================================================ 
+Per 23.07.2026  8:00:03,62 - T2SAIM Gunluk Guncelleme 
+================================================ 
+[1/4] USDTRY verisi cekiliyor... 
+Son mevcut veri: 2026-07-02
+yfinance yuklu degil — pip install yfinance
+[2/4] Kriz indeksi hesaplaniyor... 
+OK: 701 gunluk veri uretildi -> B:\Hariseldon\crisis_data.json
+   Dun (2026-07-22): CI=0.703, SRI=0.6072, Alarm=1
+   Bellek: 4.633 | L6: 1
+[3/4] Canli piyasa verileri cekiliyor... 
+pip install yfinance numpy
+[3.5/4] C5 Emtia Motoru kosturuluyor... 
+============================================================
+RUNNING AMNESIA SIMULATION FOR: US_5YIL
+============================================================
+[US_5YIL] Final Value: $17,085.65 (ROI: +70.86%)
+[US_5YIL] Benchmark:  $12,149.00 (ROI: +21.49%)
+[US_5YIL] Alpha:      +49.37%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: UK_5YIL
+============================================================
+[UK_5YIL] Final Value: $14,097.51 (ROI: +40.98%)
+[UK_5YIL] Benchmark:  $12,419.01 (ROI: +24.19%)
+[UK_5YIL] Alpha:      +16.79%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: EU_5YIL
+============================================================
+[EU_5YIL] Final Value: $11,899.46 (ROI: +18.99%)
+[EU_5YIL] Benchmark:  $11,754.56 (ROI: +17.55%)
+[EU_5YIL] Alpha:      +1.45%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: JP_5YIL
+============================================================
+[JP_5YIL] Final Value: $17,231.32 (ROI: +72.31%)
+[JP_5YIL] Benchmark:  $15,727.17 (ROI: +57.27%)
+[JP_5YIL] Alpha:      +15.04%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: HK_5YIL
+============================================================
+[HK_5YIL] Final Value: $13,744.77 (ROI: +37.45%)
+[HK_5YIL] Benchmark:  $13,464.99 (ROI: +34.65%)
+[HK_5YIL] Alpha:      +2.80%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: COIN_5YIL
+============================================================
+[COIN_5YIL] Final Value: $27,829.20 (ROI: +178.29%)
+[COIN_5YIL] Benchmark:  $22,279.53 (ROI: +122.80%)
+[COIN_5YIL] Alpha:      +55.50%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: EMTIA_5YIL
+============================================================
+[EMTIA_5YIL] Final Value: $13,485.91 (ROI: +34.86%)
+[EMTIA_5YIL] Benchmark:  $16,818.56 (ROI: +68.19%)
+[EMTIA_5YIL] Alpha:      -33.33%
+
+[GLOBAL MASTER REPORT GENERATED] -> B:\T2SAIM_NEXUS\000_Shadow\69_To_be_corrected\07-Sonuclar\GLOBAL_Amnesia_Max_Profit_Dashboard.html
+[3.8/4] T2SAIM Gunluk Portfoy Olusturuluyor... 
+==========================================================
+  T2SAIM & HERMES - WEB PORTFOLIO PAYLOAD GENERATOR
+==========================================================
+
+Piyasalar işleniyor...
+  - US (S&P 500) (Model: Model 4 (Optimized Hybrid))
+  - UK (FTSE 100) (Model: Model 3 (Advanced Hybrid))
+  - Europe (Stoxx 50) (Model: Model 4 (Optimized Hybrid))
+  - Japan (Nikkei 225) (Model: Model 1 (MFDFA))
+  - Hong Kong (HSI) (Model: Model 2 (TimesFM Hybrid))
+
+[BAŞARILI] Web paneli verisi oluşturuldu: B:\T2SAIM_NEXUS\000_Shadow\00_Success\t2saim_web_dashboard_data_V17.json
+==========================================================
+        1 file(s) copied.
+        1 file(s) copied.
+        1 file(s) copied.
+[3.9/4] Dunya Kupasi 2026 Simulasyonu Olusturuluyor... 
+[+] Starting World Cup 2026 Simulations...
+ - Simulating Model 1 (Static/FIFA Rank)...
+ - Simulating Model 2 (Seldon/Amnesia)...
+[+] Simulation complete! Results saved to: B:\Hariseldon\dashboards\world_cup_sim_results.json
+[4/4] GitHub push... 
+[main c49e15c] data: daily update with new models
+ 3 files changed, 2561 insertions(+), 2561 deletions(-)
+To https://github.com/tarco-forensics/Hariseldon.git
+   c38cf7d..c49e15c  main -> main
+Bitis:  8:01:29,39 
+ 
+================================================ 
+Cum 24.07.2026  9:09:00,17 - T2SAIM Gunluk Guncelleme 
+================================================ 
+[1/4] USDTRY verisi cekiliyor... 
+Son mevcut veri: 2026-07-02
+yfinance yuklu degil — pip install yfinance
+[2/4] Kriz indeksi hesaplaniyor... 
+OK: 701 gunluk veri uretildi -> B:\Hariseldon\crisis_data.json
+   Dun (2026-07-23): CI=0.725, SRI=0.6072, Alarm=1
+   Bellek: 5.0 | L6: 1
+[3/4] Canli piyasa verileri cekiliyor... 
+pip install yfinance numpy
+[3.5/4] C5 Emtia Motoru kosturuluyor... 
+Traceback (most recent call last):
+  File "B:\T2SAIM_NEXUS\000_Shadow\00_Success\08_Utilities_and_Core_V17\global_btf_amnesia_engine.py", line 6, in <module>
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+[3.8/4] T2SAIM Gunluk Portfoy Olusturuluyor... 
+Traceback (most recent call last):
+  File "B:\T2SAIM_NEXUS\000_Shadow\00_Success\05_Simons_Selective_V18\t2saim_daily_portfolio_generator.py", line 14, in <module>
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+[3.9/4] Dunya Kupasi 2026 Simulasyonu Olusturuluyor... 
+[+] Starting World Cup 2026 Simulations...
+ - Simulating Model 1 (Static/FIFA Rank)...
+ - Simulating Model 2 (Seldon/Amnesia)...
+[+] Simulation complete! Results saved to: B:\Hariseldon\dashboards\world_cup_sim_results.json
+[4/4] GitHub push... 
+[main 5736005] data: daily update with new models
+ 2 files changed, 1883 insertions(+), 1883 deletions(-)
+To https://github.com/tarco-forensics/Hariseldon.git
+   c49e15c..5736005  main -> main
+Bitis:  9:09:27,13 
+ 
+================================================ 
+Cmt 25.07.2026 12:53:48,97 - T2SAIM Gunluk Guncelleme 
+================================================ 
+[1/4] USDTRY verisi cekiliyor... 
+Son mevcut veri: 2026-07-02
+yfinance yuklu degil — pip install yfinance
+[2/4] Kriz indeksi hesaplaniyor... 
+OK: 701 gunluk veri uretildi -> B:\Hariseldon\crisis_data.json
+   Dun (2026-07-24): CI=0.725, SRI=0.6072, Alarm=1
+   Bellek: 5.0 | L6: 1
+[3/4] Canli piyasa verileri cekiliyor... 
+pip install yfinance numpy
+[3.5/4] C5 Emtia Motoru kosturuluyor... 
+============================================================
+RUNNING AMNESIA SIMULATION FOR: US_5YIL
+============================================================
+[US_5YIL] Final Value: $17,085.65 (ROI: +70.86%)
+[US_5YIL] Benchmark:  $12,149.00 (ROI: +21.49%)
+[US_5YIL] Alpha:      +49.37%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: UK_5YIL
+============================================================
+[UK_5YIL] Final Value: $14,097.51 (ROI: +40.98%)
+[UK_5YIL] Benchmark:  $12,419.01 (ROI: +24.19%)
+[UK_5YIL] Alpha:      +16.79%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: EU_5YIL
+============================================================
+[EU_5YIL] Final Value: $11,899.46 (ROI: +18.99%)
+[EU_5YIL] Benchmark:  $11,754.56 (ROI: +17.55%)
+[EU_5YIL] Alpha:      +1.45%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: JP_5YIL
+============================================================
+[JP_5YIL] Final Value: $17,231.32 (ROI: +72.31%)
+[JP_5YIL] Benchmark:  $15,727.17 (ROI: +57.27%)
+[JP_5YIL] Alpha:      +15.04%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: HK_5YIL
+============================================================
+[HK_5YIL] Final Value: $13,744.77 (ROI: +37.45%)
+[HK_5YIL] Benchmark:  $13,464.99 (ROI: +34.65%)
+[HK_5YIL] Alpha:      +2.80%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: COIN_5YIL
+============================================================
+[COIN_5YIL] Final Value: $27,829.20 (ROI: +178.29%)
+[COIN_5YIL] Benchmark:  $22,279.53 (ROI: +122.80%)
+[COIN_5YIL] Alpha:      +55.50%
+============================================================
+RUNNING AMNESIA SIMULATION FOR: EMTIA_5YIL
+============================================================
+[EMTIA_5YIL] Final Value: $13,485.91 (ROI: +34.86%)
+[EMTIA_5YIL] Benchmark:  $16,818.56 (ROI: +68.19%)
+[EMTIA_5YIL] Alpha:      -33.33%
+
+[GLOBAL MASTER REPORT GENERATED] -> B:\T2SAIM_NEXUS\000_Shadow\69_To_be_corrected\07-Sonuclar\GLOBAL_Amnesia_Max_Profit_Dashboard.html
+[3.8/4] T2SAIM Gunluk Portfoy Olusturuluyor... 
+==========================================================
+  T2SAIM & HERMES - WEB PORTFOLIO PAYLOAD GENERATOR
+==========================================================
+
+Piyasalar işleniyor...
+  - US (S&P 500) (Model: Model 4 (Optimized Hybrid))
+  - UK (FTSE 100) (Model: Model 3 (Advanced Hybrid))
+  - Europe (Stoxx 50) (Model: Model 4 (Optimized Hybrid))
+  - Japan (Nikkei 225) (Model: Model 1 (MFDFA))
+  - Hong Kong (HSI) (Model: Model 2 (TimesFM Hybrid))
+
+[BAŞARILI] Web paneli verisi oluşturuldu: B:\T2SAIM_NEXUS\000_Shadow\00_Success\t2saim_web_dashboard_data_V17.json
+==========================================================
+        1 file(s) copied.
+        1 file(s) copied.
+        1 file(s) copied.
+[3.9/4] Dunya Kupasi 2026 Simulasyonu Olusturuluyor... 
+[+] Starting World Cup 2026 Simulations...
+ - Simulating Model 1 (Static/FIFA Rank)...
+ - Simulating Model 2 (Seldon/Amnesia)...
+[+] Simulation complete! Results saved to: B:\Hariseldon\dashboards\world_cup_sim_results.json
+[4/4] GitHub push... 
+[main 218abde] data: daily update with new models
+ 3 files changed, 2360 insertions(+), 2360 deletions(-)
+To https://github.com/tarco-forensics/Hariseldon.git
+   5736005..218abde  main -> main
+Bitis: 12:55:37,79 
+ 
+================================================ 
+Paz 26.07.2026  8:00:05,06 - T2SAIM Gunluk Guncelleme 
+================================================ 
+[1/4] USDTRY verisi cekiliyor... 
+Son mevcut veri: 2026-07-02
+yfinance yuklu degil — pip install yfinance
+[2/4] Kriz indeksi hesaplaniyor... 
+OK: 701 gunluk veri uretildi -> B:\Hariseldon\crisis_data.json
+   Dun (2026-07-25): CI=0.3227, SRI=0.4453, Alarm=0
+   Bellek: 0.183 | L6: 0
+[3/4] Canli piyasa verileri cekiliyor... 
+pip install yfinance numpy
+[3.5/4] C5 Emtia Motoru kosturuluyor... 
+Traceback (most recent call last):
+  File "B:\T2SAIM_NEXUS\000_Shadow\00_Success\08_Utilities_and_Core_V17\global_btf_amnesia_engine.py", line 6, in <module>
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+[3.8/4] T2SAIM Gunluk Portfoy Olusturuluyor... 
+Traceback (most recent call last):
+  File "B:\T2SAIM_NEXUS\000_Shadow\00_Success\05_Simons_Selective_V18\t2saim_daily_portfolio_generator.py", line 14, in <module>
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+[3.9/4] Dunya Kupasi 2026 Simulasyonu Olusturuluyor... 
+[+] Starting World Cup 2026 Simulations...
+ - Simulating Model 1 (Static/FIFA Rank)...
+ - Simulating Model 2 (Seldon/Amnesia)...
+[+] Simulation complete! Results saved to: B:\Hariseldon\dashboards\world_cup_sim_results.json
+[4/4] GitHub push... 
+[main 363f156] data: daily update with new models
+ 2 files changed, 2929 insertions(+), 2929 deletions(-)
+To https://github.com/tarco-forensics/Hariseldon.git
+   218abde..363f156  main -> main
+Bitis:  8:00:24,49 
+ 
+================================================ 
+Pzt 27.07.2026 14:21:09,55 - T2SAIM Gunluk Guncelleme 
+================================================ 
+[1/4] USDTRY verisi cekiliyor... 
+Son mevcut veri: 2026-07-02
+yfinance yuklu degil — pip install yfinance
+[2/4] Kriz indeksi hesaplaniyor... 
+OK: 701 gunluk veri uretildi -> B:\Hariseldon\crisis_data.json
+   Dun (2026-07-26): CI=0.3099, SRI=0.4397, Alarm=0
+   Bellek: 0.035 | L6: 0
+[3/4] Canli piyasa verileri cekiliyor... 
+pip install yfinance numpy
+[3.5/4] C5 Emtia Motoru kosturuluyor... 
+Traceback (most recent call last):
+  File "B:\T2SAIM_NEXUS\000_Shadow\00_Success\08_Utilities_and_Core_V17\global_btf_amnesia_engine.py", line 6, in <module>
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+[3.8/4] T2SAIM Gunluk Portfoy Olusturuluyor... 
+Traceback (most recent call last):
+  File "B:\T2SAIM_NEXUS\000_Shadow\00_Success\05_Simons_Selective_V18\t2saim_daily_portfolio_generator.py", line 14, in <module>
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+[3.9/4] Dunya Kupasi 2026 Simulasyonu Olusturuluyor... 
+[+] Starting World Cup 2026 Simulations...
+ - Simulating Model 1 (Static/FIFA Rank)...
+ - Simulating Model 2 (Seldon/Amnesia)...
+[+] Simulation complete! Results saved to: B:\Hariseldon\dashboards\world_cup_sim_results.json
+[4/4] GitHub push... 
+[main 7084481] data: daily update with new models
+ 2 files changed, 2767 insertions(+), 2767 deletions(-)
+To https://github.com/tarco-forensics/Hariseldon.git
+   363f156..7084481  main -> main
+Bitis: 14:21:37,97 
+ 
+================================================ 
+Pzt 27.07.2026 22:40:58,71 - T2SAIM Gunluk Guncelleme 
+================================================ 
+[1/4] USDTRY verisi cekiliyor... 
+Son mevcut veri: 2026-07-02
+yfinance yuklu degil — pip install yfinance
+[2/4] Kriz indeksi hesaplaniyor... 
+OK: 701 gunluk veri uretildi -> B:\Hariseldon\crisis_data.json
+   Dun (2026-07-26): CI=0.3099, SRI=0.4397, Alarm=0
+   Bellek: 0.035 | L6: 0
+[3/4] Canli piyasa verileri cekiliyor... 
+pip install yfinance numpy
+[3.5/4] C5 Emtia Motoru kosturuluyor... 
+Traceback (most recent call last):
+  File "B:\T2SAIM_NEXUS\000_Shadow\00_Success\08_Utilities_and_Core_V17\global_btf_amnesia_engine.py", line 6, in <module>
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+[3.8/4] T2SAIM Gunluk Portfoy Olusturuluyor... 
+Traceback (most recent call last):
+  File "B:\T2SAIM_NEXUS\000_Shadow\00_Success\05_Simons_Selective_V18\t2saim_daily_portfolio_generator.py", line 14, in <module>
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+[3.9/4] Dunya Kupasi 2026 Simulasyonu Olusturuluyor... 
+[+] Starting World Cup 2026 Simulations...
+ - Simulating Model 1 (Static/FIFA Rank)...
+ - Simulating Model 2 (Seldon/Amnesia)...
+[+] Simulation complete! Results saved to: B:\Hariseldon\dashboards\world_cup_sim_results.json
+[4/4] GitHub push... 
+[main 3d0eb24] data: daily update with new models
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+To https://github.com/tarco-forensics/Hariseldon.git
+   7084481..3d0eb24  main -> main
+Bitis: 22:41:12,97 
+ 
+================================================ 
+Sal 28.07.2026  0:24:03,10 - T2SAIM Gunluk Guncelleme 
+================================================ 
+[1/4] USDTRY verisi cekiliyor... 
+Son mevcut veri: 2026-07-02
+yfinance yuklu degil — pip install yfinance
+[2/4] Kriz indeksi hesaplaniyor... 
+OK: 701 gunluk veri uretildi -> B:\Hariseldon\crisis_data.json
+   Dun (2026-07-27): CI=0.725, SRI=0.6072, Alarm=1
+   Bellek: 5.0 | L6: 1
+[3/4] Canli piyasa verileri cekiliyor... 
+pip install yfinance numpy
+[3.5/4] C5 Emtia Motoru kosturuluyor... 
+Traceback (most recent call last):
+  File "B:\T2SAIM_NEXUS\000_Shadow\00_Success\08_Utilities_and_Core_V17\global_btf_amnesia_engine.py", line 6, in <module>
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+[3.8/4] T2SAIM Gunluk Portfoy Olusturuluyor... 
+Traceback (most recent call last):
+  File "B:\T2SAIM_NEXUS\000_Shadow\00_Success\05_Simons_Selective_V18\t2saim_daily_portfolio_generator.py", line 14, in <module>
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+[3.9/4] Dunya Kupasi 2026 Simulasyonu Olusturuluyor... 
+[+] Starting World Cup 2026 Simulations...
+ - Simulating Model 1 (Static/FIFA Rank)...
+ - Simulating Model 2 (Seldon/Amnesia)...
+[+] Simulation complete! Results saved to: B:\Hariseldon\dashboards\world_cup_sim_results.json
+[4/4] GitHub push... 
+[main 6815f8e] data: daily update with new models
+ 3 files changed, 2921 insertions(+), 2913 deletions(-)
+To https://github.com/tarco-forensics/Hariseldon.git
+   3d0eb24..6815f8e  main -> main
+Bitis:  0:24:16,35 
+ 
+================================================ 
+Sal 28.07.2026  0:28:37,90 - T2SAIM Gunluk Guncelleme 
+================================================ 
+[1/4] USDTRY verisi cekiliyor... 
+Son mevcut veri: 2026-07-02
+yfinance yuklu degil — pip install yfinance
+[2/4] Kriz indeksi hesaplaniyor... 
+OK: 701 gunluk veri uretildi -> B:\Hariseldon\crisis_data.json
+   Dun (2026-07-27): CI=0.725, SRI=0.6072, Alarm=1
+   Bellek: 5.0 | L6: 1
+[3/4] Canli piyasa verileri cekiliyor... 
+pip install yfinance numpy
+[3.5/4] C5 Emtia Motoru kosturuluyor... 
+Traceback (most recent call last):
+  File "B:\T2SAIM_NEXUS\000_Shadow\00_Success\08_Utilities_and_Core_V17\global_btf_amnesia_engine.py", line 6, in <module>
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+[3.8/4] T2SAIM Gunluk Portfoy Olusturuluyor... 
+================================================================================
+🪙 T2SAIM PREDATOR V4 — KRİPTO PİYASASI SEÇİLİM MOTORU
+================================================================================
+✅ Binance Live API Connected: 3662 Crypto Pairs Received
+✅ 'crypto' key updated in B:\Hariseldon\t2saim_stock_selection_results.json: 10 Crypto Assets Loaded.
+================================================================================
+Traceback (most recent call last):
+  File "B:\T2SAIM_NEXUS\000_Shadow\00_Success\05_Simons_Selective_V18\t2saim_daily_portfolio_generator.py", line 14, in <module>
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+[3.9/4] Dunya Kupasi 2026 Simulasyonu Olusturuluyor... 
+[+] Starting World Cup 2026 Simulations...
+ - Simulating Model 1 (Static/FIFA Rank)...
+ - Simulating Model 2 (Seldon/Amnesia)...
+[+] Simulation complete! Results saved to: B:\Hariseldon\dashboards\world_cup_sim_results.json
+[4/4] GitHub push... 
+[main 1ff8733] data: daily update with new models
+ 2 files changed, 133 insertions(+), 1 deletion(-)
+To https://github.com/tarco-forensics/Hariseldon.git
+   6815f8e..1ff8733  main -> main
+Bitis:  0:28:52,62 
+ 
+================================================ 
+Sal 28.07.2026  0:35:16,68 - T2SAIM Gunluk Guncelleme 
+================================================ 
+[1/4] USDTRY verisi cekiliyor... 
+Son mevcut veri: 2026-07-02
+yfinance yuklu degil — pip install yfinance
+[2/4] Kriz indeksi hesaplaniyor... 
+✅ Embedded real crisis data into B:\Hariseldon\tarkan_index.html
+OK: 701 gunluk veri uretildi -> B:\Hariseldon\crisis_data.json
+   Dun (2026-07-27): CI=0.725, SRI=0.6072, Alarm=1
+   Bellek: 5.0 | L6: 1
+[3/4] Canli piyasa verileri cekiliyor... 
+pip install yfinance numpy
+[3.5/4] C5 Emtia Motoru kosturuluyor... 
+Traceback (most recent call last):
+  File "B:\T2SAIM_NEXUS\000_Shadow\00_Success\08_Utilities_and_Core_V17\global_btf_amnesia_engine.py", line 6, in <module>
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+[3.8/4] T2SAIM Gunluk Portfoy Olusturuluyor... 
+================================================================================
+🪙 T2SAIM PREDATOR V4 — KRİPTO PİYASASI SEÇİLİM MOTORU
+================================================================================
+✅ Binance Live API Connected: 3662 Crypto Pairs Received
+✅ 'crypto' key updated in B:\Hariseldon\t2saim_stock_selection_results.json: 10 Crypto Assets Loaded.
+================================================================================
+Traceback (most recent call last):
+  File "B:\T2SAIM_NEXUS\000_Shadow\00_Success\05_Simons_Selective_V18\t2saim_daily_portfolio_generator.py", line 14, in <module>
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+[3.9/4] Dunya Kupasi 2026 Simulasyonu Olusturuluyor... 
+[+] Starting World Cup 2026 Simulations...
+ - Simulating Model 1 (Static/FIFA Rank)...
+ - Simulating Model 2 (Seldon/Amnesia)...
+[+] Simulation complete! Results saved to: B:\Hariseldon\dashboards\world_cup_sim_results.json
+[4/4] GitHub push... 
+[main b492322] data: daily update with new models
+ 3 files changed, 33 insertions(+), 20 deletions(-)
+To https://github.com/tarco-forensics/Hariseldon.git
+   1ff8733..b492322  main -> main
+Bitis:  0:35:33,02 
+ 
+================================================ 
+Sal 28.07.2026  0:41:37,72 - T2SAIM Gunluk Guncelleme 
+================================================ 
+[1/4] USDTRY verisi cekiliyor... 
+Son mevcut veri: 2026-07-02
+yfinance yuklu degil — pip install yfinance
+[2/4] Kriz indeksi hesaplaniyor... 
+✅ Embedded real crisis data into B:\Hariseldon\tarkan_index.html
+OK: 701 gunluk veri uretildi -> B:\Hariseldon\crisis_data.json
+   Dun (2026-07-27): CI=0.725, SRI=0.6072, Alarm=1
+   Bellek: 5.0 | L6: 1
+[3/4] Canli piyasa verileri cekiliyor... 
+================================================================================
+📈 T2SAIM GERÇEK ZAMANLI PİYASA VERİ MOTORU — 2026-07-28 00:41
+================================================================================
+  Cekiliyor (Gerçek Veri): BIST-100 (XU100.IS)...
+    ✅ OK: 2026-07-23 Kapanış=14077.7 Günlük Değişim=-0.43%
+  Cekiliyor (Gerçek Veri): S&P 500 (^GSPC)...
+    ✅ OK: 2026-07-27 Kapanış=7413.18 Günlük Değişim=+0.07%
+  Cekiliyor (Gerçek Veri): FTSE 100 (^FTSE)...
+    ✅ OK: 2026-07-27 Kapanış=10781.75 Günlük Değişim=+1.34%
+  Cekiliyor (Gerçek Veri): Euro Stoxx 50 (^STOXX50E)...
+    ✅ OK: 2026-07-27 Kapanış=6282.21 Günlük Değişim=+1.16%
+  Cekiliyor (Gerçek Veri): Nikkei 225 (^N225)...
+    ✅ OK: 2026-07-23 Kapanış=66422.6 Günlük Değişim=+0.46%
+  Cekiliyor (Gerçek Veri): Hang Seng (^HSI)...
+    ✅ OK: 2026-07-23 Kapanış=25210.81 Günlük Değişim=+1.28%
+  Cekiliyor (Gerçek Veri): Kripto (BTC) (BTC-USD)...
+    ✅ OK: 2026-07-27 Kapanış=64754.78 Günlük Değişim=-0.90%
+  Cekiliyor (Gerçek Veri): Değerli Metaller (GC=F)...
+    ✅ OK: 2026-07-27 Kapanış=4078.6 Günlük Değişim=+0.27%
+✅ Real market data embedded into B:\Hariseldon\index.html
+================================================================================
+✅ OK: 8 piyasa gerçek verisi kaydedildi -> B:\Hariseldon\market_data.json
+   Portföy: $155,730 | Kâr: $75,730 | Canlı: 8/8
+================================================================================
+[3.5/4] C5 Emtia Motoru kosturuluyor... 
+Traceback (most recent call last):
+  File "B:\T2SAIM_NEXUS\000_Shadow\00_Success\08_Utilities_and_Core_V17\global_btf_amnesia_engine.py", line 6, in <module>
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+[3.8/4] T2SAIM Gunluk Portfoy Olusturuluyor... 
+================================================================================
+🪙 T2SAIM PREDATOR V4 — KRİPTO PİYASASI SEÇİLİM MOTORU
+================================================================================
+✅ Binance Live API Connected: 3662 Crypto Pairs Received
+✅ 'crypto' key updated in B:\Hariseldon\t2saim_stock_selection_results.json: 10 Crypto Assets Loaded.
+================================================================================
+Traceback (most recent call last):
+  File "B:\T2SAIM_NEXUS\000_Shadow\00_Success\05_Simons_Selective_V18\t2saim_daily_portfolio_generator.py", line 14, in <module>
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+[3.9/4] Dunya Kupasi 2026 Simulasyonu Olusturuluyor... 
+[+] Starting World Cup 2026 Simulations...
+ - Simulating Model 1 (Static/FIFA Rank)...
+ - Simulating Model 2 (Seldon/Amnesia)...
+[+] Simulation complete! Results saved to: B:\Hariseldon\dashboards\world_cup_sim_results.json
+[4/4] GitHub push... 
+[main 93aa70a] data: daily update with new models
+ 4 files changed, 368 insertions(+), 63 deletions(-)
+To https://github.com/tarco-forensics/Hariseldon.git
+   b492322..93aa70a  main -> main
+Bitis:  0:42:02,62 
+ 
+================================================ 
+Sal 28.07.2026  0:50:40,36 - T2SAIM Gunluk Guncelleme 
+================================================ 
+[1/4] USDTRY verisi cekiliyor... 
+Son mevcut veri: 2026-07-02
+yfinance yuklu degil — pip install yfinance
+[2/4] Kriz indeksi hesaplaniyor... 
+✅ Embedded real crisis data into B:\Hariseldon\tarkan_index.html
+OK: 701 gunluk veri uretildi -> B:\Hariseldon\crisis_data.json
+   Dun (2026-07-27): CI=0.725, SRI=0.6072, Alarm=1
+   Bellek: 5.0 | L6: 1
+[3/4] Canli piyasa verileri cekiliyor... 
+================================================================================
+📈 T2SAIM GERÇEK ZAMANLI PİYASA VERİ MOTORU — 2026-07-28 00:50
+================================================================================
+  Cekiliyor (Gerçek Veri): BIST-100 (XU100.IS)...
+    ✅ OK: 2026-07-23 Kapanış=14077.7 Günlük Değişim=-0.43%
+  Cekiliyor (Gerçek Veri): S&P 500 (^GSPC)...
+    ✅ OK: 2026-07-27 Kapanış=7413.18 Günlük Değişim=+0.07%
+  Cekiliyor (Gerçek Veri): FTSE 100 (^FTSE)...
+    ✅ OK: 2026-07-27 Kapanış=10781.75 Günlük Değişim=+1.34%
+  Cekiliyor (Gerçek Veri): Euro Stoxx 50 (^STOXX50E)...
+    ✅ OK: 2026-07-27 Kapanış=6282.21 Günlük Değişim=+1.16%
+  Cekiliyor (Gerçek Veri): Nikkei 225 (^N225)...
+    ✅ OK: 2026-07-23 Kapanış=66422.6 Günlük Değişim=+0.46%
+  Cekiliyor (Gerçek Veri): Hang Seng (^HSI)...
+    ✅ OK: 2026-07-23 Kapanış=25210.81 Günlük Değişim=+1.28%
+  Cekiliyor (Gerçek Veri): Kripto (BTC) (BTC-USD)...
+    ✅ OK: 2026-07-27 Kapanış=64749.6 Günlük Değişim=-0.90%
+  Cekiliyor (Gerçek Veri): Değerli Metaller (GC=F)...
+    ✅ OK: 2026-07-27 Kapanış=4078.6 Günlük Değişim=+0.27%
+✅ Real market data embedded into B:\Hariseldon\index.html
+================================================================================
+✅ OK: 8 piyasa gerçek verisi kaydedildi -> B:\Hariseldon\market_data.json
+   Portföy: $155,730 | Kâr: $75,730 | Canlı: 8/8
+================================================================================
+[3.5/4] C5 Emtia Motoru kosturuluyor... 
+Traceback (most recent call last):
+  File "B:\T2SAIM_NEXUS\000_Shadow\00_Success\08_Utilities_and_Core_V17\global_btf_amnesia_engine.py", line 6, in <module>
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+[3.8/4] T2SAIM Gunluk Portfoy Olusturuluyor... 
+================================================================================
+🪙 T2SAIM PREDATOR V4 — KRİPTO PİYASASI SEÇİLİM MOTORU
+================================================================================
+✅ Binance Live API Connected: 3662 Crypto Pairs Received
+✅ 'crypto' key updated in B:\Hariseldon\t2saim_stock_selection_results.json: 10 Crypto Assets Loaded.
+================================================================================
+Traceback (most recent call last):
+  File "B:\T2SAIM_NEXUS\000_Shadow\00_Success\05_Simons_Selective_V18\t2saim_daily_portfolio_generator.py", line 14, in <module>
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+[3.9/4] Dunya Kupasi 2026 Simulasyonu Olusturuluyor... 
+[+] Starting World Cup 2026 Simulations...
+ - Simulating Model 1 (Static/FIFA Rank)...
+ - Simulating Model 2 (Seldon/Amnesia)...
+[+] Simulation complete! Results saved to: B:\Hariseldon\dashboards\world_cup_sim_results.json
+[4/4] GitHub push... 
+[main c571439] data: daily update with new models
+ 5 files changed, 25 insertions(+), 21 deletions(-)
+To https://github.com/tarco-forensics/Hariseldon.git
+   66e4677..c571439  main -> main
+Bitis:  0:51:03,55 
+ 
+================================================ 
+Sal 28.07.2026  1:08:14,93 - T2SAIM Gunluk Guncelleme 
+================================================ 
+[1/4] USDTRY verisi cekiliyor... 
+Son mevcut veri: 2026-07-02
+yfinance yuklu degil — pip install yfinance
+[2/4] Kriz indeksi hesaplaniyor... 
+✅ Embedded real crisis data into B:\Hariseldon\tarkan_index.html
+OK: 701 gunluk veri uretildi -> B:\Hariseldon\crisis_data.json
+   Dun (2026-07-27): CI=0.725, SRI=0.6072, Alarm=1
+   Bellek: 5.0 | L6: 1
+[3/4] Canli piyasa verileri cekiliyor... 
+================================================================================
+📈 T2SAIM GERÇEK ZAMANLI PİYASA VERİ MOTORU — 2026-07-28 01:08
+================================================================================
+  Cekiliyor (Gerçek Veri): BIST-100 (XU100.IS)...
+    ✅ OK: 2026-07-23 Kapanış=14077.7 Günlük Değişim=-0.43%
+  Cekiliyor (Gerçek Veri): S&P 500 (^GSPC)...
+    ✅ OK: 2026-07-27 Kapanış=7413.18 Günlük Değişim=+0.07%
+  Cekiliyor (Gerçek Veri): FTSE 100 (^FTSE)...
+    ✅ OK: 2026-07-27 Kapanış=10781.75 Günlük Değişim=+1.34%
+  Cekiliyor (Gerçek Veri): Euro Stoxx 50 (^STOXX50E)...
+    ✅ OK: 2026-07-23 Kapanış=6210.17 Günlük Değişim=-1.69%
+  Cekiliyor (Gerçek Veri): Nikkei 225 (^N225)...
+    ✅ OK: 2026-07-23 Kapanış=66422.6 Günlük Değişim=+0.46%
+  Cekiliyor (Gerçek Veri): Hang Seng (^HSI)...
+    ✅ OK: 2026-07-23 Kapanış=25210.81 Günlük Değişim=+1.28%
+  Cekiliyor (Gerçek Veri): Kripto (BTC) (BTC-USD)...
+    ✅ OK: 2026-07-27 Kapanış=64658.05 Günlük Değişim=-1.04%
+  Cekiliyor (Gerçek Veri): Değerli Metaller (GC=F)...
+    ✅ OK: 2026-07-27 Kapanış=4078.6 Günlük Değişim=+0.27%
+✅ Real market data embedded into B:\Hariseldon\index.html
+================================================================================
+✅ OK: 8 piyasa gerçek verisi kaydedildi -> B:\Hariseldon\market_data.json
+   Portföy: $155,730 | Kâr: $75,730 | Canlı: 8/8
+================================================================================
+[3.5/4] C5 Emtia Motoru kosturuluyor... 
+Traceback (most recent call last):
+  File "B:\T2SAIM_NEXUS\000_Shadow\00_Success\08_Utilities_and_Core_V17\global_btf_amnesia_engine.py", line 6, in <module>
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+[3.8/4] T2SAIM Gunluk Portfoy Olusturuluyor... 
+================================================================================
+🪙 T2SAIM PREDATOR V4 — KRİPTO PİYASASI SEÇİLİM MOTORU
+================================================================================
+✅ Binance Live API Connected: 3662 Crypto Pairs Received
+✅ 'crypto' key updated in B:\Hariseldon\t2saim_stock_selection_results.json: 10 Crypto Assets Loaded.
+================================================================================
+Traceback (most recent call last):
+  File "B:\T2SAIM_NEXUS\000_Shadow\00_Success\05_Simons_Selective_V18\t2saim_daily_portfolio_generator.py", line 14, in <module>
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+[3.9/4] Dunya Kupasi 2026 Simulasyonu Olusturuluyor... 
+[+] Starting World Cup 2026 Simulations...
+ - Simulating Model 1 (Static/FIFA Rank)...
+ - Simulating Model 2 (Seldon/Amnesia)...
+[+] Simulation complete! Results saved to: B:\Hariseldon\dashboards\world_cup_sim_results.json
+[4/4] GitHub push... 
+[main 8ae4f43] data: daily update with new models
+ 4 files changed, 143 insertions(+), 30 deletions(-)
+To https://github.com/tarco-forensics/Hariseldon.git
+   c571439..8ae4f43  main -> main
+Bitis:  1:09:07,20 
+ 
+================================================ 
+Sal 28.07.2026  1:16:05,15 - T2SAIM Gunluk Guncelleme 
+================================================ 
+[1/4] USDTRY verisi cekiliyor... 
+Son mevcut veri: 2026-07-02
+yfinance yuklu degil — pip install yfinance
+[2/4] Kriz indeksi hesaplaniyor... 
+✅ Embedded real crisis data into B:\Hariseldon\tarkan_index.html
+OK: 701 gunluk veri uretildi -> B:\Hariseldon\crisis_data.json
+   Dun (2026-07-27): CI=0.725, SRI=0.6072, Alarm=1
+   Bellek: 5.0 | L6: 1
+[3/4] Canli piyasa verileri cekiliyor... 
+================================================================================
+📈 T2SAIM GERÇEK ZAMANLI PİYASA VERİ MOTORU — 2026-07-28 01:16
+================================================================================
+  Cekiliyor (Gerçek Veri): BIST-100 (XU100.IS)...
+    ✅ OK: 2026-07-23 Kapanış=14077.7 Günlük Değişim=-0.43%
+  Cekiliyor (Gerçek Veri): S&P 500 (^GSPC)...
+    ✅ OK: 2026-07-27 Kapanış=7413.18 Günlük Değişim=+0.07%
+  Cekiliyor (Gerçek Veri): FTSE 100 (^FTSE)...
+    ✅ OK: 2026-07-27 Kapanış=10781.75 Günlük Değişim=+1.34%
+  Cekiliyor (Gerçek Veri): Euro Stoxx 50 (^STOXX50E)...
+    ✅ OK: 2026-07-23 Kapanış=6210.17 Günlük Değişim=-1.69%
+  Cekiliyor (Gerçek Veri): Nikkei 225 (^N225)...
+    ✅ OK: 2026-07-23 Kapanış=66422.6 Günlük Değişim=+0.46%
+  Cekiliyor (Gerçek Veri): Hang Seng (^HSI)...
+    ✅ OK: 2026-07-23 Kapanış=25210.81 Günlük Değişim=+1.28%
+  Cekiliyor (Gerçek Veri): Kripto (BTC) (BTC-USD)...
+    ✅ OK: 2026-07-27 Kapanış=64670.62 Günlük Değişim=-1.02%
+  Cekiliyor (Gerçek Veri): Değerli Metaller (GC=F)...
+    ✅ OK: 2026-07-27 Kapanış=4081.8 Günlük Değişim=+0.35%
+✅ Real market data embedded into B:\Hariseldon\index.html
+================================================================================
+✅ OK: 8 piyasa gerçek verisi kaydedildi -> B:\Hariseldon\market_data.json
+   Portföy: $155,730 | Kâr: $75,730 | Canlı: 8/8
+================================================================================
+[3.5/4] C5 Emtia Motoru kosturuluyor... 
+Traceback (most recent call last):
+  File "B:\T2SAIM_NEXUS\000_Shadow\00_Success\08_Utilities_and_Core_V17\global_btf_amnesia_engine.py", line 6, in <module>
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+[3.8/4] T2SAIM Gunluk Portfoy Olusturuluyor... 
+================================================================================
+🪙 T2SAIM PREDATOR V4 — KRİPTO PİYASASI SEÇİLİM MOTORU
+================================================================================
+✅ Binance Live API Connected: 3662 Crypto Pairs Received
+✅ 'crypto' key updated in B:\Hariseldon\t2saim_stock_selection_results.json: 10 Crypto Assets Loaded.
+================================================================================
+Traceback (most recent call last):
+  File "B:\T2SAIM_NEXUS\000_Shadow\00_Success\05_Simons_Selective_V18\t2saim_daily_portfolio_generator.py", line 14, in <module>
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+[3.9/4] Dunya Kupasi 2026 Simulasyonu Olusturuluyor... 
+[+] Starting World Cup 2026 Simulations...
+ - Simulating Model 1 (Static/FIFA Rank)...
+ - Simulating Model 2 (Seldon/Amnesia)...
+[+] Simulation complete! Results saved to: B:\Hariseldon\dashboards\world_cup_sim_results.json
+[4/4] GitHub push... 
+[main 9111f42] data: daily update with new models
+ 4 files changed, 26 insertions(+), 23 deletions(-)
+To https://github.com/tarco-forensics/Hariseldon.git
+   8ae4f43..9111f42  main -> main
+Bitis:  1:16:26,83 
