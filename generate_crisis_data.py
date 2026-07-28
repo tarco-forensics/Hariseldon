@@ -13,15 +13,28 @@ import csv, json, math, os
 from datetime import datetime, timedelta
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DATA_DIR = os.path.join(BASE_DIR, "..", "T2SAIM_NEXUS", "Macroekonomics", "hermes_crisis_lab", "data")
-if not os.path.exists(DATA_DIR):
-    DATA_DIR = r"B:\T2SAIM_NEXUS\Macroekonomics\hermes_crisis_lab\data"
+
+LOCAL_DATA_DIR = r"B:\T2SAIM_NEXUS\Macroekonomics\hermes_crisis_lab\data"
+REL_DATA_DIR   = os.path.join(BASE_DIR, "..", "T2SAIM_NEXUS", "Macroekonomics", "hermes_crisis_lab", "data")
+
+if os.path.exists(LOCAL_DATA_DIR):
+    DATA_DIR = LOCAL_DATA_DIR
+elif os.path.exists(REL_DATA_DIR):
+    DATA_DIR = REL_DATA_DIR
+else:
+    DATA_DIR = None
 
 OUT_FILE = os.path.join(BASE_DIR, "crisis_data.json")
 
-PANEL_PATH = os.path.join(BASE_DIR, "..", "T2SAIM_NEXUS", "Macroekonomics", "hermes_crisis_lab", "loop_002", "data_processed", "TR_PRIORITY1_UNIFIED_PANEL_DRAFT_v3.csv")
-if not os.path.exists(PANEL_PATH):
-    PANEL_PATH = r"B:\T2SAIM_NEXUS\Macroekonomics\hermes_crisis_lab\loop_002\data_processed\TR_PRIORITY1_UNIFIED_PANEL_DRAFT_v3.csv"
+LOCAL_PANEL_PATH = r"B:\T2SAIM_NEXUS\Macroekonomics\hermes_crisis_lab\loop_002\data_processed\TR_PRIORITY1_UNIFIED_PANEL_DRAFT_v3.csv"
+REL_PANEL_PATH   = os.path.join(BASE_DIR, "..", "T2SAIM_NEXUS", "Macroekonomics", "hermes_crisis_lab", "loop_002", "data_processed", "TR_PRIORITY1_UNIFIED_PANEL_DRAFT_v3.csv")
+
+if os.path.exists(LOCAL_PANEL_PATH):
+    PANEL_PATH = LOCAL_PANEL_PATH
+elif os.path.exists(REL_PANEL_PATH):
+    PANEL_PATH = REL_PANEL_PATH
+else:
+    PANEL_PATH = None
 
 SIGMA  = 1.25
 LAMBDA = 0.15
@@ -32,7 +45,7 @@ DEFAULT_FIN = 0.4145
 DEFAULT_DEI = 0.71
 
 def load_macro_baselines():
-    if not os.path.exists(PANEL_PATH):
+    if not PANEL_PATH or not os.path.exists(PANEL_PATH):
         return DEFAULT_PSY, DEFAULT_FIN, DEFAULT_DEI
     try:
         with open(PANEL_PATH, encoding="utf-8") as f:
@@ -54,6 +67,8 @@ def load_macro_baselines():
 # ── 1. USDTRY günlük veri ──────────────────────────────────────────────
 def load_usdtry():
     rows = {}
+    if not DATA_DIR:
+        return rows
     path = os.path.join(DATA_DIR, "USDTRY_gunluk.csv")
     if os.path.exists(path):
         try:
@@ -87,6 +102,8 @@ def load_usdtry():
 # ── 2. Volatilite ──────────────────────────────────────────────────────
 def load_vol():
     rows = {}
+    if not DATA_DIR:
+        return rows
     path = os.path.join(DATA_DIR, "USDTRY_vol_haftalik.csv")
     if os.path.exists(path):
         try:
