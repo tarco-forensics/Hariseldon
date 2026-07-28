@@ -10,8 +10,9 @@ import urllib.request
 import urllib.parse
 from datetime import datetime, timedelta
 
-OUT_FILE = r"B:\Hariseldon\market_data.json"
-INDEX_HTML = r"B:\Hariseldon\index.html"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+OUT_FILE = os.path.join(BASE_DIR, "market_data.json")
+INDEX_HTML = os.path.join(BASE_DIR, "index.html")
 
 MARKETS = [
     {"key": "bist",   "flag": "TR", "name": "BIST-100",     "ticker": "XU100.IS",   "bench": "XU100.IS",  "hurst": 0.52, "roi": 59.84, "alpha": 68.20, "sharpe": 1.99, "stop": 8,   "trades": 42,  "dashboard": "dashboards/BIST100_Amnesia_Dashboard.html", "horizon": "30 Gün (D+30)"},

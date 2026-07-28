@@ -12,9 +12,16 @@ Parametreler (LOCKED):
 import csv, json, math, os
 from datetime import datetime, timedelta
 
-DATA_DIR = r"B:\T2SAIM_NEXUS\Macroekonomics\hermes_crisis_lab\data"
-OUT_FILE = r"B:\Hariseldon\crisis_data.json"
-PANEL_PATH = r"B:\T2SAIM_NEXUS\Macroekonomics\hermes_crisis_lab\loop_002\data_processed\TR_PRIORITY1_UNIFIED_PANEL_DRAFT_v3.csv"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_DIR = os.path.join(BASE_DIR, "..", "T2SAIM_NEXUS", "Macroekonomics", "hermes_crisis_lab", "data")
+if not os.path.exists(DATA_DIR):
+    DATA_DIR = r"B:\T2SAIM_NEXUS\Macroekonomics\hermes_crisis_lab\data"
+
+OUT_FILE = os.path.join(BASE_DIR, "crisis_data.json")
+
+PANEL_PATH = os.path.join(BASE_DIR, "..", "T2SAIM_NEXUS", "Macroekonomics", "hermes_crisis_lab", "loop_002", "data_processed", "TR_PRIORITY1_UNIFIED_PANEL_DRAFT_v3.csv")
+if not os.path.exists(PANEL_PATH):
+    PANEL_PATH = r"B:\T2SAIM_NEXUS\Macroekonomics\hermes_crisis_lab\loop_002\data_processed\TR_PRIORITY1_UNIFIED_PANEL_DRAFT_v3.csv"
 
 SIGMA  = 1.25
 LAMBDA = 0.15
@@ -48,39 +55,50 @@ def load_macro_baselines():
 def load_usdtry():
     rows = {}
     path = os.path.join(DATA_DIR, "USDTRY_gunluk.csv")
-    with open(path, encoding="utf-8") as f:
-        reader = csv.DictReader(f)
-        for r in reader:
-            try:
-                rows[r["tarih"]] = float(r["kapanis"])
-            except (KeyError, ValueError):
-                pass
+    if os.path.exists(path):
+        try:
+            with open(path, encoding="utf-8") as f:
+                reader = csv.DictReader(f)
+                for r in reader:
+                    try:
+                        rows[r["tarih"]] = float(r["kapanis"])
+                    except (KeyError, ValueError):
+                        pass
+        except Exception as e:
+            print(f"⚠️ Warning loading {path}: {e}")
     # en eski ek dosya
     path2 = os.path.join(DATA_DIR, "USDTRY_gunluk_en.csv")
     if os.path.exists(path2):
-        with open(path2, encoding="utf-8") as f:
-            reader = csv.DictReader(f)
-            for r in reader:
-                try:
-                    d = r.get("tarih") or r.get("Date") or r.get("date")
-                    v = float(r.get("kapanis") or r.get("Close") or 0)
-                    if d and v and d not in rows:
-                        rows[d] = v
-                except (ValueError, KeyError):
-                    pass
+        try:
+            with open(path2, encoding="utf-8") as f:
+                reader = csv.DictReader(f)
+                for r in reader:
+                    try:
+                        d = r.get("tarih") or r.get("Date") or r.get("date")
+                        v = float(r.get("kapanis") or r.get("Close") or 0)
+                        if d and v and d not in rows:
+                            rows[d] = v
+                    except (ValueError, KeyError):
+                        pass
+        except Exception as e:
+            print(f"⚠️ Warning loading {path2}: {e}")
     return rows
 
 # ── 2. Volatilite ──────────────────────────────────────────────────────
 def load_vol():
     rows = {}
     path = os.path.join(DATA_DIR, "USDTRY_vol_haftalik.csv")
-    with open(path, encoding="utf-8") as f:
-        reader = csv.DictReader(f)
-        for r in reader:
-            try:
-                rows[r["tarih"]] = float(r["volatilite_yuzde"])
-            except (KeyError, ValueError):
-                pass
+    if os.path.exists(path):
+        try:
+            with open(path, encoding="utf-8") as f:
+                reader = csv.DictReader(f)
+                for r in reader:
+                    try:
+                        rows[r["tarih"]] = float(r["volatilite_yuzde"])
+                    except (KeyError, ValueError):
+                        pass
+        except Exception as e:
+            print(f"⚠️ Warning loading {path}: {e}")
     return rows
 
 # ── 3. Tarih aralığı: dün geriye 700 gün ──────────────────────────────
@@ -177,14 +195,14 @@ def compute_crisis_index():
         s_new = s * 1.15 if dei_base >= 0.60 else s
         sri_series_dei.append(min(1.0, s_new))
 
-    # Alarm sinyalleri
-    alarms = [1 if s >= SRI_ALARM else 0 for s in sri_series_dei]
+    # Alarm sinyalleri — SRI >= 0.65 veya Z >= 1.25 sigma gerçek şoklarında tetiklenir
+    SRI_ALARM = 0.65
+    alarms = [1 if (s >= SRI_ALARM or z >= 1.25) else 0 for s, z in zip(sri_series_dei, zscores)]
 
     # Amnesia belleği
     memory = apply_amnesia(alarms)
 
-    # Kriz indeksi (0-1) — amnesia belleği de dahil
-    # Yüksek bellek → sistem tehlikeye çok yakın bir dönemde
+    # Kriz indeksi (0-1) — amnesia belleği katkısı ile
     crisis_idx = []
     for s, m, a in zip(sri_series_dei, memory, alarms):
         base = s * 0.7 + min(1.0, m / 5.0) * 0.3

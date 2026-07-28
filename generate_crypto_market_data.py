@@ -12,7 +12,8 @@ import random
 import urllib.request
 from datetime import datetime
 
-RESULTS_PATH = r"B:\Hariseldon\t2saim_stock_selection_results.json"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+RESULTS_PATH = os.path.join(BASE_DIR, "t2saim_stock_selection_results.json")
 
 CRYPTO_ASSETS = [
     {"ticker": "BTC/USD", "name": "Bitcoin", "base_price": 67450.0, "hurst": 0.5824, "r120": 42.15, "r20": 8.45, "vol": 48.20, "sharpe": 1.85, "max_dd": -21.40, "score": 78.4},
@@ -90,6 +91,22 @@ def generate_crypto_data():
 
     with open(RESULTS_PATH, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
+
+    # Embed directly into t2saim_crypto_dashboard.html for fail-safe offline rendering
+    html_crypto_path = os.path.join(os.path.dirname(RESULTS_PATH), "t2saim_crypto_dashboard.html")
+    if os.path.exists(html_crypto_path):
+        with open(html_crypto_path, "r", encoding="utf-8") as f:
+            html_content = f.read()
+        json_str = json.dumps(data, ensure_ascii=False)
+        embedded_stmt = f"window.EMBEDDED_STOCK_RESULTS = {json_str};"
+        if "window.EMBEDDED_STOCK_RESULTS =" in html_content:
+            import re
+            html_content = re.sub(r"window\.EMBEDDED_STOCK_RESULTS\s*=\s*\{.*?\};", embedded_stmt, html_content)
+        else:
+            html_content = html_content.replace("<script>", "<script>\n" + embedded_stmt + "\n", 1)
+        with open(html_crypto_path, "w", encoding="utf-8") as f:
+            f.write(html_content)
+        print(f"✅ Embedded EMBEDDED_STOCK_RESULTS into {html_crypto_path}")
 
     print(f"✅ 'crypto' key updated in {RESULTS_PATH}: {len(top_stocks)} Crypto Assets Loaded.")
     print("================================================================================")

@@ -8,9 +8,10 @@ import sys
 import json
 from datetime import datetime
 
-OUT_FILE = r"B:\Hariseldon\osint_data.json"
-TARKAN_HTML = r"B:\Hariseldon\tarkan_index.html"
-INDEX_HTML = r"B:\Hariseldon\index.html"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+OUT_FILE = os.path.join(BASE_DIR, "osint_data.json")
+TARKAN_HTML = os.path.join(BASE_DIR, "tarkan_index.html")
+INDEX_HTML = os.path.join(BASE_DIR, "index.html")
 
 def generate_osint_report():
     today_str = datetime.now().strftime("%Y-%m-%d")

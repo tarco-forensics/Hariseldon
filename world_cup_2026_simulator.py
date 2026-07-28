@@ -366,7 +366,8 @@ def main():
     }
 
     # Ensure directories exist
-    output_dir = r"B:\Hariseldon\dashboards"
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    output_dir = os.path.join(BASE_DIR, "dashboards")
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 

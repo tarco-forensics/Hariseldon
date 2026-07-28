@@ -5,8 +5,15 @@ Eksik günleri yFinance ile tamamla, crisis_data.json'ı yenile.
 import csv, json, subprocess, sys, os
 from datetime import datetime, timedelta
 
-DATA_DIR = r"B:\T2SAIM_NEXUS\Macroekonomics\hermes_crisis_lab\data"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_DIR = os.path.join(BASE_DIR, "..", "T2SAIM_NEXUS", "Macroekonomics", "hermes_crisis_lab", "data")
+if not os.path.exists(DATA_DIR):
+    DATA_DIR = r"B:\T2SAIM_NEXUS\Macroekonomics\hermes_crisis_lab\data"
 USDTRY_FILE = os.path.join(DATA_DIR, "USDTRY_gunluk.csv")
+
+if not os.path.exists(USDTRY_FILE):
+    print(f"⚠️ {USDTRY_FILE} not found. Skipping USDTRY fetch.")
+    sys.exit(0)
 
 # Son tarihi oku
 with open(USDTRY_FILE, encoding="utf-8") as f:
