@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated": "2026-07-28 12:50",
+    "generated": "2026-07-28 12:51",
     "yesterday": "2026-07-27",
     "total_portfolio": 155730.0,
     "total_profit": 75730.0,
@@ -30,8 +30,8 @@
       "profit": 5984.0,
       "live_ok": true,
       "close_prev": 13774.8,
-      "close_last": 13832.28,
-      "daily_pct": 0.42,
+      "close_last": 13830.94,
+      "daily_pct": 0.41,
       "last_date": "2026-07-28",
       "history": [
         [
@@ -64,7 +64,7 @@
         ],
         [
           "2026-07-28",
-          13832.2802734375
+          13830.9404296875
         ]
       ]
     },
@@ -146,8 +146,8 @@
       "profit": 7248.0,
       "live_ok": true,
       "close_prev": 10781.8,
-      "close_last": 10846.83,
-      "daily_pct": 0.6,
+      "close_last": 10843.92,
+      "daily_pct": 0.58,
       "last_date": "2026-07-28",
       "history": [
         [
@@ -184,7 +184,7 @@
         ],
         [
           "2026-07-28",
-          10846.830078125
+          10843.919921875
         ]
       ]
     },
@@ -206,8 +206,8 @@
       "profit": 4058.0,
       "live_ok": true,
       "close_prev": 6282.21,
-      "close_last": 6305.13,
-      "daily_pct": 0.36,
+      "close_last": 6305.33,
+      "daily_pct": 0.37,
       "last_date": "2026-07-28",
       "history": [
         [
@@ -244,7 +244,7 @@
         ],
         [
           "2026-07-28",
-          6305.1298828125
+          6305.330078125
         ]
       ]
     },
@@ -386,8 +386,8 @@
       "profit": 29702.0,
       "live_ok": true,
       "close_prev": 63724.9,
-      "close_last": 63444.72,
-      "daily_pct": -0.44,
+      "close_last": 63473.23,
+      "daily_pct": -0.39,
       "last_date": "2026-07-28",
       "history": [
         [
@@ -428,7 +428,7 @@
         ],
         [
           "2026-07-28",
-          63444.71875
+          63473.23046875
         ]
       ]
     },
@@ -450,8 +450,8 @@
       "profit": 8587.0,
       "live_ok": true,
       "close_prev": 4074.5,
-      "close_last": 4032.3,
-      "daily_pct": -1.04,
+      "close_last": 4032.9,
+      "daily_pct": -1.02,
       "last_date": "2026-07-28",
       "history": [
         [
@@ -484,7 +484,7 @@
         ],
         [
           "2026-07-28",
-          4032.300048828125
+          4032.89990234375
         ]
       ]
     }
