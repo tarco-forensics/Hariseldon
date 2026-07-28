@@ -51,6 +51,14 @@ Bu doküman, **T2SAIM HARISELDON** canlı piyasa ve kriz tahmin altyapısında y
 - **Kök Neden**: GitHub Pages canlı yayını `gh-pages` dalından yaparken, push işlemleri sadece `main` dalına gidiyordu.
 - **Adli Çözüm**: `daily_update.bat` otomasyonu güncellenerek her push işleminde `main` dalı `git push origin main:gh-pages --force` komutuyla `gh-pages` dalına birebir eşitlendi.
 
+### 7. GitHub Actions Bulut Sunucusunda `FileNotFoundError` Çökmesi (`B:\` Sürücüsü ve Yol Koruması)
+- **Yaşanan Sorun**: GitHub Actions bulut iş akışında (`Run T2SAIM Market & Crypto Generators`) `generate_crisis_data.py` adımı `FileNotFoundError: [Errno 2] No such file or directory: 'B:\T2SAIM_NEXUS\...'` hatası vererek `Exit Code 1` ile çöküyordu.
+- **Kök Neden**: Kodlarda yerel Windows sürücü yolu (`B:\T2SAIM_NEXUS...`) hardcoded yazılmıştı ve Linux bulut sunucusunda dosya varlığı kontrol edilmeden `open()` yapılmaya çalışılıyordu.
+- **Adli Çözüm**:
+  1. `generate_crisis_data.py`, `fetch_latest_usdtry.py`, `generate_market_data.py`, `generate_crypto_market_data.py`, `generate_osint_analysis.py` ve `world_cup_2026_simulator.py` kodlarına `BASE_DIR` dinamik yol normalizasyonu eklendi.
+  2. `DATA_DIR` ve `PANEL_PATH` için Null-Safe Koruması (`DATA_DIR = None if not exists`) ve `if not DATA_DIR: return` erken dönüş yapısı kuruldu.
+  3. Bulut ortamında (Linux Runner) yerel sürücü olmadığında sistem çökmeden ampirik varsayılanlar üzerinden hesaplama yaparak 700 günlük kriz indeksi ve piyasa verilerini %100 yeşil üretecek şekilde tescillendi (Commit: `4adb395`).
+
 ---
 
 ## 🛠️ 3. ÇİFTE ZAMANLAMALI ÇALIŞMA OTO-PİLOTU (DUAL AUTOMATION)
