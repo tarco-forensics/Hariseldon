@@ -1,7 +1,7 @@
 {
   "summary": {
-    "generated": "2026-07-30 22:25",
-    "yesterday": "2026-07-29",
+    "generated": "2026-07-31 00:25",
+    "yesterday": "2026-07-30",
     "total_portfolio": 155730.0,
     "total_profit": 75730.0,
     "total_roi_pct": 94.66,
@@ -29,10 +29,10 @@
       "portfolio": 15984.0,
       "profit": 5984.0,
       "live_ok": true,
-      "close_prev": 13501.6,
-      "close_last": 13292.93,
-      "daily_pct": -1.55,
-      "last_date": "2026-07-30",
+      "close_prev": 13687.9,
+      "close_last": 13501.6,
+      "daily_pct": -1.36,
+      "last_date": "2026-07-29",
       "history": [
         [
           "2026-07-17",
@@ -69,10 +69,6 @@
         [
           "2026-07-29",
           13501.599609375
-        ],
-        [
-          "2026-07-30",
-          13292.9296875
         ]
       ]
     },
@@ -94,8 +90,8 @@
       "profit": 8002.0,
       "live_ok": true,
       "close_prev": 7316.15,
-      "close_last": 7444.66,
-      "daily_pct": 1.76,
+      "close_last": 7437.63,
+      "daily_pct": 1.66,
       "last_date": "2026-07-30",
       "history": [
         [
@@ -136,7 +132,7 @@
         ],
         [
           "2026-07-30",
-          7444.66015625
+          7437.6298828125
         ]
       ]
     },
@@ -406,8 +402,8 @@
       "profit": 29702.0,
       "live_ok": true,
       "close_prev": 63908.17,
-      "close_last": 64782.06,
-      "daily_pct": 1.37,
+      "close_last": 64689.89,
+      "daily_pct": 1.22,
       "last_date": "2026-07-30",
       "history": [
         [
@@ -448,7 +444,7 @@
         ],
         [
           "2026-07-30",
-          64782.05859375
+          64689.890625
         ]
       ]
     },
@@ -470,8 +466,8 @@
       "profit": 8587.0,
       "live_ok": true,
       "close_prev": 4034.7,
-      "close_last": 4163.9,
-      "daily_pct": 3.2,
+      "close_last": 4162.8,
+      "daily_pct": 3.17,
       "last_date": "2026-07-30",
       "history": [
         [
@@ -508,7 +504,7 @@
         ],
         [
           "2026-07-30",
-          4163.89990234375
+          4162.7998046875
         ]
       ]
     }
