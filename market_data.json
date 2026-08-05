@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated": "2026-08-05 08:00",
+    "generated": "2026-08-05 09:00",
     "yesterday": "2026-08-04",
     "total_portfolio": 155730.0,
     "total_profit": 75730.0,
@@ -286,8 +286,8 @@
       "profit": 7231.0,
       "live_ok": true,
       "close_prev": 63957.53,
-      "close_last": 66115.58,
-      "daily_pct": 3.37,
+      "close_last": 66257.36,
+      "daily_pct": 3.6,
       "last_date": "2026-08-05",
       "history": [
         [
@@ -328,7 +328,7 @@
         ],
         [
           "2026-08-05",
-          66115.578125
+          66257.359375
         ]
       ]
     },
@@ -350,8 +350,8 @@
       "profit": 4918.0,
       "live_ok": true,
       "close_prev": 25852.92,
-      "close_last": 25881.2,
-      "daily_pct": 0.11,
+      "close_last": 25909.91,
+      "daily_pct": 0.22,
       "last_date": "2026-08-05",
       "history": [
         [
@@ -392,7 +392,7 @@
         ],
         [
           "2026-08-05",
-          25881.19921875
+          25909.91015625
         ]
       ]
     },
@@ -414,8 +414,8 @@
       "profit": 29702.0,
       "live_ok": true,
       "close_prev": 63460.9,
-      "close_last": 64105.61,
-      "daily_pct": 1.02,
+      "close_last": 64276.96,
+      "daily_pct": 1.29,
       "last_date": "2026-08-05",
       "history": [
         [
@@ -452,7 +452,7 @@
         ],
         [
           "2026-08-05",
-          64105.609375
+          64276.9609375
         ]
       ]
     },
@@ -474,8 +474,8 @@
       "profit": 8587.0,
       "live_ok": true,
       "close_prev": 4033.7,
-      "close_last": 4191.0,
-      "daily_pct": 3.9,
+      "close_last": 4225.4,
+      "daily_pct": 4.75,
       "last_date": "2026-08-05",
       "history": [
         [
@@ -504,7 +504,7 @@
         ],
         [
           "2026-08-05",
-          4191.0
+          4225.39990234375
         ]
       ]
     }
