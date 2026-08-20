@@ -1,0 +1,112 @@
+{
+    "system": "T2SAIM_HARI_SELDON_ENGINE",
+    "version": "3.0",
+    "last_updated": "2026-08-21",
+    "total_active_formulas": 33,
+    "layers": {
+        "Layer_1_NeuroFinance": {
+            "A_load": {
+                "name": "Amigdala Korku Yuku",
+                "formula": "sigmoid(k1*Vol + k2*abs(dCDS) + k3*Z_EFMI - theta)",
+                "critical_threshold": 0.65,
+                "reaction_time": "0.1 sec (System 1)"
+            },
+            "PFC_control": {
+                "name": "Prefrontal Korteks Frenleme",
+                "formula": "1 - 1/(1 + exp(-kappa*(A_load - 0.5)))",
+                "critical_threshold": 0.35,
+                "reaction_time": "10 sec (System 2)"
+            },
+            "v_run": {
+                "name": "Fiziki Kacis Hizi",
+                "formula": "v0 * exp(gamma*A_load + delta*deltaP_fiziki)",
+                "critical_threshold": 0.7
+            },
+            "TR_DEI": {
+                "name": "Yapisal Curume Katsayisi",
+                "value": 0.71,
+                "multiplier": 1.15
+            }
+        },
+        "Layer_2_Banking_ALM": {
+            "BFI": {
+                "name": "Bankacilik Kirilganlik Indeksi",
+                "formula": "w1*(LDR/LDR_crit) + w2*(FundingSpread/Spread_norm) + w3*(NPL_real/NPL_resmi)",
+                "critical_threshold": 0.7
+            },
+            "LDR": {
+                "name": "Kredi / Mevduat Orani",
+                "formula": "Total_Loans / Total_Deposits",
+                "critical_threshold": 1.15
+            },
+            "NPL_real": {
+                "name": "Hayalet Krediler (Gercek Batik)",
+                "formula": "NPL_resmi + delta_forbearance * (Stage2_Loans / Total_Loans)",
+                "model_value": 0.094
+            },
+            "External_Debt_1Y": {
+                "name": "Kisa Vadeli Dis Borc Servisi",
+                "value_usd_billion": 185.0,
+                "risk_type": "Sudden Stop"
+            }
+        },
+        "Layer_3_EFMI_Discourse": {
+            "EFMI": {
+                "name": "Epistemik Adli Ahlaki Gosterge",
+                "formula": "sum(wi * abs(Discourse_i - Action_i)) / Verifiable_Data"
+            },
+            "Z_EFMI": {
+                "name": "5 Yillik Z-Skor Sapmasi",
+                "formula": "(EFMI - mu_1260) / sigma_1260",
+                "critical_threshold": 1.25
+            }
+        },
+        "Layer_4_SocioPhysics_Resonance": {
+            "Ising_m": {
+                "name": "Ising Spin Kolektif Hizalanma",
+                "formula": "tanh(beta * (J*m + h))"
+            },
+            "Amnesia_Memory": {
+                "name": "Bellek Sonumlenmesi",
+                "lambda": 0.15,
+                "max_ceiling": 5.0
+            },
+            "SRI": {
+                "name": "Sistemik Rezonans Indeksi",
+                "formula": "cbrt(A_load * BFI * max(0.01, Z_EFMI))",
+                "critical_threshold": 0.5
+            }
+        },
+        "Layer_5_Macro_CoiledSpring": {
+            "REER_Pendulum": {
+                "name": "Reel Efektif Doviz Kuru Sarkaci",
+                "equilibrium": 65.0,
+                "current_model": 88.5
+            },
+            "Kapalicarsi_Spread": {
+                "name": "Tahtakale Fiziki Kur Makasi",
+                "formula": "((P_tahtakale - P_bank) / P_bank) * 100",
+                "critical_threshold_pct": 2.5
+            }
+        },
+        "Layer_6_Composite_Crisis_Index": {
+            "CI": {
+                "name": "Periyodik Kriz Indeksi",
+                "formula": "0.30*SRI + 0.25*BFI + 0.20*A_load + 0.15*(Spread_fiziki/5) + 0.10*(Memory/5)"
+            },
+            "Lock_In_Phase": {
+                "ALARM": "CI > 0.65 or (SRI >= 0.50 and Z >= 0.50)",
+                "TEDIRGIN": "CI > 0.45",
+                "NORMAL": "CI <= 0.45"
+            }
+        }
+    },
+    "expansion_indicators": {
+        "Basel_Credit_to_GDP_Gap": "Credit/GDP - HP_filter(400000)",
+        "BIS_Debt_Service_Ratio": "DSR = (i*D / (1 - (1+i)^-s)) / Income",
+        "IMF_Growth_at_Risk": "Q_0.05(dY_t+h | NFCI, dY)",
+        "Wharton_Yield_Curve_Spread": "R_10Y - R_2Y",
+        "OECD_CLI": "sum(wj * Xj_cycle)",
+        "Minsky_Parabolic_Debt": "S_S(t) = 0.5 * delta_S * delta_D * (t - t0)^2"
+    }
+}
