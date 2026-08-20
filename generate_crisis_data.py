@@ -39,11 +39,38 @@ DEFAULT_PSY = 0.5985
 DEFAULT_FIN = 0.4145
 DEFAULT_DEI = 0.71
 
-# ── 1. USDTRY ve Volatilite Yükleyici ──────────────────────────────────
+# ── 1. Çok Boyutlu Döviz Sepeti & Emtia (Altın/Petrol) Yükleyici ───────
 def load_market_data():
-    usd_data = {}
-    vol_data = {}
+    basket_file = os.path.join(BASE_DIR, "multi_currency_commodity_panel.csv")
+    market_rows = {}
     
+    if os.path.exists(basket_file):
+        try:
+            with open(basket_file, encoding="utf-8") as f:
+                for r in csv.DictReader(f):
+                    d = r.get("date")
+                    if d:
+                        try:
+                            market_rows[d] = {
+                                "usd": float(r.get("USDTRY", 34.0)),
+                                "eur": float(r.get("EURTRY", 37.0)),
+                                "gold_try": float(r.get("GRAM_ALTIN_TRY", 2800.0)),
+                                "brent_try": float(r.get("BRENT_TRY", 2700.0)),
+                                "eurusd": float(r.get("EURUSD", 1.08)),
+                                "tcmb_sepet": float(r.get("TCMB_SEPET_TRY", 35.5)),
+                                "trade_basket": float(r.get("TRADE_WEIGHTED_BASKET", 35.7)),
+                                "composite": float(r.get("BASKET_COMPOSITE", 33.0))
+                            }
+                        except (ValueError, KeyError):
+                            pass
+            if market_rows:
+                print(f"✅ Çok boyutlu döviz & emtia sepeti yüklendi ({len(market_rows)} gün): {basket_file}")
+                return market_rows
+        except Exception as e:
+            print(f"⚠️ Hata reading basket panel: {e}")
+            
+    # Fallback tekil USDTRY dosyaları
+    usd_data = {}
     for d in DATA_DIRS:
         if os.path.exists(d):
             p1 = os.path.join(d, "USDTRY_gunluk.csv")
@@ -51,19 +78,15 @@ def load_market_data():
                 try:
                     with open(p1, encoding="utf-8") as f:
                         for r in csv.DictReader(f):
-                            usd_data[r["tarih"]] = float(r["kapanis"])
+                            val = float(r["kapanis"])
+                            usd_data[r["tarih"]] = {
+                                "usd": val, "eur": val * 1.08, "gold_try": val * 75.0,
+                                "brent_try": val * 80.0, "eurusd": 1.08, "tcmb_sepet": val * 1.04,
+                                "trade_basket": val * 1.044, "composite": val
+                            }
                 except:
                     pass
-            p2 = os.path.join(d, "USDTRY_vol_haftalik.csv")
-            if os.path.exists(p2) and not vol_data:
-                try:
-                    with open(p2, encoding="utf-8") as f:
-                        for r in csv.DictReader(f):
-                            vol_data[r["tarih"]] = float(r["volatilite_yuzde"])
-                except:
-                    pass
-                    
-    return usd_data, vol_data
+    return usd_data
 
 # ── 2. Haftalık Bankacılık Paneli Yükleyici ─────────────────────────────
 def load_banking_data():
@@ -148,7 +171,7 @@ class AgentCohort:
 
 # ── 4. Birleşik 33-Formüllü Geçmiş ve Gelecek Hesaplaması ───────────────
 def generate_full_digital_twin():
-    usd, vol = load_market_data()
+    market_data = load_market_data()
     bank = load_banking_data()
     
     today = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
@@ -159,23 +182,30 @@ def generate_full_digital_twin():
     
     dates_past = [yesterday - timedelta(days=i) for i in range(PAST_DAYS, -1, -1)]
     dates_future = [yesterday + timedelta(days=i) for i in range(1, FUTURE_DAYS + 1)]
-    all_dates = dates_past + dates_future
     
     cohort = AgentCohort(N=1024)
     
-    # Geçmiş USDTRY
+    # Çok Boyutlu Sepet ve Emtia Serisi
+    basket_series = []
     usd_series = []
+    eur_series = []
+    gold_series = []
+    brent_series = []
+    
+    last_known = {"usd": 34.0, "eur": 37.0, "gold_try": 2800.0, "brent_try": 2700.0, "eurusd": 1.08, "composite": 33.0}
+    
     for d in dates_past:
         dstr = d.strftime("%Y-%m-%d")
-        if dstr in usd:
-            usd_series.append(usd[dstr])
-        elif usd_series:
-            usd_series.append(usd_series[-1])
-        else:
-            usd_series.append(30.0)
-            
-    # Günlük getiri ve volatilite
-    returns = [0.0] + [(usd_series[i] - usd_series[i-1]) / (usd_series[i-1] or 1) for i in range(1, len(usd_series))]
+        if dstr in market_data:
+            last_known = market_data[dstr]
+        usd_series.append(last_known.get("usd", 34.0))
+        eur_series.append(last_known.get("eur", 37.0))
+        gold_series.append(last_known.get("gold_try", 2800.0))
+        brent_series.append(last_known.get("brent_try", 2700.0))
+        basket_series.append(last_known.get("composite", 33.0))
+
+    # Çok Boyutlu Sepet Getirisi ve Volatilitesi
+    returns = [0.0] + [(basket_series[i] - basket_series[i-1]) / (basket_series[i-1] or 1) for i in range(1, len(basket_series))]
     smoothed_returns = []
     for i in range(len(returns)):
         sub = returns[max(0, i - 30): i + 1]
@@ -185,7 +215,6 @@ def generate_full_digital_twin():
     std_r = math.sqrt(sum((x - mu_r)**2 for x in smoothed_returns) / len(smoothed_returns)) or 1e-9
     
     bank_weeks = sorted(bank.keys())
-    
     output_series = []
     memory = 0.0
     
@@ -193,7 +222,7 @@ def generate_full_digital_twin():
     for idx, d in enumerate(dates_past):
         dstr = d.strftime("%Y-%m-%d")
         
-        # Volatilite Z-skoru
+        # Çok Boyutlu Sepet Volatilite Z-skoru
         z_val = abs(smoothed_returns[idx] - mu_r) / std_r
         z_norm = min(1.0, max(0.0, z_val / SIGMA))
         
@@ -217,7 +246,7 @@ def generate_full_digital_twin():
         # Ajan Adımı (Sosyofizik)
         psy_strain, trust_val, comp_val = cohort.step(system_shock=z_norm, bfi_stress=bfi, dei=DEFAULT_DEI)
         
-        # Formül 30: SRI Bileşik Stres İndeksi
+        # Formül 30: SRI Bileşik Stres İndeksi (Döviz Sepeti & Emtia Entegre)
         sri_fin = min(1.0, 0.35 * DEFAULT_FIN + 0.65 * bfi)
         sri_vol = min(1.0, 0.60 * z_norm + 0.40 * 0.35)
         sri = 0.30 * psy_strain + 0.40 * sri_fin + 0.30 * sri_vol
@@ -245,6 +274,11 @@ def generate_full_digital_twin():
             "ldr": round(ldr, 2),
             "dth": round(dth, 1),
             "m2_nir": round(m2_nir, 1),
+            "usd": round(usd_series[idx], 2),
+            "eur": round(eur_series[idx], 2),
+            "gold_try": round(gold_series[idx], 1),
+            "brent_try": round(brent_series[idx], 1),
+            "basket_val": round(basket_series[idx], 2),
             "trust": round(trust_val, 3),
             "compliance": round(comp_val, 3),
             "alarm": alarm,
@@ -255,26 +289,33 @@ def generate_full_digital_twin():
         })
         
     # 2. GELECEK GÜNLERİN HESAPLANMASI (T_bugün → T+180 - 18 Kasım 2026 Rezonansı)
-    # Gelecekte enflasyon ataleti, KKM tasfiyesi ve banka tahvil kapanının yarattığı dinamik diferansiyel
     last_past = output_series[-1]
     cur_ldr = last_past["ldr"]
     cur_dth = last_past["dth"]
     cur_m2_nir = last_past["m2_nir"]
+    cur_usd = last_past["usd"]
+    cur_eur = last_past["eur"]
+    cur_gold = last_past["gold_try"]
+    cur_brent = last_past["brent_try"]
+    cur_basket = last_past["basket_val"]
     
     for day_f in range(1, FUTURE_DAYS + 1):
         d = yesterday + timedelta(days=day_f)
         dstr = d.strftime("%Y-%m-%d")
         
-        # Bilanço geriliminin zamansal birikimi (Sıkışmış Yay diferansiyeli)
         t_progress = day_f / FUTURE_DAYS
-        
-        # 18 Kasım 2026 (D+90 civarı) rezonans faz kilidi yaklaşımı
         dist_to_peak = abs(day_f - 90)
-        resonance_buildup = math.exp(-math.pow(dist_to_peak / 28.0, 2))  # 33 formül rezonans katsayısı
+        resonance_buildup = math.exp(-math.pow(dist_to_peak / 28.0, 2))
         
         fut_ldr = cur_ldr + 0.05 * t_progress + 0.08 * resonance_buildup
         fut_dth = cur_dth + 4.0 * t_progress + 8.0 * resonance_buildup
         fut_m2_nir = cur_m2_nir + 15.0 * t_progress + 30.0 * resonance_buildup
+        
+        fut_usd = cur_usd * (1.0 + 0.12 * t_progress + 0.18 * resonance_buildup)
+        fut_eur = cur_eur * (1.0 + 0.11 * t_progress + 0.17 * resonance_buildup)
+        fut_gold = cur_gold * (1.0 + 0.18 * t_progress + 0.25 * resonance_buildup)
+        fut_brent = cur_brent * (1.0 + 0.08 * t_progress + 0.12 * resonance_buildup)
+        fut_basket = cur_basket * (1.0 + 0.13 * t_progress + 0.19 * resonance_buildup)
         
         # BFI
         ldr_shock = max(0.0, (fut_ldr - 1.0) * 2.0)
@@ -309,6 +350,11 @@ def generate_full_digital_twin():
             "ldr": round(fut_ldr, 2),
             "dth": round(fut_dth, 1),
             "m2_nir": round(fut_m2_nir, 1),
+            "usd": round(fut_usd, 2),
+            "eur": round(fut_eur, 2),
+            "gold_try": round(fut_gold, 1),
+            "brent_try": round(fut_brent, 1),
+            "basket_val": round(fut_basket, 2),
             "trust": round(trust_val, 3),
             "compliance": round(comp_val, 3),
             "alarm": alarm,
@@ -328,6 +374,11 @@ def generate_full_digital_twin():
         "ldr_last": yesterday_row["ldr"],
         "dth_last": yesterday_row["dth"],
         "m2_nir_last": yesterday_row["m2_nir"],
+        "usd_last": yesterday_row["usd"],
+        "eur_last": yesterday_row["eur"],
+        "gold_last": yesterday_row["gold_try"],
+        "brent_last": yesterday_row["brent_try"],
+        "basket_last": yesterday_row["basket_val"],
         "trust_last": yesterday_row["trust"],
         "compliance_last": yesterday_row["compliance"],
         "memory_last": yesterday_row["memory"],
