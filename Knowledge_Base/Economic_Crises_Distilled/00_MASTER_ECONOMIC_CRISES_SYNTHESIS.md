@@ -25,6 +25,9 @@ T2SAIM'in **6 ana katmanında çalışan 33 matematiksel formülü**, bu külliy
 | **Stoa Mücbir Sebep (Force Majeure)** | **Cristina Peicuti** (*Bölüm 8: Exogenous Crises*) | Dışsal şoklar bilinemez; sistemik mukavemet ve sönümleme (damping) ölçülür. |
 | **Dış Borç Servisi (185 Mr $)** | **Morán Álvarez** (*The End of National Economic Crises - 2025*) | Küresel faiz arbitrajı ve döviz sepeti sıkışmasında "Ani Duruş (Sudden Stop)". |
 | **Tarihsel 52+8 Kriz Sinyali** | **Skrabec Jr.** (*100 Most Important Financial Crises*) | 100 krizlik döngüsel bellek ve periyodik kriz frekans analizi. |
+| **52 Makro Gösterge Standardizasyonu** | **OECD MEI** (*Main Economic Indicators Sources*) | OECD Composite Leading Indicators (CLI) ve X-12 mevsimsellik arındırma standardı. |
+| **Merkez Bankası Likidite Tepkisi** | **Anne D. Picker** (*International Indicators & Central Banks - Wiley*) | GLP/Faiz koridoru örtük sıkılaşma, döviz sepeti kompozisyonu (USD/EUR). |
+| **Öncü / Gecikmeli Gösterge Hiyerarşisi** | **Bernard Baumohl** (*The Secrets of Economic Indicators - Wharton*) | Getiri Eğrisi (Yield Curve) ters dönmesi, NPL gecikme tuzağı ve sürpriz endeksi. |
 
 ---
 
