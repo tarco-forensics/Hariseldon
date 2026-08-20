@@ -1,0 +1,1772 @@
+--- PAGE 3 ---
+MATHEMATICS RESEARCH DEVELOPMENTS 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+MATHEMATICAL MODELS  
+OF ECONOMIC GROWTH  
+AND CRISES 
+ 
+ 
+No part of this digital document may be reproduced, stored in a retrieval system or transmitted in any form or
+by any means. The publisher has taken reasonable care in the preparation of this digital document, but makes no
+expressed or implied warranty of any kind and assumes no responsibility for any errors or omissions. No
+liability is assumed for incidental or consequential dama ges in connection with or arising out of information
+contained herein. This digital document is sold with the clear understanding that the publisher is not engaged in
+rendering legal, medical or any other professional services. 
+
+--- PAGE 4 ---
+MATHEMATICS RESEARCH 
+DEVELOPMENTS 
+ 
+ 
+Additional books in this series can be found on Nova’s website  
+under the Series tab. 
+ 
+ 
+Additional e-books in this series can be found on Nova’s website  
+under the eBooks tab. 
+ 
+ 
+ 
+ECONOMIC ISSUES, PROBLEMS  
+AND PERSPECTIVES 
+ 
+ 
+Additional books in this series can be found on Nova’s website  
+under the Series tab. 
+ 
+ 
+Additional e-books in this series can be found on Nova’s website  
+under the eBooks tab. 
+ 
+ 
+ 
+
+--- PAGE 5 ---
+MATHEMATICS RESEARCH DEVELOPMENTS 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+MATHEMATICAL MODELS  
+OF ECONOMIC GROWTH  
+AND CRISES 
+ 
+ 
+ 
+ 
+ALEXEI KROUGLOV 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+--- PAGE 6 ---
+Copyright © 2017 by Nova Science Publishers, Inc. 
+ 
+All rights reserved. No part of this book may be reproduced, stored in a retrieval system or transmitted 
+in any form or by any means: electronic, electrostatic, magnetic, tape, mechanical photocopying, 
+recording or otherwise without the written permission of the Publisher. 
+ 
+We have partnered with Copyright Clearance Center to make it easy for you to obtain permissions to 
+reuse content from this publication. Simply navigate to this publication’s page on Nova’s website and 
+locate the “Get Permission” button be low the title description. This button is linked directly to the 
+title’s permission  page on copyright.com. Alternatively, you can visit copyright.com and search by 
+title, ISBN, or ISSN.  
+  
+For further questions about using the service on copyright.com, please contact:  
+Copyright Clearance Center 
+Phone: +1-(978) 750-8400 Fax: +1-(978) 750-4470  E-mail: info@copyright.com. 
+ 
+ 
+NOTICE TO THE READER 
+The Publisher has taken reasonable care in the preparation of this book, but makes no expressed or 
+implied warranty of any kind and assumes no responsibility for any errors or omissions. No liability is 
+assumed for incidental or consequential damages in connection with or arising out of informatio n 
+contained in this book. The Publisher shall not be liable for any special, consequential, or exemplary 
+damages resulting, in whole or in part, from the readers’ use of, or reliance upon, this material. Any 
+parts of this book based on government reports are so indicated and copyright is claimed for those parts 
+to the extent applicable to compilations of such works. 
+ 
+Independent verification should be sought for any data, advice or recommendations contained in this 
+book. In addition, no responsibility is assumed by the publisher for any injury and/or damage to 
+persons or property arising from any methods, products, instructions, ideas or otherwise contained in 
+this publication. 
+ 
+This publication is designed to provide accurate and authoritative information with regard to the subject 
+matter covered herein. It is sold with the clear understanding that the Publisher is not engaged in 
+rendering legal or any other professional services. If legal or any other expert assistance is required, the 
+services of a competent person should be sought. FROM A DECLARATION OF PARTICIPANTS 
+JOINTLY ADOPTED BY A COMMITTEE OF THE AMERICAN BAR ASSOCIATION AND A 
+COMMITTEE OF PUBLISHERS. 
+ 
+Additional color graphics may be available in the e-book version of this book. 
+ 
+Library of Congress Cataloging-in-Publication Data 
+ 
+ISBN: H%RRN 
+ 
+Published by Nova Science Publishers, Inc. † New York 
+ 
+
+--- PAGE 7 ---
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+CONTENTS 
+ 
+List of Figures  ix 
+Chapter 1 Introduction 1 
+Chapter 2 Savings and Investment 5 
+2.1. Preface 5 
+2.2. Model of Economic Growth 6 
+2.2.1. Introduction 6 
+2.2.2. Model of Economy at the Undisturbed 
+State 8 
+2.2.3. Model of One-Time Investment 9 
+2.2.4. Model of Constant-Rate Investment 16 
+2.2.5. Model of Constant-Accelerated 
+Investment 23 
+2.2.6. Model of Exponential Investment 34 
+2.2.7. Conclusion 43 
+2.3. Growth Factors for Few Types  
+of Investments 44 
+2.3.1. Introduction 44 
+2.3.2. Economic Growth Induced  
+by Investments 45 
+2.3.3. Maximal Growth Rates Induced  
+by Investments 66 
+2.3.4. Conclusion 71 
+ 
+
+--- PAGE 8 ---
+Contents vi 
+Chapter 3 Economic Trends 75 
+3.1. Preface 75 
+3.2. Model of Credit Expansion 76 
+3.2.1. Introduction 76 
+3.2.2. Model of Economy at the Undisturbed 
+State 76 
+3.2.3. Model of Constant-Rate Credit 
+Expansion 77 
+3.2.4. Economic Implications 84 
+3.2.5. Conclusion 85 
+3.3. Economic Growth and Debt 86 
+3.3.1. Introduction 86 
+3.3.2. Model of Economy at the Undisturbed 
+State 87 
+3.3.3. Model of Constant-Rate Debt  
+and Constant-Rate Investment 88 
+3.3.4. Model of Constant-Rate Debt and 
+Constant-Acceleration Investment 95 
+3.3.5. Economic Implications 104 
+3.3.6. Conclusion 106 
+3.4. Model of Economic Trend 107 
+3.4.1. Introduction 107 
+3.4.2. Outline of the Mathematical Apparatus 109 
+3.4.3. Changes of the Trend Line 120 
+3.4.4. Graphical Presentation and 
+Implications 129 
+3.4.5. Conclusion 132 
+Chapter 4 Models of the Crises 135 
+4.1. Preface 135 
+4.2. Model of the Financial Crisis 137 
+4.2.1. Introduction 137 
+4.2.2. Model of Interactions between Real 
+Market and Financial Market 138 
+4.2.3. Financial Crisis and Demand Shock   
+on Financial Market 142 
+4.2.4. Conclusion 147 
+ 
+ 
+
+--- PAGE 9 ---
+Contents vii 
+4.3. Monetary Part of Abenomics 148 
+4.3.1. Introduction 148 
+4.3.2. Model of Liquidity Pumping into 
+Financial Market 149 
+4.3.3. Impact of Amortization on the Price 
+Fluctuations 152 
+4.3.4. Model of Accelerated Liquidity 
+Pumping 157 
+4.3.5. Conclusion 159 
+4.4. Secular Stagnation and Decline 160 
+4.4.1. Introduction 160 
+4.4.2. Model of Economy at the Undisturbed 
+State 161 
+4.4.3. Model of Economic Growth in Money 
+Terms 162 
+4.4.4. Model of Economic Decline in Money 
+Terms 177 
+4.4.5. Economic Implications 191 
+4.4.6. Conclusion 194 
+4.5. Model of the Greek Crisis 195 
+4.5.1. Introduction 195 
+4.5.2. Mathematical Model of the Greek Crisis 196 
+4.5.3. Model of Economic Transformations 206 
+4.5.4. Conclusion 213 
+Summary  215 
+References  219 
+Author's Contact Information 221 
+Index  223 
+ 
+ 
+
+--- PAGE 11 ---
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+LIST OF FIGURES 
+ 
+Figure 1. Graphics of Intersection of Two Economic Trends 130 
+Figure 2. Transformation of Economic Trend without 
+Fluctuations 131 
+Figure 3. Transformation of Economic Trend with Fluctuations 132 
+ 
+ 
+ 
+
+--- PAGE 13 ---
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Chapter 1 
+ 
+ 
+ 
+INTRODUCTION 
+ 
+ 
+This book is a continuation of my previous book (Krouglov,  2006) 
+where I tried to present a coherent mathematical description of 
+economic forces  acting on economic markets . In (Krouglov, 2006) I 
+also attempted to mathematically explain economic processes 
+underlying an economic growth  on markets. I tried to mathematically 
+describe an economic growth in single -product economy . The 
+explanation was briefly that markets participants  withdraw part of 
+product from markets in the form of savings  and use the withdrawn 
+product in consecutive production in the form of investment . The 
+withdrawal drives product’s supply  on market down while at the same 
+time it drives product’s price on markets up, which in turn drives 
+product’s demand  down. When an impact of the product’s price 
+increase exceeds an impact of the product’s demand decrease we 
+observe an econo mic growth whereas we observe an economic decline 
+in the opposite situation. 
+In Chapter 2 of this book I continue examining the phenomenon of 
+an economic growth  and present few mathematical models  for t his 
+purpose. The work is based on research done in (Krouglov, 2006) 
+where the system of ordinary differential equations  was presented, 
+
+--- PAGE 14 ---
+Alexei Krouglov 2 
+which linked economic forces behind the product’s demand, product’s 
+supply and product’s prices on the market. In this chapter I look into 
+various effects that savings and investment exert on market of the 
+single-product economy. 
+In Chapter 3 , I examine an impact of four important economic 
+concepts on the economic growth – demand, supply, investment, and 
+debt. I present mathematical models to explore interconnections of 
+these concepts and study their impacts on an economic growth and 
+decline. I also build a mathematical model to verify hypothesis that 
+weak recovery after the financial crisis could be attributed to a decline 
+of investment that was not compensated by the decrease of interest rate. 
+In Chapter 4 ,
+ I examine the phenomenon of economic crises and 
+present few mathematical models for this purpose. The models for four 
+economic crises are considered in this chapter. The first model is about 
+the last financial crisis, which tries to explain how relatively small 
+disturbances on financial markets have produced large effects in real 
+economy. I build a model describing how fluctuations on two connected 
+markets could amplify each other, which is known as resonance 
+phenomenon. The second model is related to monetary part of the 
+Japanese economic policy known as Abenomics where a “weird” result 
+happened. Despite steady purchasing of the bonds by the Bank of Japan 
+their price decreased and the yield increased. I construct a mathematical 
+model of the financial market to investigate this phenomenon. The third 
+model is devoted to the secular stagnation  hypothesis, which was 
+advanced by economist Lawrence Summers . Summers’s ideas were 
+close to my work where I was developing the model of an economic 
+growth. I complemented the model with a situation where external 
+supply of product comes on market. The results of model told the 
+external supply of product provided with either constant rate or constant 
+acceleration could cause either a restricted (secular stagnation) or an 
+unrestricted (secular decline) economic decline. The fourth model is a 
+simplified model describing four different stages of the Greek economic 
+crisis (before the Eurozone, before the Euro crisis, after the Euro crisis, 
+
+--- PAGE 15 ---
+Introduction 3 
+and during the austerity period) and two possible stages of the recovery  
+(with austere and benign economic transformations). Theoretical result 
+is that study of different stages of the crisis was performed with 
+mathematical accuracy. 
+ 
+
+--- PAGE 17 ---
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Chapter 2 
+ 
+ 
+ 
+SA VINGS AND INVESTMENT 
+ 
+ 
+2.1. PREFACE 
+ 
+Chapter 2  examines the phenomenon of an economic growth  and 
+presents several mathematical models for this purpose. 
+Research is based on the author’s previous work, which was 
+summarized in (Krouglov, 2006). 
+In (Krouglov, 2006) the system of ordinary differential equations  
+was p resented, which had linked the economic forces  behind the 
+product’s demand, product’s supply and product’s prices on the market. 
+The author have aspired to clarity  and chosen to understand the 
+acting economic forces in a single-product economy. 
+After the author understood the economic forces  connecting the 
+product’s demand , the product’s supply  and the product’s prices on 
+market, he tried to comprehend the phenomenon of an economic growth 
+that would fit into the said system of ordinary differential equations that 
+linked the economic forces acting on the market. The author asserts that 
+an economic growth is conceptually caused since market participants  
+withdraw partially products fro m markets in the form of savings  and 
+use the withdrawn products in the form of investment  in consecutive 
+
+--- PAGE 18 ---
+Alexei Krouglov 6 
+production. That process drives the amounts of products on markets 
+down and at the same time it drives the products’  prices on markets up 
+and in turn drives the product’s demand down. If the effect of increase 
+in the products’ prices exceeds the effect of decrease in the amounts of 
+products, one can observe the process of economic growth whereas she 
+can observe the process of economic decline in the opposite situation. A 
+significant point to note is that products’ savings are used as investment 
+in order to improve the products’ quality. Thus, an increase of the 
+products’ prices during periods of economic growth is accomp anied by 
+the continuous improvement of the products’ quality. 
+In this chapter I look into various effects that savings  and 
+investment exert on a single-product economy. 
+ 
+ 
+2.2. MODEL OF ECONOMIC GROWTH 
+ 
+Originally the content of Section 2.2 was described in (Krouglov, 
+2009). 
+ 
+ 
+2.2.1. Introduction 
+ 
+Here in this section I show how process of savings  and investment 
+in a single-product economy changes balance on the market of product, 
+and creates an economic growth . Concept of the economic growth is 
+presented through a dual impact of changes of the product’s prices and 
+changes of the supply-demand equilibrium on market of product. 
+After supply-demand equilibrium on market of product is reached, 
+economic growth  is achieved through continuous improvement of the 
+product’s quality. To improve the product’s quality one has to make an 
+appropriate investment of the product (remember, we are dealing with a 
+single-product economy ). That is done by applying the product’s 
+
+--- PAGE 19 ---
+Savings and Investment 7 
+savings, i.e., a withdrawal of the appropriate amount of product from 
+market. That process creates a shortage  of the product on market, 
+violates the supp ly-demand equilibrium on market of product, and 
+drives the product’s price up. In other words, when one pays a bigger 
+price for the improved -quality product, she compensates (from an 
+economic point of view) for increase of the product’s price caused by 
+the withdrawal of appropriate amount of product from market in the 
+process of savings (and consecutive investment) in order to improve the 
+product’s quality. 
+On the other hand, a withdrawal of product from market in the form 
+of savings decreases the available amount of product there. The smaller 
+amount of product on market is replenished by an increase of the 
+supply. Thus, withdrawal of the product from market for investment  
+and replenishment of the product on market by suppliers  have opposite 
+impacts on supply -demand equilibrium on market. As the result, it 
+could be either a surplus or shortage of product on market at some point 
+in time but the market forces will try to bring market to new supply -
+demand equilibrium in the long term. Similarly, withdrawal of the 
+product from market in the form of savings increases the product’s 
+price in the long term and in tu rn decreases the product’s demand. 
+These dual impacts drive a monetary value of the product (equal to the 
+product’s price multiplied by the product’s quantity) on market in 
+opposite directions – a bigger price typically drives the monetary value 
+up; if the  product’s quantity increases it drives the monetary value up, 
+and if the product’s quantity decreases it drives the monetary value 
+down. When the monetary value increases in time one can talk about an 
+economic growth, and when the monetary value decreases in time one 
+can talk about an economic recession. 
+In the next section I try to transform verbal description of the 
+process of an economic growth  in single -product economy  into the 
+mathematical description. 
+ 
+ 
+
+--- PAGE 20 ---
+Alexei Krouglov 8 
+2.2.2. Model of Economy at the Undisturbed State 
+ 
+To turn to mathematical descriptions, when there are no disturbing 
+economic forces , the  market is in an equilibrium  position, i.e., the 
+product’s supply and demand are equal, and they are developing with a 
+constant rate and the product’s price is fixed. 
+When the balance between the product’s supply  and demand  is 
+broken, the market is experiencing economic forces , which act to bring 
+the market to a new equilibrium position. 
+These economic forces  are described by the following ordinary 
+differential equations regarding to the product’s supply  , demand 
+, and price  (see Krouglov, 2006), 
+ 
+ (2.2.1) 
+ 
+ (2.2.2) 
+ 
+ (2.2.3) 
+ 
+In Eq. (2.2.1 – 3) above the values  are constants. 
+I assume the market was in equilibrium  position until time , 
+the volumes of product’s supply   and product’s demand  on 
+market were equal, and they both were developing with a constant rate  
+. 
+ 
+ (2.2.4) 
+ 
+ tVS
+ tVD
+ tPR
+      tVtVdt
+tdP
+DSP
+R  
+   
+dt
+tdP
+dt
+tVd R
+S
+S 2
+2
+   
+2
+2
+2
+2
+dt
+tPd
+dt
+tVd R
+D
+D 
+0,, DSP 
+0tt 
+ tVS
+ tVD
+0
+Dr
+    0
+0
+0
+DDD VttrtV 
+
+--- PAGE 21 ---
+Savings and Investment 9 
+ (2.2.5) 
+ 
+where . 
+I present few scenarios describing the situation with product’s 
+saving (investment). 
+ 
+ 
+2.2.3. Model of One-Time Investment 
+ 
+At some point in time , the equilibrium situation was broken, 
+and the amount of product equal to  was removed from the 
+market, 
+ 
+ (2.2.6) 
+ 
+where . 
+The removed amount represents savings . For that scenario, the 
+amount of savings  for the product increases since time  
+according to formula, 
+ 
+ (2.2.7) 
+ 
+where  for . 
+From Eqs. (2.2.1 – 3) the volume of product’s surplus  (or shortage) 
+ for  is described by the following, 
+ 
+   tVtV DS 
+  0
+0 DD VtV 
+0tt 
+0R
+   
+
+
+
+
+
+0
+0
+0
+,
+,
+ttV
+tttVtV
+RD
+D
+S
+00 DR V
+ tSR
+0tt 
+ 
+
+
+
+
+
+0
+0
+,
+,0
+tt
+tttS
+R
+R
+  0tSR
+0tt 
+   tVtV DS 
+0tt 
+
+--- PAGE 22 ---
+Alexei Krouglov 10 
+ (2.2.8) 
+ 
+with the following initial conditions, , 
+. 
+Initial conditions for the product’s price  are  and 
+. 
+Similar to Eq. (2.2.8) the product’s price  is described by the 
+following second-order ordinary differential equation for , 
+ 
+ (2.2.9) 
+ 
+where  is a constant. 
+If one uses a new variable , Eq. 
+(2.2.9) becomes, 
+ 
+ (2.2.10) 
+ 
+Therefore the initial conditions for  are  
+and . 
+Eqs. (2.2.8) and (2.2.10) have the same characteristic equations. 
+The roots of these characteristic equations are, 
+ 
+               02
+2
+ tVtVtVtVdt
+dtVtVdt
+d
+DSSPDSDPDS 
+    RDS tVtV  00
+     000  tVtVdt
+d
+DS
+ tPR
+  0
+0 RR PtP 
+ 
+RP
+R
+dt
+tdP  0
+ tPR
+0tt 
+      02
+2
+ CtPdt
+tdP
+dt
+tPd
+RSP
+R
+DP
+R 
+ 0
+RSRDPP PC  
+    R
+S
+DP
+RR PtPtP  
+0
+1
+      01
+1
+2
+1
+2
+ tPdt
+tdP
+dt
+tPd
+SPDP 
+ tP1
+  R
+S
+DPtP  
+
+01
+ 
+RP
+dt
+tdP  01
+
+--- PAGE 23 ---
+Savings and Investment 11 
+ (2.2.11) 
+ 
+If  the solution  of Eq. (2.2.8) is (Piskunov, 1965; 
+Petrovski, 1966), 
+ 
+, (2.2.12) 
+ 
+where  and . 
+If the inequality above holds, the solution of Eq. (2.2.10) is 
+ 
+, (2.2.13) 
+ 
+where  and  are 
+constants. 
+Since  and , it takes place  and 
+ for . 
+It follows from the change of variable, 
+ 
+ (2.2.14) 
+ 
+and it takes place for , 
+ 
+ (2.2.15) 
+SP
+DPDPk   42
+22
+2,1
+SP
+DP  4
+22
+         022011 expexp ttkCttkCtVtV DS 
+21
+2
+1
+kk
+kC R
+
+12
+1
+2
+kk
+kC R
+
+       0240131 expexp ttkCttkCtP 
+ 
+21
+2
+3
+1
+kk
+kC SD
+RP
+
+ 
+ 
+12
+1
+4
+1
+kk
+kC SD
+RP
+
+ 
+01 k
+02 k
+    0 tVtV DS
+  01 tP
+t
+    R
+S
+DP
+RR PtPtP  
+0
+1
+t
+  R
+S
+DP
+RR PtP  
+0
+
+--- PAGE 24 ---
+Alexei Krouglov 12 
+Since  and  it takes place from Eq. (2.2.3), 
+ (2.2.16) 
+Since  it takes place  for . 
+Let us calculate now an effect of the product’s savings  by 
+comparing two values of product in money terms taken at the limit 
+, i.e., when the market comes to a ne w equilibrium. The first 
+amount in money terms is equal to , i.e., the product’s 
+demand after savings  multiplied by the product’s price  (at 
+the limit). The second amount in money terms is equal to 
+, i.e., the product’s demand (if there were no 
+withdrawal of product from the market)  
+multiplied by the product’s price  (at the limit). 
+Since  and , 
+it takes place, 
+ 
+ (2.2.17) 
+ 
+If  the solution  of Eq. (2.2.8) is (Piskunov, 1965; 
+Petrovski, 1966), 
+, (2.2.18) 
+where  and . 
+ 
+  0
+0 DD VtV 
+  00
+D
+D rdt
+tdV 
+       R
+S
+DP
+DRDPDDD VttrtPtV  
+
+2
+0
+0
+0
+1
+    0 tVtV DS
+   tVtV DS 
+t
+t
+   tVtPv DRR 
+ tVD
+ tPR
+   tVtPv DRR
+~~~ 
+    0
+0
+0~
+DDD VttrtV 
+  0~
+RR PtP 
+ 
+  01~lim
+RS
+RDP
+R
+R
+t PtP
+tP
+
+ 
+
+
+
+
+
+
+ 
+  01~lim
+D
+RDP
+D
+D
+t rtV
+tV 
+
+
+
+
+
+
+
+ 
+ 
+   
+     RDPDRS
+DRS
+RDP
+DR
+DR
+tR
+R
+t
+rPrPtVtP
+tVtP
+tv
+tv 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 00
+001~~lim~lim
+SP
+DP  4
+22
+        
+
+  0021
+2exp ttttCCtVtV DP
+DS
+
+RC 1
+R
+DPC  2
+2
+
+
+--- PAGE 25 ---
+Savings and Investment 13 
+If the equality above holds, solution of Eq. (2.2.10) is 
+ 
+, (2.2.19) 
+ 
+where  and  are constants. 
+Since  it takes place  and  for 
+. 
+Therefore, it takes place for  as above, 
+ 
+ (2.2.20) 
+ 
+ (2.2.21) 
+ 
+and  for . 
+ 
+Since  and 
+it takes place, 
+ 
+ (2.2.22) 
+ 
+If  the solution  of Eq. (2.2.8) is (Piskunov, 1965; 
+Petrovski, 1966), 
+ 
+      
+
+  00431
+2exp ttttCCtP DP 
+R
+S
+DPC  
+
+3
+RPC  4
+0DP 
+    0 tVtV DS
+  01 tP
+t
+t
+  R
+S
+DP
+RR PtP  
+0
+       R
+S
+DP
+DRDPDDD VttrtPtV  
+
+2
+0
+0
+0
+1
+   tVtV DS 
+t
+ 
+  01~lim
+RS
+RDP
+R
+R
+t PtP
+tP
+
+ 
+
+
+
+
+
+
+ 
+  01~lim
+D
+RDP
+D
+D
+t rtV
+tV 
+
+
+
+
+
+
+
+ 
+ 
+   
+     RDPDRS
+DRS
+RDP
+DR
+DR
+tR
+R
+t
+rPrPtVtP
+tVtP
+tv
+tv 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 00
+001~~lim~lim
+SP
+DP  4
+22
+
+--- PAGE 26 ---
+Alexei Krouglov 14 
+ (2.2.23) 
+ 
+where  and . 
+If the inequality above holds, solution of Eq. (2.2.10) is 
+ 
+ (2.2.24) 
+ 
+where  and  are 
+constants. 
+Since  it takes place  and  for 
+. 
+ 
+Therefore it takes place for  as above, 
+ 
+ (2.2.25) 
+ 
+ 
+ 
+     
+ 
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+0
+22
+2
+0
+22
+1
+0
+4sin
+4cos
+2exp
+ttC
+ttC
+tttVtV
+DP
+SP
+DP
+SP
+DP
+DS
+
+
+
+RC 1
+42
+222
+DP
+SP
+RDPC
+
+
+
+
+   
+ 
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+0
+22
+4
+0
+22
+3
+01
+4sin
+4cos
+2exp
+ttC
+ttC
+tttP
+DP
+SP
+DP
+SP
+DP
+
+
+
+R
+S
+DPC  
+
+3
+
+
+
+
+
+ 
+
+
+S
+DP
+DP
+SP
+RPC 
+
+
+
+21
+4
+2
+224
+0DP 
+    0 tVtV DS
+  01 tP
+t
+t
+  R
+S
+DP
+RR PtP  
+0
+
+--- PAGE 27 ---
+Savings and Investment 15 
+ (2.2.26) 
+ 
+And  for . 
+Since  and , 
+it takes place, 
+ 
+ (2.2.27) 
+ 
+Thus, all cases to obtain solutions of differential equations  from the 
+roots of related characteristic equation are covered. 
+Therefore at the limit for  the withdrawal of product from 
+the market causes both an increase of the product’s price and an 
+increase of product’s demand. These actions raise on market the amount 
+ of product in money terms in the long run, 
+ 
+ 
+ 
+ 
+ 
+ 
+That concludes the first scenario. 
+ 
+ 
+       R
+S
+DP
+DRDPDDD VttrtPtV  
+
+2
+0
+0
+0
+1
+   tVtV DS 
+t
+ 
+  01~lim
+RS
+RDP
+R
+R
+t PtP
+tP
+
+ 
+
+
+
+
+
+
+ 
+  01~lim
+D
+RDP
+D
+D
+t rtV
+tV 
+
+
+
+
+
+
+
+ 
+ 
+   
+     RDPDRS
+DRS
+RDP
+DR
+DR
+tR
+R
+t
+rPrPtVtP
+tVtP
+tv
+tv 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 00
+001~~lim~lim
+t
+ tvR
+ 
+  11~lim 0 
+
+
+
+
+
+ RS
+RDP
+R
+R
+t PtP
+tP
+
+
+ 
+  11~lim 0 
+
+
+
+
+
+ D
+RDP
+D
+D
+t rtV
+tV 
+ 
+    11~lim 00
+00 
+
+
+
+
+
+ RDPDRS
+DRS
+RDP
+R
+R
+t
+rPrPtv
+tv 
+
+
+--- PAGE 28 ---
+Alexei Krouglov 16 
+2.2.4. Model of Constant-Rate Investment 
+ 
+According to this scenario, the amount of product’s savings   
+increases since time  according to following formula, 
+ 
+ (2.2.28) 
+ 
+where  for  and . 
+Therefore, the product’s withdrawal  from market in the form of 
+product’s savings  is described by Eq. (2.2.28) and the volume of 
+product’s surplus (or shortage) on market  in Eqs. (2.2.1 – 
+3) is replaced by the volume of product’s surplus (or shortage) on the 
+market expressed as . Thus, it produces 
+following equation for , 
+ 
+ (2.2.29) 
+ 
+with the following initial conditions, , . 
+Likewise, initial conditions for the product’s pr ice  are 
+ and . 
+Similar to Eq. (2.2.29), the product’s price  is described by 
+following second-order ordinary differential equation for , 
+ 
+ tSR
+0tt 
+   
+
+
+
+
+00
+0
+,
+,0
+tttt
+tttS
+R
+R
+
+  0tSR
+0tt 
+0R
+ tSR
+   tVtV DS 
+     tStVtVD RDSR 
+0tt 
+      02
+2
+ tDdt
+tdD
+dt
+tDd
+RSP
+R
+DP
+R 
+  00 tDR
+ 
+R
+R
+dt
+tdD 0
+ tPR
+  0
+0 RR PtP 
+  00 dt
+tdPR
+ tPR
+0tt 
+
+--- PAGE 29 ---
+Savings and Investment 17 
+ (2.2.30) 
+ 
+where  is a constant. 
+If one uses a new variable , Eq. (2.2.30) 
+becomes, 
+ 
+ (2.2.31) 
+ 
+Therefore, the initial conditions for  are  and 
+. 
+Eqs. (2.2.29) and (2.2.31) have the same characteristic equations. 
+The roots of these characteristic equations are, 
+ 
+ (2.2.32) 
+ 
+If , the solution of Eq. (2.2.29) is, 
+ 
+, (2.2.33) 
+ 
+where  and . 
+If the inequality above holds, solution of Eq. (2.2.31) is 
+ 
+      02
+2
+ CtPdt
+tdP
+dt
+tPd
+RSP
+R
+DP
+R 
+ RRSP PC   0
+    R
+S
+RR PtPtP 
+10
+1 
+      01
+1
+2
+1
+2
+ tPdt
+tdP
+dt
+tPd
+SPDP 
+ tP1
+  R
+S
+tP 
+1
+01 
+  001 dt
+tdP
+SP
+DPDPk   42
+22
+2,1
+SP
+DP  4
+22
+       022011 expexp ttkCttkCtDR 
+12
+1
+kkC R
+ 
+21
+2
+kkC R
+ 
+
+--- PAGE 30 ---
+Alexei Krouglov 18 
+, (2.2.34) 
+where  and  are constants. 
+Since  and  it takes place  and  
+for . 
+Then it follows from the change of variable, 
+ 
+ (2.2.35) 
+ 
+and it takes place for , 
+ 
+ (2.2.36) 
+ 
+Since  and , it takes place from  
+Eqs. (2.2.1 – 3), 
+ 
+ (2.2.37) 
+ 
+and it follows from Eqs. (2.2.28), (2.2.33), (2.2.37) for , 
+ 
+ (2.2.38) 
+ 
+ (2.2.39) 
+ 
+       0240131 expexp ttkCttkCtP 
+21
+2
+3
+kk
+kC
+S
+R
+ 
+
+12
+1
+4
+kk
+kC
+S
+R
+ 
+
+01 k
+02 k
+  0tDR
+  01 tP
+t
+    R
+S
+RR PtPtP 
+10
+1 
+t
+  R
+S
+RR PtP 
+10 
+  0
+0 DS VtV 
+  00
+D
+S rdt
+tdV 
+           R
+S
+D
+DRDSSS Vttrttkk
+Cttkk
+CtV 
+  0
+0
+0
+02
+2
+4
+01
+1
+3 expexp
+t
+     R
+S
+D
+DRDS VttrtV 
+  0
+0
+0
+    R
+S
+D
+DDD VttrtV 
+ 0
+0
+0
+
+--- PAGE 60 (SAMPLE) ---
+Alexei Krouglov 48 
+ (2.3.6) 
+ 
+where  for  and . 
+Therefore, the product’s withdrawal  from the market in the form of 
+product’s savings  is described by Eq. (2.3.6) and the volume of 
+product’s surplus (or shortage) on market  in Eqs. (2.3.1 – 
+3) has to be replaced by the volume of product’s surplus (or shortage) 
+on market expressed as . Thus, that produces 
+for , 
+ 
+ (2.3.7) 
+ 
+with the following initial conditions, , . 
+The initial conditions for the product’s price  are  
+and . 
+Similar to Eq. (2.3.7) the product’s price  is described by 
+following second-order ordinary differential equation for , 
+ 
+ (2.3.8) 
+ 
+where  is a constant. 
+   
+
+
+
+
+00
+0
+,
+,0
+tttt
+tttS
+R
+R
+
+  0tSR
+0tt 
+0R
+ tSR
+   tVtV DS 
+     tStVtVD RDSR 
+0tt 
+      02
+2
+ tDdt
+tdD
+dt
+tDd
+RSP
+R
+DP
+R 
+  00 tDR
+ 
+R
+R
+dt
+tdD 0
+ tPR
+  0
+0 RR PtP 
+  00 dt
+tdPR
+ tPR
+0tt 
+      02
+2
+ CtPdt
+tdP
+dt
+tPd
+RSP
+R
+DP
+R 
+ RRSP PC   0
+
+--- PAGE 120 (SAMPLE) ---
+Alexei Krouglov 108 
+demand will be broken, the price will be increasing and the demand will 
+tend to shrink. How would the demand in money terms react? (The 
+demand in money terms  is the product of a quantity of demand 
+multiplied by a price.) – If price increases faster than demand shrinks, 
+then the demand in money terms increases. If price increases slower 
+than demand shrinks, then the demand in money terms decreases. The 
+increment of demand in money terms is associated with an ec onomic 
+growth while the decrease of demand in money terms is associated with 
+an economic decline. 
+Thus, general explanation of an economic growth  is presented as 
+economic phenomenon caused by the partial use of supply  for 
+investment’s purposes. Furthermore, few particular applications of an 
+economic growth were examined in (Krouglov, 2014a; 2014b). 
+The above framework was expanded in (Krouglov, 2015a; 2015b) 
+by inclusion of the debt  maintenance and debt accumulation. A joint 
+employment of the concepts of investment , debt maintenance and debt 
+accumulation allowed modeling of economic recessions. In particular, 
+mutual application of th ese concepts was used in an attempt of 
+modeling of the Greek crises (Krouglov, 2015c). 
+The subsequent interpretation of the foresaid concepts prompted a 
+following hypothesis for the amendment of economic growth . Decline 
+of the investment  causes a decrement of economic growth (i.e., the 
+economic trend flattens). To counteract process of the economic 
+deterioration the monetary authorities  decrease a n interest rate  as the 
+compensatory measure. Decline of the interest rate decreases cost of the 
+debt maintenance and thereafter increases an economic growth (i.e., the 
+economic trend steepens). If the effect of economic trend’s steepening 
+prevails over effect of economic trend’s flattening, then increase of an 
+economic growth takes place (i.e., the entire economic trend steepens). 
+On the other hand, if the effect of economic trend’s flattening prevails 
+over ef fect of economic trend’s steepening, then decrease of an 
+economic growth takes place (i.e., the entire economic trend flattens). 
+
+--- PAGE 179 (SAMPLE) ---
+Models of the Crises 167 
+ and, correspondingly, inversely proportional to supply  
+inducement constant  inherent to the economic system). 
+For completeness, I introduce another variable  
+where , i.e., a r ate of the supply  in money terms for 
+product, which roughly represents the product (internal) production. 
+I compare the variable , a rate of the supply  in money terms 
+changed by saving and investment   on market, with the variable 
+, a rate of the supply in money terms unchanged by saving and 
+investment, for   and 
+. 
+Therefore, difference of rates of the supply  in money terms 
+ of the product on market, which roughly 
+represents the difference of product production or a production growth , 
+is equal to  when  for time 
+. 
+Note the converged value of variable  doesn’t have extremal 
+points in the region . In fact, v ariable  has the minimal 
+converged value when . Then respectively, 
+  04
+20
+0 
+
+
+
+
+ 
+S
+DS
+MINS
+rPtE 
+
+ for . 
+I will analyze some economic implications of the obtained results 
+further. 
+ 
+00 Dr
+0S
+     trtPtE SS 
+   
+dt
+tdVtr S
+S 
+ tES
+ tSI
+ tES
+~
+t
+   SD
+S
+S
+S rPtE 
+ 
+
+
+
+
+  00
+  00~
+DS rPtE 
+     tEtEtE SSS
+~
+  0
+0
+0 
+
+
+
+
+ 
+S
+SD
+SS
+rPtE 
+
+0S
+t
+ tES
+0S
+ tES
+  02
+1 00  DSS rP 
+t

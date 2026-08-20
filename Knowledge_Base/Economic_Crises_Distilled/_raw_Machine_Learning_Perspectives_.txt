@@ -1,0 +1,1178 @@
+--- PAGE 1 ---
+Pedro Campos
+Anand Rao
+Joaquim Margarido   Editors
+Machine Learning 
+Perspectives 
+of Agent-Based 
+Models
+Practical Applications to Economic 
+Crises and Pandemics with Python, R, 
+Netlogo and Julia
+
+--- PAGE 2 ---
+Machine Learning Perspectives of Agent-Based 
+Models
+
+--- PAGE 3 ---
+Pedro Campos • Anand Rao . Joaquim Margarido 
+Editors 
+Machine Learning 
+Perspectives of Agent-Based 
+Models 
+Practical Applications to Economic Crises 
+and Pandemics with Python, R, Netlogo 
+and Julia
+
+--- PAGE 4 ---
+Editors 
+Pedro Campos 
+University of Porto, FEP, LIAAD-INESC 
+TEC 
+Porto, Portugal 
+Joaquim 
+Margarido 
+ISEP 
+Porto, Portugal 
+Anand Rao 
+Heinz Colle
+ge of Information Systems and 
+Public Policy 
+Carne
+gie Mellon University 
+Pittsburgh, PA, USA 
+ISBN 978-3-031-73353-6 ISBN 978-3-031-73354-3 (eBook) 
+https://doi.org/10.1007/978-3-031-73354-3 
+© The Editor(s) (if applicable) and The Author(s), under exclusive license to Springer Nature Switzerland 
+AG 2025 
+This work is subject to copyright. All rights are solely and exclusively licensed by the Publisher, whether 
+the whole 
+or part of the material is concerned, speciﬁcally the rights of translation, reprinting, reuse 
+of illustrations, recitation, broadcasting, reproduction on microﬁlms or in any other physical way, and 
+transmission or information storage and retrieval, electronic adaptation, computer software, or by similar 
+or dissimilar methodology now known or hereafter developed. 
+The use of general descriptive names, registered names, trademarks, service marks, etc. in this publication 
+does not 
+imply, even in the absence of a speciﬁc statement, that such names are exempt from the relevant 
+protective laws and regulations and therefore free for general use. 
+The publisher, the authors and the editors are safe to assume that the advice and information in this book 
+are belie
+ved to be true and accurate at the date of publication. Neither the publisher nor the authors or 
+the editors give a warranty, expressed or implied, with respect to the material contained herein or for any 
+errors or omissions that may have been made. The publisher remains neutral with regard to jurisdictional 
+claims in published maps and institutional afﬁliations. 
+This Springer imprint is published by the registered company Springer Nature Switzerland AG 
+The registered company address is: Gewerbestrasse 11, 6330 Cham, Switzerland 
+If disposing of this product, please recycle the paper.
+
+--- PAGE 5 ---
+This book is dedicated to all our students and 
+researchers who believe that it is possible to 
+signiﬁcantly improve our understanding of 
+complex social and economic systems with 
+agent-based models and machine learning.
+
+--- PAGE 6 ---
+Editor’s Preface 
+Machine Learning and Agent-based models have been around for decades, arguably 
+since the early days of the Artiﬁcial Intelligence (AI) endeavor. As the ﬁelds of 
+AI and computational modeling continue to evolve, the integration of these two 
+methodologies has become increasingly signiﬁcant for advancing both research and 
+practical applications. 
+Machine Learning (ML) has been primarily concerned about learning patterns 
+from lar
+ge amounts of data and predicting outcomes or classifying information. For 
+example, early applications of ML included decision tree algorithms used in medical 
+diagnosis. Agent-based models (ABM), on the other hand, have been primarily used 
+to model and simulate the behavior of autonomous entities called agents and how 
+they interact with each other. Agent-based models have been used extensively for 
+capturing and analyzing emergent behavior. 
+Machine Learning has grown signiﬁcantly over the past three decades and 
+has found 
+a broad range of applications across several sectors like ﬁnancial ser-
+vices, healthcare, media and entertainment, retail, manufacturing, agriculture, etc. 
+Advances in deep learning, speciﬁcally around embeddings, attention mechanisms, 
+and quantization have revolutionized the development of multi-modal foundation 
+models. The number of ML algorithms and foundation models has expanded 
+with literally hundreds or even thousands of distinct algorithms and hundreds of 
+proprietary and open-source foundation models. The basis of ML algorithms has 
+also evolved from statistical models to neural network models in deep learning, 
+becoming increasingly larger and more sophisticated, typically now running into 
+billions of parameters. 
+Agent-based models on the other hand have also grown over the decades 
+becoming increasingly 
+sophisticated in capturing complex interactions and behav-
+iors. They have been widely used in social sciences to analyze, simulate, and 
+intervene in individual and group behaviors. Agents have evolved from modeling 
+emergent behaviors seen in the physical world to acting as digital twins with a 
+two-way near real-time interaction between the physical and digital to the more 
+recent conversational LLM-based agents. A fundamental characteristic underlying 
+all these different types of agents is the fact that these agents are embedded in an
+vii
+
+--- PAGE 7 ---
+viii Editor’s Preface
+environment, continuously interacting with it and with other agents, and carrying 
+out tasks or fulﬁlling goals on behalf of others. 
+Machine Learning acknowledges agents when it comes to reinforcement learn-
+ing. Reinforcement 
+learning is one of the best-known techniques for agents 
+embedded in an environment to learn based on environmental feedback in terms of 
+rewards or penalties. Over time, reinforcement learning has evolved, signiﬁcantly 
+impacting areas such as robotics and autonomous systems. The more recent usage 
+of the word “agents” within the deep learning and Large Language Model (LLM) 
+community is to enable conversational entities to access external tools, take actions, 
+and communicate with other agents. 
+Agent-based models recognize Machine Learning, especially reinforcement 
+learning as 
+one type of learning behavior. However, Agent-based models have 
+typically looked at analyzing and modeling a variety of behaviors including collab-
+orative or adversarial behaviors, programmed or emergent behaviors, negotiation, 
+and counterfactual analysis. For example, an ABM study might simulate a market 
+where agents learn to trade through reinforcement learning, enhancing the realism 
+of economic models. More recently machine learning is being used as a technique 
+for calibrating sophisticated agent-based models. 
+As someone who has worked in both these areas over the past 35 years, I ﬁnd 
+it strange 
+that there are very few books or collection of papers that bring these two 
+areas closer together. The lack of integrated research has posed signiﬁcant chal-
+lenges, often resulting in missed opportunities for leveraging combined strengths. 
+This book addresses these gaps by providing a comprehensive examination of the 
+overlap between these ﬁelds. With the increasing adoption of both Agent-based 
+models and Machine Learning it makes sense to look at the overlap between these 
+two ﬁelds. As a result, this collection of papers brought together on “Machine 
+Learning Perspectives of Agent-Based Models” is a very timely publication. 
+The particular focus of this collection is on bringing together ABM and ML 
+to analyze, 
+predict, and intervene during crisis. While COVID-19 was the most 
+traumatic event of the current century, it did bring to fore both Agent-based 
+modeling (a typical text-book example to study the spread of epidemics is agent-
+based modeling), and machine learning that was able to exploit the large volumes of 
+data that was available from the pandemic. Detailed methodologies and case studies 
+within this collection illustrate how these tools were pivotal in understanding and 
+managing the crisis. 
+This collection goes beyond the COVID-19 pandemic, demonstrating applica-
+tions in 
+modeling ﬁnancial crisis, organizational learning, strategic alliances, and 
+automotive industry. It demonstrates the beneﬁts of integrating Machine Learning 
+with Agent-based models to gather deeper insights and more meaningful behavioral 
+interventions. Chapters dedicated to ﬁnancial market simulations and conﬂict 
+scenarios provide a broad view of the utility of these models. 
+Finally, this collection also addresses some of the ethical and transparency 
+considerations as 
+we move into the widespread adoption and application of these 
+models into larger AI systems. Veriﬁcation and validation of simulations are more 
+challenging than predictions and more sophisticated ML techniques can go a long
+
+--- PAGE 8 ---
+Editor’s Preface ix
+way in improving the state of the art in validation and calibration of Agent-based 
+models. The book emphasizes robust validation techniques to ensure the reliability 
+of simulations and predictions, fostering trust and acceptance among stakeholders. 
+In conclusion, “Machine Learning Perspectives of Agent-Based Models” is a 
+groundbreaking and 
+timely publication that bridges the gap between two rapidly 
+growing research areas that is ﬁnding widespread commercial application. It is 
+an invaluable resource for researchers, practitioners, and policymakers aiming to 
+leverage the combined strengths of ML and ABM to address complex societal 
+issues. I sincerely hope that this collection would be the ﬁrst of many to bring 
+researchers, practitioners, and policymakers together to address important crises and 
+solve societal problems. 
+Distinguished Professor of Applied Data Science 
+and AI, Heinz College of Information Systems 
+and Public Policy 
+Prof. Anand S. Rao 
+Carnegie Mellon University 
+Pittsburgh, PA, USA 
+June 2024 
+
+--- PAGE 9 ---
+Preface 
+Agent-Based Models (ABM) provide a promising alternative for understanding 
+economic processes. ABMs are microscale models that simulate the interactions 
+of heterogeneous agents based on simple rules. Unlike traditional models, ABMs 
+consider factors like limited information, bounded rationality, and market disequi-
+librium, making them more suitable for capturing the complexity of real-world 
+economic systems. “A Machine Learning perspective of Agent-Based Models: 
+Applications to Economic Crises and Pandemics” explores the synergy between 
+ABMs and Machine Learning, showcasing practical examples in different lan-
+guages. The text advocates for a shift toward more dynamic and realistic modeling 
+approaches, such as ABMs, to better understand and address the complexities of 
+economic crises. It also highlights the potential of incorporating Machine Learning 
+techniques to enhance the capabilities of these models. This integration could aid in 
+not only enhancing the interpretability of ABMs but also in reﬁning the predictive 
+capabilities of the models, especially when dealing with the dynamic and uncertain 
+nature of economic crises and pandemics. 
+This book discusses the challenges of dealing with uncertainty and instability 
+in the 
+global economy, particularly in the context of frequent crises like the 
+COVID-19 pandemic, ﬁnancial crises, and wars and it highlights the limitations 
+of traditional economic models, especially the neoclassical approach, in explaining 
+complex economic phenomena. We discuss how ABMs can be applied to study 
+the effects of the COVID-19 pandemic on healthcare systems and economic 
+stability. Furthermore, the text introduces the integration of Machine Learning (ML) 
+and deep-learning models into ABMs to enhance interpretability and prediction 
+capabilities. The discussion highlights the challenges of interpreting predictions 
+from complex ML models and underscores the importance of ethical considerations, 
+transparency, and model validation in the context of complex simulations. 
+The book aims to simplify the presentation of models for undergraduate students, 
+using programming 
+languages such as Python, R, NetLogo, and Julia. 1 The idea is
+1 Program codes are available in: https://ml4agents.free.nf 
+xi
+
+--- PAGE 10 ---
+xii Preface
+to be able to function as a guide for creating agent-based models from the scratch 
+using game theory (such as the Ultimatum game, or a simple currency exchange 
+game), and machine learning as a paradigm. It emphasizes the importance of a 
+learning-by-programming approach and includes practical examples of economic 
+and management phenomena modeled through ABMs. 
+Divided into four parts, the book covers foundational concepts, explores diverse 
+applications in 
+crises, develops an economic game from the scratch, and concludes 
+with case studies and extensions. 
+This book comes at a time when generative AI is emerging. Generative AI 
+plays a 
+signiﬁcant role in science and society, and it can also contribute to the 
+creation and understanding of complex simulations, such as Data Augmentation, 
+Scenario Exploitation, and Human-AI Collaboration, since Generative AI tools can 
+facilitate collaboration between human modelers and AI systems. By generating 
+suggestions for model adjustments or proposing alternative scenarios, generative AI 
+supports the iterative development of ABMs. This collaborative approach enhances 
+the model-building process, leveraging the strengths of both human expertise and 
+AI capabilities. 
+But these aspects will be left open for a future edition! 
+Pittsburgh, PA, USA Anand Rao 
+Porto, Portugal Pedro Campos 
+Porto, Portugal Joaquim Margarido 
+June 2024 
+
+--- PAGE 11 ---
+Acknowledgments 
+We thank the collaboration of the authors of this book: Ali R. Vahdati, Ana 
+Nogueira, Arit Kumar Bishwas, Conceição Rocha, Friederike Wall, Inês Ferreira, 
+Jeremy Pitt, José Matos, Joseph V oyles, Margarida Silva, Mark Paich, Marta 
+Moraes, Pavel Brazdil, Rosaldo J. F. Rossetti, Sindy Ma, Sonia Teixeira, and Zafeiris 
+Kokkinogenis.
+xiii
+
+--- PAGE 12 ---
+Contents 
+1 Introduction ................................................................. 1 
+Pedro Campos 
+Part I Agent-Based Modelling and Machine Learning 
+2 Agent-Based Modeling and Learning in Economics: An Overview ... 9 
+Pedro Campos, Anand Rao, and Pavel Brazdil 
+Part II Agent-Based Models in the Context of COVID19 
+3 Epidemiology Modelling ................................................... 51 
+Arit Kumar Bishwas and Anand Rao 
+4 Agent-Based Behavioral Models: Modeling COVID19 Behavior ..... 77 
+Anand Rao and Arit Kumar Bishwas 
+5 COVID-19 Epidemiological, Behavioral, and Economic Model ....... 99 
+Anand Rao, Sindy Ma, Mark Paich, and Joseph V oyles 
+Part III Creating Agent-Based Models of Crisis in Python, and R 
+6 MyWealth: A Simple Model of Economic Exchange in Python 
+....... 129 
+Joaquim Margarido and Pedro Campos 
+7 The Ultimatum Game as a Paradigm for Learning Agents: 
+A Python 
+Adventure........................................................ 147 
+Joaquim Margarido and Pedro Campos 
+8 Alternative Machine Learning Approaches for an 
+Agent-Based Model 
+of the Ultimatum Game Using R .................. 189 
+Pedro Campos, José Matos, and Joaquim Margarido
+xv
+
+--- PAGE 13 ---
+xvi Contents
+Part IV Case Studies: Agent-Based Learning and Crisis Using R, 
+Netlogo, and Julia 
+9 An Agent-Based Epidemic Modeling in Julia ........................... 227 
+Ali R. Vahdati 
+10 Portfolio Management and Crises: A Multi-Armed Bandit 
+Appr
+oach .................................................................... 251 
+Inês Ferreira and Marta Moraes 
+11 Organizational Learning from Crises with Machine 
+Learning 
+and Agent-Based Models ....................................... 269 
+Friederike Wall and Pedro Campos 
+12 Strategic Alliances in NetLogo: A Flocking Algorithm with 
+Reinfor
+cement Learning ................................................... 287 
+Sónia Teixeira and Pedro Campos 
+13 Exploring the Efﬁciency vs. Fairness Behavioural Spectrum 
+in Multi-Agent 
+Deep Reinforcement Learning .......................... 307 
+Margarida Silva, Zafeiris Kokkinogenis, Jeremy Pitt, and Rosaldo 
+J. F
+. Rossetti 
+14 Resilient Agent-Based Networks in the Automotive Industry ......... 341 
+Ana Nogueira, Conceição Rocha, and Pedro Campos
+
+--- PAGE 14 ---
+Contributors 
+Arit Kumar Bishwas PricewaterhouseCoopers, Fremont, CA, USA 
+Pavel Brazdil University of Porto, FEP, LIAAD-INESC TEC, Porto, Portugal 
+Pedro Campos University of Porto, FEP, LIAAD-INESC TEC, Porto, Portugal 
+Inês Ferreira University of Porto, FEP, Porto, Portugal 
+Zafeiris Kokkinogenis University of Porto, LIACC, Porto, Portugal 
+Sindy Ma PricewaterhouseCoopers, London, London 
+Joaquim Margarido ISEP, Porto, Portugal 
+José Matos University of Porto, FEP, Porto, Portugal 
+Marta Moraes University of Porto, FEP, Porto, Portugal 
+Ana Nogueira University of Porto, FEP, Porto, Portugal 
+Mark Paich PricewaterhouseCoopers, London, UK 
+Jeremy Pitt Imperial College London, London, UK 
+Anand Rao Heinz College of Information Systems and Public Policy, Carnegie 
+Mellon University, Pittsburgh, PA, USA 
+Conceicao Rocha CPES - INESC TEC, Porto, Portugal 
+Rosaldo J. F. Rossetti University of Porto, FEUP-DEI, Porto, Portugal 
+Margarida Silva University of Porto, FEUP-MIEIC, Porto, Portugal 
+Sónia Teixeira University of Porto, LIAAD - INESC TEC, Porto, Portugal 
+University of Zurich, Zurich, Switzerland 
+Joseph Voyles PricewaterhouseCoopers, London, UK 
+Friederike Wall Department for Management Control and Strategic Management, 
+University of Klagenfurt, Klagenfurt, Austria
+xvii
+
+--- PAGE 15 ---
+Lists of Abbreviations 
+AAA Artiﬁcial Adaptive Agents 
+ABM Agent-Based Models 
+ACE Agent-Based Computational Economics 
+ACO Ant Colony Optimization 
+ACS Agent-Based Computational Sociology 
+AI Artiﬁcial Intelligence 
+ANFIS Adaptive Neuro-Fuzzy Inference System 
+ANN Artiﬁcial Neural Networks 
+ASHIA Analytically Solvable Heterogeneous Interacting Agent Models 
+AV Autonomous Vehicles 
+BERT Bidirectional Encoder Representations from Transformers 
+CE Computational Equivalence 
+CI Computational Intelligence 
+CNN Convolutional Neural Networks 
+COVID-19 Coronavirus Disease 2019 
+COVID-EBE Coronavirus Disease (Epidemiological, Behavioral, and Economic) 
+C-S Cucker and Smale Algorithm 
+CV Coefﬁcient of Variation 
+DP Dynamic Programming 
+DSGE Dynamic Stochastic General Equilibrium Models 
+DTN Disruption-Tolerant Networking 
+EES Evolutionary Stable Strategy 
+ETF Exchange-Traded Fund 
+GA Genetic Algorithm 
+GABMs Generative Agent-Based Models 
+GDP Gross Domestic Product 
+iGSS Inverse Generative Social Science 
+LLM Large Language Model 
+LSTM Long Short-Term Memory 
+MAB Multi-Armed Bandit 
+MADRL Multi-Agent Deep Reinforcement Learning
+xix
+
+--- PAGE 16 ---
+xx Lists of Abbreviations
+MARL Multi-Agent Reinforcement Learning 
+MAS Multi-Agent Systems 
+MC Monte Carlo Methods 
+MDP Markov Decision Process 
+ML Machine Learning 
+NN Neural Networks 
+POMDP Partially Observable Markov Decision Process 
+PPS Project Portfolio Selection 
+PRS Procedural Reasoning System 
+PSO Particle Swarm Optimization 
+RL Reinforcement Learning 
+SARS-CoV-2 Severe Acute Respiratory Syndrome Coronavirus 2 
+SEIRD Susceptible, Exposed, Infected, Recovered, and Dead 
+SIR Susceptible-Infected-Recovered 
+SCN Supply Chain Network 
+SCM Supply Chain Management 
+SWF Social Welfare Function 
+TD Temporal Difference Method 
+UCB Upper Conﬁdence Bounds Algorithm 
+VOA Virus Optimization Algorithm
+
+--- PAGE 17 ---
+Chapter 1 
+Introduction 
+Pedro Campos 
+We reside in an era marked by continual crises that directly affect the real economy. 
+The recent COVID-19 pandemic represented one of the most signiﬁcant challenges 
+since World War II. Financial turmoil and continuous conﬂicts highlight the 
+world’s instability, prompting questions like: how do we handle such widespread 
+uncertainty? Can we still make forecasts amidst this instability?” 
+Economics and Management sciences focus on the complex behaviour and inter-
+actions of economic agents dealing with production, distribution and consumption 
+of goods and services, resource allocation, public policy, strategic management, 
+micro and macroeconomics, among others. But because of this complexity, it is 
+often difﬁcult to understand how certain effects may result from the combination of 
+certain causes. 
+The neoclassical approach is not well suited to encompass and explain all the 
+complex details of economic life, such as the Global Financial Crisis of 2008 and 
+the Great Recession that followed [1]. Joseph Schumpeter, for example, rejected 
+the kind of economic thought that mainly favours deductive methods of inquiry. 
+Taking into account the evolution of Economics as a science, the need for a deep 
+epistemological change has already been pointed out by outstanding economists. 
+Dynamic Stochastic General Equilibrium (DSGE) models, the standard tool for 
+macroeconomic analysis, have been deeply challenged by the Global Financial 
+Crisis and the Great Recession. In DSGE models there is no causal link between 
+a boom and a bust by construction, except for small self-correcting deviations from 
+the deterministic steady state, so the stable period can be understood as separate 
+from the unstable period. DSGE models attempt to integrate macroeconomics with 
+microeconomics by providing microeconomic foundations for macroeconomics [4]. 
+P . Campos (@) 
+University of Porto, FEP , LIAAD-INESC TEC, Porto, Portugal 
+e-mail: pcampos@fep.up.pt 
+© The Author(s), under exclusive license to Springer Nature Switzerland AG 2025 
+P . Campos et al. (eds.), Machine Learning Perspectives of Agent-Based Models, 
+https://doi.org/10.1007/978-3-031-73354-3_1
+1
+
+--- PAGE 18 ---
+2 P . Campos
+Economy is as a complex system of heterogeneous interacting agents charac-
+terised by limited information and bounded rationality. Crises are macroscopic 
+phenomena which spontaneously emerge from the web of microscopic interactions 
+[1]. Agent Based Models (ABM) are microscale models that use simulation in order 
+to 
+search for explanatory insights into the collective behaviour of agents obeying 
+simple rules. ABM constitute a bottom-up approach that allows us to analyze the 
+effect of interactions of agents as a whole. They characterize economic processes 
+as dynamical systems of heterogeneous agents, explicitly accounting for agent 
+heterogeneity, bounded rationality, and market disequilibrium. These models are 
+a promising research tool for understanding the situations and problems emerged 
+with the recent crisis. As an example, [1] argue that a Central Bank has to prevent a 
+systems’ 
+ﬁnancial collapse, or the spreading of a ﬁnancial crisis, rather than looking 
+at the “average” risk of bankruptcy using the latter as a measure of the stability 
+of the system by means of a network analysis. Therefore, the economy can be 
+analyzed in terms of different interacting sub-systems and local intervention can 
+be recommended to prevent failures and their spread . The interaction of agents that 
+belong to the network structure between ﬁrms and banks can play a signiﬁcant role 
+in determining the emergence, the depth and the diffusion of a crises. 
+Axtell and Farmer [ 2] have provided an overview of the usefulness of Agent-
+Based 
+Modeling (ABM) in Economics and Finance. Also Matteo Richiardi [3 ] i n 
+the 
+Institute for New Economic Thinking employed experimentation and simulation 
+with diverse behavioral assumptions, ranging from choice heuristics to learning and 
+expectation formation, to establish a solid basis for the modeling assumptions used.
+The acknowledgment that a new direction is needed to further study the link 
+between 
+the causes and effects of crises, and that ABM may provide that link has 
+been made by Hamill and Gilbert [4]. Agent based models potentially present a 
+w
+ay to model the ﬁnancial economy as a complex system, as John Maynard Keynes 
+attempted to do, while taking human adaptation and learning into account, as Lucas 
+advocated [5]. 
+There are many situations where the effects of crises can be handled with 
+ABM. 
+Flaminio Squazzoni and other authors [ 6], worried by the effects that the 
+CO
+VID-19 pandemic were causing on the sustainability of the health care systems, 
+and threatening an economic meltdown, drew attention to the understanding that 
+pandemic requires ﬁne-grained data representing speciﬁc local conditions and the 
+social reactions of individuals. They argue that current mainstream research do not 
+cover the full behavioural and social complexity of societies under pandemic crisis. 
+The insurance industry has been studied by Owadally et al. [ 7], and the authors 
+concluded 
+that heterogeneity and interaction at a microlevel must be understood 
+if cycles and crises are to be managed and prevented. An ABM has been used by 
+Garrido et al. [ 8] to understand how propagation of failures in a banking network 
+system 
+occurs in a very short run analysis. For this purpose, an outside credit shock 
+on one of the banks was triggered and the cascade effect of failures was simulated. In 
+another work, an ABM has been combined with network analysis by Namatame and 
+Chen [9] to shed light on how a failure in a ﬁrm propagates through dynamic credit 
+netw
+orks and leads to a cascade of bankruptcies. Gallegati and Kirman used Agent-
+
+--- PAGE 19 ---
+1 Introduction 3
+Based Computational Economics (ACE) and Analytically Solvable Heterogeneous 
+Interacting Agent (ASHIA) models based on statistical physics or Markov chains to 
+deal with economies in which direct interaction between agents is important [10]. 
+The concepts of adaptive learning, and Machine Learning, are drawing inspi-
+ration 
+from thought leaders like Herbert Simon [11], John Holland [12 ], Melanie 
+Mitchell 
+[13], Peter Todd [14], and Richard Belew [15 ]. These inﬂuential ﬁgures 
+anticipated 
+and supported the idea of incorporating learning principles into agent-
+based models. However, Machine learning and deep-learning models, with their 
+intricate structures, pose challenges in interpretability despite their complexity. 
+In the era of Large Language Models, and Generative AI, these can also help 
+to program and develop Agent-Based models, and must be used thoughtfully, 
+considering the speciﬁc needs and goals of the agent-based modeling process. 
+Ethical considerations, transparency, and validation of model outputs remain crucial 
+aspects of incorporating language models in complex simulations. 
+The book “A Machine Learning perspective of Agent-Based Models— 
+Applications 
+to Economic Crises and Pandemics, with practical examples in 
+Python, R, Netlogo and Julia” uses the ABM paradigm for economic crisis and 
+pandemics, and Artiﬁcial Intelligence (AI) and Machine Learning (ML) models are 
+used to support description and prediction tasks. ML methods are used to better 
+interpret and understand the relation between the parameters of the ABM and the 
+results in the simulations [16]. However, interpretability of predictions produced 
+by 
+ML models is far from straightforward. Deep-learning models in particular are 
+enormously complex, often containing hundreds of layers of neurons adding up to 
+tens of millions of parameters. Recent advances and concerns have been devoted to 
+the interpretability of ML models. 
+In addition, ML models are also used by agents to learn during the process of 
+interactions 
+with other agents and with the environment. Multiple ML methods 
+for ABM emulation have been compared by Angione et al. [ 17] to determine 
+the 
+approaches best-suited to replicating the complex and non-linear behaviour of 
+ABMs. 
+One of the innovative aspects of this book is the simplicity of how models 
+are 
+presented to undergraduate students. We use this approach to convey concepts 
+and teach how to create models to reproduce some economics and management 
+phenomena. 
+The Ultimatum game, a game-theoretical approach is described with detail along 
+the 
+book and, at some point, the effect of learning is introduced. Forms of learning 
+such as Reinforcement Learning and other models are considered. At the same 
+time, machine learning-based data analysis techniques are also used to handle data 
+generated by agent-based models. Also covered are Social Network Analysis and 
+Agent Based Models of Network Science. 
+We follow the perspective of Learning by Programming, which consists of using 
+simple 
+programming techniques to build models, such as the Microeconomic Model 
+of crisis, or a Virus on a Network Spread Model, that are taught and learned step by 
+step throughout the book using several different tools. Python is the main language 
+in the book, due to its popularity, but R, NetLogo and Julia are also used. Python
+
+--- PAGE 20 ---
+4 P . Campos
+has become a very popular programming language in the last few years, especially 
+in the area of data science and has been used in very important projects like Google, 
+Quora, Y outube, Reddit and Dropbox, to name a few. 
+Some packages exist in Python for Agent-Based Modeling, such as Janus for 
+Land 
+Use and Land Cover Change, and MESA, a modular framework for building, 
+analyzing and visualizing the outputs. Furthermore, Python is also very suitable for 
+implementing Machine Learning models and some people even argue that Python 
+is the most popular language for all Data Scientists. 
+The book contains four parts. 
+In Part I—Agent-Based Modelling and Machine Learning, we cover the founda-
+tional 
+concepts of ABM, and the integration of learning and evolution. We introduce 
+different perspectives of Machine Learning in ABM, such as the ones of Y oav 
+Shoham, Melanie Mitchell, Rosaria Conte, Thomas Brenner, Shu Heng-Chen, and 
+Chung-Ching Tai, among others. 
+In Part II we explore different applications of ABM in crises, namely, in the 
+conte
+xt of COVID19: Epidemiology modelling, modelling COVID behaviour, and 
+COVID 19 Epidemiological, Behavioral, and Economic Models. We show how 
+ABM, traditionally used as an exemplar for ‘disease progression’ was adapted, 
+enhanced, and put to the test during the COVID19 pandemic. The interplay between 
+the epidemiological factors, consumer behavior and their impact on the economy is 
+demonstrated with the help of ABM. 
+Part III contains a step-by-step development of a simple economic exchange 
+model 
+(MyWealth) with a learning component that is created from the scratch in 
+Python, simulating simpliﬁed economies, aiding in teaching economic concepts 
+and agent-based modeling principles. Another step-by-step implementation of the 
+Ultimatum Game is made by setting up a baseline model with proposers using 
+either fair or unfair split strategies. A Fictitious Play is introduced, which reduces 
+responder rejections, and Reinforcement Learning to reﬁne action policies through 
+sequential decisions, culminating in a crisis midway through the iterations. We 
+also demonstrate the potential of different types of agent-based learning within the 
+Ultimatum Game where agents engage in repeated game iterations, following prede-
+ﬁned rules and utilizing Machine Learning to optimize their earnings. Speciﬁcally, 
+we implement Fictitious Play, Reinforcement Learning, and decision tree-based 
+Classiﬁer systems in R to enable agents to learn from past interactions and apply 
+prior knowledge. 
+Finally, in Part IV, case studies and extensions exploring dynamic environments 
+and 
+the use of different tools and languages like Julia for ABM implementation are 
+developed. From Industry-Based Resilient Networks in the Automotive Industry, 
+to Organizational Learning, Portfolio Management or the study of Fairness in 
+trafﬁc Light Control problems using deep learning, and R, JULIA or Netlogo 
+implementations.
+
+--- PAGE 21 ---
+1 Introduction 5
+References 
+1. D.D. Gatti, G. Fagiolo, M. Gallegati, M. Richiardi, A. Russo (eds.), Agent-Based Models 
+(Cambridge 
+University Press, Cambridge, 2018) 
+2. R.L. Axtell, J.D. Farmer, Agent-based modeling in economics and ﬁnance: past, present, and 
+future. 
+INET Oxford Working Papers 2022-10. Institute for New Economic Thinking at the 
+Oxford Martin School, University of Oxford (2022) 
+3. M. Richiardi, The future of agent-based modelling. Working Paper 2015-W06, Economics 
+Group, 
+Nufﬁeld College, University of Oxford (2015) 
+4. L. Hamill, N. Gilbert, Agent-Based Modelling in Economics (Wiley, Hoboken, 2015) 
+5. J.D. Farmer, D. Foley, The economy needs agent-based modelling. Nature 460(7256), 685–686 
+(2009) 
+6. F. Squazzoni, J.G. Polhill, B. Edmonds, P . Ahrweiler, P . Antosz, G. Scholz, E. Chappin, M. 
+Borit, 
+H. V erhagen, F. Giardini, N. Gilbert, Computational models that matter during a global 
+pandemic outbreak: a call to action. J. Art. Soc. Soc. Simul. 23(2), 10 (2020) 
+7. I. Owadally, F. Zhou, D. Wright, The insurance industry as a complex social system: 
+competition, 
+cycles and crises. J. Artif. Soc. Soc. Simul. 21(4), 1–2 (2018) 
+8. P . Garrido, P . Campos, A. Dias, Balance sheet analysis of credit and debt networks. Adv. 
+Comple
+x Syst. 18(5–6), 1550025 (2015) 
+9. A. Namatame, S.H. Chen, Agent-Based Modeling and Network Dynamics (Oxford University 
+Press, 
+Oxford, 2015) 
+10. M. Gallegati, A. Kirman, Reconstructing economics. Complex. Econ. 1(1), 5–31 (2012) 
+11. H. Simon, A behavioral model of rational choice. Quart. J. Econ. 1, 99–118 (1955) 
+12. J. Holland, Adaptation in Natural and Artiﬁcial Systems: An Introductory Analysis with 
+Applications 
+to Biology, Control and Artiﬁcial Intelligence (The MIT Press, Cambridge, 2001) 
+13. M. Mitchell, Artiﬁcial Intelligence: A Guide for Thinking Humans, 1st edn. (Farrar, Strausand, 
+Giroux, 
+New Y ork, 2019) 
+14. P . Todd, The causes and effects of evolutionary simulation in the behavioural sciences, in 
+Adaptive 
+Individuals in Evolving Populations: Models and Algorithms , ed. by R. Belew, M. 
+Mitchell (Santa Fe Institute in the Sciences of Complexity/Addison Wesley, Santa Fe/Boston, 
+1996), pp. 211–231 
+15. R.K. Belew, M. Mitchell, Adaptive Individuals in Evolving Populations (Addison-Wesley, 
+Reading, 
+1996) 
+16. M. Pereda, J. Santos, J.M. Galan, A brief introduction to the use of machine learning techniques 
+in 
+the analysis of agent-based models (2015). https://ssrn.com/abstract=2689676. https://doi. 
+org/10.2139/ssrn.2689676 
+17. C. Angione, E. Silverman, E. Y aneske, Using machine learning as a surrogate model for agent-
+based 
+simulations. PLoS One 17(2), e0263150 (2022)
+
+--- PAGE 22 ---
+Part I 
+Agent-Based Modelling and Machine 
+Learning
+
+--- PAGE 23 ---
+Chapter 2 
+Agent-Based Modeling and Learning in 
+Economics: An Overview 
+Pedro Campos, Anand Rao, and Pavel Brazdil 
+The ﬁelds of Agent-Based Modelling (ABM) and Multi-Agent Systems (MAS) have 
+attracted the attention of many researchers over the last two or three decades, as they 
+model how our society is organised. So, developing such complex systems could 
+help us to advance not only the general understanding, but also be used to help 
+to guide decisions. In addition, crises have followed one another, from ﬁnancial 
+crises to pandemics and wars, with signiﬁcant economic and social impacts. The 
+question therefore arises as to how these ABM and MAS can be developed. In 
+this chapter we reﬂect on the role of learning, and in particular, machine learning, 
+in multi-agent systems (MAS) and also the effects of crises. The study of agent 
+learning is addressed in different areas, such as Artiﬁcial Intelligence (AI) and game 
+theory, with applications in engineering, economics, and other social sciences. The 
+AI literature takes an approach to agent learning that distinguishes it from the game 
+theoretic literature. As stated by Shoham et al. [1], commonalities between these 
+two ﬁelds are greater than the differences and together with the area of mechanism 
+design, and perhaps the computational questions regarding concepts such as the 
+Nash equilibrium, multi-agent learning is one of the most fruitful interaction ﬁelds 
+between computer science and game theory as we are going to see in this Chapter. 
+The structure of the Chapter is the following: Sect. 2 provides an overview of the 
+evolution and key concepts in agent-based modeling (ABM) within economics, 
+highlighting its role in simulating complex adaptive systems ( 2.1). The discussion 
+then moves to the notions of adaptation and learning in multi-agent systems ( 2.2), 
+P. Campos (@ ) · P. Brazdil 
+University of Porto, FEP, LIAAD-INESC TEC, Porto, Portugal 
+e-mail: pcampos@fep.up.pt; pbrazdil@fep.up.pt 
+A. Rao 
+Heinz College of Information Systems and Public Policy, Carnegie Mellon University, Pittsburgh, 
+PA, USA 
+e-mail: 
+anandr2@andrew.cmu.edu 
+© The Author(s), under exclusive license to Springer Nature Switzerland AG 2025 
+P. Campos et al. (eds.), Machine Learning Perspectives of Agent-Based Models, 
+https://doi.org/10.1007/978-3-031-73354-3_2
+9
+
+--- PAGE 24 ---
+10 P. Campos et al.
+followed by a review of learning mechanisms inspired by evolutionary dynamics 
+(2.3). Section 2.4 explores efforts to integrate cognitive and social dimensions in 
+agent-based models. 
+Next, major approaches to agent learning are categorized and 
+analyzed (2.5). Section 2.6 introduces the intersection between machine learning 
+and ABM. 
+The emerging role of Large Language Models (LLMs) in agent-based 
+research is examined in Sect. 2.7, followed by strategies for integrating LLMs into 
+ABM frame
+works (2.8). Section 2.9 introduces Generative Agent-Based Models 
+(GABMs), a 
+novel paradigm blending generative AI and agent-based simulations. 
+Finally, Sect. 2.10 offers concluding remarks and ﬁnal considerations regarding 
+future research 
+directions. 
+2.1 Agent-Based Models in Economics 
+Agent-based models or modelling (ABM), is a class of computational models 
+aiming at studying systems composed of interacting agents and exhibiting emergent 
+properties arising from the interactions of the agents that cannot be deduced from the 
+properties of the agents themselves [ 2]. These agents engage in varied behaviours 
+encoded in 
+a set of decision rules that drive their actions in response to behavioural, 
+environmental and social change [ 3]. In 1991, John Holland and John Miller 
+had already 
+addressed the role of Artiﬁcial Adaptive Agents (AAA) in Economic 
+Theory [4 ]. The topic of learning in agent-based modelling has been dealt with 
+much insistence 
+in recent times, due to the need to understand how it is possible 
+for agents to develop methods to adapt their behavior to new situations, which 
+can be seen as learning mechanisms. In the last decade, multi-agent learning has 
+achieved great success in games which were once considered impossible for AI to 
+conquer [5]. The formal connection between ABM and machine learning started 
+around 1990 
+with the rise of topics like reinforcement learning. Stone and Veloso 
+[6] deﬁned general multi-agent scenarios from a machine learning perspective and 
+presented a 
+survey using robotic soccer as an appropriate test-bed for agents. Agent-
+based models are particularly appealing for their ability to study the interactions of 
+heterogeneous agents, characterized by learning and bounded rationality [7]. Axtell 
+[8] supported a close connection between agent computing in the positive social 
+sciences and 
+distributed computation in computer science. Distributed computation, 
+as well as distributed artiﬁcial intelligence involves computations performed by 
+distinct software agents. The growing attention devoted to ABM in the study of 
+economic phenomena is due, to a great extent, to the inadequacy demonstrated by 
+the prevailing theoretical frameworks for economic analysis, during and after the 
+global ﬁnancial crisis of 2007–2008 [9].
+
+--- PAGE 25 ---
+2A B L 11
+2.1.1 Neoclassics, Evolutionary and Crises 
+Agent-based Models have been commonly used within the evolutionary economics 
+perspective, which provides much more realistic settings than neoclassic economics 
+by allowing the consideration of learning agents acting in a context of disequi-
+librium and bounded-rationality [9]. Indeed, the analysis of interactions at the 
+individual 
+level, only, may lead to misunderstandings. Usually, economists assume 
+that the market is in equilibrium and that the individual preferences are constant. 
+Dynamic Stochastic General Equilibrium Models (DSGE) models are standard tools 
+for macroeconomic analysis. There are examples where this assumption does not 
+hold and the interaction between different levels of analysis is crucial for the real 
+understanding of a given situation. Thus, the analysis of mixed levels (individual 
+cognitive level and social level) may constitute the answer to some of these 
+problems. Indeed, a growing number of leading economists identify the limitations 
+of the dominant economic theory as a signiﬁcant aspect of the economic crisis, 
+including Paul Krugman, and Joseph Stiglitz, among others [10]. These limitations 
+include assumptions 
+of rational expectations, representative agents and perfect 
+markets. More recently, Polyzos et al. [11 ] studied the effects of the governments 
+responses to 
+crisis caused by the COVID 19 pandemics, and introduces several 
+other ﬁnancial crisis, rare events, and disasters such as World Wars, the Great 
+Depression or even the Asian ﬁnancial crisis (late 1990s) and other similar events 
+and argues that a framework for measurement of the ﬁnancial consequences of 
+such events is necessary. In the context of ﬁnancial crisis, several researchers such 
+as [10], [11], [12], and [13], argue that Dynamic Stochastic General Equilibrium 
+Models (DSGE) 
+may carry disadvantages in describing complex economic systems. 
+Therefore, the use of agent-based modelling and learning is a good ﬁt for crisis-task 
+predictions. In neoclassical conception, learning is typically modeled as rational 
+adaptation through individual or ﬁctitious play, while more realistic approaches 
+draw on AI and behavioral science [14]. In fact, unlike DSGE models, it features a 
+bottom-up approach, 
+by simulating the behaviour of each individual agent and then 
+aggregating the results. In that sense, during the COVID-19 pandemic, Squazzoni 
+et al. [ 15] called on the scientiﬁc community to improve the transparency, access, 
+and rigour 
+of the models. The importance of a model is that if micro-speciﬁcations 
+are theoretically plausible, the simulation will become stable and robust against 
+simulation parameters. 
+2.1.2 Agent-Based Computational Economics 
+Multi-Agent Systems are often used to model economies and organizations. Accord-
+ing to [ 16], there are several reasons why economies should be modelled by 
+MAS: economies 
+are complex systems encompassing micro behaviours, interaction 
+patterns, and global regularities. The MAS allows a “two-way feedback between
+
+--- PAGE 26 ---
+12 P. Campos et al.
+microstructure and macro regularities mediated by agent interactions”. Whether 
+partial or general in scope, studies of economic systems should consider how 
+to handle difﬁcult real-world aspects such as asymmetric information, imperfect 
+competition, strategic interaction, collective learning and possibility of multiple 
+equilibria. Multi-Agent Systems are a way of “growing economies from the bottom 
+up” [17]. The ﬁeld of Agent-Based Computational Economics (ACE) is inspired, 
+includes or 
+may be complementary to other ﬁelds such as: Experimental Economics, 
+Complex Adaptive Systems, Computational Modelling of Social Dynamics, Net-
+work Economics, Agent Modelling in Economics and Finance, etc. ACE have been 
+assumed as a relevant and promising alternative framework for economic analysis 
+and have been extensively used as a “laboratory” for policy design, in addition 
+to being widely successful in explaining micro and macro stylized facts [10]. An 
+illustrativ
+e example of the ambitious steps being taken in the ﬁeld of ACE is the 
+development of EURACE, an attempt to construct an agent-based model of the 
+European economy [18]. 
+In a large part of the studies of ACE, game theory is used. Game theory provides 
+us with 
+the mathematical tools to understand the possible strategies that utility-
+maximizing agents might use when making a choice. It is mostly concerned with 
+modeling the decision process of rational humans, a fact that should be kept in mind 
+as we consider its applicability to multiagent systems. One of the most important 
+aspects in modelling in economics is the way how the system is conceptualized 
+and then implemented by the modeller. According to [16 ], the modeller constructs 
+a virtual 
+economic world populated by various agent types (economic, social, 
+biological, physical) and sets the initial world conditions. Next, he/she steps back to 
+observe how the virtual world develops over time. The events in this virtual world 
+are driven by agent interactions. The key characteristics of an organizational agent, 
+the “ﬁrm” agent should contain the following characteristics: 
+• Proﬁt-seeking agent with strategic reasoning and learning capability; 
+• Proﬁt gains by producing and selling products; 
+• Can adjust production and price levels in every trading period; 
+• Can also invest proﬁts to expand its production capacity. 
+One of most important contributions of ACE to mainstream economic theory is 
+that it 
+enriches our exploration of economic dynamics [ 19]. It calls our attention 
+to the 
+fact that the established economic theory may not be robust to learning 
+algorithms. In that sense, Shu Heng-Chen [ 19] states that economists are able to 
+realize the 
+relevance of laboratory experiments (based on game theory, for example), 
+psychology, cognitive sciences and neural sciences to economics. In fact, agent-
+based simulation can help game theorists ponder on the sensitivity of their analysis 
+to various learning schemes and Reinforcement Learning is one of this learning 
+types that may be used in ACE. Furthermore, [19] argues that within the area of 
+economics itself, 
+ACE matches well with experimental economics and behavioral 
+economics as models of human agents. It has recently been noticed that models of 
+software agents and human agents should not be separate entities. ABM and mostly 
+ACE are composed of Agents (usually active objects), Objects (the other elements
+
+--- PAGE 27 ---
+2A B L 13
+Fig. 2.1 Sample of an agent-based model 
+not agents), Relationships (interaction agent-agent and agent-object, that promotes 
+communication between the various elements of the model) and Environment—the 
+framework where the agents and objects are embedded—see Fig. 2.1. 
+According to 
+[20], the standard model of economic decision-making, rests on a 
+set of 
+hypotheses that may be typiﬁed in the following propositions: 
+1. Agents are fully informed about the environment; 
+2. Agents are consistent, in the sense that between two alternatives they choose the 
+best one 
+(according to some criterion); 
+3. Deciding agents encounter no limit of time and computational power 
+2.1.3 Interaction and Cooperation 
+Epstein and Axtell [21], in their pioneering work “Growing Artiﬁcial Societies”, 
+demonstrated ho
+w fundamental collective behaviour can emerge from the interac-
+tion of individual agents and between agents and the environment. And an important 
+output of interaction is related to learning from others. 
+The idea of learning in dynamic environments contrasts with classical non-
+cooperativ
+e game theory that analyzes how rational players will behave through 
+static solution concepts such as the Nash equilibrium. In Nash equilibrium, no 
+individual has a unilateral incentive to change his or her behavior [ 22]. Interaction 
+is a 
+natural process in the real world, resulting from the relationship between an 
+individual and the world where he or she lives. For these interactions to happen, 
+individuals have to be capable of developing communication (not just transmitting 
+information), but more importantly, to provoke some speciﬁc behaviour in others 
+[23]. Those interactions may consist, for instance, of attraction, combat, mating, 
+communication, trade, 
+partnership or rivalry [24]. Cooperation is the primary 
+form of 
+interaction studied in Multi-Agent Systems, although cooperation usually 
+lies outside the Nash equilibrium in simple, one-shot games. Cooperation is a 
+mechanism of complex interaction, where agents have to coordinate their actions
+
+--- PAGE 28 ---
+14 P. Campos et al.
+in the search for synergies that offer advantages of pooled skills [23 ]. The level of 
+commitment is lo
+w and there is no sharing of goals. 
+2.1.4 Generative and Inverse Generative Social Science 
+With Growing Artiﬁcial Societies, Epstein and Axtell [ 21] proposed a generative 
+program for 
+the social sciences. Generative social science is primarily concerned 
+with building computational models or simulations that generate social phenomena 
+through the interaction of individual agents. Many Agent-Based Models work under 
+the generative approach that has been systematised by Joshua Epstein [ 25], in the 
+following 
+steps: 
+1. Situate an initial population of autonomous heterogeneous agents in a relevant 
+spatial en
+vironment; 
+2. Allow them to interact according to simple local rules, and thereby generate—or 
+‘grow’—the macroscopic 
+regularity from the bottom up [ ... .]. 
+In turn, [20] point out that four main issues need to be addressed to build an 
+Agent-Based Model,: 
+(i) the nature of the agents; (ii) the list of variables describing 
+their state; (iii) the list of the actions the agents can perform; (iv) the structure of their 
+interaction with other agents. Both these computational approaches working “from 
+the bottom-up” allow for a generative research program to be pursued with unprece-
+dented scope and vigour. Therefore, those micro-speciﬁcations in question are said 
+to satisfy the criterion of ‘generative sufﬁciency’ with regard to the social outcome 
+that we are studying. The concept of generative sufﬁciency was approached by 
+Medina in 2017 [26], in which the author proposed several conceptual alternatives 
+and identiﬁed 
+collective challenges that the analytics community should consider to 
+remain aligned with its objectives. 
+More recently, in 2023, Epstein [27], developed the concept of Inverse Generative 
+Science (iGSS) 
+where, instead of manually creating fully-formed agents to achieve 
+a speciﬁc target, as in the forward problem, iGSS begins with the macro-target 
+and evolves micro-agents that produce it. In this process, only basic agent-rule 
+components and allowable combinators are speciﬁed. One important aspect of 
+this perspective is the link with Fisher’s (1930) Fundamental Theorem of Natural 
+Selection [28]: the rate of growth of a population, in terms of ﬁtness, is proportional 
+to phenotypic 
+variance. By driving up the variance in generative agent phenotypes, 
+iGSS can likewise accelerate the evolution of social science. 
+Generative social science is a speciﬁc approach within social science with a focus 
+on the interactions of individual agents. Emergence, on the other hand, is a broader 
+concept that describes the spontaneous formation of complex patterns in various 
+complex systems, including but not limited to social systems, and, of course, they 
+are connected.
+
+--- PAGE 29 ---
+2A B L 15
+2.1.5 Individual and Aggregate Levels: Emergence 
+Relationships among the elements of ABM are crucial. And communication is the 
+basis for interactions within social organization [29 ]; it is expressed as a form of 
+interaction in 
+which the dynamic relationship between agents is expressed through 
+the intermediary of mediators or signals, which once interpreted, will affect the other 
+agents. In this scope, the ﬁeld of agent-based organizational simulation (ABOS) has 
+been fruitful, as it allows researchers to recreate interactions between individuals 
+in an organization or between organizations in a market. See, for example, the 
+surveys made by Wall [30] and Gómez-Cruz et al. [29]. Agent-based models in 
+org
+anizations can also incorporate learning. In 2023, Wall developed a model that 
+helps understand the adaptive processes of managers based on experiential learning 
+and backward-looking search behavior [ 31]. One important feature of the agents 
+is beha
+viour. Behaviour characterizes all the properties that the agent manifests 
+itself in its environment. Belew and Mitchell [32] describe behaviour, as something 
+that “closes 
+the loop” between an organism and its environment. We will devote 
+some attention to behaviour in the next chapters of this book, as the modelling of 
+behaviour is very important in Agent-Based Models. 
+Another important aspect of ABM is the individual and aggregate levels of 
+analyses. The 
+connection between these levels is sometimes referred to as emer-
+gence. According to [24], the large-effects of complex locally interacting individuals 
+endorse the 
+appearance of emergent properties at the level of the population. 
+Emergence is maybe one of the hallmarks of complexity in both physical and socioe-
+conomic systems. Emergence is the casual relationship between the complexity of 
+macro dynamics and the complexity of micro dynamics [33]. Batten [34] addresses 
+sev
+eral forms of emergent cooperative behaviour, such as those represented by the 
+prisoner’s dilemma or the trading agent. In the basis of emergence, there is the 
+interaction of individual agents. Techniques that produce such results are known by 
+several names including Agent-Based Modelling, bottom-up modelling and artiﬁcial 
+social systems [24]. 
+The bottom-up approach is widely used in teaching and learning ABM through 
+cellular-automata. 
+Cellular automata are cells located in a regular grid where the 
+behaviour of an individual cell is determined by a set of rules which specify how 
+that state depends on the previous state of that cell and the states of its neighbours. 
+In the following we will look at some examples of this approach and how they can 
+provide us with important insights into real problems. 
+2.1.6 The Game of Life 
+One of the famous examples of cellular automata is the Conway’s Game of Life 
+[35]. The rules in this game are simple: a cell can only survive if there are either 
+two 
+or three other living cells in its immediate neighbourhood (the eight cells 
+surrounding it). If these conditions are not satisﬁed it will die either from the effect
+
+--- PAGE 30 ---
+16 P. Campos et al.
+of overcrowding (if it has too many living neighbours) or from loneliness (if it has 
+too few living neighbours). 
+Cellular automata are an idealized version of a complex system [36 ]. Conway 
+was 
+trying to ﬁnd rules that originated interesting pattern behaviours in the agents. 
+And indeed various interesting patterns can emerge in this game. But what is 
+emergence and can it be observed here? 
+The emerging properties of this model appear when black cells do not actually 
+’mov
+e’, but the pattern of black squares are seen by an observer as a glider 
+travelling across the grid. Besides, other complex patterns spontaneously emerge 
+such as, oscillators (patterns that repeat over time), and stable structures (still lifes). 
+These behaviors are not explicitly programmed—they emerge purely from the local 
+interactions over time. 
+Algorithm 1 Conway’s Game of Life 
+1: Initialize a 2D grid of cells (each cell is either Alive or Dead) 
+2: for each generation do 
+3: Create a new empty grid (next state) 
+4: for each cell (x, y)
+. in the grid do 
+5: Count the number of Alive neighbors around (x, y). 
+6: if cell (x, y). is Alive then 
+7: if Alive neighbors = 2. or = 3. then 
+8: Cell (x, y). stays Alive in the new grid 
+9: else 
+10: Cell (x, y). becomes Dead (underpopulation or overpopulation) 
+11: end if 
+12: else 
+13: if Alive neighbors = 3. then 
+14: Cell (x, y). becomes Alive (reproduction) 
+15: end if 
+16: end if 
+17: end for 
+18: Replace the current grid with the new grid 
+19: end for 2.1.7 Schelling’s Segregation Model 
+Another two-dimensional cellular automata popular example of emergence was 
+developed by Thomas Schelling in the early 1970s [ 37],1 who was interested in 
+studying the macro behaviour that emerged from micro decisions. The Schelling
+1 There are several different implementations of the Schelling’s segregation game. See for example: 
+Agent-Based Computational Economics, (Leigh Tesfatsion’s page): http://www2.econ.iastate. 
+edu/tesfatsi/demos/schelling/schellhp.htm Simulating Complexity: https://simulatingcomplexity.
+
+--- PAGE 97 (SAMPLE) ---
+84 A. Rao and A. K. Bishwas
+Social and Economic Modeling ABMs have played a central role in modeling 
+social and economic systems.
+. Economic Modeling: Agent-based computational economics (ACE) studies the 
+emergence 
+of market level behavior from the complex interaction of individual 
+behaviors [44, 45]. It has been used to model real estate, investing [46], asset 
+pricing [
+47], corporate bond trading [48], automated trading [49, 50], and market 
+meltdowns 
+[51]. Since the 2008 ﬁnancial crisis, interest in modeling ﬁnancial 
+markets 
+and understanding the stability of ﬁnancial markets has increased [ 51, 
+52].
+. Social Science: Agent-based computational sociology (ACS) studies the social 
+interaction between 
+heterogeneous agents. They observe, analyze, and predict the 
+emergence of aggregate outcomes from individual behaviors. They have been 
+used to understand cooperation and social norms [53], diffusion [54], social 
+inﬂuence [
+55], culture dynamics [56], ethnic segregation [57], political coalitions 
+[58], ecological behavior [59, 60], and collective opinions. 
+Business and Organizational Modeling ABMs have been extensively used in a 
+variety 
+of business applications across a number of functional areas. In addition, 
+ABMs have also been used to study organizational behavior.
+. Business Modeling: ABMs have been used in strategic management and 
+decision making 
+[61], marketing [62], distribution, customer experience [ 63], 
+research and 
+development [64], operations and logistics [65], customer service 
+[66], risk [67], ﬁnance [68], and human resource functions [69].
+. Organizational Modeling: ABMs have been used to understand organizational 
+change, or
+ganizational learning [ 70], organizational design [71 ], and organiza-
+tional psychology 
+[72]. 
+We have provided a high-level view of the extensive range of ABM applications 
+today. 
+A detailed analysis of these are beyond the scope of this book. 
+4.3 COVID-19 Modeling 
+In early 2020, as COVID-19 continued to race around the world at a frightening 
+and ferocious pace—often spreading misinformation along with it—governments, 
+organizations and people were clamoring for the truth about safeguards, how we 
+can ﬁght back effectively and how long the nightmare will last. To get these 
+answers, we needed accurate, comprehensive models. While a number of models 
+[73] were produced initially with varying levels of infection rates and death rates 
+the constantly 
+changing numbers caused a great level of consternation and distrust 
+of these models [74 ]. This backlash against the modeling community was based 
+on widespread 
+mis-perception of how models are built and the role they play in 
+such crisis situations. Let’s examine this interplay between models, behaviors, and 
+government interventions.
+
+--- PAGE 193 (SAMPLE) ---
+7 The Ultimatum Game as a Paradigm for Learning Agents: A Python Adventure 183
+ly.append(tmp[ "Net_value" ].sum() / divider) 
+# M
+ax False 
+tmp = no_crisis[no_crisis[ ’Result’] == True] 
+# Total results true 
+ly.append(tmp[ ’Net_value’].sum() / divider) 
+tmp = no_crisis[no_crisis[ ’Result’] == False] 
+# Total results false 
+ly.append(tmp[ ’Net_value’].sum() / divider)
+Listing 7.59 Code in the analyse class 
+As we are creating a bar chart the width variable is used to deﬁne the width of 
+the bars. 
+The variable divider is used to divide the sums to simplify the presentation of the 
+chart. In this case we are dividing by 1000. 
+The l×. variable is a list that will contain the labels for the bars and the ly variable 
+is another list that will contain the values to be represented in the chart. This is done 
+by summing the occurrences of the movements with certain characteristics like for 
+example: 
+tmp = no_crisis[(no_crisis.Epsilon == ’Random’) & 
+(no_crisis .Result == True )]
+Listing 7.60 Filtering the dataframe into the variable temp 
+which ﬁlters all the lines referring to the transactions without crisis and where the 
+epsilon is random, and the result is true. 
+We use a temporary variable named tmp to create a dataframe with the ﬁlter, then 
+we sum the values in the column Net_value and append it to the ly list. In the end, 
+the list ly will contain something like [933.7, 945.1, 428.4, 208.5, 1721.5, 479.0] 
+(remember that these values are divided by 1000). 
+These are the sums of the transactions made without crisis, and now we are going 
+to create the list with the values from the transactions in the crisis. This list has the 
+name of ly2. 
+tmp = crisis[(crisis.Result == True)] 
+ly2 = [tmp["Net_value" ].sum() / divider] 
+tmp = crisis[(crisis.Result == False)] 
+ly2.append (tmp["Net_value" ].sum() / divider )
+Listing 7.61 Code from the __init__() method in the analyse class 
+We use, again, the temporary variable tmp with the values ﬁltered but this time 
+the values are from the epsilon with the value of Crisis which are in the dataframe 
+crisis.
+
+--- PAGE 289 (SAMPLE) ---
+11 Organizational Learning from Crises with ML/ABM 281
+mobility, number and type of sensors, making them unique or at least different from 
+the other agents. Two different robots were trained based on cognitive maps made by 
+students—although there were numerous differences in knowledge representation— 
+to effectively recognize different concepts in their environment, such a hole, a wall 
+and an obstacle. Interestingly, the robots tried afterwards to exchange acquired 
+knowledge between them, where one of the robots was capable to teach the other 
+robot. 
+11.4.1.4 Prescriptive Theories 
+Prescriptive theories of learning provide guidelines, recommendations, or pre-
+scriptions for 
+how learning processes should occur to optimize outcomes. These 
+theories focus on the design of instructional methods, strategies, and environments 
+to facilitate effective learning. Several prescriptive theories of learning have been 
+proposed in the ﬁeld of education and instructional design. Prescriptive theories ask 
+how agents—people, programs, or otherwise—should learn. Their main focus is not 
+on behavioral properties, but on normative theories, in which individual agents are 
+self-motivated [27]. 
+11.4.2 Systemic Learning: An Integrated Learning Approach 
+The performance of a learning model depends on a training dataset, the algorithm 
+and the parameters of the algorithm. There are situations where several algorithms 
+compete or collaborate for a solution: algorithms learning to learn. This is the case 
+of Meta Learning, a subset of machine learning used to improve the results and 
+performance of a learning algorithm by changing some aspects of the learning 
+algorithm based on experiment results. 
+Systemic learning, our proposal for this holistic approach, is built upon the 
+ﬁv
+e disciplines of the learning organization, as stated by [ 15], and described in 
+Table 11.3
+. This holistic view helps the cause-and-effect relationships among data 
+and people 
+and improves individual and collective decision making, by considering 
+an integrated learning approach. This integrated approach assumes that learning 
+is taking place in a decentralized way and that the various learning agents are 
+heterogeneous. These agents act as components of a system that functions as a whole 
+and each component may have different functions in the system. Just like in the 
+human body, the organs work in an integrated way for a common goal. According 
+to Systemic Theory, the whole emerges beyond the existence of the parts and the 
+relationships are what give cohesion to the whole system, giving it a character of 
+totality or globality, one of the deﬁning characteristics of the system [48]. 
+One possible example of Systemic learning is provided by Sun and Naveh [ 43], 
+who use 
+a cognitively realistic simulation to capture human performance data in a 
+radar task. Their model uses Clarion, a project investigating fundamental structures

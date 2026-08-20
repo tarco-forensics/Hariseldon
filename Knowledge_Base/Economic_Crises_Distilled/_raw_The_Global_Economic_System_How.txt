@@ -1,0 +1,835 @@
+--- PAGE 1 ---
+ptg
+
+
+--- PAGE 2 ---
+ptg
+The Global Economic System
+
+--- PAGE 3 ---
+ptg
+This page intentionally left blank 
+
+--- PAGE 4 ---
+ptg
+The Global Economic System
+HOW LIQUIDITY SHOCKS AFFECT FINANCIAL
+INSTITUTIONS AND LEAD TO ECONOMIC CRISES
+GEORGE CHACKO, CAROLYN L. EVANS, 
+HANS GUNAWAN, ANDERS SJÖMAN
+
+--- PAGE 5 ---
+ptg
+Vice President, Publisher: Tim Moore 
+Associate Publisher and Director of Marketing: Amy Neidlinger
+Executive Editor: Jim Boyd 
+Editorial Assistant: Pamela Boland 
+Senior Marketing Manager: Julie Phifer 
+Assistant Marketing Manager: Megan Colvin 
+Cover Designer: Alan Clements 
+Managing Editor: Kristy Hart 
+Project Editor: Betsy Harris 
+Copy Editor: Geneil Breeze 
+Proofreader: Williams Woods Publishing 
+Indexer: Lisa Stumpf 
+Senior Compositor: Gloria Schurick 
+Manufacturing Buyer: Dan Uhrig
+© 2011 by Pearson Education, Inc.
+Publishing as FT Press 
+Upper Saddle River, New Jersey 07458
+This book is sold with the understanding that neither the author nor the publisher is
+engaged in rendering legal, accounting, or other professional services or advice by
+publishing this book. Each individual situation is unique. Thus, if legal or financial advice
+or other expert assistance is required in a specific situation, the services of a competent
+professional should be sought to ensure that the situation has been evaluated carefully
+and appropriately. The author and the publisher disclaim any liability, loss, or risk result-
+ing directly or indirectly, from the use or application of any of the contents of this book.
+FT Press offers excellent discounts on this book when ordered in quantity for bulk purchases or
+special sales. For more information, please contact U.S. Corporate and Government Sales,
+1-800-382-3419, corpsales@pearsontechgroup.com. For sales outside the U.S., please contact
+International Sales at international@pearson.com.
+Company and product names mentioned herein are the trademarks or registered trademarks of
+their respective owners.
+All rights reserved. No part of this book may be reproduced, in any form or by any means, without
+permission in writing from the publisher.
+Printed in the United States of America
+First Printing June 2011
+ISBN-10: 0-13-705012-7
+ISBN-13: 978-0-13-705012-3
+Pearson Education LTD.
+Pearson Education Australia PTY, Limited.
+Pearson Education Singapore, Pte. Ltd.
+Pearson Education North Asia, Ltd.
+Pearson Education Canada, Ltd.
+Pearson Educación de Mexico, S.A. de C.V.
+Pearson Education—Japan 
+Pearson Education Malaysia, Pte. Ltd.
+Library of Congress Cataloging-in-Publication Data
+The global economic system : how liquidity shocks affect financial institutions and lead to economic
+crises / George Chacko ... [et al.].
+p. cm.
+ISBN 978-0-13-705012-3 (hbk. : alk. paper)
+1.  International finance. 2.  Liquidity (Economics) 3.  Financial crises.  I. Chacko, George. 
+HG3881.G57534 2011
+332’.042—dc22
+2011010482
+
+--- PAGE 6 ---
+ptg
+George dedicates this to Hemu, Manju, Leah, and Shreya.
+Carolyn thanks her father and mother for all their support.
+Hans dedicates this book to his loving parents.
+Anders is, as always, in constant awe of Alvar.
+
+--- PAGE 7 ---
+ptg
+This page intentionally left blank 
+
+--- PAGE 8 ---
+ptg
+Contents
+Chapter 1 Motivation for Understanding Liquidity Risk  . . . 1
+1.1 Peso Problem  . . . . . . . . . . . . . . . . . . . . . . . . . . . 2
+1.2 Liquidity Risk—The Peso Problem of 
+Our Time  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+1.3 WorldCom  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+1.4 Hedge Fund Returns . . . . . . . . . . . . . . . . . . . . . 6
+1.5 The Structure of This Book . . . . . . . . . . . . . . . . 8 
+Endnotes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+Chapter 2 Liquidity Risk: Concepts  . . . . . . . . . . . . . . . . . . 11
+2.1 Introduction  . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+2.2 What Is Liquidity?  . . . . . . . . . . . . . . . . . . . . . . 11
+2.3 Model of Liquidity Costs . . . . . . . . . . . . . . . . . 15
+2.4 Liquidity Risk and Liquidity Shocks  . . . . . . . . 21
+2.5 Liquidity Risk Premium . . . . . . . . . . . . . . . . . . 25
+2.6 Why Bear Liquidity Risk?  . . . . . . . . . . . . . . . . 32
+2.7 Liquidity-Driven Investing (LqDI) . . . . . . . . . 34
+2.8 Liquidity Risk Exposure in Bank 
+Balance Sheets  . . . . . . . . . . . . . . . . . . . . . . . . . . . . 42
+2.9 Propagation of Liquidity Shocks: 
+Systemic Risk  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 46
+2.10 From Liquidity Crisis to Credit Crisis  . . . . . 50 
+Endnotes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 52
+
+--- PAGE 9 ---
+ptg
+Chapter 3 The Great Depression . . . . . . . . . . . . . . . . . . . . . 59
+3.1 The Stages of a Liquidity Shock  . . . . . . . . . . . 59
+3.2 Recognizing a Liquidity Shock—
+Interpreting the Data . . . . . . . . . . . . . . . . . . . . . . . 65
+3.3 Setting the Stage for the Trigger—the
+Background for the Great Depression  . . . . . . . . . 73
+3.4 Stage 1: The Trigger . . . . . . . . . . . . . . . . . . . . . 79
+3.5 Stage 2: Change in Liquidity Demanded
+Throughout the Economy  . . . . . . . . . . . . . . . . . . . 82
+3.6 Stage 3: Changes in Bank Balance Sheets  . . . 85
+3.7 Stage 4: Banks Change Activities to 
+Bolster Balance Sheets . . . . . . . . . . . . . . . . . . . . . . 87
+3.8 Stage 5: Effect on Liquidity and Availability 
+of Credit Throughout the Economy  . . . . . . . . . . . 90
+3.9 Stage 6: Real Effects of Decline in Liquidity
+Observed Throughout the Economy . . . . . . . . . . . 93
+3.10 Conclusion: The Great Depression, 
+a True Liquidity Shock . . . . . . . . . . . . . . . . . . . . . . 98
+Endnotes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 100 
+References  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 103
+Chapter 4 Japan’s Lost Decade  . . . . . . . . . . . . . . . . . . . . . 105
+4.1 The Stages of a Liquidity Shock—
+Revisited and Expanded  . . . . . . . . . . . . . . . . . . . 105
+4.2 Recognizing a Liquidity Shock—
+Interpreting the Data . . . . . . . . . . . . . . . . . . . . . . 110
+4.3 Setting the Stage for the Trigger— 
+the Background to Japan’s Lost Decade  . . . . . . . 117
+4.4 Stage 1: The Trigger . . . . . . . . . . . . . . . . . . . . 124
+THE GLOBAL ECONOMIC SYSTEM
+viii
+
+--- PAGE 10 ---
+ptg
+4.5 Stage 2: Change in Liquidity Demanded
+Throughout the Economy  . . . . . . . . . . . . . . . . . . 125
+4.6 Stage 3: Changes in Bank Balance Sheets  . . 129
+4.7 Stage 4: Banks Change Activities to 
+Bolster Balance Sheets . . . . . . . . . . . . . . . . . . . . . 141
+4.8 Stage 5: Effect on Liquidity and Availability 
+of Credit Throughout the Economy  . . . . . . . . . . 149
+4.9 Stage 6: Real Effects of Decline in Liquidity
+Observed Throughout the Economy . . . . . . . . . . 155
+4.10 Conclusion: Japan’s Lost Decade, a Liquidity
+Shock That Dragged On  . . . . . . . . . . . . . . . . . . . 161
+Endnotes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 162 
+References  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 169
+Chapter 5 The Great Recession . . . . . . . . . . . . . . . . . . . . . 173
+5.1 The Stages of a Liquidity Shock—
+Same Applies Now as with the 
+Great Depression  . . . . . . . . . . . . . . . . . . . . . . . . . 173
+5.2 Recognizing a Liquidity Shock—
+Interpreting the Data . . . . . . . . . . . . . . . . . . . . . . 176
+5.3 Setting the Stage for the Trigger— 
+the Background to the Great Recession  . . . . . . . 182
+5.4 Stage 1: The Trigger . . . . . . . . . . . . . . . . . . . . 196
+5.5 Stage 2: Change in Liquidity Demanded
+Throughout the Economy  . . . . . . . . . . . . . . . . . . 201
+5.6 Stage 3: Changes in Bank Balance 
+Sheets  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 205
+5.7 Stage 4: Banks Change Activities to 
+Bolster Balance Sheets . . . . . . . . . . . . . . . . . . . . . 212
+CONTENTS
+ix
+
+--- PAGE 11 ---
+ptg
+5.8 Stage 5: Effect on Liquidity and Availability 
+of Credit Throughout the Economy  . . . . . . . . . . 217
+5.9 Stage 6: Real Effects of Decline in Liquidity
+Observed Throughout the Economy . . . . . . . . . . 224
+5.10 Conclusion  . . . . . . . . . . . . . . . . . . . . . . . . . . 237 
+Endnotes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 238 
+References  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 243
+Chapter 6 Conclusion  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 247
+6.1 A Liquidity Crisis  . . . . . . . . . . . . . . . . . . . . . . 247
+6.2 Bank Accounting Changes . . . . . . . . . . . . . . . 249
+6.3 Bank Nationalization  . . . . . . . . . . . . . . . . . . . 250
+6.4 Debt Guarantees  . . . . . . . . . . . . . . . . . . . . . . 252
+6.5 Central Bank Lending  . . . . . . . . . . . . . . . . . . 253
+6.6 Monetary Policy  . . . . . . . . . . . . . . . . . . . . . . . 255
+6.7 Fiscal Spending  . . . . . . . . . . . . . . . . . . . . . . . 256
+6.8 Preventing Liquidity Crises . . . . . . . . . . . . . . 258 
+Endnotes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 259
+Index  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .261
+THE GLOBAL ECONOMIC SYSTEM
+x
+
+--- PAGE 12 ---
+ptg
+Acknowledgments
+George Chacko and Carolyn Evans would like to gratefully acknowl-
+edge financial support from the Leavey School of Business at Santa
+Clara University. 
+
+--- PAGE 13 ---
+ptg
+About the Authors
+George Chacko is Associate Professor of Finance at Santa Clara
+University’s Leavey School of Business and formerly Associate
+Professor at Harvard Business School, Managing Director at State
+Street Bank, and Chief Investment Officer at Auda Alternative
+Investments. He holds a Ph.D. and M.A. in Business Economics from
+Harvard University and a B.S. from MIT. 
+Carolyn L. Evans is Associate Professor of Economics at Santa Clara
+University. She has worked at the Federal Reserve Bank of New York,
+the Federal Reserve Board of Governors, and the White House
+Council of Economic Advisers. She holds a Ph.D. and M.A. in
+Economics and a B.A. in East Asian Languages and Civilizations, all
+from Harvard University.
+Hans Gunawan is Senior Financial Analyst at Skyline Solar and for-
+merly a manager of financial planning and analysis at JAPFA. He
+holds an MBA from Santa Clara University and a B.S. from University
+of California, Berkeley.
+Anders Sjöman is Vice President of Communications at Voddler. He
+was formerly Senior Researcher for Harvard Business School’s Paris-
+based Europe Research Center. He holds an M.Sc. from the
+Stockholm School of Economics. 
+
+--- PAGE 14 ---
+ptg
+chapter 1
+The global economic crisis of 2008 and 2009 caught many of the most
+astute investors in the financial markets by surprise. While only 49
+hedge funds failed during all of 2007, 344 hedge funds failed during
+just the third quarter of 2008, and another 778 hedge funds failed
+during the fourth quarter of 2008. Similarly, while only 3 banks failed
+in 2007, 25 banks failed in 2008, and 140 failed in 2009. Endowment
+funds, the financial backbone of private universities, which had post-
+ed stellar investment results throughout the 2000s, had an investment
+return of -19% during fiscal 2009. The four biggest funds, with wide-
+ly acclaimed investment managers, posted returns of -27% (Harvard),
+-25% (Yale), -27% (Stanford), and -23% (Princeton). Private equity
+funds lost 15% in 2008.
+As a description of the money management industry during 2008-
+2009, one of the most widely circulated quotes was provided by the
+“sage of Omaha,” Warren Buffet, who once said “you only find out
+who is swimming naked when the tide goes out.”1 So how did some of
+the smartest investors, who had generated outsized returns for a long
+time with their skills, get caught flat-footed by the largest financial cri-
+sis the world had seen in several decades? Were they all in reality
+“swimming naked”?
+Motivation for Understanding
+Liquidity Risk
+
+--- PAGE 15 ---
+ptg
+1.1 Peso Problem
+In his famous quote, Buffet is referring to a phenomenon known in
+academic circles as a “peso problem”—a term commonly attributed to
+Nobel laureate Milton Friedman for comments he made about trad-
+ing in the Mexican peso in the early 1970s. At the time, the exchange
+rate between the U.S. dollar and the Mexican peso was fixed at that
+time as both countries were following the Bretton Woods
+Agreements. However, looking at interest rates on government bonds
+in Mexico and comparing them to interest rates on similar-maturity
+government bonds in the United States, one found that the interest
+rates in Mexico were far higher—despite the fixed exchange rate. This
+posed a bit of a puzzle. Investors could borrow U.S. dollars and pay a
+low interest rate, convert these dollars into pesos, and then invest the
+pesos into Mexican government bonds and earn a high interest rate.
+When the Mexican bonds matured, the investor could simply convert
+the peso principal and interest back into dollars at the same exchange
+rate that he did the initial conversion. He could then pay back the dol-
+lar borrowings and he would be left with a profit, equal to the inter-
+est rate differential between Mexican and U.S. interest rates times the
+principal amount borrowed. In modern terms, this is known as a carry
+trade. However because the exchange rate was fixed, there was no risk
+in this carry trade. Therefore the profit from the carry trade could be
+earned with no risk—a condition that financial economists refer to as
+an arbitrage, or free money. How could this prevail in the financial
+markets? In trying to explain this phenomenon, Friedman noted that
+perhaps the interest rate differential between the two countries
+reflected a hidden risk factor that no one could observe in financial
+market data because the downside effects of this risk had not occurred
+yet. He speculated that this risk factor was the possibility of a devalu-
+ation of the Mexican peso. And sure enough, in August 1976 the peso
+was allowed to float against the dollar, and the peso promptly fell 46%.
+THE GLOBAL ECONOMIC SYSTEM
+2
+
+--- PAGE 16 ---
+ptg
+1.2 Liquidity Risk—
+The Peso Problem of Our Time
+In this book, we argue that there was a peso problem during the
+period leading up to the global economic crisis of 2008-2009. And we
+also argue that it was an extremely pervasive peso problem, touching
+our entire society. It is present in every market (both financial and
+nonfinancial), it affects most financial institutions ranging from banks
+to hedge funds, it has always been there, and it will always continue to
+be there. This latent risk factor is liquidity risk.
+Liquidity risk is a term widely used now in the popular press, but
+the truth is that few practitioners or academics seem to understand
+this risk well. Perhaps not surprisingly, because until just a few years
+ago, there was very little work being done to analyze this risk factor.
+The purpose of this book is not only to provide a detailed description
+of the concept of liquidity risk but also to lay out how this risk affects
+financial institutions and thereby gets transmitted into the global eco-
+nomic system. We do the latter by providing an analysis of the effects
+of three prominent liquidity risk events in the 20th century: 1) the
+Great Depression of the 1930s, 2) the collapse of the asset price bub-
+ble in Japan during the 1990s—often called the Lost Decade, and 3)
+the global economic crisis of 2008-2009, which, at the time of the
+writing of this book, many would argue is still continuing.
+Before we get started, we provide a bit of additional motivation to
+study liquidity risk by presenting a couple of puzzles. These are some
+of the puzzles that initially prompted us to begin researching the con-
+cept of liquidity risk and its effects on financial institutions and the
+global economy.
+3
+MOTIVATION FOR UNDERSTANDING LIQUIDITY RISK
+
+--- PAGE 17 ---
+ptg
+1.3 WorldCom
+WorldCom was one of the largest telecommunications companies in
+the world. Due to accounting fraud, in July 2002 the firm filed for
+bankruptcy. At the time it was the largest bankruptcy filing in the his-
+tory of the United States.2
+Figure 1.1 shows a time-series graph constructed using
+WorldCom’s stock price movements over the two years prior to its
+bankruptcy. This graph depicts the assessment of WorldCom’s proba-
+bility of default3—or the risk that it would not pay its debt holders—
+by the equity markets over a period of time. The probability of default
+at any one point in time is calculated utilizing a widely used model
+known as the Merton model.4 The only information being used in the
+calculations is data from the equity markets—no bond market infor-
+mation is used. Therefore, one can interpret Figure 1.1 as represent-
+ing the equity market’s probability of default assessment of
+WorldCom.
+THE GLOBAL ECONOMIC SYSTEM
+4
+WorldCom Risk-Neutral Default Probability
+0
+0.01
+0.02
+0.03
+0.04
+0.05
+0.06
+0.07
+0.08
+0.09
+Nov-00 Feb-01 Jun-01 Sep-01 Dec-01
+Time
+Probability
+Figure 1.1 Time series graph of WorldCom’s default probability from the equity
+markets
+
+--- PAGE 18 ---
+ptg
+What we see from Figure 1.1 is that the equity markets start
+receiving information about trouble at WorldCom beginning in June
+2001. From June 2001 to December 2001, the probability of default
+rises from approximately 2% to about 8%.
+Figure 1.2 shows a time-series graph of credit spreads of a corpo-
+rate bond that was issued by WorldCom in August 1998. A credit
+spread of a corporate bond is simply the bond’s yield less the yield of
+a corresponding-maturity riskfree (Treasury) bond. Therefore, the
+credit spread is widely used by markets as an assessment of the likeli-
+hood of default of a corporate bond—the larger the credit spread, the
+higher the likelihood of default. Note that the credit spread of the
+WorldCom bond over the same time period as that in Figure 1.1 stays
+relatively flat at 1.8%. This indicates that the corporate bond market
+is assessing that WorldCom’s probability of default has not changed.
+MOTIVATION FOR UNDERSTANDING LIQUIDITY RISK
+5
+Nov-00 Feb-01 Jun-01 Sep-01 Dec-01
+WorldCom LT Credit Spread
+6.95% 30-Year, Issuance Date: 8/98, $1.75B Callable 
+0.00%
+0.50%
+1.00%
+1.50%
+2.00%
+2.50%
+Time
+Credit Spread
+Figure 1.2 Time series graph of WorldCom’s credit spread
+This is a puzzle! How can the equity market and the corporate
+bond market be arriving at different assessments of WorldCom? The
+two markets should be getting identical information about
+
+--- PAGE 19 ---
+ptg
+WorldCom. So, why does one market seemingly process this informa-
+tion differently and arrive at a different conclusion than the other
+market?
+To answer this question, we have to understand what differences
+might exist between the equity market and bond market that might
+explain the divergent expectations. One major difference is the
+amount of liquidity and liquidity risk in the two markets. The U.S. cor-
+porate bond market is orders of magnitude less liquid than the U.S.
+equity market. As we will see, the difference in liquidity provides the
+key to explaining this puzzle.
+1.4 Hedge Fund Returns
+Hedge funds are an unregulated class of investment funds that
+became popular beginning in the late 1990s. At the end of 2010, the
+hedge fund industry managed more than $2 trillion.
+Figure 1.3 contains a table of returns from the years 2000 thru
+2008. The first column in this table denotes the year, and the next two
+columns compare the returns of a broad hedge fund index published
+by Credit Suisse/Tremont with the Standard & Poor’s 500 stock index.
+For example, in 2003 the Tremont index produced a return of
+15.46%, while the S&P 500 index produced a return of 28.69%.
+Hedge funds charge relatively high fees compared to regulated
+funds, and one of the reasons they do so is their claim that the sophis-
+ticated hedging strategies they use produce returns that are insulated
+from stock market risk. Thus hedge funds produce positive returns
+whether the stock market is going up or down. Looking at Figure 1.3,
+we can verify this claim. During the years 2000-2002, the stock mar-
+ket declined a total of 38%.5 During the same time period, the hedge
+fund index increased by 13%. So, it would appear that the hedge fund
+industry’s fees were very much justified.
+THE GLOBAL ECONOMIC SYSTEM
+6
+
+--- PAGE 20 ---
+ptg
+Figure 1.3 Table of hedge fund returns and stock market returns
+In 2008, however, things change drastically. In this year, the stock
+market again dropped 38%, just like at the start of the decade.
+However, this time hedge funds produced a loss of 19% rather than
+the positive performance they produced earlier. This brings up an
+interesting question. What changed? Why did hedge funds produce a
+large negative performance in 2008 when the stock market dropped
+by the same amount?
+The answer to this question lies in understanding the nature of
+the risk that hedge funds have on their balance sheets. As we show
+later in the book, hedge funds have considerable liquidity risk on their
+balance sheets, and this risk exposure is the key to explaining the per-
+formance difference of the hedge fund industry in 2008 versus the
+start of the decade.
+MOTIVATION FOR UNDERSTANDING LIQUIDITY RISK
+7
+Year HF Index S&P 500
+  2000    4.84%   -9.10%
+  2001    4.41% -11.89%
+  2002    3.05% -22.10%
+  2003  15.46%  28.69%
+  2004    9.64%  10.88%
+  2005    7.60%    4.91%
+  2006  13.86%  15.79%
+  2007  12.58%    5.49%
+  2008 -19.07% -38.49%
+
+--- PAGE 21 ---
+ptg
+1.5 The Structure of This Book
+This book sets out to explain and discuss the questions and puzzles we
+just presented, using liquidity risk as a primary explanatory variable.
+After this introductory chapter to liquidity, Chapter 2, “Liquidity
+Risk: Concepts,” will define the key concepts surrounding the con-
+cept, such as liquidity cost, liquidity risk, and liquidity risk premium.
+We explore how financial institutions bear liquidity risk in their bal-
+ance sheets. And we end the chapter with a discussion on how that
+affects financial institutions, especially banks, and the subsequent
+effects this has on the global economy.
+In the three following chapters, we analyze three major historical
+liquidity shocks that occurred during the twentieth century. (There
+are many other examples during this time period, but we picked three
+of the most prominent ones.) We trace the shocks as they affect finan-
+cial institutions and, subsequently, spread to the nonfinancial sector.
+In Chapter 3 we look at the United States Great Depression (1929-
+1933); in Chapter 4, we study Japan’s Lost Decade of the 1990s; and
+in Chapter 5 we look at the United States Great Recession (2007-
+2009).
+The book’s final chapter, Chapter 6, explores the question of
+whether there are ways to lessen the effects of liqudity shocks, per-
+haps through public policy.
+The book is written assuming that the reader has some familiar-
+ity with finance and economics. Concepts such as supply/demand
+equilibrium, bond yields, and option payoffs hopefully are not new.
+Now, let’s dive into the pool of liquidity risk.
+THE GLOBAL ECONOMIC SYSTEM
+8
+
+--- PAGE 22 ---
+ptg
+Endnotes
+1. Chairman’s Letter, 2001 Berkshire Hathaway Annual Report, http://www.
+berkshirehathaway.com/2001ar/2001ar.pdf.
+2. The record size of WorldCom’s bankruptcy filing has been overtaken by the
+collapses of Lehman Brothers and Washington Mutual in 2008.
+3. Technically, this is called the risk-neutral probability of default.
+4. The Merton model says that a corporate bond is equivalent to a Treasury
+bond minus a put option on the assets of the firm, and that corporate equity
+is equivalent to a call option on the assets of the firm. For this calculation,
+we are using the latter approach. The implementation of this model is quite
+technical, and therefore, we do not delve into it in this book.
+5. This calculation takes into account the compounding effect of the returns
+shown in Figure 1.3.
+MOTIVATION FOR UNDERSTANDING LIQUIDITY RISK
+9
+
+--- PAGE 23 ---
+ptg
+This page intentionally left blank 
+
+--- PAGE 24 ---
+ptg
+chapter 2
+11
+2.1 Introduction
+Before we talk about financial institutions and the global economic
+system, we need to define the key concepts surrounding liquidity. In
+this chapter, we first define liquidity and the cost of liquidity, as well
+as introduce the concepts of liquidity risk and liquidity risk premium
+in the financial markets. We then explain how financial institutions
+ranging from banks and insurance companies to pension funds and
+hedge funds bear considerable liquidity risk in their balance sheets
+and why they choose to do so. Finally, we discuss the effects that bear-
+ing illiquidity risk has on financial institutions, especially banks, and
+the subsequent effects these have on the global economy.
+2.2 What Is Liquidity?
+The terms liquidity and liquidity risk have garnered a great deal of
+press recently as a result of the economic turmoil hitting the United
+States and Europe. These terms have a somewhat vague definition,
+however, and different people mean different things when using
+them. So before we explain what role liquidity, or more specifically
+the lack of liquidity, had on the economic crisis of 2008-2009, we
+should first explain what our definitions for liquidity, liquidity risk,
+and liquidity premium are.
+While many people use the term liquidity, what they often mean
+is illiquidity. For example, when people say liquidity risk, they are
+Liquidity Risk: Concepts
+
+--- PAGE 25 ---
+ptg
+referring to the risk of facing an illiquid market for a good or a finan-
+cial security. Technically it would be more appropriate to refer to such
+risk as illiquidity risk because it is illiquidity that creates problems in
+the financial markets, not liquidity. However, it has become common
+among practitioners, in the popular press and even in academic cir-
+cles, to simply use the terms liquidity risk and liquidity risk premium,
+so we will do so in this book as well. Keep in mind, however, that the
+risk being referred to is the likelihood of illiquidity.
+Liquidity refers to how quickly and at what cost one can monetize
+an asset, whether that is a financial asset such as a stock or a real asset
+such as a commercial building. If one has an asset whose “true,” or
+fundamental, value is $10, and one can instantly convert that asset
+into $10 of cash or cash equivalent, then we think of the market for
+that asset as perfectly liquid. Of course, such a perfectly liquid market
+is rarely observed in the world. Liquidity is also used to measure how
+quickly a buyer of an asset can convert cash into that tangible asset. So
+in a perfectly liquid market, someone who is looking to buy an asset
+whose fundamental value is $10 will be able to purchase that asset
+instantly for exactly $10 and receive it instantly.
+There are two frictions that lead markets to be less than perfect-
+ly liquid, or illiquid. The first is an indirect cost. There is the possibil-
+ity that it takes some amount of time before the conversion of the
+asset into $10 of cash takes place. For example, we may have to take
+the asset to a market, or if we are at the market, we may have to wait
+until someone comes along who wants the asset. This waiting time,
+sometimes referred to as a waiting cost or search cost, is one manifes-
+tation of illiquidity, and it makes a market less than perfectly liquid.
+The second friction is a direct cost. We may decide to pay someone a
+fee to get the asset sold immediately. Rather than paying the indirect
+cost of waiting until finding someone who will pay us the full $10 of
+cash, we may choose instead to cut our waiting time to zero and sim-
+ply pay someone else, a “dealer,” to do the waiting for us. We are
+THE GLOBAL ECONOMIC SYSTEM
+12
+
+--- PAGE 26 ---
+ptg
+essentially paying the dealer for transaction immediacy, or liquidity,1
+and therefore this cost is known as a transaction cost or liquidity cost.2
+For example, we may sell the asset to a dealer for $9.80 and let the
+dealer then worry about waiting to find someone who wants this asset.
+In this case, the dealer is providing us transaction immediacy in
+exchange for a fee of $0.20. While we have cut the waiting cost to
+zero, this is not a case of perfect liquidity because we have to pay a
+fee. While a dealer is a commonly used term for someone who pro-
+vides such transaction immediacy (or liquidity) services in the finan-
+cial markets, terms such as principal, financial intermediary, and bro-
+ker3 are also used. In the financial markets, financial institutions such
+as investment banks typically act as dealers for investors.
+While in this book we stay focused on the financial markets, it is
+important to note that liquidity and the provision of liquidity in goods
+markets work in the same way as in financial markets. For example,
+when a customer goes to a store to buy toothpaste, the store is provid-
+ing transaction immediacy to her in the toothpaste market, that is, it
+is allowing her immediate access to purchasing toothpaste rather than
+having to wait and find a toothpaste seller, or manufacturer, herself.
+Similarly, the store is providing liquidity to the toothpaste manufac-
+turer as well. By purchasing the toothpaste from the manufacturer
+and carrying it on its own shelves (and balance sheet), the store is
+sparing the manufacturer from having to go out and find customers
+for the toothpaste that it owns. So for both the customer and the
+toothpaste manufacturer, the store is providing transaction immedia-
+cy: It allows both the customer and the manufacturer to immediately
+have a transaction (buying in the customer’s case, and selling in the
+case of the manufacturer). Note, however, that the transaction imme-
+diacy is not occurring at the same time for both the customer and the
+manufacturer. Therefore, the store must carry the toothpaste on its
+own balance sheet between the time that it purchases the toothpaste
+from the manufacturer and the time that the customer purchases the
+13
+LIQUIDITY RISK: CONCEPTS
+
+--- PAGE 27 ---
+ptg
+toothpaste from the store. Thus, just like a financial dealer the store is
+using its balance sheet to bridge the time between the manufacturer
+and the customer. It is this bridging function that creates transaction
+immediacy, or liquidity, for both the customer and the manufacturer,
+and we can say therefore that the store is providing liquidity services
+in toothpaste.
+An important characteristic about trading illiquid assets is that
+there is a tradeoff between waiting cost and liquidity cost. If an
+investor is willing to do some searching (and therefore waiting) before
+buying or selling an asset, the investor can lower the amount of liquid-
+ity cost he pays. If an investor is willing to wait as long as it takes to
+find a counterparty himself, then he will pay zero transaction cost, but
+he will pay a full waiting cost (though the waiting cost is uncertain). At
+the other limit, if an investor is not willing to wait at all, that is, if he
+wants an immediate transaction, he will pay zero waiting cost but a full
+transaction cost. For example, suppose a homeowner wants to sell a
+home. If she wants to sell a home immediately (within three days, for
+example), then she would have to discount the home considerably to
+get this transaction done—low waiting cost, but high liquidity cost.
+However, if the homeowner is willing to wait up to a year, then she
+does not need to discount the home very much, if at all, to sell the
+home within that time period—low liquidity cost, but high waiting
+cost.
+Another characteristic to note about illiquid assets is the way in
+which a dealer collects his fee for providing transaction immediacy
+services (or liquidity services) to customers. In the example of the
+store selling toothpaste, it buys the toothpaste from the manufacturer
+at slightly below the fundamental value of the toothpaste. Say the
+store buys it at $3 per tube, and we assume a fundamental value of
+$3.25 per tube. The store then sells to the customer at slightly above
+the fundamental value of the toothpaste, say $3.50 per tube (see
+Figure 2.1). In this way a fee for providing transaction immediacy to
+THE GLOBAL ECONOMIC SYSTEM
+14
+
+--- PAGE 28 ---
+ptg
+both the manufacturer and customer is built into the transaction price
+that each sees. This is why this fee is often referred to as a transaction
+cost. The financial markets work the same way. Instead of toothpaste,
+the asset might be a stock. Then, the $3 price would be referred to as
+a bid price, and the $3.50 price would be referred to as an ask price.
+The difference between these two prices, $0.50, is commonly called a
+bid-ask spread, and this is the security dealer’s fee for providing trans-
+action immediacy. It is for this reason that the terms transaction cost
+and bid-ask spread are used interchangeably.
+LIQUIDITY RISK: CONCEPTS
+15
+Manufacturer Dealer Customer
+Toothpaste
+$3.00
+Toothpaste
+$3.50
+Figure 2.1 Illustration of dealing function and fees
+2.3 Model of Liquidity Costs
+The immediate question at this stage normally is what is an appropri-
+ate or fair transaction cost, or liquidity cost. Do we have a model for
+determining a fair liquidity cost for an asset? The answer is that many
+such models exist. Every dealer has its own model of some sort (and
+some of these models are more qualitative than quantitative) for
+determining a liquidity cost for an asset in a specific market.
+For the purposes of this book, we discuss one model of liquidity
+costs: the CJS model.4 This is not the first model of liquidity costs ever
+derived, nor will it be the last. We present it because it is highly rep-
+resentative of the types of quantitative models that have been created
+and used by dealers to calculate liquidity costs. The CJS model itself
+is fairly technical as its foundations lie in option pricing theory. We do
+not delve into the technical details of the CJS model but instead we
+focus on the features of this model that are found in virtually all liq-
+uidity cost models.
+
+--- PAGE 29 ---
+ptg
+Figure 2.2 presents a graph of some output from the CJS model.
+This graph is called the quantity structure of bid and ask prices for a
+security. The horizontal axis of the graph shows the amount of a secu-
+rity to be traded (bought or sold), in this case how many shares of a
+stock that are to be traded. The vertical axis of the graph displays the
+price at which a dealer would do the buy or sell transaction.
+Essentially this graph displays the buy and sell price at a point in time
+that a dealer would quote to an investor for any given amount of a
+security that the investor wished to trade. The buy price, or bid price,
+is given by the lower curve in the graph, and the sell price, or ask
+price, is given by the upper curve. For example, the quantity structure
+of prices in this figure indicates that at the current moment this deal-
+er would be willing to buy 1,000 shares of the stock from an investor
+at $19.80 per share, or he would be willing to sell 1,000 shares of the
+stock to any investor at $20.20 per share. The $0.40 difference
+between these two prices is the bid-ask spread for transacting 1,000
+shares. Moving to the right on the horizontal axis, we find that the
+same dealer currently would be willing to buy 3,500 shares of this
+stock from any investor for $19.60 per share or sell 3,500 shares to any
+investor for $20.40 per share.
+In Figure 2.2 the price of $20 per share is the fundamental value
+of this security, but notice that this price would never lead to a trade;
+it is not a transactable price for any buyer or seller. An investor always
+buys from a dealer at above the fundamental value of a security and
+sells to a dealer at below fundamental value of a security. This buy-sell
+price gap is the bid-ask spread—it is basically the liquidity cost of this
+security. As noted earlier, this cost represents the compensation the
+dealer wants for providing transaction immediacy to an investor, that
+is, it is the fee paid to the dealer to do the waiting for a buy or sell
+counterparty rather than an investor having to do the waiting himself.
+THE GLOBAL ECONOMIC SYSTEM
+16
+
+--- PAGE 30 ---
+ptg
+Figure 2.2 Quantity structure of bid and ask prices
+Figure 2.2 teaches us a number of things about the general prop-
+erties of liquidity costs. The first thing it shows us is that as we try to
+transact a larger and larger quantity of securities, the liquidity cost
+increases. The reason for this is that the dealer who is acting as the
+counterparty will need to wait longer if it has more of the security it
+has to buy or sell. For example, if we sell the dealer a lot of shares, it
+will take longer for the dealer to find counterparties to offload these
+shares. During this time, the shares are sitting on the dealer’s balance
+sheet, which uses up the dealer’s capital and is risky.5 The longer the
+dealer has to hold on to these shares, the more it needs to charge in
+bid-ask spread to make up for these inventory costs. This is a common
+characteristic of dealers in both financial and goods markets.
+A natural extension of this characteristic is that the more buyers
+and sellers arriving in the market to transact, that is, the more order
+flow there is in a security, the shorter the expected waiting time for
+LIQUIDITY RISK: CONCEPTS
+17
+19.00
+19.20
+19.40
+19.60
+19.80
+20.00
+20.20
+20.40
+20.60
+20.80
+21.00
+0 1 2 3 4 5 6 7 8 9 10
+Transaction Size (Thousands of Shares)
+Immediacy Prices K a,Q
+K b,Q
+
+--- PAGE 71 (SAMPLE) ---
+ptg
+This page intentionally left blank 
+
+--- PAGE 142 (SAMPLE) ---
+ptg
+Source: World Bank
+Figure 4.10 Spread between prime rate and short-term government securities
+In the next section, we see how these changes in prices in asset
+markets impact bank balance sheets, the third phase in the flowchart
+shown previously in Figure 4.1.
+4.6 Stage 3: Changes in Bank
+Balance Sheets
+We examine bank balance sheets to see whether the changes that we
+would expect to occur in a liquidity crisis happened in the case of
+Japan’s Lost Decade. We would expect to see a fall in the value of
+bank assets with low liquidity, namely loans; bank deposits either
+falling or changing little; and a decline in bank equity. For the case of
+Japan, we look directly at some of the main categories of bank balance
+JAPAN’S LOST DECADE
+129
+1 1.5 2 2.5 3 
+Percent
+1987
+1989
+1991
+1993
+1995
+1997
+1999
+2001
+2003
+2005
+2007
+2009
+Year
+Spread Between Prime Rate to Private Sector
+and Short−Term Government Securities
+
+--- PAGE 213 (SAMPLE) ---
+ptg
+Association: “Today’s announcement by Freddie Mac that it will only
+purchase subprime mortgages—and mortgage-related securities
+backed by these subprime loans—that qualify borrowers at the fully-
+indexed rate will limit the product options and the access to credit for
+those individuals most in need, many of whom are first time, under-
+served or minority homebuyers.… The mortgage products that these
+new standards target are important financial instruments, crucial to
+helping borrowers get into homes and repair their credit. Regulation
+that further limits consumer choice is unwarranted.”28
+During the summer of 2007, other problems surfaced. For exam-
+ple, on July 11, rating agency Standard and Poor’s announced that it
+would place on credit watch 612 securities backed by residential mort-
+gages.29 On August 6, mortgage lender American Home Mortgage
+filed for Chapter 11 bankruptcy. Its CEO stated, “It is unfortunate
+that American Home Mortgage, a company which we built into a high-
+ly successful business, experienced this sudden reversal of its fortunes
+due to the unanticipated and rather sudden deteriorations in the sec-
+ondary and national real estate markets.”30 On August 9, French glob-
+al bank BNP Paribas froze three funds backed by subprime mort-
+gages,31 announcing that it was unable to assign values to them: “The
+complete evaporation of liquidity in certain market segments of the
+U.S. securitisation market has made it impossible to value certain
+assets fairly regardless of their quality or credit rating. The situation is
+such that it is no longer possible to value fairly the underlying U.S.
+ABS assets in the three above-mentioned funds. We are therefore
+unable to calculate a reliable net asset value (‘NAV’) for the funds.”32
+A particularly troubling aspect of this event was the fact that it implied
+a great deal of uncertainty about the value of both these funds and
+their underlying assets. The problems in the subprime market were
+reflected in the prices of securities backed by such assets. Early in
+2007, an indicator of the value of mortgage-backed securities fell a bit,
+but then went into virtual free-fall in the second half of the year.33
+THE GLOBAL ECONOMIC SYSTEM
+200

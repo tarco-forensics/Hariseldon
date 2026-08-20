@@ -1,0 +1,1338 @@
+--- PAGE 2 ---
+Business Cycles and Economic Crises
+Throughout the history of economic thought, interest in business cycles and
+economic crises has sometimes been observed to rise during times of crises,
+recessions and depressions. However, the treatment of this topic in the literature
+has generally been merely anecdotal.
+This book presents a bibliometric and econometric analysis of the devel-
+opment of business cycle and crises theory and its connection to economic
+developments, particularly since the early 20th century . The book explores the
+connection between economic development and the literature, utilising system-
+atic bibliometric and rigorous econometric methods and drawing its data from
+a wide range of sources. This volume provides quantitative answers to ques-
+tions which have not previously been subject to a precise and comprehensive
+empirical analysis.
+This book will be of great interest to historians of economic thought for its
+novel treatment of a much-discussed topic, and its well-founded and transparent
+results.
+Niels Geiger is a postdoc in economics and research assistant at the Depart-
+ment of Economics at the University of Hohenheim in Stuttgart, Germany .
+V adim Kufenko is a postdoc in economics and a research assistant at the
+Department of Economics at the University of Hohenheim, Germany .
+
+--- PAGE 3 ---
+Routledge Studies in the History of Economics
+205 The Economic Thought of William Petty
+Exploring the Colonialist Roots of Economics
+Hugh Goodacre
+206 Greed in the History of Political Economy
+The Role of Self-Interest in Shaping Modern Economics
+Rudi V erburg
+207 Aristotle’ s Critique of Political Economy
+A Contemporary Application
+Robert L. Gallagher
+208 Otto Neurath and the History of Economics
+Michael T urk
+209 A Brief Prehistory of the Theory of the Firm
+Paul Walker
+210 Unproductive Labour in Political Economy
+The History of an Idea
+Cosimo Perrotta
+211 The History of Money and Monetary Arrangements
+Insights from the Baltic and North Seas Region
+Thomas Marmefelt
+212 Business Cycles and Economic Crises
+A Bibliometric and Economic History
+Niels Geiger and V adim Kufenko
+For more information about this series, please visit
+www .routledge.com/series/SE0341
+
+--- PAGE 4 ---
+Business Cycles and Economic
+Crises
+A Bibliometric and Economic History
+Niels Geiger and V adim Kufenko
+
+--- PAGE 5 ---
+First published 2019
+by Routledge
+2 Park Square, Milton Park, Abingdon, Oxon OX14 4RN
+and by Routledge
+711 Third Avenue, New Y ork, NY 10017
+Routledge is an imprint of the T aylor & Francis Group , an informa business
+© 2019 Niels Geiger and V adim Kufenko
+The right of Niels Geiger and V adim Kufenko to be identiﬁed as authors of
+this work has been asserted by them in accordance with sections 77 and 78
+of the Copyright, Designs and Patents Act 1988.
+All rights reserved. No part of this book may be reprinted or reproduced or
+utilised in any form or by any electronic, mechanical, or other means, now
+known or hereafter invented, including photocopying and recording, or in
+any information storage or retrieval system, without permission in writing
+from the publishers.
+T rademark notice: Product or corporate names may be trademarks or registered
+trademarks, and are used only for identiﬁcation and explanation without
+intent to infringe.
+British Library Cataloguing-in-Publication Data
+A catalogue record for this book is available from the British Library
+Library of Congress Cataloging-in-Publication Data
+A catalog record has been requested for this book
+ISBN: 978-1-138-65942-1 (hbk)
+ISBN: 978-1-315-62022-0 (ebk)
+T ypeset in Bembo
+by Sunrise Setting Ltd., Brixham, UK
+
+--- PAGE 6 ---
+Contents
+List of ﬁgures vii
+List of tables viii
+Preface ix
+Afﬁliation and acknowledgements xi
+1 Introduction 1
+2 Method and data 6
+2.1 The overarching research question 6
+2.1.1 On “scientometrics” and “bibliometrics” 6
+2.1.2 The place of bibliometrics in history of economic
+thought research 10
+2.1.3 Operationalising the bibliometrics of business cycles and
+economic crises 13
+2.2 Economic data: measuring business cycles 15
+2.2.1 Income per capita 17
+2.2.2 Unemployment rate 18
+2.2.3 Industrial production 18
+2.2.4 Investment 18
+2.2.5 Bankruptcies 19
+2.2.6 Consumer prices 19
+2.2.7 Stock market index 20
+2.2.8 Contraction years 20
+2.3 Bibliometric data sources 21
+2.3.1 EconLit 23
+2.3.2 JSTOR 25
+2.3.3 Web of Science 29
+2.3.4 Scopus 31
+2.3.5 Google Scholar 33
+
+--- PAGE 7 ---
+vi Contents
+2.4 Method and procedure 35
+2.4.1 Identiﬁcation of top journals 36
+2.4.2 Primary bibliometric time series 38
+2.4.2.1 Content analysis 38
+2.4.2.2 Citation analysis 43
+2.4.3 The potential for and limitations of a semantic analysis 45
+2.4.4 Econometric methods 48
+3 Empirical results 55
+3.1 Descriptive statistics 55
+3.1.1 General overview 55
+3.1.2 Downswings and term frequencies 59
+3.1.2.1 Frequencies inside and outside of contraction years 59
+3.1.2.2 Time series of term frequencies 66
+3.1.2.3 Graphical comparison of economic and
+bibliometric data 77
+3.1.3 Economic crises and citation frequencies 78
+3.2 Econometric analysis 84
+3.2.1 Fractionally co-integrated vector autoregressions 86
+3.2.1.1 T erm frequencies anywhere in documents 92
+3.2.1.2 T erm frequencies in titles 95
+3.2.1.3 Summary and overview 95
+3.2.2 Impulse response functions 98
+3.3 V alidation and discussion 103
+3.3.1 Identiﬁcation of relevant papers 103
+3.3.2 Generality of different ﬁndings 106
+3.3.2.1 T erm frequencies inside and outside of contraction years 106
+3.3.2.2 Economics articles and economics journals 110
+3.3.2.3 Magnitudes of measured effects 114
+3.3.3 Comparison with ﬁndings from earlier research 115
+3.3.3.1 Kufenko and Geiger (2016) 115
+3.3.3.2 Besomi (2011) 117
+3.3.4 T est power , false positive rates and implications 119
+3.3.5 Assessing the effect of changes in underlying citation data 123
+4 Conclusion 127
+References 133
+Index 141
+
+--- PAGE 8 ---
+Figures
+2.1 Schematic overview of the research question and its
+implementation 15
+3.1 Time series of JSTOR papers per category , 1855–2012 57
+3.2 Relative frequencies of terms anywhere in documents, sE and
+dE, 1855–2012 65
+3.3 Relative frequencies of central terms, 1855–2012 67
+3.4 Relative frequencies of central terms, in titles, 1855–2012 68
+3.5 Relative frequencies of central terms, in top journals,
+1855–2012 69
+3.6 Relative frequencies of the DOWNSWING index,
+1855–2012 70
+3.7 Relative frequencies of the OVERALL index, 1855–2012 71
+3.8 Relative frequencies of the indexes, in top journals,
+1855–2012 72
+3.9 T erm frequencies in the SSCI records, 1956–2015 73
+3.10 T wo examples comparing bibliometric and economic time
+series 78
+3.11 Citation frequencies, 1956–2015 80
+3.12 Cumulative citation distribution functions, 1956–2015 82
+3.13 IRFs for CPI vs. BCTC and SPC vs. ‘crisis’ 99
+3.14 IRFs for INV vs. ‘depression’ and UNEMP vs. ‘recession’ 100
+3.15 Comparison of term frequencies, sE vs. dE, 1855–2012 112
+3.16 Comparison of term frequencies, sBE vs. dBE, 1855–2012 113
+3.17 Hypothetical and estimated FPRPs 121
+
+--- PAGE 9 ---
+Ta b l e s
+2.1 Reference list of economic variables 16
+2.2 Y ears deﬁned as “contraction years” 22
+2.3 Journals in the two top journal categories from JSTOR data 38
+2.4 Reference table for bibliometric series 40
+3.1 Bibliometric reference numbers, JSTOR, 1855–2012 56
+3.2 T erm frequencies, 1855–2012, in % 60
+3.3 T erm frequencies, in titles, 1855–2012, in % 62
+3.4 Coverage of bibliometric series by economic variables 85
+3.5 FCV AR results, sE category 87
+3.6 FCV AR results, sBE category 88
+3.7 FCV AR results, dE category 89
+3.8 FCV AR results, dBE category 90
+3.9 FCV AR results, sBE category , titles 91
+3.10 Summary of FCV AR results 96
+3.11 FCV AR results in line with “panics produce texts” (PPT) 97
+3.12 Granger-causality test results for selected pairs 101
+
+--- PAGE 10 ---
+Preface
+This book is about the economics literature on business cycles and economic
+crises, and it is an empirical effort to that end. However, we are neither pre-
+senting a new theory of these subjects, nor providing statistical tests of already
+available work. Instead, our contribution is to the history of economic thought.
+This may seem a bit surprising at ﬁrst – indeed, the most widely used method
+for research in the history of economic thought is probably the deep reading of
+particular texts and the identiﬁcation of links between them, different authors,
+their research interests, etc. This may often be supplemented by delving into
+archives or building upon biographical information to get a more comprehen-
+sive picture of an author’ s background, and, speciﬁcally , what they may have
+meant with one statement or another. What we present in this book instead is
+a bibliometric study not of individual contributions, but of a large sample of
+economics as a whole to trace the spread and diffusion of discussions of busi-
+ness cycles and economic crises over time. In doing so, this book ultimately
+has two aims. First and foremost, we present precisely those results just men-
+tioned – how the economics literature on business cycles and economic crises
+in general, not just as captured by particularly relevant examples (or what were
+later deemed to be just that), evolved over time, in relation to actual economic
+developments, speciﬁcally observable ﬂuctuations in the shape of business cycles
+or economic crises. Secondly , and in doing so, we also wish to strengthen the
+case for the relevance of bibliometric research in work on the history of eco-
+nomic thought in general. Our results will show , and we will also argue in the
+discussion of them, that this is of course no substitute for the traditionally estab-
+lished methods, speciﬁcally the close and understanding reading of a particular
+contribution. But, indeed, bibliometric methods seem to be a highly promising
+complement to this approach, in particular if the history of economic thought
+strives to capture and explain both the background and also the broad impact
+of individual papers, and the literature at large.
+In assembling, processing and statistically analysing metadata like citations
+and other bibliometric variables, we have collected and organized a vast array
+of information on the quantitative history of business cycles and economic
+crises in the economics literature. Despite the generous scope given to us by
+our publishers, Routledge, for this book, it is not possible to present every
+
+--- PAGE 11 ---
+x Preface
+detail in print, and we had to select the most relevant data and ﬁndings to be
+documented here. However, insights into the additional data and further results
+from our econometric analysis may be arranged upon personal request to the
+authors. Since we believe that the data and methods we employed here may be
+used further, and in different contexts, we will be happy to discuss these matters
+with other researchers interested in a quantitative approach to the history of
+economic thought in general.
+
+--- PAGE 12 ---
+Afﬁliation and acknowledgements
+Niels Geiger is a postdoc in economics and research associate at the Institute of
+Economics (520H) at the Univ ersity of Hohenheim in Stuttgart, Germany . He
+received his doctorate in economics in February 2015 with a thesis on com-
+bining behavioural economics with business cycle theory . His current research
+interests mainly cover business cycle theory and behavioural economics, and
+especially the history of thought in both subjects. Part of the work on this
+book was conducted while he enjoyed the warm and welcoming atmosphere
+at the Academy of Finland Centre of Excellence in the Philosophy of the
+Social Sciences (TINT), University of Helsinki, Finland, during spring of 2016.
+V adim Kufenko received his doctora te in economics in 2017 at the Univer-
+sity of Hohenheim and is currently a postdoctoral research associate and a
+research area coordinator at the In stitute of Economics (520H) at the Uni-
+versity of Hohenheim. His main research interests include the econometric
+analysis of time-series and panel data, scientometrics and the analysis of sen-
+timents, inequality , political economy and economic history , with a focus on
+institutions and demographics.
+The authors began their joint work in late 2013 with a paper on the “stylized
+facts” of business cycles, which was recently published in the Journal of Business
+Cycle Research (Kufenko and Geiger 2017). In late 2014, the authors started to
+work on the connection between business cycles in the economy and economic
+research on business cycles, and thus prepared a paper on “Business Cycles
+in the Economy and in Economics: An Econometric Analysis” for the 2015
+Conference of the European Society for the History of Economic Thought in
+Rome. The paper was published in Scientometrics in early 2016 (Kufenko and
+Geiger 2016). It soon became obvious that this highly interesting and intriguing
+research area provides many more questions and many more potential answers
+than could be ﬁtted into just one single paper, so the authors decided to make
+it their main research project and expand on the original results documented in
+the paper in various ways. Emily Kindleysides of Routledge was kind enough
+to offer the ideal frame for such a publication, by offering the authors a book
+contract for a monograph in Routledge’ s series on the history of economic
+thought. During the process of writing and producing this book, we were
+in regular exchange with Laura Johnson, Lisa Lavelle and Anna Cuthbert of
+
+--- PAGE 13 ---
+xii Afﬁliation and acknowledgements
+Routledge, who were always helpful – and, in particular, very considerate and
+understanding of our requests regarding the completion of this book.
+The bibliometric data in this book primarily come from two sources. The
+ﬁrst is JSTOR’ s “Data for Research” portal. (Copyright JSTOR 2016–2017.
+All rights reserved.) While Niels Geiger visited the University of Helsinki,
+citation data were accessed from the second source, Clarivate Analytics W eb
+of Science
+TM. (Copyright Clarivate Analytics 2016. All rights reserved.) More
+detailed records of which data were used are documented in the respective
+chapters and sections, and are available from the authors upon request. The
+inclusion of long-memory effects into the time-series analysis is a merit of at
+least several generations of econometricians. In particular, however, we would
+like to thank Morten Ørregaard Nielsen and Michal Ksawery Popiel for the
+FCV AR software package implemented in Matlab. T o our knowledge, our
+work was one of the ﬁrst applications of this type of analysis to bibliometric
+series.
+Naturally , a book such as this one owes its completion to more than the input
+of the two authors. W e are particularly grateful to Johannes Schwarzer for his
+various comments and feedback throughout the process of working on this
+book, as well as for his careful proofreading of drafts. W e would also like to
+thank Mattis Geiger for the discussions we had on statistical power tests, specif-
+ically their relevance and especially their interpretation in the context of our
+econometric set-up. Our original discussion of the research question has ben-
+eﬁted from comments by Pedro Garcia Duarte and Harald Hagemann. All
+remaining errors are, of course, our own.
+
+--- PAGE 14 ---
+1 Introduction
+Following the 2007–08 ﬁnancial and ec onomic crisis, even casual observers
+of economics could have gained the impression that many more authors than
+before suddenly referred to John Maynard Keynes’ s writings, particularly the
+General Theory (Keynes 1936). Maybe most evidently , for example, Robert
+Skidelsky (2009) proclaimed Keynes: The Return of the Master .A g a i n s tt h eb a c k -
+ground of the severe economic crisis and subsequent contraction, Skidelsky
+argued, it was in the writings of Keynes that economists would ﬁnd answers
+to the present problems. Indeed, it seemed not just to Skidelsky , but to many
+economists, that the economic downswing called for a discussion of that
+approach to understanding the severe contraction. A similar context is apparent
+when going back in time to the General Theory’ s original publication. It is evi-
+dent that this original work itself was written against the very background of
+severe economic crisis and depression. Even though the direct inﬂuence of the
+Great Depression on Keynes (1936) is debatable (see Caspari 2008: 170), the
+economic turmoil arguably contributed to why Keynes’ s work seemed so rele-
+vant and quickly gained such attrac tion (see Johns on 1971: 3f.). What is more,
+Keynes’s General Theory is by no means the only example of a major work on
+ﬂuctuations and crises that is frequently set and seen in its historical context of
+a large economic contraction. Indeed, while the Great Depression was still near
+its trough, Irving Fisher had written and published a book inﬂuenced by his
+own ﬁrst-hand experience (see Blaug 1986: 80f.; Dimand 1994) with the dev-
+astating effects of the stock market crash and deﬂation in Booms and Depressions
+(Fisher 1932).
+These prominent examples highlight how economic downturns can inspire
+works on those events, i.e. contributions to business cycle and economic crises
+theory (BCCT) or related empirical work. Similar anecdotal evidence can eas-
+ily be gathered for trends in the opposite direction. During the economically
+prosperous times of the post-war decades, a prime example is Bronfenbrenner’ s
+(1969) edited volume, which raises the eponymous question Is the Business Cycle
+Obsolete? as the book’ s title. Despite the volume’ s emphasis on high (not nec-
+essarily steady) growth rates (e.g. see Allsopp 1971), interest in BCCT seemed
+to have decreased in the 1960s, with growth theory in particular taking cen-
+tre stage instead. Similarly , having experienced long expansionary phases and
+
+--- PAGE 15 ---
+2 Introduction
+relatively mild recessions during the 1980s and 1990s, authors such as W alsh
+(1999) referenced Bronfenbrenner (1969) in posing the same question (also see
+Romer 1999). Maybe the most iconic recent example of positive economic
+developments decreasing interest in BCCT can be found in Lucas (2003: 1),
+who likewise argued, based on the experience of the previous years of the
+“Great Moderation” and shortly before the onset of the “Great Recession”,
+that “the central problem of depression prevention has been solved”.
+While this is a relatively varied list of anecdotal evidence, the above examples
+still suggest a coherent interpretation. Could it be that it is not just the economy
+which goes through cycles over the course of its development, but that the
+discussion of said business cycles – particularly of its most dramatic points and
+phases, namely crises and contractions – follows a similar cyclical pattern of
+ﬂuctuations in interest and prevalence? What is more, could this pattern even be
+linked to the economic developments, following and trailing the latter, in the
+sense that economic downturns precipitate increased interest in the discussion
+of business cycles and economic crises, while recoveries and upswings have an
+adverse effect? This would imply a much more speciﬁc and peculiar cyclicality
+in economic thought than was discussed elsewhere, for example by Neumark
+(1975: 257f.) or Kurz (2006), who pointed at the idea of old economic ideas
+resurfacing many decades later, not necessarily connected to actual economic
+developments.
+1
+As it turns out, the notion of a potential link between economic ﬂuctu-
+ations and the corresponding literature is almost as old as BCCT itself. In a
+theoretical work on economic ﬂuctu ations, John Mills (1868: 11) noted that
+“every commercial crisis occurring in this country is promptly followed by a
+literature of pamphlets”. Similar observations pointing out the large amount of
+publications following each economic crisis were made, for example, by Aftal-
+ion (1913: 289f.) and Richt er (1923: 153). Realizing the same phenomenon,
+other authors such as Durbin (1933: 17) warned readers against texts origi-
+nating in these circumstances, as they might attract relevance not by virtue
+of their respectability , but because of the (historical) context in which they
+are published. Looking back at the Great Depression and subsequent years,
+Bronfenbrenner (1966: 542ff. ) described the increased discussion of economic
+ﬂuctuations as a fad (despite using the term “cycle”; this argument is therefore
+closer to those of Neumark (1975) and Kurz (2006) referenced above). Overall,
+observations of economic developments affecting the literature are not limited
+to BCCT in a more strict sense (i.e. focused on cyclical ﬂuctuations) either. In
+his History of Economic Analysis , Schumpeter (1954: 1172) ﬁnds that “[i]n any
+prolonged period of economic malaise economists, falling in like other peo-
+ple with the humors of their time, proffer theories that pretend to show that
+depression has come to stay . ” Nor is the suggested effect limited to the academic
+literature, as Fabian (1989: 127f.) shows by tracing the inﬂuence that the 1837
+and 1857 downswings in the United States had on attempted explanations and
+discussions outside of academia and economics experts. There, economic crises
+became a matter of reﬂection not just by all kinds of pundits, but also as widely
+
+--- PAGE 16 ---
+Introduction 3
+as in poetry or jokes of the time. Fabian (1989: 127) further argues that these
+non-economic writers frequently and explicitly acknowledged that it was the
+“panics” which had made them write their texts. What is more, even within
+the academic literature, contractions may cause not just increased research in
+BCCT and related empirical work, but also more casual discussions of busi-
+ness cycles and economic crises. Overall, therefore, an intriguing argument
+can be made for the hypothesis and story that “panics produce texts” (Fabian
+1989: 128), and, more generally for the ac ademic economics literature on busi-
+ness cycles and economic crises, that downswings in economic activity cause an
+increase in publications and in the reception of literature on business cycles and
+economic crises, while upswings conversely tend to have the opposite effect.
+On the one hand, this argument of the economics literature reacting to busi-
+ness cycles and economic crises is intuitively very appealing. On the other
+hand, however, there is something strange about the “panics produce texts”
+story indeed. If economists realized the recurrence of business cycles and eco-
+nomic crises, and if those constitute a phenomenon worth explaining – or even
+one that is considered essential for a complete analysis of capitalist economies,
+as for example Schumpeter (1939: v) argued (similarly , also see B ¨ohm-Bawerk
+1898: 132; Mitchell 1951: vii) – should that phenomenon not be discussed
+regardless of the phase of the cycle the economy is currently in? Indeed, follow-
+ing this logic, the academic literature – unlike media such as, especially , news
+outlets – should be expected to be fairly independent of recent salient events.
+In other words, searching for answers on what causes, and how to devise poli-
+cies to deal with, crises is not just relevant – albeit arguably more pressing – in
+a contraction period. Therefore, if economists strive for a better understanding
+of aggregate economic ﬂuctuations, they should not stop deliberating on busi-
+ness cycles and economic crises just because the previous year was prosperous.
+This may be very much in line with what newspapers are supposed to do – i.e.
+report on the events – but less so with what is expected from academics try-
+ing to fundamentally comprehend underlying phenomena. However, even if
+much BCCT research in the strict sense was not subject to such ﬂuctuations,
+economics as a whole might still display a corresponding reaction if economic
+downturns fuel more general writings on and superﬁcial references to these
+(also note Durbin 1933: 17).
+Therefore, despite the intuitive appeal of the “panics produce texts” hypoth-
+esis, and even when taking all the above-mentioned anecdotal examples into
+account, it can be said that, ex ante , it is not completely evident whether the
+economics literature as a whole, and speciﬁcally BCCT , reacts to business cycles
+and economic crises. T o gain a better understanding of whether or not there
+really is a corresponding relation between economic data and the economics
+literature, reference to anecdotal examples needs to be extended by an empir-
+ical analysis that considers more than individual historical contractions such as
+the Great Depression and seminal works such as Keynes’ s (1936)General Theory.
+A ﬁrst contribution in this direction was made by Besomi (2011), who traced
+frequencies of particular terms relevant in the context of BCCT in the titles of
+
+--- PAGE 17 ---
+4 Introduction
+economics publications between 1815 and 2009. Based on a descriptive analysis
+directly comparing absolute frequencies inside and outside of (respectively , close
+to and far from) contraction years, Besomi (2011: 56) corroborates the “pan-
+ics produce texts” hypothesis. A more in-depth, econometric analysis which
+picked up Besomi’ s work was subsequently provided by Kufenko and Geiger
+(2016). Measuring relative frequencies of Besomi’ s terms in the full texts of eco-
+nomics articles archived on JSTOR, the authors argue that their results may be
+read to conﬁrm the original hypothesis, but also point to caution in interpret-
+ing the ﬁndings and highlight the necessity of further research such as a more
+comprehensive statistical approach (see Kufenko and Geiger 2016: 57f.). This is
+precisely what the present book will do, namely , extend earlier empirical work
+(in particular that of Besomi (2011) and Kufenko and Geiger (2016)), and espe-
+cially provide a more comprehensive and in-depth discussion of the results and
+their potential implications. The guiding research question is whether or not
+economic ﬂuctuations have a clearly identiﬁable, robust effect on the economics
+literature on business cycles and economic crises, and the book is devoted to
+investigating, analysing and discussing this question.
+T o achieve this end, the argument and analysis in this book is structured as
+follows. Chapter 2 provides a comprehensive overview of the data used and
+methods applied, and especially of how the “panics produce texts” hypothesis
+can be operationalized and linked to the data. This includes a general illustration
+of the relevant sources and tools of bibliometrics and scientometrics, which
+are presented in some additional detail for the reader who may not yet be
+familiar with these approaches. All aspects of the methods and data, whether
+they are related to how the data were accessed, compiled and analysed with
+econometric methods, are laid out in Chapter 2. This is in order to allow
+Chapter 3 to fully focus on the presentation and discussion of the empirical
+ﬁndings. Results on the “panics produce texts” hypothesis, i.e. the potential
+effect of economic ﬂuctuations on the academic literature on business cycles
+and economic crises, are presented in a descriptive manner with ﬁgures and
+corresponding conjectures in Section 3.1, as well as in the rigorous econometric
+analysis supplemented by various illustrative tables in Section 3.2.
+In the descriptive part of the results, there are several interesting ﬁndings in
+line with earlier observations in the literature that had not built on a similar
+empirical record. In th e 1930s, around 40% and in some years nearly 50% of all
+economics articles, and well over 30% of all articles in economics journals, con-
+tained the term ‘depression’, which appeared much more frequently then than
+during any other historical episode. In the following decades, ‘depression’ came
+to be used less and less, and even more rarely than ‘recession’ since the 1970s.
+Between the 1920s and the 2010s, in line with the question raised by Bron-
+fenbrenner (1969), 1970 marks the year with the lowest frequency of papers
+featuring the terms “business cycle” or “trade cycle”,
+2 in both economics jour-
+nals and economics articles, as well as in the broader categories of business
+and economics, which include neighbouring disciplines such as ﬁnance. Over-
+all, however, the descriptive results pro vide no generally conclusive evidence.
+
+--- PAGE 18 ---
+Introduction 5
+As regards statistical associations between economic and bibliometric variables,
+there are a select few robust ﬁndings. Concerning articles on economics and
+neighbouring subjects, changes in the US consumption price index were con-
+sistently found to affect changes in the frequency of papers containing the terms
+‘crisis’, ‘recession’, ‘glut’ and ‘stagnation’. In the same categories, variations in
+the frequency of papers in which either of the terms “business cycle” or “trade
+cycle” appeared were found to be affected by changes in investment activity
+in the United States. Several impulse response functions further indicate effects
+of non-negligible magnitude and in the expected direction of increased discus-
+sions following a downturn. This implies that, at least for these combinations,
+there may be a “panics produce texts” effect in the literature. However, there is
+a remarkable lack of more general robust positive evidence from the statistical
+analysis, especially in bibliometric time series for economics journals.
+Aiming at a validation of these and the many other ﬁndings, Section 3.3
+provides a detailed discussion of various issues relating to the data itself, the
+operationalization of the research question, and the potential interpretations
+possible from the results. Chapter 4 then concludes with a summary which
+argues that, despite compelling anecdotal evidence and positive ﬁndings from
+earlier related research, as well as some individual examples like those men-
+tioned in the previous paragraph, in light of the various caveats raised in the
+discussion and the overall weak evidence for a systematic, robust effect of eco-
+nomics on bibliometric variables, the “panics produce texts” hypothesis cannot
+be conﬁrmed as a general rule for the academic economics literature at large,
+and especially not for the academic literature published in economics journals.
+Notes
+1 The resurgence in popularity of Keynes’ s works in the context of the Great Recession may
+be seen as an instance of both: a revival in popularity of old ideas decades after their orig-
+inal publication, and greater interest in BCCT fuelled by recent economic developments.
+2 Throughout this book, the terms of interest are usually put in single quotes when they
+are referenced in the text. This is in order to highlight that a bibliometric variable with
+potentially various corresponding strings is concerned. However, when the text refers to
+speciﬁc search strings, which were used for compiling the bibliometric series, those are
+put in double quotes. See Subsection 2.4.2 for a full overview of the notation.
+
+--- PAGE 19 ---
+2 Method and data
+This chapter presents our research strategy in detail. T o provide some context
+ﬁrst, Section 2.1 operationalizes the research question against the background
+of a short summary of the history of scientometrics and bibliometrics, specif-
+ically concerning its applications to economics, respectively the history of
+economic thought (HET). Empirically assessing the “panics produce texts”
+(PPT) hypothesis requires both economic data (presented in Section 2.2) and
+bibliometric records (documented in Section 2.3). Section 2.4 then concludes
+the chapter by listing how and in what way we process and arrange the data,
+including the econometric methods. Results are presented in the following
+Chapter 3.
+2.1 The overarching research question
+In order to quantitatively answer the question of how economic ﬂuctuations
+affect the academic literature in economics, we use bibliometric, respectively
+scientometric, data and methods. Since neither are, as of yet, standard tools in
+research on the HET , it is worthwhile to include a short overview of what
+these two ﬁelds cover, and how and where their methods and corresponding
+data have already been employed in research on the HET . Subsections 2.1.1
+and 2.1.2 do just that, before Subsection 2.1.3 returns to focus on the issue at
+hand, i.e. the operationalization of the PPT story as a research question.
+2.1.1 On “scientometrics” and “bibliometrics”
+Scientometrics is the scientiﬁc observation and analysis of science itself by
+means of quantitative methods. This pertains to both the history and present
+state of science. One of the major tools employed in this endeavour is
+bibliometrics, i.e. the statistical analysis of written publications, including
+both their actual text content and their metadata, most importantly cita-
+tions and references between items.
+1 Non-bibliometric measures which feature
+in scientometric research may include data on the number of scientists, the
+volumes of research grants, etc. In comparison with the sociology of science
+(e.g. Merton 1968, 1988), scientometrics generally focuses on publications,
+
+--- PAGE 20 ---
+Method and data 7
+whereas the former is more interested in the behaviour of scientists – see
+Leydesdorff and Milojevi ´c (2015); but also note Merton’ s (1979) foreword
+in Garﬁeld (1979). The analysis in this book tackles a scientometric research
+question by means of bibliometric and econometric tools.
+The origin of scientometrics and bibliometrics as dedicated scientiﬁc efforts
+dates back to Eugene Garﬁeld’ s (1955) paper on “Citation Indexes for Science”.
+Garﬁeld’ s early work led to the creation of the Science Citation Index (SCI),
+ofﬁcially launched in 1964 and originally arranged and published by the Insti-
+tute for Scientiﬁc Information, and now accessible via the W eb of Science.
+2 It is
+still one of the primary , most reliable and most commonly used sources for cita-
+tion data today – see Hamermesh (2015: 3); also Section 2.3. Next to Eugene
+Garﬁeld, another prominent founding father was Derek J. de Solla Price (e.g.
+Price 1963). In 1978, fuelled by the rise of computers and the thereby increas-
+ingly possible effective analysis of the vast arrays of data which scientometrics
+deals with, the dedicated journal wearing the discipline’ s name, Scientometrics,
+was established (see Price 1978). T oday , additional periodicals such as the Jour-
+nal of Informetrics focus on scientometrics as well. The tools of bibliometrics
+are of course not exclusively used in scientometrics, but particularly feature as
+a staple in library and information science. Furthermore, they have recently
+been applied to an even broader ﬁeld: Michel et al. (2011) trace trends in
+English book literature (including non-academic works) by means of biblio-
+metric methods to quantitatively analyse developments outside of science under
+the label of “culturomics”.
+At present, scientometrics constitutes an empirical approach used to quanti-
+tatively assemble trends, changes and developments in science in order to gain a
+more detailed picture of the history and state of science (see e.g. Leydesdorff and
+Milojevi´c 2015). This also includes such general topics of interest as the iden-
+tiﬁcation of thematic structures and research ﬁelds like “economics” through
+bibliometric methods – see e.g. Gl ¨aser et al. (2017) for a recent review of
+that literature. Furthermore, scientometric indicators are broadly used to com-
+pare research ﬁelds, universities, faculties, journals and individual researchers –
+whether in ranking comparisons (e.g. the Shanghai “Academic Ranking of
+W orld Universities”), hiring decisions or other related issues. The two most
+prominent measures employed in this context are the “impact factor” (IF) and
+the “ h-index”. Both are simple index numbers which do convey some infor-
+mation, but should also be interpreted with care, as much of the discussion
+within the scientometric literature itself shows – for example, see Zuckerman
+(1987) on the advantages and shortcomings of citation data; also see Alberts
+(2013) and Gagolewski (2013) for more recent discussions of the limitations of
+simple indicators.
+The IF , mostly encountered as a journal IF and regularly provided not only
+in bibliometric databases, but on publishers’ own websites, is a measure which
+relates citations that a body of literature received to the number of citable items
+in that body (see Garﬁeld 1972). In the standard form that is often documented,
+for example for journals, the IF for a given year t is the number of citations
+
+--- PAGE 21 ---
+8 Method and data
+received in year t by articles published in that journal during the two preced-
+ing years t − 1a n d t − 2, divided by the total number of articles published in
+that journal in years t − 1a n d t − 2. That is, a journal’ s 2015 IF is the num-
+ber of 2015 citations to 2014 and 2013 articles in that journal, divided by the
+number of 2014 and 2013 articles published in the journal’ s respective issues
+(or, more generally , citable items instead of articles). Of course, other, similar
+numbers can be constructed just as easily , e.g. by using a ﬁve-year IF , etc. This
+measure is simple and straightforward, and provides a very general impression of
+the reach and impact of a body of literature (e.g. a journal’ s issues within some
+time period). However, there are a number of apparent problems once more
+than a superﬁcial impression is to be gained from the index. These apply even if
+all relevant citations could be observed without any error, bias or other short-
+comings, i.e. even if it was certain that empirically measured citation counts
+reﬂect actual citation counts (and, what is more, that these accurately reﬂect
+intellectual inﬂuence).
+The major caveat which can be raised about IFs is that they are averages
+which do not capture either any other aspects of the distribution they
+are describing or differences in underlying determinants. For example, dif-
+ferent disciplines – and even subdisciplines within the same general research
+ﬁelds such as economics – often have vastly different citation practices (see e.g.
+Kaur et al. 2013). If, in one discipline, there was a higher frequency of co-
+authorship and a generally higher average citation or reference count per paper
+(as is usually the case when comparing natural sciences with social sciences),
+IFs in that discipline – whether for journals or authors – will tend to be higher
+than in the other, which does not really say much about a journal’ s or author’ s
+impact within their relevant area or peer group.
+3 This matters, of course,
+when university hiring decisions are based on IFs, and candidates from dif-
+ferent disciplines – or even just subdisciplines, e.g. from macroeconomics and
+industrial economics – apply for the same position. Furthermore, differences
+between disciplines also feature in publication lags, which additionally affects
+IFs, depending on how they are calculated. For example, due to the short-
+term view captured by the standard two-year form of IFs, economics journals
+tend to have lower IFs than those in the natural sciences (see Hamermesh
+2015: 27), in part because lags between acceptance and publication are often
+much shorter in the latter – as opposed to the 18 months between submission
+and publication which are common in economics (see Bj ¨ork and Solomon
+2013). Therefore, unless a paper is written and submitted very soon after a
+publication it cites, it will not affect the latter author’ s or publication’ s IF .
+Citation patterns, however, differ not only between subdisciplines, but
+also indeed within them. This is best illustrated by differences in IFs of a
+(sub)discipline’ s journals, where the majority of papers in lower-ranked jour-
+nals are cited just as (in)frequently as those in higher-ranked journals, but the
+higher-ranked journals (by IF) often feature a few extraordinarily frequently
+referenced items. As Hamermesh (2015: 26) notes, “[t]he main reason that a
+few economics journals are ranked more highly than all others is that a very
+
+--- PAGE 22 ---
+Method and data 9
+few papers in these journals generate immensely more citations than other
+papers published in those journals or elsewhere. A very few outliers determine
+our perceptions of journal quality , a perception that ignores the tremendous
+heterogeneity of articles within and across journals. ” This heterogeneity is not
+captured by simple IFs, which is why an individual article’ s quality cannot be
+reliably (i.e. without considerable probability of misattribution) derived from
+the journal’ s IF . W ang et al. (2016) even show that “novel” papers (deﬁned as
+those which contain new and often unprecedented combinations of citations),
+which are more likely – at a greater overall variance in citation counts – to be
+major contributions to science in the long run, are often published in jour-
+nals with a relatively low IF . Quite generally , Palacios-Huerta and V olij (2004)
+therefore point out that rankings based on IFs do not build on a sound theo-
+retical basis and are just one among many other conceivable ways of ranking
+journals’ (or authors’) intellectual inﬂuence.
+Given the discussion about the adequacy of IFs, alternative, more reﬁned
+measures have been suggested recently . For example, Guerrero-Bote and
+Moya-Aneg´on (2012) propose the SJR2 indicator, which works similar to
+Google’ s PageRank algorithm. Instead of only considering simple citation
+numbers, these are weighted by the prestige of the citing journal (i.e. that
+journal’ s own SJR2) as well as the proximity (i.e. similarity in citation proﬁles)
+of the cited and citing journal (see Guerrero-Bote and Moya-Aneg ´on 2012).
+The SJR2 is highly correlated with simple IFs, but documents different rank-
+ings between journals. For the empirical analysis in the present book, the SJR2
+index is used as one reference to identify premier journals in economics (see
+Subsection 2.4.1).
+The second prominent simple index number, the h-index, was originally
+proposed by Hirsch (2005). It is usually calculated for individual authors and
+used as a proxy to compare their scientiﬁc productivity . When ordering all of an
+author’ s works by number of citations, the present h-index is equal to the num-
+ber x of items of that author which have been cited at least x times. This results
+in a single number which may be considered as a better measure of a scholar’ s
+scientiﬁc productivity than the mere number of papers (which does not capture
+quality) or the total number of citations (which may be highly skewed by one
+single very successful contribution). It is thus, to some extent, a measure of both
+quality and quantity combined. While the h-index is most prominent, there
+are similar examples of the same family of indexes which are sometimes used as
+well: Egghe (2006) proposed the g-index, where g is the unique largest number
+so that an author’ sg most cited publications are cited at least g
+2 times in total. By
+giving higher weight to very frequently cited articles, g is usually larger than h.
+Like the IF , the h-index and similar numbers are subject to a series of issues,
+too, for which they are frequently criticized. While between two authors, the
+one with the higher h-index will have a higher number of relatively frequently
+cited publications, the other may actually have more very highly cited pub-
+lications. Problems like these are especially relevant when comparing authors
+across (sub)disciplines. This holds in addition to the fact that the h-index
+
+--- PAGE 23 ---
+10 Method and data
+does not account for these differences in citation behaviour in the ﬁrst place.
+Normalizing citation counts by each (sub)discipline’ s average citation count
+can then lead to rank reversals among authors. Perry and Reny (2016: 2723)
+thus criticize popular scientometric indicators like the h-index for being “ad
+hoc measures based almost entirely on intuition and rules of thumb” and
+instead propose a new “Euclidean” index to measure research performance
+by taking the square root over the sum of the squares of citations of each of an
+author’ s papers. This index, Perry and Reny (2016) argue, can overcome several
+shortcomings (e.g. ranking reversals) of the h-index and related concepts.
+2.1.2 The place of bibliometrics in history of economic
+thought research
+Given the aim of scientometrics and bibliometrics to quantitatively describe
+science itself with scientiﬁc methods, it appears to be a relevant approach to and
+tool for the history of science – including, of course, the HET . However, the
+use of bibliometric methods in research on the HET has been rather limited so
+far, as a cursory reading of the ﬁeld’ s most prominent journals – even more so if
+supplemented by a search for scientometrics- or bibliometrics-related key terms
+within these journals – quickly indicates.
+4 A look at conference programmes
+of relevant meetings further conﬁrms the impression of a marginal role of bib-
+liometric research. Instead, work on the HET usually analyses a small sample
+of contributions in-depth, and this approach is sometimes supplemented by
+archival sources or biographical and general historical records. As an anecdotal
+but illustrative example of this, consider Marcuzzo’ s (2008) paper, which iden-
+tiﬁes four broad categories of methods used in research on the HET: “textual
+exegesis”, “rational reconstruction”, “contextual analysis” and “historical nar-
+rative”. Interestingly , although Marcuzzo (2008) uses some descriptive biblio-
+metrics to describe the subject of the HET herself, she does not list quantitative
+or bibliometric research among the categories of approaches she identiﬁes.
+However, there are nonetheless a number of interesting and often highly illu-
+minating contributions which provide new and additional insights on various
+questions discussed in the literature dealing with economics and the HET –
+particularly , related to the availability of respective data, more recent HET . The
+following list is not comprehensive, but it should still provide a good impression
+of the different contexts and questions where bibliometric and scientometric
+methods are employed in the HET , which should also highlight the value of
+such approaches.
+Already ﬁve decades ago, George Stigler (1965a), maybe “the most famous
+advocate of scientometrics in econom ics” (Diamond 2000: 323), had pointed
+out the potential of quantitative methods in his Essays in the History of Eco-
+nomics and provided a categorized list of the contents of ﬁve relevant journals
+(see especially Stigler 1965b). Stigler and Freidland (1975, 1979) subsequently
+published further work which empirically approached HET topics using
+citation measures acquired through manually counting references in published
+
+--- PAGE 24 ---
+Method and data 11
+articles (see Hamermesh 2015: 3). The ﬁrst dedicated HET journal to publish
+on the topic was probably History of Political Economy (HOPE)w i t hS t i g l e r
+and Freidland’ s (1979) “T he Pattern of Citation Pr actices in Economics”.
+Bordo and Landau (1979) provided their “Exploration T owards a Quantita-
+tive History of Thought ” using 1945–1968 citation data in the next HOPE
+issue. Subsequently and ever since, bibliometrics featured more frequently in
+HOPE than in other primary HET journals – see e.g. Oehler (1990), Biddle
+(1996), Sandelin and V eiderpass (1996) , Backhouse (1998) an d very recently
+Claveau and Gingras (2016).
+A year after Stigler (1965a), Bronfenbrenner (1966) documented “T rends,
+Cycles, and Fads in Economic Writing”, which were illustrated with two
+tables and two ﬁgures. Bronfenbre nner (1966) used the American Economic
+Association’ s (AEA) “Index of Economic Journals” to categorize papers (sim-
+ilar to today’ s JEL codes) from 1866–1963 as well as dissertation records from
+1960–1965 documented in the American Economic Review in order to identify
+trends and cycles of interest in different subdisciplines of economics, specif-
+ically in what was considered orthodoxy or the mainstream. Of particular
+interest for the research question and analysis in the present book is that Bron-
+fenbrenner (1966: 546) points out that the discussion of economic ﬂuctuations
+greatly increased throughout the Great Depression – but he classiﬁes this obser-
+vation as a fad, and does not argue for a recurring theme of generally increased
+discussion of the matter during economic downturns. Despite the use of the
+term “cycle”, therefore, Bronfenbrenner’ s (1966) analysis was not limited to
+BCCT , and the length of the cycles in the literature which he observes is far
+greater than the ﬁve to maybe ten years business cycles are usually associated
+with, too (see e.g. Bronfenbrenner 1966: 542).
+A somewhat comparable analysis which speciﬁcally refers to both Stigler
+(1965b) and Bronfenbrenner (1966) was provided by Diamond and Haurin
+(1995), who document changes of the popularity of different economics subdis-
+ciplines by coding and tracing research interests of AEA members as registered
+in the AEA directories at different points in time between 1905 and 1989. Most
+notably , Diamond and Haurin (1995: 118) ﬁnd an increase in theory between
+1956 and 1969, followed by a subsequent decline. They also ﬁnd that inter-
+est in HET had decreased since 1955 and throughout 1969–1974, but slightly
+increased at very low levels again afterwards.
+Just like in scientometrics in general, the digital availability of data sources
+allows for more applications and more comprehensive analyses in HET research.
+Extensively using Social Science Citation Index (SSCI, see Subsection 2.3.3)
+data, Kim et al. (2006) identify the mos t cited papers in economics since 1970
+and document their characteristics, background, etc. Similar data are used by
+Laibson and Zeckhauser ( 1998) to point out the relevance of some inﬂuential
+behavioural economics research. A more detailed analysis of behavioural eco-
+nomics since Herbert Simon in the 1950s, based on SSCI and JSTOR (see
+Subsection 2.3.2) data, is provided by Geiger (2017). Wight (2002) uses SSCI
+data to trace citations to Adam Smith’ s work between 1970 and 1997. In other
+
+--- PAGE 25 ---
+12 Method and data
+contributions, Hoover (2004) uses JSTOR data to trace the frequency of papers
+using terms such as “cause” or “causal ity” in economics jour nals since 1930, an
+approach very similar to what is employed in this book (see Section 2.4). Silva
+and T eixeira (2008) provide a bibliometric overview of the economics literature
+on structural change since the 1970s. D iamond (2009) co mpares the inﬂu-
+ence of Keynes and Schumpeter over time, using SSCI data. Similarly , Becker
+and Knudsen (2004) had already examined occurrences of the name “Schum-
+peter” in top economics journals between 1898 and 1998. Based on SSCI
+citation counts, Jovanovic (2012) tracks the rec eption of Louis Bachelier’ s work
+on ﬁnancial economics. Using JSTOR da ta, King et al. (2012) docume nt the
+increase of mathematization (and concepts closely linked to it, such as statistics
+or the use of the term “model”) in economics throughout the 20th century
+and until 2012, speciﬁcally for the years following W orld W ar I until the 1980s.
+Hoover (2014) traces citations to T rygve Haavelmo’ s work since the 1940s
+using JSTOR data. Emphasizing and analysing somewhat different variables,
+Sandelin and Ranki (1997) document ch anges in Swedish economics between
+the 1940s and early 1990s by observing shifts in the languages of cited articles
+(and also the countries where cited authors work), as well as of Ph.D . theses,
+etc. (see also similarly Sandelin 2001). Biddle and Hamermesh (2016) analyse
+the history of microeconomics after W orld W ar II, with a focus on the role of
+theory , by outlining and quantitatively testing earlier arguments brought for-
+ward in the HET literature. Concerning the very recent history of economics,
+Cardoso et al. (2010) use EconLit and SSCI data to investigate which regions of
+the world had contributed how much to inﬂuential economics research since
+1991. Duarte and Giraud (2016) provide bibliometric time series from 1991 to
+2011 to assess the place of HET itself within mainstream economics.
+Furthermore, even when it is not the main part of the HET analysis which is
+presented, scientometric and bibliometric data and methods are sometimes still
+present in respective contributions in order to provide an additional illustration
+of the main arguments. For example, Colander (2004) supplements his paper on
+“The Strange Persistence of the IS-LM Model” with term frequency data from
+JSTOR and EconLit. More comprehensively , Qin’ s (2011) work on the history
+of econometric approaches to the Phillips curve discussion is supplemented
+with citation data. Therefore, it is clear that scientometric and bibliometric data
+and tools have a wide applicability in research on the HET .
+Outside of what may strictly be considered the HET (even if only for how
+recent a time period the study deals with), scientometrics and bibliometrics
+sometimes feature in other research on economics, too. Indeed, it may even
+be argued that economics and scientometrics are complementary , because, for
+example, scientometrics can provide information relevant to allocating scarce
+resources, e.g. concerning research funds, and economics can provide the-
+oretical explanations for scientometric ﬁndings, e.g. concerning researcher
+behaviour (see Diamond 2000). A few examples will sufﬁce to illustrate this.
+In an early application using citation data in economics, Gerrity and
+McKenzie (1978) ranked ec onomics departments in the South of the United
+
+--- PAGE 26 ---
+Method and data 13
+States. In a very economic bibliometric analysis of economics, Hamermesh
+et al. (1982) investigate the relation between economic rewards received by
+economists and bibliometric variables such as their citations. Similarly ,
+Diamond (1986) estimates a “dollar value” of citations by comparing differ-
+ent researchers’ salaries and earnings. Peritz (1990) compares citation records of
+funded with those of unfunded economics research, and ﬁnds that the former
+is cited more frequently . Beckmann and Persson (1998) identify the 13 most
+cited journals in economics. Using ec onomics as an example, Cahlik (2000) dis-
+cusses which methods are suitable to identify a discipline’ s fundamental articles
+(also see Subsection 2.4.1). Oswald (2009) deals with the question of assess-
+ing a country’ s research output by analysing bibliometric data on economics.
+Diamond and T oth (2007) employ a logit estimation to identify determinants
+such as citation counts and where a Ph.D . was obtained to explain which
+AEA members were elected presidents in the 1950s. Hamermesh (2013) doc-
+uments changes in co-authorship, authors’ age structure and methodology in
+top economics journals between 1950 and 2010. Sun and Xia (2016) anal-
+yse how citations of cited papers, authors’ IFs and similar measures relate to
+a paper’ s citation count in economics. Gnewuch and W ohlrabe (2017) analyse
+the connection between characteristics of titles of economics papers and cita-
+tion counts. Brogaard et al. (2018) analyse cit ation counts of economists before
+and after they were granted tenure. V ery generally , Hamermesh (2015) provides
+an overview both of (early) uses of citation data in economics, as well as some
+general guidelines for their use.
+Among all previously published bibliometric works on economics, the most
+relevant one for the analysis in this book is that by Daniele Besomi (2011).
+Building on an identiﬁcation of key terms relevant to BCCT which is presented
+in the early part of that paper, Besomi (2011: 113–117) proceeds to document
+absolute annual frequencies of these terms within the titles of a wide array of
+contributions (journal articles, books and even pamphlets, etc.) listed primar-
+ily on JSTOR and EconLit and dating back to 1815. In discussing the results,
+Besomi (2011: 55ff.) ﬁnds that the frequency of key terms related to business
+cycles and crises indeed increases in connection with economic contractions.
+An extension of Besomi’ s (2011) work has subsequently been suggested by
+Kufenko and Geiger (2016). The analysis which follows in this book fur-
+ther expands on Kufenko and Geiger (2016), as the following sections will
+demonstrate.
+2.1.3 Operationalising the bibliometrics of business cycles
+and economic crises
+Ideally , to fully answer the research question derived from the PPT hypothesis –
+or any question which concerns general developments in the HET – one might
+want to read all economics papers carefully and, through a profound under-
+standing of business cycle theory and related literature, classify and categorize
+these items correspondingly . Owing to the vast amount of both historical and
+
+--- PAGE 27 ---
+14 Method and data
+contemporary literature, this is, of course, impossible. Indeed, there exists a
+major trade-off: the broader the trend which one wants to analyse, the less fea-
+sible it is to conduct a full in-depth analysis of all its constituent parts. This is
+precisely where bibliometric analysis enters the picture as a very helpful tool:
+it allows an analysis of a broad spectrum of hundreds of thousands of articles
+by standardized methods and metrics – at the expense of the detail and the
+researcher’ s individual insight with which the single elements can be analysed. It
+is straightforward to see, therefore, that the application of bibliometric methods
+in the HET is not a substitute for, but a complementary approach to, those tra-
+ditionally employed in the ﬁeld such as the careful in-depth reading of selected
+texts. Indeed, as Merton (1979: vii) put it in his foreword to Garﬁeld (1979),
+“[s]pecialized historical and sociological studies can supplement explicit cita-
+tions with tacit ones, the kind that can be reconstructed from textual evidence
+such as eponymous allusions, terminology bearing the stamp of the source of
+an idea, and the like. ”
+The utility of this, as it were, co-operation between bibliometrics and more
+“traditional” HET approaches becomes apparent in the discussion of how
+to actually operationalize the PPT hypothesis and our research question of
+whether and how the economics literature on business cycles and economic
+crises is connected to economic ﬂuctuations. Here, it is evident that appropri-
+ate bibliometric variables can hardly be identiﬁed without a prior theoretical
+understanding of the literature to be analysed. Thus, if the history of BCCT and
+related work is to be traced with bibliometric data, as is the aim of this book,
+it should be clearly deﬁned when and how a paper is classiﬁed as belonging
+to that very category , which presupposes a theoretical background and knowl-
+edge of the relevant literature. Building on this, then, both the number of such
+papers as well as references and citations to these can be counted, analysed and
+discussed.
+There are multiple ways to classify a particular paper as belonging to a cer-
+tain category such as BCCT . The arguably most precise one is based on an
+in-depth reading of the said article – i.e. the standard approach in most HET
+work. However, as pointed out above, this is in no way feasible for a biblio-
+metric analysis of the scope employed in this book. Therefore, more superﬁcial
+approaches are necessary , which will be presented in Section 2.4. The primary
+tool employed is to identify and classify contributions by the terms they use. In
+doing so, we refer to and build on Besomi’ s (2011) list of key terms related to
+BCCT . The respective bibliometric data used here are presented in Section 2.3.
+On the other hand, answering the research question also requires an empiri-
+cal assessment of economic ﬂuctuations, of course: the data used for this other
+half of our approach are presented in Section 2.2. Next to describing how the
+relevant bibliometric series are constructed, Section 2.4 also lays out the differ-
+ent statistical methods employed in comparing the economic and bibliometric
+data. The descriptive and econometric analyses return a long list of quantitative
+empirical results documented in Sections 3.1 and 3.2. In the ﬁnal step of the
+analysis, the results are validated and discussed in Section 3.3. Here, BCCT , as
+
+--- PAGE 28 ---
+Method and data 15
+theoryimplemen-
+tation
+connection, correlation and
+potential causality between
+theory and actual events
+research question historical
+economic
+development
+bibliometric
+data
+(Section 2.3)
+US economic
+data
+(Section 2.2)
+overview of the empirical
+strategy and the methods
+employed (Section 2.4)
+empirical strategy
+presentation of descriptive and
+econometric results
+(Chapter 3)
+empirical results
+discussion
+empirical analysis
+operationalization
+operationalization
+“panics produce texts”
+(PPT)
+economic literature on
+business cycles and 
+economic crises
+Figure 2.1 Schematic overview of the research question and its implementation.
+well as previous HET research on the issue, will feature prominently once more,
+for it is this theoretical background which allows one to meaningfully relate the
+empirical results to the research question and therefore to ultimately conclude
+the book in Chapter 4. Figure 2.1 summarizes this approach, starting from the
+PPT hypothesis, and including the various steps which are documented in
+detail in all of the following.
+2.2 Economic data: measuring business cycles
+In order to assess the effect of business cycles and economic crises on the eco-
+nomics literature, it is of course inevitable to ﬁrst operationalize and quantify
+said business cycles and economic crises in the economic data. In both theo-
+retical and empirical literature on such ﬂuctuations, there are multiple variables
+which feature frequently and in prominent position, irrespective of whether
+business cycles and economic crises are to be traced in the data, explained by
+reference to the data or a theoretical construct which can then be approximated
+with these data, or even if attempts at prediction are made. Correspond-
+ing with the literature, we thus consider seven economic variables to trace
+business cycles and economic crises in the data, and additionally employ an
+index based on an assessment of various indicators to trace contraction peri-
+ods: income per capita, unemployment rates, industrial production, investment
+activity , bankruptcy rates, the consumer price index, the Standard & Poor’ s
+stock market index, and a dummy variable for contraction years (i.e. down-
+swings). Each of these variables, their relevance for the analysis at hand, sources,
+availability and additional remarks (where necessary) are laid out in detail in the
+
+--- PAGE 29 ---
+16 Method and data
+Ta b l e 2 . 1Reference list of economic variables
+ID Name V ariable Period Source
+A INCPC income per capita 1929–2016 FRED; US BEA (2017a)
+B UNEMP unemployment rate 1948–2016 FRED; US BLS (2017)
+C INDP industrial production 1919–2016 FRED; Fed BoG (2017)
+D INV investment 1929–2016 FRED; US BEA (2017b)
+E BANKR bankruptcies 1900–2005 Garrett (2007)
+F CPI consumer prices 1774–2016 Ofﬁcer and Williamson (2017)
+G SPC stock market index 1871–2016 Shiller (2015)
+H CON contraction years 1855–2015 NBER
+Note: For each variable, the different columns indicate their assigned IDs, their short name identiﬁer,
+the variable, the time period for which data are available, and the respective source.
+following Subsections 2.2.1–2.2.8. T able 2.1 summarizes their main metadata
+and provides variable IDs and names for future reference.
+The question of operationalizing business cycles and economic crises has
+two more layers in addition to selecting appropriate variables, though. The
+ﬁrst one concerns the time period and is rather easy to settle: the longer the
+available series, i.e. the larger the sample size, the better. Therefore, as long as
+a time series is available without any relevant structural breaks in the data, we
+use the maximum available length. As the respective subsections show , how-
+ever, this leads to considerable differences in the years covered by the various
+series. In general, it would also be desirable to have all data at as high a fre-
+quency as possible. However, here the bibliometric variables (see the following
+Section 2.3) become a limiting factor, for they are mostly available consistently
+only on an annual basis. Therefore, we will also use annual frequencies for the
+economic data in our analysis.
+The second additional point to consider and discuss is somewhat harder to
+tackle. It concerns the question of the appropriate geographical entity to trace.
+For the analysis in this book, we use US data as our proxy for economic activ-
+ity – as previously done in Kufenko and Geiger (2016). This does, of course,
+introduce some inaccuracy with regards to our research question, because
+economists surely do not only know about ﬂuctuations in the United States,
+but also about those in other countries. Ideally , we would like to include
+global or at least aggregate OECD data, while also striving to differentiate
+country-speciﬁc business cycles.
+Nonetheless, using US data seems like a good compromise between data
+availability and a large and especially re levant (particularly in terms of the lit-
+erature) economy for multiple reasons. The ﬁrst is the high availability of the
+data, and the length of the available time series, sometimes reaching back into
+the 19th century without any problematic structural breaks in the data (espe-
+cially when compared with, for example, OECD or even global aggregates).
+
+--- PAGE 30 ---
+Method and data 17
+Secondly , the United States is the major and leading economy of the world,
+and has been for over a century . By considering US data, we can therefore trace
+economic activity in the world’ s largest economy for much of the time period
+for which a large sample of bibliometric data is available – especially when the
+papers constituting our bibliometric data are mostly in English (see Section 2.3).
+Furthermore, and in connection with this, US developments have also been a
+central concern in much research on business cycles and economic crises, not
+least because of the National Bureau of Economic Research (NBER) and the
+research conducted and originating there. More broadly , close to half of all
+journal articles on the EconLit database (see Subsection 2.3.1) which contain
+either of the strings “business cycle” or “trade cycle” (a term which was mostly
+used in British literature until the ﬁrst half of the 20th century , as for example
+in Keynes (1936) or Hicks (1950)) also contain “United States”, and the ratio is
+similarly high for the term “recession”. In the economics journals on JSTOR
+(see Subsection 2.3.2), among the articles which contain “business cycle” or
+“trade cycle”, respectively , “recession”, the relative frequency of those featur-
+ing “United States” is even higher than 50%. This indicates that the United
+States is a frequent point of reference for discussions of business cycles. And,
+ﬁnally , many of the most inﬂuential journals (as can be taken from, for exam-
+ple, the SJR2 journal ranking – see Subsection 2.4.1) are from or are published
+in the United States.
+The main purpose of the economic variables illustrated in the following is
+to provide an overall measure of economic activity subject to business cycles
+and economic crises. If anything, it is these variables which should be among
+the primary suspects expected to have an effect according to PPT on the eco-
+nomics literature. Furthermore, it will also be interesting to identify potential
+differences in how a particular variable is connected to developments in the
+literature, e.g. if changes in one economic variable lead to more substantial
+changes in one or another bibliometric variable. All series were last updated
+from their online sources on March 4th and 5th, 2017.
+2.2.1 Income per capita
+The ﬁrst economic variable included in our analysis is a general measure of
+aggregate macroeconomic activity: real disposable income per capita. Data are
+taken from the Federal Reserve Bank of St. Louis Economic Database (FRED),
+speciﬁcally the Real Disposable Personal Income: Per Capita series which cov-
+ers the years 1929–2016.
+5 A major advantage of this particular variable is its
+comparatively long historical record. The alternative series of gross domes-
+tic product (per capita), which is often used as a similar indicator, only dates
+back to 1947. The data supplied by FRED are originally from the US Bureau
+of Economic Analysis (2017a ). W e use the standard annual series (due to the
+bibliometric data being available at an annual frequency) which is given in 2009
+dollars and not seasonally adjusted.
+
+--- PAGE 40 (SAMPLE) ---
+Method and data 27
+JSTOR therefore serves as the primary data source for the content analysis in
+the present book.
+The most straightforward way to use the DfR search is to enter a search
+term, then narrow the results down by selecting categories on the left of the
+interface. The default option for searches is “anywhere in document”, which
+means that the whole body of text, including authors, titles, abstracts and key-
+words (where available), references and the main text itself are searched – i.e.
+a full-text search. However, searches can also be limited to these categories:
+authors, titles, abstracts, keywords and references. An author’ s name, for exam-
+ple, can of course be searched for both within author names only , and anywhere
+in the document. In the latter case, mentions of the name in any part of
+the document – particularly the references, e.g. if the item cites an author
+by that name – would also return the item as a search result. Searches are case-
+insensitive and can be conducted for single terms, or longer strings consisting
+of multiple words, with the strings indicated by double quotes (“ ”). Multiple
+terms or strings can further be connected via “AND”, “ +”, “OR” (which is
+applied as the default conjunction operator), “NOT” and “ −” Boolean opera-
+tors. Search strings can also contain single or multiple character wildcards (“?”
+and “∗”, respectively), except as the ﬁrst character. By searching references, it
+is theoretically possible to identify citation links and thus count references to
+individual papers (by using those papers’ authors, titles and journals as search
+strings). However, this is generally not feasible for larger samples of cited papers
+due to different citation styles, the risk of false attributions, etc., especially in
+light of the fact that there are citation databases which provide exactly that
+information in a systematic manner (see the next two subsections).
+Results for a given search string can be further narrowed down by a wide
+set of different categories (called “facets” on the DfR search help). First, the
+year of publication can be selected – either one single year, or a continuous
+period. Secondly , search results may be ﬁltered by their type and related fea-
+tures: the “Content T ype” facet distinguishes between journals and pamphlets,
+and the “Article T ype” facet then can be further used to narrow down results
+to “research articles” and “book reviews” (which together constitute the large
+majority of nearly 88% of items in journals), as well as “miscellaneous” (which
+contains list of abstracts and everything else not covered by the other cate-
+gories), “news” and “editorials”. Among book reviews, it is also possible to
+further reﬁne the sample by “Reviewed Author” and “Reviewed W ork”, i.e.
+by author and work that is being reviewed. Similar to a range for the years of
+publications, a range for the “Page Count” of the sampled items can be selected.
+The more important facets for the purpose of the present study , however,
+are those that reﬁne the sample by “Subject” or “Subject Group”, respectively
+“Discipline” or “Discipline Group”. JSTOR lists an “Economics” (E) category
+that is part of a larger group category , “Business and Economics” (BE), which
+additionally includes the neighbouring ﬁelds of “Business”, “Development
+Studies”, “Finance” (F), “Labor & Employment Relations”, “Management &
+Organizational Behavior” and “Marketing & Advertising”. In general, it should
+
+--- PAGE 80 (SAMPLE) ---
+Empirical results 67
+1860
+1870
+1880
+1890
+1900
+1910
+1920
+1930
+1940
+1950
+1960
+1970
+1980
+1990
+2000
+2010
+dBE
+1860
+1870
+1880
+1890
+1900
+1910
+1920
+1930
+1940
+1950
+1960
+1970
+1980
+1990
+2000
+2010
+sE
+0%
+10%
+20%
+30%
+40%
+50%
+1860
+1870
+1880
+1890
+1900
+1910
+1920
+1930
+1940
+1950
+1960
+1970
+1980
+1990
+2000
+2010
+sBE
+0%
+10%
+20%
+30%
+40%
+50%
+1860
+1870
+1880
+1890
+1900
+1910
+1920
+1930
+1940
+1950
+1960
+1970
+1980
+1990
+2000
+2010
+sF
+0%
+10%
+20%
+30%
+40%
+50%
+0%
+8%
+16%
+24%
+32%
+40%
+1860
+1870
+1880
+1890
+1900
+1910
+1920
+1930
+1940
+1950
+1960
+1970
+1980
+1990
+2000
+2010
+dE
+0%
+8%
+16%
+24%
+32%
+40%
+1860
+1870
+1880
+1890
+1900
+1910
+1920
+1930
+1940
+1950
+1960
+1970
+1980
+1990
+2000
+2010
+dF
+0%
+8%
+16%
+24%
+32%
+40%
+BCTC crisis recessiondepression
+Figure 3.3 Relative frequencies of central terms, 1855–2012.
+Note: Each panel shows the respective timelines for relative frequencies of the four central terms when
+searching anywhere in documents, all six JSTOR categories. Left column: subject categories. Right
+column: discipline categories.
+course of the 20th century . Therefore, both absolute and relative frequencies
+of occurrences of individual terms (which naturally do not feature in every
+single item) are more volatile earlier in the observation period. This especially
+holds with respect to frequencies within titles, which is why the corresponding
+JSTOR series in Figures 3.4–3.8 have been smoothed by ﬁve-year moving
+
+--- PAGE 120 (SAMPLE) ---
+Empirical results 107
+page 57 shows that, on the one hand, contraction years are much more frequent
+before than after W orld W ar II (of the 64 contraction years in 1855–2012, 49 are
+in 1855–1945). On the other hand, the total number of papers is much higher
+in more recent years than it was a century ago. Therefore, forming aggregates
+across all years from both earlier and later in the observation period heavily
+skews the results, with contraction years being more seldom after W orld W ar II,
+but potentially still having a larger weight due to the greater number of items.
+What is more, aggregates are further skewed by the prevalence of trends in
+the time series of relative term frequencies, as was evident from Figure 3.3 on
+page 67. Quite clearly , the time series for BCTC and ‘crisis’ in particular are
+characterized by distinct upward trends. Relative frequencies are thus much
+higher during the decades after W orld W ar II which have been characterized
+by less frequent and shorter recessions. Therefore, the descriptive results based
+on averages are biased towards indicating a negative relation between contrac-
+tion years and term frequencies. Since average frequencies were higher in the
+second half of the observation period, but those years also coincided with less
+contractions, the average annual frequencies in non-contraction years relative
+to contraction years over the whole 1855–2012 period are quite likely overesti-
+mated by simply taking a number out of T ables 3.2 and 3.3. While it primarily
+affects the annual average, such a trend also skews the total weighted aver-
+age, especially if the distribution of the different types of years (contraction or
+non-contraction) is uneven in different periods of time (e.g. before or after
+W orld W ar II): in that case, many contraction years with relatively low (abso-
+lute) numbers (from before W orld W ar II) enter the total weighted average for
+contraction years, whereas the average for non-contraction years is to a larger
+extent affected by a big number of non-contraction years from the post-war
+years. A similar logic may be employed to partly explain why some terms, espe-
+cially ‘distress’, ‘embarrassment’ and ‘glut’, did display a frequencies pattern in
+line with what PPT implies: for those three, relative frequencies were generally
+higher before than after W orld W ar II, i.e. they were higher when contraction
+years were more frequent. This contributes to the large differences between
+non-contraction and contraction years that are observed for these terms’ annual
+averages in sE in particular (e.g. see Figure 3.2 on page 65).
+It deserves to be noted that these observations (term frequencies being
+higher, on average, outside of than during contractions for most terms) are not
+a peculiar result of the contraction year speciﬁcation from Subsection 2.2.8,
+namely deﬁning contraction years as those where at least four consecutive
+months were part of a downswing. T o test the robustness of the ﬁndings, we also
+calculated the same averages for all 15 terms in sE and dE based on contrac-
+tion year deﬁnitions where either three or six consecutive downswing months
+were required.
+7 Based on four months, there were 64 (49 for 1855–1945,
+15 for 1946–2012) contraction and 94 ( 42/52) non-contraction years. With
+three months as the criterion, this changes to 72 (55/17) contraction and 86
+(36/50) non-contraction years; and there are 55 (43/12) contraction and 103
+(48/55) non-contraction years if the deﬁnition is based on six months. In

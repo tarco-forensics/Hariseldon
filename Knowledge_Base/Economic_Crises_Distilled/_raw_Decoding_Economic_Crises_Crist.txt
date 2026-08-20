@@ -1,0 +1,789 @@
+--- PAGE 2 ---
+DECODING  
+ECONOMIC CRISES
+
+--- PAGE 3 ---
+This page intentionally left blank This page intentionally left blank This page intentionally left blank This page intentionally left blank
+
+--- PAGE 4 ---
+NEW JERSEY   •  LONDON   •  SINGAPORE   •  BEIJING   •  SHANGHAI   •  HONG KONG   •  TAIPEI   •  CHENNAI   •  TOKYO
+DECODING  
+ECONOMIC CRISES
+Cristina Peicuti 
+Jean-Marc Daniel
+ESCP Business School, France
+
+--- PAGE 5 ---
+Published by
+World Scientific Publishing Europe Ltd.
+57 Shelton Street, Covent Garden, London WC2H 9HE
+Head ofÏce: 5 Toh Tuck Link, Singapore 596224
+USA ofÏce:  27 Warren Street, Suite 401-402, Hackensack, NJ 07601
+Library of Congress Cataloging-in-Publication Data
+Names: Peicuti, Cristina, author. | Daniel, Jean-Marc, author.  
+Title: Decoding economic crises / Cristina Peicuti, ESCP Business School, France, 
+ Jean-Marc Daniel, ESCP Business School, France.  
+Description: Hackensack, NJ : World Scientific, [2024] | 
+ Includes bibliographical references and index. 
+Identifiers: LCCN 2023039693 | ISBN 9781800615106 (hardcover) | 
+ ISBN 9781800615113 (ebook for institutions) | ISBN 9781800615120 (ebook for individuals)  
+Subjects: LCSH: Financial crises. | Crises. 
+Classification: LCC HB3722 .P444 2024 | DDC 338.5/42--dc23/eng/20231005 
+LC record available at https://lccn.loc.gov/2023039693
+British Library Cataloguing-in-Publication Data
+A catalogue record for this book is available from the British Library.
+First published 2024 (Hardcover)
+Reprinted 2024 (in paperback edition)
+ISBN  9781800615700 (pbk)
+Copyright © 2024 by Cristina Peicuti & Jean-Marc Daniel
+All rights reserved. 
+For any available supplementary material, please visit 
+https://www.worldscientific.com/worldscibooks/10.1142/Q0446#t=suppl
+Translated from the French by Malcolm Leveridge
+Desk Editors: Logeshwaran Arumugam/Ana Ovey/Shi Ying Koe 
+Typeset by Stallion Press
+ 
+Email: enquiries@stallionpress.com
+Printed in Singapore
+
+--- PAGE 6 ---
+“Who knows what the tide could bring?”
+Tom Hanks in Cast Away
+
+--- PAGE 7 ---
+This page intentionally left blank This page intentionally left blank This page intentionally left blank This page intentionally left blank
+
+--- PAGE 8 ---
+Translated with the support of  
+BPCE Chair “Mutual and Cooperative Banking  
+for the Benefit of the Economy” at the ESCP BS.
+
+--- PAGE 9 ---
+This page intentionally left blank This page intentionally left blank This page intentionally left blank This page intentionally left blank
+
+--- PAGE 10 ---
+ix
+About the Authors
+Cristina Peicuti foresaw the 2008 crisis, which was the subject of her 
+thesis, “The subprime mortgage crisis and the credit channel” (Paris, 
+Panthéon-Assas University, 2006–2009). An affiliate professor and a sci -
+entific director at the ESCP Business School (Paris), the oldest business 
+school of France, she is an economist in a mutual and cooperative bank. 
+In addition, she is the chair of the Strategy and Corporate Social 
+Responsibility Committee of the Realités Real Estate Group and serves as 
+an adviser to the French government on foreign trade. She is a member of 
+Société d’Économie Politique, one of France’s oldest learned societies, 
+concerned with political economy. Cristina is the author of the books 
+Credit, Destabilisation and Crises, Decoding Economic Crises (2024) and 
+Of Banks and Crises (2024).
+Jean-Marc Daniel is an emeritus associate professor at ESCP Business 
+School. He serves as the president of the Société d’Économie Politique. 
+He regularly offers his insights as a commentator on BFM Business and 
+contributes as a columnist to Les Echos.
+
+--- PAGE 11 ---
+This page intentionally left blank This page intentionally left blank This page intentionally left blank This page intentionally left blank
+
+--- PAGE 12 ---
+xi
+Contents
+About the Authors ix
+Introduction xiii
+Part I Can the Economy Exist Without Crises? 1
+Chapter 1 There Have Been Crises Since the Dawn of Time  3
+Chapter 2 Theoretical Analysis of Crises 11
+Defining a crisis 11
+Is a crisis a phase in the cycle?  17
+1929 crisis: Keynes takes the stage  23
+Formalisation of cycle post-1929: Hansen and  
+Samuelson provide another conception  
+of Keynes’s general theory 30
+Real business cycle theory 36
+Crises herald permanent transformations:  
+Regulation theory 37
+Chapter 3  Economic Cycle and Policy 41
+Fiscal policy comes into play 41
+Contesting fiscal policy 43
+Money and finance 45
+Foreign exchange policy in times of crisis  52
+
+--- PAGE 13 ---
+xii Decoding Economic Crises
+Part II A History of Crises 55
+Chapter 4  The Great Depression and Debt Deflation 57
+The “Great Contraction” 59
+Chapter 5  The 1975 Recession 65
+The economic turning point 67
+Western countries and oil 71
+Chapter 6 1993 Crisis: OECD Employment Strategy 75
+Cyclical downturn: Fiscal policy to the rescue  75
+European specificity: EMS crisis 77
+OECD draws lessons from the crisis  81
+Chapter 7 2008 Crisis and Quantitative Easing 85
+Pauperisation of Americans and subprime mortgages 85
+The Great Recession 89
+G20 asserts itself 91
+The action of central banks 96
+Would Irving Fisher have wanted central banks  
+to go to such lengths in 2008 to avoid deflation?  100
+Chapter 8  Exogenous Crises: Pandemics and Wars 105
+Pandemics 105
+Wars 110
+Conclusion 117
+Bibliography 123
+Index 127
+
+--- PAGE 14 ---
+xiii
+Introduction
+ “The inherent vice of capitalism is the unequal sharing  
+of blessings; the inherent virtue of socialism is the equal  
+sharing of miseries.”
+— Winston Churchill
+Is the market economy stable by nature? What happens to make it unsta -
+ble? Is it external shocks, such as pandemics or wars? Is it the incompe -
+tence of policymakers or regulators? Or is this instability inherent to the 
+market economy’s very dynamics and/or mechanisms? Does the market 
+economy carry the forces and seeds of its destabilisation? If so, will this 
+destabilisation prove fatal, as Marx and communist theoreticians believe? 
+Is there an alternative to the market economy? Or do these upheavals 
+merely require patience on the part of economic agents and policymakers, 
+long enough for negative effects to be cushioned?
+It is easy enough to criticise the market economy. Many thinkers have 
+announced its demise, bemoaning or rejoicing at the prospect. However, 
+since the mid-18th century, the Western world has experienced strong 
+growth thanks to the market economy’s existence in more or less modified 
+forms. Growth has not prevented economic fluctuations and crises to this 
+day.
+At the end of the Second World War, through the Marshall Plan, the 
+United States helped the western half of Europe recover and continue to 
+develop based on a market economy. The other half of Europe, “liberated” 
+
+--- PAGE 15 ---
+xiv Decoding Economic Crises
+by the Soviet Union (only to be brought under its yoke), did not have the 
+opportunity to benefit from the Marshall Plan.
+The United States administration gathered the negotiators of 17 European 
+countries and oversaw the implementation of the Marshall Plan from 1948 
+to 1950 from the Hotel de Talleyrand, the Paris mansion located between 
+rue Saint-Florentin and place de la Concorde, home of the great French 
+statesman after whom it is named, where he entertained heads of state and 
+international dignitaries and where he passed away.
+Talleyrand pulled the strings at the Congress of Vi enna after 
+Napoleon’s defeat and even during the Hundred Days, when he managed 
+to convince the European victors not to leave the negotiating table, claim-
+ing that Napoleon would not remain in power for long! After the Second 
+World War, it was the United States that pulled the strings, fittingly from 
+the Hotel de Talleyrand, which served as headquarters for the Marshall 
+Plan.1
+After 1945, the USSR imposed a classical Soviet-typ e command 
+economy on one half of Europe. Populations in Eastern Europe (or strictly, 
+Central Europe, a hotchpotch of cultures, languages  and economies), in 
+opposition to Western Europe, were forced into a so -called communist 
+economy, turning their backs on the market system.
+By the time the Berlin Wall fell in 1989, the economic performances 
+of former Soviet Bloc countries bore testimony to the aberrations of a 
+planned economy. The communist era from 1948 to 1989 was a political, 
+moral and economic tragedy for Eastern Europe. This tragedy is plain to 
+see in the case of Czechoslovakia, a country with a rich industrial heritage 
+and whose economic development before 1939 was comparable to that of 
+1 At the time of the Marshall Plan, the Hotel de Talleyrand belonged to the Rothschild family. 
+The United States acquired the mansion on 14 November 1950 to house its embassy and later 
+the Marshall Center, home to a unique exhibit honouring the pivotal European contributions 
+to the success of the European Recovery Program, better known as the Marshall Plan. More 
+than 70 years later, the mansion is still home to the United States embassy. In the intervening 
+years, the United States has ruled supreme, playing a central role in international diplomacy 
+and the world economy. No matter the sheer scale of the Marshall Plan and communication 
+efforts surrounding it or the United States leadership since then, the stately mansion remains 
+named after the great French statesman, not the United States Secretary of State. Talleyrand’s 
+wish, “I want people to continue discussing for centuries what I was, what I thought, what  
+I wanted”, has thus been fulfilled, much to the chagrin of the United States, for George C. 
+Marshall cannot lay claim to such as august a legacy.
+
+--- PAGE 16 ---
+Introduction xv
+Western countries. In 1948, when the Communist Party assumed undis -
+puted control over the government following a coup d’état , per capita 
+income in the country was higher than in Western Germany and 85% of 
+per capita income in France. By the time of the so-called Velvet Revolution 
+in 1989, per capita income in Czechoslovakia was 60% of per  capita 
+income in Germany and 62% of per capita income in France. After 1989, 
+not one former “socialist country” continued to base its development on a 
+command economy. All swung from one extreme to the other, from a 
+command economy to a liberal economy.
+One might say of the market economy what Winston Churchill said of 
+democracy: “It has been said that democracy is the worst form of govern-
+ment except for all those other forms that have been tried from time to 
+time”.
+The market economy that existed in Europe and the United States 
+before the Second World War, which the latter imposed on the world in 
+the post-war era, prevailed. Of course, historical circumstances mean that 
+it has been fashioned on the lines desired by the United States. Post-war, 
+this country has been the great artisan of globalisation.
+Notwithstanding this success, large-scale crises reminiscent of the 
+Crash of 1929 have rocked capitalist economies since 1945. The world 
+economy experienced recessions (contractions in activity) in 1975, 1992–
+1993, 2009 and 2020. Public authorities proved incapable of preventing 
+the crises (1929, 1974, 1991 and 2008) that had preceded these recessions. 
+That being so, they had to heal what they could not prevent. One question 
+is whether globalisation and what some have called the “financialisation” 
+of the economy contributed to the propagation of these tremors in increas-
+ingly interlocked economies at the global level. These global crises have 
+led to massive interventions by states — what might be called state inter -
+ference — and central banks, which gradually affirmed their independ -
+ence. The very fabric of the market economy has been distorted as a 
+result. To function optimally and for economic agents to find meaning in 
+their involvement, the market economy needs to remain labour- and 
+competition-based. Instead, it is structured increasingly around the accu -
+mulation of debt, particularly public debt.
+Having proved incapable of preventing the onset of crises, the ques -
+tion is whether governments and regulators have at least been able to 
+contain these phenomena. In particular, have they drawn lessons from 
+each crisis to better deal with the next one and mitigate toxic aftermaths? 
+There was the debt deflation after the Great Depression, the stimulus 
+
+--- PAGE 17 ---
+xvi Decoding Economic Crises
+plans in 1975 based on the locomotive theory developed by the OECD, 
+Japan’s recourse to quantitative easing in 1992–1993 before the wider 
+adoption of this monetary policy during the 2008 crisis and the Pandemic 
+Emergency Purchase Programme in 2020. Were these cures or just band-
+aid solutions? Were these responses rational or arbitrary? Ultimately, is 
+capitalism such as we know it all about competition (and may the best 
+win!)? Or is it a matter of connivance, with the state favouring one or 
+other economic agent and kicking the problems down the road? Is the 
+limitless recourse to debt underpinning the economic system an instance 
+of what communist theoreticians call “state monopoly capitalism”?
+Understanding the origins of crises, their evolution, their resolution 
+and their necessity will, in turn, help comprehend today’s world. One can 
+adapt instead of nervously blundering blindfolded through a crisis. One 
+can grasp not just the risks but also the opportunities and thus take advan-
+tage of a crisis.
+Each crisis has its winners and losers. To identify the big winners and 
+losers, one needs only to consider the breakdown of global wealth before 
+and after the 2008 or 2019 crisis.
+A subsidiary question is whether countries that have carried the day 
+can hold on to their gains. Can anything be inferred about their capacity 
+to lead the world economy? In the 19th century, Britain dominated the 
+world economy, with its vision of the economy based on classical/neo -
+classical liberal theories. Since 1945, it has been dominated by the United 
+States, based on a Keynesian justification for the systematic use of budget 
+deficits and easy money. American economic leadership was not funda -
+mentally challenged by the Soviet countermodel and its avatars. Will the 
+pounding inflicted by the 1992, 2009 and 2020 recessions deal a blow to 
+this leadership to the benefit of the authoritarian capitalism that has flour-
+ished in Asia? Or will environmental challenges usher in a more devastat-
+ing crisis reminiscent of the “nutritional trap” theorised by Nobel Prize 
+winner Angus Deaton? Will there be a return to times of absolute scarcity 
+and famine prevalent before the mid-18th century?
+
+--- PAGE 18 ---
+Part I
+Can the Economy Exist  
+Without Crises?
+“We cannot solve our problems  
+with the same thinking we used  
+when we created them.”
+— Albert Einstein
+
+--- PAGE 19 ---
+This page intentionally left blank This page intentionally left blank This page intentionally left blank This page intentionally left blank
+
+--- PAGE 20 ---
+3
+Chapter 1 
+There Have Been Crises Since the  
+Dawn of Time
+“There is nothing new under the sun”, Ecclesiastes 1:9. Crises are no 
+exception. They are a perpetual repetition, to the point that they fit into 
+another phenomenon: market economy cycles. This repetitiousness begs 
+the question of what the economy would be like without crises. Would the 
+economy even exist? Would it present a degree of sustainability?
+Modern crises are often financial crises. They generally start with a 
+rise in the price of an asset that is limited in nature to a level that is 
+increasingly above that asset’s intrinsic value. The inflation in the price of 
+the asset is fuelled by the fact that related purchases are often made on 
+credit in the United States. During the crash of 1929 and again in 1992 
+and 2008, the asset in question was real estate. The spectacular rise in 
+prices encouraged more and more economic agents to buy real estate in 
+the hope of reselling it later at a substantial profit. The rise in prices is out 
+of all proportion. As the German proverb goes, trees don’t grow to the 
+sky: the speculative bubble 1 ends up bursting, and the market goes into 
+reverse. What follows is a sudden and dramatic plunge in the price of the 
+asset, back towards its intrinsic value. It may even fall below this value 
+because of an overabundant supply of this asset in the face of weak 
+demand, with mistrust taking hold. As the American billionaire and 
+1 The term “speculative bubble” dates back to the start of the 18th century. It was coined 
+by the British authorities in reference to the speculation surrounding the stock of the South 
+Sea Company and the subsequent collapse in the stock price, the episode becoming known 
+as the South Sea Bubble.
+
+--- PAGE 21 ---
+4 Decoding Economic Crises
+businessman Warren Buffett put it, “only when the tide goes out do you 
+discover who’s been swimming naked”. What is important is that what 
+starts off as a financial correction leads to a crisis: the frailty of the econ -
+omy at macro- and microeconomic levels is laid bare for all to see (at the 
+global and country levels, as well as at the level of businesses and house-
+holds). In fact, it is when the purchase of assets at exorbitant prices has 
+been financed on credit that the crisis really begins because selling the 
+assets is no longer enough to repay the credit. As a result, banks are also 
+undermined. They find themselves quite unable to continue financing the 
+economy, even though it is already in difficulty. This was the scenario in 
+the crises of 1929, 1992 and 2008.
+Such speculative bubbles have existed since time immemorial. There 
+were already instances in ancient Rome. In AD 33, during the reign of 
+Emperor Tiberius, Rome’s financial system experienced a crisis, the first 
+for which there are quite precise accounts of its unfolding. This was a 
+credit crisis: creditors called in loans in order to purchase land (to meet a 
+requirement under a lapsed but now revived decree that conditioned usury 
+on part of the lender’s capital being invested in land), which led to a large 
+number of defaults as debtors could not raise the funds. Such was the scale 
+of the crisis that the Roman State stepped in, meeting the debtors’ obliga-
+tions towards their creditors. Amounts owed by debtors now had to be 
+repaid to the state. Also, the state injected liquidity into the system by 
+channelling funds through specially chartered banks that offered three-
+year, interest-free loans. In this way, creditors avoided bankruptcy as they 
+recovered from the Treasury what they were owed. Debtors also avoided 
+bankruptcy: their debt subsisted but was now sustainable. To the extent an 
+estimate can even be drawn up, these measures cost the equivalent of 
+0.5% of the Roman Empire’s gross domestic product.
+The first speculative bubble to have captured the p ublic’s imagina-
+tion for generations was probably the Tulip Bulb Market Bubble in  
+the 17th century. It occurred in the United Provinc es (present-day 
+Netherlands). The craze for tulip bulbs led to an i rrational rise in their 
+price, which reached a peak in February 1637. A word — tulpenmanie in 
+Dutch, or “tulipomania” — was even coined to describe the frenzied buy-
+ing that gripped the country between 1633 and 1637.  During this period, 
+the price of tulip bulbs increased fivefold between  12 and 25 November 
+1636. Then, it doubled again between 25 November an d 3 February 
+1637, the day on which prices began to fall. On 3 F ebruary, the price of 
+a tulip bulb represented 10 times the annual salary  of a Dutch craftsman 
+
+--- PAGE 22 ---
+There Have Been Crises Since the Dawn of Time 5
+in those days. By 1 May 1637, the price had returne d to its level of  
+early November 1636. The first modern episode of ge neralised specula -
+tion, tulipomania, continues to feed the theoretical reflections of financial 
+specialists to this day. This founding act of what is known as “speculative 
+hysteria” was followed by other speculative bubbles , mainly due to the 
+evolution of the public debt.
+When, to the king’s surprise, a speculative bubble burst at the start of 
+the 18th century in France, the monarch asked V oltaire for an explanation, 
+which he provided in one sentence: “paper money eventually returns to its 
+intrinsic value, your Majesty”.2
+Financial crises are a very old problem. They are often presented as 
+the alpha and omega of the crises that have shaken the economy. Though 
+financial crises have captured the imagination, before the Industrial 
+Revolution, the most devastating crises for the population were subsist -
+ence crises. The “nutritional trap” theorised by Angus Deaton refers back 
+to this era. Extreme and general scarcity of food leads to dramatic rises in 
+prices. The crisis, whether due to speculation or to an absolute scarcity 
+linked to poor harvests, results in a sharp rise in the prices of certain com-
+modities, leading to a considerable redistribution of income and plunging 
+large swaths of the population into misery.
+With the onset of the Industrial Revolution, the economic growth of 
+industrialised countries was marked by crises that were not strictly finan -
+cial, unlike those caused by food shortages. They started as “industrial” 
+crises, characterised by a phase of overproduction, followed by a correc -
+tion that resulted in a contraction of production. In the 19th century, the 
+periodicity of these crises was, on average, decennial: 1816, 1825, 1836, 
+1847, 1857, 1866, 1873, 1882, 1890, 1900, 1907 and 1913. As early as the 
+1820s, this periodicity meant that the notion of crisis was fairly systemati-
+cally associated with the idea of an economic cycle. One of the issues with 
+which economic theory is still grappling to this day is the regularity of the 
+slowdowns in growth, or, put another way, the relevance of the cycle con-
+cept. Are these repeated slowdowns wholly fortuitous or attributable to 
+the very functioning of the market economy? This question shows that an 
+understanding of crises requires an analysis of economic cycles.
+In 1926, in his book entitled The Major Economic Cycles , Soviet 
+economist Nikolai Kondratiev [1892–1938] postulated that there are  
+long economic cycles, lasting between 50 and 60 years, which comprise 
+2 Orieux, Jean (1999). 
+
+--- PAGE 23 ---
+6 Decoding Economic Crises
+three phases: expansion, lasting 20–25 years, followed by a short turning 
+point, and then depression, also lasting 20–25 years. This theory had the 
+favours of French economist and sociologist François Joseph Charles 
+Simiand [1873–1935], who considered that during a phase A, there is a 
+rise in prices accompanied by sustained growth in production, and then, 
+during a phase B, there is a fall in prices, followed by slower economic 
+growth. These two phases follow each other. However, other contempo -
+rary economists, such as Wesley C. Mitchell, 3 considered them simply 
+business cycles of varying duration. Paul Samuelson [1915–2009], the 
+recipient of the 1970 Nobel Prize in Economic Sciences, dismissed the 
+Kondratieff cycle as “science fiction”.
+After the First World War, econometrics was enlisted to try to quantify 
+crises and cycles. The intention was to adopt as scientific an approach as 
+possible in determining the relevance of the notion of cycle and identify -
+ing its periodicity. This meant developing statistical methods using quan-
+titative data to predict economic fluctuations, cycles and their regularity. 
+One of the presuppositions of the econometric approach is admitting that 
+such predictions do not provide a theoretical, rational justification of cycle 
+mechanisms but a simple empirical description.
+Economic research thus became a major issue for economists and one 
+of the aspects of their work most visible in the public debate. The creation 
+of the National Bureau of Economic Research in the United States in 
+1920, the Institut fur Konjunkturforschung in Germany in 1925 and 
+the Service d’Observation Économique in France in 1937 illustrate the 
+development of this new branch of economic science. Academics were 
+involved in this development. For example, in the 1920s, Harvard 
+University developed a barometer of business conditions that was sup -
+posed to forecast the evolution of the economy. As disappointing as the 
+results of economic forecasts proved, as they were often invalidated, 
+econometrics became a major branch of economic science. It is now sys -
+tematically used by economists to the point of being indispensable. At the 
+same time, more and more institutions, such as credit rating agencies, are 
+combining big data and artificial intelligence to forecast economic fluc -
+tuations and crises, thus increasing the reliability of mathematical models 
+and econometric equations.
+The Industrial Revolution shaped the 19th century, whereas in the 
+20th century, services played a similar role. This change was accompanied 
+3 Mitchell, Wesley C. (1913). 
+
+--- PAGE 24 ---
+There Have Been Crises Since the Dawn of Time 7
+by the financialisation of the economy, which gave rise to a new form to 
+crises. Before the 20th century, a financial crisis could occur without eco-
+nomic agents noticing. Now, it propagates through the entire economy. 
+Financial crises spread fast because global finance is a tightly interwoven 
+system, as is global trade.
+The crisis of 1929 began in the United States with the failure of the 
+Bank of United States, a systemically important bank, whose defining char-
+acteristic was that it was too big to fail without bringing about the collapse 
+of the financial system. The bank’s grandiose name, suggesting it was an 
+emanation of the state, meant that its failure reverberated around the world. 
+In fact, this triggered what is considered to be the first major global crisis, 
+reminiscent of contemporary crises. It was of excep tional magnitude and 
+had devastating consequences, from which Europe has not yet fully recov-
+ered. It should be remembered that the Nazi rise to power, which led to the 
+Second World War, was mainly due to widespread economic misery.
+Similarly, the 2008 crisis, which began with the failure of another 
+American bank, Lehman Brothers, unleashed a wave of populist senti -
+ment. As Talleyrand explained in his memoirs, “the ranks of the discon -
+tented are made up of the thinking poor”. 4
+There could have been a rescue of the two American banks. They 
+were illiquid but not insolvent. In other words, despite having negative 
+equity, these banks were not technically bankrupt. What they lacked were 
+highly liquid assets to meet their immediate commitments. They were 
+short of cash, a problem that a bridge loan could have solved. However, a 
+bridge loan was not forthcoming from the United States regulator, which 
+let them default and pushed them into bankruptcy. No one knows what 
+would have happened if the government had arranged the loan to help 
+them through this difficult period. In particular, wouldn’t the cycle have 
+caught up with developed economies in any case? Be that as it may, the 
+whole world, especially Europe, paid a high price for the consequences of 
+what, in many ways, was an inconsequential decision by the United States 
+regulator.
+Nowadays, crises have the characteristic of being global. Also, para -
+doxically, more damage is done to other countries than to the one where 
+they originated. In other words, it is not the country triggering a global 
+crisis that foots the bill. In the aftermath of a global crisis, there are no 
+indemnities or reparations, as there might be after a war. The failings of 
+4 Talleyrand-Périgord, Charles-Maurice (de). (2002). 
+
+--- PAGE 25 ---
+8 Decoding Economic Crises
+American policymakers were responsible for the 1929 and 2008 crises 
+taking on a devastating dimension, but other countries paid the price!
+These failings — in a country that has produced the most Nobel prizes 
+in economics — raise the question of why economics is not proving capa-
+ble of providing policymakers with mistake-proofing tools. The word 
+“crisis” is frequently used, not to say overused, in economic analysis. 
+Whether the economic crisis is presented as global or sectoral, financial 
+or affecting the real economy, the expression is nowadays pervasive to the 
+point of suggesting that the phenomenon is permanent and has, therefore, 
+become a normality, which is paradoxical.
+Be that as it may, the mission of today’s economists is to provide a 
+theoretical explanation of its causes and the ensuing chain of events, as 
+well as the means to mitigate its effects and prevent repetitions. Have they 
+been successful? This question does indeed have to be asked, as it was 
+raised in no uncertain terms by no less than the Queen of England, 
+Elizabeth II. In November 2008, during the reception staged on the occa -
+sion of her visit to the prestigious London School of Economics (LSE), 
+her Majesty asked her hosts:
+“Why didn’t anyone see the financial crisis coming?”
+Slightly taken aback, her entourage quickly came up with a rather pat 
+answer, adding that more time would be needed to provide her Majesty 
+with a structured answer intelligible to non-economists.
+In early 2009, the LSE decided to pursue the matter and respond with 
+a reasoned argumentation to what is undoubtedly a challenge to economic 
+science. There is no question of dodging the problem by settling for a few 
+truisms. It therefore launched a call for contributions to answer Her 
+Gracious Majesty’s question without detour and, more broadly, to stem 
+the tide of criticism directed at economists. Soon enough, the task of writ-
+ing this reply was entrusted to three people. The first was Jim O’Neill, an 
+English economist who was head of global economics research at 
+Goldman Sachs. He gained notoriety with the publication of his seminal 
+paper on the rise of emerging economies, in which he coined the acronym 
+BRIC5 for Brazil, Russia, India and China. The second was Tim Besley,  
+5 BRICs in Building Better Global Economic BRICs was later modified to BRICS follow-
+ing the addition of South Africa. The BRICS concept has been widely adopted and gained 
+institutional recognition, even though the five countries in question have enjoyed quite 
+differing economic fortunes.
+
+--- PAGE 26 ---
+There Have Been Crises Since the Dawn of Time 9
+a professor at the LSE who was a rising star in British economics. The 
+third was Nicholas MacPherson, the then permanent secretary to the 
+British Treasury. He was the bearer of what economists call the “Treasury 
+Opinion”, the thoughts of senior British officials who were considered to 
+be among the best economists in the world. Nicolas MacPherson studied 
+at Oxford University’s Balliol College, a venerable institution if ever there 
+was one, as it boasts Adam Smith himself among its former students. The 
+trio met regularly, often joined by William Keegan, the economic editor 
+of the Observer newspaper, who acted as reporter.
+This response took the form of a letter sent to Buckingham Palace in 
+July 2009. Tim Besley did most of the legwork and wrote the bulk of the 
+text. However, his paper was also vetted by the leading British economists 
+at the British Academy Forum held on 17 June 2009.
+After getting acquainted with the text, Her Majesty authorised the 
+Observer to print a résumé. For the authors, the crisis is the consequence 
+of an overly lax monetary policy and a refusal to correct current account 
+imbalances on the part of both countries running deficits (such as the 
+United States) and those running surpluses (China, Germany, Japan and 
+the oil-producing countries).
+But what is most interesting is the conclusion in the penultimate 
+paragraph:
+“So in summary, Your Majesty, the failure to foresee the timing, extent 
+and severity of the crisis and to head it off, while it had many causes, 
+was principally a failure of the collective imagination of many bright 
+people, both in this country and internationally, to understand the risks 
+to the system as a whole”.
+Officially, faced with what is a worrying admission of impotence 
+likely to bring the very function of economist into disrepute, there was no 
+reaction from the Queen. Will the letter have dispelled Her Majesty’s 
+doubts? Probably not since these doubts were shared by an increasing 
+number of people, including Paul Krugman. Shortly before the letter 
+drafted by the LSE was delivered to Buckingham Palace, the influential 
+British weekly The Economist  published an article on 16 July 2009 in 
+which it reported that, in a recent lecture, the winner of the 2008 Nobel 
+Prize in Economics argued that much of the past 30 years of macroeco-
+nomics was “spectacularly useless at best, and positively harmful at 
+worst”.
+
+--- PAGE 27 ---
+10 Decoding Economic Crises
+Some three years later, while visiting the Bank of England in 
+December 2012, the Queen indulged in some more or less ironic remarks, 
+wondering if “people had got a bit [...] lax?” in the run-up to the 2009 
+crisis. The Financial Services Authority responded immediately, making 
+their mea culpa and giving assurances that thinking about sound and pru -
+dent credit management had been, and remained, more than ever at the 
+centre of their concerns.
+Nevertheless, confessing to “a failure of the collective imagination” 
+will not get economists off the hook forever. They must be aware of the 
+need to respond in a practical, pragmatic way to the questions that have 
+fuelled so much debate within the profession, as unanswered questions 
+have an unsettling effect on all economic agents.
+To better understand the explanations given to Her Majesty Queen 
+Elizabeth II, let’s first cast our minds back to the arguments of economists 
+through the ages to then proceed to determine a theory of “crises”.
+
+--- PAGE 28 ---
+11
+Chapter 2
+Theoretical Analysis of Crises
+To find meaning in the notion of crisis and discern  its relevance as pre -
+cisely as possible, a definition is needed first of  all, along with its con -
+tours. To do this, we must not talk exclusively about an “economic crisis” 
+to avoid getting lost in the pursuit of theories about “crises of civilisation” 
+or “crises of adolescence”. Even if one limits the analysis to an “eco -
+nomic crisis”, how does an “agricultural crisis”, a n “industrial crisis” or 
+a “financial crisis” fit into the frame of things? The latter has become 
+something of an umbrella term: the crisis of 2008–2009 is now systemati-
+cally referred to as a “ financial crisis”. For the public at large, this te rm 
+has the merit of identifying a guilty party traditi onally held in rather low 
+esteem.
+Let us first agree on a definition.
+Defining a crisis
+To this end, let’s first consider the entries in the Dictionnaire de la langue 
+française by Émile Littré (commonly called simply the “Littré”):
+“Medical term. The turning point of a disease, announced by particular 
+symptoms, such as abundant excretion, significant h emorrhaging, 
+sweating, urinary deposits, etc. Happy crisis. Fatal crisis. Astrological 
+opinion, falsely attributing an influence to the moon upon crises. 
+Magnetic crisis, the name of the state into which magnetised people fall.
+
+--- PAGE 29 ---
+12 Decoding Economic Crises
+Figurative. A perilous or decisive moment. A crisis is in the offing. 
+Business is in a state of crisis. A very dangerous political crisis.
+Disturbance in production. Industrial or commercial crisis, disturbance, 
+disruption of industrial operations or commercial transactions, suspend-
+ing their execution. Financial crisis, considerable financial difficulties 
+affecting public finances or business. Monetary crisis, financial difficul-
+ties resulting from the scarcity of money. Crises sometimes lead to 
+higher prices for products, sometimes to lower prices. Wine crisis. 
+Subsistence crisis.
+Ministerial crisis, when a ministry is dissolved without being replaced.
+Nature crisis, in reference to the great convulsions that occur on earth.
+Etymology: from the Greek Κρίσις, “a decision”, from ϰρίνειν, “to 
+decide, judge””.
+The Littré, which was first published in the 1870s, opens with the 
+medical meaning of the term. It then departs from its literal use to its 
+usage in figurative language, where the economy has pride of place.
+Since the 19th century, the French term “crisis” has entered common 
+usage as denoting a “disturbance of industrial operations or commercial 
+transactions”. Interestingly, in English texts referring to situations of this 
+kind, “crisis” is not the immediate equivalent of the French term. The 
+book by John Kenneth Galbraith [1908–2006] on the events of 1929 goes 
+by the title The Great Crash, with crash normally denoting an “accident”, 
+and was translated into French as La crise économique de 1929 . As for 
+The Return of Depression Economics and the Crisis of 2008  by Paul 
+Krugman, it was translated as Pourquoi les crises reviennent toujours.
+The generally held view is that Swiss historian and economist Jean 
+Charles Léonard Simonde de Sismondi [1773–1842] was the first econo -
+mist to systematically use the term “crisis”. At a time when economics 
+was largely dominated by French and English thinkers, “distress” was the 
+term used to denote an economic situation characterised by unemploy -
+ment and a contraction of activity. This departure from the literal use of 
+the term can be traced to French economists, particularly Sismondi. 
+Having witnessed firsthand the French Revolution, which his Swiss-born 
+family fled, crisscrossing Europe before returning home to Geneva, 
+Sismondi fell under the spell of Adam Smith’s works. He was attracted by 
+their positive content and spirit, in contrast to the violence and despair of 
+
+--- PAGE 30 ---
+Theoretical Analysis of Crises 13
+Jacobin politics in France. However, he found France under the Bourbon 
+Restoration to be repugnant. Having wed a Welshwoman in 1819, he was 
+appalled by the condition of the working class in his wife’s country. In his 
+Nouveaux principes d’économie politique , published in 1819, Sismondi 
+broke with classical economists, developing a systematic critique of this 
+school of economic thought. He contended that supply did not create suf -
+ficient demand, contrary to what has gone down in the annals as Say’s 
+law, named after the famous French economist who formulated it. There 
+followed that, according to Sismondi, it was under-consumption, unbri -
+dled competition (leading to excessive falls in prices) and uncertainty that 
+led to “crises”, which would ultimately bring about the demise of the 
+market economy. As for a solution, Sismondi advocated supporting 
+demand.
+To this end, Sismondi considered that there were three possible eco -
+nomic policies, which he described as follows:
+(1) “Egyptian” consists of having the state shoulder a significant part of 
+demand in the form of large works. With this proposition, Sismondi 
+was one of the precursors of modern Keynesianism and one of the 
+first thinkers to look into stimulus policies.
+(2) “Sybarite” is based on a system for the distribution of purchasing 
+power. For Sismondi, the central issue for an economy is that if firms 
+increase wages, they increase their costs, reduce their profitability and 
+ultimately go bankrupt. On the other hand, if firms maintain exces -
+sively low wages, there will be insufficient outlets for their goods. His 
+proposition, therefore, was for the state to manage demand through an 
+income policy based on large-scale redistribution using taxation. It is 
+still all about stimulus, but this time acting on consumption.
+(3) “Athenian” focuses on avoiding overproduction by reducing working 
+time. This would encourage the development of culture and lead to, 
+as in ancient Athens, the creation of places where citizens might con-
+gregate to exchange and discuss all manner of things.
+The Panic of 1825 gave wide notice to Sismondi’s theories about the 
+economy’s difficulty finding outlets for its production and the need for 
+public action to mitigate the consequences of overproduction. In The 
+Communist Manifesto, Karl Marx saluted Sismondi’s criticism of capital-
+ism, especially in Britain, where it had found its fullest expression. At the 
+same time, the German philosopher dismissed the man as an exemplary 
+
+--- PAGE 37 (SAMPLE) ---
+20 Decoding Economic Crises
+one country; others are pandemics and spread around the world, like 
+cholera. The word ‘cycle’ does not imply any idea of disorder or of 
+disturbance. On the contrary, it conjures up the idea of rhythm. This is 
+the law of this world, that of regularity in alternation, to which all phe -
+nomena of the physical order seem to be subject — not only the alterna-
+tion of the seasons, but the barometric variations, the rise and fall of the 
+glaciers, the precession of the equinoxes — and also those of the eco -
+nomic order, such as the balance of trade, the oscillations in the rate of 
+interest, etc. There is nothing mysterious about this. There are only two 
+possible states of affairs: immobility, which would be death, or oscilla -
+tions around a position of equilibrium, which is life. From this perspec -
+tive, it seems quite natural that all economic phenomena should take the 
+form of a more or less regular wave line”. 
+He insists: 
+“But above all, the most striking characteristic of crises is their 
+periodicity. They follow one another with the regularity and majesty of 
+a sea ball, each wave having an amplitude of about ten years, of which 
+four or five years in ascending motion, four or five years in descending 
+motion”. 
+Charles Gide then sets out Jevons’ own analysis:
+“Such regularity could not be attributed to chance;  it suggested the idea 
+of some astronomical cycle. So we find Jevons turni ng to the skies for 
+an explanation, and believing he had found it in th e periodic recurrence 
+of sunspots. At the time, the widely held view was that the maxima or 
+minima of these spots occurred more or less every ten years. What might 
+be the link between sunspots and crises? Well, the varying intensity of 
+the sun’s rays resulted in good or bad harvests, in  turn determining cri-
+ses. It would seem everything was considered in this cosmogonic novel”. 
+For Jevons, it is not just the crisis but the cycle itself that is exoge -
+nous. Charles Gide mocked this “as mere romancing”, even if today 
+physicists and meteorologists have given some relevance to Jevons’ point 
+of view. His is an endogenous interpretation that inspires the solutions he 
+advocates:
+
+--- PAGE 74 (SAMPLE) ---
+57
+Chapter 4 
+The Great Depression and Debt  
+Deflation
+The financial crises that strike the United States and the European Union 
+generally unfold in two to three phases. During the first phase, when the 
+financial crisis is triggered, the deterioration in the balance sheets of 
+financial institutions, the fall in share prices and mounting uncertainty 
+contribute to a contraction in lending, brought about by an exacerbation 
+of adverse selection and moral hazard. This may lead to a second phase, 
+characterised by a decline in economic activity, a banking panic and a 
+malfunctioning of the credit channel. The combination of these factors 
+can lead to a banking crisis.
+If there is no resolution of the financial crisis, the economic downturn 
+causes an unanticipated fall in the general price level, and the recovery 
+process cannot kick in. A third phase then follows: debt deflation. When 
+this happens, the unanticipated sharp fall in the general price level 
+becomes entrenched, leading to a still greater fall in the net worths of busi-
+nesses because of the increased debt burden. When debt deflation takes 
+hold, problems to do with adverse selection and moral hazard are exacer -
+bated, triggering a long-term depression in loans, investment spending 
+and the overall level of economic activity.
+For all those worried (or delighted, for there are some) by the difficul-
+ties of capitalist economies, the 1929 crisis is the mother of all crises, to 
+be avoided (or at least meditated upon). The crisis had its genesis on 
+24 October 1929, with the fall in prices on the New York Stock Exchange. 
+This day went down in the annals of history as Black Thursday. It was 
+
+--- PAGE 111 (SAMPLE) ---
+94 Decoding Economic Crises
+on supporting the banking sector, going so far as to nationalise certain 
+banks, and implementing a quite conventional package of fiscal measures 
+to support an economy on the back foot. In 2007, relative to GDP, fiscal 
+deficits reached 2.8% in the United States, 0.7% in the euro area, 2.7% in 
+the United Kingdom and 2.4% in Japan. By 2009, fiscal deficits had dete-
+riorated to 11.2% in the United States, 6.4% in the euro area, 11.4% in the 
+United Kingdom and 8.7% in Japan.
+Commenting on the implementation of these stimulus plans, 
+Dominique Strauss-Kahn, who was attending the G20 summit in his 
+capacity as the managing director of the International Monetary Fund 
+(IMF), declared during the closing press conference that nearly all the 
+participants had backed the IMF’s proposal to use the fiscal tool and 
+placed the emphasis on a coordinated fiscal stimulus in order to be more 
+effective, concluding that as a result, the situation was really changing. 
+The 2008–2009 crisis marked the start of an unprecedented escalation in 
+both public and private debt.
+By 2016, when one can consider that the 2008–2009 crisis was over, 
+the world’s debt stood at $164,000 billion, or 225% of GDP. It consisted 
+of 63% private debt and 37% public sector debt.
+Just as after the 1975 crisis the OECD published “Towards full 
+employment and price stability — A report to the OECD by a group of 
+independent experts” 18 and then after the 1993 crisis The OECD Jobs 
+Study, in 2009 it published the “OECD strategic response to the financial 
+and economic crisis — Contributions to the global effort”, aimed at “tack-
+ling regulatory and policy failures comprehensively”, with “the focus […] 
+on the interactions between finance, competition and governance, and, 
+ultimately, on achieving sustainable growth”.
+It summarised its recommendations as follows:
+“In the current context, an optimal policy strategy  to restore  
+sustainable long-term growth should include the fol lowing key 
+components:
+–  keeping markets open;
+–  sound macroeconomic, fiscal and labour market policies for stability 
+and resilience;
+18 Commonly known as the McCraken Report.

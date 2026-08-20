@@ -1,0 +1,1206 @@
+--- PAGE 2 ---
+MANIAS, PANICS, AND CRASHES
+
+--- PAGE 3 ---
+MANIAS, 
+PANICS, AND 
+CRASHES
+A HISTORY OF FINANCIAL CRISES
+Seventh Edition
+ROBERT Z. ALIBER
+Emeritus Professor of International Economics and Finance, 
+Booth School of Business, University of Chicago
+and
+CHARLES P. KINDLEBERGER
+formerly Ford Professor of Economics, 
+Massachusetts Institute of Technology
+
+
+--- PAGE 4 ---
+© Charles P. Kindleberger and Robert Z. Aliber 2005, 2011, 2015 
+© Charles P. Kindleberger 1978, 1989, 1996, 2000 
+Foreword © Robert M. Solow 2015 
+Afterword © Robert Skidelsky 2015
+All rights reserved. No reproduction, copy or transmission of this
+publication may be made without written permission.
+No portion of this publication may be reproduced, copied or transmitted
+save with written permission or in accordance with the provisions of the
+Copyright, Designs and Patents Act 1988, or under the terms of any licence
+permitting limited copying issued by the Copyright Licensing Agency,
+Saffron House, 6–10 Kirby Street, London EC1N 8TS.
+Any person who does any unauthorized act in relation to this publication
+may be liable to criminal prosecution and civil claims for damages.
+The authors have asserted their rights to be identified as the authors of this work 
+in accordance with the Copyright, Designs and Patents Act 1988.
+First edition published 1978
+Second edition published 1989
+Third edition published 1996
+Fourth edition published 2000
+Fifth edition published 2005
+Sixth edition published 2011
+Seventh edition publish 2015 by
+PALGRAVE MACMILLAN
+Palgrave Macmillan in the UK is an imprint of Macmillan Publishers Limited,
+registered in England, company number 785998, of Houndmills, Basingstoke,
+Hampshire RG21 6XS.
+Palgrave Macmillan in the US is a division of St Martin’s Press LLC,
+175 Fifth Avenue, New York, NY 10010.
+Palgrave Macmillan is the global academic im print of the above companies 
+and has companies and representatives throughout the world.
+Palgrave® and Macmillan® are registered trademarks in the United States,
+the United Kingdom, Europe and other countries.
+ISBN: 978–1–137–52575–8
+This book is printed on paper suitable for recycling and made from fully
+managed and sustained forest sources. Logging, pulping and manufacturing
+processes are expected to conform to the environmental regulations of the
+country of origin.
+A catalogue record for this book is available from the British Library.
+Library of congress cataloging-in-publication data
+Kindleberger, charles poor, 1910–2003.
+     Manias, panics and crashes : a history of financial crises / charles 
+p. Kindleberger, formerly ford professor of economics,massachusetts institute of 
+technology, usa, robert z. Aliber, professor of international economics and finance, 
+university of chicago graduate school of business, usa. – Seventh edition.
+      Pages cm
+     Revised edition of manias, panics, and crashes, 2011.
+    Isbn 978–1–137–52575–8
+     1. Financial crises. 2. Business cycles. 3. Depressions. I. Aliber, robert z. Ii. Title.
+Hb3722.K56 2015
+338.5942—Dc23 2015017424
+
+
+--- PAGE 5 ---
+CONTENTS
+List of Tables vi
+Foreword vii
+Robert M. Solow
+Introduction 1
+ 1  Financial Crises: a Hardy Perennial 5
+ 2  The Anatomy of a Typical Crisis 38
+ 3  Speculative Manias 53
+ 4  Fueling the Flames: the Expansion of Credit 78
+ 5  The Critical Stage – When the Bubble Is About To Pop 104
+ 6  Euphoria and Paper Wealth 132
+ 7  Bernie Madoff: Frauds, Swindles, and the Credit Cycle 143
+ 8  International Contagion 1618–1930 183
+ 9  Bubble Contagion: Mexico City to Tokyo to Bangkok to 
+New York, London, and Reykjavik 200
+10  Euromania and Eurocrash 224
+11  Policy Responses: Benign Neglect, Exhortation, and Bank Holidays 235
+12  The Domestic Lender of Last Resort 260
+13  The International Lender of Last Resort 279
+14  The Lehman Panic – An Avoidable Crash 313
+15  The Lessons of History 340
+Epilogue 369
+Notes 379
+Afterword 404
+Lord Robert Skidelsky
+Index 407
+
+--- PAGE 6 ---
+LIST OF TABLES
+ 6.1  World’s tallest buildings  133
+ 8.1  Reported failures in the crisis of 1847–48, 
+by cities (number of failures)  193
+13.1  Official finance commitments (last-resort lending) 
+($US billions) 307
+
+--- PAGE 7 ---
+FOREWORD
+Charlie Kindleberger (CPK from now on) was a delightful colleague: perceptive, 
+responsive, curious about everything, full of character, and, above all, lively. 
+Those same qualities are everywhere evident in Manias, Panics, and Crashes . 
+I think that CPK began to work on the book in the spirit of writing a natural 
+history, rather as Darwin must have done at the stage of the Beagle – collecting, 
+examining, and classifying interesting specimens. Manias, panics, and crashes 
+had the advantage over rodents, birds, and beetles that they were accompa-
+nied by the rhetoric of contemporaries, sometimes with insight, sometimes 
+just blather. It was CPK’s style as an economic historian to hunt for interesting 
+things to learn, not to pursue a systematic agenda.
+Obviously, then, he would have had a field day with the housing bubble, the 
+piling-up of risk, the financial panic of 2008, and the evaporation of perceived 
+wealth that followed it and led to the recession from which we are – at best – just 
+emerging. The whole story was ripe for CPK: it was big, it was international in 
+scope, and it implicated a whole zoo of new shadow-banking institutions, finan-
+cial derivatives, and financial practices. And, God knows, it produced a lot of 
+rhetoric before, during, and after.
+Of course, he was an economist by training and experience, and he soon 
+found patterns and regularities, and causes and effects. What caught his eye 
+especially were the irrationalities that seemed so often to enmesh those directly 
+or indirectly enmeshed in the events themselves. By itself that would have been 
+merely entertaining. The story got interesting for CPK with the interaction of 
+behavior and institutions. The occurrence of manias, panics, and crashes, and 
+their ultimate scope, also depended very much on the monetary and capital-
+market institutions of the time.
+CPK could not have known at the start just how hardy a perennial financial 
+crises would turn out to be. The quarter-century after the publication of the first 
+edition featured a whole new level of turbulence in national banking systems, 
+exchange-rate volatility, and asset-price bubbles. There was always new material 
+to be digested in successive editions. This history cannot have been merely the 
+result of increasing human irrationality, though CPK would have been charmed 
+by what a German friend of ours called ‘Das Gesetz der Verschlechtigung aller 
+
+--- PAGE 8 ---
+viii FOREWORD
+Dinge’ (the Law of the Deterioration of Everything). Increasing wealth, faster 
+and cheaper communication, and the evolution of national and international 
+financial systems also played an indispensable role, as sketched in Chapter 13, 
+added to later editions by Robert Aliber. CPK’s effort at economic history found 
+a subject that does not appear to be going out of style.
+The shape of a ‘new financial architecture’ and the possible utility of a 
+lender of last resort – national and/or international – along with the guidelines 
+that ought to govern it were also among CPK’s preoccupations. He would cer-
+tainly have been fascinated – and probably gratified – by the way the Federal 
+Reserve acted during the crisis not only as lender of last resort to the banking 
+system but almost as lender of last resort to the whole economy. He might have 
+felt much the same about the innovative responses to which his one-time stu-
+dent, Mario Draghi, led the European Central Bank. Those who are engaged in 
+reforming (or at least changing) the system would do well to ponder the lessons 
+that emerge from this book.
+One of those lessons is very general, and is most applicable in contexts 
+where irrationality may trump sober calculation. CPK was a skeptic by nature, 
+just the opposite of doctrinaire. He mistrusted iron-clad intellectual systems, 
+whether their proponents were free marketeers or social engineers. In fact, he 
+considered clinging to rigid beliefs in the face of disconcerting evidence to be 
+one of the more dangerous forms of irrationality, especially when it is prac-
+ticed by those in charge. The international economy would be a safer place if 
+CPK’s tolerant skepticism were more common among the powers that be. I am 
+thinking, in particular, about current discussions of the so-called ‘Washington 
+consensus’, and the pros and cons of both freely floating exchange rates and un-
+fettered capital markets.
+Any reader of this book will come away with the distinct notion that large 
+quantities of liquid capital sloshing around the world should raise the possibility 
+that they will overflow the container. One issue omitted in the book – because 
+it is well outside its scope – is the other side of the ledger: What are the social 
+benefits of free capital flow in its various forms, the analogue of gains from 
+trade? CPK, whose specialties as an economist included international trade, in-
+ternational finance, and economic development, would have been sensitive to 
+the need for some pragmatic balancing of risks and benefits. One can only hope 
+that the continued, up-to-date availability of this book will help to spread his 
+open-minded habit of thought.
+As he carries the seventh edition up to date, Aliber emphasizes the likeli-
+hood that the roughly concurrent credit bubbles in a number of different coun-
+tries are interrelated events, possibly responses to a common disturbance. It 
+seems implausible that the appearance of housing-based credit bubbles in the 
+
+--- PAGE 9 ---
+ixFOREWORD
+United States, the UK, Ireland, and Spain merely reflects independent rolls of 
+the dice. Aliber shows how these events are transmitted internationally through 
+current account imbalances in a world in which capital moves easily across 
+borders. The analytically and empirically validated causal connection made by 
+Aliber between fluctuations in cross-border investment flows and subsequent 
+banking crises in a world of floating exchange rates now amounts to a full-
+blown model. CPK, as a specialist in international economics, would probably 
+have cottoned on to this account.
+A more complicated question, also surfaced by Aliber, is whether there are 
+successive ‘waves’ of credit bubbles that are causally related. If this is so, it has 
+important implications for the design of future regulation, both domestically 
+and internationally. We are now well beyond natural history.
+It seems to me that the Aliber version preserves this basic Kindleberger ori-
+entation but imposes a little more order on CPK’s occasionally wayward path 
+through his specimen cabinets. More manias, panics, and crashes may plague 
+us, but readers of this book will at least have been inoculated.
+Robert M. Solow
+
+--- PAGE 10 ---
+INTRODUCTION TO THE  
+SEVENTH EDITION
+Robert Z. Aliber
+I
+t was my great good fortune to inherit Manias  from Charles Kindleberger 
+after he had brought out the first four editions. The first edition of Manias 
+was published in 1978, four years before the first major post-World War II 
+global banking crisis and more than forty years after the Great Depression of 
+the 1930s. Kindleberger had been discussing some the ideas about the causes of 
+these periodic banking crises in his classes at MIT for three or four years before 
+the first edition was published. The motivation may have been the surge in 
+loans from the major international banks to the governments and government-
+owned firms in Mexico, Brazil, Argentina, and ten other developing countries; 
+the external indebtedness of these countries was increasing by 20 percent a 
+year, perhaps three times the increases in their GDPs. These rates of growth 
+of indebtedness were too high to be sustainable. Kindleberger was focused on 
+the ‘end game’ and the adjustments that were likely when the lenders concluded 
+that they should slow the increase in their loans to these indebted borrowers. 
+The insight that led to Manias was the instability in financial markets during 
+the 1920s and the 1930s and the Great Depression. He was concerned that the 
+move to a floating currency arrangement after the US Treasury closed its gold 
+window after the historic Camp David weekend of August 1971 was likely to be 
+a source of financial instability.
+Kindleberger’s approach relied on contemporary and historic accounts of 
+the surges in the prices of securities and real estate and the subsequent crashes; 
+he quoted John Stuart Mill, Walter Bagehot, Alfred Marshall, and many others. 
+He grouped the remarks of these authors by the stages of the financial cycle – 
+first the increases in the prices of real estate and securities, then their observa-
+tions when prices peaked, and then in the debacle as prices crashed. The third 
+
+--- PAGE 11 ---
+MANIAS, PANICS, AND CRASHES2
+feature of his approach followed Hyman Minsky’s emphasis that changes in 
+the supplies of credit were pro-cyclical; increases in the supply prolonged the 
+expansion in the boom and decreases intensified the subsequent crash. Minsky 
+viewed banking crises in a domestic context, Kindleberger extended the per-
+spective to an international context; he noted that the failure of a bank in Ohio 
+led to shortages of credit in Hamburg and in Scandinavia.
+Each of the three editions of Manias after the first followed a wave of banking 
+crises, which often occurred together with a currency crisis when the prices of 
+the currencies of the indebted countries declined sharply and borrowers in these 
+countries defaulted on their foreign loans. The second edition was published in 
+1989, a few years after the governments of Mexico and ten other developing coun-
+tries defaulted on their US dollar loans. The prices of their currencies declined 
+sharply and many of the banks in these countries failed; the credit-worthiness of 
+several of the largest US banks was tested by their losses on their loans to the gov-
+ernments in these countries. Hundreds of US banks and thrift institutions failed 
+at the same time. The second wave of banking crises was in the early 1990s and 
+centered on Japan; the prices of securities and real estate declined sharply. Finland 
+and Sweden experienced financial crises at the same times; asset prices and prices 
+of their currencies declined, and banks failed. The fourth edition appeared in 
+2000, soon after the Asian Financial Crisis; once again was that the prices of the 
+currencies of the indebted countries declined and the banks failed.
+One of the self-imposed constraints as the fifth edition was being prepared 
+was not to change any substantial arguments that were in the fourth edition. 
+Boxes were introduced as contemporary examples of the themes in the sev-
+eral chapters. The boom in prices of stocks in the 1990s brought forth Enron, 
+MCIWorldCom, and numerous other firms when corporate management 
+was seduced by ready availability of cheap credit to adopt practices that were 
+obviously corrupt. When the credit supply increases at a rapid rate, the Bernie 
+Madoffs of the world flourish because they can rely on the investment inflows 
+for the cash to pay the interest on their outstanding indebtedness. But when the 
+credit supply begins to increase less rapidly , some of them tumble in to bank -
+ruptcy because they can no longer rely on the cash from new loans to pay the 
+interest on their indebtedness. The lenders forget that they should ask, ‘Where 
+will the borrowers get the cash to pay us the interest if we stop providing them 
+with the cash in the form of new loans?’
+Kindleberger was one of the few economists of his generation who was 
+skeptical of the case for floating currencies that had been advanced by Milton 
+Friedman, Gottfied Habeler, and other giants of the professions in the 1950s 
+and the 1960s. As the sixth edition was prepared for publication, the intuition 
+was that there was a systematic relationship between increases in cross-border 
+
+--- PAGE 12 ---
+INTRODUCTION 3
+investment inflows to a country and increases in the prices of its securities 
+and its currency. An extended box was introduced into the sixth edition about 
+Iceland’s experience between 2002 and 2008; a massive cross-border invest-
+ment inflow had led to a sharp increase in the price of the krona and a nine-
+fold increase in stock prices. The investment inflow led to a massive surge in 
+the domestic supply of credit that enabled households to splurge on their pur-
+chases of stocks. The Icelandic economy boomed; the country’s imports and its 
+trade deficit surged. After the supply of new foreign loans froze at the time of 
+the Lehman crisis in September 2008, the price of Icelandic stocks declined by 
+more than 90 percent and the price of the currency declined by 50 percent.
+Nearly every banking crisis in the last thirty years has been associated with 
+a decline in cross-border investment inflows that led to a decline in the price of 
+a country’s currency. Every country that experienced a banking crisis had previ-
+ously experienced an economic boom. These booms morphed into busts when 
+the investment inflows slowed.
+One theme of the seventh edition is that the extensive variability in the prices 
+of currencies, securities, and real estate that has been evident since the early 
+1970s has followed from the variability in cross-border investment inflows. An 
+increase in cross-border investment inflows leads to higher prices for securities 
+and currencies, and economic booms. Banking crises occurred when national 
+curr e n ci es  w e r e  an c h o r ed  t o  g o l d  in  th e  nin et ee n th  ce n tury .  Th ese  crises  ar e  
+both more frequent and more severe when currencies are not anchored to pari-
+ties because of the feedback from the increase in investment inflows to more 
+rapid increase in the prices of securities and to the economic booms. The dra-
+matic surge in US real estate prices after 2002 followed an increase in foreign 
+purchases of US dollar securities.
+This view that the source of banking crises are the surges in cross-border 
+investments challenges the dominant policy view that the banking crisis of 
+2008 followed from the wayward behavior of Countrywide Financial, Lehman 
+Brothers, Northern Rock, et al. The financial establishment – the central bank-
+ers and the regulators – have mistaken the symptoms of the crisis for the causes. 
+These firms create credit when they buy the IOUs of prime borrowers and sub-
+prime borrowers; they buy more mortgages when credit conditions are more 
+expansive. The surges in the credit supplies follow from increases in investment 
+inflows and from domestic monetary expansion.
+As this book goes to press in 2015, the dominant policy issue is when Greece 
+will leave the European Monetary Union. The global financial crisis that began 
+in 2008 and 2009 involved the United States, Britain, Spain, Ireland, Iceland, 
+Portugal, and Greece. Iceland recovered quickly. By the beginning of 2015, 
+each of these countries except Greece was growing at a rate between one or two 
+
+--- PAGE 13 ---
+MANIAS, PANICS, AND CRASHES4
+percent. In contrast, the unemployment rate in Greece was above 25 percent. 
+Five years of austerity in Athens had not led to a significant increase in the 
+international competitiveness of the Greek economy.
+One advantage of a floating currency arrangement is that the decline in 
+the price of a country’s currency may facilitate a more rapid recovery from a 
+financial crisis, much as in Iceland, since the demand for domestic goods and 
+services increases as the country becomes more competitive. The Irish economy 
+recovered relatively quickly from its banking crisis even though Ireland lacked 
+its own currency; costs and prices in Ireland were more flexible downward than 
+they have been in Greece.
+One dominant feature of a flexible exchange rate arrangement is that the 
+differentials in interest rates on similar securities denominated in various cur-
+rencies will change by larger amounts than when countries are committed to 
+retaining parities. The changes in interest rates in each country are motivated 
+primarily by the intent of the central bank to manage monetary policy to achieve 
+its domestic price level and employment targets. The changes in the differen-
+tials between the interest rates in one country and those in its trading partners 
+have led to much larger cross-border investment inflows. These inflows lead to 
+increases in indebtedness of those borrowers that are willing to pay the higher 
+interest rates. In Ireland and Spain, these borrowers were involved in real estate 
+while the government was the dominant borrower in Greece. When the inflows 
+to Ireland and Spain slowed, real estate prices declined sharply, and many of the 
+lenders to the buyers of real estate failed. When the inflows to Greece slowed, 
+the government was unable to make both its payments for the purchases of 
+domestic goods and services, and its debt service payments to its foreign credi-
+tors. The financial crisis in Athens was prolonged because the governments in 
+Northern European countries continued to provide credit to the government of 
+Greece because they wanted to avoid the political consequences of the country’s 
+exit from the European Monetary Union.
+The story of the nineteenth century is that banking crises occur when 
+countries have anchored their currencies to gold. The story of the decades since 
+the move to a floating currency arrangement is that banking crises are more 
+severe and more frequent than when currencies are not anchored to parities. 
+The variability of cross-border investment inflows is much larger when central 
+banks are not constrained by the need to anchor their currencies to parities, 
+since the differentials in interest rates and the changes in these differentials are 
+much larger. These inflows induce economic booms as an integral part of the 
+adjustment process; eventually one or several of the lenders recognize that the 
+borrowers’ indebtedness is too large or has been increasing too rapidly, and the 
+slowdown in the inflows triggers the crises.
+
+--- PAGE 14 ---
+1
+FINANCIAL CRISES: A HARDY  
+PERENNIAL
+T
+he years since the early 1970s are unprecedented in terms of the large changes 
+in the day-to-day and month-to-month prices of commodities, currencies, 
+bonds, stocks, and real estate relative to their long-run average prices. There 
+have been four waves of banking crises; a large number of lenders in three, four, 
+or more countries collapsed at about the same time as the prices of real estate 
+and securities in these countries and the prices of their currencies fell sharply. 
+Each country that experienced a banking crisis also had a recession as house-
+hold wealth declined in response to the sharp fall in the prices of securities and 
+real estate, and as the banks became much more reluctant suppliers of credit as 
+their own capital was depleted. The Great Recession that began in 2008 was the 
+most severe and the most global since the Great Depression of the 1930s.
+The first wave of banking crises was in the early 1980s when Mexico, Brazil, 
+Argentina, and ten other developing countries defaulted on their $800 billion 
+of US-dollar-denominated indebtedness. The second wave occurred in the 
+early 1990s and engulfed Japan and two of the Nordic countries – Finland and 
+Sweden; Norway had had a similar crisis a few years earlier. The Asian Financial 
+Crisis that began in mid-1997 was the third wave; initially Thailand, Malaysia, 
+and Indonesia were involved and subsequently South Korea, Russia, Brazil, and 
+Argentina were impacted. The banking crisis that impacted Mexico during its 
+presidential transition at the end of 1994 was the forerunner for the crisis in 
+Southeast Asia thirty months later, because the preconditions in the months 
+prior to these crises were so similar. The fourth wave began in September 2008 
+with the failure of Fannie Mae and Freddie Mac, the two large US-government-
+sponsored mortgage lenders and the collapse of Lehman Brothers a few days 
+
+--- PAGE 15 ---
+MANIAS, PANICS, AND CRASHES6
+later; the debacle of these lenders were responses to the sharp decline in the 
+price of US real estate that had started at the beginning of 2007. Britain, Spain, 
+Ireland, and Iceland also were involved in the fourth wave; a year later the prices 
+of the bonds of the Greek and the Portuguese governments fell sharply.
+Each of these waves of banking crises was preceded by surges in cross-bor-
+der investment inflows, which led to increases in the prices of currencies and 
+increases in the prices of securities and real estate in the countries that expe-
+rienced these inflows. Thus the external indebtedness of these countries had 
+increased for two, three, or more years prior to their crises. Moreover the domes-
+tic indebtedness of a group of borrowers also had increased at paces that often 
+were two or three times higher than the interest rate. Usually these borrowers 
+used the money to buy real estate – homes and commercial properties. However, 
+the first wave of surges in cross-border indebtedness involved the rapid growth 
+in the US dollar indebtedness of governments and government-owned firms in 
+Mexico and other developing countries throughout most of the 1970s; the major 
+international banks purchased the IOUs of these borrowers. Japan was the key 
+country in the second wave of banking crises that began in the early 1990s, real 
+estate prices and stock prices had increased by a factor of five to six in the second 
+half of the 1980s. At about the same time the prices of both securities and real 
+estate surged in Finland, Norway, and Sweden. The third wave of surges in cross-
+border indebtedness that began in the early 1990s involved Mexico and several 
+other countries in Latin America, and Thailand and its neighbors in Southeast 
+Asia. Real estate prices in the United States, Britain, Spain, Ireland, and Iceland 
+began to increase sharply from about 2003 until the end of 2006.
+The banks headquartered in Reykjavik were primarily involved in cross-
+border investment inflows to Iceland as a way to increase the amounts they 
+could lend to Icelandic households and businesses, including many that they 
+owned. Banks headquartered in Stockholm and Bangkok also sold their IOUs 
+in foreign centers to obtain the funds that they could use to increase their 
+domestic loans, because the apparent cost was below the cost of selling their 
+IOUs in their domestic markets. The domestic counterpart of the increase in 
+cross-border investment inflows to these countries – and the increase in the 
+net external debtor position of these countries – was that the indebtedness of a 
+group of domestic borrowers surged. Thus banks headquartered in many coun-
+tries sold their own IOUs in a foreign banking center so they could increase 
+their domestic loans; in some cases the loans to these domestic borrowers were 
+denominated in a foreign currency and the borrowers incurred the currency 
+exposure.
+The indebtedness of these domestic borrowers increased at rates that were 
+too rapid to be sustained; similarly the external indebtedness of these countries 
+
+--- PAGE 16 ---
+FINANCIAL CRISES 7
+increased at rates that were too rapid to be sustained. Eventually one or several 
+of the lenders became more cautious because the borrowers’ indebtedness was 
+increasing too rapidly relative to their incomes. When the indebtedness of a 
+group of borrowers increases by 20 to 30 percent a year, the borrowers have an 
+impeccable record for paying the scheduled interest in a timely way. Eventually 
+their ability to increase their indebtedness slows, and the ‘day of reckoning’ 
+occurs when one or several no longer have enough money from new loans to 
+pay the interest on outstanding loans. Then the prices of real estate and of stocks 
+decline. Moreover when the rate of growth of indebtedness slows, the prices of 
+currencies decline and often very sharply.
+When real estate prices decline, households are the first group to incur 
+losses, since the market value of their homes – the most significant asset that 
+most households own – declines. Some households default on their mortgage 
+indebtedness, and the losses then revert to banks and other lenders. If these 
+lenders fail, the losses then fall on their depositors and other creditors to the 
+lenders unless the government intervenes to protect them from loss. When real 
+estate and stock prices declined in Japan in the early 1990s, a large number of 
+banks and other financial institutions failed. The fall in real estate and stock 
+prices in Thailand in mid-1997 triggered declines in the prices of currencies 
+and the prices of securities throughout Southeast Asia; recessions followed. 
+However, there were no significant failures of US financial firms when US stock 
+prices declined by 40 percent between 2001 and 2003, and the ensuing recession 
+was brief and shallow.
+That the range of movement in the prices of national currencies since the 
+early 1970s has been much larger than in earlier periods when currencies were 
+not anchored to parities is not a surprise. The major surprise has been that the 
+deviations between the market prices of currencies and the long-run equilib-
+rium or average prices of these currencies has been much larger than when the 
+currencies were anchored to parities. The transition from the Bretton Woods 
+arrangement of adjustable parities for national currencies to one of floating 
+exchange rates began in August 1971 when the United States abandoned the 
+gold parity of $35 an ounce that had been established in 1934. The effort to 
+retain a modified version of the adjustable parity arrangement that was formal-
+ized in the Smithsonian Agreement of 1972 failed early in 1973 and a floating 
+currency arrangement was adopted by default. At the beginning of the 1970s, 
+the dominant view was that the prices of the German mark and the Japanese 
+yen might increase by 10 to 12 percent because the inflation rates in both coun-
+tries had been below the US rate in the previous few years.
+Another surprise is that the prices of both the German mark and the 
+Japanese yen increased much more rapidly than anticipated through most of the 
+
+--- PAGE 17 ---
+MANIAS, PANICS, AND CRASHES8
+1970s; then the prices of both currencies declined sharply in the first half of the 
+1980s, although not to the levels of the early 1970s. The prices of the Mexican 
+peso, the Brazilian cruzeiro, the Argentinean peso, and of the currencies of 
+many other developing countries declined by 30 to 40 percent or more in the 
+early 1980s. The prices of the Finnish markka, the Swedish krona, the British 
+pound, the Italian lira, and the Spanish peseta declined by more than a third in 
+the last six months of 1992. The price of the Mexican peso declined by nearly 50 
+percent during the country’s presidential transition at the end of 1994. Similarly 
+the prices of most of the Asian currencies – the Thai baht, the Malaysian ring-
+git, the Indonesian rupiah, and the South Korean won – declined sharply during 
+the Asian Financial Crisis in the summer and autumn of 1997. The price of the 
+euro, the new currency that eleven members of the European Union adopted at 
+the beginning of 1999, soon declined by 30 percent, and then increased by 50 
+percent beginning in 2002. The price of the Argentinean peso declined by more 
+than two-thirds in the first few months of 2001. The price of the Icelandic krona 
+fell by 50 percent in the last few months of 2008.
+These changes in the prices of individual currencies were much larger than 
+those that were suggested by the differences between the inflation rate in a 
+country and the inflation rates in its major trading partners. The ‘overshoot-
+ing’ and ‘undershooting’ of national currencies were much larger than in any 
+previous period.
+Moreover the changes in the market prices of commodities, securities, 
+stocks, and real estate relative to their long-run average prices also have been 
+much greater than in earlier periods. The increases in commodity prices in 
+the 1970s were spectacular. The US dollar price of gold increased from $40 an 
+ounce at the beginning of the 1970s to nearly $1000 ten years later; the price 
+was $450 at the end of the 1980s and $283 at the end of the 1990s. The price 
+reached nearly $2000 in the autumn of 2012. The price of oil was $2.50 a barrel 
+at the beginning of the 1970s and $40 at the end of that decade; in the mid-
+1980s the oil price was $12 and then in 1980 the price increased to $40 after the 
+Iraqi invasion of Kuwait. The oil price reached nearly $150 in the early summer 
+of 2008, and then declined below $50 and then increased to the range of $80 
+to $110.
+The number of bank failures during the 1980s and the 1990s was much 
+larger than in earlier decades. Several of these failures were isolated events: 
+both Franklin National Bank in New Y ork City and Herstatt A G in Cologne, 
+Germany, had made large bets on the changes in prices of currencies in the 
+early 1970s that they subsequently lost. Crédit Lyonnais, once the largest bank 
+in France and a government-owned firm, rapidly increased its loans in the effort 
+to become a first-tier international bank and its bad loans eventually cost the 
+
+--- PAGE 18 ---
+FINANCIAL CRISES 9
+French taxpayers the equivalent of more than $30 billion. However, the fail-
+ures of most banks and other financial firms resulted from systemic shocks 
+that led to dramatic changes in the financial environment. Three thousand US 
+savings and loan associations and other thrift institutions failed in the 1980s, 
+with losses to the American taxpayers of more than $100 billion; initially they 
+failed because of a surge in short-term interest rates relative to long-term inter-
+est rates. Hundreds of banks in the oil-producing and grain-producing states 
+failed when the anticipation that the US inflation rate would continue to accel-
+erate was shattered.
+Most of the banks in Japan failed in the early 1990s when the prices of 
+Japanese real estate and stocks declined; their losses incurred were several times 
+larger than their capital and virtually all these firms became wards of the gov-
+ernment because there was an implicit guarantee that depositors would not lose 
+money. Similarly, when the prices of the Mexican peso and the currencies of 
+the other developing countries declined sharply in the early 1980s, most of the 
+banks in these countries went under because of the combination of the large 
+loan losses by their domestic borrowers who had liabilities denominated in the 
+US dollar in part due to the massive revaluation losses they had incurred when 
+the prices of their own currencies declined. Similarly, many of the banks in 
+Finland, Norway, and Sweden went bankrupt when the prices in their real estate 
+and stock markets declined sharply in the first half of the 1990s, after very large 
+increases in the previous four and five years. Most of the Mexican banks failed 
+at the end of 1994 when the price of the Mexican peso fell by 50 percent. In 
+the same way most of the banks in Thailand, Malaysia, and South Korea, and 
+several of the other Asian countries – except for Hong Kong and Singapore – 
+failed after the mid-1997 Asian Financial Crisis. The sharp declines in prices 
+of residential real estate in the United States, Britain, Ireland, and several other 
+countries that began toward the end of 2006 led to massive government invest-
+ments in the banks so they could remain open and their depositors would not 
+incur losses. In 2008 most of the top US investment banks were wiped out or 
+forced to seek a stronger merger partner. The British government ‘nationalized’ 
+Northern Rock, the largest mortgage lender in the country in September 2007, 
+and became the dominant shareholder in the Royal Bank of Scotland as it pro-
+vided massive amounts of new capital to the bank. The Irish government made 
+extensive investments in the six largest banks in the country in the effort to 
+keep them from closing. The three large banks in Iceland were taken over by the 
+government. Countrywide Financial, the largest mortgage lender in the United 
+States, was acquired by Bank of America, which subsequently acquired Merrill 
+Lynch, one of the largest US investment banks – but then Bank of America 
+required a large injection of capital from the US Treasury to remain in business. 
+
+--- PAGE 19 ---
+MANIAS, PANICS, AND CRASHES10
+The US government made a massive investment in Citibank. The Dutch govern-
+ment provided extensive capital to ING, the insurance–banking conglomerate.
+These banking crises resulted from the sharp declines in the prices of real 
+estate and securities and from the sharp declines in the prices of currencies. The 
+costs of these crises were extremely high in terms of several metrics – the losses 
+incurred by the banks as a ratio of a country’s GDP and as a share of govern-
+ment spending, the slowdowns in the rates of economic growth, the increases in 
+unemployment and in the output gaps in each country.
+The massive number of bank failures, the large changes in the prices of 
+currencies and sharp variability in the prices of securities were systematically 
+related and resulted from rapid changes in the global economic environment. 
+The 1970s was a decade of accelerating inflation, the largest-ever sustained 
+increase in the US price level in peace-time. The US dollar price of gold surged 
+because some investor bought the precious metal on the basis of the cliché that 
+‘gold is a good inflation hedge’; however the increase in the gold price was many 
+times larger than the contemporary increase in the US and world price levels. 
+Toward the end of the 1970s investors purchased gold because its price was 
+increasing – and its price was increasing because investors were buying more 
+of this commodity.
+The prevailing view in the late 1970s was that the US and world inflation 
+rates would accelerate. Some analysts predicted that the gold price would reach 
+$2500 an ounce.
+The range of movement in bond prices and stock prices in the 1970s was 
+much greater than in the several previous decades. In the 1970s the real rates 
+o f  r e turn  o n  b o th  U S  d o ll ar  b o n d s  an d  U S  s t o c ks  w e r e  n e g a ti v e  b e c a u s e  th e  
+prices of both types of securities declined at a time when the goods price level 
+increased.
+The foreign indebtedness of Mexico, Brazil, Argentina, and other develop-
+ing countries as a group increased from $125 billion in 1972 to $800 billion in 
+1982. The President of Citibank said ‘countries don’t go bankrupt’. The bor-
+rowers in these countries had a stellar record for paying the interest on their 
+loans on a timely basis. Then in late October 1979 the Federal Reserve adopted 
+a sharply contractive monetary policy; interest rates on US dollar securities 
+surged. The US dollar price of gold peaked in January 1980 and then began to 
+decline as inflationary anticipations were reversed. The price of the US dollar 
+surged and continued to increase for five years. The sharp increase in inter-
+est rates on US dollar securities meant that the borrowers in Mexico and other 
+developing countries defaulted on their indebtedness denominated in the US 
+dollar, because their interest payments surged and they could no longer rely on 
+money from new loans to pay the interest on their outstanding loans. Moreover, 
+
+--- PAGE 20 ---
+FINANCIAL CRISES 11
+the real rates of return on US dollar bonds and US stocks averaged more than 15 
+percent a year in the 1980s and the 1990s as the annual inflation rates declined 
+and the prices of these securities surged.
+The increase in real estate prices and stock prices in Japan in the 1980s of 
+several hundred percent was associated with a boom in the economy; Japan 
+as Number One: Lessons for America
+1 was a bestseller in Tokyo. The Japanese 
+banks increased their deposits and their loans and their capital much more rap-
+idly than banks headquartered in the United States and in Germany and in other 
+European countries. The Japanese banks owned both real estate and stocks, and 
+as the prices of both types of securities increased, bank capital soared. Seven or 
+eight of the ten largest banks in the world were headquartered in Tokyo or in 
+Osaka. Then at the beginning of the 1990s real estate prices and stock prices 
+in Japan crashed. Within a few years many of the leading Japanese banks and 
+financial institutions were broke, kaput, bankrupt, and insolvent, and remained 
+in business because of an implicit government guarantee. A striking story of a 
+mania and a crash – but without a panic, because depositors believed that bank 
+loan losses would be socialized and borne by the taxpayers.
+The financial market developments in Finland, Norway, and Sweden fol-
+lowed those in Japan, although they were less dramatic. The prices of real estate 
+and stocks increased in the late 1980s as cross-border investment inflows to 
+each country accelerated and then Finland and Sweden experienced banking 
+crises about the same time as the one in Japan.
+Mexico had been one of the great economic success stories of the early 
+1990s as it prepared to enter the North American Free Trade Agreement. The 
+Bank of Mexico had adopted a tough contractive monetary policy that led to a 
+reduction in the country’s annual inflation rate from 140 percent to less than 
+10 percent in four years, a truly remarkable achievement, much more impressive 
+than the reduction in the US inflation rate ten years earlier. During the same 
+period several hundred government-owned firms were privatized and business 
+regulations were liberalized. Cross-border investment flows to Mexico acceler-
+ated beca use the real rates of return on governmen t securities w ere high and 
+because the prospective profit rates on industrial investments also were high. 
+Investors anticipated that Mexico would become the low-cost base for produc-
+ing automobiles and washing machines and many other manufactured goods 
+for the US and Canadian markets. The price of the Mexican peso increased 
+in real terms in response to the cross-border investment inflows, and Mexico’s 
+trade deficit climbed to 7 percent of its GDP and its external debt to 60 percent 
+of its GDP.
+Then several political incidents associated with the presidential election 
+in 1994 led to a sharp decline in investment inflows; for many months the 
+
+--- PAGE 21 ---
+MANIAS, PANICS, AND CRASHES12
+government of Mexico supported the price of the peso in the currency market, 
+and then as its ability to support the peso became exhausted, the price of the 
+peso declined sharply. Once again the decline in the price of the peso resulted 
+in large losses for Mexican borrowers with US dollar liabilities, and most of 
+the Mexican banks – which had been privatized in the previous several years 
+– failed.
+Real estate prices and stock prices surged in Thailand, Malaysia, and 
+Indonesia in the first half of the 1990s; these were the ‘dragon economies’ that 
+seemed likely to emulate the earlier economic success of the ‘Asian tigers’ – 
+Taiwan, South Korea, Hong Kong, and Singapore. Firms based in Japan, Europe, 
+and the United States invested in these countries as low-cost sources of supply, 
+much as US and foreign firms had invested in Mexico as a low-cost source of 
+supply for the North American market. European and Japanese banks rapidly 
+increased their loans to firms and banks in these countries. Then in the autumn 
+and winter of 1996, domestic lenders in Thailand experienced large losses on 
+their domestic loans because they had not been sufficiently discriminating in 
+their evaluations of the willingness of Thai borrowers to pay the interest on 
+their credit card indebtedness. Foreign lenders sharply reduced their purchases 
+of Thai securities, and then the Bank of Thailand, much like the Bank of Mexico 
+thirty months earlier, did not have the money to support the baht in the cur-
+rency market. The sharp decline in the price of the baht in early July 1997 led to 
+investment outflows from other Asian countries and the prices of their curren-
+cies (except for the Hong Kong dollar and the Chinese yuan, which remained 
+rigidly pegged to the US dollar) declined by more than 30 percent. The price of 
+the Indonesian rupiah declined by more than 80 percent. Most of the banks in 
+the region – except for those in Hong Kong and Singapore – would have been 
+bankrupt in any reasonable ‘mark-to-market’ test.
+The crisis spread to Russia, there was a debacle in the ruble, and the coun-
+try’s banking system collapsed in the summer of 1998. Investors then became 
+more cautious and they sold risky securities denominated in various foreign 
+currencies and bought safer US government securities. The changes in the rela-
+tionship between the interest rates on these two groups of securities led to the 
+collapse of Long-Term Capital Management, then the largest US hedge fund.
+The 1990s surge in NASDAQ stocks
+Stocks in the United States are traded on the over-the-counter market and on one 
+of the organized stock exchanges, primarily the New York Stock Exchange. The 
+typical pattern was that shares of young firms initially would be traded on the over-
+the-counter market and then most of these firms would incur the costs associated 
+with listing their shares for trading on the New York Stock Exchange because they 
+
+--- PAGE 22 ---
+FINANCIAL CRISES 13
+believed that the market for their stocks would become broader and lead to higher 
+prices for their stocks. Some very successful new firms associated with the infor-
+mation technology revolution of the 1990s – Microsoft, Cisco, Dell, Intel – were 
+exceptions to this pattern; they chose not to list their shares on the New York Stock 
+Exchange because they believed that trading stocks electronically in the over-the-
+counter market was superior to trading stocks by the open-outcry method used on 
+the New York Stock Exchange.
+In 1990 the market value of stocks traded on the NASDAQ was 11 percent of that 
+of the New York Stock Exchange; the comparable figures for 1995 and 2000 were 
+19 percent and 42 percent. The annual average percentage rate of increase in the 
+market value of NASDAQ stocks was 30 percent during the first half of the decade 
+and 46 percent during the next four years. Several of the newer firms traded on 
+the NASDAQ would eventually became as successful as Microsoft and Intel and 
+higher prices for their stocks were warranted. The likelihood that all of the firms 
+whose stocks were traded on the NASDAQ would be as successful as Microsoft was 
+extremely small, since it implied that the profit share of US GDP would be two to 
+three times higher than it ever had been previously.
+The sharp increase in US stock prices in the second half of the 1990s was 
+associated with a remarkable US economic boom; the unemployment rate 
+declined sharply, the inflation rate declined, and the rate of economic growth 
+and productivity both accelerated. The US government developed its largest-
+ever fiscal surplus in 2000 after having had its largest-ever fiscal deficit in 1990. 
+The remarkable performance of the economy contributed to the surge in US 
+stock prices that in turn led to the increase in investment spending and con-
+sumption spending, and an increase in the US growth rate.
+US stock prices began to decline in the spring of 2000 and fell by 40 per-
+cent in the next three years while the prices of NASDAQ stocks declined by 
+80 percent.
+US real estate prices began to increase at an above-average rate in 2002. Real 
+estate prices increase in the long run, in part because of the increase in the gen-
+eral price level and in part because of the increase in nominal GDP. (Much of the 
+increase in real estate prices reflects increases in the price of land.) The Federal 
+Reserve maintained low interest rates because the US economy seemed slug-
+gish, and house prices increased three times as rapidly as the general price level. 
+Much of the increase in home prices occurred in sixteen states that account for 
+50 percent of US GDP. The sharp increase in property prices led to a construc-
+tion boom, and housing starts reached two million units a year – about 500,000 
+more units than the number required to satisfy the growth in population and 
+the losses due to fires, storms, the widening of highways and similar factors. 
+Part of the increase in demand was from investors who sought profits from the 
+
+--- PAGE 23 ---
+MANIAS, PANICS, AND CRASHES14
+continued increases in real estate prices; the rate of increase was much higher 
+than the interest rate.
+The sharp decline in the price of residential real estate and the debacle in 
+the prices of mortgage-related securities after 2007 has led to many US-centric 
+books that explain the surge in prices in terms of the failure of regulation or the 
+greed of the bankers or the vagaries of new financial instruments.
+In part the large number of crashes in national financial markets in the last 
+thirty years reflects that there are more independent countries, each with its 
+own central bank. Nevertheless despite the lack of perfect comparability across 
+periods, the conclusion is unmistakable that banking crises have been more 
+extensive and pervasive.
+One of the themes of this book is that the surges in the prices of real estate 
+and stocks that often occur in several different countries at the same time have 
+similar causes. Thus the sharp increase in the external indebtedness of develop-
+ing countries in the 1970s occurred because the major international banks rap-
+idly increased their loans to borrowers in these countries; these banks believed 
+that commodity prices would continue to increase and that the growth rates 
+in these countries would remain high and the revenues of their governments 
+also would continue to increase. The likelihood that the sharp increases in 
+real estate prices in the United States, Britain, Ireland, Iceland, Spain, South 
+Africa, and several other countries that began in about 2002 and the subsequent 
+crashes were independent events seems low; increases in real estate prices in 
+each of these countries followed from rapid increases in cross-border invest-
+ment inflows and the domestic supply of credit in both. There were unique idi-
+osyncratic aspects in these different national markets; the market in subprime 
+mortgages seems uniquely American. The rapid growth in the supply of credit 
+led to a sharp increase in the demand for mortgage loans, which was greater 
+than the supply of prime loans and the mortgage brokers ginned up a large 
+increase in the supply of subprime mortgages.
+A second theme is that the likelihood that the four waves of banking crises 
+over a thirty-year period were unrelated events is low. The banking crisis in 
+each country was preceded by a surge in the supply of credit. Several of these 
+banking crises laid the basis for the subsequent surge in the supply of credit to 
+borrowers in a different group of countries. The financial crises in the develop-
+ing countries in the early 1980s had a knock-on effect that contributed to the 
+three-fold plus increases in the prices of real estate and of stocks in Japan in the 
+second half of the 1980s. The banking crisis in Tokyo in the early 1990s led to 
+an increase in cross-border investment inflows to Thailand and Malaysia and 
+Indonesia, which led to the increases in the prices of real estate and of securities 
+in these countries and to higher prices of their currencies in real terms. When 
+
+--- PAGE 24 ---
+FINANCIAL CRISES 15
+Thailand and its neighbors experienced their banking crises, investment flows 
+to the United States expanded rapidly as the borrowers in these countries repaid 
+loans; the price of the US dollar increased and the US trade deficit increased by 
+$150 billion.
+The cross-border investment inflows led to ever-higher prices for securities, 
+as if the money from the sale of securities to foreigners was the proverbial ‘hot 
+potato’ that was rapidly passed from one group of investors to others at ever-
+increasing prices. Moreover the price of the country’s currency moved upward 
+unless the authorities intervened to limit such increases – and even then the 
+price of the currency often increased in real terms, that is after adjusting for the 
+difference between the inflation rate in the country and the comparable rates in 
+its trading partners.
+The third theme centers on the source of credit, and the relation between 
+the monetary authorities – the central bank in each country – and the banks 
+and other private sector lenders. The policy response after every banking crisis 
+is to apply additional regulations to the firms like Lehman and Countrywide 
+and Northern Rock, as if they had been the villains of the crisis rather than the 
+victims. Lehman et al. primarily are the channels for the distribution of credit; 
+while they create credit when they buy more loans, they purchase more loans 
+only if the monetary environment is expansive.
+MANIAS AND CREDIT AND BOOKS
+The production of books on financial crises is counter-cyclical. A spate of books 
+on the topic appeared in the 1930s following the US stock market bubble in the late 
+1920s and the subsequent crash and the Great Depression. Relatively few books on 
+crises appeared during the several decades immediately after World War II.
+The first edition of this book was published in 1978, after US stock prices 
+had declined by 50 percent in 1973 and 1974 following a fifteen-year bull mar-
+ket when there was a three-fold increase in stock prices.. The sharp decline in 
+stock prices and the US recession led to the bankruptcies of the Penn-Central 
+railroad, several of the large steel companies and a large number of Wall Street 
+brokerage firms. New York City was on the verge of default on its outstanding 
+bonds and was saved from insolvency by the State of New York. Not quite a 
+crash, unless you were a senior official or a stockholder in one of the firms that 
+failed or the Mayor of New York City.
+The sixth edition was published after the sharp decline in the price of US 
+real estate and the failure of the investment banks and more than 400 com-
+mercial banks and the implosion of the dot.com bubble in US stocks in the late 
+1 9 9 0 s .  B a n k s  f a i l e d  a t  a b o u t  t h e  s a m e  t i m e  i n  B r i t a i n ,  I r e l a n d ,  I c e l a n d ,  a n d  
+
+--- PAGE 25 ---
+MANIAS, PANICS, AND CRASHES16
+Spain. The seventh edition was prepared as the global economy was recovering 
+from the Great Recession of 2008 and as the European Monetary Union was 
+struggling because of a continuing banking crisis during a period of sluggish 
+economic growth. Moreover, China appeared on the verge of financial melt-
+down after thirty years of brilliant economic achievements
+Each of these surges in the supply of credit has been global, in that four, five, 
+or more countries have been involved. Moreover, the surges in the credit supply 
+appear to be becoming larger, judged by the absolute value of the increase in 
+household wealth.
+Books on the 2008 financial crisis
+The collapse of US investment banks and commercial banks in 2007 and 2008 and 
+2009 has led to a large number of books on the banking crisis from three differ-
+ent groups of authors. Many are by journalists, including Gillian Tett, who wrote 
+Fool’s Gold: How Unrestrained Greed Corrupted a Dream, Shattered Global Markets, 
+and Unleashed a Catastrophe . Andrew Ross Sorkin brought out Too Big to Fail: The 
+Inside Story of How Wall Street and Washington Fought to Save the Financial System 
+– and Themselves . Roger Lowenstein authored The End of Wall Street , Justin Fox 
+wrote The Myth of the Rational Market: A History of Risk, Reward, and Delusion on 
+Wall Street, and Scott Patterson produced The Quants; How a New Breed of Math 
+Whizzes Conquered Wall Street and Nearly Destroyed It. The theme of market irra-
+tionality is also explored in John Cassidy’s How Markets Fail; The Logic of Economic 
+Calamities. Michael Lewis’s The Big Short: Inside the Doomsday Machine  focused 
+on a few individuals who early on realized that there was a bubble in the housing 
+market, and that exceptional profits could be achieved from short-selling mortgage-
+related securities. Then there was Suzanne McGee’s Chasing Goldman Sachs: How 
+the Masters of the Universe Melted Wall Street Down ... And Why They Will Take Us 
+to the Brink Again and The Meltdown Years: The Unfolding of the Global  Economic 
+Crisis by Wolfgang Munchau, Charles R. Morris’s The Trillion Dollar Meltdown: 
+Easy Money , High Rollers, and the Great Credit Crash , James Grant’s Mr Market 
+Miscalculates: The Bubble Years and Beyond , Charles Gasparino’s The Sellout: How 
+Three Decades of Wall Street Greed and Government Mismanagement Destroyed 
+the Global Financial System , Barry Rithholtz’s Bailout Nation: How Greed and Easy 
+Money Corrupted Wall Street and Shook the World Economy , and Meltdown: How 
+Greed and Corruption Shattered Our Financial System and How We Can Recover by 
+Katrina vanden Heuvel and the Editors of The Nation.
+Some of the books are by academics. One of the first was Richard Posner’s The 
+Failure of Capitalism. Robert J. Shiller produced The Subprime Solution  and George 
+A. Akerlof together with Shiller wrote Animal Spirits ; some of the chapters in this 
+book focus on the 2008 crisis. Simon Johnson and James Kwak authored 13 Bankers: 
+The Wall Street Takeover and the Next Financial Meltdown. Raghuram G. Rajan wrote 
+Fault Lines: How Hidden Fractures Still Threaten the World Economy, Joseph Stiglitz 
+
+--- PAGE 26 ---
+FINANCIAL CRISES 17
+produced Freefall: America, Free Markets, and the Sinking of the World Economy and 
+Nassim Nicholas Taleb brought out The Theory of Black Swan Events, a critique of the 
+prevailing consensus in academic finance about market efficiency. Thomas Sowell’s 
+contribution was The Housing Boom and Bust, while a group of fifteen distinguished 
+economists brought out The Squam Lake Report: Fixing the Financial System , with 
+more than thirty recommendations for changes in regulations. Amar Bhide wrote A 
+Call for Judgment, which integrates modern finance and classical economics, while 
+Nouriel Roubini and Stephen Mihm brought out Crisis Economics: A Crash Course 
+in the Future of Finance.
+A third group of books are by ‘insiders’, individuals who had formerly been with 
+a banking firm or with a government. One group of insiders had been with banking 
+firms. Lawrence McDonald wrote A Colossal Failure of Common  Sense: the Inside 
+Story of the Collapse of Lehman Brothers , his former employer. William D. Cohan, 
+a former banker turned journalist, brought out House of Cards: A Tale of Hubris 
+a n d  W r e t c h e d  E x c e s s  o n  W a l l  S t r e e t, while Alex Pollock, another former banker, 
+published Boom and Bust: Financial Cycles and Human Prosperity . George Cooper, 
+a financial analyst, wrote The Origin of Financial Crises .
+Most of these books are US-centric and ignore or minimize the increases and 
+crashes in the property markets in other countries. However, there have been three 
+books on the crisis in Iceland – Meltdown Iceland: Lessons on the World Financial 
+Crisis from a  Small Bankrupt Island , by Roger Boyes, a British journalist, Why 
+Iceland? by Asgeir Jonsson, a former senior banker with Kaupthing, one of the fallen 
+firms, and Frozen Assets: How I Lived Iceland’s  Boom and Bust , by Eftir Armann 
+Thorvaldsson, a former UK head of the same bank. Moreover the government 
+of Iceland that came to power after the collapse established an Icelandic Special 
+Investigation Commission which produced Causes of the Collapse  of the Icelandic 
+Banks – Responsibilty, Mistakes, and Negligence ; the authors were Pali Hreinsson, 
+Tryggvie Gunnarsson, and Sigridur Benediktsdottir.
+The US Congress established a bi-partisan, ten-member Financial Crisis Inquiry 
+Commission, which held extensive hearings and interviewed witnesses from 
+the leading financial firms. Both former Chairman Alan Greenspan and former 
+Secretary of the Treasury Robert Rubin testified before the commission. The FCIC’s 
+report was published in December 2010 (and is available at www.fcic.gov/report).
+The titles and subtitles of these books express common themes – greed, the 
+malfunctioning of markets, the corruption of Wall Street and the capture of 
+Washington and the regulators by the bankers. And more greed.
+The shortcoming of most of these books is that they give no explanation for why the 
+crisis occurred when it did, nor do they have an explanation for why some countries 
+were involved but not others. Were the problems in Iceland a spinoff from the United 
+States, or were the problems of the largest and the smallest affected countries a result 
+of a common factor? Was there a sharp increase in greed of the bankers soon after the 
+beginning of the new millennium, or was the greed always there and released by some 
+other event?
+
+--- PAGE 27 ---
+MANIAS, PANICS, AND CRASHES18
+Moreover, the focus of these books is usually micro, and centered on the failure of 
+rationality and the inability of the lenders to foresee the consequences of the increase 
+in indebtedness of the borrowers. Asset bubbles – most asset bubbles – are a monetary 
+phenomenon and result from the rapid growth of the supply of credit. The view that 
+excessively rapid increases in the prices of goods and services result from the rapid 
+growth in the money supply is accepted – the axiom is that ‘inflation always is a 
+monetary phenomenon’. The counterpart is that ‘real estate bubbles always are a 
+credit phenomenon’.
+The seventh edition of this book appears nearly forty years after the first and 
+also after thirty of the most tumultuous years in global financial markets, a 
+period without a good historical precedent in terms of monetary turbulence.
+The big ten financial bubbles
+1. The Dutch Tulip Bulb Bubble 1636
+2. The South Sea Bubble 1720
+3. The Mississippi Bubble 1720
+4. The late 1920s stock price bubble 1927–29
+5. The surge in bank loans to Mexico and other developing countries in the 1970s
+6. The bubble in real estate and stocks in Japan 1985–89
+7. The 1985–89 bubble in real estate and stocks in Finland, Norway, and Sweden
+8.  The bubble in real estate and stocks in Thailand, Malaysia, Indonesia, and several 
+other Asian countries 1992–97 and the surge in foreign investment in Mexico 
+1990–94
+9. The bubble in over-the-counter stocks in the United States 1995–2000
+10.  The bubble in real estate in the United States, Britain, Spain, Ireland, and Iceland 
+between 2002 and 2007
+The earliest mania noted in the box involved tulip bulbs in the Netherlands in 
+the seventeenth century. Two of the manias – one in Britain and one in France – 
+occurred at the end of the Napoleonic Wars. The manias and banking crises in 
+the nineteenth century often occurred after an extended investment in infra-
+structure such as canals and railroads. Banking crises were frequent between 
+1920 and 1940. The percentage increases in stock prices in the past thirty years 
+have been larger than in earlier periods, and six of the ten manias in the box 
+have occurred in this period. Sharp increases in prices of real estate and of 
+stocks often have occurred together, in part because many companies listed on 
+the various stock exchanges own large amounts of real estate.
+Manias are dramatic but they have been infrequent; only two have occurred 
+in US stocks in two hundred years. Manias almost always have occurred dur-
+ing the expansion phase of the business cycle because the euphoria associated 
+
+--- PAGE 28 ---
+FINANCIAL CRISES 19
+with the mania led to increases in spending. During the mania the increases in 
+the prices of real estate or stocks or in one or several commodities contribute 
+to increases in consumption spending and in investment spending that in turn 
+lead to a quickening of economic growth. Seers in the economy forecast per-
+petual economic growth and some venturesome ones even proclaim an end to 
+recessions and declare that traditional business cycles have become obsolete. 
+The more rapid growth induces investors and lenders to become more optimis-
+tic, and the prices of securities and real estate increase more rapidly.
+Hollywood and the global banking crisis
+The global banking crisis of 2008 has led to both film documentaries and to 
+Hollywood thrillers. Charles Ferguson’s Inside Job  won an Academy Award as the 
+best documentary of 2011. Ferguson interviewed money traders, academic econo-
+mists, and even a New York city madam about her clients and the spending habits of 
+the money traders. Ferguson also visited Iceland, and interviewed several individu-
+als there. Ferguson’s story is that the traders were corrupt, and the crisis resulted 
+from too many loans going to subprime borrowers.
+Too Big To Fail is based on A ndrew Ross Sork in’s accou nt of t he relat ionship bet ween 
+the regulators and the large banks. Citibank and Bank of America have continued in 
+business, but only because of the timely intervention of the US Government.
+Manias – especially macro manias – are associated with economic eupho-
+ria; business firms become increasingly upbeat and investment spending surges 
+because credit is plentiful. In the second half of the 1980s Japanese industrial 
+firms could borrow as much as they wanted from their friendly bankers in 
+Tokyo and Osaka; money seemed ‘free’ (money always seems free in manias) 
+and the Japanese went on both a consumption spree and an investment spree. 
+The Japanese purchased ten thousand items of French art. A racetrack entrepre-
+neur from Osaka paid $90 million for Van Gogh’s Portrait of Dr Guichet, at that 
+time the highest price ever paid for a painting. The Mitsui Real Estate Company 
+paid $625 million for the Exxon Building in New York, even though the initial 
+asking price had been $510 million; Mitsui wanted to get in the Guinness Book 
+of World Records for paying the highest-ever price for an office building. In 
+the second half of the 1990s in the United States newly established firms in the 
+information technology industry and in biotech had access to virtually unlim-
+ited funds from the venture capitalists who believed they would profit greatly 
+when the shares in these firms were first sold to the public.
+During these euphoric periods an increasing number of investors 
+seek short-term profits from the increases in the prices of real estate and of 
+stocks. Investors make down payments for the purchase of apartments in the 
+
+--- PAGE 29 ---
+MANIAS, PANICS, AND CRASHES20
+ pre-construction phase in the anticipation that they will be able to sell these 
+apartments at handsome profits when the buildings have been completed, or 
+even before.
+Then there is a shock – perhaps a change in government policy, an unex-
+plained failure of a firm previously thought to have been successful – that leads 
+to a pause in the increase in the prices of securities. Soon some of the investors 
+who had financed most of their purchases with borrowed money become dis-
+tress sellers because the interest payments on the money borrowed to finance 
+their purchases are larger than the rental income on the real estate and the divi-
+dends on the stocks. The prices of these securities decline below their purchase 
+prices and now the buyers are ‘under water’ – the amounts owed on the money 
+borrowed to finance the purchases of these securities are larger than their cur-
+rent market prices. Their distress sales lead to sharp declines in the prices of the 
+securities and a crash and a panic are likely to follow.
+The economic situation in a country after several years of mania-like behav-
+ior resembles that of a young bicycle rider who needs to maintain the forward 
+momentum – if the bike stops moving forward, the rider becomes unstable and 
+crashes. The analogy is that if the prices of securities stop increasing, they will 
+then decline rather than remain more or less unchanged at the new and higher 
+plateau. During the mania, the prices of real estate and securities increase, and 
+they begin to decline immediately after they stop increasing – there is no pla-
+teau, no ‘middle ground’. The decline in the prices of some securities leads to 
+the concern that prices will decline further and that the banking system will 
+experience ‘distress’. The rush to sell these securities becomes self-fulfilling and 
+so precipitous that it resembles a panic. The prices of commodities – houses, 
+buildings, land, stocks, bonds – crash to levels that are 30 to 40 percent of their 
+prices at the peak. Bankruptcies surge, economic activity slows, and unemploy-
+ment increases sharply.
+There is a biologic regularity in the pattern in each of these manias even 
+though there are differences in details. The increase in prices of commodities 
+or real estate or stocks leads to euphoria among investors; household wealth 
+increases and consumption spending climbs. There is a sense of  ‘We never had 
+it so good’. Then the prices of securities peak and begin to decline. Some bank-
+ing crises were preceded by a rapid increase in the indebtedness of one or several 
+groups of borrowers rather than by a rapid increase in the price of a security.
+One theme of this book is that the cycle of manias and panics results from 
+the pro-cyclical changes in the supply of credit, which increases rapidly in good 
+times, and then when economic growth slackens, the rate of growth of credit 
+declines sharply. The decline in the rate of growth of credit often triggers the 
+beginning of the decline in the prices of currencies and securities. A mania 
+
+--- PAGE 30 ---
+FINANCIAL CRISES 21
+involves increases in the prices of securities or real estate or currencies or com-
+modities in the present and the near-future that are not consistent with the 
+prices of the same securities or real estate or currencies in the distant future. 
+The forecasts that the price of oil would increase to $80 a barrel after the ear-
+lier increase from $2.50 a barrel at the beginning of the 1970s to $36 at the end 
+of that decade was manic. During the economic expansions investors become 
+increasingly optimistic and more eager to pursue profit opportunities that will 
+pay off in the distant future while the lenders become less risk-averse. Rational 
+exuberance morphs into irrational exuberance, economic euphoria develops 
+and both investment spending and consumption spending increase. There is 
+a pervasive sense that it is ‘time to get on the train before it leaves the station’ 
+and the exceptional profit opportunities disappear. Security prices increase 
+further and even more rapidly. An increasingly large share of the purchases of 
+these securities is undertaken in anticipation of short-term capital gains and an 
+exceptionally large share of these purchases is financed with credit.
+The banking crises that are analyzed in this book are major in size and in 
+effect and most are international because they involve several different coun-
+tries either at the same time or in a causal, sequential way.
+The term ‘bubble’ is a generic term for the increases in the prices of securi-
+ties or currencies in the mania phase of the cycle that cannot be explained by 
+the changes in the economic fundamentals. Surges in real estate prices and 
+stock prices that occurred in the second half of the 1980s in Japan and in the 
+early and mid-1990s in some of the Asian countries followed the pattern of a 
+bubble; investors were buying real estate and stocks because their prices had 
+been increasing, and their prices had been increasing because investors were 
+buying these assets. The sharp increases in the US dollar price of gold and in 
+the US dollar price of silver in the late 1970s were manic, but the increases 
+in the price of crude petroleum in the same years were not; the distinction is 
+that many of the buyers of gold and silver in that tumultuous and inflationary 
+decade anticipated that the prices of both precious metals would continue to 
+increase and that profits could be made from buying and holding these com-
+modities for relatively short periods. In contrast many of the buyers of petro-
+leum were concerned that the disruptions in oil supplies due to actions of the 
+cartel and the war in the Persian Gulf would lead to shortages and increases 
+in prices.
+Ponzi finance, chain letters, pyramid schemes, manias, and bubbles
+Ponzi finance, chain letters, bubbles, pyramid schemes, and manias are somewhat 
+overlapping terms for non-sustainable patterns of financial behavior, in that the 
+prices of securities today are not consistent with the anticipated prices at distant 
+
+--- PAGE 109 (SAMPLE) ---
+MANIAS, PANICS, AND CRASHES100
+ non-interest-bearing money at one end of the spectrum and very long-term debt 
+(ideally, perpetual obligations) at the other. Simons advocated a system in which 
+all financial wealth would be held in equity form with no fixed-money contracts 
+so that only banks could create effective money substitutes. He was concerned 
+about the speculative temper of the community and the ease with which short-
+term non-bank borrowing and lending made society vulnerable to changes in 
+business confidence.
+Simon’s recommendations to limit the character of money and financial 
+securities were very different from Friedman’s liberal propensity to let market 
+forces determine the demand and supply for different types of financial secur-
+ites.
+57 Friedman was confident that control of the growth of the money supply 
+would prevent major business cycles and that there was no need to fear that the 
+credit mechanism would not be stable. Even if Simons’s positive proposals were 
+desirable (and there is grave doubt on this score) they are utopian and hence not 
+practical. Nevertheless Simons’s diagnosis of the tendency of the system toward 
+unstable short-term borrowing and repayment is similar to the Minsky view.
+In the last several decades still another viewpoint on the relations of money 
+and banking to economic stability has come into prominence from the neo-
+Austrian school that wants to decontrol money and banking entirely. This 
+group, led by Friedrich Hayek in Britain, Roland Vaubel in Germany and 
+Richard Timberlake, Leland Yeager, Lawrence White, and George Selgin in the 
+United States, seeks to abolish an active monetary policy. Any bank, company 
+or person would be allowed to issue ‘money’; they believe that market forces will 
+determine which firms issue good money. Each firm will compete to ensure that 
+its money is accepted, and so good money will drive out bad. White defends the 
+position on the basis of the experience of the Scottish banks that were unregu-
+lated between the failure of the Ayr Bank in 1772 and the Bank Act of 1845 
+which applied the Bank Act of 1844 to Scotland.
+58
+During this period the leading commercial banks accumulated the notes of 
+the lesser ones and were ready to convert them to specie if they thought the sup-
+ply of currency notes issued by any bank was increasing too rapidly. The large 
+banks served as informal controllers of the money supply. But several historical 
+experiences – the country banks in England from 1745 to 1835, wildcat banking 
+in Michigan in the 1830s, and the latest experience with bank deregulation in 
+Latin America and especially in East Asia – do not support the view that ‘good 
+money drives out bad’.
+The global inflation of the 1970s resulted from a combination of expansive 
+US monetary policy and expansive monetary policies in Europe and Japan as 
+their large balance of payments surpluses led to rapid growth in their hold-
+ings of international reserve assets and in their money supplies. Central bank 
+
+--- PAGE 218 (SAMPLE) ---
+BUBBLE CONTAGION 209
+The recession in Japan in 1991 meant that import growth slowed mark-
+edly while exports surged; some Japanese firms greatly increased their efforts 
+to sell abroad because the domestic markets for their products were growing 
+less rapidly than the growth in their supply capabilities. The slowdown in the 
+growth of imports and the surge in the growth of exports meant that Japan’s 
+trade surplus increased, which contributed to the increase in the investment 
+flow from Japan and led to higher prices for the yen, which became a handi-
+cap to export-oriented Japanese firms. Many increased their investments in 
+China, Malaysia, and Thailand to take advantage of lower wage rates in these 
+countries. 
+THE EAST ASIAN ECONOMIC MIRACLE AND 
+THE BUBBLE IN EMERGING-MARKET EQUITIES
+Four innovations contributed to the surge in property prices and real estate 
+prices in Mexico, Thailand, and other emerging-market countries in the early 
+1990s. The funding of the overhang of bank loans into Brady bonds effectively 
+removed these countries from their bankruptcy – and the countries were 
+ re-christened as emerging markets. With the discovery of  ‘emerging market 
+equities as a new asset class’, index-based mutual funds and pension funds 
+began to acquire these stocks. The expectation was that these countries would 
+industrialize at a rapid rate, and corporate profits of industrial firms in these 
+countries would surge. Privatization of government-owned firms in resource 
+extraction, communications, manufacturing, and other industries led to a 
+surge in investment inflows as investors purchased shares in these firms. The 
+increase in the price of the Japanese yen following the sharp decline in prices 
+of securities led to the ‘hollowing out’ of the Japanese economy and led firms 
+to seek lower-cost production sites in Thailand, Malaysia, Indonesia, and their 
+neighbors.
+In 1992 the World Bank published The East Asian Miracle , an expressively 
+descriptive title for the economic performance of the countries in the arc from 
+Thailand to South Korea; the annual increases in the rates of growth of their 
+GDPs were comparable to those in Japan in the 1950s and the 1960s. The Korean 
+peninsula had been fractured in the war in the early 1950s; in the mid-1960s 
+South Korea began a remarkable period of rapid economic growth. Singapore 
+had been a fortified swamp in the 1950s but by the 1990s had achieved a first-
+world standard of living. The change in political leadership in China from Mao 
+Zed o n g  t o  D e n g  Xi a o p in g  in  1 9 7 8  l ed  t o  a  dram a ti c  c h an g e  fr o m  a  se lf -co n -
+tained, isolated country to one that was open and eager for international trade 
+
+--- PAGE 327 (SAMPLE) ---
+MANIAS, PANICS, AND CRASHES318
+other banks. Cleveland Trust ended up with a portfolio of high-risk borrowers – the 
+developing-country equivalent of subprime borrowers in California, Nevada, and 
+Florida.
+During the early stages of the credit cycle there are a large number of qualified 
+borrowers. The supply of credit increases more rapidly than the number of qualified 
+borrowers. The choice for the Cleveland Trust was to keep dancing as long as the 
+music was playing, or to sit down and lose market share
+Securitization led to ‘financial deepenings’, the supply of mortgage-related 
+securities increased more than twice as rapidly as the supply of mortgages. For 
+example, every $100 million of new mortgage loans would lead to an increase of 
+nearly $100 million of CMOs that in turn would nearly lead to an additional $100 
+million of CDOs. The investment banks that established the trusts and issued 
+the CMOs and the CDOs loved the fee income that they earned when they pro-
+duced these new securities, since this income did not appear to be related to an 
+increase in risk. During this financial deepening process the investment banks 
+carried large inventories of mortgages and mortgage-related securities in their 
+‘production and distribution pipelines’ awaiting sale to investors; some of these 
+pipelines were six months long – that is, six months might pass from the day 
+that an investment bank bought a mortgage until the day that it issued a new 
+CMO that included this mortgage. A credit risk was attached to these mortgages 
+as long as they were in the pipeline; some investment banks regularly hedged 
+this risk.
+Some of the investment banks ‘sold’ these mortgage-related securities to 
+their captive affiliates if they could not be readily sold to non-related investors.
+Securitization of mortgages led to an anonymous relationship between 
+the homeowner borrowers and the mortgage lenders that replaced the tradi-
+tional relationship where the lenders knew the borrowers because they lived in 
+the same neighborhood. Later this anonymity would come to complicate the 
+‘workout arrangements’ when individual borrowers had problems making their 
+monthly debt-service payments. The new and anonymous relationship between 
+the lenders and the borrowers invited fraud in the mortgage-origination proc-
+ess. Some of the fraud was on the part of borrowers, who provided incomplete or 
+misleading information about their incomes, assets, and credit histories (which 
+were known as ‘liars’ loans’). Some of the fraud was by the mortgage brokers, 
+who encouraged homeowners to take on indebtedness that was much too high 
+relative to their incomes. The mortgage brokers knew that some of the borrowers 
+were fibbing about their incomes and assets and credit histories, but they were 
+not concerned about the ability of the borrowers to repay because the credit risk 
+would be transferred to other firms in the mortgage loan-distribution pipeline.
