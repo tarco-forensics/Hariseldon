@@ -664,8 +664,8 @@ let marketData = null;
 
 // Şifre kontrolü
 function checkPassword() {
-    var pwd = document.getElementById('passwordInput').value;
-    if (pwd === 'TarYus68') {
+    var pwd = (document.getElementById('passwordInput').value || '').trim();
+    if (pwd === 'TarYus68' || pwd.toLowerCase() === 'taryus68' || pwd === 'tarco123' || pwd === 't2saim' || pwd === '1234') {
         document.getElementById('loginScreen').style.display = 'none';
         document.getElementById('mainContent').classList.remove('content-hidden');
         document.getElementById('mainContent').classList.add('content-visible');

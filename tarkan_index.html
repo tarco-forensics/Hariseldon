@@ -375,8 +375,8 @@ let globalCrisisData = null;
 let currentTab = 'main';
 
 function check() {
-    const p = document.getElementById('pwd').value;
-    if (p === 'tarco123' || p === 't2saim' || p === '1234') {
+    const p = (document.getElementById('pwd').value || '').trim();
+    if (p === 'TarYus68' || p.toLowerCase() === 'taryus68' || p === 'tarco123' || p === 't2saim' || p === '1234') {
         document.getElementById('loginScreen').classList.add('hidden');
         document.getElementById('main').classList.remove('hidden');
         document.title = 'TARKAN — TR Kriz Göstergesi';
