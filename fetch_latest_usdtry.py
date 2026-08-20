@@ -30,12 +30,19 @@ try:
     df = yf.download("USDTRY=X", start=start, end=end, interval="1d", progress=False)
     if not df.empty:
         new_rows = []
+        def to_float(val):
+            if hasattr(val, 'iloc'):
+                return float(val.iloc[0])
+            elif hasattr(val, 'values'):
+                return float(val.values[0])
+            return float(val)
+
         for idx, row in df.iterrows():
             d = idx.strftime("%Y-%m-%d")
-            o = float(row["Open"])
-            h = float(row["High"])
-            l = float(row["Low"])
-            c = float(row["Close"])
+            o = to_float(row["Open"])
+            h = to_float(row["High"])
+            l = to_float(row["Low"])
+            c = to_float(row["Close"])
             new_rows.append({"tarih": d, "acilis": round(o,4), "yuksek": round(h,4), "dusuk": round(l,4), "kapanis": round(c,4)})
         # Mevcut dosyaya ekle
         with open(USDTRY_FILE, "a", encoding="utf-8", newline="") as f:
