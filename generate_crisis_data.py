@@ -431,12 +431,14 @@ def compute_continuous_waves():
         with open(html_path, "r", encoding="utf-8") as f:
             html_content = f.read()
         json_str = json.dumps(result, ensure_ascii=False)
-        embedded_stmt = f"window.EMBEDDED_CRISIS_DATA = {json_str};"
-        if "window.EMBEDDED_CRISIS_DATA =" in html_content:
+        if "/*DATA_START*/" in html_content and "/*DATA_END*/" in html_content:
             import re
-            html_content = re.sub(r"window\.EMBEDDED_CRISIS_DATA\s*=\s*\{.*?\};", embedded_stmt, html_content)
+            html_content = re.sub(r"/\*DATA_START\*/.*?/\*DATA_END\*/", f"/*DATA_START*/\nwindow.EMBEDDED_CRISIS_DATA = {json_str};\n/*DATA_END*/", html_content, flags=re.DOTALL)
+        elif "window.EMBEDDED_CRISIS_DATA =" in html_content:
+            import re
+            html_content = re.sub(r"window\.EMBEDDED_CRISIS_DATA\s*=\s*null;", f"window.EMBEDDED_CRISIS_DATA = {json_str};", html_content)
         else:
-            html_content = html_content.replace("<script>", "<script>\n" + embedded_stmt, 1)
+            html_content = html_content.replace("<script>", "<script>\nwindow.EMBEDDED_CRISIS_DATA = " + json_str + ";\n", 1)
         with open(html_path, "w", encoding="utf-8") as f:
             f.write(html_content)
         print(f"✅ tarkan_index.html içine gün be gün çok katmanlı veri gömüldü.")
