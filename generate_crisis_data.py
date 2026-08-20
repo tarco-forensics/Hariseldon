@@ -257,8 +257,28 @@ def compute_continuous_waves():
         gold_evasion = min(1.0, 0.40 * (dth / 70.0) + 0.60 * (kap_spread / 5.0))
         
         # EFMI (Ahlaki Sapma / Söylem-Eylem Makası)
-        # Söylem = 0.65, Eylem Bozulması = BFI ve Enflasyon baskısı
         efmi = -0.36 + 0.45 * bfi + 0.35 * z_norm
+        
+        # ── T2SAIM Nörofinans & Amigdala Stres Yükü (A_load & PFC_control) ──
+        # Risk algısı: Volatilite, Tahtakale makası ve Bankacılık BFI birleşimi
+        perceived_risk = 0.35 * z_norm + 0.35 * (kap_spread / 5.0) + 0.30 * bfi
+        a_load = 1.0 / (1.0 + math.exp(-8.0 * (perceived_risk - 0.42)))
+        pfc_control = max(0.0, min(1.0, 1.0 - a_load))
+        
+        # ── Bankacılık Hayalet Kredi (Evergreened / Zombie Loans) & Likidite Makası ──
+        # Resmî NPL regülasyonla %1.8-2.0'de tutulurken, gerçek yüzdürülen batık kredi oranı
+        ghost_loans_pct = 1.8 + 6.5 * bfi + 4.5 * max(0.0, ldr - 1.0)
+        
+        # ── Makro Sarkaç (REER Pendulum) & 150-200 Milyar $ Dış Borç Servis Stresi ──
+        # REER Sarkaç salınımı (Sıcak para bolluk yılları vs ani duruş)
+        reer_pendulum = 85.0 + 32.0 * math.sin((idx / 90.0) * math.pi) + 15.0 * bfi
+        ext_debt_stress = 165.0 + 40.0 * bfi + 25.0 * (kap_spread / 5.0) # Milyar $ dış kaynak ihtiyacı
+        
+        # ── TCMB Efektif Fonlama & Geç Likidite Penceresi (GLP) Makası (%) ──
+        funding_spread = 0.5 + 4.0 * bfi + 3.0 * (kap_spread / 5.0)
+        
+        # ── Mevduat Kaçış Hızı (v_run) ──
+        v_run = min(1.0, 0.40 * a_load + 0.35 * (kap_spread / 5.0) + 0.25 * (dth / 70.0))
         
         # Sosyofizik Ajan Adımı
         psy_strain, trust_val, comp_val = sim.step(system_shock=z_norm, bfi_stress=bfi, kap_spread_pct=kap_spread/100.0, dei_val=DEFAULT_DEI)
@@ -286,6 +306,13 @@ def compute_continuous_waves():
             "sri": round(sri, 4),
             "bfi": round(bfi, 4),
             "efmi": round(efmi, 4),
+            "a_load": round(a_load, 4),
+            "pfc_control": round(pfc_control, 4),
+            "ghost_loans": round(ghost_loans_pct, 2),
+            "reer_pendulum": round(reer_pendulum, 1),
+            "ext_debt_stress": round(ext_debt_stress, 1),
+            "funding_spread": round(funding_spread, 2),
+            "v_run": round(v_run, 4),
             "trust": round(trust_val, 3),
             "compliance": round(comp_val, 3),
             "gold_evasion": round(gold_evasion, 4),
@@ -347,6 +374,20 @@ def compute_continuous_waves():
         gold_evasion = min(1.0, 0.40 * (fut_dth / 70.0) + 0.60 * (fut_kap_spread / 5.0))
         efmi = -0.36 + 0.45 * fut_bfi + 0.35 * res_buildup
         
+        # Nörofinans & Amigdala Yükü (Gelecek Zirvesi)
+        perceived_risk_f = 0.30 * fut_bfi + 0.40 * res_buildup + 0.30 * (fut_kap_spread / 5.0)
+        fut_a_load = min(1.0, 1.0 / (1.0 + math.exp(-8.0 * (perceived_risk_f - 0.40))))
+        fut_pfc_control = max(0.0, min(1.0, 1.0 - fut_a_load))
+        
+        # Hayalet Krediler
+        fut_ghost_loans = 2.0 + 7.5 * fut_bfi + 5.0 * res_buildup
+        
+        # REER Sarkaç & Dış Borç
+        fut_reer = 80.0 - 25.0 * res_buildup # Kriz zirvesinde devalüasyon çöküşü
+        fut_ext_debt = 180.0 + 35.0 * res_buildup
+        fut_funding_spread = 1.0 + 6.5 * fut_bfi + 4.5 * res_buildup
+        fut_v_run = min(1.0, 0.45 * fut_a_load + 0.35 * (fut_kap_spread / 5.0) + 0.20 * (fut_dth / 70.0))
+        
         # Sosyofizik Ajan Adımı (Güven Hızla Aşınır)
         psy_strain, trust_val, comp_val = sim.step(system_shock=0.4 + 0.6 * res_buildup, bfi_stress=fut_bfi, kap_spread_pct=fut_kap_spread/100.0, dei_val=DEFAULT_DEI)
         
@@ -370,6 +411,13 @@ def compute_continuous_waves():
             "sri": round(sri, 4),
             "bfi": round(fut_bfi, 4),
             "efmi": round(efmi, 4),
+            "a_load": round(fut_a_load, 4),
+            "pfc_control": round(fut_pfc_control, 4),
+            "ghost_loans": round(fut_ghost_loans, 2),
+            "reer_pendulum": round(fut_reer, 1),
+            "ext_debt_stress": round(fut_ext_debt, 1),
+            "funding_spread": round(fut_funding_spread, 2),
+            "v_run": round(fut_v_run, 4),
             "trust": round(trust_val, 3),
             "compliance": round(comp_val, 3),
             "gold_evasion": round(gold_evasion, 4),
@@ -398,6 +446,13 @@ def compute_continuous_waves():
         "sri_last": yesterday_row["sri"],
         "bfi_last": yesterday_row["bfi"],
         "efmi_last": yesterday_row["efmi"],
+        "a_load_last": yesterday_row.get("a_load", 0.72),
+        "pfc_control_last": yesterday_row.get("pfc_control", 0.28),
+        "ghost_loans_last": yesterday_row.get("ghost_loans", 9.4),
+        "reer_pendulum_last": yesterday_row.get("reer_pendulum", 88.5),
+        "ext_debt_stress_last": yesterday_row.get("ext_debt_stress", 185.0),
+        "funding_spread_last": yesterday_row.get("funding_spread", 4.2),
+        "v_run_last": yesterday_row.get("v_run", 0.65),
         "trust_last": yesterday_row["trust"],
         "compliance_last": yesterday_row["compliance"],
         "gold_evasion_last": yesterday_row["gold_evasion"],
