@@ -186,6 +186,26 @@ def generate_output():
         json.dump(payload, f, ensure_ascii=False, indent=2)
         
     print(f"✅ 50-Yıllık Bilimsel Kriz Verisi Üretildi -> {OUT_JSON}")
+    
+    # kriz_raporu.html içine de doğrudan göm (file:/// desteği için)
+    html_file = os.path.join(BASE_DIR, "kriz_raporu.html")
+    if os.path.exists(html_file):
+        with open(html_file, "r", encoding="utf-8") as f:
+            content = f.read()
+            
+        json_str = json.dumps(payload, ensure_ascii=False)
+        embed_script = f"<script>\nwindow.EMBEDDED_SCIENTIFIC_CRISIS_DATA = {json_str};\n</script>"
+        
+        if "window.EMBEDDED_SCIENTIFIC_CRISIS_DATA" in content:
+            import re
+            content = re.sub(r'<script>\s*window\.EMBEDDED_SCIENTIFIC_CRISIS_DATA = .*?;\s*</script>', embed_script, content, flags=re.DOTALL)
+        else:
+            content = content.replace("</body>", f"{embed_script}\n</body>")
+            
+        with open(html_file, "w", encoding="utf-8") as f:
+            f.write(content)
+        print(f"✅ kriz_raporu.html içine veri gömüldü (Local file:// hazır).")
+        
     return payload
 
 if __name__ == "__main__":

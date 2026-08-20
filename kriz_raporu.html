@@ -235,17 +235,26 @@
 </div>
 
 <script>
-// JSON Verisi (scientific_crisis_data.json)
 let RAW_DATA = null;
 
 async function loadData() {
-    try {
-        const res = await fetch('scientific_crisis_data.json?v=' + Date.now());
-        RAW_DATA = await res.json();
+    // 1. Önce doğrudan gömülü veriyi kontrol et (file:/// desteği)
+    if (typeof window.EMBEDDED_SCIENTIFIC_CRISIS_DATA !== 'undefined' && window.EMBEDDED_SCIENTIFIC_CRISIS_DATA) {
+        RAW_DATA = window.EMBEDDED_SCIENTIFIC_CRISIS_DATA;
         renderCharts(RAW_DATA.series);
         renderTable(RAW_DATA.series);
+    }
+    
+    // 2. HTTP/HTTPS üzerinden canlı JSON güncellemesi dene
+    try {
+        const res = await fetch('scientific_crisis_data.json?v=' + Date.now());
+        if (res.ok) {
+            RAW_DATA = await res.json();
+            renderCharts(RAW_DATA.series);
+            renderTable(RAW_DATA.series);
+        }
     } catch(e) {
-        console.error("Veri yüklenemedi:", e);
+        console.log("file:/// lokal modda gömülü veri kullanılıyor.");
     }
 }
 
