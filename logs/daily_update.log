@@ -8093,3 +8093,48 @@ Per 20.08.2026 18:00:04,37 - T2SAIM Gunluk Guncelleme
 Son mevcut veri: 2026-07-02
 Cekiliyor: 2026-07-03 -> 2026-08-21
 Hata: float() argument must be a string or a real number, not 'Series'
+ 
+================================================ 
+Cum 21.08.2026 12:04:39,35 - T2SAIM Gunluk Guncelleme 
+================================================ 
+[1/4] USDTRY verisi cekiliyor... 
+Son mevcut veri: 2026-08-20
+Cekiliyor: 2026-08-21 -> 2026-08-22
+Eklendi: 1 yeni gun
+  2026-08-21: 48.062
+ 
+================================================ 
+Cum 21.08.2026 12:05:39,59 - T2SAIM Gunluk Guncelleme 
+================================================ 
+[1/4] USDTRY verisi cekiliyor... 
+$USDTRY=X: possibly delisted; no price data found  (1d 2026-08-22 -> 2026-08-22) (Yahoo error = "Data doesn't exist for startDate = 1787353200, endDate = 1787353200")
+
+1 Failed download:
+['USDTRY=X']: possibly delisted; no price data found  (1d 2026-08-22 -> 2026-08-22) (Yahoo error = "Data doesn't exist for startDate = 1787353200, endDate = 1787353200")
+Son mevcut veri: 2026-08-21
+Cekiliyor: 2026-08-22 -> 2026-08-22
+Yeni veri yok (piyasa kapali olabilir)
+ 
+================================================ 
+Cum 21.08.2026 14:05:09,05 - T2SAIM Gunluk Guncelleme 
+================================================ 
+[1/4] USDTRY verisi cekiliyor... 
+$USDTRY=X: possibly delisted; no price data found  (1d 2026-08-22 -> 2026-08-22) (Yahoo error = "Data doesn't exist for startDate = 1787353200, endDate = 1787353200")
+
+1 Failed download:
+['USDTRY=X']: possibly delisted; no price data found  (1d 2026-08-22 -> 2026-08-22) (Yahoo error = "Data doesn't exist for startDate = 1787353200, endDate = 1787353200")
+Son mevcut veri: 2026-08-21
+Cekiliyor: 2026-08-22 -> 2026-08-22
+Yeni veri yok (piyasa kapali olabilir)
+ 
+================================================ 
+Cum 21.08.2026 18:00:02,39 - T2SAIM Gunluk Guncelleme 
+================================================ 
+[1/4] USDTRY verisi cekiliyor... 
+$USDTRY=X: possibly delisted; no price data found  (1d 2026-08-22 -> 2026-08-22) (Yahoo error = "Data doesn't exist for startDate = 1787353200, endDate = 1787353200")
+
+1 Failed download:
+['USDTRY=X']: possibly delisted; no price data found  (1d 2026-08-22 -> 2026-08-22) (Yahoo error = "Data doesn't exist for startDate = 1787353200, endDate = 1787353200")
+Son mevcut veri: 2026-08-21
+Cekiliyor: 2026-08-22 -> 2026-08-22
+Yeni veri yok (piyasa kapali olabilir)
