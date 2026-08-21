@@ -590,6 +590,207 @@
             </div>
         </section>
 
+    
+        <!-- BÖLÜM 7: KÜRESEL İTİBAR, DERECELENDİRME, KARA PARA (FATF), MAFYA VE VİZE KRİZİ -->
+        <section class="glass-panel p-6 space-y-6 border-cyan-500/40 glow-cyan">
+            <div class="border-b border-slate-800 pb-3 flex flex-col md:flex-row items-start md:items-center justify-between gap-2">
+                <div>
+                    <h2 class="text-lg font-black text-white font-mono flex items-center gap-2">
+                        🌐 7. KÜRESEL İTİBAR, FATF GRİ LİSTE, ORGANİZE SUÇ VE PASAPORT/VİZE ÇÖKÜŞÜ
+                    </h2>
+                    <p class="text-xs text-slate-400 mt-0.5">
+                        Kredi Notları, FATF Kara Para Riski, GI-TOC Küresel Organize Suç Raporu ve Schengen Vize Ret Oranları
+                    </p>
+                </div>
+                <span class="px-3 py-1 rounded bg-cyan-500/20 text-cyan-300 font-mono text-xs font-bold border border-cyan-500/40">
+                    KÜRESEL İTİBAR TELEMETRİSİ
+                </span>
+            </div>
+
+            <!-- 4 KÜRESEL İTİBAR KARTI -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-xs font-mono">
+                <div class="glass-card p-4 rounded-xl border-amber-500/30">
+                    <div class="text-[10px] text-amber-400 font-bold">KREDİ DERECELENDİRME (NOT)</div>
+                    <div class="text-2xl font-black font-mono text-white mt-1">B+ / B3 (Junk)</div>
+                    <div class="text-[11px] text-slate-400 mt-1">Yatırım Yapılabilir Seviyenin 4 Kademe Altında</div>
+                    <div class="text-[10px] text-amber-400/90 mt-2 bg-dark-950 p-1.5 rounded border border-amber-500/20">
+                        Moody's, S&P ve Fitch: "Yüksek Risk / Spekülatif"
+                    </div>
+                </div>
+
+                <div class="glass-card p-4 rounded-xl border-red-500/30">
+                    <div class="text-[10px] text-red-400 font-bold">ORGANİZE SUÇ (GI-TOC ENDEKSİ)</div>
+                    <div class="text-2xl font-black font-mono text-red-400 mt-1">Avrupa 1.'si</div>
+                    <div class="text-[11px] text-slate-400 mt-1">Dünya Genelinde 193 Ülke Arasında 14. Sırada</div>
+                    <div class="text-[10px] text-red-400/90 mt-2 bg-dark-950 p-1.5 rounded border border-red-500/20">
+                        Mafya, kara para ve uyuşturucu transit skoru: 7.03 / 10
+                    </div>
+                </div>
+
+                <div class="glass-card p-4 rounded-xl border-purple-500/30">
+                    <div class="text-[10px] text-purple-400 font-bold">FATF KARA PARA AKLAMA STATÜSÜ</div>
+                    <div class="text-2xl font-black font-mono text-purple-300 mt-1">Gri Liste Baskısı</div>
+                    <div class="text-[11px] text-slate-400 mt-1">MASAK Denetimi & ABD OFAC Yaptırım Tehditleri</div>
+                    <div class="text-[10px] text-purple-400/90 mt-2 bg-dark-950 p-1.5 rounded border border-purple-500/20">
+                        Yabancı doğrudan sermaye (FDI) kaçışının ana sebebi
+                    </div>
+                </div>
+
+                <div class="glass-card p-4 rounded-xl border-cyan-500/30">
+                    <div class="text-[10px] text-cyan-400 font-bold">SCHENGEN VİZE RET ORANI</div>
+                    <div class="text-2xl font-black font-mono text-cyan-300 mt-1">%21.7 Ret</div>
+                    <div class="text-[11px] text-slate-400 mt-1">2014'te %4.4 iken 5 Katına Fırladı</div>
+                    <div class="text-[10px] text-cyan-400/90 mt-2 bg-dark-950 p-1.5 rounded border border-cyan-500/20">
+                        Yılda 100+ Milyon Euro vize harcı iadesiz yanmaktadır
+                    </div>
+                </div>
+            </div>
+
+            <!-- VİZE RET ORANLARI VE PASAPORT SIRALAMASI GRAFİĞİ -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 pt-2">
+                <div class="bg-dark-900/70 p-4 rounded-xl border border-slate-800 lg:col-span-6 space-y-2">
+                    <h4 class="text-xs font-bold text-cyan-300 font-mono flex items-center justify-between">
+                        <span>🛂 Schengen Vize Ret Oranı Tırmanışı (% 2014 - 2026)</span>
+                        <span class="text-[10px] text-slate-500 font-normal">Avrupa Komisyonu Resmi İstatistikleri</span>
+                    </h4>
+                    <div class="h-[240px] w-full relative">
+                        <canvas id="visaRejectionChart"></canvas>
+                    </div>
+                    <div class="text-[10px] font-mono text-slate-400">
+                        * Türkiye pasaportuyla yapılan Schengen başvurularının <strong>5'te 1'inden fazlası doğrudan reddedilmekte</strong>, randevu ambargosu uygulanmaktadır.
+                    </div>
+                </div>
+
+                <div class="bg-dark-900/70 p-4 rounded-xl border border-slate-800 lg:col-span-6 space-y-2">
+                    <h4 class="text-xs font-bold text-red-400 font-mono flex items-center justify-between">
+                        <span>📉 Henley Pasaport Güç Sıralaması & Vizesiz Gelişmiş Ülke Sayısı</span>
+                        <span class="text-[10px] text-slate-500 font-normal">Henley Passport Index</span>
+                    </h4>
+                    <div class="h-[240px] w-full relative">
+                        <canvas id="passportIndexChart"></canvas>
+                    </div>
+                    <div class="text-[10px] font-mono text-slate-400">
+                        * Türkiye pasaportu ile AB, ABD, İngiltere, Kanada veya Japonya dahil <strong>hiçbir gelişmiş ülkeye vizesiz seyahat edilememektedir</strong>.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BÖLÜM 8: KAMUSAL ŞATAFAT VE BÜROKRASİ VS. HALKIN 30 YILLIK BESLENME SEPETİ -->
+        <section class="glass-panel p-6 space-y-6 border-amber-500/40 glow-amber">
+            <div class="border-b border-slate-800 pb-3 flex flex-col md:flex-row items-start md:items-center justify-between gap-2">
+                <div>
+                    <h2 class="text-lg font-black text-white font-mono flex items-center gap-2">
+                        🥩 8. KAMUSAL ŞATAFAT VS. HALKIN 30 YILLIK BESLENME SEPETİ (1995 - 2026)
+                    </h2>
+                    <p class="text-xs text-slate-400 mt-0.5">
+                        115.000 Lüks Makam Aracı, Temsil/Ağırlama Bütçeleri ve 30 Yılda Çöken Kişi Başı Kırmızı Et/Protein Tüketimi
+                    </p>
+                </div>
+                <span class="px-3 py-1 rounded bg-amber-500/20 text-amber-300 font-mono text-xs font-bold border border-amber-500/40">
+                    PROTEİN YOKSULLUĞU & ŞATAFAT
+                </span>
+            </div>
+
+            <!-- ŞATAFAT VE BESLENME KARTLARI -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-xs font-mono">
+                <div class="glass-card p-4 rounded-xl border-red-500/30">
+                    <div class="text-[10px] text-red-400 font-bold">KAMU TAŞIT FİLOSU</div>
+                    <div class="text-2xl font-black font-mono text-white mt-1">115.000+ Araç</div>
+                    <div class="text-[11px] text-slate-400 mt-1">Almanya'nın 12 Katı Makam Aracı</div>
+                </div>
+
+                <div class="glass-card p-4 rounded-xl border-amber-500/30">
+                    <div class="text-[10px] text-amber-400 font-bold">TEMSİL & AĞIRLAMA BÜTÇESİ</div>
+                    <div class="text-2xl font-black font-mono text-amber-300 mt-1">16.4 Mr TL / Yıl</div>
+                    <div class="text-[11px] text-slate-400 mt-1">Lüks ziyafet, organizasyon ve koruma</div>
+                </div>
+
+                <div class="glass-card p-4 rounded-xl border-purple-500/30">
+                    <div class="text-[10px] text-purple-400 font-bold">KİŞİ BAŞI KIRMIZI ET (YIL)</div>
+                    <div class="text-2xl font-black font-mono text-red-400 mt-1">5.8 Kg / Yıl</div>
+                    <div class="text-[11px] text-slate-400 mt-1">AB Ortalaması: 38.5 Kg (1/6'sı)</div>
+                </div>
+
+                <div class="glass-card p-4 rounded-xl border-cyan-500/30">
+                    <div class="text-[10px] text-cyan-400 font-bold">GIDAYDA KARBONHİDRAT ORANI</div>
+                    <div class="text-2xl font-black font-mono text-cyan-300 mt-1">%68.5 Pay</div>
+                    <div class="text-[11px] text-slate-400 mt-1">Ekmek, makarna, patatese bağımlılık</div>
+                </div>
+            </div>
+
+            <!-- BESLENME DEĞİŞİMİ GRAFİĞİ -->
+            <div class="bg-dark-900/70 p-4 rounded-xl border border-slate-800 space-y-2">
+                <h4 class="text-xs font-bold text-amber-300 font-mono flex items-center justify-between">
+                    <span>🍲 Türkiye'de Hanehalkı Kişi Başı Yıllık Temel Gıda Tüketim Dönüşümü (1995 - 2026)</span>
+                    <span class="text-[10px] text-slate-500 font-normal">TÜİK & OECD & Tarım Bakanlığı</span>
+                </h4>
+                <div class="h-[260px] w-full relative">
+                    <canvas id="nutrition30YrChart"></canvas>
+                </div>
+                <div class="text-[10px] font-mono text-slate-400">
+                    * 1995 yılında kişi başı 14.5 kg olan kırmızı et tüketimi <strong>5.8 kg'a düşmüş</strong>; süt ve peynir tüketimi yarıya inmiş, hanehalkı sepeti tamamen ekmek ve unlu mamullere kilitlenmiştir (Protein Yoksulluğu).
+                </div>
+            </div>
+        </section>
+
+        <!-- BÖLÜM 9: LONDRA TAHKİMİNE TABİ KÖİ PROJELERİ VE 160 MİLYAR $'LIK DIŞ YÜKÜMLÜLÜKLER -->
+        <section class="glass-panel p-6 space-y-6 border-purple-500/40 glow-purple">
+            <div class="border-b border-slate-800 pb-3 flex flex-col md:flex-row items-start md:items-center justify-between gap-2">
+                <div>
+                    <h2 class="text-lg font-black text-white font-mono flex items-center gap-2">
+                        🇬🇧 9. İNGİLİZ HUKUKUNA TABİ KÖİ BORÇLARI VE 160 MİLYAR $'LIK GARANTİLER
+                    </h2>
+                    <p class="text-xs text-slate-400 mt-0.5">
+                        Şehir Hastaneleri, Köprüler, Otoyollar ve Londra Tahkim Mahkemelerine Bağlı Döviz Gelir Garantileri
+                    </p>
+                </div>
+                <span class="px-3 py-1 rounded bg-purple-500/20 text-purple-300 font-mono text-xs font-bold border border-purple-500/40">
+                    TOPLAM TAAHHÜT: 160 MİLYAR $
+                </span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                <div class="bg-dark-900/80 p-4 rounded-xl border border-slate-800 space-y-2">
+                    <h4 class="font-bold text-purple-400 font-mono text-sm">
+                        🌉 Ulaştırma ve Otoyol Garantileri
+                    </h4>
+                    <p class="text-xs text-slate-300 leading-relaxed font-sans">
+                        Osmangazi Köprüsü, Çanakkale Köprüsü, Kuzey Marmara ve Avrasya Tüneli sözleşmelerinde araç başına <strong>dolar ve euro bazlı garanti</strong> verilmiştir. Eksik kalan her geçiş için Hazine bütçesinden doğrudan Londra merkezli kreditör şirketlere aktarım yapılmaktadır.
+                    </p>
+                </div>
+
+                <div class="bg-dark-900/80 p-4 rounded-xl border border-slate-800 space-y-2">
+                    <h4 class="font-bold text-amber-400 font-mono text-sm">
+                        🏥 Şehir Hastaneleri 25 Yıllık Kira Yükü
+                    </h4>
+                    <p class="text-xs text-slate-300 leading-relaxed font-sans">
+                        İngiltere'de kurulan özel fonlar ve şirketler aracılığıyla inşa edilen 18 şehir hastanesine <strong>25 yıl boyunca dövize endeksli bina kullanım kirası ve %70 doluluk garantisi</strong> verilmiştir. Yıllık bütçe yükü <strong>80+ Milyar TL</strong>'dir.
+                    </p>
+                </div>
+
+                <div class="bg-dark-900/80 p-4 rounded-xl border border-slate-800 space-y-2">
+                    <h4 class="font-bold text-red-400 font-mono text-sm">
+                        ⚖️ İngiliz Mahkemeleri & Londra Tahkimi
+                    </h4>
+                    <p class="text-xs text-slate-300 leading-relaxed font-sans">
+                        Tüm bu KÖİ sözleşmelerinde Türk mahkemeleri devre dışı bırakılmış; ihtilaf halinde <strong>İngiliz Hukuku ve Londra Uluslararası Tahkim Mahkemesi (LCIA)</strong> yetkili kılınmıştır. Olası bir temerrütte Türkiye'nin yurt dışındaki tüm kamu varlıkları haciz tehdidi altındadır.
+                    </p>
+                </div>
+            </div>
+
+            <!-- KÖİ YILLIK ÖDEME GRAFİĞİ -->
+            <div class="bg-dark-900/70 p-4 rounded-xl border border-slate-800 space-y-2">
+                <h4 class="text-xs font-bold text-purple-300 font-mono flex items-center justify-between">
+                    <span>⏳ Hazine'nin Yıllık KÖİ Garanti ve Şehir Hastanesi Ödemeleri Projeksiyonu ($ Milyar)</span>
+                    <span class="text-[10px] text-slate-500 font-normal">Hazine ve Maliye Bakanlığı KÖİ Raporları</span>
+                </h4>
+                <div class="h-[240px] w-full relative">
+                    <canvas id="pppDebtChart"></canvas>
+                </div>
+            </div>
+        </section>
+
     <!-- FOOTER -->
     <footer class="border-t border-slate-800 bg-dark-950 p-6 text-center text-xs font-mono text-slate-500">
         T2SAIM / Tarco Crisis Index v2.0 · Yapısal Analiz ve Sosyolojik Çürüme Raporu · Sıfır Sentetik Veri · Veritas Per Se
