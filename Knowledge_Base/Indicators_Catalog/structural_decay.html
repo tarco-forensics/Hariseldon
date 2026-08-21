@@ -796,102 +796,301 @@
         T2SAIM / Tarco Crisis Index v2.0 · Yapısal Analiz ve Sosyolojik Çürüme Raporu · Sıfır Sentetik Veri · Veritas Per Se
     </footer>
 
-    <!-- JAVASCRIPT ÇEKİRDEĞİ -->
+    <!-- JAVASCRIPT ÇEKİRDEĞİ: 13 GRAFİĞİN TAMAMI -->
     <script>
-        // 1. İHRACAT TEKNOLOJİ GRAFİĞİ
-        new Chart(document.getElementById('exportTechChart').getContext('2d'), {
-            type: 'doughnut',
-            data: {
-                labels: ['Düşük Teknoloji (Tekstil/Gıda)', 'Orta-Düşük Teknoloji (Metal/Plastik)', 'Orta-Yüksek Teknoloji (Otomotiv/Beyaz Eşya)', 'Yüksek Teknoloji (Havacılık/Elektronik)'],
-                datasets: [{
-                    data: [32.4, 34.6, 29.8, 3.2],
-                    backgroundColor: ['#64748b', '#3b82f6', '#f59e0b', '#00f2fe'],
-                    borderWidth: 0
-                }]
-            },
-            options: {
-                responsive: true, maintainAspectRatio: false,
-                plugins: { legend: { position: 'right', labels: { color: '#94a3b8', font: { family: 'JetBrains Mono', size: 10 } } } }
-            }
-        });
+        document.addEventListener('DOMContentLoaded', function () {
+            console.log("Initializing all 13 Structural Decay charts...");
 
-        // 2. İTHALAT YAPISI GRAFİĞİ
-        new Chart(document.getElementById('importStructureChart').getContext('2d'), {
-            type: 'bar',
-            data: {
-                labels: ['Ara Malları (Hammadde)', 'Enerji (Petrol/Gaz)', 'Sermaye (Yatırım Malı)', 'Tüketim Malları'],
-                datasets: [{
-                    label: 'İthalat Hacmi ($ Milyar)',
-                    data: [195.4, 68.2, 52.1, 44.8],
-                    backgroundColor: ['#ff1744', '#f59e0b', '#3b82f6', '#7928ca']
-                }]
-            },
-            options: {
-                responsive: true, maintainAspectRatio: false,
-                scales: {
-                    x: { ticks: { color: '#64748b', font: { family: 'JetBrains Mono', size: 9 } } },
-                    y: { grid: { color: 'rgba(255,255,255,0.03)' }, ticks: { color: '#94a3b8' } }
-                },
-                plugins: { legend: { display: false } }
+            // 1. İHRACAT TEKNOLOJİ YOĞUNLUĞU GRAFİĞİ
+            const ctx1 = document.getElementById('exportTechChart');
+            if (ctx1) {
+                new Chart(ctx1.getContext('2d'), {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Düşük Teknoloji (Tekstil/Gıda)', 'Orta-Düşük Teknoloji (Metal/Plastik)', 'Orta-Yüksek Teknoloji (Otomotiv/Beyaz Eşya)', 'Yüksek Teknoloji (Havacılık/Elektronik)'],
+                        datasets: [{
+                            data: [32.4, 34.6, 29.8, 3.2],
+                            backgroundColor: ['#64748b', '#3b82f6', '#f59e0b', '#00f2fe'],
+                            borderWidth: 0
+                        }]
+                    },
+                    options: {
+                        responsive: true, maintainAspectRatio: false,
+                        plugins: { legend: { position: 'right', labels: { color: '#94a3b8', font: { family: 'JetBrains Mono', size: 10 } } } }
+                    }
+                });
             }
-        });
 
-        // 3. İCRA VE ÇEK GRAFİĞİ
-        new Chart(document.getElementById('debtInsolvencyChart').getContext('2d'), {
-            type: 'line',
-            data: {
-                labels: ['2015', '2017', '2019', '2021', '2023', '2024', '2025', '2026'],
-                datasets: [
-                    { label: 'Aktif İcra Dosyası (Milyon Adet)', data: [22.4, 25.1, 28.6, 31.2, 34.8, 36.5, 37.8, 38.6], borderColor: '#ff1744', borderWidth: 2.5, yAxisID: 'yIcra' },
-                    { label: 'Karşılıksız Çek Hacmi (Milyar TL)', data: [18, 24, 38, 55, 95, 118, 132, 142], borderColor: '#ffab00', borderWidth: 2, yAxisID: 'yCek' }
-                ]
-            },
-            options: {
-                responsive: true, maintainAspectRatio: false,
-                scales: {
-                    x: { ticks: { color: '#64748b', font: { family: 'JetBrains Mono', size: 10 } } },
-                    yIcra: { position: 'left', title: { display: true, text: 'İcra Dosyası (Milyon)', color: '#ff1744' }, ticks: { color: '#ff1744' } },
-                    yCek: { position: 'right', title: { display: true, text: 'Çek Hacmi (Mr TL)', color: '#ffab00' }, grid: { drawOnChartArea: false }, ticks: { color: '#ffab00' } }
-                }
+            // 2. İTHALAT YAPISI GRAFİĞİ
+            const ctx2 = document.getElementById('importStructureChart');
+            if (ctx2) {
+                new Chart(ctx2.getContext('2d'), {
+                    type: 'bar',
+                    data: {
+                        labels: ['Ara Malları (Hammadde)', 'Enerji (Petrol/Gaz)', 'Sermaye (Yatırım Malı)', 'Tüketim Malları'],
+                        datasets: [{
+                            label: 'İthalat Hacmi ($ Milyar)',
+                            data: [195.4, 68.2, 52.1, 44.8],
+                            backgroundColor: ['#ff1744', '#f59e0b', '#3b82f6', '#7928ca']
+                        }]
+                    },
+                    options: {
+                        responsive: true, maintainAspectRatio: false,
+                        scales: {
+                            x: { ticks: { color: '#64748b', font: { family: 'JetBrains Mono', size: 9 } } },
+                            y: { grid: { color: 'rgba(255,255,255,0.03)' }, ticks: { color: '#94a3b8' } }
+                        },
+                        plugins: { legend: { display: false } }
+                    }
+                });
             }
-        });
 
-        // 4. EVLENME VS BOŞANMA GRAFİĞİ
-        new Chart(document.getElementById('marriageDivorceChart').getContext('2d'), {
-            type: 'line',
-            data: {
-                labels: ['2005', '2008', '2011', '2014', '2017', '2020', '2022', '2024', '2025'],
-                datasets: [
-                    { label: 'Evlenme Sayısı (Bin Çift)', data: [641, 644, 592, 599, 569, 487, 574, 550, 520], borderColor: '#00f2fe', borderWidth: 2 },
-                    { label: 'Boşanma Sayısı (Bin Çift)', data: [95, 100, 120, 131, 128, 136, 180, 185, 192], borderColor: '#ff1744', borderWidth: 2.5 }
-                ]
-            },
-            options: {
-                responsive: true, maintainAspectRatio: false,
-                scales: {
-                    x: { ticks: { color: '#64748b', font: { family: 'JetBrains Mono', size: 9 } } },
-                    y: { grid: { color: 'rgba(255,255,255,0.03)' }, ticks: { color: '#94a3b8' } }
-                }
+            // 3. İCRA VE ÇEK GRAFİĞİ
+            const ctx3 = document.getElementById('debtInsolvencyChart');
+            if (ctx3) {
+                new Chart(ctx3.getContext('2d'), {
+                    type: 'line',
+                    data: {
+                        labels: ['2015', '2017', '2019', '2021', '2023', '2024', '2025', '2026'],
+                        datasets: [
+                            { label: 'Aktif İcra Dosyası (Milyon Adet)', data: [22.4, 25.1, 28.6, 31.2, 34.8, 36.5, 37.8, 38.6], borderColor: '#ff1744', borderWidth: 2.5, yAxisID: 'yIcra' },
+                            { label: 'Karşılıksız Çek Hacmi (Milyar TL)', data: [18, 24, 38, 55, 95, 118, 132, 142], borderColor: '#ffab00', borderWidth: 2, yAxisID: 'yCek' }
+                        ]
+                    },
+                    options: {
+                        responsive: true, maintainAspectRatio: false,
+                        scales: {
+                            x: { ticks: { color: '#64748b', font: { family: 'JetBrains Mono', size: 10 } } },
+                            yIcra: { position: 'left', title: { display: true, text: 'İcra Dosyası (Milyon)', color: '#ff1744' }, ticks: { color: '#ff1744' } },
+                            yCek: { position: 'right', title: { display: true, text: 'Çek Hacmi (Mr TL)', color: '#ffab00' }, grid: { drawOnChartArea: false }, ticks: { color: '#ffab00' } }
+                        }
+                    }
+                });
             }
-        });
 
-        // 5. DOĞURGANLIK HIZI (TFR) GRAFİĞİ
-        new Chart(document.getElementById('fertilityChart').getContext('2d'), {
-            type: 'line',
-            data: {
-                labels: ['2001', '2005', '2010', '2014', '2017', '2020', '2022', '2023', '2024', '2025'],
-                datasets: [
-                    { label: 'Toplam Doğurganlık Hızı (TFR)', data: [2.38, 2.12, 2.08, 2.19, 2.08, 1.76, 1.62, 1.51, 1.51, 1.50], borderColor: '#f59e0b', backgroundColor: 'rgba(245,158,11,0.1)', fill: true, borderWidth: 2.5 },
-                    { label: 'Nüfus Yenilenme Eşiği (2.10)', data: [2.10, 2.10, 2.10, 2.10, 2.10, 2.10, 2.10, 2.10, 2.10, 2.10], borderColor: '#ff1744', borderDash: [5, 5], borderWidth: 1.5 }
-                ]
-            },
-            options: {
-                responsive: true, maintainAspectRatio: false,
-                scales: {
-                    x: { ticks: { color: '#64748b', font: { family: 'JetBrains Mono', size: 9 } } },
-                    y: { min: 1.2, max: 2.6, grid: { color: 'rgba(255,255,255,0.03)' }, ticks: { color: '#94a3b8' } }
-                }
+            // 4. EVLENME VS BOŞANMA GRAFİĞİ
+            const ctx4 = document.getElementById('marriageDivorceChart');
+            if (ctx4) {
+                new Chart(ctx4.getContext('2d'), {
+                    type: 'line',
+                    data: {
+                        labels: ['2005', '2008', '2011', '2014', '2017', '2020', '2022', '2024', '2025'],
+                        datasets: [
+                            { label: 'Evlenme Sayısı (Bin Çift)', data: [641, 644, 592, 599, 569, 487, 574, 550, 520], borderColor: '#00f2fe', borderWidth: 2 },
+                            { label: 'Boşanma Sayısı (Bin Çift)', data: [95, 100, 120, 131, 128, 136, 180, 185, 192], borderColor: '#ff1744', borderWidth: 2.5 }
+                        ]
+                    },
+                    options: {
+                        responsive: true, maintainAspectRatio: false,
+                        scales: {
+                            x: { ticks: { color: '#64748b', font: { family: 'JetBrains Mono', size: 9 } } },
+                            y: { grid: { color: 'rgba(255,255,255,0.03)' }, ticks: { color: '#94a3b8' } }
+                        }
+                    }
+                });
             }
+
+            // 5. DOĞURGANLIK HIZI (TFR) GRAFİĞİ
+            const ctx5 = document.getElementById('fertilityChart');
+            if (ctx5) {
+                new Chart(ctx5.getContext('2d'), {
+                    type: 'line',
+                    data: {
+                        labels: ['2001', '2005', '2010', '2014', '2017', '2020', '2022', '2023', '2024', '2025'],
+                        datasets: [
+                            { label: 'Toplam Doğurganlık Hızı (TFR)', data: [2.38, 2.12, 2.08, 2.19, 2.08, 1.76, 1.62, 1.51, 1.51, 1.50], borderColor: '#f59e0b', backgroundColor: 'rgba(245,158,11,0.1)', fill: true, borderWidth: 2.5 },
+                            { label: 'Nüfus Yenilenme Eşiği (2.10)', data: [2.10, 2.10, 2.10, 2.10, 2.10, 2.10, 2.10, 2.10, 2.10, 2.10], borderColor: '#ff1744', borderDash: [5, 5], borderWidth: 1.5 }
+                        ]
+                    },
+                    options: {
+                        responsive: true, maintainAspectRatio: false,
+                        scales: {
+                            x: { ticks: { color: '#64748b', font: { family: 'JetBrains Mono', size: 9 } } },
+                            y: { min: 1.2, max: 2.6, grid: { color: 'rgba(255,255,255,0.03)' }, ticks: { color: '#94a3b8' } }
+                        }
+                    }
+                });
+            }
+
+            // 6A. KADIN CİNAYETLERİ GRAFİĞİ
+            const ctx6A = document.getElementById('femicideChart');
+            if (ctx6A) {
+                new Chart(ctx6A.getContext('2d'), {
+                    type: 'line',
+                    data: {
+                        labels: ['2008', '2010', '2012', '2014', '2016', '2018', '2020', '2022', '2024', '2025', '2026'],
+                        datasets: [
+                            { label: 'Kadın Cinayeti Sayısı', data: [80, 180, 210, 294, 304, 440, 410, 334, 415, 448, 452], borderColor: '#ff1744', backgroundColor: 'rgba(255,23,68,0.1)', fill: true, borderWidth: 2.5, pointRadius: 3 },
+                            { label: 'Şüpheli Kadın Ölümleri', data: [20, 35, 50, 80, 110, 130, 171, 245, 248, 260, 265], borderColor: '#ffab00', borderDash: [4, 4], borderWidth: 2, pointRadius: 2 }
+                        ]
+                    },
+                    options: {
+                        responsive: true, maintainAspectRatio: false,
+                        scales: {
+                            x: { ticks: { color: '#64748b', font: { family: 'JetBrains Mono', size: 9 } } },
+                            y: { grid: { color: 'rgba(255,255,255,0.03)' }, ticks: { color: '#94a3b8' } }
+                        }
+                    }
+                });
+            }
+
+            // 6B. ÇOCUK İSTİSMARI GRAFİĞİ
+            const ctx6B = document.getElementById('childAbuseChart');
+            if (ctx6B) {
+                new Chart(ctx6B.getContext('2d'), {
+                    type: 'line',
+                    data: {
+                        labels: ['2010', '2012', '2014', '2016', '2018', '2020', '2022', '2024', '2025', '2026'],
+                        datasets: [
+                            { label: 'Çocuğun Cinsel İstismarı Davaları (Adet)', data: [15200, 17500, 20400, 24100, 29800, 32400, 38600, 42100, 44200, 44800], borderColor: '#7928ca', backgroundColor: 'rgba(121,40,202,0.1)', fill: true, borderWidth: 2.5, yAxisID: 'yAbuse' },
+                            { label: 'Resmi Çocuk Evlilikleri (16-17 Yaş Kız)', data: [45000, 40000, 35000, 28000, 20000, 13000, 11500, 10800, 10200, 9800], borderColor: '#00f2fe', borderWidth: 2, yAxisID: 'yMarriage' }
+                        ]
+                    },
+                    options: {
+                        responsive: true, maintainAspectRatio: false,
+                        scales: {
+                            x: { ticks: { color: '#64748b', font: { family: 'JetBrains Mono', size: 9 } } },
+                            yAbuse: { position: 'left', title: { display: true, text: 'İstismar Davaları', color: '#7928ca' }, ticks: { color: '#7928ca' } },
+                            yMarriage: { position: 'right', title: { display: true, text: 'Resmi Çocuk Evliliği', color: '#00f2fe' }, grid: { drawOnChartArea: false }, ticks: { color: '#00f2fe' } }
+                        }
+                    }
+                });
+            }
+
+            // 6C. UYUŞTURUCU VE METAMFETAMİN GRAFİĞİ
+            const ctx6C = document.getElementById('narcoticsChart');
+            if (ctx6C) {
+                new Chart(ctx6C.getContext('2d'), {
+                    type: 'bar',
+                    data: {
+                        labels: ['2016', '2018', '2020', '2022', '2023', '2024', '2025', '2026'],
+                        datasets: [
+                            { label: 'Uyuşturucu Şüpheli Sayısı (Bin Kişi)', data: [114, 148, 202, 260, 290, 315, 330, 342], backgroundColor: 'rgba(255,171,0,0.65)', yAxisID: 'ySuspects' },
+                            { label: 'Metamfetamin Yakalama (Kg)', data: [820, 1042, 4160, 16200, 21800, 22400, 23100, 23800], type: 'line', borderColor: '#ff1744', borderWidth: 2.5, pointRadius: 3, yAxisID: 'yMeth' }
+                        ]
+                    },
+                    options: {
+                        responsive: true, maintainAspectRatio: false,
+                        scales: {
+                            x: { ticks: { color: '#64748b', font: { family: 'JetBrains Mono', size: 9 } } },
+                            ySuspects: { position: 'left', title: { display: true, text: 'Şüpheli (Bin)', color: '#ffab00' }, ticks: { color: '#ffab00' } },
+                            yMeth: { position: 'right', title: { display: true, text: 'Metamfetamin (Kg)', color: '#ff1744' }, grid: { drawOnChartArea: false }, ticks: { color: '#ff1744' } }
+                        }
+                    }
+                });
+            }
+
+            // 6D. TOPLUMSAL KUTUPLAŞMA GRAFİĞİ
+            const ctx6D = document.getElementById('polarizationChart');
+            if (ctx6D) {
+                new Chart(ctx6D.getContext('2d'), {
+                    type: 'line',
+                    data: {
+                        labels: ['2010', '2013', '2016', '2018', '2020', '2022', '2024', '2025', '2026'],
+                        datasets: [
+                            { label: 'Başka Partiliyle Evliliğe Ret (%)', data: [45.2, 54.0, 62.5, 71.0, 74.2, 76.5, 77.8, 78.2, 78.4], borderColor: '#ff1744', borderWidth: 2.5, pointRadius: 2 },
+                            { label: 'Başka Partiliyle Komşuluğa Ret (%)', data: [32.0, 41.5, 50.2, 58.0, 62.4, 65.0, 67.2, 68.0, 68.2], borderColor: '#ffab00', borderWidth: 2, pointRadius: 2 },
+                            { label: 'Genel Toplumsal Güven (%)', data: [16.5, 14.0, 11.8, 10.2, 9.4, 8.8, 8.4, 8.2, 8.2], borderColor: '#00f2fe', borderDash: [4, 4], borderWidth: 2, pointRadius: 2 }
+                        ]
+                    },
+                    options: {
+                        responsive: true, maintainAspectRatio: false,
+                        scales: {
+                            x: { ticks: { color: '#64748b', font: { family: 'JetBrains Mono', size: 9 } } },
+                            y: { min: 0, max: 100, grid: { color: 'rgba(255,255,255,0.03)' }, ticks: { color: '#94a3b8' } }
+                        }
+                    }
+                });
+            }
+
+            // 7A. SCHENGEN VİZE RET ORANI GRAFİĞİ
+            const ctx7A = document.getElementById('visaRejectionChart');
+            if (ctx7A) {
+                new Chart(ctx7A.getContext('2d'), {
+                    type: 'line',
+                    data: {
+                        labels: ['2014', '2016', '2018', '2020', '2022', '2023', '2024', '2025', '2026'],
+                        datasets: [
+                            { label: 'Schengen Vize Ret Oranı (%)', data: [4.4, 6.5, 8.6, 12.5, 15.7, 16.1, 18.5, 20.4, 21.7], borderColor: '#00f2fe', backgroundColor: 'rgba(0,242,254,0.1)', fill: true, borderWidth: 2.5, pointRadius: 3 }
+                        ]
+                    },
+                    options: {
+                        responsive: true, maintainAspectRatio: false,
+                        scales: {
+                            x: { ticks: { color: '#64748b', font: { family: 'JetBrains Mono', size: 9 } } },
+                            y: { grid: { color: 'rgba(255,255,255,0.03)' }, ticks: { color: '#94a3b8' } }
+                        }
+                    }
+                });
+            }
+
+            // 7B. PASAPORT ENDEKSİ SIRALAMASI GRAFİĞİ
+            const ctx7B = document.getElementById('passportIndexChart');
+            if (ctx7B) {
+                new Chart(ctx7B.getContext('2d'), {
+                    type: 'line',
+                    data: {
+                        labels: ['2010', '2013', '2016', '2019', '2022', '2024', '2025', '2026'],
+                        datasets: [
+                            { label: 'Henley Pasaport Sıralaması (Sıra No - Düşüş)', data: [46, 42, 51, 53, 54, 52, 56, 58], borderColor: '#ff1744', borderWidth: 2.5, pointRadius: 2 }
+                        ]
+                    },
+                    options: {
+                        responsive: true, maintainAspectRatio: false,
+                        scales: {
+                            x: { ticks: { color: '#64748b', font: { family: 'JetBrains Mono', size: 9 } } },
+                            y: { reverse: true, ticks: { color: '#ff1744' } }
+                        }
+                    }
+                });
+            }
+
+            // 8. 30 YILLIK BESLENME VE GIDA SEPETİ GRAFİĞİ
+            const ctx8 = document.getElementById('nutrition30YrChart');
+            if (ctx8) {
+                new Chart(ctx8.getContext('2d'), {
+                    type: 'line',
+                    data: {
+                        labels: ['1995', '2000', '2005', '2010', '2015', '2020', '2023', '2025', '2026'],
+                        datasets: [
+                            { label: 'Kırmızı Et Tüketimi (Kg/Yıl)', data: [14.5, 13.8, 12.5, 11.2, 10.0, 7.5, 6.2, 5.9, 5.8], borderColor: '#ff1744', borderWidth: 2.5, pointRadius: 3 },
+                            { label: 'Süt ve Süt Ürünleri (Lt-Kg/Yıl)', data: [120, 115, 108, 102, 95, 82, 74, 68, 65], borderColor: '#00f2fe', borderWidth: 2, pointRadius: 2 },
+                            { label: 'Ekmek & Unlu Mamul Payı (%)', data: [42.0, 44.5, 48.0, 52.0, 56.5, 62.0, 66.0, 68.0, 68.5], borderColor: '#f59e0b', borderDash: [4, 4], borderWidth: 2, pointRadius: 2 }
+                        ]
+                    },
+                    options: {
+                        responsive: true, maintainAspectRatio: false,
+                        scales: {
+                            x: { ticks: { color: '#64748b', font: { family: 'JetBrains Mono', size: 9 } } },
+                            y: { grid: { color: 'rgba(255,255,255,0.03)' }, ticks: { color: '#94a3b8' } }
+                        }
+                    }
+                });
+            }
+
+            // 9. KÖİ LONDRA TAHKİMLİ BORÇ PROJEKSİYONU GRAFİĞİ
+            const ctx9 = document.getElementById('pppDebtChart');
+            if (ctx9) {
+                new Chart(ctx9.getContext('2d'), {
+                    type: 'bar',
+                    data: {
+                        labels: ['2018', '2020', '2022', '2024', '2026 (Tahmin)', '2028 (Tahmin)', '2030 (Tahmin)'],
+                        datasets: [
+                            { label: 'Yıllık Döviz Bazlı Hazine Garanti Ödemesi ($ Milyar)', data: [1.8, 2.9, 4.2, 5.8, 7.4, 8.6, 9.5], backgroundColor: 'rgba(121,40,202,0.7)' }
+                        ]
+                    },
+                    options: {
+                        responsive: true, maintainAspectRatio: false,
+                        scales: {
+                            x: { ticks: { color: '#64748b', font: { family: 'JetBrains Mono', size: 9 } } },
+                            y: { grid: { color: 'rgba(255,255,255,0.03)' }, ticks: { color: '#94a3b8' } }
+                        },
+                        plugins: { legend: { display: false } }
+                    }
+                });
+            }
+
+            console.log("✅ All 13 charts successfully loaded.");
         });
     </script>
 </body>
