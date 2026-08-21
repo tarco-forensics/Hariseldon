@@ -48,7 +48,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
     
-    <!-- MathJax 3.2 -->
+    <!-- MathJax 3.2 Configuration -->
     <script>
         window.MathJax = {
             tex: {
@@ -66,29 +66,29 @@
             color: #f1f5f9;
             font-family: 'Inter', sans-serif;
             background-image: 
-                radial-gradient(circle at 15% 0%, rgba(201, 168, 76, 0.08) 0%, transparent 45%),
-                radial-gradient(circle at 85% 100%, rgba(121, 40, 202, 0.07) 0%, transparent 40%);
+                radial-gradient(circle at 15% 0%, rgba(201, 168, 76, 0.10) 0%, transparent 45%),
+                radial-gradient(circle at 85% 100%, rgba(121, 40, 202, 0.08) 0%, transparent 40%);
             background-attachment: fixed;
         }
         
         .glass-panel {
-            background: rgba(13, 18, 28, 0.90);
+            background: rgba(13, 18, 28, 0.92);
             backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 0.85rem;
         }
         
         .glass-card {
-            background: rgba(20, 28, 43, 0.75);
+            background: rgba(20, 28, 43, 0.80);
             backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.07);
             transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
         .glass-card:hover {
             transform: translateY(-2px);
-            border-color: rgba(201, 168, 76, 0.4);
-            box-shadow: 0 8px 25px -5px rgba(201, 168, 76, 0.15);
+            border-color: rgba(201, 168, 76, 0.5);
+            box-shadow: 0 8px 25px -5px rgba(201, 168, 76, 0.20);
         }
 
         .glow-gold { box-shadow: 0 0 30px -5px rgba(201, 168, 76, 0.25); }
@@ -114,10 +114,10 @@
                         <h1 class="text-lg font-black tracking-tight text-white font-mono flex items-center gap-2">
                             T2SAIM × DARON ACEMOĞLU MASTER SENTEZ RAPORU
                         </h1>
-                        <span class="text-xs px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-mono border border-amber-500/30">
+                        <span class="text-xs px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-mono border border-amber-500/40 font-bold">
                             LM-ECON-DARON v2.1
                         </span>
-                        <span class="text-xs px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 font-mono border border-purple-500/30">
+                        <span class="text-xs px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 font-mono border border-purple-500/40 font-bold">
                             NTZ-49 PROTOKOL
                         </span>
                     </div>
@@ -135,6 +135,9 @@
                 <a href="structural_decay.html" class="px-3 py-1.5 rounded-lg bg-purple-500/20 text-purple-300 border border-purple-500/40 hover:bg-purple-500/30 transition flex items-center gap-1.5 font-bold">
                     <span>📊 Yapısal & Toplumsal Çürüme</span>
                 </a>
+                <a href="turkey_gullini_crisis_protocol.html" class="px-3 py-1.5 rounded-lg bg-red-500/20 text-red-300 border border-red-500/40 hover:bg-red-500/30 transition flex items-center gap-1.5 font-bold">
+                    <span>⚡ Gullini Protokolü</span>
+                </a>
             </div>
             
         </div>
@@ -147,10 +150,10 @@
         <section class="glass-panel p-6 space-y-6 border-amber-500/40 glow-gold">
             <div class="border-b border-slate-800 pb-3 flex flex-col md:flex-row items-start md:items-center justify-between gap-2">
                 <div>
-                    <span class="text-[10px] uppercase font-mono tracking-widest text-amber-400 font-bold">
+                    <span class="text-[11px] uppercase font-mono tracking-widest text-amber-300 font-black bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/30">
                         MISSION ALBION · NOBEL PRIZE INSTITUTIONAL SYNTHESIS
                     </span>
-                    <h2 class="text-xl font-black text-white font-mono mt-0.5 flex items-center gap-2">
+                    <h2 class="text-xl font-black text-white font-mono mt-1 flex items-center gap-2">
                         ⚖️ I. DARON ACEMOĞLU KURUMSAL EKONOMİ KANONU VE T2SAIM MATEMATİKSEL ENTEGRASYONU
                     </h2>
                 </div>
@@ -162,17 +165,17 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-5 text-xs text-slate-300 leading-relaxed font-sans">
-                <div class="bg-dark-900/80 p-4 rounded-xl border border-slate-800 space-y-2">
-                    <h3 class="font-bold text-amber-400 font-mono text-sm">
+                <div class="bg-dark-900/90 p-4 rounded-xl border border-slate-800 space-y-2">
+                    <h3 class="font-bold text-amber-300 font-mono text-sm">
                         1. Siyasal Gücün Dinamiği (De Jure vs. De Facto)
                     </h3>
                     <p>
-                        Acemoğlu-Robinson modellerinde siyasal güç ikiye ayrılır: Anayasal/kurumsal güç ($	ext{De Jure}$) ve sokaktaki devrim tehdidi / kolektif eylem gücü ($	ext{De Facto}$). Rejimler, elitlerin geçici $	ext{de facto}$ tehditleri savuşturmak için kalıcı $	ext{de jure}$ tavizler (Demokrasi) vermesi veya maliyetli baskı araçlarına ($\mu$) başvurmasıyla belirlenir.
+                        Acemoğlu-Robinson modellerinde siyasal güç ikiye ayrılır: Anayasal/kurumsal güç ($\text{De Jure}$) ve sokaktaki devrim tehdidi / kolektif eylem gücü ($\text{De Facto}$). Rejimler, elitlerin geçici $\text{de facto}$ tehditleri savuşturmak için kalıcı $\text{de jure}$ tavizler (Demokrasi) vermesi veya maliyetli baskı araçlarına ($\mu$) başvurmasıyla belirlenir.
                     </p>
                 </div>
 
-                <div class="bg-dark-900/80 p-4 rounded-xl border border-slate-800 space-y-2">
-                    <h3 class="font-bold text-purple-400 font-mono text-sm">
+                <div class="bg-dark-900/90 p-4 rounded-xl border border-slate-800 space-y-2">
+                    <h3 class="font-bold text-purple-300 font-mono text-sm">
                         2. Taahhüt Sorunu (Commitment Problem)
                     </h3>
                     <p>
@@ -180,8 +183,8 @@
                     </p>
                 </div>
 
-                <div class="bg-dark-900/80 p-4 rounded-xl border border-slate-800 space-y-2">
-                    <h3 class="font-bold text-cyan-400 font-mono text-sm">
+                <div class="bg-dark-900/90 p-4 rounded-xl border border-slate-800 space-y-2">
+                    <h3 class="font-bold text-cyan-300 font-mono text-sm">
                         3. Dar Koridor ve Kırmızı Kraliçe (Red Queen)
                     </h3>
                     <p>
@@ -198,7 +201,7 @@
                     📐 II. SİYASİ GEÇİŞLERİN OYUN TEORİSİ VE MATEMATİKSEL İSPATI
                 </h2>
                 <p class="text-xs text-slate-400 mt-0.5">
-                    "Economic Origins of Dictatorship and Democracy" Matematiksel Çekirdeği: Eşikler, Eşitsizlik ($	heta$) ve Baskı Maliyeti ($\mu$)
+                    "Economic Origins of Dictatorship and Democracy" Matematiksel Çekirdeği: Eşikler, Eşitsizlik ($\theta$) ve Baskı Maliyeti ($\mu$)
                 </p>
             </div>
 
@@ -206,32 +209,32 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 
                 <div class="glass-card p-5 rounded-xl border-amber-500/30 space-y-3">
-                    <h4 class="text-xs font-bold text-amber-400 font-mono">
+                    <h4 class="text-xs font-bold text-amber-300 font-mono">
                         1. Devrim Tehdidi Altında Elitlerin Kazanç Fonksiyonu (Payoff Matrix)
                     </h4>
-                    <div class="bg-dark-950 p-3.5 rounded-lg border border-slate-800 font-mono text-xs overflow-x-auto">
-                        $$V^E(R) = rac{(1-\mu^E) y^E}{1-eta} \quad 	ext{vs.} \quad V^E(D) = rac{(1-	au^D) y^E + T^E}{1-eta}$$
+                    <div class="bg-dark-950 p-4 rounded-lg border border-slate-800 font-mono text-xs overflow-x-auto text-amber-200">
+                        $$V^E(R) = \frac{(1-\mu^E) y^E}{1-\beta} \quad \text{vs.} \quad V^E(D) = \frac{(1-\tau^D) y^E + T^E}{1-\beta}$$
                     </div>
                     <p class="text-[11px] text-slate-400 font-sans leading-relaxed">
-                        Elitler baskı maliyeti $\mu$ ile demokrasideki vergi oranı $	au^D$ arasında seçim yapar. Eğer toplumun devrim yapma maliyeti $\mu^R$ düşük ve eşitsizlik $	heta$ yüksekse, elitler baskı uygulayamaz ve demokrasiye geçiş zorunlu hale gelir:
+                        Elitler baskı maliyeti $\mu$ ile demokrasideki vergi oranı $\tau^D$ arasında seçim yapar. Eğer toplumun devrim yapma maliyeti $\mu^R$ düşük ve eşitsizlik $\theta$ yüksekse, elitler baskı uygulayamaz ve demokrasiye geçiş zorunlu hale gelir:
                     </p>
-                    <div class="bg-dark-950 p-2.5 rounded border border-slate-800 font-mono text-[11px] text-amber-300">
-                        $$\mu > \mu^* \equiv 	heta - rac{	au^D (1-	heta)}{\lambda} \implies 	ext{Demokratikleşme Eşiği}$$
+                    <div class="bg-dark-950 p-3 rounded border border-slate-800 font-mono text-xs text-amber-300">
+                        $$\mu > \mu^* \equiv \theta - \frac{\tau^D (1-\theta)}{\lambda} \implies \text{Demokratikleşme Eşiği}$$
                     </div>
                 </div>
 
                 <div class="glass-card p-5 rounded-xl border-purple-500/30 space-y-3">
-                    <h4 class="text-xs font-bold text-purple-400 font-mono">
+                    <h4 class="text-xs font-bold text-purple-300 font-mono">
                         2. Kırmızı Kraliçe Dinamik Diferansiyel Denklem Sistemi
                     </h4>
-                    <div class="bg-dark-950 p-3.5 rounded-lg border border-slate-800 font-mono text-xs overflow-x-auto">
-                        $$egin{cases} \dot{S} = lpha_S X^\gamma - \delta_S S \ \dot{X} = lpha_X S^\eta - \delta_X X \end{cases}$$
+                    <div class="bg-dark-950 p-4 rounded-lg border border-slate-800 font-mono text-xs overflow-x-auto text-purple-200">
+                        $$\begin{cases} \dot{S} = \alpha_S X^\gamma - \delta_S S \\ \dot{X} = \alpha_X S^\eta - \delta_X X \end{cases}$$
                     </div>
                     <p class="text-[11px] text-slate-400 font-sans leading-relaxed">
-                        Devlet gücü ($S$) ve Toplum gücü ($X$) arasındaki faz düzleminde kararlı denge sadece koridor içinde sağlanır. Eğer $S > S_{	ext{crit}}$ ve $X 	o 0$ olursa sistem <strong>Despotik Leviathan</strong> rejimine çöker ($TFP 	o -\%1.6$).
+                        Devlet gücü ($S$) ve Toplum gücü ($X$) arasındaki faz düzleminde kararlı denge sadece koridor içinde sağlanır. Eğer $S > S_{\text{crit}}$ ve $X \to 0$ olursa sistem <strong>Despotik Leviathan</strong> rejimine çöker ($TFP \to -\%1.6$).
                     </p>
-                    <div class="bg-dark-950 p-2.5 rounded border border-slate-800 font-mono text-[11px] text-purple-300">
-                        $$	ext{Shackled Leviathan Condition: } \left| rac{\partial \dot{S}}{\partial X} ight| pprox \left| rac{\partial \dot{X}}{\partial S} ight|$$
+                    <div class="bg-dark-950 p-3 rounded border border-slate-800 font-mono text-xs text-purple-300">
+                        $$\text{Shackled Leviathan Condition: } \left| \frac{\partial \dot{S}}{\partial X} \right| \approx \left| \frac{\partial \dot{X}}{\partial S} \right|$$
                     </div>
                 </div>
 
@@ -241,7 +244,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 pt-2">
                 
                 <!-- GRAFİK A: DAR KORİDOR FAZ DÜZLEMİ (lg:col-span-6) -->
-                <div class="bg-dark-900/70 p-4 rounded-xl border border-slate-800 lg:col-span-6 space-y-2">
+                <div class="bg-dark-900/80 p-4 rounded-xl border border-slate-800 lg:col-span-6 space-y-2">
                     <h4 class="text-xs font-bold text-amber-300 font-mono flex items-center justify-between">
                         <span>🗺️ Dar Koridor Faz Düzlemi & Türkiye'nin Yörüngesi (2002 - 2026)</span>
                         <span class="text-[10px] text-slate-500 font-normal">Acemoğlu-Robinson Model</span>
@@ -255,7 +258,7 @@
                 </div>
 
                 <!-- GRAFİK B: AĞ ŞOKLARI VE MERKEZİ GİRDİ-ÇIKTI ÇÖKÜŞÜ (lg:col-span-6) -->
-                <div class="bg-dark-900/70 p-4 rounded-xl border border-slate-800 lg:col-span-6 space-y-2">
+                <div class="bg-dark-900/80 p-4 rounded-xl border border-slate-800 lg:col-span-6 space-y-2">
                     <h4 class="text-xs font-bold text-purple-300 font-mono flex items-center justify-between">
                         <span>🕸️ Ağ Şokları: Bonacich Merkezilik vs. Sistemik Çöküş Riski</span>
                         <span class="text-[10px] text-slate-500 font-normal">Acemoğlu, Ozdaglar & Tahbaz-Salehi</span>
@@ -302,19 +305,19 @@
                         <tr class="hover:bg-slate-800/20">
                             <td class="p-3 font-mono font-bold text-red-400">LM-1: Zaman Masası (Caliper)</td>
                             <td class="p-3 font-bold text-white">The Time-Inconsistency & Commitment Problem</td>
-                            <td class="p-3 font-mono text-cyan-300">$$CV(\Delta t) = rac{\sigma(\Delta t)}{\mu(\Delta t)} < 0.15$$</td>
+                            <td class="p-3 font-mono text-cyan-300">$$CV(\Delta t) = \frac{\sigma(\Delta t)}{\mu(\Delta t)} < 0.15$$</td>
                             <td class="p-3 text-slate-300">Geriye dönük tarihleme (backdating), gece yarısı KHK'ları, TCMB başkanlarının keyfi azli.</td>
                         </tr>
                         <tr class="hover:bg-slate-800/20">
-                            <td class="p-3 font-mono font-bold text-amber-400">LM-2: Topolojik Ağ (Benford)</td>
+                            <td class="p-3 font-mono font-bold text-amber-300">LM-2: Topolojik Ağ (Benford)</td>
                             <td class="p-3 font-bold text-white">Extractive Network Topology & Hub Concentration</td>
-                            <td class="p-3 font-mono text-cyan-300">$$	ext{MAD}_B = rac{1}{9}\sum_{d=1}^9 |P_{	ext{obs}}(d) - \log_{10}(1+d^{-1})|$$</td>
+                            <td class="p-3 font-mono text-cyan-300">$$\text{MAD}_B = \frac{1}{9}\sum_{d=1}^9 |P_{\text{obs}}(d) - \log_{10}(1+d^{-1})|$$</td>
                             <td class="p-3 text-slate-300">İhale yoğunlaşması (HHI = 4.280), KİK 21/b istisnaları, kaynakların 5 holdinge aktarılması.</td>
                         </tr>
                         <tr class="hover:bg-slate-800/20">
-                            <td class="p-3 font-mono font-bold text-purple-400">LM-3: Sentetik Yapı (Entropi)</td>
+                            <td class="p-3 font-mono font-bold text-purple-300">LM-3: Sentetik Yapı (Entropi)</td>
                             <td class="p-3 font-bold text-white">Information Asymmetry & Mükemmellik Paradoksu</td>
-                            <td class="p-3 font-mono text-cyan-300">$$D_{	ext{KL}}(P \parallel Q) = \sum_x P(x) \log rac{P(x)}{Q(x)}$$</td>
+                            <td class="p-3 font-mono text-cyan-300">$$D_{\text{KL}}(P \parallel Q) = \sum_x P(x) \log \frac{P(x)}{Q(x)}$$</td>
                             <td class="p-3 text-slate-300">TÜİK enflasyon sepetinin gizlenmesi, swap hariç net rezervlerin karartılması, yapay düşük entropi.</td>
                         </tr>
                     </tbody>
@@ -334,7 +337,7 @@
                     </p>
                 </div>
                 <span class="px-3 py-1 rounded bg-cyan-500/20 text-cyan-300 font-mono text-xs font-bold border border-cyan-500/40">
-                    IDIS FORMÜLÜ: $	ext{IDIS} = rac{100}{1 + 	ext{KE}_{	ext{final}}}$
+                    IDIS FORMÜLÜ: $\text{IDIS} = \frac{100}{1 + \text{KE}_{\text{final}}}$
                 </span>
             </div>
 
@@ -350,10 +353,10 @@
                 </div>
 
                 <div class="glass-card p-4 rounded-xl border-amber-500/30">
-                    <div class="text-[10px] text-amber-400 font-bold uppercase">IDIS: 65 - 84</div>
+                    <div class="text-[10px] text-amber-300 font-bold uppercase">IDIS: 65 - 84</div>
                     <div class="text-xl font-black text-white mt-1">Hibrit / Kayan Kurum</div>
                     <div class="text-[11px] text-slate-400 mt-1">Sinyal Gürültüsü Başlangıcı</div>
-                    <div class="text-[10px] text-amber-400 mt-2 bg-dark-950 p-1.5 rounded">
+                    <div class="text-[10px] text-amber-300 mt-2 bg-dark-950 p-1.5 rounded">
                         Kısa vadeli sıcak para ve carry trade girişi
                     </div>
                 </div>
@@ -368,17 +371,17 @@
                 </div>
 
                 <div class="glass-card p-4 rounded-xl border-purple-500/30">
-                    <div class="text-[10px] text-purple-400 font-bold uppercase">IDIS: < 50</div>
+                    <div class="text-[10px] text-purple-300 font-bold uppercase">IDIS: &lt; 50</div>
                     <div class="text-xl font-black text-purple-300 mt-1">Kurumsal Felç</div>
                     <div class="text-[11px] text-slate-400 mt-1">Mali Moratoryum / İflas</div>
-                    <div class="text-[10px] text-purple-400 mt-2 bg-dark-950 p-1.5 rounded">
+                    <div class="text-[10px] text-purple-300 mt-2 bg-dark-950 p-1.5 rounded">
                         Fiziksel likidite kilitlenmesi
                     </div>
                 </div>
             </div>
 
             <!-- GRAFİK 3: IDIS İLE CDS VE ENFLASYON MAKASI İLİŞKİSİ -->
-            <div class="bg-dark-900/70 p-4 rounded-xl border border-slate-800 space-y-2">
+            <div class="bg-dark-900/80 p-4 rounded-xl border border-slate-800 space-y-2">
                 <h4 class="text-xs font-bold text-cyan-300 font-mono flex items-center justify-between">
                     <span>📈 Kurumsal Veri Bütünlüğü (IDIS) vs. 5Y CDS & ENAG-TÜİK Enflasyon Makası (2015 - 18 Kasım 2026)</span>
                     <span class="text-[10px] text-slate-500 font-normal">T2SAIM Master Engine</span>
@@ -414,7 +417,7 @@
         document.addEventListener('DOMContentLoaded', function () {
             console.log("Initializing Acemoglu Master Synthesis Charts...");
 
-            // 1. DAR KORİDOR FAZ DÜZLEMİ GRAFİĞİ (Plotly / Chart.js Scatter)
+            // 1. DAR KORİDOR FAZ DÜZLEMİ GRAFİĞİ
             const ctx1 = document.getElementById('narrowCorridorChart');
             if (ctx1) {
                 new Chart(ctx1.getContext('2d'), {
@@ -533,7 +536,7 @@
                 });
             }
 
-            console.log("✅ Acemoglu Master Synthesis Charts Loaded.");
+            console.log("✅ Acemoglu Master Synthesis Charts and Clean MathJax Loaded.");
         });
     </script>
 </body>
