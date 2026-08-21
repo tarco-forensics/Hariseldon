@@ -472,6 +472,124 @@
 
     </main>
 
+    
+        <!-- BÖLÜM 6: ŞİDDET, CİNSİYET EŞİTSİZLİĞİ, MADDE BAĞIMLILIĞI VE TOPLUMSAL KUTUPLAŞMA -->
+        <section class="glass-panel p-6 space-y-6 border-red-500/40 glow-red">
+            <div class="border-b border-slate-800 pb-3 flex flex-col md:flex-row items-start md:items-center justify-between gap-2">
+                <div>
+                    <h2 class="text-lg font-black text-white font-mono flex items-center gap-2">
+                        🩸 6. ŞİDDET, ÇOCUK İSTİSMARI, UYUŞTURUCU PATLAMASI VE KUTUPLAŞMA (2008 - 2026)
+                    </h2>
+                    <p class="text-xs text-slate-400 mt-0.5">
+                        Kadın Cinayetleri, Çocuk İstismarı Davaları, Metamfetamin Yakalamaları, Cinsiyet Eşitsizliği ve Sosyal Fay Hatları Zaman Serisi
+                    </p>
+                </div>
+                <span class="px-3 py-1 rounded bg-red-500/20 text-red-300 font-mono text-xs font-bold border border-red-500/40">
+                    ADLİ SİCİL & EGM NARKOTİK VERİLERİ
+                </span>
+            </div>
+
+            <!-- 6 TEMEL SOSYAL KRİZ KARTI -->
+            <div class="grid grid-cols-2 md:grid-cols-6 gap-3.5 text-xs font-mono">
+                <div class="glass-card p-3 rounded-xl border-red-500/30">
+                    <div class="text-[10px] text-red-400 font-bold">KADIN CİNAYETLERİ</div>
+                    <div class="text-xl font-black text-white mt-1">452 / Yıl</div>
+                    <div class="text-[9px] text-slate-500 mt-0.5">+215 Şüpheli Ölüm</div>
+                </div>
+
+                <div class="glass-card p-3 rounded-xl border-amber-500/30">
+                    <div class="text-[10px] text-amber-400 font-bold">KADIN İŞSİZLİĞİ</div>
+                    <div class="text-xl font-black text-white mt-1">%36.4</div>
+                    <div class="text-[9px] text-slate-500 mt-0.5">Geniş tanımlı kadın işsizliği</div>
+                </div>
+
+                <div class="glass-card p-3 rounded-xl border-purple-500/30">
+                    <div class="text-[10px] text-purple-400 font-bold">ÇOCUK İSTİSMARI DAVA</div>
+                    <div class="text-xl font-black text-white mt-1">44.800 Dosya</div>
+                    <div class="text-[9px] text-slate-500 mt-0.5">Yılda açılan kamu davası</div>
+                </div>
+
+                <div class="glass-card p-3 rounded-xl border-red-500/30">
+                    <div class="text-[10px] text-red-400 font-bold">METAMFETAMİN ARTIŞ</div>
+                    <div class="text-xl font-black text-white mt-1">21.800 Kg</div>
+                    <div class="text-[9px] text-slate-500 mt-0.5">2019'a göre 20x Yakalama</div>
+                </div>
+
+                <div class="glass-card p-3 rounded-xl border-cyan-500/30">
+                    <div class="text-[10px] text-cyan-300 font-bold">TOPLUMSAL GÜVEN</div>
+                    <div class="text-xl font-black text-white mt-1">%8.2</div>
+                    <div class="text-[9px] text-slate-500 mt-0.5">"İnsanlara güvenebilirim"</div>
+                </div>
+
+                <div class="glass-card p-3 rounded-xl border-amber-500/30">
+                    <div class="text-[10px] text-amber-400 font-bold">WEF CİNSİYET SIRASI</div>
+                    <div class="text-xl font-black text-white mt-1">129. / 146</div>
+                    <div class="text-[9px] text-slate-500 mt-0.5">Küresel Eşitlik Endeksi</div>
+                </div>
+            </div>
+
+            <!-- 4'LÜ ZAMAN SERİSİ GRAFİK MATRİSİ -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-2">
+                
+                <!-- GRAFİK 6A: KADIN CİNAYETLERİ & ŞÜPHELİ ÖLÜMLER (2008 - 2026) -->
+                <div class="bg-dark-900/70 p-4 rounded-xl border border-slate-800 space-y-2">
+                    <h4 class="text-xs font-bold text-red-400 font-mono flex items-center justify-between">
+                        <span>👩 1. Kadın Cinayetleri ve Şüpheli Kadın Ölümleri (2008 - 2026)</span>
+                        <span class="text-[10px] text-slate-500 font-normal">KCDP & Adalet Bakanlığı</span>
+                    </h4>
+                    <div class="h-[240px] w-full relative">
+                        <canvas id="femicideChart"></canvas>
+                    </div>
+                    <div class="text-[10px] font-mono text-slate-400">
+                        * 2008 yılında 80 olan kadın cinayeti vakası, cezasızlık politikaları ve İstanbul Sözleşmesi'nden çıkış sonrası <strong>yıllık 450+ seviyesine</strong> tırmanmıştır.
+                    </div>
+                </div>
+
+                <!-- GRAFİK 6B: ÇOCUK İSTİSMARI DAVALARI & ÇOCUK EVLİLİKLERİ (2010 - 2026) -->
+                <div class="bg-dark-900/70 p-4 rounded-xl border border-slate-800 space-y-2">
+                    <h4 class="text-xs font-bold text-purple-400 font-mono flex items-center justify-between">
+                        <span>👶 2. Çocuğun Cinsel İstismarı Dava Sayısı & Çocuk Yaşta Evlilikler (2010 - 2026)</span>
+                        <span class="text-[10px] text-slate-500 font-normal">Adli Sicil İstatistikleri</span>
+                    </h4>
+                    <div class="h-[240px] w-full relative">
+                        <canvas id="childAbuseChart"></canvas>
+                    </div>
+                    <div class="text-[10px] font-mono text-slate-400">
+                        * Adli kayıtlara geçen çocuğun cinsel istismarı suç dosyası sayısı 2010'da 15.200 iken 2025'te <strong>44.800'e fırlamıştır (+%194 artış)</strong>.
+                    </div>
+                </div>
+
+                <!-- GRAFİK 6C: UYUŞTURUCU SUÇLARI VE METAMFETAMİN YAKALAMALARI (2016 - 2026) -->
+                <div class="bg-dark-900/70 p-4 rounded-xl border border-slate-800 space-y-2">
+                    <h4 class="text-xs font-bold text-amber-400 font-mono flex items-center justify-between">
+                        <span>💊 3. Uyuşturucu Suçu Şüpheli Sayısı (Bin) & Metamfetamin Yakalama (Kg)</span>
+                        <span class="text-[10px] text-slate-500 font-normal">EGM Narkotik Başkanlığı</span>
+                    </h4>
+                    <div class="h-[240px] w-full relative">
+                        <canvas id="narcoticsChart"></canvas>
+                    </div>
+                    <div class="text-[10px] font-mono text-slate-400">
+                        * Cezaevlerindeki hükümlülerin <strong>%31.4'ü uyuşturucu suçlarından</strong> yatmaktadır. Metamfetamin yakalaması 1 tondan 21.8 tona çıkarak rekor kırmıştır.
+                    </div>
+                </div>
+
+                <!-- GRAFİK 6D: TOPLUMSAL KUTUPLAŞMA VE SOSYAL MESAFE ENDEKSİ (2010 - 2026) -->
+                <div class="bg-dark-900/70 p-4 rounded-xl border border-slate-800 space-y-2">
+                    <h4 class="text-xs font-bold text-cyan-300 font-mono flex items-center justify-between">
+                        <span>⚡ 4. Siyasi/Kültürel Kutuplaşma & Sosyal Mesafe Oranları (%)</span>
+                        <span class="text-[10px] text-slate-500 font-normal">KONDA & World Values Survey</span>
+                    </h4>
+                    <div class="h-[240px] w-full relative">
+                        <canvas id="polarizationChart"></canvas>
+                    </div>
+                    <div class="text-[10px] font-mono text-slate-400">
+                        * "Kızımın diğer partiliden biriyle evlenmesini istemem" diyenlerin oranı <strong>%78.4'e</strong>, "Başka partiliyle komşu olmam" diyenler <strong>%68.2'ye</strong> çıkmıştır.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
     <!-- FOOTER -->
     <footer class="border-t border-slate-800 bg-dark-950 p-6 text-center text-xs font-mono text-slate-500">
         T2SAIM / Tarco Crisis Index v2.0 · Yapısal Analiz ve Sosyolojik Çürüme Raporu · Sıfır Sentetik Veri · Veritas Per Se
