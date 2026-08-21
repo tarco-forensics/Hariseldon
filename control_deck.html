@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🛸 T2SAIM Control Deck — Merkezi Komuta Köprüsü</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #07090e;
+            --bg-card: rgba(16, 22, 34, 0.85);
+            --border-card: rgba(255, 255, 255, 0.08);
+            --accent-cyan: #00f2fe;
+            --accent-blue: #4facfe;
+            --accent-green: #00e676;
+            --accent-red: #ff1744;
+            --accent-purple: #7928ca;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-image: radial-gradient(circle at 50% 0%, rgba(79, 172, 254, 0.12) 0%, transparent 60%);
+        }
+
+        header {
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-card);
+            background: rgba(7, 9, 14, 0.8);
+            backdrop-filter: blur(12px);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.3rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .status-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 230, 118, 0.1);
+            border: 1px solid rgba(0, 230, 118, 0.3);
+            color: var(--accent-green);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--accent-green);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--accent-green);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); opacity: 0.8; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(0.95); opacity: 0.8; }
+        }
+
+        main {
+            padding: 30px 40px;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+            flex: 1;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: 14px;
+            padding: 24px;
+            backdrop-filter: blur(16px);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .col-4 { grid-column: span 4; }
+        .col-8 { grid-column: span 8; }
+        .col-12 { grid-column: span 12; }
+
+        .card-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .feed-container {
+            flex: 1;
+            overflow-y: auto;
+            max-height: 400px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+        }
+
+        .feed-item {
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 3px solid var(--accent-blue);
+            padding: 12px 14px;
+            border-radius: 0 8px 8px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .feed-item.error { border-left-color: var(--accent-red); }
+        .feed-item.success { border-left-color: var(--accent-green); }
+
+        .feed-time { color: var(--text-muted); font-size: 0.75rem; }
+
+        .input-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        input, textarea {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--border-card);
+            color: #fff;
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-family: inherit;
+            outline: none;
+            width: 100%;
+        }
+
+        input:focus, textarea:focus {
+            border-color: var(--accent-cyan);
+        }
+
+        button {
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+            color: #07090e;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(79, 172, 254, 0.4);
+        }
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .metric-box {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 16px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .metric-val {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--accent-cyan);
+            font-family: 'JetBrains Mono', monospace;
+            margin-top: 4px;
+        }
+
+        .metric-lbl {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="brand">
+            🛸 T2SAIM CONTROL DECK // MERKEZİ KÖPRÜ
+        </div>
+        <div class="status-badge" id="server-status">
+            <div class="status-dot"></div>
+            <span>PORT 8001 ACTIVE</span>
+        </div>
+    </header>
+
+    <main>
+        <!-- METRİKLER -->
+        <div class="card col-12">
+            <div class="card-title">
+                <span>📊 KÖPRÜ DURUM VE GÖREV İSTATİSTİKLERİ</span>
+                <span style="font-size:0.8rem; color:var(--text-muted);">DuckDB: control_deck.duckdb</span>
+            </div>
+            <div class="metric-grid">
+                <div class="metric-box">
+                    <div class="metric-lbl">İŞLENEN GÖREVLER</div>
+                    <div class="metric-val" id="metric-processed">0</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-lbl">KUYRUKTAKİ GÖREVLER</div>
+                    <div class="metric-val" id="metric-queued" style="color:var(--accent-green)">0</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-lbl">SON BRİFİNG RAPORU</div>
+                    <div class="metric-val" id="metric-briefs" style="font-size:1.1rem; color:#fff;">AKTİF</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- GÖREV YÖNETİMİ & KUYRUK -->
+        <div class="card col-8">
+            <div class="card-title">
+                <span>🛰️ OPERASYONEL GÖREV KUYRUĞU (TASK QUEUE)</span>
+                <button onclick="fetchTasks()" style="padding:4px 10px; font-size:0.75rem;">Yenile</button>
+            </div>
+            <div class="feed-container" id="tasks-feed">
+                <div class="feed-item success">
+                    <div class="feed-time">2026-08-21T03:13:00</div>
+                    <div><strong>Sistem Başlatıldı:</strong> T2SAIM Control Deck FastAPI backend 127.0.0.1:8001 üzerinde yayında.</div>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <input type="text" id="task-prompt" placeholder="Ajanlara yeni görev veya analiz komutu gönder...">
+                <button onclick="submitTask()">Göreve Gönder</button>
+            </div>
+        </div>
+
+        <!-- HERMES HAFIZA VE BRİFİNGLER -->
+        <div class="card col-4">
+            <div class="card-title">
+                <span>🧠 HERMES BELLEK & HABERLEŞME</span>
+                <button onclick="fetchMemory()" style="padding:4px 10px; font-size:0.75rem;">Yenile</button>
+            </div>
+            <div class="feed-container" id="memory-feed">
+                <div class="feed-item">
+                    <div class="feed-time">Hermes Memory: Genel</div>
+                    <div>T2SAIM 126 Yıllık ABD Kriz verileri başarıyla sisteme mühürlendi.</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const API_BASE = "http://127.0.0.1:8001";
+
+        async function checkHealth() {
+            try {
+                const res = await fetch(`${API_BASE}/health`);
+                const data = await res.json();
+                if(data.status === 'healthy') {
+                    document.getElementById('server-status').innerHTML = '<div class="status-dot"></div><span>PORT 8001 ACTIVE</span>';
+                }
+            } catch(e) {
+                document.getElementById('server-status').innerHTML = '<div class="status-dot" style="background:var(--accent-red)"></div><span style="color:var(--accent-red)">OFFLINE</span>';
+            }
+        }
+
+        async function fetchTasks() {
+            try {
+                const res = await fetch(`${API_BASE}/api/control_deck/tasks`);
+                if(res.ok) {
+                    const tasks = await res.json();
+                    document.getElementById('metric-queued').innerText = tasks.length || 0;
+                    if(tasks.length > 0) {
+                        const feed = document.getElementById('tasks-feed');
+                        feed.innerHTML = tasks.map(t => `
+                            <div class="feed-item ${t.status === 'failed' ? 'error' : 'success'}">
+                                <div class="feed-time">${t.created_at || 'Şimdi'} | Durum: ${t.status}</div>
+                                <div><strong>${t.source || 'Panel'}:</strong> ${t.prompt}</div>
+                            </div>
+                        `).join('');
+                    }
+                }
+            } catch(e) {}
+        }
+
+        async function submitTask() {
+            const prompt = document.getElementById('task-prompt').value;
+            if(!prompt) return;
+            try {
+                const res = await fetch(`${API_BASE}/api/control_deck/tasks`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({prompt: prompt, source: 'commander'})
+                });
+                if(res.ok) {
+                    document.getElementById('task-prompt').value = '';
+                    fetchTasks();
+                }
+            } catch(e) {
+                alert('Görev gönderilirken hata: ' + e);
+            }
+        }
+
+        async function fetchMemory() {
+            try {
+                const res = await fetch(`${API_BASE}/api/control_deck/memory`);
+                if(res.ok) {
+                    const mems = await res.json();
+                    if(mems.length > 0) {
+                        document.getElementById('memory-feed').innerHTML = mems.map(m => `
+                            <div class="feed-item">
+                                <div class="feed-time">${m.category || 'Genel'}: ${m.key}</div>
+                                <div>${m.content}</div>
+                            </div>
+                        `).join('');
+                    }
+                }
+            } catch(e) {}
+        }
+
+        setInterval(checkHealth, 5000);
+        setInterval(fetchTasks, 4000);
+        checkHealth();
+        fetchTasks();
+        fetchMemory();
+    </script>
+</body>
+</html>
