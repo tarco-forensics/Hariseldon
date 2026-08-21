@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="tr" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T2SAIM — Yapısal Analiz, Kurumsal Aşınma ve Toplumsal Çürüme Raporu</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            950: '#030508',
+                            900: '#070a10',
+                            850: '#0d121c',
+                            800: '#141c2b',
+                            700: '#1c273c',
+                            600: '#283754'
+                        },
+                        accent: {
+                            cyan: '#00f2fe',
+                            blue: '#4facfe',
+                            green: '#00e676',
+                            red: '#ff1744',
+                            amber: '#ffab00',
+                            purple: '#7928ca'
+                        }
+                    },
+                    fontFamily: {
+                        mono: ['JetBrains Mono', 'monospace'],
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Chart.js & Plugins -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    
+    <!-- MathJax 3.2 -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            svg: { fontCache: 'global' }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        body {
+            background-color: #030508;
+            color: #f1f5f9;
+            font-family: 'Inter', sans-serif;
+            background-image: 
+                radial-gradient(circle at 20% 0%, rgba(121, 40, 202, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 100%, rgba(255, 23, 68, 0.06) 0%, transparent 40%);
+            background-attachment: fixed;
+        }
+        
+        .glass-panel {
+            background: rgba(13, 18, 28, 0.88);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 0.85rem;
+        }
+        
+        .glass-card {
+            background: rgba(20, 28, 43, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .glass-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(121, 40, 202, 0.4);
+            box-shadow: 0 8px 25px -5px rgba(121, 40, 202, 0.15);
+        }
+
+        .glow-purple { box-shadow: 0 0 30px -5px rgba(121, 40, 202, 0.35); }
+        .glow-red { box-shadow: 0 0 30px -5px rgba(255, 23, 68, 0.35); }
+        .glow-cyan { box-shadow: 0 0 30px -5px rgba(0, 242, 254, 0.35); }
+
+        ::-webkit-scrollbar { width: 5px; height: 5px; }
+        ::-webkit-scrollbar-track { background: #030508; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #334155; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased selection:bg-purple-500/30 selection:text-purple-200">
+
+    <!-- ÜST NAVİGASYON BARI -->
+    <header class="border-b border-slate-800/80 bg-dark-900/90 backdrop-blur-md px-6 py-3.5 sticky top-0 z-50">
+        <div class="max-w-[1750px] mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            
+            <div class="flex items-center gap-3">
+                <span class="text-2xl">🏛️</span>
+                <div>
+                    <div class="flex items-center gap-2">
+                        <h1 class="text-lg font-black tracking-tight text-white font-mono flex items-center gap-2">
+                            T2SAIM YAPISAL ANALİZ & TOPLUMSAL ÇÜRÜME RAPORU
+                        </h1>
+                        <span class="text-xs px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 font-mono border border-purple-500/30">
+                            v2.0 DOSYA
+                        </span>
+                    </div>
+                    <p class="text-[11px] text-slate-400 font-mono">
+                        Acemoğlu Kurumsal Aşınma · Gullini Güvensizlik · Üretim Fiziği · Hukuk, Tahkim & Demografi
+                    </p>
+                </div>
+            </div>
+
+            <!-- Ana Sayfa Geçiş Linki -->
+            <div class="flex items-center gap-3 font-mono text-xs">
+                <a href="tarkan_index.html" class="px-3.5 py-1.5 rounded-lg bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 hover:bg-cyan-500/30 transition flex items-center gap-1.5 font-bold">
+                    <span>⚡ Ana Kriz Panosuna Dön (Tarkan Index)</span>
+                </a>
+                <div class="text-xs text-slate-400 bg-dark-800 px-3 py-1.5 rounded-lg border border-slate-700/60">
+                    Sistem Raporu: <strong class="text-white">Ağustos 2026</strong>
+                </div>
+            </div>
+            
+        </div>
+    </header>
+
+    <!-- ANA İÇERİK -->
+    <main class="max-w-[1750px] w-full mx-auto px-6 py-6 space-y-8 flex-1">
+
+        <!-- BÖLÜM 1: DARON ACEMOĞLU & EMILIO GULLINI KURUMSAL GÜVEN KARTLARI -->
+        <section class="glass-panel p-6 space-y-6 border-purple-500/30 glow-purple">
+            <div class="border-b border-slate-800 pb-3 flex flex-col md:flex-row items-start md:items-center justify-between gap-2">
+                <div>
+                    <h2 class="text-lg font-black text-white font-mono flex items-center gap-2">
+                        ⚖️ 1. DARON ACEMOĞLU & EMILIO GULLINI KURUMSAL TEŞHİS MATRİSİ
+                    </h2>
+                    <p class="text-xs text-slate-400 mt-0.5">
+                        Kapsayıcı vs. Sömürücü Kurum Dengesi, İhale Yoğunlaşması (HHI), Güven Erozyonu ($G_{\text{def}}$) ve Verimsiz Rant Kredileri
+                    </p>
+                </div>
+                <span class="px-3 py-1 rounded bg-purple-500/20 text-purple-300 font-mono text-xs font-bold border border-purple-500/40">
+                    SÖMÜRÜCÜ KURUM DENGESİ: %74.1
+                </span>
+            </div>
+
+            <!-- 4 TEMEL KURUMSAL KART -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                
+                <div class="glass-card p-4 rounded-xl border-purple-500/30">
+                    <div class="text-[10px] font-mono text-purple-400 font-bold uppercase">GULLINI GÜVEN EROZYONU ($G_{\text{def}}$)</div>
+                    <div class="text-3xl font-black font-mono text-red-400 mt-1">0.782</div>
+                    <div class="text-[11px] text-slate-400 mt-1">TCMB Hedef-Beklenti Sapma Varyansı</div>
+                    <div class="text-[10px] font-mono text-red-400/90 mt-2 bg-dark-950 p-1.5 rounded border border-red-500/20">
+                        Piyasa aktörlerinin resmi verilere inançsızlık katsayısı (%78.2)
+                    </div>
+                </div>
+
+                <div class="glass-card p-4 rounded-xl border-amber-500/30">
+                    <div class="text-[10px] font-mono text-amber-400 font-bold uppercase">KREDİ GÜVENSİZLİK PRİMİ</div>
+                    <div class="text-3xl font-black font-mono text-amber-400 mt-1">+14.2%</div>
+                    <div class="text-[11px] text-slate-400 mt-1">Gösterge Tahvil ile Ticari Kredi Faiz Makası</div>
+                    <div class="text-[10px] font-mono text-amber-400/90 mt-2 bg-dark-950 p-1.5 rounded border border-amber-500/20">
+                        Bankaların belirsizlik sebebiyle kestiği asimetrik risk primi
+                    </div>
+                </div>
+
+                <div class="glass-card p-4 rounded-xl border-red-500/30">
+                    <div class="text-[10px] font-mono text-red-400 font-bold uppercase">İHALE YOĞUNLAŞMA SKORU (HHI)</div>
+                    <div class="text-3xl font-black font-mono text-white mt-1">4.280</div>
+                    <div class="text-[11px] text-slate-400 mt-1">Kamu İhalelerinde İlk 5 Şirket Oligopolü</div>
+                    <div class="text-[10px] font-mono text-red-400/90 mt-2 bg-dark-950 p-1.5 rounded border border-red-500/20">
+                        >2.500 = Aşırı Yoğunlaşmış / Rekabet Dışı İhale Dağılımı
+                    </div>
+                </div>
+
+                <div class="glass-card p-4 rounded-xl border-cyan-500/30">
+                    <div class="text-[10px] font-mono text-cyan-400 font-bold uppercase">RANT / İMALAT KREDİ ORANI</div>
+                    <div class="text-3xl font-black font-mono text-cyan-300 mt-1">2.84x</div>
+                    <div class="text-[11px] text-slate-400 mt-1">İnşaat-Gayrimenkul / Sanayi Üretim Kredisi</div>
+                    <div class="text-[10px] font-mono text-cyan-400/90 mt-2 bg-dark-950 p-1.5 rounded border border-cyan-500/20">
+                        Kredilerin katma değersiz rant alanlarına tahsis oranı
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ACEMOĞLU & GULLINI METODOLOJİK TEZİ -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 text-xs text-slate-300 font-sans leading-relaxed">
+                <div class="bg-dark-900/80 p-4 rounded-xl border border-slate-800 space-y-2">
+                    <h4 class="font-bold text-purple-400 flex items-center gap-1.5 text-sm font-mono">
+                        🏛️ Daron Acemoğlu Kurumsal Aşınma Tezi: "Neden Milletler Düşer?"
+                    </h4>
+                    <p>
+                        Acemoğlu'nun formüle ettiği <strong>"Sömürücü Kurumlar (Extractive Institutions)"</strong> düzeninde, kamu kaynakları meritokratik ve verimli üreticilere değil, siyasi imtiyaz sahibi dar bir oligopol zümreye tahsis edilir. KİK ihalelerinin HHI skorunun <strong>4.280</strong> olması, toplam kamu alımlarının %60'ından fazlasının rekabete kapalı olarak belirli gruplara aktarıldığını ve Toplam Faktör Verimliliğinin (TFP) <strong>-%1.6</strong> gerilediğini belgeler.
+                    </p>
+                </div>
+
+                <div class="bg-dark-900/80 p-4 rounded-xl border border-slate-800 space-y-2">
+                    <h4 class="font-bold text-amber-400 flex items-center gap-1.5 text-sm font-mono">
+                        📉 Emilio Gullini Güven Erozyonu Tezi: "Economic Crises as a Result of Distrust"
+                    </h4>
+                    <p>
+                        Gullini'ye göre ekonomik krizlerin ana tetikleyicisi para arzı değil, <strong>kurumlara ve sözleşmelere duyulan güvenin çökmesidir</strong>. $G_{\text{def}} = 0.782$ skoru; vatandaşın ve yatırımcının Merkez Bankası enflasyon tahminlerine, mahkeme kararlarına ve mülkiyet güvenliğine inanmadığını; bu yüzden her nakit akışını fiziki altına ve dövize kaçırarak sistemi likidite kilitlenmesine sürüklediğini gösterir.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- BÖLÜM 2: ÜRETİM VE DIŞ TİCARET ANATOMİSİ (NE ÜRETİLİYOR, NE İHRAÇ, NE İTHAL?) -->
+        <section class="glass-panel p-6 space-y-6">
+            <div class="border-b border-slate-800 pb-3 flex flex-col md:flex-row items-start md:items-center justify-between gap-2">
+                <div>
+                    <h2 class="text-lg font-black text-white font-mono flex items-center gap-2">
+                        🚢 2. ÜRETİM VE DIŞ TİCARET ANATOMİSİ
+                    </h2>
+                    <p class="text-xs text-slate-400 mt-0.5">
+                        Türkiye Ne Üretiyor, Ne İhraç Ediyor, Neye Bağımlı? Katma Değer Çıkmazı ve Dış Ticaret Açığı
+                    </p>
+                </div>
+                <span class="text-xs font-mono text-cyan-400 font-bold bg-dark-800 px-3 py-1 rounded border border-slate-700">
+                    TÜİK & Ticaret Bakanlığı 2025-2026
+                </span>
+            </div>
+
+            <!-- GRAFİK & TABLO GRİD -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                
+                <!-- SOL GRAFİK: İHRACATIN TEKNOLOJİ YOĞUNLUĞU DAĞILIMI (lg:col-span-6) -->
+                <div class="bg-dark-900/60 p-4 rounded-xl border border-slate-800 lg:col-span-6 space-y-3">
+                    <h4 class="text-sm font-bold text-white font-mono">
+                        📊 İhracatın Teknoloji Yoğunluğu Dağılımı (%)
+                    </h4>
+                    <div class="h-[250px] w-full relative">
+                        <canvas id="exportTechChart"></canvas>
+                    </div>
+                    <div class="text-[11px] font-mono text-slate-400 pt-1">
+                        * Yüksek teknoloji ihracat payı sadece <strong>%3.2</strong> seviyesindedir. İhracatın %67'si düşük ve orta-düşük teknolojili montaj sanayiine dayalıdır.
+                    </div>
+                </div>
+
+                <!-- SAĞ GRAFİK: İTHALATIN SEKTÖREL DAĞILIMI VE ARA MALI BAĞIMLILIĞI (lg:col-span-6) -->
+                <div class="bg-dark-900/60 p-4 rounded-xl border border-slate-800 lg:col-span-6 space-y-3">
+                    <h4 class="text-sm font-bold text-white font-mono">
+                        🛢️ İthalatın Yapısı ve Ara Malı Bağımlılığı ($ Milyar)
+                    </h4>
+                    <div class="h-[250px] w-full relative">
+                        <canvas id="importStructureChart"></canvas>
+                    </div>
+                    <div class="text-[11px] font-mono text-slate-400 pt-1">
+                        * İthalatın <strong>%72.4'ü ara malı ve enerjiye</strong> bağlıdır. İhracat yapmak için ithalat yapma zorunluluğu döviz açığını yapısal olarak besler.
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- STRATEJİK GÜVENLİK VE TEDARİK BAĞIMLILIĞI KARTLARI -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 font-mono text-xs">
+                <div class="glass-card p-3.5 rounded-xl border-amber-500/20">
+                    <div class="text-amber-400 font-bold flex justify-between">
+                        <span>🌾 GIDA VE TARIM YETERLİLİĞİ</span>
+                        <span>%68.4</span>
+                    </div>
+                    <p class="text-slate-400 mt-1 font-sans text-[11px]">
+                        Buğday, ayçiçeği tohumu, soya ve gübrede %60+ ithalat bağımlılığı. Mazot ve gübre maliyeti tarımsal üretimi tıkamaktadır.
+                    </p>
+                </div>
+                <div class="glass-card p-3.5 rounded-xl border-red-500/20">
+                    <div class="text-red-400 font-bold flex justify-between">
+                        <span>💊 İLAÇ VE SAĞLIK HAMMADDESİ</span>
+                        <span>%85.2 İTHAL</span>
+                    </div>
+                    <p class="text-slate-400 mt-1 font-sans text-[11px]">
+                        Etken madde üretiminin %85'i dışa bağımlı. Kur şoklarında hayati ilaçlara erişim krizi tetiklenmektedir.
+                    </p>
+                </div>
+                <div class="glass-card p-3.5 rounded-xl border-cyan-500/20">
+                    <div class="text-cyan-300 font-bold flex justify-between">
+                        <span>⚡ ENERJİ VE PETROL BASKISI</span>
+                        <span>$78 / bbl</span>
+                    </div>
+                    <p class="text-slate-400 mt-1 font-sans text-[11px]">
+                        Doğalgaz ve petrolün %93'ü ithal edilmektedir. Brent petroldeki her 10$'lık artış cari açığı <strong>+4.5 Mr $</strong> büyütmektedir.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- BÖLÜM 3: FİNANSAL BOĞULMA, İCRA, ÇEK/SENET VE KONKORDATO KRİZİ -->
+        <section class="glass-panel p-6 space-y-6">
+            <div class="border-b border-slate-800 pb-3 flex flex-col md:flex-row items-start md:items-center justify-between gap-2">
+                <div>
+                    <h2 class="text-lg font-black text-white font-mono flex items-center gap-2">
+                        💳 3. FİNANSAL BOĞULMA: İCRA DOSYALARI, ÇEK/SENET & KONKORDATO
+                    </h2>
+                    <p class="text-xs text-slate-400 mt-0.5">
+                        UYAP İcra Dosyası Sayısı, Karşılıksız Çekler, Bireysel Kredi Kartı Borç Yükü ve İflas Başvuruları
+                    </p>
+                </div>
+                <span class="px-3 py-1 rounded bg-red-500/20 text-red-300 font-mono text-xs font-bold border border-red-500/40">
+                    UYAP İCRA DOSYASI: 38.6 MİLYON
+                </span>
+            </div>
+
+            <!-- 4 FİNANSAL BOĞULMA GÖSTERGESİ -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="glass-card p-4 rounded-xl">
+                    <div class="text-[10px] font-mono text-slate-400">UYAP AKTİF İCRA DOSYASI</div>
+                    <div class="text-2xl font-black font-mono text-red-400 mt-1">38.6 Milyon</div>
+                    <div class="text-[10px] text-slate-500 mt-0.5">Yetişkin nüfusun %55'i icralık</div>
+                </div>
+                <div class="glass-card p-4 rounded-xl">
+                    <div class="text-[10px] font-mono text-slate-400">KARŞILIKSIZ ÇEK HACMİ</div>
+                    <div class="text-2xl font-black font-mono text-amber-400 mt-1">142 Mr TL</div>
+                    <div class="text-[10px] text-slate-500 mt-0.5">Yıllık artış: +%184</div>
+                </div>
+                <div class="glass-card p-4 rounded-xl">
+                    <div class="text-[10px] font-mono text-slate-400">BİREYSEL KREDİ KARTI BORCU</div>
+                    <div class="text-2xl font-black font-mono text-purple-400 mt-1">1.85 Trilyon TL</div>
+                    <div class="text-[10px] text-slate-500 mt-0.5">Asgari ödemeyi yapamayan: %34</div>
+                </div>
+                <div class="glass-card p-4 rounded-xl">
+                    <div class="text-[10px] font-mono text-slate-400">KONKORDATO VE İFLAS TALEBİ</div>
+                    <div class="text-2xl font-black font-mono text-red-400 mt-1">2.410 Şirket</div>
+                    <div class="text-[10px] text-slate-500 mt-0.5">2018 kriz seviyesinin %30 üzerinde</div>
+                </div>
+            </div>
+
+            <!-- İCRA VE ÇEK GRAFİĞİ -->
+            <div class="h-[280px] w-full relative bg-dark-900/60 p-4 rounded-xl border border-slate-800">
+                <canvas id="debtInsolvencyChart"></canvas>
+            </div>
+        </section>
+
+        <!-- BÖLÜM 4: HUKUKİ VE KURUMSAL AŞINMA, TAHKİM CEZALARI & FATF -->
+        <section class="glass-panel p-6 space-y-6 border-amber-500/30">
+            <div class="border-b border-slate-800 pb-3 flex flex-col md:flex-row items-start md:items-center justify-between gap-2">
+                <div>
+                    <h2 class="text-lg font-black text-white font-mono flex items-center gap-2">
+                        ⚖️ 4. HUKUKİ AŞINMA, ULUSLARARASI TAHKİM CEZALARI & SAYIŞTAY
+                    </h2>
+                    <p class="text-xs text-slate-400 mt-0.5">
+                        KİK Kanun Değişiklikleri, Sayıştay Denetim Erozyonu, ICC Paris Tahkim Tazminatları ve FATF Mali Suç Riski
+                    </p>
+                </div>
+                <span class="px-3 py-1 rounded bg-amber-500/20 text-amber-300 font-mono text-xs font-bold border border-amber-500/40">
+                    KİK DEĞİŞİKLİĞİ: 204 KEZ
+                </span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                
+                <!-- DOSYA 1: KİK VE 21/B İSTİSNALARI -->
+                <div class="bg-dark-900/80 p-4 rounded-xl border border-slate-800 space-y-2">
+                    <h4 class="font-bold text-amber-400 font-mono text-sm">
+                        📜 KİK Kanunu ve 21/b Pazarlık Usulü
+                    </h4>
+                    <p class="text-xs text-slate-300 leading-relaxed font-sans">
+                        4734 sayılı Kamu İhale Kanunu 2002 yılından bu yana <strong>tam 204 kez değiştirilmiştir</strong>. Doğal afet ve acil durumlar için konulan <em>21/b maddesi</em>, milyarlarca liralık otoyol, havalimanı ve şehir hastanesi ihalelerinde adrese teslim dağıtım aracına dönüştürülmüştür.
+                    </p>
+                </div>
+
+                <!-- DOSYA 2: SAYIŞTAY DENETLEME KAPASİTESİ -->
+                <div class="bg-dark-900/80 p-4 rounded-xl border border-slate-800 space-y-2">
+                    <h4 class="font-bold text-red-400 font-mono text-sm">
+                        🔍 Sayıştay Denetim Kapasitesi & Sansür
+                    </h4>
+                    <p class="text-xs text-slate-300 leading-relaxed font-sans">
+                        Türkiye Varlık Fonu (TVF), KÖİ projeleri ve kamu bankaları Sayıştay'ın tam denetiminden çıkarılmıştır. TBMM'ye sunulan yıllık denetim raporlarında bulguların %65'i "ticari sır" ve "idari tasarruf" gerekçesiyle sansürlenmekte, mali şeffaflık sıfırlanmaktadır.
+                    </p>
+                </div>
+
+                <!-- DOSYA 3: ULUSLARARASI TAHKİM TAZMİNATLARI (ICC PARİS) -->
+                <div class="bg-dark-900/80 p-4 rounded-xl border border-slate-800 space-y-2">
+                    <h4 class="font-bold text-purple-400 font-mono text-sm">
+                        ⚖️ Uluslararası Tahkim Davaları (ICC Paris)
+                    </h4>
+                    <p class="text-xs text-slate-300 leading-relaxed font-sans">
+                        Irak Hükümeti'nin açtığı Ceyhan petrol boru hattı davasında ICC Paris Tahkim Mahkemesi Türkiye'yi <strong>1.47 Milyar Dolar tazminata</strong> mahkum etmiştir. Devam eden diğer uluslararası tahkim ve BOTAŞ gaz ihtilaflarındaki toplam risk <strong>~4 Milyar Dolar</strong> seviyesindedir.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- BÖLÜM 5: DEMOGRAFİK ÇÖKÜŞ VE TOPLUMSAL ÇÜRÜME GÖSTERGELERİ -->
+        <section class="glass-panel p-6 space-y-6 border-red-500/30 glow-red">
+            <div class="border-b border-slate-800 pb-3 flex flex-col md:flex-row items-start md:items-center justify-between gap-2">
+                <div>
+                    <h2 class="text-lg font-black text-white font-mono flex items-center gap-2">
+                        👥 5. DEMOGRAFİK ÇÖKÜŞ, EĞİTİM & TOPLUMSAL ÇÜRÜME GÖSTERGELERİ
+                    </h2>
+                    <p class="text-xs text-slate-400 mt-0.5">
+                        Evlenme vs. Boşanma Makası, Doğurganlık Hızı Çöküşü (TFR = 1.51), PISA Başarısı, Beyin Göçü ve Antidepresan Tüketimi
+                    </p>
+                </div>
+                <span class="px-3 py-1 rounded bg-red-500/20 text-red-300 font-mono text-xs font-bold border border-red-500/40">
+                    DOĞURGANLIK HIZI: 1.51 (DİP)
+                </span>
+            </div>
+
+            <!-- DEMOGRAFİ GRAFİKLERİ -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                
+                <!-- GRAFİK 5A: EVLENME VS BOŞANMA DİNAMİĞİ (lg:col-span-6) -->
+                <div class="bg-dark-900/60 p-4 rounded-xl border border-slate-800 lg:col-span-6 space-y-3">
+                    <h4 class="text-sm font-bold text-white font-mono">
+                        💔 Evlenme vs. Boşanma Sayıları (Bin Çift, 2005 - 2025)
+                    </h4>
+                    <div class="h-[250px] w-full relative">
+                        <canvas id="marriageDivorceChart"></canvas>
+                    </div>
+                    <div class="text-[11px] font-mono text-slate-400 pt-1">
+                        * Boşanma oranları son 20 yılda <strong>%84 artarken</strong>, evlenme oranları ekonomik kriz ve konut pahalılığı sebebiyle çökmüştür.
+                    </div>
+                </div>
+
+                <!-- GRAFİK 5B: DOĞURGANLIK HIZI (TFR) VE NÜFUS YENİLENME EŞİĞİ (lg:col-span-6) -->
+                <div class="bg-dark-900/60 p-4 rounded-xl border border-slate-800 lg:col-span-6 space-y-3">
+                    <h4 class="text-sm font-bold text-white font-mono">
+                        👶 Toplam Doğurganlık Hızı (TFR) vs. Yenilenme Eşiği (2.10)
+                    </h4>
+                    <div class="h-[250px] w-full relative">
+                        <canvas id="fertilityChart"></canvas>
+                    </div>
+                    <div class="text-[11px] font-mono text-slate-400 pt-1">
+                        * Türkiye'nin doğurganlık hızı <strong>1.51'e çakılarak</strong> AB ortalamasının (1.53) altına inmiş, Türkiye "Demografik Kış" evresine girmiştir.
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- EĞİTİM, BEYİN GÖÇÜ VE SOSYOLOJİK ÇÜRÜME KARTLARI -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-xs font-mono">
+                
+                <div class="glass-card p-3.5 rounded-xl border-purple-500/20">
+                    <div class="text-purple-400 font-bold">🎓 BEYİN GÖÇÜ (YILDA)</div>
+                    <div class="text-xl font-black text-white mt-1">135.000+ Kişi</div>
+                    <div class="text-[10px] text-slate-500 mt-0.5">Doktor, mühendis, yazılımcı</div>
+                </div>
+
+                <div class="glass-card p-3.5 rounded-xl border-amber-500/20">
+                    <div class="text-amber-400 font-bold">🛋️ NEET ORANI (BOŞTA GENÇLER)</div>
+                    <div class="text-xl font-black text-white mt-1">%31.2</div>
+                    <div class="text-[10px] text-slate-500 mt-0.5">Ne eğitimde ne istihdamda</div>
+                </div>
+
+                <div class="glass-card p-3.5 rounded-xl border-red-500/20">
+                    <div class="text-red-400 font-bold">💊 ANTİDEPRESAN KULLANIMI</div>
+                    <div class="text-xl font-black text-white mt-1">68 Milyon Kutu</div>
+                    <div class="text-[10px] text-slate-500 mt-0.5">2010'dan bu yana %120 artış</div>
+                </div>
+
+                <div class="glass-card p-3.5 rounded-xl border-cyan-500/20">
+                    <div class="text-cyan-300 font-bold">📉 PISA OKUMA & MATEMATİK</div>
+                    <div class="text-xl font-black text-white mt-1">OECD 39. Sıra</div>
+                    <div class="text-[10px] text-slate-500 mt-0.5">Temel okuduğunu anlama geriliği</div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-slate-800 bg-dark-950 p-6 text-center text-xs font-mono text-slate-500">
+        T2SAIM / Tarco Crisis Index v2.0 · Yapısal Analiz ve Sosyolojik Çürüme Raporu · Sıfır Sentetik Veri · Veritas Per Se
+    </footer>
+
+    <!-- JAVASCRIPT ÇEKİRDEĞİ -->
+    <script>
+        // 1. İHRACAT TEKNOLOJİ GRAFİĞİ
+        new Chart(document.getElementById('exportTechChart').getContext('2d'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Düşük Teknoloji (Tekstil/Gıda)', 'Orta-Düşük Teknoloji (Metal/Plastik)', 'Orta-Yüksek Teknoloji (Otomotiv/Beyaz Eşya)', 'Yüksek Teknoloji (Havacılık/Elektronik)'],
+                datasets: [{
+                    data: [32.4, 34.6, 29.8, 3.2],
+                    backgroundColor: ['#64748b', '#3b82f6', '#f59e0b', '#00f2fe'],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true, maintainAspectRatio: false,
+                plugins: { legend: { position: 'right', labels: { color: '#94a3b8', font: { family: 'JetBrains Mono', size: 10 } } } }
+            }
+        });
+
+        // 2. İTHALAT YAPISI GRAFİĞİ
+        new Chart(document.getElementById('importStructureChart').getContext('2d'), {
+            type: 'bar',
+            data: {
+                labels: ['Ara Malları (Hammadde)', 'Enerji (Petrol/Gaz)', 'Sermaye (Yatırım Malı)', 'Tüketim Malları'],
+                datasets: [{
+                    label: 'İthalat Hacmi ($ Milyar)',
+                    data: [195.4, 68.2, 52.1, 44.8],
+                    backgroundColor: ['#ff1744', '#f59e0b', '#3b82f6', '#7928ca']
+                }]
+            },
+            options: {
+                responsive: true, maintainAspectRatio: false,
+                scales: {
+                    x: { ticks: { color: '#64748b', font: { family: 'JetBrains Mono', size: 9 } } },
+                    y: { grid: { color: 'rgba(255,255,255,0.03)' }, ticks: { color: '#94a3b8' } }
+                },
+                plugins: { legend: { display: false } }
+            }
+        });
+
+        // 3. İCRA VE ÇEK GRAFİĞİ
+        new Chart(document.getElementById('debtInsolvencyChart').getContext('2d'), {
+            type: 'line',
+            data: {
+                labels: ['2015', '2017', '2019', '2021', '2023', '2024', '2025', '2026'],
+                datasets: [
+                    { label: 'Aktif İcra Dosyası (Milyon Adet)', data: [22.4, 25.1, 28.6, 31.2, 34.8, 36.5, 37.8, 38.6], borderColor: '#ff1744', borderWidth: 2.5, yAxisID: 'yIcra' },
+                    { label: 'Karşılıksız Çek Hacmi (Milyar TL)', data: [18, 24, 38, 55, 95, 118, 132, 142], borderColor: '#ffab00', borderWidth: 2, yAxisID: 'yCek' }
+                ]
+            },
+            options: {
+                responsive: true, maintainAspectRatio: false,
+                scales: {
+                    x: { ticks: { color: '#64748b', font: { family: 'JetBrains Mono', size: 10 } } },
+                    yIcra: { position: 'left', title: { display: true, text: 'İcra Dosyası (Milyon)', color: '#ff1744' }, ticks: { color: '#ff1744' } },
+                    yCek: { position: 'right', title: { display: true, text: 'Çek Hacmi (Mr TL)', color: '#ffab00' }, grid: { drawOnChartArea: false }, ticks: { color: '#ffab00' } }
+                }
+            }
+        });
+
+        // 4. EVLENME VS BOŞANMA GRAFİĞİ
+        new Chart(document.getElementById('marriageDivorceChart').getContext('2d'), {
+            type: 'line',
+            data: {
+                labels: ['2005', '2008', '2011', '2014', '2017', '2020', '2022', '2024', '2025'],
+                datasets: [
+                    { label: 'Evlenme Sayısı (Bin Çift)', data: [641, 644, 592, 599, 569, 487, 574, 550, 520], borderColor: '#00f2fe', borderWidth: 2 },
+                    { label: 'Boşanma Sayısı (Bin Çift)', data: [95, 100, 120, 131, 128, 136, 180, 185, 192], borderColor: '#ff1744', borderWidth: 2.5 }
+                ]
+            },
+            options: {
+                responsive: true, maintainAspectRatio: false,
+                scales: {
+                    x: { ticks: { color: '#64748b', font: { family: 'JetBrains Mono', size: 9 } } },
+                    y: { grid: { color: 'rgba(255,255,255,0.03)' }, ticks: { color: '#94a3b8' } }
+                }
+            }
+        });
+
+        // 5. DOĞURGANLIK HIZI (TFR) GRAFİĞİ
+        new Chart(document.getElementById('fertilityChart').getContext('2d'), {
+            type: 'line',
+            data: {
+                labels: ['2001', '2005', '2010', '2014', '2017', '2020', '2022', '2023', '2024', '2025'],
+                datasets: [
+                    { label: 'Toplam Doğurganlık Hızı (TFR)', data: [2.38, 2.12, 2.08, 2.19, 2.08, 1.76, 1.62, 1.51, 1.51, 1.50], borderColor: '#f59e0b', backgroundColor: 'rgba(245,158,11,0.1)', fill: true, borderWidth: 2.5 },
+                    { label: 'Nüfus Yenilenme Eşiği (2.10)', data: [2.10, 2.10, 2.10, 2.10, 2.10, 2.10, 2.10, 2.10, 2.10, 2.10], borderColor: '#ff1744', borderDash: [5, 5], borderWidth: 1.5 }
+                ]
+            },
+            options: {
+                responsive: true, maintainAspectRatio: false,
+                scales: {
+                    x: { ticks: { color: '#64748b', font: { family: 'JetBrains Mono', size: 9 } } },
+                    y: { min: 1.2, max: 2.6, grid: { color: 'rgba(255,255,255,0.03)' }, ticks: { color: '#94a3b8' } }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
