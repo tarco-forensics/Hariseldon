@@ -1,0 +1,119 @@
+[
+    {
+        "name": "1907 Bankerler Paniği",
+        "crash_date": "1907-10-01",
+        "first_alarm_date": "1907-06",
+        "lead_time_months": 4,
+        "peak_CI": 0.58,
+        "peak_A_load": 0.845,
+        "detected": true
+    },
+    {
+        "name": "1914 1. Dünya Savaşı Borsa Kapanması",
+        "crash_date": "1914-08-01",
+        "first_alarm_date": "N/A",
+        "lead_time_months": 0,
+        "peak_CI": 0.418,
+        "peak_A_load": 0.621,
+        "detected": false
+    },
+    {
+        "name": "1920-1921 Savaş Sonrası Deflasyon",
+        "crash_date": "1920-05-01",
+        "first_alarm_date": "1918-05",
+        "lead_time_months": 24,
+        "peak_CI": 0.752,
+        "peak_A_load": 0.965,
+        "detected": true
+    },
+    {
+        "name": "1929 Büyük Buhran & Borsa Çöküşü",
+        "crash_date": "1929-10-01",
+        "first_alarm_date": "1928-03",
+        "lead_time_months": 19,
+        "peak_CI": 0.657,
+        "peak_A_load": 0.927,
+        "detected": true
+    },
+    {
+        "name": "1937-1938 Çift Dip Resesyonu",
+        "crash_date": "1937-10-01",
+        "first_alarm_date": "1935-10",
+        "lead_time_months": 24,
+        "peak_CI": 0.643,
+        "peak_A_load": 0.939,
+        "detected": true
+    },
+    {
+        "name": "1973 OPEC Petrol Şoku & Stagflasyon",
+        "crash_date": "1973-11-01",
+        "first_alarm_date": "1973-08",
+        "lead_time_months": 3,
+        "peak_CI": 0.491,
+        "peak_A_load": 0.662,
+        "detected": true
+    },
+    {
+        "name": "1980-1982 Volcker Şoku & Çift Resesyon",
+        "crash_date": "1980-03-01",
+        "first_alarm_date": "1978-03",
+        "lead_time_months": 24,
+        "peak_CI": 0.846,
+        "peak_A_load": 0.951,
+        "detected": true
+    },
+    {
+        "name": "1987 Kara Pazartesi (Flash Crash)",
+        "crash_date": "1987-10-01",
+        "first_alarm_date": "1987-08",
+        "lead_time_months": 2,
+        "peak_CI": 0.532,
+        "peak_A_load": 0.723,
+        "detected": true
+    },
+    {
+        "name": "1990 S&L / Körfez Savaşı Krizi",
+        "crash_date": "1990-08-01",
+        "first_alarm_date": "1988-08",
+        "lead_time_months": 24,
+        "peak_CI": 0.449,
+        "peak_A_load": 0.665,
+        "detected": true
+    },
+    {
+        "name": "2000-2002 Dot-Com Balonu Çöküşü",
+        "crash_date": "2000-09-01",
+        "first_alarm_date": "1998-09",
+        "lead_time_months": 24,
+        "peak_CI": 0.827,
+        "peak_A_load": 0.999,
+        "detected": true
+    },
+    {
+        "name": "2007-2008 Küresel Finansal Kriz (GFC)",
+        "crash_date": "2008-09-01",
+        "first_alarm_date": "2008-07",
+        "lead_time_months": 2,
+        "peak_CI": 0.494,
+        "peak_A_load": 0.749,
+        "detected": true
+    },
+    {
+        "name": "2020 COVID-19 Likidite Şoku",
+        "crash_date": "2020-03-01",
+        "first_alarm_date": "2018-06",
+        "lead_time_months": 21,
+        "peak_CI": 0.478,
+        "peak_A_load": 0.672,
+        "detected": true
+    },
+    {
+        "name": "2023 Silicon Valley Bank (SVB) Krizi",
+        "crash_date": "2023-03-01",
+        "first_alarm_date": "2021-03",
+        "lead_time_months": 24,
+        "peak_CI": 0.709,
+        "peak_A_load": 0.911,
+        "detected": true
+    }
+]
