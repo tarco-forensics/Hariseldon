@@ -27,12 +27,9 @@ if %ERRORLEVEL% EQU 0 (
     copy /y B:\T2SAIM_NEXUS\000_Shadow\00_Success\t2saim_stock_selection_results_V17.json B:\Hariseldon\t2saim_stock_selection_results.json >> %LOG% 2>&1
 )
 
-echo [3.9/4] Dunya Kupasi 2026 Simulasyonu Olusturuluyor... >> %LOG%
-%PYTHON% B:\Hariseldon\world_cup_2026_simulator.py >> %LOG% 2>&1
-
 echo [4/4] GitHub push... >> %LOG%
 cd /d B:\Hariseldon
-git add crisis_data.json market_data.json t2saim_web_dashboard_data.json t2saim_model_selector.json t2saim_stock_selection_results.json t2saim_dashboard.html t2saim_asset_details.html t2saim_crypto_dashboard.html dashboards/world_cup_sim_results.json world_cup_2026.html spor_edge.html index.html tarkan_index.html .github/workflows/daily_update.yml >> %LOG% 2>&1
+git add crisis_data.json market_data.json t2saim_web_dashboard_data.json t2saim_model_selector.json t2saim_stock_selection_results.json t2saim_dashboard.html t2saim_asset_details.html t2saim_crypto_dashboard.html spor_edge.html index.html tarkan_index.html .github/workflows/daily_update.yml >> %LOG% 2>&1
 git commit -m "data: daily update with new models" >> %LOG% 2>&1
 git push origin main >> %LOG% 2>&1
 git push origin main:gh-pages --force >> %LOG% 2>&1
