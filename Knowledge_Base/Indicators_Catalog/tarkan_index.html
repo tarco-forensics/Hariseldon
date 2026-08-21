@@ -73,7 +73,7 @@
         }
         
         .glass-panel {
-            background: rgba(12, 16, 23, 0.85);
+            background: rgba(12, 16, 23, 0.88);
             backdrop-filter: blur(16px);
             border: 1px solid rgba(255, 255, 255, 0.07);
             border-radius: 0.85rem;
@@ -109,7 +109,7 @@
 </head>
 <body class="min-h-screen flex flex-col antialiased selection:bg-cyan-500/30 selection:text-cyan-200">
 
-    <!-- 1. ÜST BAŞLIK VE CANLI TELEMETRİ BARI (IMAGE 1 HEADER) -->
+    <!-- 1. ÜST BAŞLIK VE CANLI TELEMETRİ BARI -->
     <header class="border-b border-slate-800/80 bg-dark-900/90 backdrop-blur-md px-6 py-3.5 sticky top-0 z-50">
         <div class="max-w-[1750px] mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
             
@@ -145,7 +145,7 @@
     <!-- 2. ANA GÖVDE -->
     <main class="max-w-[1750px] w-full mx-auto px-6 py-5 space-y-6 flex-1">
 
-        <!-- KRİZ EŞİĞİNE KALAN MESAFE BARI (IMAGE 1 TOP GAUGE) -->
+        <!-- KRİZ EŞİĞİNE KALAN MESAFE BARI -->
         <section class="glass-panel p-5 space-y-3">
             <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-2">
                 <div>
@@ -183,7 +183,7 @@
             </div>
         </section>
 
-        <!-- 3 SATIRLI 13 TEMEL GÖSTERGE KARTLARI (IMAGE 1 GRID - TAM VE EKSİKSİZ) -->
+        <!-- 3 SATIRLI 13 TEMEL GÖSTERGE KARTLARI -->
         <section class="grid grid-cols-2 md:grid-cols-4 gap-3.5">
             
             <!-- SATIR 1 -->
@@ -310,7 +310,7 @@
 
         </section>
 
-        <!-- SATIR 3: MAKRO VE PİYASA BÜYÜKLÜKLERİ (5'Lİ KART) -->
+        <!-- SATIR 3: MAKRO VE PİYASA BÜYÜKLÜKLERİ -->
         <section class="grid grid-cols-2 md:grid-cols-5 gap-3.5">
             <div class="glass-card p-3.5 rounded-xl cursor-pointer" onclick="plotIndicator('REER Sarkaç', 'reer')">
                 <div class="text-[11px] text-slate-400">🌊 REER Sarkaç (Reel Kur)</div>
@@ -339,7 +339,109 @@
             </div>
         </section>
 
-        <!-- 4. 700 GÜNLÜK ÇOK KATMANLI KRİZ DALGASI VE DEV GERİ SAYIM (IMAGE 1 ORTA BÖLÜM) -->
+        <!-- YENİ BÖLÜM: SİSTEMİK KRİZ VE NET EKONOMİK MALİYET DÖKÜMÜ (+2.89 TRİLYON TL EK YÜK) -->
+        <section class="glass-panel p-6 space-y-6 border-red-500/30 glow-red">
+            <div class="border-b border-slate-800 pb-3 flex flex-col md:flex-row items-start md:items-center justify-between gap-2">
+                <div>
+                    <h3 class="text-lg font-black text-white flex items-center gap-2 font-mono">
+                        💥 SİSTEMİK KRİZ VE NET EKONOMİK MALİYET DÖKÜMÜ
+                    </h3>
+                    <p class="text-xs text-slate-400 mt-0.5">
+                        Kapalıçarşı Kuru (49.14 ₺) & Gram Altının (7.316 ₺) Türkiye Ekonomisine Bindirdiği Doğrudan ve Dolaylı Yük Analizi
+                    </p>
+                </div>
+                <span class="px-3 py-1 rounded bg-red-500/20 text-red-300 font-mono text-xs font-bold border border-red-500/40">
+                    NET EK YÜK: +2.89 TRİLYON TL
+                </span>
+            </div>
+
+            <!-- 4 BÜYÜK FİNANSAL DARBE KARTI -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                
+                <div class="glass-card p-4 rounded-xl border-red-500/30">
+                    <div class="text-[10px] font-mono text-red-400 font-bold uppercase">1. DIŞ BORÇ KUR FARKI YÜKÜ</div>
+                    <div class="text-2xl font-black font-mono text-white mt-1">+2.89 Trilyon TL</div>
+                    <div class="text-[11px] text-slate-400 mt-1">191 Mr $ Dış Borç Servisinde %44.5 Maliyet Sıçraması</div>
+                    <div class="text-[10px] font-mono text-red-400/90 mt-2 bg-dark-950 p-1.5 rounded border border-red-500/20">
+                        191 Mr $ x (49.14 - 34.00 ₺) = +2.891 Mr ₺
+                    </div>
+                </div>
+
+                <div class="glass-card p-4 rounded-xl border-amber-500/30">
+                    <div class="text-[10px] font-mono text-amber-400 font-bold uppercase">2. ENFLASYON GEÇİŞKENLİĞİ</div>
+                    <div class="text-2xl font-black font-mono text-white mt-1">+17.8 Puan</div>
+                    <div class="text-[11px] text-slate-400 mt-1">Kurdaki %44.5 Artışın TÜFE'ye Doğrudan İlave Etkisi</div>
+                    <div class="text-[10px] font-mono text-amber-400/90 mt-2 bg-dark-950 p-1.5 rounded border border-amber-500/20">
+                        Geçişkenlik (α=0.40): %44.5 x 0.40 = +%17.8
+                    </div>
+                </div>
+
+                <div class="glass-card p-4 rounded-xl border-yellow-500/30">
+                    <div class="text-[10px] font-mono text-yellow-400 font-bold uppercase">3. ALTIN İTHALAT & REZERV ERİMESİ</div>
+                    <div class="text-2xl font-black font-mono text-white mt-1">-3.5 Mr $ / Ay</div>
+                    <div class="text-[11px] text-slate-400 mt-1">Gram Altın 7.316 ₺'ye Çıkınca Fiziki Yastıkaltı Kaçışı</div>
+                    <div class="text-[10px] font-mono text-yellow-400/90 mt-2 bg-dark-950 p-1.5 rounded border border-yellow-500/20">
+                        Yıllık -36 Mr $ Net Rezerv Kan Kaybı
+                    </div>
+                </div>
+
+                <div class="glass-card p-4 rounded-xl border-purple-500/30">
+                    <div class="text-[10px] font-mono text-purple-400 font-bold uppercase">4. BÜTÇE FAİZ KİLİTLENMESİ</div>
+                    <div class="text-2xl font-black font-mono text-white mt-1">%28.4 / Vergi</div>
+                    <div class="text-[11px] text-slate-400 mt-1">TR-DEI = 0.71 (Kurumsal Aşınma ve Ölü Bütçe Eşiği)</div>
+                    <div class="text-[10px] font-mono text-purple-400/90 mt-2 bg-dark-950 p-1.5 rounded border border-purple-500/20">
+                        Toplanan Her 100 TL Verginin 28 TL'si Faize
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 3 KATMANLI METODOLOJİK ANALİZ VE AÇIKLAMA METİNLERİ -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 text-xs text-slate-300 font-sans leading-relaxed">
+                
+                <!-- KATMAN 1: NÖRO-FİNANS VE PSİKOLOJİ -->
+                <div class="bg-dark-900/80 p-4 rounded-xl border border-slate-800 space-y-2">
+                    <h4 class="font-bold text-red-400 flex items-center gap-1.5 text-sm font-mono">
+                        🧠 1. Nöro-Finans & Bilişsel Felç ($A_{\text{load}} = 0.84$)
+                    </h4>
+                    <p>
+                        İnsan beyninde panik ve kaçışı yöneten <strong>Sistem 1 (Amigdala)</strong> stres yükü <strong>0.84</strong> seviyesine ulaşarak kritik eşiği ($0.65$) aşmıştır. Rasyonel karar alan <strong>Prefrontal Korteks (PFC)</strong> kapasitesi ise %16'ya gerilemiştir.
+                    </p>
+                    <p class="text-slate-400 text-[11px]">
+                        <strong>Sonuç:</strong> Toplum faiz getirisini umursamayıp <strong>Mevduat Kaçış Hızı ($v_{	ext{run}} = 0.70$)</strong> ile parasını ne pahasına olursa olsun fiziki Kapalıçarşı dolarına ve gram altına kaçırmaktadır.
+                    </p>
+                </div>
+
+                <!-- KATMAN 2: BANKACILIK ALM VE LİKİDİTE -->
+                <div class="bg-dark-900/80 p-4 rounded-xl border border-slate-800 space-y-2">
+                    <h4 class="font-bold text-amber-400 flex items-center gap-1.5 text-sm font-mono">
+                        🏦 2. Bankacılık ALM & Fonlama Açığı ($LDR = 1.15$)
+                    </h4>
+                    <p>
+                        Bankalar topladıkları her 100 TL mevduata karşılık 115 TL kredi açmıştır (15 TL fonlama açığı). Resmi NPL %1.94 görünürken, ötelenen ve yüzdürülen <strong>Hayalet Krediler ($NPL_{	ext{real}}$) %4.7</strong> (450 Milyar TL batık kredi) büyüklüğündedir.
+                    </p>
+                    <p class="text-slate-400 text-[11px]">
+                        <strong>Sonuç:</strong> TCMB'nin GLP fonlama makası (%3.4) örtük sıkılaşma yaratarak reel sektörün taze kredi musluklarını tamamen kurutmuştur.
+                    </p>
+                </div>
+
+                <!-- KATMAN 3: REEL PİYASA VE REER SARKAÇ -->
+                <div class="bg-dark-900/80 p-4 rounded-xl border border-slate-800 space-y-2">
+                    <h4 class="font-bold text-cyan-300 flex items-center gap-1.5 text-sm font-mono">
+                        🌊 3. REER Sarkaç ($69.5$) & 18 Kasım Borç Duvarı
+                    </h4>
+                    <p>
+                        Kurdaki yapay baskılama sebebiyle REER endeksi 69.5 ile aşırı değerlenmiş, ihracatçı sipariş kaybederken ithalat patlamıştır. Kapalıçarşı Doları (49.14 ₺) ile resmi kur makasının açılması güven çöküşünü gösterir.
+                    </p>
+                    <p class="text-slate-400 text-[11px]">
+                        <strong>Sonuç:</strong> 18 Kasım 2026 rezonans tepe noktasında vadesi gelen 191 Milyar $'lık dış borç, kur farkı zararıyla birleşerek nakit akışını kilitleyecektir.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 4. 700 GÜNLÜK ÇOK KATMANLI KRİZ DALGASI VE DEV GERİ SAYIM -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
             
             <!-- SOL: 700 GÜNLÜK TÜM GENİŞLİK ÇOK KATMANLI GRAFİK (lg:col-span-8) -->
@@ -557,7 +659,7 @@
 
         </div>
 
-        <!-- 7. T2SAIM KRİZ KRONOLOJİSİ TABLOSU (IMAGE 2 FULL TABLE) -->
+        <!-- 7. T2SAIM KRİZ KRONOLOJİSİ TABLOSU -->
         <section class="glass-panel p-5 space-y-4">
             <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-3 border-b border-slate-800 pb-3">
                 <div class="flex items-center gap-3">
@@ -597,7 +699,7 @@
             </div>
         </section>
 
-        <!-- 8. ALT 3'LÜ DOKTRİNEL VE FELSEFİ EĞİTİM PANELLERİ (IMAGE 2 BOTTOM PANELS) -->
+        <!-- 8. ALT 3'LÜ DOKTRİNEL VE FELSEFİ EĞİTİM PANELLERİ -->
         <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
             <!-- PANEL 1: TARİHSEL DOĞRULAMA & 52+8 KRİZ SİNYALİ -->
@@ -749,7 +851,6 @@
             usd_kap: []
         };
 
-        // 700 Günlük Veri Üretimi / EVDS Entegrasyonu
         const startDate = new Date("2024-09-19");
         for(let i = 0; i < 700; i++) {
             const d = new Date(startDate);
@@ -757,14 +858,12 @@
             const dateStr = d.toISOString().split('T')[0];
             allDates.push(dateStr);
 
-            // Geçmiş vs Projeksiyon Çapası (Gün 500 = 21 Ağustos 2026)
             if (i <= 500) {
                 const baseCI = 0.65 + Math.sin(i / 35) * 0.12 + Math.cos(i / 15) * 0.05;
                 seriesData.ci_past.push(Number(baseCI.toFixed(4)));
                 seriesData.ci_pred.push(null);
             } else {
                 seriesData.ci_past.push(null);
-                // 18 Kasım 2026'ya giden parabolik kriz konisi (Gün 588)
                 const distToPeak = (i - 500) / 88.0;
                 const peakVal = 0.94 - Math.pow(distToPeak - 1.0, 2) * 0.25;
                 seriesData.ci_pred.push(Number(peakVal.toFixed(4)));
@@ -897,7 +996,6 @@
             });
         }
 
-        // Sekme Değiştirme
         function switchTab(tab) {
             currentTab = tab;
             ['main', 'amigdala', 'hayalet', 'reer', 'kapalicarsi'].forEach(t => {
@@ -913,7 +1011,6 @@
             renderChart();
         }
 
-        // Çözünürlük Değiştirme
         function setResolution(res) {
             currentRes = res;
             ['daily', 'weekly', 'crises'].forEach(r => {
@@ -929,7 +1026,6 @@
             renderChart();
         }
 
-        // Zoom Kontrolleri
         function zoomStep(step) {
             zoomLevel += step * 0.2;
             zoomLevel = Math.max(0.5, Math.min(3.0, zoomLevel));
@@ -941,7 +1037,6 @@
             renderChart();
         }
 
-        // Tıklanan Göstergeyi Grafikte Gösterme
         function plotIndicator(name, key) {
             document.getElementById('main-chart-title').innerHTML = `📈 Telemetri Grafiği: <span class="text-cyan-300 font-mono">${name}</span>`;
             if (key === 'a_load' || key === 'pfc') switchTab('amigdala');
@@ -951,9 +1046,7 @@
             else switchTab('main');
         }
 
-        // 3. PLOTLY MODÜLLERİ (2M MERTON & FAZ UZAYI)
         function initPlotly() {
-            // 2M Merton Dağılımı
             const bins = [20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110];
             const counts = [12000, 45000, 180000, 390000, 520000, 380000, 210000, 110000, 65000, 38000, 22000, 14000, 8000, 4000, 1500, 800, 400, 200, 100];
             
@@ -972,7 +1065,6 @@
                 yaxis: { showgrid: false, tickfont: { color: '#64748b', size: 9 } }
             }, { displayModeBar: false, responsive: true });
 
-            // Faz Uzayı 2D Çekici
             const theta = [], dtheta = [];
             for(let i=0; i<350; i++) {
                 const t = i * 0.08;
@@ -992,7 +1084,6 @@
             }, { displayModeBar: false, responsive: true });
         }
 
-        // 4. KRİZ KRONOLOJİSİ TABLOSUNU DOLDURMA (IMAGE 2 TABLE)
         function renderChronology() {
             const tbody = document.getElementById('chronology-tbody');
             const sampleLog = [
@@ -1025,7 +1116,6 @@
             `).join('');
         }
 
-        // Modal Fonksiyonları
         function openOsintModal() {
             document.getElementById('drill-title').innerText = "52 Kriz Sinyali ve OSINT Teşhisi";
             document.getElementById('drill-val').innerText = "Kriz Alarmı (L6 Faz Kilidi)";
@@ -1040,7 +1130,6 @@
             document.getElementById('drillModal').classList.remove('flex');
         }
 
-        // Başlatma
         window.addEventListener('DOMContentLoaded', () => {
             renderChart();
             initPlotly();
