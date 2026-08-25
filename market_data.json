@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated": "2026-08-25 08:00",
+    "generated": "2026-08-25 09:00",
     "yesterday": "2026-08-24",
     "total_portfolio": 155730.0,
     "total_profit": 75730.0,
@@ -286,8 +286,8 @@
       "profit": 7231.0,
       "live_ok": true,
       "close_prev": 65528.09,
-      "close_last": 65816.66,
-      "daily_pct": 0.44,
+      "close_last": 65691.48,
+      "daily_pct": 0.25,
       "last_date": "2026-08-25",
       "history": [
         [
@@ -328,7 +328,7 @@
         ],
         [
           "2026-08-25",
-          65816.65625
+          65691.4765625
         ]
       ]
     },
@@ -350,8 +350,8 @@
       "profit": 4918.0,
       "live_ok": true,
       "close_prev": 25517.33,
-      "close_last": 25453.19,
-      "daily_pct": -0.25,
+      "close_last": 25473.56,
+      "daily_pct": -0.17,
       "last_date": "2026-08-25",
       "history": [
         [
@@ -392,7 +392,7 @@
         ],
         [
           "2026-08-25",
-          25453.189453125
+          25473.560546875
         ]
       ]
     },
@@ -414,8 +414,8 @@
       "profit": 29702.0,
       "live_ok": true,
       "close_prev": 77755.27,
-      "close_last": 80334.53,
-      "daily_pct": 3.32,
+      "close_last": 80682.0,
+      "daily_pct": 3.76,
       "last_date": "2026-08-25",
       "history": [
         [
@@ -452,7 +452,7 @@
         ],
         [
           "2026-08-25",
-          80334.53125
+          80682.0
         ]
       ]
     },
@@ -474,8 +474,8 @@
       "profit": 8587.0,
       "live_ok": true,
       "close_prev": 4640.8,
-      "close_last": 4680.6,
-      "daily_pct": 0.86,
+      "close_last": 4694.9,
+      "daily_pct": 1.17,
       "last_date": "2026-08-25",
       "history": [
         [
@@ -508,7 +508,7 @@
         ],
         [
           "2026-08-25",
-          4680.60009765625
+          4694.89990234375
         ]
       ]
     }
