@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated": "2026-08-29 11:40",
+    "generated": "2026-08-29 14:54",
     "yesterday": "2026-08-28",
     "total_portfolio": 155730.0,
     "total_profit": 75730.0,
@@ -390,8 +390,8 @@
       "profit": 29702.0,
       "live_ok": true,
       "close_prev": 80257.54,
-      "close_last": 77561.16,
-      "daily_pct": -3.36,
+      "close_last": 77627.62,
+      "daily_pct": -3.28,
       "last_date": "2026-08-29",
       "history": [
         [
@@ -428,7 +428,7 @@
         ],
         [
           "2026-08-29",
-          77561.15625
+          77627.6171875
         ]
       ]
     },
