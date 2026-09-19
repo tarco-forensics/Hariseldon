@@ -1,7 +1,7 @@
 {
   "summary": {
-    "generated": "2026-09-19 18:01",
-    "yesterday": "2026-09-18",
+    "generated": "2026-09-20 01:08",
+    "yesterday": "2026-09-19",
     "total_portfolio": 155730.0,
     "total_profit": 75730.0,
     "total_roi_pct": 94.66,
@@ -414,8 +414,8 @@
       "profit": 29702.0,
       "live_ok": true,
       "close_prev": 80901.46,
-      "close_last": 81584.17,
-      "daily_pct": 0.84,
+      "close_last": 81029.69,
+      "daily_pct": 0.16,
       "last_date": "2026-09-19",
       "history": [
         [
@@ -456,7 +456,7 @@
         ],
         [
           "2026-09-19",
-          81584.171875
+          81029.6875
         ]
       ]
     },
